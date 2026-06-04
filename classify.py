@@ -1,13 +1,8 @@
 # classify.py
 import json
-import logging
 import os
 import time
 import config
-
-# We disable thinking below for speed; this also silences the SDK's benign
-# "non-text parts in the response" warning (defensive — keeps logs clean either way).
-logging.getLogger("google_genai.types").setLevel(logging.ERROR)
 
 def load_instruction():
     """The fixed system-instruction block from prompts/classify.md."""
@@ -23,27 +18,46 @@ def build_message(batch):
                   f"Categories: {', '.join(p['categories'])}", ""]
     return "\n".join(lines)
 
+def _parse(text):
+    """DeepSeek returns a JSON array; tolerate stray code fences or an object wrapper."""
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.strip("`")
+        text = text[text.index("\n") + 1:] if "\n" in text else text
+    data = json.loads(text)
+    if isinstance(data, dict):                        # e.g. {"papers": [...]}
+        data = next((v for v in data.values() if isinstance(v, list)), [])
+    return data
+
 def _apply(item, p):
     valid = set(config.TAGS)
     in_scope = bool(item.get("in_scope"))
     tags = [t for t in (item.get("tags") or []) if t in valid] if in_scope else []
     return {**p, "in_scope": in_scope, "tags": tags, "reason": str(item.get("reason", ""))[:300]}
 
+def _is_quota_error(e):
+    s = str(e).lower()
+    return any(k in s for k in ("insufficient balance", "402", "429", "rate limit", "quota"))
+
 def classify(papers, generate, instruction=None, sleep=time.sleep):
-    """Return classified papers (in + out) for as many as the request cap allows.
-    Papers we never reach simply aren't returned — they stay unseen and retry next run."""
+    """Classify papers in batches. Returns (results, requests_used).
+    A balance/rate-limit error stops the run cleanly; any paper we never reach is simply
+    not returned — it stays unseen and is retried on the next run."""
     instruction = instruction or load_instruction()
     done, used = [], 0
+    total = (len(papers) + config.BATCH_SIZE - 1) // max(config.BATCH_SIZE, 1)
     for i in range(0, len(papers), config.BATCH_SIZE):
         if used >= config.MAX_REQUESTS:
-            print(f"[classify] request cap hit; deferring {len(papers) - i} papers")
+            print(f"[classify] request cap ({config.MAX_REQUESTS}) hit; deferring {len(papers) - i} papers")
             break
         batch = papers[i:i + config.BATCH_SIZE]
         try:
-            data = json.loads(generate(instruction, build_message(batch)))
-            by_id = {int(x["id"]): x for x in data if "id" in x}
-        except Exception as e:                        # bad JSON / API error: skip, retry next run
-            print(f"[classify] batch failed: {e}")
+            by_id = {int(x["id"]): x for x in _parse(generate(instruction, build_message(batch))) if "id" in x}
+        except Exception as e:
+            if _is_quota_error(e):
+                print(f"[classify] stopped (balance/rate limit): {str(e)[:120]} — {len(papers) - i} papers deferred")
+                break
+            print(f"[classify] batch failed, skipping: {str(e)[:120]}")
             used += 1
             sleep(config.REQUEST_DELAY)
             continue
@@ -51,18 +65,41 @@ def classify(papers, generate, instruction=None, sleep=time.sleep):
             if j in by_id:
                 done.append(_apply(by_id[j], p))
         used += 1
+        kept = sum(1 for d in done if d["in_scope"])
+        print(f"[classify] batch {used}/{total} · processed {len(done)}/{len(papers)} · in-scope {kept}")
         sleep(config.REQUEST_DELAY)
-    return done
+    return done, used
 
-def gemini_generate(instruction, message):
-    """Real Gemini call (not exercised by unit tests)."""
-    from google import genai
-    from google.genai import types
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    resp = client.models.generate_content(
-        model=config.GEMINI_MODEL, contents=message,
-        config=types.GenerateContentConfig(
-            system_instruction=instruction,
-            response_mime_type="application/json", temperature=0.0,
-            thinking_config=types.ThinkingConfig(thinking_budget=0)))  # no thinking: faster
-    return resp.text
+def deepseek_generate(instruction, message):
+    """Real DeepSeek call (not exercised by unit tests)."""
+    from openai import OpenAI
+    client = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url=config.DEEPSEEK_BASE_URL)
+    resp = client.chat.completions.create(
+        model=config.DEEPSEEK_MODEL,
+        messages=[{"role": "system", "content": instruction},
+                  {"role": "user", "content": message}],
+        stream=False, temperature=0.0,
+        response_format={"type": "json_object"})
+    return resp.choices[0].message.content
+
+def deepseek_balance():
+    """Best-effort account balance for the maintainer log. Returns a short string or None."""
+    import urllib.request
+    try:
+        req = urllib.request.Request(
+            config.DEEPSEEK_BASE_URL + "/user/balance",
+            headers={"Authorization": "Bearer " + os.environ["DEEPSEEK_API_KEY"]})
+        info = json.loads(urllib.request.urlopen(req, timeout=15).read().decode())
+        infos = info.get("balance_infos") or [{}]
+        funded = [b for b in infos if _to_float(b.get("total_balance")) > 0]
+        b = (funded or infos)[0]
+        return f"{b.get('currency', '?')} {b.get('total_balance', '?')}"
+    except Exception as e:
+        print(f"[balance] unavailable: {str(e)[:80]}")
+        return None
+
+def _to_float(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return 0.0

@@ -35,6 +35,6 @@ analysis of LLMs / neural nets · Foundations
 ## Run your own
 
 Want a feed tuned to your own interests? Fork the repo, edit the categories, keywords, and tags in
-`config.py`, add a free [Gemini API key](https://aistudio.google.com/apikey) as the GitHub Actions
-secret `GEMINI_API_KEY`, and turn on GitHub Pages (`main` → `/docs`). The included workflow scrapes,
+`config.py`, add a [DeepSeek API key](https://platform.deepseek.com/api_keys) as the GitHub Actions
+secret `DEEPSEEK_API_KEY`, and turn on GitHub Pages (`main` → `/docs`). The included workflow scrapes,
 classifies, and republishes your site automatically every morning.

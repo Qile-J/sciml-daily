@@ -1,6 +1,6 @@
-# Classifier prompt (Gemini Flash)
+# Classifier prompt (DeepSeek)
 
-This is the **full prompt** sent to Gemini Flash for every candidate paper.
+This is the **full prompt** sent to DeepSeek for every candidate paper.
 The **system instruction** below is fixed and identical on every call. The **user message**
 is filled in per paper. The model is run in JSON mode and must return only the JSON object
 described under "Output".
@@ -160,7 +160,7 @@ Categories: {categories}
 ## BATCH MODE (how the API is actually called)
 
 Latency does not matter to us, so papers are classified in **batches** to minimize request count
-and stay far under the daily free-tier quota. The **system instruction above is unchanged** — the
+and cost. The **system instruction above is unchanged** — the
 model applies the exact same per-paper rules, scope, and tag set. Only the I/O format changes:
 
 - **User message** — a numbered list of papers:

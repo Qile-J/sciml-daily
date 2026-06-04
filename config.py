@@ -9,6 +9,7 @@ TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
 SEEN_FILE = DATA / "seen.txt"
 PAPERS_FILE = DATA / "papers.json"
+STATS_FILE = DATA / "stats.json"           # maintainer-only run log (not shown on the site)
 
 # arXiv: generous but specific categories (measured live 2026-06: ~400–600 papers/day). Edit freely.
 ARXIV_CATEGORIES = [
@@ -22,11 +23,12 @@ LOOKBACK_DAYS = 2                          # re-scan a few days; seen-filter ded
 OPENREVIEW = True
 OPENREVIEW_VENUES = ["ICLR.cc/2026/Conference", "NeurIPS.cc/2025/Conference"]
 
-# Gemini — the only model. Bump this one line for new versions.
-GEMINI_MODEL = "gemini-3.5-flash"
-BATCH_SIZE = 20                            # papers per request
-MAX_REQUESTS = 1200                        # daily backstop under the ~1,500 free tier
-REQUEST_DELAY = 6.0                        # seconds between calls (~10 RPM)
+# DeepSeek — the only model (cheap paid API). Bump this one line for new versions.
+DEEPSEEK_MODEL = "deepseek-v4-flash"
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+BATCH_SIZE = 30                            # papers per request (batched to cut latency + cost)
+MAX_REQUESTS = 200                         # per-run safety cap so a spike can't run up the bill
+REQUEST_DELAY = 1.0                        # small gap between calls (DeepSeek allows fast sequential use)
 
 # Subfield tags: slug -> (display name, pill color). Keep slugs in sync with prompts/classify.md.
 TAGS = {

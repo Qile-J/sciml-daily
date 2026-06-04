@@ -17,9 +17,16 @@ def test_classify_validates_and_drops_unknown_tags():
     def gen(instr, msg):
         return ('[{"id":1,"in_scope":true,"tags":["operator-learning","nope"],"reason":"r"},'
                 '{"id":2,"in_scope":false,"tags":[],"reason":"out"}]')
-    out = classify.classify(papers(2), gen, instruction="x", sleep=lambda s: None)
+    out, used = classify.classify(papers(2), gen, instruction="x", sleep=lambda s: None)
     assert out[0]["in_scope"] is True and out[0]["tags"] == ["operator-learning"]
     assert out[1]["in_scope"] is False and out[1]["tags"] == []
+    assert used == 1
+
+def test_classify_parses_fenced_and_wrapped_json():
+    def gen(instr, msg):
+        return '```json\n{"results": [{"id":1,"in_scope":true,"tags":[],"reason":"r"}]}\n```'
+    out, _ = classify.classify(papers(1), gen, instruction="x", sleep=lambda s: None)
+    assert len(out) == 1 and out[0]["in_scope"] is True
 
 def test_classify_respects_cap(monkeypatch):
     monkeypatch.setattr(config, "BATCH_SIZE", 1)
@@ -28,9 +35,17 @@ def test_classify_respects_cap(monkeypatch):
     def gen(instr, msg):
         calls["n"] += 1
         return '[{"id":1,"in_scope":true,"tags":[],"reason":"r"}]'
-    out = classify.classify(papers(5), gen, instruction="x", sleep=lambda s: None)
-    assert calls["n"] == 2 and len(out) == 2
+    out, used = classify.classify(papers(5), gen, instruction="x", sleep=lambda s: None)
+    assert calls["n"] == 2 and len(out) == 2 and used == 2
 
 def test_classify_survives_bad_json():
-    out = classify.classify(papers(1), lambda i, m: "boom", instruction="x", sleep=lambda s: None)
+    out, _ = classify.classify(papers(1), lambda i, m: "boom", instruction="x", sleep=lambda s: None)
     assert out == []
+
+def test_classify_stops_on_balance_error():
+    calls = {"n": 0}
+    def gen(instr, msg):
+        calls["n"] += 1
+        raise RuntimeError("Error code: 402 - Insufficient Balance")
+    out, used = classify.classify(papers(5), gen, instruction="x", sleep=lambda s: None)
+    assert out == [] and calls["n"] == 1 and used == 0
