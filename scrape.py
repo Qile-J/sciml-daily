@@ -35,9 +35,17 @@ def _arxiv_get(start):
         "search_query": "(" + " OR ".join(f"cat:{c}" for c in config.ARXIV_CATEGORIES) + ")",
         "start": start, "max_results": 100,
         "sortBy": "submittedDate", "sortOrder": "descending"})
-    r = requests.get(f"http://export.arxiv.org/api/query?{q}",
-                     headers={"User-Agent": "sciml-daily/1.0"}, timeout=60)
-    return r.text if r.ok else ""
+    url = f"http://export.arxiv.org/api/query?{q}"
+    for attempt in range(3):                          # arXiv is flaky/throttles; retry with backoff
+        try:
+            r = requests.get(url, headers={"User-Agent": "sciml-daily/1.0"}, timeout=60)
+            if r.ok and r.text.strip():
+                return r.text
+            print(f"[arxiv] HTTP {r.status_code} at start={start}, retrying")
+        except requests.RequestException as e:
+            print(f"[arxiv] {type(e).__name__} at start={start}, retrying")
+        time.sleep(5 * (attempt + 1))
+    return ""                                          # give up this page; caller stops gracefully
 
 def fetch_arxiv(since, get=None, sleep=time.sleep):
     """Newest-first pages until we cross below `since` (YYYY-MM-DD)."""
