@@ -1,0 +1,336 @@
+[
+ {
+  "id": "openreview:Y7xCdFuFw7",
+  "source": "OpenReview",
+  "title": "HeurekaBench: A Benchmarking Framework for AI Co-scientist",
+  "abstract": "LLM-based reasoning models have enabled the development of agentic systems that act as co-scientists, assisting in multi-step scientific analysis. However, evaluating these systems is challenging, as it requires realistic, end-to-end research scenarios that integrate data analysis, interpretation, and the generation of new insights from the experimental data. To address this limitation, we introduce HeurekaBench, a framework to create benchmarks with *exploratory, open-ended research questions* for experimental datasets.\nEach such question is grounded in a scientific study and its corresponding code repository, and is created using a semi-automated pipeline that leverages multiple LLMs to extract insights and generate candidate workflows, which are then verified against reported findings. We instantiate the framework in single-cell biology to obtain sc-HeurekaBench benchmark and use it to compare state-of-the-art single-cell agents. We further showcase the benefits of our benchmark for quantitatively analyzing current design choices in agentic systems. We find that the addition of a *critic* module can improve ill-formed responses for open-source LLM-based agents by up to 22% and close the gap with their closed-source counterparts. Overall, HeurekaBench sets a path toward rigorous, end-to-end evaluation of scientific agents, grounding benchmark construction in real scientific workflows.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Siba Smarak Panigrahi",
+   "Jovana Videnović",
+   "Maria Brbic"
+  ],
+  "url": "https://openreview.net/forum?id=Y7xCdFuFw7",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "reason": "Introduces a benchmarking framework for evaluating LLM-based co-scientist agents in scientific analysis tasks.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:ky5iqwZSXI",
+  "source": "OpenReview",
+  "title": "Reliable Fine-Grained Evaluation of Natural Language Math Proofs",
+  "abstract": "Recent advances in large language models (LLMs) for mathematical reasoning have largely focused on tasks with easily verifiable final answers while generating and verifying natural language math proofs remains an open challenge. We identify the absence of a reliable, fine-grained evaluator for LLM-generated math proofs as a critical gap.\nTo address this, we propose a systematic methodology for developing and validating evaluators that assign fine-grained scores on a 0-7 scale to model-generated math proofs. \nTo enable this study, we introduce ProofBench, the first expert-annotated dataset of fine-grained proof ratings, spanning 145 problems from six major math competitions (USAMO, IMO, Putnam, etc) and 435 LLM-generated solutions from Gemini-2.5-Pro, o3, and DeepSeek-R1. \nUsing ProofBench as a testbed, we systematically explore the evaluator design space across key axes: the backbone model, input context, instructions and evaluation workflow.\nOur analysis delivers ProofGrader, an evaluator that combines a strong reasoning backbone LM, rich context from reference solutions and marking schemes, and a simple ensembling method; it achieves a low Mean Absolute Error (MAE) of 0.926 against expert scores, significantly outperforming naive baselines.\nFinally, we demonstrate its practical utility in a best-of-$n$ selection task: at $n=16$, ProofGrader achieves an average score of 4.14/7, closing 78\\% of the gap between a naive binary evaluator (2.48) and the human oracle (4.62), highlighting its potential to advance downstream proof generation.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Wenjie Ma",
+   "Andrei Cojocaru",
+   "Neel Kolhe",
+   "Haihan Zhang",
+   "Vincent Zhuang",
+   "Matei Zaharia",
+   "Sewon Min"
+  ],
+  "url": "https://openreview.net/forum?id=ky5iqwZSXI",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "reason": "Proposes a methodology and dataset for evaluating LLM-generated natural language mathematical proofs.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:Z5sWYACAop",
+  "source": "OpenReview",
+  "title": "Adaptive Rollout Allocation for Online Reinforcement Learning with Verifiable Rewards",
+  "abstract": "Sampling efficiency is a key bottleneck in reinforcement learning with verifiable rewards. Existing group-based policy optimization methods, such as GRPO, allocate a fixed number of rollouts for all training prompts. This uniform allocation implicitly treats all prompts as equally informative, and could lead to inefficient computational budget usage and impede training progress. We introduce VIP, a Variance-Informed Predictive allocation strategy that allocates a given rollout budget to the prompts in the incumbent batch to minimize the expected gradient variance of the policy update. At each iteration, VIP uses a lightweight Gaussian process model to predict per-prompt success probabilities based on recent rollouts. These probability predictions are translated into variance estimates, which are then fed into a convex optimization problem to determine the optimal rollout allocations under a hard compute budget constraint. Empirical results show that VIP consistently improves sampling efficiency and achieves higher performance than uniform or heuristic allocation strategies in multiple benchmarks.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Hieu Trung Nguyen",
+   "Bao Nguyen",
+   "Wenao Ma",
+   "Yuzhi Zhao",
+   "Ruifeng She",
+   "Viet Anh Nguyen"
+  ],
+  "url": "https://openreview.net/forum?id=Z5sWYACAop",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "reason": "Uses a Gaussian process model and convex optimization to dynamically allocate rollout budgets in reinforcement learning.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:JfiwaTxhI8",
+  "source": "OpenReview",
+  "title": "Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models",
+  "abstract": "Distinguishing epistemic uncertainty (model ignorance) from aleatoric uncertainty (task randomness) is critical for reliable AI systems, yet standard confidence evaluation metrics capture different and incomplete aspects of uncertainty. While AUC and accuracy measure predictive signal, proper scoring rules assess overall uncertainty, and calibration metrics isolate part of the epistemic uncertainty but ignore within-bin heterogeneity of errors, known as grouping loss. We bridge this evaluation gap by introducing asymptotically consistent and sample-efficient estimators of the grouping loss and excess decision risk, providing a fine-grained assessment of epistemic uncertainty that complements existing calibration metrics. Applied to LLM question-answering with inherent aleatoric noise, our estimators reveal substantial grouping loss which decreases with model scale and instruction tuning. Their local nature enables automatic identification of subgroups with systematic over- or under-confidence, supporting interpretable confidence audits. Finally, we leverage these estimates to design LLM cascades that defer high excess decision risk predictions to stronger models, achieving higher accuracy at lower cost than competing approaches.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Sébastien Melo",
+   "Gaël Varoquaux",
+   "Marine Le Morvan"
+  ],
+  "url": "https://openreview.net/forum?id=JfiwaTxhI8",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "reason": "Develops estimators for grouping loss and excess decision risk to quantify epistemic uncertainty in black-box models.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:HIUqeO9OOr",
+  "source": "OpenReview",
+  "title": "Rethinking Code Similarity for Automated Algorithm Design with LLMs",
+  "abstract": "The rise of Large Language Model-based Automated Algorithm Design (LLM-AAD) has transformed algorithm development by autonomously generating code implementations of expert-level algorithms. Unlike traditional expert-driven algorithm development, in the LLM-AAD paradigm, the algorithm's ideas are often implicitly embedded in the generated code. Therefore, assessing algorithmic similarity directly from code, distinguishing genuine algorithmic innovation from mere syntactic variation, becomes essential. While code similarity metrics exist, they fail to capture algorithmic similarity, as they focus on surface-level syntax or output equivalence rather than problem-solving behavior.\n\nWe propose BehaveSim, a novel method to measure algorithmic similarity through the lens of problem-solving trajectories (PSTrajs)—sequences of intermediate solutions produced during execution. By quantifying the alignment between PSTrajs using dynamic time warping (DTW), BehaveSim distinguishes algorithms with divergent logic despite syntactic or output-level similarities. We demonstrate its utility in two key applications: (i) Enhancing LLM-AAD: Integrating BehaveSim into existing LLM-AAD frameworks (e.g., FunSearch, EoH) promotes behavioral diversity, significantly improving performance on three AAD tasks. (ii) Algorithm analysis: BehaveSim clusters generated algorithms by behavior, enabling systematic analysis of problem-solving strategies—a crucial tool for the growing ecosystem of AI-generated algorithms. Data and code of this work are open-sourced at https://github.com/RayZhhh/behavesim.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Rui Zhang",
+   "Zhichao Lu"
+  ],
+  "url": "https://openreview.net/forum?id=HIUqeO9OOr",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "ml-numerical-methods"
+  ],
+  "reason": "Proposes a method to measure algorithmic similarity of LLM-generated code to enhance automated algorithm design.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:gubSyVxWdG",
+  "source": "OpenReview",
+  "title": "A Relative Error-Based Evaluation Framework of Heterogeneous Treatment Effect Estimators",
+  "abstract": "While significant progress has been made in heterogeneous treatment effect (HTE) estimation, the evaluation of HTE estimators remains underdeveloped. In this article, we propose a robust evaluation framework based on relative error, which quantifies performance differences between two HTE estimators. We first derive the key theoretical conditions on the nuisance parameters that are necessary to  achieve a robust estimator of relative error. Building on these conditions, we introduce novel loss functions and design a neural network architecture to estimate nuisance parameters, thereby obtaining a robust estimation of relative error. We provide large sample properties of the proposed relative error estimator. Furthermore, beyond evaluation,  we propose a new learning algorithm for HTE that leverages both the previously HTE estimators and the nuisance parameters learned through our neural network architecture. Extensive experiments demonstrate that our evaluation framework supports reliable comparisons across HTE estimators, and the proposed learning algorithm for HTE exhibits desirable performance.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Jiayi Guo",
+   "Haoxuan Li",
+   "YE TIAN",
+   "Peng Wu"
+  ],
+  "url": "https://openreview.net/forum?id=gubSyVxWdG",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "reason": "Proposes a robust evaluation framework and neural network architecture for heterogeneous treatment effect estimation.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:IqXlvYA7En",
+  "source": "OpenReview",
+  "title": "Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss",
+  "abstract": "Recent studies have explored autoregressive models for image generation, with promising results, and have combined diffusion models with autoregressive frameworks to optimize image generation via diffusion losses. In this study, we present a theoretical analysis of diffusion and autoregressive models with diffusion loss, highlighting the latter's advantages. We present a theoretical comparison of conditional diffusion and autoregressive diffusion with diffusion loss, demonstrating that patch denoising optimization in autoregressive models effectively mitigates condition errors and leads to a stable condition distribution. Our analysis also reveals that autoregressive condition generation refines the condition, causing the condition error influence to decay exponentially. In addition, we introduce a novel condition refinement approach based on Optimal Transport (OT) theory to address ``condition inconsistency''. We theoretically demonstrate that formulating condition refinement as a Wasserstein Gradient Flow ensures convergence toward the ideal condition distribution, effectively mitigating condition inconsistency. Experiments demonstrate the superiority of our method over diffusion and autoregressive models with diffusion loss methods.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Yucheng Zhou",
+   "Hao Li",
+   "Jianbing Shen"
+  ],
+  "url": "https://openreview.net/forum?id=IqXlvYA7En",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "reason": "Uses Wasserstein Gradient Flows and Optimal Transport theory to refine condition errors in autoregressive image generation.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:O224NIizhz",
+  "source": "OpenReview",
+  "title": "Flow Along the $K$-Amplitude for Generative Modeling",
+  "abstract": "In this work, we propose K-Flow, a novel generative learning paradigm that flows along the $K$-amplitude domain, where $K$ is a scaling parameter that organizes projected coefficients (frequency bands), and amplitude refers to the norm of such coefficients. We instantiate K-Flow with three concrete $K$-amplitude transformations: Fourier transformation, Wavelet transformation, and PCA. By incorporating the $K$-amplitude transformations, K-Flow enables flow matching across the scaling parameter as time. We discuss six properties of K-Flow, covering its theoretical foundations, energy and temporal dynamics, and practical applications. Specifically, from the perspective of practical usage, K-Flow allows for steerable generation by controlling the information at different scales. To demonstrate the effectiveness of K-Flow, we conduct experiments on both unconditional and conditional image generation tasks, showing that K-Flow achieves competitive performance. Furthermore, we perform three ablation studies to illustrate how K-Flow leverages the scaling parameter for controlled image generation. Additional results, including scientific applications, are also provided.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "weitao Du",
+   "Jiasheng Tang",
+   "Shuning Chang",
+   "Yu Rong",
+   "Fan Wang",
+   "Shengchao Liu"
+  ],
+  "url": "https://openreview.net/forum?id=O224NIizhz",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "reason": "Proposes K-Flow, a generative flow matching framework across frequency/scale domains with applications to scientific and image generation.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:RMWcdp5IUy",
+  "source": "OpenReview",
+  "title": "Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization",
+  "abstract": "Uncertainty quantification is crucial in safety-critical systems, where decisions must be made under uncertainty. \nIn particular, we consider the problem of online uncertainty quantification, \nwhere data points arrive sequentially. \nOnline conformal prediction is a principled online uncertainty quantification method that dynamically constructs a prediction set at each time step.\nWhile existing methods for online conformal prediction provide long-run coverage guarantees without any distributional assumptions, they typically assume a *full feedback* setting in which the true label is always observed. \nIn this paper, we propose a novel learning method for online conformal prediction with *partial feedback* from an adaptive adversary—a more challenging setup where the true label is revealed only when it lies inside the constructed prediction set.\nSpecifically, we formulate online conformal prediction as an adversarial bandit problem by treating each candidate prediction set as an arm. \nBuilding on an existing algorithm for adversarial bandits, \nour method achieves a long-run coverage guarantee by explicitly establishing its connection to the regret of the learner.\nFinally, we empirically demonstrate the effectiveness of our method in both independent and identically distributed (i.i.d.) and non-i.i.d. settings, \nshowing that it successfully controls the miscoverage rate while maintaining a reasonable size of the prediction set.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Junyoung Yang",
+   "Kyungmin Kim",
+   "Sangdon Park"
+  ],
+  "url": "https://openreview.net/forum?id=RMWcdp5IUy",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "reason": "Develops a mathematical framework for online conformal prediction (uncertainty quantification) under partial feedback using adversarial bandit theory.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:5bkAbueJwM",
+  "source": "OpenReview",
+  "title": "Diffusion Language Models are Provably Optimal Parallel Samplers",
+  "abstract": "Diffusion language models (DLMs) have emerged as a promising alternative to autoregressive models for faster inference via parallel token generation. We provide a rigorous foundation for this advantage by formalizing a model of parallel sampling and showing that DLMs augmented with polynomial-length chain-of-thought (CoT) can simulate any parallel sampling algorithm using an optimal number of sequential steps. \nConsequently, whenever a target distribution \ncan be generated using a small number of sequential steps, a DLM can be used to generate the distribution using the same number of optimal sequential steps.\nHowever, without the ability to modify previously revealed tokens, DLMs with CoT can still incur large intermediate footprints. We prove that enabling remasking (converting unmasked tokens to masks or revision (converting unmasked tokens to other unmasked tokens) together with CoT further allows DLMs to simulate any parallel sampling algorithm with optimal space complexity.\nWe further justify the advantage of revision by establishing a strict expressivity gap: DLMs with revision or remasking are strictly more powerful than those without.\nOur results not only provide a theoretical justification for the promise of DLMs as the most efficient sampler, but also \nadvocate for why revisions should be enabled in DLMs.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Haozhe Jiang",
+   "Nika Haghtalab",
+   "Lijie Chen"
+  ],
+  "url": "https://openreview.net/forum?id=5bkAbueJwM",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "reason": "Provides a rigorous mathematical analysis of diffusion language models as parallel samplers, proving expressivity and complexity bounds.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:05PqjBzN6S",
+  "source": "OpenReview",
+  "title": "When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency",
+  "abstract": "Sudden concept drift makes previously trained predictors unreliable, yet deciding when to retrain and what post-drift data size is sufficient is rarely addressed. We propose CALIPER —a detector- and model-agnostic, data-only test that estimates the post-drift data size required for stable retraining. CALIPER exploits state dependence in streams generated by dynamical systems: we run a single-pass weighted local regression over the post-drift window and track a one-step proxy error as a function of a locality parameter $\\theta$. When an effective sample size gate is satisfied, a monotonically non-increasing trend in this error with increasing a locality parameter indicates that the data size is sufficiently informative for retraining.\nWe also provide a theoretical analysis of our method, and we show that the algorithm has a low per-update time and memory. Across datasets from four heterogeneous domains, three learner families, and two detectors, CALIPER consistently matches or exceeds the best fixed data size for retraining while incurring negligible overhead and often outperforming incremental updates. CALIPER closes the gap between drift detection and data-sufficient adaptation in streaming learning.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Ren Fujiwara",
+   "Yasuko Matsubara",
+   "Yasushi Sakurai"
+  ],
+  "url": "https://openreview.net/forum?id=05PqjBzN6S",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "reason": "Proposes a data-only test for concept drift in streams generated by dynamical systems using weighted local regression.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:CPdAB7H8mU",
+  "source": "OpenReview",
+  "title": "Implicit Regularization of SGD Reduces Shortcut Learning",
+  "abstract": "Training with stochastic gradient descent (SGD) at moderately large learning rates has been observed to improve robustness against spurious correlations, strong correlation between non-predictive features and target labels. Yet, the mechanism underlying this effect remains unclear. In this work, we identify batch size as an additional critical factor and show that robustness gains arise from the implicit regularization of SGD, which intensifies with larger learning rates and smaller batch sizes. This implicit regularization reduces reliance on spurious or shortcut features, thereby enhancing robustness while preserving accuracy. Importantly, this effect appears unique to SGD: gradient descent (GD) does not confer the same benefit and may even exacerbate shortcut reliance. Theoretically, we establish this phenomenon in linear models by leveraging statistical formulations of spurious correlations, proving that SGD systematically suppresses spurious feature dependence. Empirically, we demonstrate that the effect extends to deep neural networks across multiple benchmarks. Our code is available at\n\\href{https://github.com/mirzanahal/sgd-implicit-regularization-shortcuts}{https://github.com/mirzanahal/sgd-implicit-regularization-shortcuts}.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Nahal Mirzaie",
+   "Alireza Alipanah",
+   "Ali Abbasi",
+   "Amirmahdi Farzane",
+   "Hossein Jafarinia",
+   "Erfan Sobhaei",
+   "Mahdi Ghaznavi",
+   "Amir Najafi",
+   "Mahdieh Soleymani Baghshah",
+   "Mohammad Hossein Rohban"
+  ],
+  "url": "https://openreview.net/forum?id=CPdAB7H8mU",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "reason": "Analyzes the mathematical and statistical properties of SGD implicit regularization in reducing shortcut learning.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:c5TFhCJ6fs",
+  "source": "OpenReview",
+  "title": "Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin",
+  "abstract": "Attention sinks and compression valleys have attracted significant attention as two puzzling phenomena in large language models, but have been studied in isolation. In this work, we present a surprising connection between attention sinks and compression valleys, tracing both to the formation of massive activations in the residual stream. We prove theoretically that massive activations necessarily produce representational compression and establish bounds on the resulting entropy reduction. Through experiments across several models (410M--120B parameters), we confirm that when the beginning-of-sequence token develops extreme activation norms in the middle layers, both compression valleys and attention sinks emerge simultaneously. Targeted ablation validates our theoretical predictions. This unified view motivates us to propose the Mix-Compress-Refine theory of information flow, as an attempt to explain how LLMs organize their computation in depth by controlling attention and representational compression via massive activations. Specifically, we posit that Transformer-based LLMs process tokens in three distinct phases: (1) broad mixing in the early layers, (2) compressed computation with limited mixing in the middle layers, and (3) selective refinement in the late layers. Our framework helps explain why embedding tasks perform best at intermediate layers, whereas generation tasks benefit from full-depth processing, clarifying differences in task-dependent representations.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Enrique Queipo-de-Llano",
+   "Alvaro Arroyo",
+   "Federico Barbero",
+   "Xiaowen Dong",
+   "Michael M. Bronstein",
+   "Yann LeCun",
+   "Ravid Shwartz-Ziv"
+  ],
+  "url": "https://openreview.net/forum?id=c5TFhCJ6fs",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "reason": "Provides a mathematical analysis connecting attention sinks and compression valleys to massive activations in the residual stream of LLMs.",
+  "added": "2026-06-04"
+ },
+ {
+  "id": "openreview:Xk8cwnwu2e",
+  "source": "OpenReview",
+  "title": "Efficient Message-Passing Transformer for Error Correcting Codes",
+  "abstract": "Error correcting codes (ECCs) are a fundamental technique for ensuring reliable communication over noisy channels. Recent advances in deep learning have enabled transformer-based decoders to achieve state-of-the-art performance on short codes; however, their computational complexity remains significantly higher than that of classical decoders due to the attention mechanism. To address this challenge, we propose EfficientMPT, an efficient message-passing transformer that significantly reduces computational complexity while preserving decoding performance. A key feature of EfficientMPT is the Efficient Error Correcting (EEC) attention mechanism, which replaces expensive matrix multiplications with lightweight vector-based element-wise operations. Unlike standard attention, EEC attention relies only on query-key interaction using global query vector, efficiently encode global contextual information for ECC decoding. Furthermore, EfficientMPT can serve as a foundation model, capable of decoding various code classes and long codes by fine-tuning. In particular, EfficientMPT achieves 85% and 91% of significant memory reduction and 47% and 57% of FLOPs reduction compared to ECCT for $(648,540)$ and $(1056,880)$ standard LDPC code, respectively.",
+  "categories": [
+   "ICLR.cc/2026/Conference"
+  ],
+  "authors": [
+   "Seong-Joon Park",
+   "Taewoo Park",
+   "Hee-Youl Kwak",
+   "Sang-Hyo Kim",
+   "Yongjune Kim",
+   "Jong-Seon No"
+  ],
+  "url": "https://openreview.net/forum?id=Xk8cwnwu2e",
+  "published": "2025-09-20",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "reason": "Proposes an efficient transformer-based decoder for error correcting codes, accelerating numerical decoding computations.",
+  "added": "2026-06-04"
+ }
+]
