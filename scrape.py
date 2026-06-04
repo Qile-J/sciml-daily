@@ -36,7 +36,7 @@ def _arxiv_get(start):
         "start": start, "max_results": 100,
         "sortBy": "submittedDate", "sortOrder": "descending"})
     url = f"http://export.arxiv.org/api/query?{q}"
-    for attempt in range(3):                          # arXiv is flaky/throttles; retry with backoff
+    for attempt in range(5):                          # arXiv 429/503s on heavy use; ride it out with backoff
         try:
             r = requests.get(url, headers={"User-Agent": "sciml-daily/1.0"}, timeout=60)
             if r.ok and r.text.strip():
@@ -44,7 +44,7 @@ def _arxiv_get(start):
             print(f"[arxiv] HTTP {r.status_code} at start={start}, retrying")
         except requests.RequestException as e:
             print(f"[arxiv] {type(e).__name__} at start={start}, retrying")
-        time.sleep(5 * (attempt + 1))
+        time.sleep(min(60, 5 * 2 ** attempt))         # 5,10,20,40,60s — spans most transient outages
     return ""                                          # give up this page; caller stops gracefully
 
 def fetch_arxiv(since, get=None, sleep=time.sleep):
