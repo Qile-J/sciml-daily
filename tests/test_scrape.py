@@ -54,6 +54,7 @@ def test_parse_openreview():
     assert p["authors"] == ["A One", "B Two"]
     assert p["url"] == "https://openreview.net/forum?id=abc"
     assert p["categories"] == ["ICLR.cc/2026/Conference"]
+    assert p["published"] == "2024-06-03"   # cdate ms -> UTC day
 
 def test_fetch_openreview_is_defensive():
     def boom(venue):
