@@ -7,8 +7,7 @@ DOCS = ROOT / "docs"                       # GitHub Pages serves from here
 PROMPT = ROOT / "prompts" / "classify.md"
 TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
-SEEN_FILE = DATA / "seen.txt"
-PAPERS_FILE = DATA / "papers.json"
+PAPERS_FILE = DATA / "papers.json"         # the feed + the only "seen" record (dedup by id)
 STATS_FILE = DATA / "stats.json"           # maintainer-only run log (not shown on the site)
 
 # arXiv: generous but specific categories (measured live 2026-06: ~400–600 papers/day). Edit freely.
@@ -17,7 +16,10 @@ ARXIV_CATEGORIES = [
     "math.NA", "math.OC", "math.DS", "math.AP", "math.PR", "math-ph",
     "physics.comp-ph", "physics.flu-dyn", "eess.SY",
 ]
-LOOKBACK_DAYS = 2                          # re-scan a few days; seen-filter dedups
+# Pull window (days). Only absorbs arXiv's announcement lag — papers announced today were
+# submitted over the prior day or two. Dedup against papers.json keeps the feed from re-adding
+# anything, so this is NOT backtracking; it just makes sure nothing fresh is missed.
+FETCH_WINDOW_DAYS = 2
 
 # OpenReview (set OPENREVIEW = False to skip)
 OPENREVIEW = True
@@ -27,6 +29,7 @@ OPENREVIEW_VENUES = ["ICLR.cc/2026/Conference", "NeurIPS.cc/2025/Conference"]
 DEEPSEEK_MODEL = "deepseek-v4-flash"
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 BATCH_SIZE = 30                            # papers per request (batched to cut latency + cost)
+MAX_TOKENS = 8192                          # generous output cap so a full batch is never truncated
 MAX_REQUESTS = 200                         # per-run safety cap so a spike can't run up the bill
 REQUEST_DELAY = 1.0                        # small gap between calls (DeepSeek allows fast sequential use)
 

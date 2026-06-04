@@ -102,13 +102,14 @@ def is_candidate(p):
     return any(k in text for k in _KW)
 
 def fetch_all(since):
-    """Deduped list of all fetched papers in the window (arXiv + OpenReview)."""
+    """Deduped list of papers published on/after `since` (arXiv + OpenReview).
+    The date window is applied to both sources so a daily `since=today` means today only."""
     papers = fetch_arxiv(since)
     if config.OPENREVIEW:
         papers += fetch_openreview(config.OPENREVIEW_VENUES)
     seen, out = set(), []
     for p in papers:
-        if p["id"] not in seen:
+        if p["published"] >= since and p["id"] not in seen:
             seen.add(p["id"])
             out.append(p)
     return out

@@ -78,7 +78,7 @@ def deepseek_generate(instruction, message):
         model=config.DEEPSEEK_MODEL,
         messages=[{"role": "system", "content": instruction},
                   {"role": "user", "content": message}],
-        stream=False, temperature=0.0,
+        stream=False, temperature=0.0, max_tokens=config.MAX_TOKENS,
         response_format={"type": "json_object"})
     return resp.choices[0].message.content
 
