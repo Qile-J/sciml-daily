@@ -1,8 +1,13 @@
 # classify.py
 import json
+import logging
 import os
 import time
 import config
+
+# We disable thinking below for speed; this also silences the SDK's benign
+# "non-text parts in the response" warning (defensive — keeps logs clean either way).
+logging.getLogger("google_genai.types").setLevel(logging.ERROR)
 
 def load_instruction():
     """The fixed system-instruction block from prompts/classify.md."""
@@ -58,5 +63,6 @@ def gemini_generate(instruction, message):
         model=config.GEMINI_MODEL, contents=message,
         config=types.GenerateContentConfig(
             system_instruction=instruction,
-            response_mime_type="application/json", temperature=0.0))
+            response_mime_type="application/json", temperature=0.0,
+            thinking_config=types.ThinkingConfig(thinking_budget=0)))  # no thinking: faster
     return resp.text
