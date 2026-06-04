@@ -6,6 +6,7 @@ def _wire(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "SEEN_FILE", tmp_path / "seen.txt")
     monkeypatch.setattr(config, "PAPERS_FILE", tmp_path / "papers.json")
     monkeypatch.setattr(config, "DOCS", tmp_path / "docs")
+    monkeypatch.setattr(config, "REQUEST_DELAY", 0)   # skip RPM pacing in tests
 
 def test_run_end_to_end_offline(tmp_path, monkeypatch):
     _wire(tmp_path, monkeypatch)
