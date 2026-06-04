@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site_title }}{% if day %} · {{ day | pretty }}{% endif %}</title>
+<meta name="description" content="{{ tagline }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site_title }}" href="{{ url }}/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url }}/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url }}/">{{ site_title }}</a>
+  <nav>
+    <a href="{{ url }}/">Today</a>
+    <a href="{{ url }}/archive.html">Archive</a>
+    <a href="{{ url }}/feed.xml">RSS</a>
+  </nav>
+</header>
+
+<main>
+  <section class="masthead">
+    <p class="kicker">{{ tagline }}</p>
+    <h1>{% if day %}{{ day | pretty }}{% else %}No papers yet{% endif %}</h1>
+    <p class="count"><span id="visible-count">{{ papers|length }}</span> papers</p>
+  </section>
+
+  {% if papers %}
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search titles, abstracts, authors…" autocomplete="off">
+    <div class="pills" id="pills">
+      <button class="pill active" data-tag="">All</button>
+      {% for slug, t in tags.items() %}
+      <button class="pill" data-tag="{{ slug }}" style="--c:{{ t.color }}">{{ t.name }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <ul class="papers" id="papers">
+    {% for p in papers %}
+    <li class="paper" data-tags="{{ p.tags|join(' ') }}"
+        data-text="{{ (p.title ~ ' ' ~ p.abstract ~ ' ' ~ p.authors|join(' '))|lower }}"
+        style="--accent:{{ tags[p.tags[0]].color if p.tags else '#cbd5e1' }}">
+      <h2><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a></h2>
+      <p class="reason">{{ p.reason }}</p>
+      {% if p.tags %}
+      <div class="tags">
+        {% for tg in p.tags %}<span class="tag" style="--c:{{ tags[tg].color }}">{{ tags[tg].name }}</span>{% endfor %}
+      </div>
+      {% endif %}
+      <div class="meta">
+        <span class="src">{{ p.source }}</span>
+        <span class="authors">{{ p.authors[:4]|join(', ') }}{% if p.authors|length > 4 %} +{{ p.authors|length - 4 }}{% endif %}</span>
+        <button class="abstract-toggle" aria-expanded="false">Abstract</button>
+      </div>
+      <p class="abstract" hidden>{{ p.abstract }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="empty" id="empty" hidden>No papers match.</p>
+  {% else %}
+  <p class="empty">Nothing yet — the next morning run will fill this in.</p>
+  {% endif %}
+</main>
+
+<footer><p>{{ site_title }} — {{ tagline }}</p></footer>
+<script src="{{ url }}/static/app.js"></script>
+</body>
+</html>
