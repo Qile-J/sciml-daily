@@ -21,6 +21,7 @@ def build(papers, out=None):
     env = Environment(loader=FileSystemLoader(str(config.TEMPLATES)),
                       autoescape=select_autoescape(["html", "xml"]))
     env.filters["pretty"] = lambda d: datetime.strptime(d, "%Y-%m-%d").strftime("%A, %B %-d, %Y")
+    env.filters["rfc822"] = lambda d: datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 00:00:00 GMT")
 
     days = _group_by_day(papers)
     day_list = list(days.keys())

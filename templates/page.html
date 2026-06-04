@@ -43,12 +43,12 @@
     {% for p in papers %}
     <li class="paper" data-tags="{{ p.tags|join(' ') }}"
         data-text="{{ (p.title ~ ' ' ~ p.abstract ~ ' ' ~ p.authors|join(' '))|lower }}"
-        style="--accent:{{ tags[p.tags[0]].color if p.tags else '#cbd5e1' }}">
+        style="--accent:{{ tags[p.tags[0]].color if (p.tags and p.tags[0] in tags) else '#cbd5e1' }}">
       <h2><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a></h2>
       <p class="reason">{{ p.reason }}</p>
       {% if p.tags %}
       <div class="tags">
-        {% for tg in p.tags %}<span class="tag" style="--c:{{ tags[tg].color }}">{{ tags[tg].name }}</span>{% endfor %}
+        {% for tg in p.tags if tg in tags %}<span class="tag" style="--c:{{ tags[tg].color }}">{{ tags[tg].name }}</span>{% endfor %}
       </div>
       {% endif %}
       <div class="meta">

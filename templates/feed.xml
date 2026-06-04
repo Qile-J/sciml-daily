@@ -9,6 +9,7 @@
       <title>{{ p.title }}</title>
       <link>{{ p.url }}</link>
       <guid isPermaLink="false">{{ p.id }}</guid>
+      <pubDate>{{ p.added | rfc822 }}</pubDate>
       <description>{{ p.reason }} (tags: {{ p.tags|join(', ') }})</description>
     </item>
     {% endfor %}
