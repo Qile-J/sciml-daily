@@ -1,7 +1,7 @@
 name: daily
 on:
   schedule:
-    - cron: "0 11 * * *"     # 11:00 UTC daily; adjust to your morning
+    - cron: "12 11 * * *"    # 11:12 UTC (~7:12am ET, EDT). Off the hour: GitHub drops on-the-hour crons under load.
   workflow_dispatch:          # manual "Run workflow" button
 
 permissions:
