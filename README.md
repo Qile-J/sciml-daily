@@ -1,51 +1,64 @@
+<div align="center">
+
 # SciML Daily
 
-**A daily feed of new papers in Scientific Machine Learning, AI for Scientific Computing, and AI for Applied Math.**
+### The morning paper feed for Scientific Machine Learning.
 
-&rarr; **[sciml-daily.github.io](https://qile-j.github.io/sciml-daily)**
+**[→ sciml-daily.github.io](https://qile-j.github.io/sciml-daily)**
+
+&nbsp;
+
+[![Daily pipeline](https://github.com/Qile-J/sciml-daily/actions/workflows/daily.yml/badge.svg)](https://github.com/Qile-J/sciml-daily/actions/workflows/daily.yml)
+![GitHub Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-0d0f14?logo=github)
+![Free](https://img.shields.io/badge/cost-~%240.01%2Fmonth-22c55e)
+
+</div>
+
+&nbsp;
+
+400–600 arXiv papers hit your feed every morning.
+Most of them aren't for you.
+
+**SciML Daily reads them first.**
+
+Every day, it scans the latest arXiv and OpenReview submissions, keeps only the papers relevant to the *methods* space — operator learning, physics-informed ML, neural ODEs, PDE solvers, and the applied math of neural networks — and delivers each one with a two-sentence summary written by AI: what problem it tackles, what method it introduces.
+
+Open it with your coffee. Know what dropped overnight.
+
+&nbsp;
+
+## What's covered
+
+`Operator Learning` &nbsp; `PDE Foundation Models` &nbsp; `Physics-Informed ML`
+
+`Generative Models for Simulation` &nbsp; `Differentiable Simulation`
+
+`ML-Accelerated Solvers` &nbsp; `Equation Discovery & Dynamical Systems`
+
+`LLMs for Scientific Computing` &nbsp; `UQ & Inverse Problems`
+
+`Mathematical Analysis of Neural Networks`
+
+&nbsp;
+
+## What you get
+
+**Browse by date** — a date strip at the top. Latest day selected by default. Every past day archived.
+
+**Filter by subfield** — narrow the feed to exactly the topics you follow.
+
+**Search** — find any paper by title or author across the full archive.
+
+**Flip for abstract** — click any card to flip it and read the full abstract, with LaTeX rendered.
+
+&nbsp;
 
 ---
 
-Every morning, SciML Daily scans the latest arXiv and OpenReview submissions, keeps only the papers that matter to this space, and publishes them with two-sentence summaries and subfield tags. No noise from the broad "AI for Science" firehose. Just the methods.
+<div align="center">
 
-## What it covers
+**[Read today's papers →](https://qile-j.github.io/sciml-daily)**
 
-| Tag | Topics |
-|-----|--------|
-| Operator learning | Neural operators (FNO, DeepONet), geometry-aware operators |
-| PDE foundation models | Pretrained multi-PDE models (Poseidon, SPUS, P3) |
-| Physics-informed ML | PINNs, PINO, deep energy methods, convergence theory |
-| Generative models for simulation | Diffusion for PDEs, probabilistic surrogates |
-| Differentiable simulation | Differentiable physics, hybrid physics-neural surrogates |
-| ML-accelerated solvers | Learned solvers, reduced-order modeling |
-| Equation discovery | SINDy, neural ODEs, Koopman/DMD, symbolic regression |
-| LLMs for sci-computing | LLM agents for PDEs, autoformalization, solver codegen |
-| Mathematical analysis of LLMs | Training dynamics, mean-field theory, expressivity bounds |
-| UQ & inverse problems | Bayesian SciML, data assimilation, uncertainty quantification |
+*New papers every morning. Free, open-source, no account needed.*
 
-## How it works
-
-```
-arXiv + OpenReview  →  keyword prefilter  →  DeepSeek classify + summarize  →  GitHub Pages
-```
-
-- Runs daily on GitHub Actions (free, unattended)
-- DeepSeek V4 Flash classifies each candidate — around 4-7 API calls per day, fractions of a cent
-- Renders a static single-page app: browse by date, filter by tag, search by title or author
-
-## Run your own
-
-1. Fork this repo
-2. Edit `config.py` — adjust categories, keywords, and subfield tags to your interests
-3. Add your [DeepSeek API key](https://platform.deepseek.com/api_keys) as the secret `DEEPSEEK_API_KEY` in repo Settings → Secrets
-4. Enable GitHub Pages: Settings → Pages → Source: `main` branch, `/docs` folder
-
-The Actions workflow scrapes, classifies, and redeploys every morning automatically.
-
-## Stack
-
-- **Python** — fetch, prefilter, classify, render
-- **DeepSeek V4 Flash** — the only paid dependency (~$0.01/month)
-- **GitHub Actions** — daily cron runner (free for public repos)
-- **GitHub Pages** — static hosting (free)
-- **Vanilla JS + KaTeX** — client-side search, tag filter, math rendering
+</div>
