@@ -33,7 +33,7 @@ def _apply(item, p):
     valid = set(config.TAGS)
     in_scope = bool(item.get("in_scope"))
     tags = [t for t in (item.get("tags") or []) if t in valid] if in_scope else []
-    return {**p, "in_scope": in_scope, "tags": tags, "reason": str(item.get("reason", ""))[:300]}
+    return {**p, "in_scope": in_scope, "tags": tags, "summary": str(item.get("summary", ""))[:600]}
 
 def _index(item, pos):
     """Match a result to its paper by the model's echoed 1-based "id" when present, else by the
