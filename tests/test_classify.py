@@ -22,6 +22,18 @@ def test_classify_validates_and_drops_unknown_tags():
     assert out[1]["in_scope"] is False and out[1]["tags"] == []
     assert used == 1
 
+def test_classify_maps_by_position_when_no_id():
+    # DeepSeek returns objects in order WITHOUT an "id" (the loaded system prompt never asks for it);
+    # results must still map to papers by position.
+    def gen(instr, msg):
+        return ('[{"in_scope":true,"tags":["operator-learning"],"reason":"a"},'
+                '{"in_scope":false,"tags":[],"reason":"b"}]')
+    out, used = classify.classify(papers(2), gen, instruction="x", sleep=lambda s: None)
+    assert [p["id"] for p in out] == ["arxiv:0", "arxiv:1"]
+    assert out[0]["in_scope"] is True and out[0]["tags"] == ["operator-learning"]
+    assert out[1]["in_scope"] is False
+    assert used == 1
+
 def test_classify_parses_fenced_and_wrapped_json():
     def gen(instr, msg):
         return '```json\n{"results": [{"id":1,"in_scope":true,"tags":[],"reason":"r"}]}\n```'

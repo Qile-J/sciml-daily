@@ -35,6 +35,14 @@ def _apply(item, p):
     tags = [t for t in (item.get("tags") or []) if t in valid] if in_scope else []
     return {**p, "in_scope": in_scope, "tags": tags, "reason": str(item.get("reason", ""))[:300]}
 
+def _index(item, pos):
+    """Match a result to its paper by the model's echoed 1-based "id" when present, else by the
+    array position (the prompt returns one object per paper, in order — and in practice omits id)."""
+    try:
+        return int(item["id"])
+    except (KeyError, TypeError, ValueError):
+        return pos
+
 def _is_quota_error(e):
     s = str(e).lower()
     return any(k in s for k in ("insufficient balance", "402", "429", "rate limit", "quota"))
@@ -52,7 +60,7 @@ def classify(papers, generate, instruction=None, sleep=time.sleep):
             break
         batch = papers[i:i + config.BATCH_SIZE]
         try:
-            by_id = {int(x["id"]): x for x in _parse(generate(instruction, build_message(batch))) if "id" in x}
+            parsed = _parse(generate(instruction, build_message(batch)))
         except Exception as e:
             if _is_quota_error(e):
                 print(f"[classify] stopped (balance/rate limit): {str(e)[:120]} — {len(papers) - i} papers deferred")
@@ -61,9 +69,10 @@ def classify(papers, generate, instruction=None, sleep=time.sleep):
             used += 1
             sleep(config.REQUEST_DELAY)
             continue
+        by_pos = {_index(item, pos): item for pos, item in enumerate(parsed, 1) if isinstance(item, dict)}
         for j, p in enumerate(batch, 1):
-            if j in by_id:
-                done.append(_apply(by_id[j], p))
+            if j in by_pos:
+                done.append(_apply(by_pos[j], p))
         used += 1
         kept = sum(1 for d in done if d["in_scope"])
         print(f"[classify] batch {used}/{total} · processed {len(done)}/{len(papers)} · in-scope {kept}")

@@ -1,37 +1,49 @@
 # tests/test_scrape.py
 import scrape
 
-ARXIV_XML = """<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
- <entry>
-  <id>http://arxiv.org/abs/2406.01234v1</id>
-  <title>A Neural Operator</title>
-  <summary>  We learn operators for PDEs.  </summary>
-  <published>2026-06-03T00:00:00Z</published>
-  <author><name>Jane Doe</name></author>
-  <category term="cs.LG"/><category term="math.NA"/>
- </entry>
-</feed>"""
-EMPTY = '<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+# arXiv's daily RSS feed (rss.arxiv.org): one call lists this mailing's new/cross/replace items.
+ARXIV_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+ <channel>
+  <item>
+   <title>A Neural Operator</title>
+   <link>https://arxiv.org/abs/2406.01234</link>
+   <description>arXiv:2406.01234v1 Announce Type: new
+Abstract:   We learn operators for PDEs.  </description>
+   <category>cs.LG</category>
+   <category>math.NA</category>
+   <pubDate>Tue, 03 Jun 2026 00:00:00 -0400</pubDate>
+   <dc:creator>Jane Doe, John Roe</dc:creator>
+   <arxiv:announce_type>new</arxiv:announce_type>
+  </item>
+  <item>
+   <title>An Old Paper, Revised</title>
+   <link>https://arxiv.org/abs/2401.00001</link>
+   <description>arXiv:2401.00001v3 Announce Type: replace
+Abstract: A revision of an older paper.</description>
+   <category>cs.LG</category>
+   <pubDate>Tue, 03 Jun 2026 00:00:00 -0400</pubDate>
+   <dc:creator>Someone Else</dc:creator>
+   <arxiv:announce_type>replace</arxiv:announce_type>
+  </item>
+ </channel>
+</rss>"""
 
 def test_parse_arxiv():
-    p = scrape.parse_arxiv(ARXIV_XML)[0]
-    assert p["id"] == "arxiv:2406.01234"
+    out = scrape.parse_arxiv(ARXIV_RSS)
+    assert [p["id"] for p in out] == ["arxiv:2406.01234"]   # 'replace' revision dropped
+    p = out[0]
     assert p["source"] == "arXiv"
     assert p["title"] == "A Neural Operator"
     assert p["abstract"] == "We learn operators for PDEs."
     assert p["categories"] == ["cs.LG", "math.NA"]
-    assert p["authors"] == ["Jane Doe"]
+    assert p["authors"] == ["Jane Doe", "John Roe"]
     assert p["url"] == "https://arxiv.org/abs/2406.01234"
     assert p["published"] == "2026-06-03"
 
-def test_fetch_arxiv_single_call_windows():
-    out = scrape.fetch_arxiv("2026-06-01", get=lambda: ARXIV_XML)   # one call, no pagination
+def test_fetch_arxiv_one_call_new_and_cross_only():
+    out = scrape.fetch_arxiv(get=lambda: ARXIV_RSS)        # one RSS call, no date window
     assert [p["id"] for p in out] == ["arxiv:2406.01234"]
-
-def test_fetch_arxiv_excludes_before_window():
-    out = scrape.fetch_arxiv("2026-06-05", get=lambda: ARXIV_XML)
-    assert out == []
 
 OR_PAYLOAD = {"notes": [{"id": "abc", "cdate": 1717372800000, "content": {
     "title": {"value": "Operator Learning"},

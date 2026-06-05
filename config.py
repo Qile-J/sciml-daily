@@ -10,17 +10,17 @@ STATIC = ROOT / "static"
 PAPERS_FILE = DATA / "papers.json"         # the feed + the only "seen" record (dedup by id)
 STATS_FILE = DATA / "stats.json"           # maintainer-only run log (not shown on the site)
 
-# arXiv: generous but specific categories (measured live 2026-06: ~400–600 papers/day). Edit freely.
+# arXiv: generous but specific categories. Pulled in ONE daily RSS call (rss.arxiv.org), which
+# lists exactly this mailing's new/cross-listed papers (~500/day across this set). Edit freely.
 ARXIV_CATEGORIES = [
     "cs.LG", "cs.NA", "cs.AI", "cs.CL", "cs.CE", "stat.ML",
     "math.NA", "math.OC", "math.DS", "math.AP", "math.PR", "math-ph",
     "physics.comp-ph", "physics.flu-dyn", "eess.SY",
 ]
-# Pull window (days). Only absorbs arXiv's announcement lag — papers announced today were
-# submitted over the prior day or two. Dedup against papers.json keeps the feed from re-adding
-# anything, so this is NOT backtracking; it just makes sure nothing fresh is missed.
+USER_AGENT = "sciml-daily/1.0 (+https://github.com/qile-j/sciml-daily; mailto:qile.jiang@outlook.com)"
+# OpenReview-only date window (days): its notes span all submissions ever, so we keep only those
+# created in the last couple days. arXiv needs no window — its RSS feed is already today's mailing.
 FETCH_WINDOW_DAYS = 2
-ARXIV_MAX_RESULTS = 2000                   # newest papers pulled in a SINGLE arXiv call (no pagination)
 
 # OpenReview (set OPENREVIEW = False to skip)
 OPENREVIEW = True

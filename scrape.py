@@ -1,48 +1,60 @@
 # scrape.py
-import urllib.parse
+import re
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import xml.etree.ElementTree as ET
 import requests
 import config
 
-ATOM = "{http://www.w3.org/2005/Atom}"
-EMPTY_FEED = '<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+ARX = "{http://arxiv.org/schemas/atom}"
+DC = "{http://purl.org/dc/elements/1.1/}"
 
 def _clean(s):
     return " ".join(s.split()) if s else ""
 
-# ---------- arXiv ----------
+# ---------- arXiv (ONE daily RSS call across all categories) ----------
+# rss.arxiv.org is CDN-served and built for daily polling — unlike the export query API it does
+# not 429 from shared/CI IPs. The feed already IS "this mailing's new papers", so no date window,
+# no pagination, no max_results. We keep `new` + `cross` items and drop `replace`/`replace-cross`
+# (those are revisions of older papers, not new arrivals).
 def parse_arxiv(xml_text):
-    root = ET.fromstring(xml_text)
+    ch = ET.fromstring(xml_text).find("channel")
     out = []
-    for e in root.findall(f"{ATOM}entry"):
-        aid = (e.findtext(f"{ATOM}id") or "").rsplit("/abs/", 1)[-1].split("v")[0]
+    for it in (ch.findall("item") if ch is not None else []):
+        if (it.findtext(f"{ARX}announce_type") or "").strip() not in ("new", "cross"):
+            continue
+        aid = re.sub(r"v\d+$", "", (it.findtext("link") or "").rsplit("/abs/", 1)[-1])
+        if not aid:
+            continue
+        desc = it.findtext("description") or ""
+        abstract = desc.split("Abstract:", 1)[-1] if "Abstract:" in desc else desc
         out.append({
             "id": f"arxiv:{aid}", "source": "arXiv",
-            "title": _clean(e.findtext(f"{ATOM}title")),
-            "abstract": _clean(e.findtext(f"{ATOM}summary")),
-            "categories": [c.get("term") for c in e.findall(f"{ATOM}category") if c.get("term")],
-            "authors": [a for a in (_clean(x.findtext(f"{ATOM}name"))
-                                    for x in e.findall(f"{ATOM}author")) if a],
+            "title": _clean(it.findtext("title")),
+            "abstract": _clean(abstract),
+            "categories": [c.text for c in it.findall("category") if c.text],
+            "authors": [a.strip() for a in (it.findtext(f"{DC}creator") or "").split(",") if a.strip()],
             "url": f"https://arxiv.org/abs/{aid}",
-            "published": (e.findtext(f"{ATOM}published") or "")[:10],
+            "published": _rss_day(it.findtext("pubDate")),
         })
     return out
 
-def _arxiv_get():
-    """One request for the newest papers across all categories (sorted newest-first)."""
-    q = urllib.parse.urlencode({
-        "search_query": "(" + " OR ".join(f"cat:{c}" for c in config.ARXIV_CATEGORIES) + ")",
-        "start": 0, "max_results": config.ARXIV_MAX_RESULTS,
-        "sortBy": "submittedDate", "sortOrder": "descending"})
-    r = requests.get(f"http://export.arxiv.org/api/query?{q}",
-                     headers={"User-Agent": "sciml-daily/1.0"}, timeout=120)
-    return r.text if r.ok else ""
+def _rss_day(s):
+    try:
+        return parsedate_to_datetime(s).astimezone(timezone.utc).strftime("%Y-%m-%d")
+    except Exception:
+        return ""
 
-def fetch_arxiv(since, get=None):
-    """One call, then keep papers submitted on/after `since` (YYYY-MM-DD)."""
-    get = get or _arxiv_get
-    return [p for p in parse_arxiv(get() or EMPTY_FEED) if p["published"] >= since]
+def _arxiv_get():
+    """One RSS request for today's announcements across all categories."""
+    url = "https://rss.arxiv.org/rss/" + "+".join(config.ARXIV_CATEGORIES)
+    r = requests.get(url, headers={"User-Agent": config.USER_AGENT}, timeout=60)
+    r.raise_for_status()          # never swallow a failed fetch into an empty day
+    return r.text
+
+def fetch_arxiv(get=None):
+    """One RSS call -> this mailing's new + cross-listed papers (self-bounded to today)."""
+    return parse_arxiv((get or _arxiv_get)())
 
 # ---------- OpenReview ----------
 def _val(content, key, default=""):
@@ -92,14 +104,14 @@ def is_candidate(p):
     return any(k in text for k in _KW)
 
 def fetch_all(since):
-    """Deduped list of papers published on/after `since` (arXiv + OpenReview).
-    The date window is applied to both sources so a daily `since=today` means today only."""
-    papers = fetch_arxiv(since)
+    """Deduped papers from arXiv + OpenReview. The arXiv RSS feed is already today's mailing,
+    so no date filter there; `since` only bounds OpenReview (whose notes span all submissions)."""
+    papers = fetch_arxiv()
     if config.OPENREVIEW:
-        papers += fetch_openreview(config.OPENREVIEW_VENUES)
+        papers += [p for p in fetch_openreview(config.OPENREVIEW_VENUES) if p["published"] >= since]
     seen, out = set(), []
     for p in papers:
-        if p["published"] >= since and p["id"] not in seen:
+        if p["id"] not in seen:
             seen.add(p["id"])
             out.append(p)
     return out
