@@ -37,11 +37,12 @@ Each paper object in `data.json` ships only the fields the UI needs:
 ```json
 { "id": "arxiv:2606.04018", "title": "...", "authors": ["..."],
   "tags": ["physics-informed-ml", "foundations"], "url": "https://arxiv.org/abs/...",
-  "source": "arXiv", "summary": "...", "added": "2026-06-04" }
+  "source": "arXiv", "summary": "...", "abstract": "...", "added": "2026-06-04" }
 ```
 
-Dropped from the shipped JSON: `categories`, `published`, `in_scope` (not displayed). `reason`
-is renamed to `summary` (see §6).
+`abstract` is shipped because the card's Abstract toggle expands it client-side. Dropped from the
+shipped JSON: `categories`, `published`, `in_scope` (not displayed). `reason` is renamed to
+`summary` (see §6).
 
 `app.js` fetches `data.json` once, holds papers in memory, and derives both views:
 - date strip = unique `added` values, ascending, latest selected by default;
