@@ -30,8 +30,43 @@
     var t = TAGS[(p.tags && p.tags[0]) || ""];
     return t ? t.color : "#94a3b8";
   }
+  function delatex(s) {
+    if (!s) return s;
+    return s
+      .replace(/\{?\\aa\}?/gi, 'å').replace(/\{?\\AA\}?/gi, 'Å')
+      .replace(/\{?\\ae\}?/gi, 'æ').replace(/\{?\\AE\}?/gi, 'Æ')
+      .replace(/\{?\\oe\}?/gi, 'œ').replace(/\{?\\OE\}?/gi, 'Œ')
+      .replace(/\{?\\ss\}?/gi, 'ß')
+      .replace(/\{?\\o\}?/g,   'ø').replace(/\{?\\O\}?/g,   'Ø')
+      .replace(/\{?\\l\}?/g,   'ł').replace(/\{?\\L\}?/g,   'Ł')
+      .replace(/\\"\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',y:'ÿ',
+                A:'Ä',E:'Ë',I:'Ï',O:'Ö',U:'Ü',Y:'Ÿ'}[c] || c;
+      })
+      .replace(/\\'\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {a:'á',e:'é',i:'í',o:'ó',u:'ú',y:'ý',c:'ć',n:'ń',s:'ś',z:'ź',
+                A:'Á',E:'É',I:'Í',O:'Ó',U:'Ú',Y:'Ý',C:'Ć',N:'Ń',S:'Ś',Z:'Ź'}[c] || c;
+      })
+      .replace(/\\`\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {a:'à',e:'è',i:'ì',o:'ò',u:'ù',A:'À',E:'È',I:'Ì',O:'Ò',U:'Ù'}[c] || c;
+      })
+      .replace(/\\~\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {n:'ñ',N:'Ñ',a:'ã',A:'Ã',o:'õ',O:'Õ'}[c] || c;
+      })
+      .replace(/\\\^\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {a:'â',e:'ê',i:'î',o:'ô',u:'û',A:'Â',E:'Ê',I:'Î',O:'Ô',U:'Û'}[c] || c;
+      })
+      .replace(/\\c\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {c:'ç',C:'Ç',s:'ş',S:'Ş'}[c] || c;
+      })
+      .replace(/\\v\{?([a-zA-Z])\}?/g, function(_, c) {
+        return {c:'č',C:'Č',s:'š',S:'Š',z:'ž',Z:'Ž',n:'ň',N:'Ň',r:'ř',R:'Ř'}[c] || c;
+      })
+      .replace(/[{}]/g, '');
+  }
+
   function authorsLine(a) {
-    a = a || [];
+    a = (a || []).map(delatex);
     return a.length <= 10
       ? esc(a.join(", "))
       : esc(a.slice(0, 10).join(", ")) + " +" + (a.length - 10);
