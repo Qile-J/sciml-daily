@@ -20,6 +20,7 @@ ARXIV_CATEGORIES = [
 # submitted over the prior day or two. Dedup against papers.json keeps the feed from re-adding
 # anything, so this is NOT backtracking; it just makes sure nothing fresh is missed.
 FETCH_WINDOW_DAYS = 2
+ARXIV_MAX_RESULTS = 2000                   # newest papers pulled in a SINGLE arXiv call (no pagination)
 
 # OpenReview (set OPENREVIEW = False to skip)
 OPENREVIEW = True

@@ -25,20 +25,12 @@ def test_parse_arxiv():
     assert p["url"] == "https://arxiv.org/abs/2406.01234"
     assert p["published"] == "2026-06-03"
 
-def test_fetch_arxiv_paginates_and_windows():
-    pages = [ARXIV_XML, EMPTY]
-    starts = []
-    def get(start):
-        starts.append(start)
-        return pages[min(len(starts) - 1, 1)]
-    out = scrape.fetch_arxiv("2026-06-01", get=get, sleep=lambda s: None)
+def test_fetch_arxiv_single_call_windows():
+    out = scrape.fetch_arxiv("2026-06-01", get=lambda: ARXIV_XML)   # one call, no pagination
     assert [p["id"] for p in out] == ["arxiv:2406.01234"]
-    assert starts == [0, 100]
 
 def test_fetch_arxiv_excludes_before_window():
-    def get(start):
-        return ARXIV_XML if start == 0 else ""
-    out = scrape.fetch_arxiv("2026-06-05", get=get, sleep=lambda s: None)
+    out = scrape.fetch_arxiv("2026-06-05", get=lambda: ARXIV_XML)
     assert out == []
 
 OR_PAYLOAD = {"notes": [{"id": "abc", "cdate": 1717372800000, "content": {

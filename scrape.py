@@ -1,5 +1,4 @@
 # scrape.py
-import time
 import urllib.parse
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
@@ -30,37 +29,20 @@ def parse_arxiv(xml_text):
         })
     return out
 
-def _arxiv_get(start):
+def _arxiv_get():
+    """One request for the newest papers across all categories (sorted newest-first)."""
     q = urllib.parse.urlencode({
         "search_query": "(" + " OR ".join(f"cat:{c}" for c in config.ARXIV_CATEGORIES) + ")",
-        "start": start, "max_results": 100,
+        "start": 0, "max_results": config.ARXIV_MAX_RESULTS,
         "sortBy": "submittedDate", "sortOrder": "descending"})
-    url = f"http://export.arxiv.org/api/query?{q}"
-    for attempt in range(5):                          # arXiv 429/503s on heavy use; ride it out with backoff
-        try:
-            r = requests.get(url, headers={"User-Agent": "sciml-daily/1.0"}, timeout=60)
-            if r.ok and r.text.strip():
-                return r.text
-            print(f"[arxiv] HTTP {r.status_code} at start={start}, retrying")
-        except requests.RequestException as e:
-            print(f"[arxiv] {type(e).__name__} at start={start}, retrying")
-        time.sleep(min(60, 5 * 2 ** attempt))         # 5,10,20,40,60s — spans most transient outages
-    return ""                                          # give up this page; caller stops gracefully
+    r = requests.get(f"http://export.arxiv.org/api/query?{q}",
+                     headers={"User-Agent": "sciml-daily/1.0"}, timeout=120)
+    return r.text if r.ok else ""
 
-def fetch_arxiv(since, get=None, sleep=time.sleep):
-    """Newest-first pages until we cross below `since` (YYYY-MM-DD)."""
+def fetch_arxiv(since, get=None):
+    """One call, then keep papers submitted on/after `since` (YYYY-MM-DD)."""
     get = get or _arxiv_get
-    papers, start = [], 0
-    while start < 2000:
-        batch = parse_arxiv(get(start) or EMPTY_FEED)
-        if not batch:
-            break
-        papers += batch
-        if batch[-1]["published"] < since:
-            break
-        start += 100
-        sleep(3)                       # arXiv API politeness
-    return [p for p in papers if p["published"] >= since]
+    return [p for p in parse_arxiv(get() or EMPTY_FEED) if p["published"] >= since]
 
 # ---------- OpenReview ----------
 def _val(content, key, default=""):
