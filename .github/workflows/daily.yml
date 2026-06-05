@@ -1,7 +1,7 @@
 name: daily
 on:
   schedule:
-    - cron: "0 11 * * *"     # 11:00 UTC daily; adjust to your morning
+    - cron: "12 10 * * *"    # 10:12 UTC (~6:12am ET, EDT) so the digest is ready before 7am. Off the hour: GitHub drops on-the-hour crons under load.
   workflow_dispatch:          # manual "Run workflow" button
 
 permissions:
