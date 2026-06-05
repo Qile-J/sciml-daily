@@ -27,9 +27,11 @@ Dual purpose:
 
 - **Runner:** GitHub Actions cron (daily). Output is a static artifact committed back to
   the repo / deployed from it.
-- **Output formats (v1):** a **web page** like HF Daily Papers — browsable, archived by date
-  (`/2026-06-03`, …) — plus an **RSS/Atom feed** so it's subscribable. A **daily email
-  digest is deferred** to a later version.
+- **Output formats (v1):** a single-page **web app** (HF Daily Papers style) — a full-width,
+  responsive **card grid** browsable by a **date strip** (latest selected by default), plus a
+  separate **Search** tab (title/author text search + multi-select subfield-tag filter). Built as
+  one `index.html` shell + a `data.json` payload rendered client-side. **RSS and the archive page
+  were removed** (superseded by the date strip + search). A daily email digest is still deferred.
   - README-only output was **rejected** (becomes an unscrollable wall with many papers).
 - **v1 = comprehensive daily filtered index. NO ranking / "Top picks."** Ranking is
   explicitly **deferred** to a later version (no community upvotes on day 0; ranking would
@@ -101,8 +103,11 @@ medicine. Also generic ML/LLM papers with no scientific-computing/applied-math a
 
 ## LLM task spec (DeepSeek — the only LLM call)
 
-The LLM has **one job**: classify a single candidate paper (already past the cheap prefilter).
-No summarizing, ranking, or rewriting.
+The LLM has **two jobs** per candidate paper (already past the cheap prefilter): (1) classify it
+in/out of scope and assign subfield tags, and (2) write a **two-sentence summary** — sentence one
+states the specific problem the paper investigates, sentence two states its key method/innovation
+(specific, using the paper's own terminology; the most important points of this paper, not
+background). No ranking or rewriting beyond that summary.
 
 - **Input per request (one paper):** `title`, `abstract`, `categories` (arXiv cats / OpenReview venue).
 - **Fixed instruction (system prompt, identical every call):** scope definition + gray-zone rule
@@ -112,12 +117,11 @@ No summarizing, ranking, or rewriting.
   ```json
   { "in_scope": true,
     "tags": ["operator-learning", "pde-foundation-models"],
-    "reason": "Introduces a neural-operator architecture pretrained across PDE families." }
+    "summary": "Solving many PDE families with one model is hard. Introduces a neural operator pretrained across PDE families and fine-tunable to new ones." }
   ```
-  `tags` empty when `in_scope` is false. `reason` = one sentence, reused as the site card blurb +
-  debugging aid.
+  `tags` empty when `in_scope` is false. `summary` = two sentences, shown as the site card blurb.
 - **Execution (batched):** classify **N papers per request** (batch size in config, e.g. 30) — the
-  user message is a numbered list, the output a JSON **array** of `{id, in_scope, tags, reason}`.
+  user message is a numbered list, the output a JSON **array** of `{id, in_scope, tags, summary}`.
   Latency is irrelevant to us, so batching is pure upside: it cuts requests ~N× and ~N× the cost
   (≈100–200 candidates/day → ~4–7 requests). JSON mode for reliable parsing. Sequential with a
   small delay; balance/rate-limit-aware stop/resume. (See "BATCH MODE" in `prompts/classify.md`.)
@@ -156,6 +160,7 @@ The prompt itself lives in `prompts/classify.md` (approved separately).
 ## Pipeline shape (high level)
 
 `fetch (arXiv + OpenReview) → dedup → cheap prefilter (categories + keywords) → LLM classify
-in/out + assign subfield tags → store daily set → render static web page (archived by date) +
-RSS feed → deploy to GitHub Pages` — all orchestrated by a daily GitHub Actions cron, for the cost
+in/out + assign subfield tags + write a two-sentence summary → store daily set → render the
+single-page web app (index.html shell + data.json, browsable by date strip + search) → deploy to
+GitHub Pages` — all orchestrated by a daily GitHub Actions cron, for the cost
 of a few cheap DeepSeek calls (free hosting/runner).

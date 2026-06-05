@@ -14,16 +14,16 @@ matter to this space, and tags each by subfield so you can see what's new over c
 The field moves fast and the firehose is loud. SciML Daily filters the day's new papers down to
 just the ones about operator learning, physics-informed ML, PDE foundation models, differentiable
 simulation, equation discovery, UQ & inverse problems, and the mathematical analysis of neural
-networks — each with a one-line "why it matters" so you can decide in seconds.
+networks — each with a **two-sentence summary** (the problem it tackles + its key method) so you
+can decide in seconds.
 
 ## What you get
 
 - **Fresh every morning** — the day's new papers, archived by date.
 - **Tagged by subfield** — tap a tag to narrow the feed to exactly the topics you follow.
-- **One-line summaries** — skim the gist; click through only what grabs you.
-- **Subscribe by RSS** — drop the [feed](https://qile-j.github.io/sciml-daily/feed.xml) into your
-  reader. No account, no email.
-- **Instant search** — filter by title, author, or abstract as you type.
+- **Two-sentence summaries** — the problem each paper tackles and its key method, at a glance.
+- **Browse by date** — a date strip jumps to any day; the latest day is shown by default.
+- **Search tab** — filter all papers by title, author, and subfield tags.
 
 ## Subfields covered
 

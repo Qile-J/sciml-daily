@@ -71,5 +71,4 @@ KEYWORDS = [
 
 SITE_TITLE = "SciML Daily"
 SITE_TAGLINE = "New papers in Scientific ML, AI for Scientific Computing & Applied Math — every morning."
-SITE_URL = "https://qile-j.github.io/sciml-daily"   # your Pages URL (used in links + RSS)
-RSS_COUNT = 60
+SITE_URL = "https://qile-j.github.io/sciml-daily"   # your Pages URL (canonical link)
