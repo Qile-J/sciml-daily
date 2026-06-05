@@ -1,33 +1,26 @@
 <div align="center">
 
+<img src="docs/static/logo.svg" width="80" height="80" alt="SciML Daily logo">
+
 # SciML Daily
 
-### The morning paper feed for Scientific Machine Learning.
+### The morning paper feed for *Scientific Machine Learning*.
 
 **[→ sciml-daily.github.io](https://qile-j.github.io/sciml-daily)**
 
-&nbsp;
-
-[![Daily pipeline](https://github.com/Qile-J/sciml-daily/actions/workflows/daily.yml/badge.svg)](https://github.com/Qile-J/sciml-daily/actions/workflows/daily.yml)
-![GitHub Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-0d0f14?logo=github)
-![Free](https://img.shields.io/badge/cost-~%240.01%2Fmonth-22c55e)
-
 </div>
 
-&nbsp;
+Most HuggingFace Daily Papers aren't for me. So here's one specifically for the scientific machine learning community.
 
-400–600 arXiv papers hit your feed every morning.
-Most of them aren't for you.
+### SciML Daily reads them first.
 
-**SciML Daily reads them first.**
-
-Every day, it scans the latest arXiv and OpenReview submissions, keeps only the papers relevant to the *methods* space — operator learning, physics-informed ML, neural ODEs, PDE solvers, and the applied math of neural networks — and delivers each one with a two-sentence summary written by AI: what problem it tackles, what method it introduces.
-
-Open it with your coffee. Know what dropped overnight.
+Every day, it scans the latest arXiv and OpenReview submissions, keeps only the papers relevant to the **methods space** — operator learning, physics-informed ML, neural ODEs, PDE solvers, and the applied math of neural networks — and delivers each one with a two-sentence AI-generated summary: what problem it tackles, what method it introduces.
 
 &nbsp;
 
 ## What's covered
+
+Basically everything that I personally care about.
 
 `Operator Learning` &nbsp; `PDE Foundation Models` &nbsp; `Physics-Informed ML`
 
@@ -58,7 +51,5 @@ Open it with your coffee. Know what dropped overnight.
 <div align="center">
 
 **[Read today's papers →](https://qile-j.github.io/sciml-daily)**
-
-*New papers every morning. Free, open-source, no account needed.*
 
 </div>
