@@ -23,7 +23,7 @@ USER_AGENT = "sciml-daily/1.0 (+https://github.com/qile-j/sciml-daily; mailto:qi
 FETCH_WINDOW_DAYS = 2
 
 # OpenReview (set OPENREVIEW = False to skip)
-OPENREVIEW = True
+OPENREVIEW = False
 OPENREVIEW_VENUES = ["ICLR.cc/2026/Conference", "NeurIPS.cc/2025/Conference"]
 
 # DeepSeek — the only model (cheap paid API). Bump this one line for new versions.
