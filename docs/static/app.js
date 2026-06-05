@@ -37,9 +37,19 @@
       : esc(a.slice(0, 10).join(", ")) + " +" + (a.length - 10);
   }
 
+  var KATEX_OPTS = {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$",  right: "$",  display: false},
+      {left: "\\(", right: "\\)", display: false},
+      {left: "\\[", right: "\\]", display: true}
+    ],
+    throwOnError: false
+  };
+
   function card(p, showDate) {
     var tags = (p.tags || []).map(tagPill).join("");
-    return '<article class="card">'
+    var front = '<div class="card-front">'
       + '<h2><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a></h2>"
       + (p.summary ? '<p class="summary">' + esc(p.summary) + "</p>" : "")
       + (tags ? '<div class="tags">' + tags + "</div>" : "")
@@ -47,13 +57,19 @@
         + (showDate ? '<span class="card-date">' + esc(fmtShort(p.added)) + "</span>" : "")
         + '<span class="authors">' + authorsLine(p.authors) + "</span>"
       + "</div>"
-      + '<button class="abstract-toggle" aria-expanded="false">Abstract</button>'
-      + '<p class="abstract" hidden>' + esc(p.abstract) + "</p>"
-      + "</article>";
+      + (p.abstract ? '<button class="abstract-toggle">Abstract</button>' : "")
+      + "</div>";
+    var back = '<div class="card-back">'
+      + '<span class="back-label">Abstract</span>'
+      + '<p class="abstract">' + esc(p.abstract || "") + "</p>"
+      + '<button class="abstract-close">← Back</button>'
+      + "</div>";
+    return '<article class="card"><div class="card-inner">' + front + back + "</div></article>";
   }
 
   function renderGrid(el, list, showDate) {
     el.innerHTML = list.map(function (p) { return card(p, showDate); }).join("");
+    if (window.renderMathInElement) { renderMathInElement(el, KATEX_OPTS); }
   }
 
   function setTab(view) {
@@ -148,13 +164,9 @@
         return;
       }
       var tog = e.target.closest(".abstract-toggle");
-      if (tog) {
-        var ab = tog.parentNode.querySelector(".abstract");
-        var open = !ab.hidden;
-        ab.hidden = open;
-        tog.setAttribute("aria-expanded", String(!open));
-        tog.textContent = open ? "Abstract" : "Hide abstract";
-      }
+      if (tog) { tog.closest(".card").classList.add("flipped"); return; }
+      var cls = e.target.closest(".abstract-close");
+      if (cls) { cls.closest(".card").classList.remove("flipped"); return; }
     });
     $("search-input").addEventListener("input", runSearch);
     window.addEventListener("hashchange", route);

@@ -48,17 +48,39 @@ main{max-width:1520px;margin:0 auto;padding:20px clamp(16px,4vw,44px) 80px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
   gap:12px;align-items:start}
 
-/* ── card ── */
-.card{display:flex;flex-direction:column;background:var(--surface);
-  border:1px solid var(--line);border-radius:var(--radius);
-  padding:20px 20px 16px;box-shadow:var(--shadow);
-  transition:border-color .2s,box-shadow .2s}
-.card:hover{border-color:var(--muted2);
-  box-shadow:0 2px 6px rgba(0,0,0,.1),0 16px 40px rgba(0,0,0,.18)}
+/* ── flip card shell ── */
+.card{
+  perspective:1200px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+}
+.card:hover{
+  border-color:var(--muted2);
+  box-shadow:0 2px 6px rgba(0,0,0,.1),0 16px 40px rgba(0,0,0,.18);
+}
+.card-inner{
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .52s cubic-bezier(.4,0,.2,1);
+}
+.card.flipped .card-inner{transform:rotateY(180deg)}
 
-.card h2{font-size:15px;font-weight:700;line-height:1.4;letter-spacing:-.012em;margin:0 0 9px}
+.card-front,.card-back{
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  background:var(--surface);
+}
+
+/* ── front face ── */
+.card-front{
+  display:flex;flex-direction:column;
+  padding:20px 20px 16px;
+}
+.card h2{font-size:15px;font-weight:700;line-height:1.42;letter-spacing:-.012em;margin:0 0 9px}
 .card h2 a:hover{color:var(--accent)}
-
 .summary{margin:0 0 13px;font-size:13.5px;color:var(--ink);opacity:.84;line-height:1.65}
 
 /* ── tags ── */
@@ -68,19 +90,41 @@ main{max-width:1520px;margin:0 auto;padding:20px clamp(16px,4vw,44px) 80px}
   background:color-mix(in srgb,var(--c) 9%,transparent);
   border:1px solid color-mix(in srgb,var(--c) 22%,transparent)}
 
-/* ── meta row (authors + date) ── */
-.meta{display:flex;flex-direction:column;gap:3px;font-size:12px;
-  color:var(--muted);margin-top:auto;padding-top:2px}
+/* ── meta (authors + date) ── */
+.meta{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);
+  margin-top:auto;padding-top:2px}
 .authors{line-height:1.5;word-break:break-word}
 .card-date{font-weight:600;color:var(--muted2)}
 
-/* ── abstract ── */
+/* ── abstract toggle (front) ── */
 .abstract-toggle{align-self:flex-start;margin-top:13px;border:0;background:none;
   color:var(--accent);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
   padding:0;opacity:.75;transition:opacity .15s;letter-spacing:.01em}
 .abstract-toggle:hover{opacity:1}
-.abstract{margin:11px 0 0;padding-top:13px;border-top:1px solid var(--line);
-  color:var(--muted2);font-size:13px;line-height:1.72}
+
+/* ── back face ── */
+.card-back{
+  position:absolute;inset:0;
+  transform:rotateY(180deg);
+  padding:18px 20px 14px;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.back-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;flex-shrink:0}
+.abstract{
+  flex:1;overflow:hidden;margin:0;
+  font-size:13px;line-height:1.72;color:var(--muted2);
+  -webkit-mask-image:linear-gradient(to bottom,black 72%,transparent 100%);
+  mask-image:linear-gradient(to bottom,black 72%,transparent 100%);
+}
+.abstract-close{
+  flex-shrink:0;margin-top:10px;border:0;background:none;
+  color:var(--accent);font:inherit;font-size:12.5px;font-weight:600;
+  cursor:pointer;padding:0;opacity:.75;transition:opacity .15s;
+  align-self:flex-start;letter-spacing:.01em;
+}
+.abstract-close:hover{opacity:1}
 
 /* ── search ── */
 .searchbar{margin:6px 0 14px}
@@ -98,8 +142,12 @@ main{max-width:1520px;margin:0 auto;padding:20px clamp(16px,4vw,44px) 80px}
 
 .empty{color:var(--muted);text-align:center;padding:60px 0;font-size:15px}
 
+/* ── KaTeX inline sizing ── */
+.katex{font-size:1em}
+
 @media (max-width:520px){
   .grid{grid-template-columns:1fr}
   .topbar{gap:12px}
-  .card{padding:17px 16px 14px}
+  .card-front{padding:17px 16px 14px}
+  .card-back{padding:16px 16px 12px}
 }
