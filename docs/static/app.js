@@ -39,12 +39,11 @@
 
   function card(p, showDate) {
     var tags = (p.tags || []).map(tagPill).join("");
-    return '<article class="card" style="--accent:' + accent(p) + '">'
+    return '<article class="card">'
       + '<h2><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a></h2>"
       + (p.summary ? '<p class="summary">' + esc(p.summary) + "</p>" : "")
       + (tags ? '<div class="tags">' + tags + "</div>" : "")
       + '<div class="meta">'
-        + '<span class="src">' + esc(p.source || "arXiv") + "</span>"
         + (showDate ? '<span class="card-date">' + esc(fmtShort(p.added)) + "</span>" : "")
         + '<span class="authors">' + authorsLine(p.authors) + "</span>"
       + "</div>"
