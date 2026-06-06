@@ -30,81 +30,31 @@
     var t = TAGS[(p.tags && p.tags[0]) || ""];
     return t ? t.color : "#94a3b8";
   }
-  function delatex(s) {
-    if (!s) return s;
-    return s
-      .replace(/\{?\\aa\}?/gi, 'å').replace(/\{?\\AA\}?/gi, 'Å')
-      .replace(/\{?\\ae\}?/gi, 'æ').replace(/\{?\\AE\}?/gi, 'Æ')
-      .replace(/\{?\\oe\}?/gi, 'œ').replace(/\{?\\OE\}?/gi, 'Œ')
-      .replace(/\{?\\ss\}?/gi, 'ß')
-      .replace(/\{?\\o\}?/g,   'ø').replace(/\{?\\O\}?/g,   'Ø')
-      .replace(/\{?\\l\}?/g,   'ł').replace(/\{?\\L\}?/g,   'Ł')
-      .replace(/\\"\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',y:'ÿ',
-                A:'Ä',E:'Ë',I:'Ï',O:'Ö',U:'Ü',Y:'Ÿ'}[c] || c;
-      })
-      .replace(/\\'\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {a:'á',e:'é',i:'í',o:'ó',u:'ú',y:'ý',c:'ć',n:'ń',s:'ś',z:'ź',
-                A:'Á',E:'É',I:'Í',O:'Ó',U:'Ú',Y:'Ý',C:'Ć',N:'Ń',S:'Ś',Z:'Ź'}[c] || c;
-      })
-      .replace(/\\`\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {a:'à',e:'è',i:'ì',o:'ò',u:'ù',A:'À',E:'È',I:'Ì',O:'Ò',U:'Ù'}[c] || c;
-      })
-      .replace(/\\~\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {n:'ñ',N:'Ñ',a:'ã',A:'Ã',o:'õ',O:'Õ'}[c] || c;
-      })
-      .replace(/\\\^\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {a:'â',e:'ê',i:'î',o:'ô',u:'û',A:'Â',E:'Ê',I:'Î',O:'Ô',U:'Û'}[c] || c;
-      })
-      .replace(/\\c\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {c:'ç',C:'Ç',s:'ş',S:'Ş'}[c] || c;
-      })
-      .replace(/\\v\{?([a-zA-Z])\}?/g, function(_, c) {
-        return {c:'č',C:'Č',s:'š',S:'Š',z:'ž',Z:'Ž',n:'ň',N:'Ň',r:'ř',R:'Ř'}[c] || c;
-      })
-      .replace(/[{}]/g, '');
-  }
-
   function authorsLine(a) {
-    a = (a || []).map(delatex);
+    a = a || [];
     return a.length <= 10
       ? esc(a.join(", "))
       : esc(a.slice(0, 10).join(", ")) + " +" + (a.length - 10);
   }
 
-  var KATEX_OPTS = {
-    delimiters: [
-      {left: "$$", right: "$$", display: true},
-      {left: "$",  right: "$",  display: false},
-      {left: "\\(", right: "\\)", display: false},
-      {left: "\\[", right: "\\]", display: true}
-    ],
-    throwOnError: false
-  };
-
   function card(p, showDate) {
     var tags = (p.tags || []).map(tagPill).join("");
-    var front = '<div class="card-front">'
+    return '<article class="card" style="--accent:' + accent(p) + '">'
       + '<h2><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a></h2>"
       + (p.summary ? '<p class="summary">' + esc(p.summary) + "</p>" : "")
       + (tags ? '<div class="tags">' + tags + "</div>" : "")
       + '<div class="meta">'
+        + '<span class="src">' + esc(p.source || "arXiv") + "</span>"
         + (showDate ? '<span class="card-date">' + esc(fmtShort(p.added)) + "</span>" : "")
         + '<span class="authors">' + authorsLine(p.authors) + "</span>"
       + "</div>"
-      + (p.abstract ? '<button class="abstract-toggle">Abstract</button>' : "")
-      + "</div>";
-    var back = '<div class="card-back">'
-      + '<span class="back-label">Abstract</span>'
-      + '<p class="abstract">' + esc(p.abstract || "") + "</p>"
-      + '<button class="abstract-close">← Back</button>'
-      + "</div>";
-    return '<article class="card"><div class="card-inner">' + front + back + "</div></article>";
+      + '<button class="abstract-toggle" aria-expanded="false">Abstract</button>'
+      + '<p class="abstract" hidden>' + esc(p.abstract) + "</p>"
+      + "</article>";
   }
 
   function renderGrid(el, list, showDate) {
     el.innerHTML = list.map(function (p) { return card(p, showDate); }).join("");
-    if (window.renderMathInElement) { renderMathInElement(el, KATEX_OPTS); }
   }
 
   function setTab(view) {
@@ -199,9 +149,13 @@
         return;
       }
       var tog = e.target.closest(".abstract-toggle");
-      if (tog) { tog.closest(".card").classList.add("flipped"); return; }
-      var cls = e.target.closest(".abstract-close");
-      if (cls) { cls.closest(".card").classList.remove("flipped"); return; }
+      if (tog) {
+        var ab = tog.parentNode.querySelector(".abstract");
+        var open = !ab.hidden;
+        ab.hidden = open;
+        tog.setAttribute("aria-expanded", String(!open));
+        tog.textContent = open ? "Abstract" : "Hide abstract";
+      }
     });
     $("search-input").addEventListener("input", runSearch);
     window.addEventListener("hashchange", route);
