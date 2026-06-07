@@ -254,6 +254,13 @@
     PAPERS.forEach(function (p) {
       (byDate[p.added] = byDate[p.added] || []).push(p);
     });
+    // Daily view ranks each day's papers by author count, highest first (stable
+    // within equal counts). The Search tab renders PAPERS in date order, untouched.
+    Object.keys(byDate).forEach(function (d) {
+      byDate[d].sort(function (a, b) {
+        return (b.authors || []).length - (a.authors || []).length;
+      });
+    });
     DATES = Object.keys(byDate).sort();          // ascending → latest at the right
     latest = DATES.length ? DATES[DATES.length - 1] : null;
     wire();
