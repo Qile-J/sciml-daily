@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/static/logo.svg" width="80" height="80" alt="SciML Daily logo">
+<img src="static/logo.png" width="80" height="80" alt="SciML Daily logo">
 
 # SciML Daily
 
