@@ -43010,5 +43010,1655 @@
   ],
   "summary": "Bootstrap inference for semiparametric and machine-learning estimators is often computationally expensive and theoretically unvalidated. The paper develops the V-fold jackknife, requiring only leave-fold-out refits, and establishes its theoretical validity for asymptotically linear estimators, including confidence intervals and simultaneous confidence bands.",
   "added": "2026-07-27"
+ },
+ {
+  "id": "arxiv:2607.22548",
+  "source": "arXiv",
+  "title": "SeT-Diff: Towards Semantic Foundation Models for HPC Telemetry and Time-Series",
+  "abstract": "Data centers and their compute nodes require accurate and flexible digital twins capable of modeling the complex interplay of workloads, environmental parameters, and physical metrics. Current machine learning approaches for HPC and its telemetry typically rely on a static subset of anonymous, fixed-position sensor variables tailored to single tasks. Consequently, these models become obsolete when target tasks change or sensor metrics vary. We propose SeT-Diff, the first foundational model for compute node telemetry and time-series. Unlike rigid architectures, our diffusion-based approach conditions the generative process on each sensor's semantic description, decoupling the system dynamics from the structure of the dataset. Experiments on a real-world supercomputer dataset demonstrate a Mean Absolute Error (MAE) of 0.0470 on reconstruction tasks. SeT-Diff exhibits zero-shot permutation stability, maintaining accuracy with negligible degradation even when sensors are shuffled. A single pre-trained model effectively performs data imputation, forecasting, and virtual sensing - achieving a 0.033 MAE in thermal inference - making SeT-Diff an effective data-driven digital twin for HPC systems.",
+  "categories": [
+   "cs.AI",
+   "cs.LG",
+   "cs.PF"
+  ],
+  "authors": [
+   "Giovanni B. Esposito",
+   "Francesco Antici",
+   "Daniele Cesarini",
+   "Andrea Bartolini"
+  ],
+  "url": "https://arxiv.org/abs/2607.22548",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "SeT-Diff proposes the first foundational model for HPC telemetry and time-series. It uses a diffusion model conditioned on semantic descriptions to achieve zero-shot permutation stability and performs imputation, forecasting, and virtual sensing.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22550",
+  "source": "arXiv",
+  "title": "Learning to Optimize at Scale: A Benders Decomposition-TransfORmers Framework for Stochastic Combinatorial Optimization",
+  "abstract": "We propose a learning-augmented Benders decomposition framework to solve large-scale two-stage stochastic mixed-integer programs. We focus on the two-stage stochastic capacitated lot-sizing problem (TSSCLSP) under demand uncertainty. Our method accelerates the convergence of the decomposition by using a pre-trained TransfORmer model to rapidly generate high-quality approximate solutions for the scenario subproblems. This hybrid strategy uses the TransfORmer predictions to generate strong optimality and feasibility cuts, effectively guiding the Benders master problem. Our framework includes a novel expandable generation mechanism, allowing a model trained on a fixed horizon to solve instances of arbitrary length. For the test set considered, our method solves instances up to T = 270, a scale previously intractable for this approach, while maintaining zero infeasibility in the generated subproblem solutions. This demonstrates the potential of TransfORmers as powerful surrogate solvers embedded within classical decomposition algorithms.",
+  "categories": [
+   "math.OC",
+   "cs.LG"
+  ],
+  "authors": [
+   "Seung Jin Choi",
+   "Kimiya Jozani",
+   "Josh Cooper",
+   "Esra Buyuktahtakin Toy"
+  ],
+  "url": "https://arxiv.org/abs/2607.22550",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper addresses large-scale stochastic combinatorial optimization by combining Benders decomposition with a Transformer model. The Transformer generates high-quality approximate solutions for scenario subproblems, accelerating cut generation and allowing solution of instances up to T=270, previously intractable.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22552",
+  "source": "arXiv",
+  "title": "MioFFAn: an Annotation Software for Formula Formalization with LLM Automation Capabilities",
+  "abstract": "The automatic translation of mathematical expressions in scientific literature into executable symbolic code (a process we refer to as Formula Formalization) is hindered by a severe scarcity of high-quality, ground-truth datasets specialized for technical scientific domains. In this paper, we present MioFFAn, an open-source, document-centric, and customizable framework designed to facilitate rapid annotation for this task. Building upon the MioGatto architecture, we extend existing features to overcome structural limitations and pivot its scope by introducing specific functionalities for Formula Formalization, such as selection of equations of interest and aided symbolic code specification. By allowing users to configure custom taxonomies and properties for identified symbols, and compatible symbolic operators, we ensure the framework is adaptable to diverse specialized scientific fields. Furthermore, MioFFAn is designed to incorporate partial automation via Large Language Models. By defining a modular set of automated sub-tasks with strict output formats, we enable researchers to iteratively refine automation capabilities and evaluate competing strategies using standard NLP metrics. We specify the current automation methodology and perform a preliminary evaluation that demonstrates to efficacy of this human-in-the-loop approach.",
+  "categories": [
+   "cs.CL",
+   "cs.LG",
+   "cs.SE"
+  ],
+  "authors": [
+   "Nicolas Sibuet",
+   "Horacio Saggion",
+   "Riccardo Rossi"
+  ],
+  "url": "https://arxiv.org/abs/2607.22552",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "MioFFAn is an annotation software for formalizing mathematical expressions into executable code, with LLM automation capabilities. It uses a human-in-the-loop approach with modular automated sub-tasks to facilitate dataset creation for formula formalization.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22560",
+  "source": "arXiv",
+  "title": "Efficient multidisciplinary design via Bayesian optimization",
+  "abstract": "This study introduces SEGOMOE, a Bayesian optimization tool for optimizing complex, computationally expensive systems, especially in aeronautics. It efficiently handles mixed design variables (continuous, discrete, categorical, hierarchical) using adaptive Gaussian process models. SEGOMOE combines expert models to address nonlinearities in objectives and constraints, leveraging the open-source Surrogate Modeling Toolbox (SMT). The tool supports multi-fidelity data and solves both single- and multi-objective problems, including hidden constraints and high-dimensional decomposition. Validated through benchmarks and real-world aeronautical applications, SEGOMOE proves to be robust and versatile for tackling multidisciplinary challenges.",
+  "categories": [
+   "math.OC",
+   "stat.ML"
+  ],
+  "authors": [
+   "Nathalie Bartoli",
+   "Thierry Lefebvre",
+   "R\\'emi Lafage",
+   "Paul Saves",
+   "Youssef Diouane",
+   "Joseph Morlier"
+  ],
+  "url": "https://arxiv.org/abs/2607.22560",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "SEGOMOE is a Bayesian optimization tool for multidisciplinary design, handling mixed variables and multi-fidelity data. It combines adaptive Gaussian process models to efficiently optimize complex, expensive systems in aeronautics.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22609",
+  "source": "arXiv",
+  "title": "Evaluating LLMs as Interpretable Controllers for Dynamical Systems",
+  "abstract": "Large Language Models (LLMs) are increasingly used for decision-making and reasoning tasks, yet their potential as controllers for physical systems remains largely unexplored. This work investigates whether LLMs can function as interpretable controllers for a dynamic thermal environment, examining their ability to follow setpoints, interpret natural-language commands, reason about actuator effects, and incorporate prior model-based knowledge. Five LLMs of varying scales are evaluated under multiple scenarios, including settings with penalties on heater or fan usage and cases where the models have access to a physics-based prediction tool. The results show that control performance depends on model complexity: while low- and mid-scale models frequently misinterpret actuator dynamics or generate inconsistent reasoning, high-complexity models such as Qwen-3~14B and GPT-4o achieve accurate temperature tracking, stable actuator usage, and coherent explanations aligned with physical principles. Incorporating a physics-based model significantly improves control smoothness and energy efficiency by enabling anticipatory decision-making. A detailed reasoning taxonomy further reveals a clear progression from causal misinterpretation in smaller models to cohesive and temporally aware reasoning in larger ones. The findings demonstrate that LLMs can act as interpretable controllers when sufficiently capable and appropriately grounded in domain knowledge, highlighting promising opportunities for hybrid model-based and language-driven control strategies that can provide plausible explanations.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Aleksander {\\O}stensen",
+   "Alberto Mino Calero",
+   "Anastasios M. Lekkas",
+   "Adil Rasheed"
+  ],
+  "url": "https://arxiv.org/abs/2607.22609",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The potential of large language models (LLMs) to act as controllers for physical dynamical systems is unexplored. This paper evaluates five LLMs as interpretable controllers for a dynamic thermal environment, examining setpoint tracking, natural-language interpretation, and the benefit of physics-based tools.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22646",
+  "source": "arXiv",
+  "title": "Extracting Algorithms in Pre-trained LLMs: A Case on Hidden Markov Models",
+  "abstract": "Large language models (LLMs) display a striking ability to predict next observations from Hidden Markov Models (HMMs) via in-context learning (ICL), but the algorithm underlying this capability remains undetermined: prior work has proposed several candidates without consensus, and none has been grounded in the model's internal activations. We close this gap with a three-stage pipeline. First, we empirically compare LLM behavior against a suite of candidate algorithms and narrow the space to three classes -- though no single class explains LLM behavior across all HMM settings and sequence lengths. Second, we derive theoretical connections between the three classes and show how each can be implemented in-context by a Transformer, validating the construction in a small trained Transformer. Third, returning to pre-trained LLMs, we introduce the Principal Activations Probe (PAP), a layer-wise probing and intervention method that isolates algorithmic signals in model activations. PAP reveals low-dimensional linear representations that causally drive model predictions and track empirical ICL performance. PAP further reveals how these representations shift with properties of the underlying HMM regime; distinct computational stages are localized to different layers. Together, our results connect the in-context behavior of pre-trained LLMs to the underlying internal mechanisms and advance our understanding of how LLMs perform ICL on HMMs.",
+  "categories": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yijia Dai",
+   "Zhaolin Gao",
+   "Yahya Sattar",
+   "Jennifer J. Sun",
+   "Sarah Dean"
+  ],
+  "url": "https://arxiv.org/abs/2607.22646",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The algorithm underlying LLMs' in-context learning ability on Hidden Markov Models (HMMs) is unknown. This paper introduces a three-stage pipeline that narrows candidate algorithms, derives theoretical Transformer implementations, and uses Principal Activations Probe (PAP) to extract low-dimensional algorithmic representations from LLM activations.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22653",
+  "source": "arXiv",
+  "title": "Do Language Models Converge to Themselves? Recursive Self-Refinement as Textual Relaxation",
+  "abstract": "Large language models are increasingly used in recursive refinement workflows, where an initial draft is repeatedly revised by the same model. Despite their growing use, the long-term dynamics of such workflows remain poorly understood. Does repeated refinement continue to improve outputs indefinitely, or does it converge toward a stable textual form? We study recursive self-refinement as a dynamical process in which repeated LLM revision drives text toward a model-preferred soft fixed-point region. Using GPT-5.5, we generate 10-step refinement trajectories for 50 ICML 2025 abstracts under both default-temperature and deterministic decoding, and additionally evaluate 15 ICML 2020 abstracts. We analyze normalized edit distance, exact and approximate fixed points, word-count stability, exponential relaxation, and external LLM-as-a-judge evaluation. Across all settings, refinement trajectories rapidly saturate. Most edits occur within the first few iterations, after which trajectories enter a soft fixed-point region with only minor surface-level changes. Deterministic decoding reaches exact fixed points earlier and exhibits smaller residual fluctuations than default-temperature decoding, while both achieve universal approximate convergence. The average edit magnitude follows a consistent exponential relaxation pattern, suggesting convergence toward a model-preferred textual equilibrium rather than open-ended optimization. External evaluation indicates that converged abstracts improve clarity, conciseness, and scientific style while preserving technical meaning. These findings support a dynamical-systems view of LLM self-refinement and motivate practical stopping criteria based on edit-magnitude saturation.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Xuening Wu",
+   "Qianya Xu",
+   "Yanlan Kang",
+   "Zeping Chen",
+   "Yubin Liu",
+   "Shenqin Yin"
+  ],
+  "url": "https://arxiv.org/abs/2607.22653",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The long-term dynamics of recursive self-refinement by LLMs are poorly understood. This paper models self-refinement as a dynamical system converging to a model-preferred soft fixed-point region, evidenced by exponential relaxation of edit magnitude and rapid saturation.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22660",
+  "source": "arXiv",
+  "title": "Generalized Fine-Tuning of Diffusion Models via Stochastic Control and FBSDEs",
+  "abstract": "We propose a generalized fine-tuning framework for diffusion models from the perspective of stochastic control. Beyond entropy-regularized formulations, we introduce a general running cost that induces a relative generalized path cost, encompassing both Kullback-Leibler divergence and optimal transport metrics as special cases. This leads to a fully nonlinear Hamilton-Jacobi-Bellman equation. We characterize the value function through a forward-backward stochastic differential equation system and establish existence and uniqueness under standard regularity conditions. The optimal control admits a nonlinear feedback form driven by the backward stochastic differential equation gradient component. Finally, we show that generalized fine-tuning naturally introduces an additional gradient-dependent penalty, providing a unified framework for diffusion fine-tuning under general distributional constraints.",
+  "categories": [
+   "math.OC",
+   "math.PR"
+  ],
+  "authors": [
+   "Zirui Wang",
+   "Lu Wang"
+  ],
+  "url": "https://arxiv.org/abs/2607.22660",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Beyond entropy-regularized fine-tuning of diffusion models, a general framework is lacking. This paper introduces a stochastic control perspective with a general running cost, leading to a nonlinear HJB equation characterized by forward-backward SDEs, providing a unified fine-tuning framework.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22694",
+  "source": "arXiv",
+  "title": "Bayesian Repetition Penalty: A Principled Adjacent-Conditional Framework for Reversing Attention Collapse in Autoregressive Language Models",
+  "abstract": "Attention collapse in autoregressive language models -- manifested as repetitive token loops where the model becomes trapped in self-reinforcing attractors -- is a persistent pathology that existing decoding-time heuristics fail to address at its root cause. We present a principled framework that penalises or compensates anomalous confidence arising from collapsed generation patterns, by comparing a token's observed frequency against its corpus prior through an adjacent-conditional probability construction. The resulting self-normalising penalty ratio $R=f(m,n,p)/f(np,n,p)$ requires no ad hoc standardisation and admits a closed-form logit offset with zero approximation error. The correction is isolated from the loss gradient and accumulated into a frozen output-layer bias via exponential moving average, enabling deployment as a repair mechanism for models that have already collapsed without requiring intrusive modifications to standard training pipelines. Experimental validation on a 1.5B-parameter model demonstrates that the frozen-bias mechanism can rescue a model already trapped in a collapsed attractor, reducing 2-gram repetition from 0.073 to near 0 while preserving generation quality.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Wenjie Fan",
+   "Bin Ma",
+   "Dong Li"
+  ],
+  "url": "https://arxiv.org/abs/2607.22694",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Autoregressive language models suffer from attention collapse causing repetitive token loops. The paper introduces a Bayesian repetition penalty framework with a closed-form logit offset derived from an adjacent-conditional probability construction to correct anomalous confidence.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22757",
+  "source": "arXiv",
+  "title": "Hierarchical Grading in Large Language Models",
+  "abstract": "We introduce Graded Large Language Models (GLLMs), an algebraic framework that equips the representation space of a transformer with a grading and propagates the induced weighted scalar action through embeddings, self-attention, and the training objective. The construction extends the theory of graded neural networks and graded transformers to autoregressive language models while preserving expressive power, asymptotic computational complexity, and inference cost. The governing geometric picture is that of geometric invariant theory. The benefit of a grading is expressed by a Kempf--Ness functional on the grading torus; the grades that improve upon the uniform architecture form an open convex cone whose membership is decided by a Hilbert--Mumford-type criterion pairing a grade direction against two measurable profiles of the target and the data; the optimal grades are the coincidence point of two moment maps, given in closed form; and the ordinary transformer appears as a semistable isotropic point on the boundary of the cone: one member of a larger graded family rather than a distinguished optimum. Separately, for level-stratified targets we prove a minimax separation between the graded prior and its absence: over all estimators the risks of the graded and uniform target classes separate throughout an explicit window of sample sizes, by a factor that decays exponentially in the number of levels under geometric stratification. Both profiles are estimable offline, so the optimal grades solve a convex program certified before training begins. Because the grading is absorbed into the learned parameters after training, every GLLM compiles to a standard transformer of identical architecture and inference complexity.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "T. Shaska"
+  ],
+  "url": "https://arxiv.org/abs/2607.22757",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The representation space of transformers lacks a geometric grading. The paper proposes Graded Large Language Models (GLLMs), an algebraic framework using geometric invariant theory to derive optimal grades via a Hilbert-Mumford criterion and moment maps.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22774",
+  "source": "arXiv",
+  "title": "CC-AOS: Cost- and Horizon-Conditioned Amortized Backward Induction for Finite-Horizon Optimal Stopping",
+  "abstract": "Finite-horizon optimal stopping is a central problem in early time-series classification, where a system must decide at each sequence prefix whether the expected benefit of another observation justifies its acquisition cost. Existing data-driven backward-induction methods typically solve each cost-horizon operating point separately, so changing operating conditions requires repeated optimization and separate model stacks, making continuous cost adaptation and multi-horizon deployment inefficient. We propose CC-AOS (Cost- and Horizon-Conditioned Amortized Optimal Stopping), a structured amortized solver for a family of finite-horizon stopping problems with continuous costs and multiple horizons. CC-AOS learns a shared continuation-value model conditioned on the current state, absolute time, remaining horizon, and acquisition cost through joint amortized fitted backward induction. We establish that the exact value and continuation functions are nondecreasing, concave, and horizon-dependently Lipschitz in cost, encode these properties in the model architecture, and derive residual-based bounds on value and policy errors. Experiments on controlled Gaussian and time-varying non-Gaussian processes and the FordA engine-noise time-series benchmark compare CC-AOS with representative per-operating-point backward-induction solvers and tuned static stopping rules. At six unseen FordA cost-horizon pairs, one CC-AOS checkpoint achieved a lower terminal-risk-plus-sampling-cost objective than independently fitted Convex Function Learning at all six pairs, with an average reduction of 15.75 percent, while matching the tuned static thresholds on average.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Tianwei Yu"
+  ],
+  "url": "https://arxiv.org/abs/2607.22774",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Finite-horizon optimal stopping problems require repeated optimization when operating conditions change. The paper proposes CC-AOS, an amortized solver conditioned on cost and horizon, with theoretical bounds on value and policy errors.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22788",
+  "source": "arXiv",
+  "title": "FMOPF: Latent Flow Matching with Constraint-Aware Interaction Priors for AC Optimal Power Flow",
+  "abstract": "AC optimal power flow determines the minimum-cost generation dispatch under nonlinear power balance constraints and is solved thousands of times daily in electricity market operations. Learning a direct mapping from load conditions to OPF solutions can accelerate this computation, yet with deepening renewable penetration, a single optimal dispatch is no longer sufficient. Operators require a characterization of the distribution of feasible near-optimal solutions for risk quantification, sensitivity analysis, and multi-objective trade-off assessment. Supervised neural networks provide fast point predictions but cannot capture this conditional distribution. Diffusion-based generative models can sample diverse solutions in principle, yet existing methods operating in the raw state space exhibit degraded solution quality and fail to scale beyond medium-sized systems. We identify the root cause as the conflation of two distinct tasks within a single model. Compressing the high-dimensional OPF solution manifold is one task, and learning the conditional mapping from loads to that manifold is another. This paper presents FMOPF, a framework that resolves this conflation by decoupling compression from generation through latent flow matching and by explicitly modeling load-state coupling through a Constraint-Aware Interaction Prior Network. Experiments on four IEEE test systems demonstrate that FMOPF provides the most effective Newton-Raphson warm starts, achieves the lowest tail risk among generative methods, and is the first such method to scale to systems with several hundred buses while preserving full feasibility. Ablation studies confirm that the latent generation pipeline is a necessary condition for physical feasibility and that the interaction prior functions as a late-stage tail-risk controller.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "stat.ML"
+  ],
+  "authors": [
+   "Zhilin Huang"
+  ],
+  "url": "https://arxiv.org/abs/2607.22788",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "AC optimal power flow requires diverse feasible near-optimal solutions, which supervised methods cannot provide. The paper introduces FMOPF, which decouples compression from generation via latent flow matching and uses a constraint-aware interaction prior to ensure feasibility.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22797",
+  "source": "arXiv",
+  "title": "Physically Verifiable Evidence and LLM-Based Reporting for Bearing Fault Diagnosis",
+  "abstract": "Trustworthy deployment of AI-based diagnosis in safety-critical mechanical systems hinges on validation: whether a prediction can be checked against physical reality before it is acted upon. Current intelligent fault diagnosers fail this standard in two ways. Their standard output, a class label with a softmax confidence score, is an internal statistic of the classifier, offering nothing checkable against independent physical knowledge; and the growing use of generative language models in maintenance reporting adds a second risk: hallucinated content entering reports on which decisions rest. Taking bearing fault diagnosis as the testbed, this work addresses both problems from the output side. The proposed Diagnostic Evidence Network (DENet) is an encoder-agnostic multi-task framework extending the output to a structured evidence record: the classification, a predicted characteristic frequency comparable against the theoretical value determined by bearing geometry and shaft speed, and a temporal localization of transient impulses inspectable on the raw waveform. Across four encoders and three public datasets, this evidence incurs no statistically significant accuracy cost, with a frequency error of about 6 Hz on 1,024-point segments where spectral estimation is structurally inapplicable. Centrally, the deviation between predicted and theoretical frequency constitutes a label-free, inference-time validation signal: it detects misclassifications with AUROC values of 0.970 and 0.871, and remains discriminative in the high-confidence regime where confidence-derived detectors are blind. Finally, a QLoRA-adapted language model is constrained to translate, but never generate, diagnostic content, reducing unsupported-claim rates from 10-12% to 2% and eliminating fabricated quantities.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Yuntong Chen",
+   "Jianyu Liu",
+   "Guobin Zhao",
+   "Ziang Wang",
+   "Chao Chen",
+   "Ju Huang",
+   "Xitian Tian",
+   "Lijiang Huang"
+  ],
+  "url": "https://arxiv.org/abs/2607.22797",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Bearing fault diagnosis lacks physically verifiable predictions. The paper proposes DENet, a multi-task framework that outputs characteristic frequency and temporal localization, enabling label-free validation against theoretical values.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22811",
+  "source": "arXiv",
+  "title": "From Hybrid Mechanistic--Data-Driven Modeling Toward Neuro-Symbolic AI: What, Why, and How",
+  "abstract": "Hybrid mechanistic/data-driven models, which combine first-principles with learned components, are increasingly used in process engineering and scientific machine learning. Common hybrid modeling designs are specified primarily through their architectures and training losses, which offers a limited basis for a shared semantic interface to compare or verify them across domains, with comparatively little attention paid to epistemic uncertainty in the mechanistic part. We bridge hybrid modeling and neuro-symbolic (NeSy) AI by reconstructing these designs as instances of NeSy interface. The resulting translation, Hybrid-to-NeSy (H2N), places mechanistic knowledge on the language side, learned modules on the belief side, and validity domains together with constraints on the logic side. For each design, H2N then yields an explicit NeSy inference functional and a logic-belief decomposition. From this decomposition we derive two metrics: structural violation rate (SVR), measuring whether the learned belief respects the mechanistic structure; and belief dispersion (BD), measuring how concentrated the learned plausibility is, serving as a hybrid model's epistemic uncertainty in its mechanistic part. We instantiate H2N on a case study of a structured hybrid model for binary classification under label noise and show that models with higher SVR and BD exhibit greater variability in held-out accuracy. Under structural distribution shift, H2N further quantifies a model's uncertainty during extrapolations, whereas test accuracy reveals the same shift only post hoc.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.LO",
+   "stat.ML"
+  ],
+  "authors": [
+   "Moein E. Samadi",
+   "Andreas Schuppert"
+  ],
+  "url": "https://arxiv.org/abs/2607.22811",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "foundations"
+  ],
+  "summary": "Hybrid mechanistic/data-driven models lack a shared semantic interface for comparison. The paper bridges hybrid modeling and neuro-symbolic AI via the H2N translation and introduces metrics (SVR, BD) for evaluating epistemic uncertainty.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22823",
+  "source": "arXiv",
+  "title": "Can the perfect Swiss alphorn be designed? A combination of reduced basis method and machine learning for shape optimization",
+  "abstract": "In this work, we investigate the shape optimization of a Swiss alphorn to achieve resonance frequencies as close as possible to prescribed target notes. We construct an accurate geometric model of the alphorn based on both experimental measurements and imaging techniques. The latter are used to reconstruct geometric information where direct measures are not available. The resulting 3D model is meshed using a fully structured approach. Then, we introduce a geometry-parametrized finite element (FE) formulation of the Helmholtz equation enabling the application of the Reduced Basis Method (RBM) to efficiently generate a large dataset of simulations, in which each set of geometric parameters corresponds to a specific set of resonance frequencies (notes). This dataset enables the training of machine learning (ML) models for forward prediction of resonance frequencies from geometric parameters, as well as inverse design, where geometries are estimated to achieve specified target notes.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Fabio Marcinn\\`o",
+   "Cl\\'ement Froidevaux",
+   "Leonardo Bocchieri",
+   "Riccardo Tenderini",
+   "Gerald Pot",
+   "Simone Deparis"
+  ],
+  "url": "https://arxiv.org/abs/2607.22823",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Shape optimization of an alphorn requires efficient simulation of many designs. The paper combines reduced basis method with ML for forward prediction and inverse design of resonance frequencies.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22892",
+  "source": "arXiv",
+  "title": "Mirror Langevin diffusions: Convergence rates and Markov chain approximations",
+  "abstract": "Given a strongly convex function $u$, equip $R^d$ with a Riemannian metric given by the Hessian $\\nabla^2 u$. This is a so-called Hessian manifold. Given a probability density $\\mu$ one may run a Langevin diffusion intrinsic to the manifold with stationary distribution $\\mu$. Such (Hessian) manifold-valued Langevin diffusions are called Mirror Langevin diffusions (MLD) which have recently become popular. One of the questions we explore is whether, given $\\mu$, one can choose $u$ to get an exponential convergence to equilibrium for the MLD, especially if $\\mu$ is not strongly log-concave. Our results are based on Lyapunov function methods and give sufficient conditions for a Poincar\\'e or a log-Sobolev inequality to hold for the MLD. These, in turn, imply exponential convergence. We also introduce a Markov chain approximation to the MLD given by a two step Gibbs sampler with stationary distribution $\\mu$. This Markov chain is a variant of the Sinkhorn Markov chain introduced in arXiv:2307.16421 that is conjectured to converge to a time-inhomogeneous generalization of the MLD. Under suitable assumptions, we prove that the Markov chain has a guaranteed convergence rate in $\\chi^2$ that is consistent with the diffusion time scale. Our proofs are based on ideas from entropic optimal transport and strong data processing inequalities.",
+  "categories": [
+   "math.PR",
+   "stat.ML"
+  ],
+  "authors": [
+   "Benjamin Capdeville",
+   "Young-Heon Kim",
+   "Soumik Pal"
+  ],
+  "url": "https://arxiv.org/abs/2607.22892",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Convergence of Mirror Langevin diffusions depends on the choice of mirror map. The paper provides sufficient conditions for exponential convergence via Lyapunov methods and introduces a Markov chain approximation with guaranteed convergence rate.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22927",
+  "source": "arXiv",
+  "title": "Hidden Boundary Motion in Transformer Optimization: Function-Space Orthogonalization of Affine Weight and Bias Updates",
+  "abstract": "Weights and biases are normally optimized as separate parameter tensors, yet they do not represent separate functions when the input to an affine layer has nonzero mean. For an affine map $z=Wx+b$ with input mean $\\mu$, a weight update contains a sample-independent displacement $\\Delta W\\mu$ that is functionally indistinguishable from a bias update. We call this hidden contribution \\emph{boundary motion} and decompose each update into a centered, sample-varying \\emph{shape} component and a shared \\emph{boundary} component. On a four-layer Transformer trained from scratch on IMDb, the bias-like term $g_b\\mu^\\top$ has a median norm equal to 0.664 of the raw weight-gradient norm across affine layers and training checkpoints. More strikingly, the median ratio $\\norm{\\Delta W\\mu}/\\norm{\\Delta b}$ is 134.7, while $\\norm{\\Delta W\\mu}/\\norm{\\Delta b+\\Delta W\\mu}$ is 0.994. Thus, under AdamW, the observed boundary motion is almost entirely realized through the weight matrix rather than the explicit bias. We implement a diagnostic optimizer, Shape--Boundary Orthogonal AdamW (SBO-AdamW), that optimizes $g_W-g_b\\mu^\\top$ and $g_b$ with independent Adam states and compensates the weight-induced boundary displacement. In a single-seed experiment, SBO-AdamW raises validation accuracy from 81.68\\% to 85.81\\% and validation-selected test accuracy from 78.73\\% to 82.73\\%, with the best validation checkpoint occurring at step 800 instead of step 3000. However, the moving-batch-center compensation produces severe bias-coordinate drift and strongly reduces boundary energy. The present evidence therefore supports hidden boundary motion as an important optimization mechanism, but it does not yet establish a final general-purpose optimizer. A stable centered-affine parameterization is identified as the required next step.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Zhang Gongyue",
+   "Sheng Yixuan",
+   "Liu donghan",
+   "Wang Zhiyong",
+   "Ren Weihong",
+   "Liu honghai"
+  ],
+  "url": "https://arxiv.org/abs/2607.22927",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "In transformer optimization, weight updates contain a bias-like term (boundary motion) that is functionally identical to explicit bias updates. The paper formalizes this and proposes SBO-AdamW, which orthogonalizes shape and boundary components.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22985",
+  "source": "arXiv",
+  "title": "Robust Conformalized Selection with Noisy Responses",
+  "abstract": "Conformalized selection has been widely applied to select high-quality candidates from large datasets with rigorous uncertainty quantification, such as reliable labeling, drug discovery, and the alignment of large language models. Nevertheless, existing methods assume clean responses on calibration data, an assumption that rarely holds in practice. In this paper, we formulate the above tasks as selecting candidates with true predicted labels or with responses exceeding certain values. We demonstrate that existing conformal selection methods fail to control the false discovery rate (FDR) or suffer from severe power loss under contaminated calibration data. To that end, we propose Robust Conformalized Selection (RCS), a unified framework for selective classification with valid FDR control under general label contamination. The key insight of RCS lies in a novel statistical reduction: by separately conditioning on different classes, we translate the intractable label noise into a localized covariate shift problem, which then enables a covariate-adjusted empirical-Bayes-type estimate of the number of false selections. Statistical properties such as the asymptotic FDR control, power optimality, and robustness of RCS are established. We further develop an instantiation of RCS under randomized response model, and also apply RCS to the task of selecting candidates with large response values. Extensive experiments on both simulated and real-world datasets demonstrate the effectiveness of RCS.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "stat.ME"
+  ],
+  "authors": [
+   "Chengyao Yu",
+   "Hongxin Wei",
+   "Bingyi Jing"
+  ],
+  "url": "https://arxiv.org/abs/2607.22985",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "This paper addresses the problem of selecting high-quality candidates from large datasets with rigorous uncertainty quantification when calibration data contains label noise. It proposes Robust Conformalized Selection (RCS), a unified framework that uses conditioning on different classes to translate label noise into a localized covariate shift problem, achieving asymptotic FDR control and power optimality.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23008",
+  "source": "arXiv",
+  "title": "Nesterov acceleration in optimizing over probability measures",
+  "abstract": "Optimization over probability measures has become an increasingly important paradigm in modern machine learning, scientific computing, and uncertainty quantification. Motivated by Nesterov's accelerated gradient method in Euclidean space, we develop Heavy-ball and Nesterov acceleration methods over the probability measure space $\\mathcal{P}_2$ and establish non-asymptotic convergence guarantees that match their Euclidean counterparts. In particular, we derive convergence rates with respect to both the number of iterations and the number of particles used to represent the underlying probability distributions. Extending accelerated optimization from Euclidean space to probability measures is challenging. The natural notion of momentum requires concepts such as tangent bundles of the set of probability space and they are hard to operate numerically. To overcome these difficulties, we introduce two complementary lifting procedures. The first lifts probability measures to phase space through a Hamiltonian formulation, introducing momentum variables into the dynamics. The second lifts probability measures to a common Hilbert space, restoring the linear structure required for convergence analysis while simultaneously yielding executable particle dynamics. Together, these two complementary lifting procedures provide a systematic methodology for designing, analyzing, and implementing momentum-based accelerated optimization methods over probability measure spaces.",
+  "categories": [
+   "math.OC",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jiaqi Tang",
+   "Qin Li",
+   "Wilfrid Gangbo"
+  ],
+  "url": "https://arxiv.org/abs/2607.23008",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "This paper develops accelerated optimization methods (heavy-ball and Nesterov) over probability measure spaces, providing non-asymptotic convergence guarantees. It introduces complementary lifting procedures to phase space and Hilbert space to enable momentum-based optimization in the probability measure setting.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23018",
+  "source": "arXiv",
+  "title": "Covariance-Boosted Gaussian Processes for Spatiotemporal Irregularities",
+  "abstract": "Nonstationary Gaussian process (GP) models are powerful tools for capturing input-dependent variability by adapting to observed data. However, with limited sampling and highly parameterized covariance structure, they are often prone to overfitting and overconfident uncertainty estimates, potentially leading to misleading predictions in safety-critical applications. Motivated by ionospheric modeling for satellite-based augmentation systems (SBAS), this paper proposes a Covariance-Boosted Gaussian Process (CBGP) framework centered upon boosting covariance priors to discover nonstationary latent functions for signal and observation variation that capture irregularities in the input domain. An additional layer of GP modeling of \"partially-whitened\" observations guides latent function relative error estimation that is used to iteratively update weak priors in a gradient descent-like procedure. Following boosting, restrictions are imposed upon prior covariances to prevent overfitting while posterior uncertainties are inflated to prevent model overconfidence. CBGP model efficacy and robustness are demonstrated through out-of-sample testing of both simulated and real-world applications that meet a three-nines integrity standard. The modeling of an extensive ionospheric storm dataset over South America suggests accurate and reliable means to compute SBAS ionospheric corrections in the most challenging space weather environment using regional models that are more informed and responsive than local fitting performed by currently-operating SBAS.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "physics.space-ph",
+   "stat.ME"
+  ],
+  "authors": [
+   "Jeremy Ovadia"
+  ],
+  "url": "https://arxiv.org/abs/2607.23018",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "This paper addresses overfitting and overconfident uncertainty estimates in nonstationary Gaussian process models for spatiotemporal data. It proposes a Covariance-Boosted Gaussian Process (CBGP) framework that uses boosting of covariance priors and posterior uncertainty inflation to prevent overconfidence, with application to ionospheric modeling for satellite-based augmentation systems.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23026",
+  "source": "arXiv",
+  "title": "All in One: Generative Modeling as Mean-Field Game Design",
+  "abstract": "Mean-field games (MFGs) offer a unifying lens on continuous-time generative modeling: a cost tuple recovering twelve prominent models---Continuous Normalizing Flows, OT-Flow, Score-based Models, Schr\\\"{o}dinger Bridges, and more---as special cases of one variational problem. Yet two dimensions of this space remain entirely unexplored: the interaction term $\\mathcal{I}$ is set to zero in many existing models, and the rich family of MFG solvers has never been applied to generative modeling. We address both gaps with MFGLab an open-source PyTorch library whose primary API is the cost tuple: all twelve models are specified by four composable cost functions, and the training loop, log-Jacobian, and reverse-ODE sampler are shared automatically. We additionally propose DI-Flow, a novel cost design that uses a differentiable entropy functional to encourage mode coverage, and provide learning-based MFG solvers that substantially outperform neural training on stochastic-dynamics rows. Experiments on two 2-D benchmarks confirm that the unified API is lossless relative to hand-coded implementations.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Kun Zhao",
+   "Xu Chen"
+  ],
+  "url": "https://arxiv.org/abs/2607.23026",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "This paper unifies twelve prominent generative models as special cases of a mean-field game variational problem. It introduces MFGLab, an open-source library with a cost-tuple API, and proposes DI-Flow, a novel cost design using differentiable entropy for mode coverage.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23029",
+  "source": "arXiv",
+  "title": "Multi-Agent Privacy Game in Federated Learning: A Unified Mean-Field View",
+  "abstract": "Federated learning enables collaborative model training across distributed clients without centralising their data, yet privacy remains a persistent concern because the shared model updates can leak information about local datasets. Existing privacy-preserving methods either inject calibrated noise into client updates, limiting their composition guarantees, or formulate client privacy choices as a multi-agent game whose Nash equilibrium becomes intractable as the number of clients grows. We bridge these two lines of work by formulating privacy-preserving federated learning as a mean-field privacy game: each client strategically chooses its own privacy budget while interacting with the population only through a single mean-field statistic. The mean-field limit yields a tractable equilibrium for arbitrarily many clients, accommodates heterogeneous client preferences, and inherits an exponentially decaying privacy guarantee through a log-Sobolev contraction. The framework recovers the entropic privacy baseline as the homogeneous special case and the multi-agent privacy game as the finite-population case. Experiments on quadratic regression, logistic regression, and MNIST demonstrate that the proposed framework attains the privacy-utility trade-off of the entropic baseline while delivering a personalized privacy guarantee that the homogeneous baseline cannot express.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Kun Zhao",
+   "Xu Chen"
+  ],
+  "url": "https://arxiv.org/abs/2607.23029",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "This paper formulates privacy-preserving federated learning as a mean-field privacy game, where each client strategically chooses its privacy budget. It provides a tractable equilibrium for arbitrarily many clients, accommodates heterogeneous preferences, and inherits exponential privacy guarantees via log-Sobolev contraction.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23050",
+  "source": "arXiv",
+  "title": "The Entropic Bound for Transformers: Why Static Rank Fails and Attention-Native Rank Recovers",
+  "abstract": "Neural scaling laws describe how loss decreases as models, data, and compute grow, but they do not answer a prior question: for a fixed task, what is the minimum model capacity required to solve it? We study this through the Entropic Bound, a spectral notion of task-intrinsic capacity for Transformers. We first prove that, in a linear attention surrogate, the intrinsic rank $r^*$ of the token-mixing operator is a tight lower bound: any rank-deficient model incurs unavoidable excess risk, and the bound is achievable at $r^*$. We further show that gradient descent recovers this rank under standard low-rank implicit-bias assumptions, confirm all three properties empirically, and show $r^*$ is recoverable from data before training. We then ask whether this transfers to real attention. A naive transfer fails, and a controlled interpolation ladder localizes the cause precisely: it is not softmax and not a rank constraint, but the input-conditioned nature of attention's mixing operator, which a static weight kernel cannot summarize. Motivated by this, we introduce an attention-native intrinsic rank -- the minimum query-key kernel rank realizing the task within the attention class -- and show that under this definition the full Entropic Bound structure (deficiency, achievability, recovery) is restored for both linear and softmax attention, with the energy effective rank as the estimator robust to softmax distortion. Finally, we map the boundary of data-only predictability: $r^*$ is exactly recoverable for linear QK attention, even without the value map at scale, while softmax attention admits only partial pre-training recovery due to nonlinear inversion and kernel-value identifiability effects. Our results reframe the Entropic Bound from a post-hoc descriptor into an attention-native capacity measure with a precisely characterized predictability frontier.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Byeong Hoon Yoon"
+  ],
+  "url": "https://arxiv.org/abs/2607.23050",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "This paper studies the minimum model capacity required for a task in Transformers through an entropic bound on intrinsic rank. It proves that any rank-deficient model incurs excess risk and introduces attention-native intrinsic rank to restore the bound structure for both linear and softmax attention.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23069",
+  "source": "arXiv",
+  "title": "Geometry-aware LegONet for PDE Learning on Arbitrary Domains",
+  "abstract": "Learned PDE solvers often entangle governing operators with the geometry, boundary conditions, and discretization used for training. This limits reuse when the same physics is posed on new domains, and it also makes physical-law discovery geometry-dependent. We introduce Geometry-aware LegONet (gLegONet), a boundary-manifold extension of Lego-like operator learning. Physical mechanisms are pretrained once as modular variational blocks on an ambient spectral domain. For a target geometry, sampled boundary constraints define an affine admissible manifold. Its mass-orthonormal tangent coordinates are used to evolve the dynamics and evaluate candidate law-discovery features directly. Changing the domain therefore changes only an algebraic coordinate interface, not the learned operator blocks. This converts arbitrary-domain PDE learning from geometry-specific retraining or soft penalty enforcement into boundary-guaranteed assembly of reusable mechanisms. In forward simulations and sparse identification tests on unseen domains, the method maintains boundary residuals near the algebraic tolerance and yields predictive governing laws from short-time observations.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Jiahao Zhang",
+   "Yueqi Wang",
+   "Guang Lin"
+  ],
+  "url": "https://arxiv.org/abs/2607.23069",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "This paper addresses the problem that learned PDE solvers entangle governing operators with geometry, limiting reuse. It introduces Geometry-aware LegONet (gLegONet), which pretrains modular variational blocks on an ambient spectral domain and adapts to new geometries via a boundary-manifold coordinate interface.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23080",
+  "source": "arXiv",
+  "title": "A mixed residual method for biharmonic equations in spectral Barron spaces",
+  "abstract": "We propose a mixed residual method (MIM) for numerically solving the biharmonic equation with nonhomogeneous clamped boundary conditions. By establishing the well-posedness of the biharmonic equation in spectral Barron spaces, we derive an error bound for MIM that relates shallow neural network approximations to the exact solution and overcomes the curse of dimensionality. This error bound consists of two components: the first corresponds to the approximation error of the neural network, while the second represents the generalization error arising from randomly sampled training data. Several numerical experiments are presented to demonstrate the effectiveness of the proposed method.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Mengjia Bai",
+   "Kuo Gai",
+   "Shuai Lu"
+  ],
+  "url": "https://arxiv.org/abs/2607.23080",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "This paper addresses numerically solving biharmonic equations with nonhomogeneous clamped boundary conditions. It proposes a mixed residual method (MIM) that uses shallow neural networks in spectral Barron spaces, providing error bounds that overcome the curse of dimensionality.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23110",
+  "source": "arXiv",
+  "title": "Operator Neural Jump ODEs: $L^2$-optimal prediction in function spaces",
+  "abstract": "In this paper, we study the extension of Neural Jump ODEs to infinite-dimensional function spaces. In particular, the underlying process $X$ now takes values in $L^2(\\Xi, \\mathbb{R}^{d_X})$ instead of $\\mathbb{R}^{d_X}$ and the Operator NJ-ODE approximates the optimal predictor of this process by producing a representative of the conditional expectation. The NJ-ODE model is a framework for online learning the optimal prediction of continuous-time stochastic processes, given discrete, possibly irregular and incomplete past observations. In a series of works, this model has been extended to deal with generic path-dependent processes, with observation noise and dependent observations, with long-term predictions, and with input-output systems. However, throughout all of these works, the underlying processes were restricted to be finite-dimensional. In particular, function-valued problems, like yield curve or volatility surface predictions, could only be handled through discretization, which inherently leads to a loss of information. In this work, we build on ideas from Neural Operator methods that allow us to extend the NJ-ODE framework to an infinite-dimensional output process. To prove convergence of the NJ-ODE to the optimal prediction process, we develop a new approximation strategy that also generalizes previous works in the finite-dimensional setting by considerably weakening the assumptions.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Florian Krach",
+   "Oliver L\\\"othgren",
+   "Josef Teichmann"
+  ],
+  "url": "https://arxiv.org/abs/2607.23110",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "This paper extends Neural Jump ODEs to infinite-dimensional function spaces for online prediction of stochastic processes. Using operator methods, it approximates the optimal predictor in $L^2$ and develops a new approximation strategy that weakens assumptions from previous works.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23143",
+  "source": "arXiv",
+  "title": "Physics-informed token transformer methodology for nonlinear balance laws. I. Schwarzschild--Burgers fluid flows",
+  "abstract": "We introduce a Physics-Informed Token Transformer (PITT) methodology for nonlinear hyperbolic balance laws in one space dimension, using piecewise steady-state profiles for the representation of approximate weak solutions. The method combines symbolic equation tokenization, a Fourier neural operator encoder, an explicit Rankine--Hugoniot law for shock motion, and a learned correction term. For clarity, we present it here for the relativistic Schwarzschild--Burgers equation, a scalar model for spherically symmetric fluid flows on a Schwarzschild background. For this model the steady-state invariant and the generalized Riemann solutions are explicit, and they can therefore be built into the neural evolution. In particular, the leading discontinuities are advanced by the analytical jump condition, while the learned part reconstructs smooth regions, rarefaction fans, geometric dependence, and finite-resolution effects. The method is designed to locate wave fronts accurately and to preserve the relevant steady states. We test our PITT method on moving shocks, stationary shocks, rarefaction waves, and compare it with a standard high-order finite-volume approximation. We also analyze the standard Burgers limit (when the Schwarzschild mass tends to zero). The Rankine--Hugoniot prior plays the dominant role in these tests, while equation tokenization gives a systematic additional gain. The method is relevant for problems involving geometric effects and/or complex shock-wave dynamics, and is used here to study the long-time dynamics of perturbations of steady-state solutions. In particular, we exhibit an asymptotic law of propagation for the shock location of perturbed steady-state flows.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Philippe G. LeFloch",
+   "Shuyang Xiang"
+  ],
+  "url": "https://arxiv.org/abs/2607.23143",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "operator-learning"
+  ],
+  "summary": "Solves nonlinear hyperbolic balance laws with shocks using physics-informed token transformers. Combines symbolic equation tokenization, a Fourier neural operator encoder, and an explicit Rankine-Hugoniot law for shock motion to preserve steady states and locate wave fronts accurately.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23153",
+  "source": "arXiv",
+  "title": "In-Context Learning as Implicit Policy Gradient",
+  "abstract": "Recent work has shown that large language models (LLMs) can iteratively improve their outputs by incorporating generated samples and their corresponding evaluation scores as in-context examples. Despite these empirical findings, the theoretical foundations underlying this phenomenon remain poorly understood. In this paper, we show that score-conditioned In-Context Learning (ICL) admits a structural correspondence to policy gradient optimization. We first provide a constructive proof that self-attention mechanisms can implement reward-weighted aggregation analogous to the REINFORCE algorithm under specific weight matrix configurations, and discuss the relationship between this construction and the behavior of pretrained transformers. The correspondence is directional in hidden-state space and holds exactly only under the stated simplifying conditions; we quantify its strength empirically. Within our simplified hidden-state model, we furthermore derive an exact upper bound on the distribution shift induced by a bounded attention update, yielding a trust-region-like analogy to KL-constrained policy optimization. We validate our theory through extensive experiments across multiple LLMs, demonstrating that LLMs effectively utilize score information to shift output distributions toward high-scoring exemplars, and that attention weights exhibit a strong correlation with example scores.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Masahiro Kaneko",
+   "Timothy Baldwin"
+  ],
+  "url": "https://arxiv.org/abs/2607.23153",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Establishes a structural correspondence between score-conditioned in-context learning and policy gradient optimization. Provides a constructive proof that self-attention can implement reward-weighted aggregation analogous to REINFORCE and derives a trust-region-like bound on distribution shift.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23176",
+  "source": "arXiv",
+  "title": "An Adjoint-Based Differentiable Physics Framework for Online Parameter Inversion in Closed-Brayton Gas-Cooled Reactor Digital Twins",
+  "abstract": "Digital twins for advanced reactors must invert physical parameters online from noisy, partial sensor streams while the plant is rarely at steady state. Gradient-based inversion is the natural tool for this task, but the forward models in routine use are seldom differentiable end to end, so practitioners fall back on derivative-free filters. We present an end-to-end-differentiable digital twin of a closed-Brayton gas-cooled reactor that propagates reverse-mode automatic differentiation through an implicit differential-algebraic plant model, exposing exact parameter sensitivities. The twin drives an AD-Hessian incremental 4D-Var estimator, benchmarked against ensemble, unscented, and finite-difference variational baselines over a two-by-two matrix that crosses steady with transient excitation and full with partial observation. No single estimator wins everywhere: the unscented filter keeps its best-linear-unbiased advantage on the controlled steady-state corner, while the proposed estimator attains the lowest mean error on the reflector coefficient on the other three corners --- reaching \\SI{0.43}{\\percent} under transient full observation, roughly an order of magnitude below the unscented filter, and matching the ensemble filter at low-to-moderate noise on the combined transient-partial corner. Every estimator's variance sits within a small factor of the Cram\\'er--Rao bound, so the residual error reflects a deterministic bias floor from the twin's differentiability simplifications rather than statistical inefficiency, and the advantage is one of robustness to the resulting multi-modal loss landscape, which a component ablation localises by regime. Differentiating a first-principles plant model thus makes gradient-based inversion competitive with established filters across a reactor's operating range.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Chengyuan Li",
+   "Shanfang Huang",
+   "Jian Deng"
+  ],
+  "url": "https://arxiv.org/abs/2607.23176",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Enables online parameter inversion for gas-cooled reactor digital twins by making the plant model end-to-end differentiable. Uses an AD-Hessian incremental 4D-Var estimator that outperforms established filters on transient and partial-observation corners.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23186",
+  "source": "arXiv",
+  "title": "Stochastic Dynamics of the Two-Dimensional Low-to-High Transition System Driven by Multiplicative Noise",
+  "abstract": "This work presents a two-dimensional coupled Low-to-High confinement transition system based on the phenomenological coupling mechanism between zonal flows and turbulent fluctuations at the plasma edge in tokamak magnetic confinement devices. For this two-dimensional system, the corresponding Hamilton-Jacobi equation is derived, and a machine learning approach combining physics-informed neural networks with a loss function designed via vector field decomposition is employed to numerically solve it. This yields information about the system's quasipotential, enabling further computation of the most probable path for the rare event of a state transition in the coupled system. Compared with classical two-dimensional Low-to-High confinement transition models, the proposed system features state variables that are more accessible to experimental measurement and has a more comprehensive physical foundation. Moreover, it self-consistently describes the dynamical behavior of tokamak devices during the startup phase.",
+  "categories": [
+   "math.DS"
+  ],
+  "authors": [
+   "Yongzhi Li",
+   "Shenglan Yuan"
+  ],
+  "url": "https://arxiv.org/abs/2607.23186",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Studies rare state transitions in tokamak plasma confinement using a two-dimensional coupled system. Solves the Hamilton-Jacobi equation with physics-informed neural networks and vector field decomposition to compute the quasipotential and most probable transition paths.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23192",
+  "source": "arXiv",
+  "title": "Data-Driven Diffusion Processes on Differential Forms via the Projected Ambient Connection Laplacian",
+  "abstract": "We develop a data-driven approximation of the projected ambient connection Laplacian acting on differential forms over smooth Riemannian manifolds sampled by point clouds. The proposed construction extends the classical framework of diffusion maps and Vector Diffusion Maps from scalar functions and tangent vector fields to differential forms of arbitrary degree. Our approach is based on a novel representation of differential forms as alternating differential arrays obtained through an extension of the classical musical isomorphism. This representation enables the construction of a matrix-valued diffusion operator that approximates the projected ambient connection Laplacian directly from point cloud data without requiring a mesh or simplicial complex. The proposed discretization admits the asymptotically optimal kernel bandwidth scaling inherited from diffusion maps, leading to sharper convergence guarantees than previous data-driven approximations of the Hodge Laplacian. Building upon this operator, we derive a fully data-driven explicit Euler scheme for the heat equation on differential forms and validate the proposed methodology through numerical experiments on the unit sphere. The experiments confirm the predicted decay of the analytical solution and demonstrate the effectiveness of the proposed discretization. The proposed framework provides a natural generalization of Vector Diffusion Maps to differential forms of arbitrary degree and establishes a practical foundation for the numerical approximation of geometric partial differential equations directly from point cloud data.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "Alvaro Almeida Gomez",
+   "Jorge Duque Franco"
+  ],
+  "url": "https://arxiv.org/abs/2607.23192",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Extends diffusion maps to differential forms of arbitrary degree on smooth manifolds sampled by point clouds. Proposes a data-driven approximation of the projected ambient connection Laplacian using alternating differential arrays, without requiring a mesh.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23299",
+  "source": "arXiv",
+  "title": "PI-GINOT: Data-free geometry-informed neural operator learning for finite-strain hyperelasticity on parametric DogBone specimens",
+  "abstract": "Parametric nonlinear solid-mechanics simulations are widely used in virtual testing, optimisation, and uncertainty analysis, but repeated finite-element simulations become costly when geometry changes. This paper presents PI-GINOT, a physics-informed neural operator that predicts finite-strain hyperelastic responses across a four-parameter family of DogBone specimens without using finite-element training data. Each specimen is described by a boundary point cloud, which is encoded into geometry features. A cross-attention decoder then predicts displacement at arbitrary points. Displacement boundary conditions are enforced exactly, while stresses are computed using automatic differentiation and a compressible Neo-Hookean plane-stress model. Training is guided by equilibrium, traction-free and symmetry conditions, deformation stability, and internal force consistency. Abaqus simulations are used only after training for validation. Across eight test geometries, PI-GINOT achieves displacement errors of 2.1%-7.1%, peak von Mises stress errors of 0.9%-13.3%, and section-force errors below 10.3%. Larger errors occur in individual stress components, especially for narrow specimens, mainly because of steep stress gradients near the gauge-to-fillet transition. These results show that PI-GINOT can provide useful geometry-dependent predictions for nonlinear solid mechanics without labelled simulation data, while also revealing where better local stress resolution is still needed.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Aamir Dean",
+   "Betim Bahtiri"
+  ],
+  "url": "https://arxiv.org/abs/2607.23299",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml"
+  ],
+  "summary": "Predicts finite-strain hyperelastic responses across parametric DogBone specimens without simulation data. Uses a physics-informed neural operator that encodes boundary point clouds into geometry features and enforces equilibrium via automatic differentiation.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23333",
+  "source": "arXiv",
+  "title": "Training with (Swap) Regret Loss in a Single-Layer Self-Attention Model: A Case Study on the Probability Simplex",
+  "abstract": "We revisit the regret loss framework introduced in Park et al. (2025), which uses decision-theoretic regret as a direct loss function for training models to make better decisions, through the lens of probability-simplex policies. Our first result shows that a single-layer self-attention model trained with regret loss admits a stationary point whose forward-pass exactly matches smoothed fictitious play with the appropriate stepsize that ensures no-regret behavior-i.e., for any given policy input, the model outputs the same update that smoothed fictitious play would produce. In parallel, we also newly introduce a swap-regret loss function, which extends the regret-loss framework beyond external regret and enables models to directly optimize for swap-deviation robustness. We further show that this swap-regret loss admits a stationary point whose forward pass implements the corresponding swap-regret update induced by classical Blum-Mansour no-pass implementation algorithm, with each head implementing an external-regret update via smoothed fictitious play. Together, these results show that regret-trained attention can realize differentiable mechanisms whose deployment induces equilibrium behavior in games: external-regret dynamics lead to coarse correlated equilibrium, while swap-regret dynamics lead to correlated equilibrium. Thus, regret-based objectives steer minimal attention architectures toward online-learning dynamics with game-theoretic guarantees, without supervised traces of those algorithms.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Chanwoo Park",
+   "Asuman Ozdaglar"
+  ],
+  "url": "https://arxiv.org/abs/2607.23333",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "This paper studies the mathematical properties of self-attention trained with regret loss, showing it implements no-regret dynamics. It introduces a swap-regret loss and proves that the forward pass matches smoothed fictitious play, connecting attention to game-theoretic equilibria.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23337",
+  "source": "arXiv",
+  "title": "Neural operator discovery from heterogeneous trajectories",
+  "abstract": "Neural operators provide data-driven mappings for modeling dynamical systems. Extending them to families of systems typically requires explicit conditioning variables such as physical parameters, geometries, or boundary conditions. In many real-world settings, these quantities are unobserved. Here, we formulate neural operator discovery (NOD) as the problem of learning both shared solution operators and system-specific variation directly from heterogeneous trajectories without access to labeled governing factors. We introduce a factorized latent-conditioning formulation that jointly learns a neural operator and a low-dimensional latent representation through factorized prediction, trajectory-decoupled sampling, and dimension selection. Across diverse systems, the learned latent representation captures the intrinsic dimensionality of system variation and organizes system instances in a smooth and approximately invertible latent structure aligned with the underlying governing factors. This organization enables generalization to previously unseen system instances, including zero-shot extrapolation across regimes and stable long-horizon prediction. These results establish an interpretable paradigm for operator learning in the absence of explicit factor supervision.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Zituo Chen",
+   "Qiaofeng Li",
+   "Jiaxin Hu",
+   "Sili Deng"
+  ],
+  "url": "https://arxiv.org/abs/2607.23337",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Learning shared solution operators directly from heterogeneous trajectories without explicit conditioning variables is challenging. The paper introduces neural operator discovery (NOD) with a factorized latent-conditioning formulation that jointly learns a neural operator and low-dimensional latent representations, enabling generalization to unseen system instances.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23364",
+  "source": "arXiv",
+  "title": "On the Impossibility of Unbiased and Length-Invariant Policy Optimization with Outcome Rewards",
+  "abstract": "Group Relative Policy Optimization (GRPO) is the dominant reinforcement learning algorithm for training reasoning capabilities in large language models, notably adopted by DeepSeek-R1. The recent improvement Dr. GRPO (COLM 2025) identifies the response-level length bias caused by per-trajectory length normalization in GRPO and proposes removing this normalization, claiming the resulting optimizer is \"unbiased.\" We show that this claim is incomplete. Specifically, we establish an impossibility theorem: under the standard outcome reward + GRPO setting, no length-based weighting scheme can simultaneously achieve the following two properties. (P1) Gradient unbiasedness: the gradient estimator is an unbiased estimate of the true policy gradient. (P2) Length invariance: each trajectory's effective contribution to the gradient is independent of its token length. GRPO approximately satisfies P2 but violates P1; Dr. GRPO satisfies P1 but violates P2. We characterize the complete tradeoff spectrum via the parametric family f_alpha(L) = L^{alpha - 1}, where alpha = 0 recovers GRPO, alpha = 1 recovers Dr. GRPO, and provide quantitative analysis showing that Dr. GRPO's length bias can cause longer trajectories to dominate gradient updates by a factor proportional to the length ratio. Our results reveal that neither algorithm is universally \"done right\"; they occupy opposite ends of a fundamental and unavoidable tradeoff.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Fei Ding",
+   "Yongkang Zhang",
+   "Yuhao Liao",
+   "Zijian Zeng",
+   "Huiming Yang"
+  ],
+  "url": "https://arxiv.org/abs/2607.23364",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "This paper proves an impossibility theorem for GRPO in LLM policy optimization: no length-based weighting can simultaneously achieve unbiased gradient estimates and length invariance. It characterizes the tradeoff via a parametric family, showing GRPO and Dr. GRPO occupy opposite ends of a fundamental tradeoff.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23404",
+  "source": "arXiv",
+  "title": "Transfer Learning Architectures for Scalable Multi-Fidelity Bayesian Optimization",
+  "abstract": "Self-driving laboratories increasingly rely on multi-fidelity Bayesian optimization (MFBO) to balance cheap, approximate evaluations against scarce, expensive ones, with a predictive surrogate at its core. Gaussian processes (GPs) are the default choice, but they scale poorly as data accumulate and assume a smooth landscape that molecular and materials search spaces routinely violate. Transfer learning offers an alternative suited to this regime: it learns a representation from abundant cheap data and adapts it to sparse expensive data. Despite its use in property prediction, transfer learning has not been tested as the engine of a closed-loop optimization. Here we benchmark eleven transfer-learning surrogates against four GP methods under an identical selection rule, fidelity budget, and model size, across nine tasks spanning synthetic functions to real chemistry and materials problems. GPs win on smooth, low-dimensional functions but perform worst on molecular and materials problems, where transfer-learning surrogates reach substantially better solutions using far less computation. Because acquisition policy is held fixed across surrogates, this advantage is attributable to the surrogate itself. Uncertainty-driven exploration is not reliably beneficial, and calibration does not predict optimization performance, so greedy exploitation of the transfer-learned mean is the more robust default. Transfer learning is therefore the surrogate of choice for molecular and materials MFBO.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Jaewook Lee",
+   "Ethan Errington",
+   "Christian D. Lorenz",
+   "Miao Guo"
+  ],
+  "url": "https://arxiv.org/abs/2607.23404",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Benchmarking surrogates for multi-fidelity Bayesian optimization in molecular and materials problems. The paper compares eleven transfer-learning surrogates against GPs, finding that transfer learning substantially outperforms GPs on real chemistry and materials tasks, attributing the advantage to the surrogate itself.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23408",
+  "source": "arXiv",
+  "title": "NeurGO: Learning to Generate Elite Candidates for Meta-Black-Box Expensive Optimization",
+  "abstract": "Expensive black-box optimization is ubiquitous in science and engineering, where function evaluations are costly and the evaluation budget is limited. Traditional evolutionary algorithms and Meta-BlackBox Optimization (MetaBBO) approaches typically consume most evaluations on candidate selection, often wasting precious budget on inferior solutions. Although surrogate-assisted evolution and Bayesian optimization aim to reduce evaluations through surrogate models, constructing an accurate global model from limited data remains challenging, and model bias can easily trap the search in local optima. To overcome these limitations, we propose NeurGO, a generative MetaBBO framework that directly synthesizes elite candidates from historical population states. Specifically, we employ an attention-based encoder to capture the population-level search trend and condition a decoder on this representation to generate high-quality candidates, avoiding the expensive evaluation of large offspring pools. We then design a quality-diversity loss to maintain solution quality and population diversity throughout the search. Through extensive benchmarking on CEC 2008 and the COCO BBOB test suites, our method achieves better optimization performance under the same evaluation budget and exhibits faster convergence.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Jintao He",
+   "Huixiang Zhen",
+   "Wenyin Gong"
+  ],
+  "url": "https://arxiv.org/abs/2607.23408",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Expensive black-box optimization is challenging due to limited evaluation budgets. The paper proposes NeurGO, a generative MetaBBO framework that directly synthesizes elite candidates using an attention-based encoder–decoder and a quality-diversity loss, achieving better optimization performance under the same budget.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23466",
+  "source": "arXiv",
+  "title": "Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs",
+  "abstract": "Parameterized and coupled partial differential equations (PDEs) are central to modeling phenomena in science and engineering, yet neural operator methods that address both aspects remain limited. We extend Fourier neural operators (FNOs) with minimal architectural modifications along two directions. For parameterized dynamics, we propose a hypernetwork-based modulation that conditions the operator on physical parameters. For coupled systems, we conduct a systematic exploration of architectural choices, examining how operator components can be adapted to balance shared structure with cross-variable interactions while retaining the efficiency of standard FNOs. Evaluations on benchmark PDEs, including the one-dimensional capacitively coupled plasma equations and the Gray-Scott system, show that our methods achieve up to 55-72% lower errors than strong baselines, demonstrating the effectiveness of principled modulation and systematic design exploration.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Cheng Jing",
+   "Uvini Balasuriya Mudiyanselage",
+   "Abhishek Verma",
+   "Kallol Bera",
+   "Shahid Rauf",
+   "Kookjin Lee"
+  ],
+  "url": "https://arxiv.org/abs/2607.23466",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Parameterized and coupled PDEs are prevalent in science and engineering, but neural operator methods for both aspects are limited. The paper extends FNOs with hypernetwork-based modulation for parameterized dynamics and systematically explores architectures for coupled systems, achieving 55–72% lower errors on benchmarks.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23467",
+  "source": "arXiv",
+  "title": "Learning to Optimize: Joint Routing and Flow Allocation on Sparse Non-Euclidean Networks",
+  "abstract": "We study an integrated pickup-and-delivery problem on sparse, non-Euclidean networks that jointly optimizes cyclic routing, cargo flow allocation, and cross-cycle service. The tight coupling of these operational constraints creates a complex discrete-continuous decision space with highly restricted feasible regions. To overcome these computational challenges, we propose Double-Channel Graph Attention (DCGA), an end-to-end reinforcement learning framework. DCGA isolates network reachability and demand-service logic into separate graph channels and constructs valid routes using a simulator-coupled, constraint-informed decoder. Experiments on LinerLib benchmarks demonstrate that DCGA achieves seconds-level inference and delivers state-of-the-art solution quality on instances beyond a specific scale, with its advantage over existing baselines widening significantly as problem size increases. Supported by extensive stability and ablation analyses, our results demonstrate that this structure-aware learning approach provides an effective, low-latency engine for realistic routing-and-flow optimization.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Haomiao Sun",
+   "Fang He",
+   "Congyuan Ji",
+   "Xindi Tang"
+  ],
+  "url": "https://arxiv.org/abs/2607.23467",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Joint routing and flow allocation on sparse non-Euclidean networks is computationally challenging. The paper proposes Double-Channel Graph Attention (DCGA), an end-to-end RL framework that isolates network reachability and demand-service logic into separate channels, achieving state-of-the-art solution quality on large-scale instances.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23501",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Networks for Discovering Periodic Orbits in the Gravitational Three-Body Problem",
+  "abstract": "Locating periodic solutions of chaotic dynamical systems normally requires an initial guess close enough to the target orbit for numerical continuation or gradient-based search to converge. We show that Physics-Informed Neural Networks (PINNs) trained on sparse, noisy observations \\emph{without} initial conditions recover periodic orbits of the gravitational three-body problem, including orbit families absent from the training data. The method rests on a second-order ODE formulation, fixed-frequency Fourier features, percentile-based adaptive refinement, and a trainable scaling parameter, each validated on forward problems. Across two 100-seed ensembles, $23$--$25\\%$ of runs converge to families not present in the training data. We then ask what determines which family emerges. Two $\\chi^2$ tests give a consistent answer: changing the training data source significantly shifts the distribution of recovered families ($p < 0.001$, Cram\\'{e}r's $V = 0.339$), whereas switching between the two initialization distributions tested does not ($p = 0.620$, $V = 0.094$). The random seed selects which family a given run recovers; the \\emph{distribution} the weights are drawn from does not shift the aggregate frequencies, but the training data does. The evidence is empirical: we do not characterize the loss landscape analytically, and PINNs remain slower than conventional integrators on well-posed initial-value problems. What the experiments establish is that the recovered orbits are verifiable rather than merely plausible: the identified ones refine to genuine periodic solutions, a network trained on Lagrange data recovers the figure-eight choreography (Li--Liao class I.A.1, matched to seven significant digits in $T^*$), and one trained on figure-eight data recovers a Broucke--Hadjidemetriou--H\\'{e}non orbit closing to $\\delta_T < 10^{-9}$.",
+  "categories": [
+   "cs.LG",
+   "nlin.CD",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Nikolaos Kollias",
+   "Nikolaos Matzakos"
+  ],
+  "url": "https://arxiv.org/abs/2607.23501",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Discovering periodic orbits in the chaotic three-body problem typically requires good initial guesses. The paper uses Physics-Informed Neural Networks (PINNs) trained on sparse, noisy observations without initial conditions to recover periodic orbits, including families not present in training data.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23502",
+  "source": "arXiv",
+  "title": "Learning switched non-linear dynamical systems from a single trajectory",
+  "abstract": "We study empirical risk minimization for learning non-linear dynamical systems whose transition dynamics may switch over time. Under stability assumptions, and i.i.d switching over a set of $K$ modes, we derive non-asymptotic bounds on the prediction risk expressed in terms of the metric entropy of the underlying function class. We instantiate our general result for H\\\"older and linear function classes, obtaining explicit convergence rates that depend on the effective sample size $Tp_i$, where $T$ is the trajectory length and $p_i$ is the probability of observing mode $i$. Numerical simulations support our theoretical findings. To the best of our knowledge, these results are the first non-asymptotic guarantees for learning switched nonlinear dynamical systems from a single trajectory.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.ST",
+   "stat.TH"
+  ],
+  "authors": [
+   "Sunny G. W. Wang",
+   "Hemant Tyagi"
+  ],
+  "url": "https://arxiv.org/abs/2607.23502",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Learning switched nonlinear dynamical systems from a single trajectory lacks theoretical guarantees. The paper derives non-asymptotic bounds on prediction risk in terms of metric entropy, obtaining explicit convergence rates for Hölder and linear function classes.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23667",
+  "source": "arXiv",
+  "title": "No Free Lunch in Flow Surrogates under Time-Varying Boundary Conditions: A Two-Regime Study",
+  "abstract": "A flow surrogate validated on a simple regime is often taken as evidence that the approach will carry to a richer one. We test this assumption on two transient flows under time-varying boundary conditions emulating the process startup: the three-dimensional slurry film in chemical-mechanical planarisation (CMP), a core semiconductor-manufacturing process, and the two-dimensional Karman vortex street (KVS) behind a cylinder. Eight surrogate models are compared on one shared evaluation pipeline, differing in whether they learn the full field or a latent representation, and whether they predict trajectories in one shot or step by step. No single architecture wins both regimes. On the film, a one-shot full-field model reconstructs the process-relevant cumulative wall shear stress to 3.2% relative error. On the wake, a latent autoregressive DeepONet retains 96% of the shedding power that direct and one-shot models damp to almost zero. The deciding axis is the treatment of time. The self-sustained wake requires the phase memory that autoregressive feedback provides, while the boundary-driven film rewards a direct map. Pointwise RMSE picks the wrong model in both regimes, so the evaluation scores five physical questions instead, the field, its structure, invented motion, amplitude, and timing. The trained surrogates answer queries $10^3$ to $10^4$ times faster than the finite-element solver, but the offline cost of the training simulations means they pay off from the first query beyond the training set for CMP and the third for the KVS. The choice of surrogate should follow the dynamical character of the target flow, and its validation should use failure-mode-resolved metrics, since neither the winning architecture nor its validation transfers.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Georg Winkler",
+   "Martin Stoll"
+  ],
+  "url": "https://arxiv.org/abs/2607.23667",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The paper investigates whether flow surrogates validated on one regime transfer to another, using two transient flows under time-varying boundary conditions. It compares eight surrogate models on an evaluation pipeline and finds that no single architecture wins both regimes, with the deciding axis being the treatment of time.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23676",
+  "source": "arXiv",
+  "title": "SpecAHD: Localize to Specialize for Automated Heuristic Design in Large-Scale Routing Problems",
+  "abstract": "LLM-based automated heuristic design (AHD) typically scores executable programs on complete instances or within fixed solver components. In large-scale routing problems, localized reconstruction reduces the size of each optimization task, but repair regions within the same incumbent can exhibit substantially different structures. One construction rule must therefore compromise across them. In this paper, we propose SpecAHD, a coupled bilevel framework for within-instance specialization. An upper-level search learns where to expose bounded repair regions, while a lower-level search evolves a complementary repertoire of executable heuristics for the induced repair tasks. The upper-level program determines the repair tasks seen by the lower level, while checked repair outcomes determine how upper-level programs are evaluated. The lower-level objective favors heuristics that perform well on average or solve tasks that the current repertoire handles poorly. For the repair tasks induced by a fixed upper-level program and a fixed lower-level candidate pool, this objective is monotone submodular, allowing greedy repertoire selection with a (1-1/e) approximation guarantee. Across four routing problems and multiple LLM backbones, SpecAHD reduces held-out objective cost by up to 57.7% against the strongest competing AHD baseline and outperforms the per-instance baseline envelope on most public instances.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Kezhao Lai",
+   "Yutao Lai",
+   "Hai-Lin Liu"
+  ],
+  "url": "https://arxiv.org/abs/2607.23676",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper addresses the challenge of automated heuristic design for large-scale routing problems where local repair regions have different structures. It proposes SpecAHD, a coupled bilevel framework with within-instance specialization that learns where to expose repair regions and evolves a complementary repertoire of heuristics, achieving up to 57.7% cost reduction.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23711",
+  "source": "arXiv",
+  "title": "The Intruder Threshold: A Spectral Law for LoRA Fine-Tuning",
+  "abstract": "LoRA fine-tuning can create intruder dimensions: new leading singular vectors of the updated weight matrix $W+BA$ that are nearly orthogonal to all pretrained singular vectors and that drive catastrophic forgetting. Since their discovery, no theory has predicted, layer by layer on measured spectra, when they appear. We derive a per-layer critical update strength $s^\\ast=\\bar\\theta/(\\gamma\\sigma_1(BA))$, computed from the measured spectrum of $W$ alone through the rectangular spiked-deformation transform, together with an exact secular-equation characterization of the updated spectrum, with no fitted parameters. In a pre-specified study spanning four dense Transformer families, a state-space model, a mixture-of-experts model, and an encoder-decoder (18 adapters, 9{,}840 layer scans), the law localizes the empirical threshold within a factor of two on $82\\%$ of layers, separates intruder-bearing from intruder-free layers at deployment with a mean AUC of $0.89$, holds unchanged on six third-party adapters, and predicts where WikiText-2 perplexity begins to degrade; a combination of the two pre-specified edge evaluations reaches $98\\%$ and is confirmed out-of-bag on the external adapters ($0.997$). Full fine-tuning disperses its update far below the threshold of every layer, which resolves the asymmetry between LoRA and full fine-tuning. Norm-matched interventions confirm that threshold-crossing layers, rather than update magnitude, carry the forgetting, and a spike-budget rule derived from the thresholds, requiring one SVD and no validation sweeps, reduces forgetting by $62\\%$ on the most fragile model at no task cost.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Peng Xie"
+  ],
+  "url": "https://arxiv.org/abs/2607.23711",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper aims to predict when intruder dimensions appear during LoRA fine-tuning, which cause catastrophic forgetting. It derives a per-layer critical update strength spectral law from the pretrained weight spectrum alone, locating the empirical threshold within a factor of two on 82% of layers and reducing forgetting by 62%.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23753",
+  "source": "arXiv",
+  "title": "On the post-hoc Evaluation of PDE Discovery: A Multifaceted Challenge of Scientific Advancement",
+  "abstract": "Partial differential equation (PDE) discovery aims to identify from data the governing law of a physical system. Constituting a cornerstone of scientific advancement, it has become during the past decade a major line of research in the rapidly evolving field of Physics-informed Machine Learning (PiML). Among the remaining open problems to address in this domain, the post-hoc evaluation of discovered PDEs raises the particular difficulty of being multifaceted. Indeed, it requires jointly considering predictive accuracy, physical consistency, interpretability, and out-of-distribution generalization capacity. Given that some of these properties are conflicting, it is worth noting that the wide range of existing evaluation metrics only partially address the overall problem, potentially leading to overly interpreted conclusions about the validity of a presumed new physical theory. From an abundant literature spanning machine learning, numerical analysis, information theory or symbolic regression, we propose, to our knowledge, the first taxonomy of PDE evaluation metrics, and discuss their advantages and limitations in depth. Based on the observation that evaluation is often achieved on a case-by-case basis and that a universally accepted methodology remains elusive, we further provide recommendations with the aim of promoting standardized and reliable practices, before sketching promising future lines of research in this field. We argue that this paper is intended both for ML experts who design new PDE discovery algorithms and for users of these methods aiming, in real applications, to discover and validate well-founded scientific laws.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Baptiste Mathevon",
+   "Farah Cherfaoui",
+   "Amaury Habrard",
+   "Marc Sebban"
+  ],
+  "url": "https://arxiv.org/abs/2607.23753",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "The paper addresses the difficulty of post-hoc evaluation of discovered PDEs, which requires joint consideration of predictive accuracy, physical consistency, interpretability, and generalization. It provides the first taxonomy of PDE evaluation metrics from the literature and offers recommendations for standardized practices.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23869",
+  "source": "arXiv",
+  "title": "A Coulomb Particle Model for Learning Kernel Attention in Transformers",
+  "abstract": "Randomized features provide a scalable approximation to kernel machines, but their performance depends strongly on the choice of feature distribution. We propose a particle-based method that learns this distribution by optimizing kernel-target alignment while regularizing particles with a Riesz/Coulomb repulsive potential. The resulting Hamiltonian yields diverse, task-adaptive random features and admits a mean-field description through a McKean--Vlasov equation. We instantiate the method in linearized Transformer attention by learning positive random-feature maps in a first alignment phase, then freezing the kernel and training the remaining network parameters with cross-entropy. Experiments on synthetic classification and sentence-level benchmarks show that learned kernelized attention can improve accuracy, calibration, and robustness for several feature maps while preserving linear-attention inference complexity.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Masoud Badiei Khuzani",
+   "Sharath Honnaiah",
+   "Atiq Islam",
+   "Alex Cozzi",
+   "Abraham Bagherjeiran"
+  ],
+  "url": "https://arxiv.org/abs/2607.23869",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The problem of learning kernel attention in transformers is addressed by proposing a particle-based method that optimizes kernel-target alignment with Coulomb repulsion. The method is grounded in a mean-field description via a McKean–Vlasov equation and is applied to linearized transformer attention.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23940",
+  "source": "arXiv",
+  "title": "Variational Boosting for Physics-Informed Neural Networks",
+  "abstract": "Physics-Informed Neural Networks (PINNs) solve differential equations by minimizing the residual of a nonlinear operator over a neural parameterization of the solution. However, monolithic PINNs often suffer from ill-conditioning, spectral bias, and optimization instability. We introduce a variational boosting framework in which solutions are constructed additively in function space. Each stage trains a weak learner whose converged correction satisfies a local orthogonality condition, equivalent to a projected functional gradient descent step onto the tangent space of the network's function manifold. Because each correction network is deliberately small, the restricted minimization admits full Newton or conjugate gradient updates, which are typically infeasible in large PINNs. The resulting method separates global nonlinear refinement into a sequence of well-conditioned subproblems while preserving the full variational structure of the operator. This framework provides a geometric interpretation of multi-stage PINNs as projected functional gradient descent and enables stable second-order optimization for nonlinear differential equations.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Pavlos Protopapas",
+   "Kaylee Vo"
+  ],
+  "url": "https://arxiv.org/abs/2607.23940",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Monolithic PINNs suffer from ill-conditioning and optimization instability. The paper introduces a variational boosting framework that constructs solutions additively with small weak learners, enabling second-order optimization via projected functional gradient descent.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23967",
+  "source": "arXiv",
+  "title": "Grokking on the Weight-Decay Clock: A Rate Hierarchy from Softly Broken Symmetries",
+  "abstract": "Delayed generalization, or grokking, remains poorly understood despite extensive empirical study. We identify an exactly solvable late-time relaxation mechanism for grokking in linear models trained with full-batch heavy-ball optimization and weight decay, together with a locally quadratic extension to nonlinear neural networks. Our analysis reveals a distinguished population-active component of the empirical null space, which we call the grokking subspace. Along this subspace, the training predictions remain unchanged, leaving weight decay as the sole restoring force and giving rise to a slow dissipative relaxation governed by an exact discrete-time and continuous-time law. We show that only this subspace contributes to the slow asymptotic decay of the population risk and derive explicit iteration-scale predictions for the grokking time, recovering the familiar $(1-\\beta)/(\\eta\\lambda)$ scaling in the weak-regularization regime. The theory further predicts distinct effects of optimizer choice, distinguishing coupled $L_2$ regularization from decoupled weight decay, and yields causal predictions for interventions that modify the grokking component. We verify all theoretical identities without fitted parameters in a synthetic model where every subspace and relaxation rate is computable in closed form. We further observe genuine delayed generalization in modular addition, where the measured delay follows the predicted scaling and the late-time relaxation agrees closely with the theoretical clock.",
+  "categories": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Taeyoung Kim"
+  ],
+  "url": "https://arxiv.org/abs/2607.23967",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The grokking phenomenon in neural networks lacks a theoretical explanation. The paper provides an exact solvable relaxation mechanism for grokking in linear models and a quadratic extension to nonlinear networks, deriving iteration-scale predictions for the grokking time.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24259",
+  "source": "arXiv",
+  "title": "Generative Artificial Intelligence (GenAI) to convert images of queuing networks into verifiable simulation models: an open-weight LLM workflow approach",
+  "abstract": "Recent work has explored the use of Large Language Models (LLMs) to automate simulation model building, typically by generating executable code directly from natural language descriptions. However, this raises challenges for verification and reproducibility particularly for users without programming expertise. We propose Sketch2DES, a sketch-to-simulation workflow that converts diagrammatic representations of queuing networks into verifiable discrete-event simulation models using open-weight LLMs. The workflow has three stages: (1) translation of a diagram into a semi-structured textual description using a multimodal LLM; (2) conversion into schema-validated structured data (JSON) via an LLM with a reflection-based verification loop; and (3) deterministic transformation into an executable simulation model using a software adapter. Intermediate artefacts can therefore be inspected and automatically validated before execution. We evaluate the approach on eight queuing-network diagrams of varying complexity. The workflow achieved high reliability for all stages, and results were statistically indistinguishable from human-coded and analytical benchmarks. Compared to direct code generation, the workflow improves reproducibility, transparency, and verifiability, while reducing the need for programming expertise. Limitations include restricted model scope and dependence on accurate visual interpretation. The results demonstrate the feasibility of structured, workflow-based model generation as a robust foundation for LLM-assisted simulation modelling.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Thomas Monks",
+   "Alison Harper",
+   "Amy Heather",
+   "Navonil Mustafee"
+  ],
+  "url": "https://arxiv.org/abs/2607.24259",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Converting diagrammatic representations of queuing networks into executable simulation models is challenging for non-experts. The paper proposes Sketch2DES, a workflow using open-weight LLMs with a reflection-based verification loop to translate diagrams into validated JSON and then into simulation models, improving reproducibility and reducing the need for programming expertise.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24274",
+  "source": "arXiv",
+  "title": "Physics-Guided Generative AI for Property-Targeted 3D Porous Media Design",
+  "abstract": "Inverse design of three-dimensional porous media is central to applications in filtration, catalysis, energy storage, fuel cells, thermal management, and biomedical scaffolds, but remains challenging because many distinct pore geometries can share similar porosity or permeability while small structural changes can strongly affect transport behaviour. This paper proposes a physics-guided generative AI framework for property-targeted porous media design, combining a property-aware variational autoencoder, a conditional latent diffusion model, and an independently trained differentiable structure-to-property surrogate. The framework learns a compact, physically informative latent design space, generates porous structures conditioned on target porosity and directional permeability, and refines generated samples using property-level feedback during denoising and decoding. Experiments on procedurally generated structures and real micro-CT porous-media datasets show improved target-property matching, directional permeability control, and property correlation compared with representative property-aware variational-autoencoder and latent-diffusion baselines. The results demonstrate a scalable route towards controllable inverse design of complex porous geometries and establish a foundation for simulation-informed generative AI tools in engineering and advanced materials discovery.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Peng Wang"
+  ],
+  "url": "https://arxiv.org/abs/2607.24274",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Inverse design of 3D porous media with target properties is difficult due to the many-to-one mapping between geometry and transport properties. The paper proposes a physics-guided generative AI framework combining a property-aware VAE, conditional latent diffusion, and a differentiable surrogate to generate porous structures conditioned on porosity and permeability, with property-level feedback during denoising.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24305",
+  "source": "arXiv",
+  "title": "Domain-Decomposition Neural Surrogates for Scalable Decentralized Ensemble Kalman Filter Based Parameter Identification in High-Dimensional Stochastic PDEs",
+  "abstract": "Ensemble Kalman filters (EnKF) provide an efficient framework for parameter identification of physics based laws from spatially distributed measurements. Their forecast models require a large number of samples to accurately represent uncertainties, leading to high computational costs. A NN-based surrogate model is introduced to replace the sample-based forecast model. The proposed NN surrogate maps spatial coordinates and physics-based parameters to the forecasted observation. Such maps require a large number of parameters for high-dimensional spatial domains. To overcome this limitation, a augmented Lagrange multiplier domain decomposition method (DDM) is developed, where local NN models are optimized independently before global communication and coupling. This reduces the number of NN parameters while improving local approximation accuracy. Furthermore, a distributed and decentralized ensemble Kalman filter approach based on DDM-NN surrogate model is investigated, where the parameter identification problem is decomposed into local subproblems. Each local estimator updates the material parameters using locally available information, while communication between neighboring subdomains enables the reconstruction of a consistent global estimate to reduce the computational cost. The proposed method is evaluated on a three-dimensional material parameter identification problem and compared with an EnKF and a MCMC reference solution. The results show that the proposed DDM NN-based KF captures the posterior parameter distribution and approaches the solutions obtained with both EnKF and MCMC. While MCMC provides the most accurate representation of the posterior distribution, the proposed approach achieves comparable parameter estimates with reduced computational requirements for the forecast model.",
+  "categories": [
+   "cs.CE"
+  ],
+  "authors": [
+   "Timm G\\\"odde",
+   "Bojana Rosi\\'c"
+  ],
+  "url": "https://arxiv.org/abs/2607.24305",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "uq-inverse-problems"
+  ],
+  "summary": "Ensemble Kalman filter for parameter identification in high-dimensional stochastic PDEs requires many expensive forward model runs. The paper introduces a domain-decomposition neural surrogate that replaces the forecast model, reducing the number of NN parameters while improving local accuracy, and combines it with a decentralized EnKF to reconstruct a consistent global estimate at lower computational cost.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24345",
+  "source": "arXiv",
+  "title": "Perturbative-NeuSA: A Structured Spectral Framework for Time-Dependent PDEs",
+  "abstract": "Neural spectral PDE solvers often learn an entire unresolved vector field even when an inexpensive approximate model can already capture most of the trajectory. Here we introduce Perturbative-NeuSA, a residual formulation that decomposes the target solution into a low-fidelity background and a high-resolution perturbation, so that only the unresolved dynamics is learned. Starting from the exact perturbation equation, the method combines a fixed spectral operator, a background-dependent correction, the background defect in the target PDE, and an optional neural closure. This construction makes the roles of physical structure and neural closure separately measurable. Across 2D Burgers, Klein-Gordon, and heterogeneous 2D wave equations, the deterministic structured solver outperforms the trained NeuSA baseline while requiring no neural-network training. The largest gains occur on Burgers, where the deterministic correction reduces training and extrapolation errors by factors of 24 and 44, respectively. In addition, a Klein-Gordon sweep over seven background resolutions shows that the effect of the closure is conditional: it improves a poor background by 3.6 times, becomes neutral at intermediate resolutions, and degrades a well-resolved background. For the wave equation, however, the closure provides an additional 18% reduction when the remaining residual is interface-localized. Multi-initial-condition diagnostics further show that the useful closure regime depends on the initial-condition spectrum and can disappear in extrapolation when structured correction already captures the dominant Burgers dynamics. Perturbative-NeuSA therefore reframes neural closure as a conditional, diagnosable correction governed by background fidelity, residual organization, and compatibility with the closure model.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Xianli Zhu",
+   "Jia Yin"
+  ],
+  "url": "https://arxiv.org/abs/2607.24345",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The paper introduces a residual formulation for neural spectral PDE solvers that decomposes the solution into a low-fidelity background and a learned perturbation. Only the unresolved dynamics is learned, improving accuracy and interpretability.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24420",
+  "source": "arXiv",
+  "title": "Frequency-Based Reservoir computing",
+  "abstract": "Reservoir computing has emerged as an efficient machine learning framework for predicting time series generated by dynamical systems. In contrast to other machine and deep learning approaches, a reservoir computing trains only the output layer via linear regression, leaving the reservoir (recurrent layer) untrained. This simplification makes reservoir computers easier to train and more amenable to experimentation. However, because current reservoirs consist of networks of randomly connected nodes and require the optimization of numerous hyperparameters, a framework that precisely explains how reservoir computing operates and how it can be optimized remains missing. Here, we propose a frequency-based reservoir inspired by the brain's oscillatory dynamics and its hierarchy of timescales. The frequency-based reservoir can be interpreted as an ensemble of independent oscillatory units, each processing a portion of the input's frequency content. This allows us to understand the reservoir's internal behavior by modeling it as a single unit driven by an external input. Borrowing from the theory of a nonlinear oscillator forced by complex periodic inputs, we found that units of the frequency-based reservoir selectively amplify and store specific input frequencies, which are then used for prediction. The frequency-based reservoir performs as well as or better than equivalent random reservoirs. Furthermore, the frequency-based approach can be optimized to improve short-term prediction, a property that random reservoirs lack. Finally, we show that the frequency-based reservoir can also predict complex spatiotemporal dynamics. Our results show that reservoir computing can be designed using brain properties and theoretical insights borrowed from the physics of forced nonlinear oscillators.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Arthur S Powanwe"
+  ],
+  "url": "https://arxiv.org/abs/2607.24420",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper proposes a frequency-based reservoir computing where each unit processes a portion of the input's frequency content, understood via forced nonlinear oscillator theory. It outperforms random reservoirs and can be optimized for short-term prediction.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24459",
+  "source": "arXiv",
+  "title": "From Execution to Capability: Scientific Experience Consolidation via Procedural Knowledge Synthesis",
+  "abstract": "Large language models increasingly solve scientific-computing tasks, but executable feedback from one problem rarely becomes durable capability on subsequent problems. We study scientific-computing experience consolidation: converting verified runtime experience into transferable procedural knowledge and persistent model improvement. This setting presents two challenges: trajectory-derived artifacts may encode source-specific repairs rather than cross-task computational mechanisms; and a weaker target model may be unable to operationalize an otherwise valid abstract procedure - an abstraction-execution gap. We introduce SciConsolidate, which contrasts verified successes and failures to induce cross-task procedures, selects them through a development-validation gate, and uses failure-informed, answer-free query synthesis to expand the consolidation data without requiring pre-existing reference answers. Because the target model may not directly execute these abstractions, a stronger model concretizes them into executable code supervision for standard, procedure-free SFT; a matched no-procedure teacher branch isolates the value of procedural guidance. On SciCode, runtime procedure injection improves Qwen3.6-27B by +3.85/+6.26 sub-step/main-problem points, but yields almost no aggregate main-problem gain for Qwen3.5-9B, providing operational evidence of the abstraction-execution gap. After procedure-guided concretization, the 9B student improves under procedure-free deployment by +3.89/+6.25 points over the no-procedure SFT control and by +5.62/+11.25 over the original 9B model. These results establish an experience-to-capability pathway for scientific computing and provide a practical starting point for scaling self-improving scientific assistance.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Liwei Dong",
+   "Jiahao Zhao",
+   "Nan Xu"
+  ],
+  "url": "https://arxiv.org/abs/2607.24459",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper studies scientific-computing experience consolidation, converting verified runtime experience into transferable procedural knowledge. It introduces SciConsolidate, which contrasts successes and failures, selects procedures via a development-validation gate, and uses failure-informed query synthesis for consolidation.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24502",
+  "source": "arXiv",
+  "title": "Self-Attention Dynamics with Rotary Position Embeddings: Twisted States and Explicit Consensus Rates on the Sphere",
+  "abstract": "Rotary position embeddings (RoPE) modify attention scores through position-dependent rotations, but their effect on normalized token dynamics is not captured by the vanilla spherical self-attention model. We study the continuous-time dynamics obtained when queries and keys are rotated while values remain on the unit sphere. The resulting attention kernel is reversible and admits a sharp uniform softmax floor, yet the natural RoPE interaction energy has derivatives of both signs within one fixed nontrivial system. Every consensus state remains an equilibrium, and its transverse linearization is a reversible Markov operator whose kernel depends on the consensus point through its energy across RoPE planes. On a resonant single-frequency ring we derive an exact Bessel-aliasing spectrum, including non-coprime frequencies and the correct fixed-ring large-$\\beta$ asymptotics. Globally, closed hemispheres are invariant, while pairwise non-obtuse configurations and strict open semicircles contract with explicit half-angle and single-point tail bounds. These regional estimates instantiate a kernel-generic positivity principle with the sharp RoPE softmax floor. RoPE also selects an explicit score-flattening twisted branch; the generic resonant family is non-hyperbolic and linearly unstable, whereas an odd antipodal family becomes a hyperbolic saddle after quotienting global rotation. In multiple dimensions, the local consensus gap can depend non-monotonically on the allocation of energy across frequency planes, so no universal ordering by frequency is valid. Independent matrix, finite-difference, and nonlinear-flow computations cross-check the theorem boundaries and the reported constants.",
+  "categories": [
+   "math.DS",
+   "cs.LG"
+  ],
+  "authors": [
+   "Hao Ye (Xi'an Institute of Optics",
+   "Precision Mechanics",
+   "Chinese Academy of Sciences",
+   "University of Chinese Academy of Sciences)"
+  ],
+  "url": "https://arxiv.org/abs/2607.24502",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper studies the continuous-time dynamics of self-attention with rotary position embeddings, analyzing equilibrium states, linear stability, and consensus rates on the sphere. It provides explicit estimates on convergence and identifies twisted states.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24513",
+  "source": "arXiv",
+  "title": "Physics Transformer: Tailoring Transformer for General PDE Prediction",
+  "abstract": "Transformer architectures have attracted increasing attention for solving partial differential equations (PDEs), owing to their flexibility in handling irregular discretizations and their ability to capture long-range physical dependencies. However, unlike discrete language tokens or fixed-resolution image patches, observed physical fields are finite samples of underlying infinite-dimensional functions. Consequently, effectively applying Transformers to PDEs requires a tokenizer that respects the functional nature of physical fields and constructs physically expressive tokens from arbitrary discretizations.To this end, we propose \\methodname{Physics Transformer}, a function-projection-based Transformer architecture for physical field prediction. Physics Transformer treats a physical field as a continuous function and partitions its discretization into locality-preserving spatial patches. Within each patch, it dynamically learns a set of adaptive local basis functions and projects the sampled field onto these bases to obtain compact physics tokens. The resulting tokens capture diverse latent physical states while preserving fine-scale spatial structures, enabling efficient global interaction through factorized attention across space and physical states. The projected representation further supports efficient decoding at arbitrary query locations. Extensive experiments on diverse benchmarks, ranging from two-dimensional PDE dynamics to industrial-scale three-dimensional CFD simulations, demonstrate that Physics Transformer accurately captures fine-grained physical structures and achieves state-of-the-art predictive performance. These results establish function projection as a practical and effective foundation for designing Transformer architectures for PDE solving.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Guoze Sun",
+   "Rui Zhang",
+   "Jiankai Tang",
+   "Mengtao Yan",
+   "Runze Mao",
+   "Zhi X. Chen",
+   "Hao Sun"
+  ],
+  "url": "https://arxiv.org/abs/2607.24513",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The Physics Transformer treats physical fields as continuous functions, partitions space into patches, learns adaptive local basis functions to project fields into physics tokens, and uses factorized attention for global interaction. It achieves state-of-the-art on diverse PDE benchmarks.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24562",
+  "source": "arXiv",
+  "title": "Hierarchical Group-Conditional Conformal Risk Control for Selective Prediction in Language Models",
+  "abstract": "Large language models serve heterogeneous populations structured by domain, topic difficulty, and linguistic style. Conformal risk control (CRC) gives rigorous marginal risk guarantees for selective prediction with abstention, but marginal guarantees do not imply per-group ones: a model can meet the population budget while systematically over-exposing subgroups to errors. Under mild shift in group composition, standard CRC violates the budget in up to 47% of trials. We propose HG-CRC (Hierarchical Group-Conditional CRC), a post-hoc calibration framework enforcing simultaneous risk guarantees across all nodes of a user-defined group hierarchy. It applies a Bonferroni correction over nodes and a leaf-first policy that uses the most specific applicable threshold, falling back to coarser nodes when a finer one is uncertified or rejects the example. It needs only a held-out calibration set, with no retraining. We evaluate on three models (Qwen3-4B, Llama-3.1-8B-Instruct, Gemma-3-4B) and two benchmarks (ARC Challenge, MMLU-Pro) across eight configurations probing IID generalization, heterogeneity, mixture/domain/prompt/difficulty shift, label noise, and quantization. Main result: HG-CRC reaches an empirical 0% violation rate and WGER=0 on ARC Challenge for high-accuracy models (Qwen3-4B, Llama-3.1-8B). At 500 bootstrap trials these zeros are empirical upper bounds (true rate up to 0.6%), not certified. Results are benchmark-specific: on MMLU-Pro these models abstain entirely or (Llama) retain WGER=0.014. Gemma-3-4B, poorly calibrated here, degrades gracefully by abstaining. Participation cost vs. global CRC is 22 to 37 points. Ablations show hierarchical depth clears the budget: removing difficulty level returns violations to about 11%. Bonferroni is needed for the theoretical guarantee, though its empirical effect matters only with many nodes.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Murilo Salem",
+   "Lu\\'isa B\\\"ohm",
+   "Daniel Pontes",
+   "Anderson Ferrugem"
+  ],
+  "url": "https://arxiv.org/abs/2607.24562",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Provides group-conditional risk guarantees for selective prediction in LLMs. Proposes HG-CRC, a post-hoc calibration framework using Bonferroni correction and hierarchical thresholds.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24569",
+  "source": "arXiv",
+  "title": "The balance between compactness and forecast accuracy of data-driven latent-space reduced-order models in controlled wake flows",
+  "abstract": "Model-based active flow control requires predictive models that are accurate, stable, and fast enough for real-time optimisation. In controlled wake flows, this is often achieved through Reduced-Order Models (ROMs) that first compress high-dimensional velocity snapshots into a latent space and then learn a time- stepping predictor for the dynamics in the latent space. Here, we study how the choice of the spatial encoder affects the predictability of the resulting latent coordinates for wake flows under control inputs. Using two actuated 2D wake configurations, a simplified truck wake and the fluidic pinball, we compare Proper Orthogonal Decomposition (POD) against nonlinear Convolutional Autoencoders (CAEs) and two types of variational autoencoders for compression, and evaluate several temporal predictors based on Long Short-Term Memory networks. CAEs achieve higher compression efficiency and sharper short-term reconstructions, but they produce latent dynamics that are more irregular and with broadband spectral content. As a consequence, long-horizon forecasts degrade faster and show a higher probability of catastrophic divergence than POD-based models. POD yields smoother latent trajectories that are easier to learn and extrapolate, leading to more reliable predictions beyond the short- term regime. These results reveal a clear trade-off between compactness and forecast accuracy, and suggest that the stability of the latent dynamics prediction can outweigh maximal compression. This is particularly relevant for control strategies rooted in forecasts of the dynamics, such as model predictive control and reinforcement learning. The findings provide practical guidance for designing actuation-aware, hardware-feasible predictive ROMs for real-time flow control.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.LG"
+  ],
+  "authors": [
+   "Alberto Solera-Rico",
+   "Patricia Garc\\'ia-Caspue\\~nas",
+   "Carlos Sanmiguel Vila",
+   "Stefano Discetti"
+  ],
+  "url": "https://arxiv.org/abs/2607.24569",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Investigates the trade-off between compression and forecast accuracy in reduced-order models for controlled wake flows. Compares POD against convolutional autoencoders and finds that POD yields more predictable latent dynamics for long-horizon forecasting.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24572",
+  "source": "arXiv",
+  "title": "Tikhonov-Regularized Physics-Informed Neural Networks for Terminal-State Distributed Optimal Control of Parabolic Partial Differential Equations",
+  "abstract": "In this study, we propose a Physics-Informed Neural Networks (PINNs) framework that incorporates Tikhonov regularization to solve terminal-state tracking optimal control constrained by parabolic partial differential equations (PDEs). This problem is inherently ill-posed, as infinitely many distributed controls may drive the system to the same desired state, so the regularization guides the optimizer toward the minimum-energy control, restoring numerical stability and yielding a smooth, physically meaningful solution. On the theoretical side, we establish a consistency result showing that PINNs minimizers nearly attain the continuous regularized objective under residual and quadrature approximation assumptions, and a novel error estimate that bounds the deviation of the learned control from the minimum-energy solution in terms of the PINNs training residuals and the regularization parameter. Numerical experiments on the linear heat equation and the nonlinear Burgers'equation demonstrate that the regularized PINNs framework accurately achieves the target terminal state while producing controls with significantly lower energy and smoother profiles compared to unregularized baselines.",
+  "categories": [
+   "math.AP"
+  ],
+  "authors": [
+   "Nguyen Thanh Quang",
+   "Ta Thi Thanh Mai"
+  ],
+  "url": "https://arxiv.org/abs/2607.24572",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Addresses the ill-posedness of terminal-state optimal control for parabolic PDEs. Proposes Tikhonov-regularized PINNs with consistency and error estimates, showing smoother and lower-energy controls.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24586",
+  "source": "arXiv",
+  "title": "D-Score: A Spectral Hidden-State Signal for Hallucination Detection in Large Language Models",
+  "abstract": "Large Language Models can produce fluent text that is false, unsupported by the available evidence, or inconsistent with information that appears to be internally represented by the model. We study hallucination detection from the geometry of hidden activations and introduce the D-Score, a simple spectral statistic computed from a single forward pass. For a fixed model, layer, and tolerance parameter, the D-Score counts how many singular directions of the hidden activation matrix have singular values that remain close to the leading one. We use this quantity as a hallucination score, classifying an input text as hallucinated when its D-Score is larger than a pre-defined quantity. The motivation is that, when a model processes a text that conflicts with information available in its own internal state, the hidden representation may encode both the asserted content and some form of counter-evidence, uncertainty, correction, or lack of support; this can make the hidden trajectory spread across additional singular directions. We formalize this intuition through a lightweight spectral argument and evaluate the resulting detector on FAVA-Annotation and RAGTruth. The experiments indicate that the D-Score is a strong hidden-state signal for hallucination detection, while requiring no external verifier, no retrieval step, and no multiple generations.",
+  "categories": [
+   "cs.CL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Bianca Raimondi",
+   "Davide Evangelista",
+   "Maurizio Gabbrielli",
+   "Elena Loli Piccolomini"
+  ],
+  "url": "https://arxiv.org/abs/2607.24586",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Introduces the D-Score, a spectral statistic from a single forward pass for hallucination detection. Shows that hidden activations spread across singular directions when processing conflicting information.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24696",
+  "source": "arXiv",
+  "title": "Long-time Stability and Convergence of Particle Swarm Optimization",
+  "abstract": "Particle Swarm Optimization (PSO) is a global optimization algorithm defined by an interacting set of particles evolving over the search space. Heuristically motivated, its theoretical analysis remains limited due to the second-order, stochastic, and highly nonlinear nature of the dynamics. In this paper, we connect classical PSO stability analysis under the stagnation assumption with more recent mean-field methods, providing new quantitative estimates for the time-discrete algorithm. We study in particular a regularized PSO model without memory, with non-degenerate noise by adding a noise floor to the original model. Studying such a surrogate model allows us to identify quantitative conditions under which the dynamics is stable and converges toward a small neighborhood of a global minimizer. We do so by first studying the Schur stability of the linearized dynamics, then analyzing the convergence properties of a nonlinear mean-field system via a Laplace principle, and finally establishing a quantitative error bound for the mean-field approximation of order $N^{-1/2}$.",
+  "categories": [
+   "math.OC",
+   "math.DS"
+  ],
+  "authors": [
+   "Giacomo Borghi",
+   "Hui Huang",
+   "Dohyeon Kim"
+  ],
+  "url": "https://arxiv.org/abs/2607.24696",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Provides stability and convergence analysis of Particle Swarm Optimization using mean-field methods. Derives quantitative error bounds for the mean-field approximation and convergence to a global minimizer.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24726",
+  "source": "arXiv",
+  "title": "Global Convergence of DGM and PINN Algorithms for Solving Nonlinear PDEs",
+  "abstract": "The Deep Galerkin Method (DGM) and Physics Informed Neural Networks (PINNs) have become widely-used methods for solving partial differential equations (PDEs) in the rapidly growing field of scientific machine learning. In these methods, a neural network is trained to approximate the PDE solution by using (stochastic) gradient descent to minimize the PDE residual of the neural network. Due to the non-convexity of the PDE residual objective function, the trained neural network may, in principle, only converge to a local minimizer of the objective function (which would not be a solution of the PDE). Therefore, there is a longstanding question regarding the mathematical foundations of these algorithms, and it is highly valuable to establish that the trained neural network will converge to the PDE solution. For a class of semi-linear PDEs (nonlinear in the solution and its first derivative), we prove that neural networks trained with gradient descent to minimize the PDE residual objective function will converge to the PDE solution.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Justin Sirignano",
+   "Konstantinos Spiliopoulos",
+   "Samuel Cohen"
+  ],
+  "url": "https://arxiv.org/abs/2607.24726",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Proves global convergence of DGM and PINN algorithms for semi-linear PDEs. Shows that gradient descent on the PDE residual objective converges to the PDE solution.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22704",
+  "source": "arXiv",
+  "title": "Visible-Light Imaging Diagnosis of Neutral Particle Emission Tomography in the Tokamak Divertor: An Efficient Transformer-based Surrogate Model",
+  "abstract": "Nuclear fusion has made significant progress in recent years and is expected to become one of the most important pathways to addressing global energy challenges. This paper focuses on observing plasma using visible-light cameras, analyzing its spatio-temporal motion cues, and predicting the two-dimensional spatial distribution of light intensity, aiming to provide a foundational basis for future scientific experiments using deep neural networks. Specifically, we propose Delta-InvFormer, a novel backbone network centered on a differential Transformer. The key insight is that by taking consecutive video frames as input, we can better capture the dynamics of the plasma. Moreover, spatial and temporal differential self-attention effectively mitigates interference from noisy signals, ensuring high-quality feature extraction. These features are then fused into a compact and informative representation, which is fed into a decoder network to predict the distribution. Based on real experimental data collected from the Experimental Advanced Superconducting Tokamak (EAST) large-scale scientific facility, our results demonstrate that the proposed model not only significantly accelerates traditional methods for distribution prediction but also achieves competitive reconstruction accuracy. The source code of this paper will be released on https://github.com/Event-AHU/OpenFusion",
+  "categories": [
+   "cs.CV",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Xiao Wang",
+   "Hao Si",
+   "Qiang Chen",
+   "Yu-Xiang Zhang",
+   "Beihe Zhang",
+   "Jianhua Yang",
+   "Qingquan Yang",
+   "Dengdi Sun",
+   "Wanli Lyu",
+   "Guosheng Xu",
+   "Jin Tang"
+  ],
+  "url": "https://arxiv.org/abs/2607.22704",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The paper addresses the problem of predicting 2D light intensity distribution from plasma video in tokamaks for fusion diagnostics. It proposes Delta-InvFormer, a transformer backbone with spatial and temporal differential self-attention to capture dynamics and reduce noise, achieving fast and accurate surrogate modeling.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22758",
+  "source": "arXiv",
+  "title": "Spectral Dynamics of Semantic Drift in Clinical Multi-Agent Language Model Networks",
+  "abstract": "The integration of iterative LLMs within multi-agent diagnostic frameworks requires a rigorous quantitative reevaluation of underlying communication topologies. Frequently used architectural paradigms depend on scale-free or small-world networks, assuming optimal communication efficiency. Our study mathematically dismantles that assumption for semantic data. By mapping multi-agent communication uncertainty trajectories onto a 768-dimensional Bio_ClinicalBERT embedding space via an analytical isotropic variance proxy using Barab'asi--Albert (BA) and Watts--Strogatz (WS) networks, we prove that structural bottlenecks compromise diagnostic safety. Our phase transition matrices illustrate that localized dense cliques confine hallucinated data, preventing global consensus and forcing the system toward a permanent entropy saturation threshold of $H_{\\infty} \\approx 5.947$. As a result, we measure a severe terminal cosine similarity degradation of 53.29%, completely overwriting the original ground-truth. Moreover, the terminal semantic drift reveals a catastrophic variance amplification of 51.81% ($\\rho = 1.5181$) in highly clustered architectures, proving total system unpredictability when compared to Erd\\H{o}s--R'enyi configurations ($\\rho = 1.0766$). Instead of reducing errors, hub-centric systems autonomously compound localized hallucinations. By introducing dynamic spectral monitoring operating at an $\\mathcal{O}(N^3)$ time complexity and imposing a strict lower bound on algebraic connectivity ($\\lambda_{2_{min}}$) via the continuous eigen-decomposition of the graph Laplacian, we present a mathematically rigorous technique to ensure global state diffusion. Securing the reliability of autonomous medical diagnostics necessitates treating topological stability as a non-negotiable quantitative imperative.",
+  "categories": [
+   "cs.MA",
+   "cs.AI"
+  ],
+  "authors": [
+   "Amritesh Banerjee"
+  ],
+  "url": "https://arxiv.org/abs/2607.22758",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper investigates how communication topology affects semantic drift and hallucination propagation in clinical multi-agent LLM networks. It proves that hub-centric systems compound localized hallucinations and proposes dynamic spectral monitoring with algebraic connectivity bounds to ensure global state diffusion.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.22824",
+  "source": "arXiv",
+  "title": "Agentic Autoresearch for CT Reconstruction",
+  "abstract": "Comparing CT reconstruction methods fairly is labor-intensive and largely manual, and many benchmarks use idealized data. We ask whether a large language model (LLM) agent can do the labor of reconstruction research on its own, and whether a ranking measured on ideal data predicts behavior under realistic noise. We built an agentic loop: the agent edits a solver, runs a short cluster job, reads one frozen metric, and revises. The metric is a calibrated headroom score against the FBP baseline, inside the field of view; every method shares the same differentiable fan-beam projector. We benchmarked 26 methods on Mayo low-dose CT (noise-limited) and a 128-view sparse-view breast task from the noiseless DL-Sparse-View Challenge, with validation-selected iterations scored on a held-out test set. Every trained breast model was then re-scored on noisy inputs (I_0 = 10^5 photons) without retraining, and separately retrained on matched noise. The agent independently implemented, tuned, and benchmarked all 26 methods, and recombined them into a compact solver of 969 parameters that ties the top Mayo tier at the 1% level using 0.4% of the champion's parameters. Benchmarking gives a tier of statistically indistinguishable top methods, not one winner. Mild input noise nearly inverts the breast ranking: the noiseless champion (a supervised image denoiser, hr 0.89) collapses to 0.00, while a learned primal-dual method rises to champion (0.72 to 0.93). An ideal-data leaderboard therefore does not predict robustness. The inversion is a transfer effect, not a permanent deficit: retraining on matched noise restores much of the clean ranking (Spearman rho 0.04 to 0.61). Noise is only the easiest confounder in an open-ended set (beam hardening, scatter, anatomy, disease), so no single-factor challenge certifies generality. Benchmarks should model a broad spectrum of realistic factors at once.",
+  "categories": [
+   "physics.med-ph",
+   "cs.AI",
+   "cs.CV"
+  ],
+  "authors": [
+   "Andreas Maier",
+   "Lucas Kachelriess",
+   "Siming Bayer",
+   "Yixing Huang",
+   "Yan Xia",
+   "Amber Simpson",
+   "Moritz Zaiss"
+  ],
+  "url": "https://arxiv.org/abs/2607.22824",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper explores whether an LLM agent can automate the comparison of CT reconstruction methods. It develops an agentic loop that implements, tunes, and benchmarks 26 methods, revealing that rankings on ideal data do not predict robustness to noise.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23202",
+  "source": "arXiv",
+  "title": "jaxdae: A JAX-native Differentiable Solver for Differential-Algebraic Equations in Coupled Multi-physics",
+  "abstract": "Many engineered models begin as partial differential equations. Spatial discretization converts them into ordinary differential equations coupled to algebraic constraints---conservation closures, constitutive laws, network topology---whose joint evolution is a differential-algebraic equation (DAE). Parameter inversion, uncertainty quantification, Bayesian inference, and optimal control all require gradients of this solve. The two software traditions that should supply them have not met: industrial acausal modeling tools simulate DAEs forward but stop at reverse-mode differentiation, while differentiable-physics frameworks in JAX handle explicit ODEs and PDEs but leave the algebraic-constraint layer untouched. Here we show that the forward DAE solve and its reverse-mode sensitivity can be unified in one JAX-native suite. jaxdae pairs adaptive BDF, Radau, and Rosenbrock integration with Pantelides index reduction and dummy derivatives, and makes the adaptive BDF path differentiable by freezing the accepted step grid and re-solving a variable-step BDF-2 on it for the backward pass. The full pipeline differentiates under one $\\texttt{jax.grad}$ call, XLA fuses a batched parameter sweep into one program whose wall time stays nearly flat from batch~1 to~1000, and the DAE becomes a differentiable primitive for inference, control, and design.",
+  "categories": [
+   "cs.MS",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Chengyuan Li",
+   "Shanfang Huang",
+   "Jian Deng"
+  ],
+  "url": "https://arxiv.org/abs/2607.23202",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Differentiable solvers for differential-algebraic equations (DAEs) are needed for parameter inversion, UQ, and optimal control, but existing frameworks do not handle algebraic constraints in reverse mode. The paper presents jaxdae, a JAX-native differentiable DAE solver that uses adaptive BDF, Radau, and Rosenbrock integration with Pantelides index reduction and makes the adaptive BDF path differentiable by freezing its step grid for the backward pass.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23437",
+  "source": "arXiv",
+  "title": "Neural Representation of Minimal Surfaces",
+  "abstract": "We propose a neural representation for minimal surfaces. Unlike prior approaches based on discretization or Physics-Informed Neural Networks (PINNs), where meshes or neural fields are optimized to approximate the governing equations, our method builds on an exact representation, similar to the classical Weierstrass--Enneper parameterization, yielding minimal surfaces up to negligible quadrature error in evaluation. We formulate a training objective for the Plateau problem that optimizes over this representation.",
+  "categories": [
+   "cs.GR",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jiayin Sun",
+   "Albert Chern"
+  ],
+  "url": "https://arxiv.org/abs/2607.23437",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Minimal surfaces satisfying the Plateau problem are classically represented via the Weierstrass–Enneper parameterization or discretized PINNs with approximation error. The paper introduces a neural representation that directly parameterizes minimal surfaces using an exact representation akin to Weierstrass–Enneper, yielding solutions with only quadrature error by optimizing a training objective over this representation.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.23983",
+  "source": "arXiv",
+  "title": "HydroAgent: Formalizing Forecaster Expertise into Skill-Orchestrated Flood Forecasting Workflows",
+  "abstract": "Operational flood forecasting depends on tacit forecaster expertise that is difficult to formalize, audit, and transfer. Although artificial intelligence methods have advanced flood prediction and model-error correction, most existing studies have not explicitly represented the tacit expert rules, review checkpoints, and workflow constraints that connect model outputs to operational warning decisions. To address this issue, we propose HydroAgent, a skill-orchestrated agent framework that embeds Large Language Models (LLMs) into a model-driven flood forecasting workflow, where each skill encodes explicit rules to bound LLM reasoning. We validated its effectiveness using five state-of-the-art LLMs in the South Yamhill River basin. Our results demonstrate that prior judgment captures observed peak flow and flood volume within 5% tolerance in 10 and 11 out of 14 events, with 5-fold cross-validation over 129 events yielding Pearson correlations of 0.62 and 0.84. Building on a high-baseline scheme library (average KGE 0.890), the guided scheme selection further improves KGE by 0.023-0.154, with simulated peak flow and flood volume falling within the prior judgment ranges for 14 and 13 out of 14 events. All five tested LLMs successfully execute the HydroAgent workflow with comparable judgment accuracy (40%-80%), while showing moderate performance variation and substantial cost differences. HydroAgent does not aim to replace human forecasters; instead, it translates their tacit expertise into an auditable and reproducible workflow, streamlining analytical steps and supporting more informed decision-making. This skill-orchestrated paradigm demonstrates how explicit rule boundaries can guide language model reasoning to complement physically based simulation in next-generation flood forecasting.",
+  "categories": [
+   "physics.geo-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Qingyi Yang",
+   "Siqian Qiu",
+   "Bing Li",
+   "Xu Shan",
+   "Jia Feng",
+   "Shunan Zhou",
+   "Xudong Zhou",
+   "Tiantian Xing",
+   "Jiale Guo",
+   "Xiaoyi Dong",
+   "Gaoyu Liu",
+   "Xiaohuan Liu",
+   "Haiqing Pu",
+   "Qingwen Deng",
+   "Xun Zhang",
+   "Zhongrun Xiang",
+   "Haiyang Qian",
+   "Ying Yan",
+   "Yongkang Xu",
+   "Nuo Lei",
+   "Tianlong Jia",
+   "Baoying Shan",
+   "Carlo De Michele"
+  ],
+  "url": "https://arxiv.org/abs/2607.23983",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "It addresses the challenge of formalizing tacit forecaster expertise in operational flood forecasting. The paper proposes HydroAgent, a skill-orchestrated LLM agent framework that embeds explicit rule boundaries into a model-driven workflow to guide reasoning and support decision-making.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24051",
+  "source": "arXiv",
+  "title": "HELIOS: An LLM-Driven Autonomous Indirect Trajectory Optimization Agent",
+  "abstract": "Low-thrust trajectory optimization is a core technology in deep-space mission design. Indirect methods based on Pontryagin's Minimum Principle (PMP) offer rigorous optimality guarantees, yet their practical application faces three bottlenecks: (1) transversality conditions must be derived case by case for each constraint type; (2) different dynamics models require repeated code rewrites; and (3) shooting equations are highly sensitive to initial guesses. This paper presents HELIOS (Heuristic Engine for Low-thrust Interplanetary Optimization System), a trajectory optimization agent built around a large language model (LLM). Given a physical problem described in natural language, the system autonomously performs PMP symbolic derivation, SymPy verification, C++ shooting-code generation, and numerical solution without human intervention. Key innovations include: (1) a constraint-adaptive derivation framework that unifies arbitrary constraints into psi(x,p)=0 form and automatically generates stationarity conditions for free parameters (e.g., gravity-assist turning angle); (2) dynamics-adaptive four-module code generation supporting non-standard dynamics (solar sail, J2 perturbation) without modifying the underlying template; and (3) a general derivation rule set covering critical error-prone points in PMP derivation. Experiments on 11 progressive test scenarios show that HELIOS correctly derives and solves problems from simple rendezvous (8 variables) to multi-leg stay transfers (48 variables), gravity-assist trajectories (17 variables), and solar-sail minimum-time transfers (8 variables). The best compilation success rate reaches 100% (11/11). A multi-model comparison (8 open-source LLM backends, total scores 250-905) verifies the model-agnostic architecture and reveals a positive correlation between model scale and derivation capability.",
+  "categories": [
+   "astro-ph.IM",
+   "cs.AI",
+   "cs.RO"
+  ],
+  "authors": [
+   "An-yi Huang"
+  ],
+  "url": "https://arxiv.org/abs/2607.24051",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "It tackles the three bottlenecks of indirect trajectory optimization methods. The paper presents HELIOS, an LLM-driven agent that autonomously performs PMP symbolic derivation, code generation, and numerical solution for low-thrust trajectory optimization.",
+  "added": "2026-07-28"
+ },
+ {
+  "id": "arxiv:2607.24304",
+  "source": "arXiv",
+  "title": "Teacher Knows It Best: Spontaneous Symmetry Breaking and Tipping Points in Networked Langevin Dynamics AI Sycophancy",
+  "abstract": "We formulate a statistical physics framework to model a networked stochastic dynamical system exhibiting bistability, driven by additive noise and social conformity. We apply this model to understand and mitigate AI-induced delusional spiraling-a phenomenon where algorithmic sycophancy from Large Language Models continuously reinforces inaccurate beliefs within a socially interacting society. By partitioning the network into a majority of regular agents and a minority of \"aware\" nodes (Teachers) placed at topological hubs, we use a degree-weighted mean-field approximation to reduce high-dimensional coupled Langevin equations into a single macroscopic drift equation. We provide a closed-form analytical derivation for the deterministic critical tipping time through a saddle-node bifurcation. We validate this analytical boundary using finite-size scaling and demonstrate a universal data collapse across diverse network topologies. Finally, we optimize an intervention strategy under a strict budget constraint that balances the topological footprint against driving velocity. We prove mathematically that under certain conditions, a highly concentrated, rapid intervention targeting massive hubs strictly outperforms a distributed, slow approach to rescue the network.",
+  "categories": [
+   "physics.soc-ph",
+   "cs.AI",
+   "math.DS"
+  ],
+  "authors": [
+   "Sayantari Ghosh",
+   "Saumik Bhattacharya",
+   "Partha Pratim Chakrabarti"
+  ],
+  "url": "https://arxiv.org/abs/2607.24304",
+  "published": "2026-07-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It models AI-induced sycophancy as a networked stochastic dynamical system exhibiting bistability. The paper develops a statistical physics framework with Langevin equations and mean-field approximation to derive critical tipping times and optimize intervention strategies.",
+  "added": "2026-07-28"
  }
 ]
