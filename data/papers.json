@@ -56004,5 +56004,500 @@
   ],
   "summary": "The paper addresses the difficulty of comparing data-assimilation algorithms across simulations due to incompatible codebases and limited differentiability support. It introduces ADDA, a PyTorch framework with first-class parallel processing and automatic differentiation, providing base classes for dynamical systems and observation operators plus 10 differentiable dynamical-system implementations.",
   "added": "2026-08-25"
+ },
+ {
+  "id": "arxiv:2608.23570",
+  "source": "arXiv",
+  "title": "Taming Visual Neglect: A Variational Information Bottleneck Framework for Adaptive Attention in Multimodal In-Context Learning",
+  "abstract": "Large vision-language models exhibit strong in-context learning (ICL) capabilities, yet when and why visual context helps multimodal ICL remains poorly understood. Empirical studies show a puzzling dichotomy: models sometimes effectively leverage visual demonstrations, yet often neglect them entirely. We propose VIB-ICL, an information-theoretic framework that resolves this dichotomy through the Information Bottleneck principle. We introduce the Cross-Modal Information Gain (CMIG), which quantifies the additional mutual information that visual context provides about the target beyond textual context. We derive a generalization bound showing that multimodal ICL's excess risk over text-only ICL is governed by the CMIG, proving that multimodal ICL provably outperforms text-only ICL when visual information is non-redundant. We further prove that visual context neglect, often viewed as a failure mode, is the Information Bottleneck-optimal solution when visual information is redundant, yielding a closed-form Attention Reallocation Principle that prescribes how visual attention weights should be adaptively adjusted. We instantiate this principle in the VIB-ICL algorithm, which estimates CMIG via variational bounds and dynamically reallocates attention. Experiments on five benchmarks demonstrate consistent improvements of up to 4.7\\% accuracy gains and 35\\% reduction in required demonstrations, validating our theoretical predictions.",
+  "categories": [
+   "cs.CL"
+  ],
+  "authors": [
+   "Kaito Tanaka",
+   "Yuji Nishimura",
+   "Keisuke Matsuda",
+   "Aya Nakayama"
+  ],
+  "url": "https://arxiv.org/abs/2608.23570",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks when visual context helps multimodal in-context learning and why models sometimes neglect it. It introduces VIB-ICL, an information-bottleneck framework with a cross-modal information gain (CMIG) generalization bound and an attention-reallocation principle prescribing when visual attention should be adjusted.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23571",
+  "source": "arXiv",
+  "title": "Equivariant Cellular Sheaves for Molecular Electronic Structure: Bridging Sheaf Cohomology and E(3)-Equivariant Hamiltonian Learning",
+  "abstract": "Equivariant message-passing networks are the standard model for molecular property and interatomic-potential prediction, and recent work predicts the electronic Hamiltonian itself in an E(3)-equivariant way. Separately, topological deep learning has extended graph networks to cellular sheaves. Our central observation is structural: in a localized atomic-orbital basis, the molecular single-particle Hamiltonian, after a constant shift that makes it positive semidefinite, is the Laplacian of a cellular sheaf on a regular cell complex built from the molecule. Making the restriction maps O(3)-steerable two-center kernels from bond geometry recovers the Slater-Koster form as a special case and yields an E(3)- and permutation-equivariant operator. Three consequences follow. First, the zeroth sheaf cohomology H^0 = ker L is a topological invariant equal to the non-bonding (zero-mode) orbitals, recovering the classical alternant non-bonding-orbital count as a lower bound. Second, the Hodge 1-Laplacian lets higher cells (rings) carry cycle and delocalization information through H^1. Third, the model strictly generalizes E(3)-equivariant message-passing networks and CW networks, and inherits the anti-oversmoothing of non-trivial sheaf diffusion. We prove equivariance, expressivity, and cohomological-correspondence results for the Equivariant Cellular Sheaf Networks, and validate them numerically: the Hamiltonian-to-sheaf embedding is exact to machine precision, the cohomology dimension reproduces non-bonding-orbital counts across eleven conjugated molecules, the sheaf Laplacian is O(3)-equivariant to machine precision, and the equivariant model attains lower error and rotation generalization on a directional electronic target. Our contribution is this sheaf-theoretic formalization and its invariants, not equivariant Hamiltonian prediction itself.",
+  "categories": [
+   "cs.LG",
+   "physics.chem-ph"
+  ],
+  "authors": [
+   "Krishna Harish"
+  ],
+  "url": "https://arxiv.org/abs/2608.23571",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper asks how the electronic Hamiltonian of a molecule can be given a topological/geometric structure for equivariant learning. It proves that the localized molecular Hamiltonian is the Laplacian of a cellular sheaf, and introduces Equivariant Cellular Sheaf Networks whose sheaf Laplacian yields cohomological invariants and generalizes E(3)-equivariant message passing.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23622",
+  "source": "arXiv",
+  "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
+  "abstract": "Large language models (LLMs) have shown strong capabilities in reasoning, planning, and tool use, but many scientific and engineering tasks require more than plausible text and code generation. They require understanding how a system responds to intervention, which in practice depends on controlled experimentation. In this work, we propose a multi-agent framework that enables LLM agents to conduct controlled experiments with scientific simulation models for pharmaceutical process design. Given a user query and a baseline configuration, the system constructs a structured task representation, designs experiments, executes comparative simulation, interprets the resulting outcomes, and synthesizes evidence-based recommendations for process parameter optimization. By coupling language models with high-fidelity simulation models in an interactive agent framework, the proposed system supports reasoning through intervention, comparison, and observation. As a result, it produces more specific and actionable outputs than language-only reasoning. In an industrial application setting, this advantage is reflected in higher output specificity as well as improved user-rated correctness and helpfulness. Ablation studies and visualized case analyses further demonstrate the effectiveness and practical utility of simulation-integrated experimental reasoning.",
+  "categories": [
+   "cs.AI",
+   "cs.CL",
+   "cs.MA",
+   "cs.SE"
+  ],
+  "authors": [
+   "Yuchen Xia",
+   "Michael Weyrich",
+   "Nasser Jazdi",
+   "Johannes St\\\"umpfle",
+   "Johannes Sigel",
+   "Akshay Narla",
+   "Gavin K. Reynolds",
+   "Anna Jawor-Baczynska",
+   "Pol Llopart"
+  ],
+  "url": "https://arxiv.org/abs/2608.23622",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper asks how LLM agents can reason about interventions in engineering systems rather than only generating text. It proposes a multi-agent framework that constructs task representations, designs and executes controlled experiments with high-fidelity simulation models, and synthesizes evidence-based parameter recommendations.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23659",
+  "source": "arXiv",
+  "title": "Relative formalization in Isabelle/HOL of a result in inverse problems",
+  "abstract": "This reports on an experiment in autoformalization of arxiv:2606.15977, an inverse problems result for piecewise polynomial anisotropic conductivities, using Isabelle/HOL. The proof of the result is relative to a number of external results which were deemed to be well known and generally accepted to be true. The formalization files are made available at a GitHub repository. Translation issues are discussed.",
+  "categories": [
+   "math.AP"
+  ],
+  "authors": [
+   "C\\u{a}t\\u{a}lin I. C\\^{a}rstea"
+  ],
+  "url": "https://arxiv.org/abs/2608.23659",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper asks whether a result in inverse problems (piecewise polynomial anisotropic conductivities) can be autoformalized in a proof assistant. It reports a relative formalization in Isabelle/HOL, making files available and discussing translation issues.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23696",
+  "source": "arXiv",
+  "title": "Renormalization Group Flow Matching for Scalable Local Generative Modeling",
+  "abstract": "Despite their remarkable success in modeling complex data, generative models face a fundamental tradeoff. Global approaches can capture full structural coherence but suffer from high computational costs, while local models are efficient but often fail to reproduce long-range correlations and global coherence. The renormalization group (RG) bridges this gap by seamlessly connecting spatial structures across different length scales, retaining quasi-local descriptions at each step while preserving long-range correlations. We introduce renormalization group flow matching (RGFM), a generative framework that systematically structures data generation across different spatial scales. By using an exact RG flow as the probability path, RGFM progressively generates data from long- to short-wavelength structures. To reconcile scalability with global structure, we exploit two key properties of the RG: quasi-locality and scale separation. We rigorously show that the RGFM probability flow can be accurately approximated by local velocity fields acting over a spatial range $O(\\Lambda^{-1}[\\ln L+\\ln(1/\\varepsilon)])$ for RG wavenumber scale $\\Lambda$, linear system size $L$, and prescribed error tolerance $\\varepsilon$. This property enables local generative modeling with patches of size $O(\\ln L)$ and a computational cost that scales nearly linearly with the system volume. We numerically demonstrate that local RGFM reproduces long-range correlations far beyond its receptive field in representative one-dimensional distributions, while conventional local flow matching exhibits substantial errors at long distances. On FFHQ images, RGFM yields far more coherent and higher-quality samples than local flow matching at 64x64 and 256x256. Our results establish RG-guided probability flows as a promising route toward scalable generative modeling that captures long-range structure using only local computation.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.stat-mech"
+  ],
+  "authors": [
+   "Kanta Masuki",
+   "Yuto Ashida"
+  ],
+  "url": "https://arxiv.org/abs/2608.23696",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper asks how generative models can achieve global coherence with local computational cost. It introduces renormalization group flow matching (RGFM), which uses an exact RG flow as the probability path, proves a locality bound on the required velocity-field range, and shows near-linear scaling while reproducing long-range correlations.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23725",
+  "source": "arXiv",
+  "title": "Response Renormalization for Critical Deep Equilibrium Models",
+  "abstract": "Deep Equilibrium Models (DEQs) compute predictions from a hidden representation unchanged by the model update. Training through this equilibrium uses implicit differentiation and requires solving an adjoint system built from the residual Jacobian. If this Jacobian is nearly singular along loss-sensitive directions, small perturbations can be strongly amplified in the adjoint response, producing large, highly sensitive gradients that can make optimization unreliable. We introduce Response Renormalization, a backward-pass framework that lifts selected near-pole denominators while leaving unlifted response channels unchanged. Collective Mode Response Renormalization (CMR) applies this correction in a low-dimensional critical subspace, while Phi-adaptive CMR computes a bounded response mass from a positive susceptibility rule. We derive dense and matrix-free collective formulations, distinguish exact gradients of a modified frozen-anchor residual from backward-response surrogates, and extend the construction to Structured Implicit Layers and Vector Attractors (SILVA). Across 23 multiphysics families spanning partial differential equations, three-dimensional fields, operator maps, complex geometries, and particle systems, CMR and Phi-CMR yield test errors no more than five percent higher than those from models trained with exact implicit differentiation in more than 98% of static and 95% of transient family-seed comparisons. Solver-index experiments show convergence toward the static adjoint, while physical-time rollouts retain predictive fidelity under the evaluated conditions. These results demonstrate that selective response renormalization can control near-critical adjoint amplification without globally damping well-conditioned sensitivity. Therefore, the method can make parameter updates more reliable while preserving the useful gradient information needed for learning.",
+  "categories": [
+   "cs.LG",
+   "cs.NE"
+  ],
+  "authors": [
+   "Jose Luis Lima de Jesus Silva"
+  ],
+  "url": "https://arxiv.org/abs/2608.23725",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper asks how to prevent near-singular adjoint Jacobians in Deep Equilibrium Models from destabilizing implicit-differentiation training. It introduces Response Renormalization (CMR and Phi-adaptive CMR), which selectively lifts near-pole denominators in a critical subspace to control adjoint amplification while preserving useful gradient information.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23798",
+  "source": "arXiv",
+  "title": "A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds",
+  "abstract": "Speciation in generative diffusion models denotes the emergence of distinct stable branches during denoising, through which initially undifferentiated trajectories progressively commit to different data classes. In this work we develop an intrinsic theory of speciation for diffusion models supported on compact Riemannian manifolds: the aim is to go beyond existing theoretical descriptions, which usually identify speciation with a symmetric pitchfork bifurcation and assume to work in a large-dimensional space. We characterize speciation by bifurcations of the critical points of the evolving probability density. A spectral heat-kernel representation makes explicit the role of the manifold geometry, while Poincar\\'e-Hopf and Morse theory impose global constraints on the number and type of score equilibria and reveal topologically-imposed geometrical modes. For mixtures of heat kernels, we prove that generic speciation events have a one-dimensional critical kernel and admit an A2 fold normal form; pitchforks and simultaneous multidirectional transitions arise from nongeneric symmetric configurations. We derive geometry-dependent estimates of speciation times for bimodal mixtures and Riemannian regular simplices. We further establish structural stability of nondegenerate folds under score perturbations and show that the first-order time shift is determined solely by the component of the score error along the critical direction. The theory is illustrated on the sphere using mixtures of von Mises-Fisher distributions, where pitchfork and saddle-node bifurcations, topological modes, and hierarchical multiple speciations are observed. Finally, a chart-based intrinsic score-learning scheme based on neural networks contrasts the theoretically predicted transitions on prototypal and more complex datasets.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Alessio Marta",
+   "Paola Causin"
+  ],
+  "url": "https://arxiv.org/abs/2608.23798",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper asks how speciation (branching toward distinct classes) arises in diffusion models on Riemannian manifolds. It develops an intrinsic theory in which speciation is characterized by bifurcations of critical points of the probability density, using heat-kernel, Poincaré-Hopf, and Morse theory to prove A2 fold normal forms, stability, and geometry-dependent speciation-time estimates.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23980",
+  "source": "arXiv",
+  "title": "Structure-preserving generalized transferable neural networks for the Cahn-Hilliard equation",
+  "abstract": "This paper is concerned with a structure-preserving neural network-based framework for the Cahn-Hilliard equation in mixed form. We employ generalized transferable neural networks (GTransNet) for spatial approximation and stabilized backward differentiation formulas (BDF) for temporal discretization. The resulting first- and second-order in time GTransNet-BDF schemes are shown to conserve mass and satisfy energy stability at the time-discrete level. The schemes are implemented by a collocation-based method, in which a least-squares system with constant coefficient matrix needs to be solved at each time step. The solution of this system, which determines the output-layer weights of the network, violates mass conservation due to the expected nonzero least-squares residual. To overcome this issue, we introduce a novel post-processing mass-conserving projection that enforces the mass constraint through a minimization problem, whose solution can be computed at negligible computational cost. A key advantage of the proposed method lies in its predetermined hidden layers and mesh-free nature, making the method applicable to complex domains, variable mobility, and long-time simulations. Extensive numerical experiments in two and three dimensions verify convergence, mass conservation, and energy dissipation as well as demonstrate the accuracy and robustness of the proposed GTransNet-BDF schemes.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Cao-Kha Doan",
+   "Thi-Thao-Phuong Hoang",
+   "Lili Ju",
+   "Shuting Wang"
+  ],
+  "url": "https://arxiv.org/abs/2608.23980",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "The paper develops structure-preserving neural network schemes for the Cahn-Hilliard equation in mixed form, using GTransNet for spatial approximation and stabilized BDF for time. It introduces a post-processing mass-conserving projection that enforces the mass constraint at negligible cost, yielding first- and second-order schemes that conserve mass and satisfy discrete energy stability.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23987",
+  "source": "arXiv",
+  "title": "Low-Latency Activation-Regularized Sparse Neural Operators with Distillation Assistance Towards Real-Time Edge-Deployable Virtual Sensing",
+  "abstract": "Virtual sensing enables digital twins and safety-critical systems to reconstruct and forecast spatial-temporal physics in real time. However, conventional computational and data-driven methods often face challenges in generalization, latency, and energy efficiency for edge deployment. Neural operators offer a promising alternative but remain reliant on power-intensive hardware. Spiking neurons and neuromorphic computing can improve efficiency, yet surrogate-gradient training and multi-step spiking introduce convergence and latency challenges. We propose the Sparse-Activation-ReLU (SAR) layer, a single-step alternative that promotes activation sparsity without surrogate-gradient training while remaining compatible with event-based computing. Within a trunk-based NOMAD architecture, SAR achieves over a fivefold improvement in the combined Latency-Error-Energy (LEE) metric compared with Variable Spiking Neuron (VSN) and Leaky Integrate-and-Fire (LIF) implementations. We further analyze spiking entropy and feature usage and introduce synthetic knowledge distillation, reducing the LEE score by more than twofold. Finally, we improve VSN through a ReLU-based spiking loss and graph-neighbor thresholding. On the Heat Exchanger dataset, these approaches reduce L2 error by more than twofold and nearly sevenfold, respectively, while reducing spiking and spatial aggregation. Overall, the work presented is a step towards energy-efficient virtual sensing by providing an alternative framework that can be positioned towards neuromorphic or other edge device integration that can be a gold standard to compare latency, energy, and error performance for future efficient designs that are sparsity or brain-inspired spiking based.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "William Howes",
+   "Farid Ahmed",
+   "Syed Bahauddin Alam"
+  ],
+  "url": "https://arxiv.org/abs/2608.23987",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The paper addresses latency, energy, and generalization challenges of neural-operator surrogates for real-time edge virtual sensing. It introduces the Sparse-Activation-ReLU (SAR) layer as a single-step sparsity-promoting alternative to spiking neurons, and combines it with synthetic knowledge distillation inside a trunk-based NOMAD architecture to improve the Latency-Error-Energy metric.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24007",
+  "source": "arXiv",
+  "title": "Revenge of Monosemanticity: Specialized Neurons Improve Data Efficiency in MLPs",
+  "abstract": "Understanding how neural networks learn and organize features is central to understanding their behavior. Much existing theory of feature learning has focused on the emergence of a global low-dimensional predictive geometry. We show that this picture is incomplete. In regression problems with clustered data, we demonstrate that multilayer perceptrons (MLPs) naturally develop monosemantic specialized neurons: individual neurons become strongly aligned with a specific predictive feature relevant to a particular region of the input space. Rather than learning a single global low-dimensional representation, MLPs learn a collection of local low-dimensional representations that can collectively span a high-dimensional space. This specialization provably gives MLPs a data-efficiency advantage over feature-learning methods based on a global low-dimensional representation.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Amirhesam Abedsoltan",
+   "Enric Boix-Adsera",
+   "Fivos Kalogiannis",
+   "Mikhail Belkin"
+  ],
+  "url": "https://arxiv.org/abs/2608.24007",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper studies feature learning in MLPs on clustered regression data, showing that networks develop monosemantic specialized neurons aligned with local predictive features. It proves this localized representation gives MLPs a data-efficiency advantage over methods relying on a single global low-dimensional representation.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24049",
+  "source": "arXiv",
+  "title": "Physics-Integrated Operator Learning via Gaussian Splatting Representations",
+  "abstract": "Neural operators provide efficient surrogates for spatiotemporal PDE systems, but purely data-driven formulations often accumulate substantial errors during long-horizon autoregressive prediction and may fail to exploit available governing-equation structure. Existing approaches incorporate physics primarily through residual-based training objectives or PDE-specific architectural constraints, which can introduce optimization difficulties or limit architectural generality. In this work, we introduce a representation-level approach to physics integration in which a feed-forward Gaussian splatting (FFGS) representation serves as a continuous interface between discretized solution fields and governing operators. The FFGS representation reconstructs the state as a continuous Gaussian field with closed-form spatial derivatives, allowing available physical PDE operators to be integrated directly within the learned evolution map without introducing a physics-residual loss. We evaluate the framework across two- and three-dimensional PDE systems, including advection, diffusion, nonlinear self-advection, and reaction dynamics. Over long-horizon autoregressive rollouts, the proposed framework reduces relative $\\ell_2$ error by $1.5\\times$--$2.2\\times$ compared with the strongest purely data-driven baseline across the benchmark suite, while consistently improving spectral fidelity. The framework also remains effective when the governing equations are partially known, demonstrating robustness to incomplete physics. These results demonstrate that continuous field representations can provide a practical interface for incorporating known physical structure into generic neural-operator surrogates.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Jihao Zhang",
+   "Junyi Guo",
+   "Jian-Xun Wang"
+  ],
+  "url": "https://arxiv.org/abs/2608.24049",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "The paper addresses error accumulation and limited physics exploitation in data-driven neural operator surrogates for spatiotemporal PDE systems. It introduces a feed-forward Gaussian splatting (FFGS) representation as a continuous interface between solution fields and governing operators, enabling direct incorporation of known PDE structure into the learned evolution map and improving long-horizon accuracy by 1.5x-2.2x.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24087",
+  "source": "arXiv",
+  "title": "Knowing When to Ask for Help: Bayesian Self-Escalation in Hierarchical LLM Agents",
+  "abstract": "Current LLM agent systems decide delegation before reasoning begins (a router picks a model) or after a response is complete (a verifier scores it and may retry). We study a third regime: an agent that recognises, during its own reasoning, that it is unlikely to succeed and transfers control to a stronger model. We formulate intra-generation delegation as a Bayesian optimal-stopping problem over a learned competence posterior -- an online estimate of the agent's eventual task success whose sufficient statistics are learned from labelled trajectories, not read off raw entropy. We derive the myopic escalation threshold in closed form, characterise the optimal policy via dynamic programming, and prove that the optimal policy is a time-varying threshold with no shape assumption on the raw signal. We further prove exponential separation of the oracle belief at the Chernoff-information rate of the signal, a regret bound governed by the calibration of the posterior, and a finite-sample guarantee: with n labelled calibration trajectories the deployed plug-in policy's regret decays as 1/sqrt(n). A controlled simulation study confirms each prediction of the theory, including the predicted 1/sqrt(n) rate. We additionally report a real-model validation on a Qwen2.5-Coder 1.5B->7B code cascade (MBPP, 257 tasks), confirming two of three pre-registered predictions: the escalation frontier dominates post-hoc routing at equal cost, and the cumulative competence belief's discrimination rises over generation.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "stat.ML"
+  ],
+  "authors": [
+   "Nadeem Shaikh"
+  ],
+  "url": "https://arxiv.org/abs/2608.24087",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper studies intra-generation delegation in hierarchical LLM agents, formulating it as a Bayesian optimal-stopping problem over a learned competence posterior. It derives closed-form escalation thresholds, proves the optimal policy is time-varying, and provides regret bounds and finite-sample guarantees.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24319",
+  "source": "arXiv",
+  "title": "Can a Dynamic Internal Field Govern a Transformer's Cognition? Certifiability, not Superiority, in Homeostatic Compute Control",
+  "abstract": "An intelligent system does not merely reason: it governs its own reasoning - how much to compute, when to stop, which module to activate. Can that role be played by a dynamic internal field - a low-dimensional homeostatic state with explicit physics and certified stability - that modulates cognition without performing it? Ours is a field on the module graph governed by a family of PDEs on the graph Laplacian, advancing with an adaptive-depth reasoner. We certify the stability of the integrator of the whole family - an integrator certificate, not a closed-loop one. New, and proved here: a discrete Schur-Cohn criterion for Verlet with velocity coupling, necessary and sufficient per latent root, with no commutation hypothesis. The answer is threefold: substance no, structure only in part, certifiability yes. The type of the field's physics is irrelevant for accuracy: wave, diffusion, gated mixtures and a 2D Navier-Stokes substrate tie. A twenty-seed preregistered deconfounding campaign bounds the structural claim: at equalized caps the second-order effect is strong in one family (+0.087 [+0.042, +0.132], t=4.0) but is not detected in the other (+0.014 [-0.013, +0.040], n.s.), so part of the original contrast was capacity, not order; and a matched-interface GRU is indistinguishable in the first and nominally exceeds the field in the second (-0.035 [-0.067, -0.002]). What distinguishes the field is not capability but that its one-step operator admits an exact runtime stability check - a difference of kind, not of existence: learned recurrences carry certificates too, sufficient and conservative ones. A kill-gate with a positive control finds no evidence for the field as evidence accumulator (Delta AUC +0.0007 [-0.0065, +0.0079] vs a 0.03 threshold). A dynamic internal field is a viable, certifiable compute governor, but not an enhancer of cognition: it modulates, it does not think.",
+  "categories": [
+   "cs.AI",
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Francisco M. Arrabal-Campos",
+   "Ignacio Fernandez",
+   "Francisco G. Montoya",
+   "Alfredo Alcayde"
+  ],
+  "url": "https://arxiv.org/abs/2608.24319",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper investigates whether a dynamic internal field—a low-dimensional homeostatic state with explicit physics—can govern a transformer's compute decisions, such as how much to compute and when to stop. It introduces a field on the module graph governed by PDEs on the graph Laplacian and proves a new discrete Schur-Cohn criterion for certified stability of its integrator, concluding that the field is a viable certifiable compute governor but not a cognition enhancer.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24386",
+  "source": "arXiv",
+  "title": "Equivariant Covariance Tensors: Guaranteed SPD Uncertainty for Tensor-Valued Geometric Learning",
+  "abstract": "Tensor-valued prediction is fundamental to geometric deep learning, yet uncertainty quantification (UQ) for such outputs remains an open challenge. While E(3)-equivariant neural networks excel at point estimates, they lack rigorous confidence measures. We focus on symmetric rank-2 tensor prediction, where the target has six Kelvin--Mandel coordinates and full uncertainty is represented by a $6\\times6$ covariance matrix. We introduce a framework for E(3)-equivariant UQ, modeling the full predictive distribution where both mean and covariance preserve rotational symmetry. Our approach decomposes the covariance into irreducible representations $\\mathrm{Sym}^2(\\rho_c) \\cong 2\\times(l=0) \\oplus 2\\times(l=2) \\oplus 1\\times(l=4)$. By mapping from the flat Lie algebra $\\mathfrak{sym}(6)$ to the curved SPD manifold via matrix exponentiation, we strictly ensure positive-definite covariances while maintaining exact equivariance. Furthermore, we formulate a Log-Euclidean Equivariant Scoring Objective (LE-ESO)---a robust surrogate loss based on the Multivariate Laplace distribution---providing robustness to heavy-tailed errors and stable optimization. Validation on ModelNet40 inertia tensors and Materials Project dielectric tensors demonstrates that our method achieves competitive performance and provides physically consistent, symmetry-preserving uncertainty estimates with useful risk and OOD sensitivity.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Ruihan Liu",
+   "Yu Ji",
+   "Jianbo Yu",
+   "Shifu Yan",
+   "Qingchao Jiang"
+  ],
+  "url": "https://arxiv.org/abs/2608.24386",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Uncertainty quantification for tensor-valued predictions in E(3)-equivariant deep learning is an open challenge. The paper introduces a framework that models the full predictive distribution with equivariant mean and covariance, enforcing positive-definiteness via exponential mapping from the Lie algebra to the SPD manifold and using a Log-Euclidean Equivariant Scoring Objective.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24426",
+  "source": "arXiv",
+  "title": "Sequential operator learning under dependent data",
+  "abstract": "Learning operators from sequentially collected data arises in adaptive experimental design, Bayesian optimization, and dynamical-system modelling, where observations may be dependent, and future inputs or sensing operators may depend on preceding data. We derive time-uniform self-normalized concentration bounds for stochastic processes in Hilbert spaces with vector-valued noise. We use these bounds to obtain regression-error guarantees for linear operators, including targets outside the Hilbert estimation space, and for nonlinear parametric operators trained with strongly convex losses and regularizers. Our results allow possibly infinite-dimensional inputs and outputs without independence or mixing assumptions, providing a major step towards convergence guarantees for adaptive operator learning and learning from stochastic dynamical data.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Rafael Oliveira"
+  ],
+  "url": "https://arxiv.org/abs/2608.24426",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Sequential operator learning often involves dependent data, where standard concentration bounds fail. The paper derives time-uniform self-normalized concentration bounds for Hilbert-space stochastic processes and uses them to prove regression-error guarantees for linear and nonlinear parametric operators, allowing infinite-dimensional spaces without independence or mixing assumptions.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24435",
+  "source": "arXiv",
+  "title": "Feedback control of vortex shedding using data-driven modelling",
+  "abstract": "This paper details the data-driven modelling and feedback control of vortex shedding past a circular cylinder at a Reynolds number of Re = 1000. We study the effect of varying the order of the reduced model for control design purposes and demonstrate that higher orders can lead to lower suppression of vortex shedding. We use the Bode integral theorem and a frequency-domain interpretation to show that this drop in performance is, in part, due to the classical ``waterbed effect'', which increases sensitivity in frequency bands of unmodelled dynamics. Training data from 2D unsteady simulation is used to obtain linear reduced-order state-space models of the system via dynamic mode decomposition with control. Using only lift measurement, we show that at least a 4th-order model is required for an LQG controller to suppress vortex shedding, with the best performance achieved with as few as 9 modes, whilst higher-order (>14) controllers show a significant decrease in performance. We study the influence of external disturbances, noise rejection, and parameter uncertainty on controller performance. A 28.6 dB reduction in lift coefficient variance is achieved, resulting in a 26% reduction in drag. We further show that, for control design purposes with practical actuation bandwidth, the closed-loop control delivers a significant 13.7% drag reduction within 3D DDES, despite having been trained with 2D URANS and therefore argue that 2D URANS simulation is sufficient for reduced-order model generation and control design.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Jack Proudfoot",
+   "Chris J. Nicholls",
+   "Brian M. T. Tang",
+   "Marko Bacic"
+  ],
+  "url": "https://arxiv.org/abs/2608.24435",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Data-driven reduced-order models for feedback control of vortex shedding suffer performance drops at higher model orders. Using dynamic mode decomposition with control on 2D URANS data, the paper shows via the Bode integral theorem that this drop is due to the waterbed effect, and that a low-order LQG controller achieves substantial lift and drag reduction.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24547",
+  "source": "arXiv",
+  "title": "From Numerical Simulators of PDEs to Neural Emulators and Back",
+  "abstract": "Simulation is central to modern engineering and science, but the cost of numerical solvers for partial differential equations (PDEs) remains a bottleneck whenever fast or many-query evaluations are required. Neural emulators trained on solver-generated data promise significant speedups, yet they are usually framed as opaque alternatives to the very methods that produce their training signal. This thesis argues the two paradigms are more alike than different: neural architectures mirror classical discretizations, their errors are amenable to the same spectral analysis, and insight flows profitably in both directions. We approach the relationship by disentangling the multiple roles a solver plays in the emulator learning pipeline. Mode-wise Fourier analysis then provides a common language in which solver errors, architectural inductive biases, and training objectives can all be read off simultaneously. Taken together, this allows synthesizing three contributions. (1) APEBench, a comprehensive benchmarking suite for autoregressive neural emulators of PDEs that uses fast differentiable pseudo-spectral solvers in JAX. (2) Progressively Refined Differentiable Physics, an investigation of the effect of unconverged solvers on surrogate training. (3) Neural Emulator Superiority, an analysis of the influence of numerical errors and architectural inductive biases.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Felix Koehler"
+  ],
+  "url": "https://arxiv.org/abs/2608.24547",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "This thesis examines the relationship between numerical PDE solvers and neural emulators, arguing that solver errors, architectural inductive biases, and training objectives can be compared in a common mode-wise Fourier analysis. It contributes APEBench, a benchmark suite for autoregressive neural emulators, a study of progressively refined differentiable physics on surrogate training, and an analysis of neural emulator superiority.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.24833",
+  "source": "arXiv",
+  "title": "Real-time inverse solutions via neural matrix operators",
+  "abstract": "Rapid data assimilation is required for real-time prediction and control in digital twins. For many physical systems, the data assimilation task requires the solution of a physics-constrained inverse problem, which is often computationally intractable in real time using traditional physics solvers. This work presents a reduced-basis neural operator approach to enable real-time inverse problem solutions in the digital twin setting. Our approach specifically targets the large class of problems with spatiotemporal dynamics governed by partial differential equations (PDEs) that are parameterized nonlinearly with respect to model parameters $m$, and linearly with respect to inversion parameters $q$. Based on this physical structure, our neural operator approximates the nonlinear map from the model parameters $m$ to the parameter-to-observable operator $\\mathcal{F}(m)$ in a reduced subspace. Since the output of the neural operator is the parameter-to-observable operator itself (manifested as a matrix), we refer to this approach as NEural Matrix Operator (NEMO). With NEMO, for new given $m$, we enable a closed-form inverse problem solution for $q$ in a reduced subspace. We apply NEMO in two real-world applications: contaminant transport initial condition identification, and hypersonic vehicle load identification. We show that NEMO delivers high quality inverse problem solutions for data assimilation in real time, with over three orders of magnitude speedup compared to constructing the reduced operator with the PDE solver. Further, NEMO demonstrates comparable inverse performance to a state-of-the-art multiple-input neural operator, while reducing online computational complexity by over an order of magnitude and providing real-time uncertainty quantification.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Julie Pham",
+   "Thomas O'Leary-Roseberry",
+   "Omar Ghattas",
+   "Karen Willcox"
+  ],
+  "url": "https://arxiv.org/abs/2608.24833",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "uq-inverse-problems"
+  ],
+  "summary": "Real-time data assimilation in digital twins requires solving physics-constrained inverse problems that are too slow with traditional solvers. The paper introduces NEMO, a reduced-basis neural operator that learns the map from model parameters to the parameter-to-observable operator, enabling closed-form inverse solutions with real-time speedup and uncertainty quantification.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2605.22330",
+  "source": "arXiv",
+  "title": "Symbolic Classification-Enabled LHC Limits Online BSM Global Fits",
+  "abstract": "Global fits of Beyond the Standard Model (BSM) physics often involve a two-way interplay between theory and experiment. Theoretical models provide guidance for experimental searches, while experimental results, in turn, constrain theoretical frameworks. A crucial aspect of this feedback loop is the direct inclusion of measurements and exclusion limits ``online'' global fits, i.e. during the parameter scans aspects of the global fits. However, incorporating the Large Hadron Collider (LHC) limits into such analyses has been computationally prohibitive, often due to time taken per parameter point exceeding the scales acceptable for global fit frameworks. In this study, we show that LHC limits can be incorporated ``online'' global fits by leveraging approximations derived from symbolic regression techniques. We utilize a dataset of ATLAS constraints from searches for electroweakino productions to derive a mathematical expression capable of classifying the phenomenological Minimal Supersymmetric Standard Model (pMSSM) parameter space as allowed or excluded. This is subsequently incorporated for making a global fit of the pMSSM to data, including the LHC Run-2 limits.",
+  "categories": [
+   "hep-ph",
+   "cs.LG",
+   "cs.SC",
+   "hep-ex",
+   "hep-th"
+  ],
+  "authors": [
+   "Shehu AbdusSalam"
+  ],
+  "url": "https://arxiv.org/abs/2605.22330",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Incorporating LHC exclusion limits into online global fits of BSM physics is computationally prohibitive. The paper derives a symbolic-regression-based classifier of the pMSSM parameter space from ATLAS electroweakino search data and integrates it into global fits.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23750",
+  "source": "arXiv",
+  "title": "S-matrix informed neural networks for amplitude analysis",
+  "abstract": "Reconstructing scattering amplitudes from finite, noisy, and mutually inconsistent measurements is an ill-posed inverse problem common to many reactions relevant to particle physics. We introduce S-matrix informed neural networks (SINNs), and demonstrate their ability to learn scattering amplitudes directly from data while respecting first principles. We further develop a novel data selection procedure, which uses the response of constrained neural network ensembles to identify a set of experiments compatible with first principles, and with each other. We apply this framework to $\\pi\\pi$ scattering, producing reusable amplitudes and correlated uncertainties without relying on a fixed functional form. We validate our results against residual model dependencies and training biases through closure tests and ablations. We find negligible impact of model architecture on our results. Our workflow unifies physics-constrained representation learning, data selection, and uncertainty quantification. Our strategy is transferable to other scattering processes, and other constrained physics problems limited by inconsistent data.",
+  "categories": [
+   "hep-ph",
+   "cs.LG",
+   "nucl-th"
+  ],
+  "authors": [
+   "Wyatt A. Smith",
+   "Arkaitz Rodas",
+   "Marius D. Thomas",
+   "C\\'esar Fern\\'andez-Ram\\'irez",
+   "Giorgio Foti",
+   "Lin Qiu",
+   "Adam P. Szczepaniak",
+   "Alessandro Pilloni"
+  ],
+  "url": "https://arxiv.org/abs/2608.23750",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing scattering amplitudes from noisy and mutually inconsistent experimental measurements is an ill-posed inverse problem. The paper introduces S-matrix informed neural networks (SINNs) that learn amplitudes from data under first-principles constraints, plus a data-selection procedure for identifying compatible experiments and correlated uncertainties.",
+  "added": "2026-08-26"
+ },
+ {
+  "id": "arxiv:2608.23895",
+  "source": "arXiv",
+  "title": "Learning the Kohn-Sham map with neural operators for quasi-linear scaling density functional theory",
+  "abstract": "Kohn--Sham density functional theory (DFT) underpins electronic-structure simulations, but repeated orbital diagonalizations lead to cubic scaling, restricting quantum calculations to modest scales only. Eliminating these auxiliary orbitals while retaining Kohn--Sham accuracy is the central goal of orbital-free DFT, but both analytical and machine-learning methods have so far fallen short. Prior learning approaches either try to learn the variational kinetic-energy functionals, which are ill-conditioned, or directly predict the ground state, which extrapolate poorly to larger systems. Instead, we identify the Kohn--Sham map as the right learning target for orbital-free DFT. It maps a Kohn--Sham potential directly to the corresponding density and noninteracting kinetic energy, quantities otherwise obtained through an orbital diagonalization. Focusing on the density component in this work, a domain-invariant $\\mathrm{SE}(3)$-equivariant Fourier neural operator learns to predict it from the potential as input on real-space grids, enabling stable quasi-linear scaling SCFs. Trained jointly on 8,504 molecules and solids, a single model generalizes to out-of-distribution organic molecules, insulators, and metals. For the first time, the same method converges SCFs across these systems without explicitly constructing Kohn--Sham orbitals, while reproducing densities, electronic spectra, and structural observables at Kohn--Sham DFT accuracy. Linear-scaling SCFs additionally allow converging magnesium dislocation densities containing up to 82,500 valence electrons on a single GPU.",
+  "categories": [
+   "physics.chem-ph",
+   "cs.AI"
+  ],
+  "authors": [
+   "Danish Khan",
+   "Maurice D. Hanisch",
+   "Nikolai Argatoff",
+   "Evan Xie",
+   "Sandeep Sharma",
+   "Anima Anandkumar"
+  ],
+  "url": "https://arxiv.org/abs/2608.23895",
+  "published": "2026-08-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Kohn-Sham DFT requires cubic-scaling orbital diagonalization, limiting system sizes, while prior orbital-free approaches are ill-conditioned or extrapolate poorly. This paper learns the Kohn-Sham map (potential to density and kinetic energy) with a domain-invariant SE(3)-equivariant Fourier neural operator, enabling stable quasi-linear scaling SCFs without explicitly constructing orbitals.",
+  "added": "2026-08-26"
  }
 ]
