@@ -57038,5 +57038,143 @@
   ],
   "summary": "The paper studies the regularity of spatially adaptive regularisation weights used in variational image reconstruction, motivated by hybrid methods that learn such weights with deep neural networks. It reviews theoretical classes (constant, continuous, piecewise constant) and demonstrates via denoising and MRI examples that learned weights are often of low regularity, adapting to image structure and noise realization.",
   "added": "2026-08-27"
+ },
+ {
+  "id": "arxiv:2608.26139",
+  "source": "arXiv",
+  "title": "Syntax vs. Semantics: How Transformers Learn Deep Dependencies",
+  "abstract": "Large Language Models demonstrate remarkable syntactic fluency, yet the optimization dynamics governing their acquisition of deep semantic dependencies remain poorly understood. We propose a mechanistic framework that models this learning process as a competition between Surface Statistics and Deep Semantics. Our theoretical analysis identifies a ``Gradient Starvation\" phenomenon where the error signals for sparse semantic dependencies are actively suppressed during early optimization. This suppression impedes the learning of structural reasoning and causes its emergence to manifest as a sudden phase transition. Furthermore, this framework offers a mechanistic basis for the effectiveness of Chain-of-Thought (CoT) strategies. By externalizing intermediate reasoning steps into concrete tokens, CoT effectively bypasses the suppression regime inherent to implicit reasoning. We validate these findings across scales ranging from toy transformers to production models (Llama-3.1-8B, Qwen2.5-Coder-7B). Finally, guided by this theory, we propose a topology-aligned contrastive objective that explicitly rectifies the gradient geometry. Experiments on variable binding tasks demonstrate that our method achieves an improvement that is over 2x larger than that obtained via standard cross-entropy fine-tuning.",
+  "categories": [
+   "cs.CL",
+   "cs.AI"
+  ],
+  "authors": [
+   "Jiangrui Zhao",
+   "Xiaoting Du"
+  ],
+  "url": "https://arxiv.org/abs/2608.26139",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The optimization dynamics by which transformers acquire deep semantic dependencies, versus surface statistics, are poorly understood. The paper proposes a mechanistic competition framework identifying Gradient Starvation, a phase-transition explanation for the sudden emergence of structural reasoning, a mechanistic account of Chain-of-Thought, and a topology-aligned contrastive objective that rectifies gradient geometry.",
+  "added": "2026-08-28"
+ },
+ {
+  "id": "arxiv:2608.26288",
+  "source": "arXiv",
+  "title": "Muon with Finite Newton-Schulz: The Smoothing Benefit in Nonsmooth Nonconvex Optimization",
+  "abstract": "Muon has emerged as a strong optimizer for the matrix-valued parameters in large language model pretraining, approximately orthogonalizing its momentum with a few Newton-Schulz iterations. Existing theory either replaces this iteration with the exact polar factor it approximates, or treats its finite depth as an approximation error, and thus the iteration Muon actually runs can only hurt the guarantees. We show that finite Newton-Schulz can instead be beneficial for nonsmooth nonconvex optimization. To this end, we analyze Muon through the online-to-nonconvex conversion, which views the update rule as an online learner and converts its regret bound into a stationarity guarantee. The finite Newton-Schulz iteration smooths the discontinuous polar map into a Lipschitz map of the singular values, and Muon with finite Newton-Schulz can be regarded as an online learner with a smoothed spectral potential. This smoothing is exactly what the conversion needs: we prove that a Newton-Schulz depth growing only logarithmically in the target accuracy suffices for convergence to stationary points in nonsmooth nonconvex optimization, whereas Muon with the exact-polar update may fail to converge. The resulting sample complexity bounds match the best-known guarantees for nonsmooth nonconvex optimization and are optimal for smooth nonconvex optimization up to problem-dependent factors. The argument extends beyond Newton-Schulz to general spectral maps with the same smoothing property.",
+  "categories": [
+   "cs.LG",
+   "math.OC",
+   "stat.ML"
+  ],
+  "authors": [
+   "Mingyi Li",
+   "Taira Tsuchiya"
+  ],
+  "url": "https://arxiv.org/abs/2608.26288",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper investigates whether the finite Newton-Schulz iteration used in the Muon optimizer helps or hurts nonsmooth nonconvex optimization. It proves that finite Newton-Schulz smooths the polar map and that logarithmically growing depth suffices for convergence to stationary points with optimal sample complexity, whereas the exact-polar update may fail.",
+  "added": "2026-08-28"
+ },
+ {
+  "id": "arxiv:2608.27028",
+  "source": "arXiv",
+  "title": "A quantum-assisted framework for PDE-based Bayesian inverse problems",
+  "abstract": "Quantum computing offers potential advantages for solving partial differential equations (PDEs). However, most existing quantum PDE solvers primarily focus on preparing quantum states for solutions, while the efficient recovery of classical information from these states remains less explored. Motivated by the readout limitation, we propose a quantum-classical hybrid framework for Bayesian PDE inversion problems: The quantum processor evolves the PDE and evaluate the loss function with sampling noises, while the classical computer tunes the hyper-parameters in the Gaussian Process Regression to explore the next trial candidate. To match the quantum solvers for linear and semi-linear autonomous evolution PDEs, we suggest to use a normalized quantum-state loss as the data-misfit function and evaluate the new misfit by combining quantum PDE solvers with the Hadamard test, thereby allowing us to extract useful classical information using only a limited number of quantum state copies without reconstructing the full solution vector. The analysis of error propagation and overall complexity of loss evaluation under a prescribed accuracy shows that the new data-misfit function outperforms the conventional L2-loss under quantum measurements. Quantum circuit simulations of 1D and 2D linear convection diffusion equations under approximate and finite sampling loss evaluations, together with classical numerical experiments on a nonlinear forced viscous Burgers equation, demonstrate the feasibility of the proposed approach for parameter inversion even when the loss evaluations are affected by sampling noise. This framework may provide a viable quantum-assisted scheme for PDE-based inverse problems and elucidate the potential of quantum PDE algorithms in addressing a complete quantum-to-end optimization stack.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Dong An",
+   "Yinan Li",
+   "Pucheng Tang",
+   "Yunfeng Xiong"
+  ],
+  "url": "https://arxiv.org/abs/2608.27028",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper addresses the readout bottleneck in quantum PDE solvers for Bayesian inverse problems by recovering classical information efficiently. It proposes a quantum-classical hybrid framework that evaluates a normalized quantum-state loss via the Hadamard test and uses Gaussian-process-regression-guided candidate selection to perform parameter inversion under sampling noise.",
+  "added": "2026-08-28"
+ },
+ {
+  "id": "arxiv:2608.27080",
+  "source": "arXiv",
+  "title": "Active Diffusion-Based Inference for Ill-Posed Inverse Problems under Incomplete Priors",
+  "abstract": "Many scientific and engineering applications require estimating unknown parameters from experimentally observable data -- an inverse problem that is inherently challenging due to nonlinearity, noise, and ill-posedness. In this paper, we propose an active diffusion-based inverse problem solver. A DM is trained to learn the mapping between the parameter space and the observable space. By iteratively detecting and correcting model misspecification through posterior uncertainty, the method discovers and learns the correct region of parameter space, even when initial training bounds exclude the true parameters. This provides a principled, Bayesian justification for adaptive domain augmentation and ensures robust inference for inverse problems under incomplete prior knowledge. We demonstrate the effectiveness of our inverse solver for a toy inverse problem with infinite solutions, and for the parameterization of the quantum correlation functions to event observables in a Quantum Chromodynamics analysis of nucleon structure.",
+  "categories": [
+   "stat.ML",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jitao Xu",
+   "Nobuo Sato",
+   "Yaohang Li"
+  ],
+  "url": "https://arxiv.org/abs/2608.27080",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper tackles ill-posed inverse problems where the initial prior domain fails to contain the true parameters. It introduces an active diffusion-based inverse solver that detects model misspecification through posterior uncertainty and iteratively corrects the domain, giving a Bayesian justification for adaptive domain augmentation and testing on a toy problem and a QCD nucleon-structure analysis.",
+  "added": "2026-08-28"
+ },
+ {
+  "id": "arxiv:2608.27081",
+  "source": "arXiv",
+  "title": "Sequential and distributive dual futile cycle: Hopf bifurcation can occur under parameter-rich kinetics but cannot occur under mass action kinetics",
+  "abstract": "This paper establishes that the system of ordinary differential equations arising from the sequential and distributive dual futile cycle has the structural capacity for Hopf bifurcations, whenever it is endowed with general parameter-rich kinetics, but it loses such capacity if it is endowed with mass action kinetics. The proof of the latter fact relies on a Routh-Hurwitz approach, improved by few preliminary structural considerations, but a decisive contribution came from ChatGPT Sol 5.6, which provided a nontrivial positivity certificate. A second purpose of the paper is indeed to document such AI-contribution, exploiting this well-studied toy-model, and to offer an example of the utilizability of such tools in the context of computer algebra and positivity certificates for large polynomials.",
+  "categories": [
+   "math.DS",
+   "q-bio.MN"
+  ],
+  "authors": [
+   "Nicola Vassena"
+  ],
+  "url": "https://arxiv.org/abs/2608.27081",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper asks whether the sequential and distributive dual futile cycle can exhibit Hopf bifurcations under different kinetic assumptions. It proves Hopf bifurcations are possible under general parameter-rich kinetics but impossible under mass action kinetics, using a Routh-Hurwitz approach and a positivity certificate produced by ChatGPT Sol 5.6, documenting the AI-assisted proof.",
+  "added": "2026-08-28"
+ },
+ {
+  "id": "arxiv:2608.27153",
+  "source": "arXiv",
+  "title": "Inductive Correlation Clustering with Graph Neural Networks",
+  "abstract": "Correlation Clustering (CC) is a natural formulation of clustering in combinatorial optimization, which uses a graph representation of the input and does not require a pre-specified number of clusters. Given $n$ objects and a pairwise similarity function, the goal is to cluster the objects so that similar objects are put in the same cluster and dissimilar objects are put in different clusters. Despite its versatility, existing CC algorithms suffer from significant scalability issues and are inherently transductive: i.e., the algorithm must be executed from scratch for any new problem instance. In this work, we bridge this gap by leveraging Graph Neural Networks (GNNs) to solve Inductive Correlation Clustering, a novel generalization of the CC problem designed to handle unseen graph instances. By learning to exploit common structural patterns and node features during training, our framework generalizes to new graphs drawn from the same distribution with minimal computational overhead with respect to standard algorithms. We demonstrate the effectiveness and scalability of our approach through extensive experiments. Our framework not only excels in the inductive setting, e.g., lowering the inference time up to $5$ order of magnitude, while maintaining an approximation ratio within $~10\\%$ of the best baseline solution, but also achieves competitive results on standard (transductive) CC benchmarks. Finally, we showcase a practical application of our framework as a learnable pooling mechanism for graph classification. Our results indicate that our method serves as an efficient pooling layer, enhancing the ability of GNNs to capture hierarchical structural information in networks.",
+  "categories": [
+   "cs.LG",
+   "cs.DS"
+  ],
+  "authors": [
+   "Francesco Paolo Nerini",
+   "Francesco Bonchi",
+   "Arijit Khan",
+   "Andr\\'e Panisson"
+  ],
+  "url": "https://arxiv.org/abs/2608.27153",
+  "published": "2026-08-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper addresses the scalability and transductive nature of correlation clustering, which requires solving from scratch for each new instance. It proposes an inductive, GNN-based correlation clustering framework that learns structural patterns during training and generalizes to unseen graphs, achieving up to five orders of magnitude faster inference while retaining approximation quality comparable to standard solvers.",
+  "added": "2026-08-28"
  }
 ]
