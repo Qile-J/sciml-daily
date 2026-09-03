@@ -58856,5 +58856,122 @@
   ],
   "summary": "The paper studies whether one-layer transformer in-context predictors match nearest-neighbor classifiers in multiclass settings. It proves that a one-layer transformer with an argmax classification head behaves identically to a one-nearest-neighbor classifier via simplex encoding, closing the gap left by prior rounding-based multiclass results.",
   "added": "2026-09-02"
+ },
+ {
+  "id": "arxiv:2609.02275",
+  "source": "arXiv",
+  "title": "Do Large Language Models Capture the Diversity in their Training Data?",
+  "abstract": "Large language models are trained to model conditional distributions over text, yet it remains inadequately understood whether they capture the full diversity of plausible outputs present in their training data. We study this question through an information-theoretic lens by comparing the conditional entropy of model-generated outputs with that of the corresponding training data. Given paired input-output samples, we use conditional entropy and its matrix-based analogue based on von Neumann entropy to measure output variability beyond what is explained by the conditioning input, without requiring multiple reference outputs for the same prompt. Across LLM families with publicly available training data, including OLMo, Pythia, and GPT-Neo, we consistently find that model-generated outputs exhibit lower conditional entropy than their training data, across different model scales, sequence lengths, and decoding strategies. We observe a similar conditional diversity gap beyond language modeling, including class-conditioned ImageNet generators and text-conditioned models trained on MS-COCO. To address this gap, we propose a post-hoc correction mechanism that generates multiple outputs for each input and reweights them through a matrix-entropy projection, increasing conditional diversity while remaining close to the original model distribution. We prove the concavity of the matrix-based conditional entropy functional, which makes the resulting entropy-constrained projection a convex optimization problem, and develop a scalable mirror-descent algorithm for its implementation. Our results reveal a systematic conditional diversity gap between modern generative models and their training data, and provide an information-theoretic framework for measuring and mitigating this gap.",
+  "categories": [
+   "cs.CL",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Youqi Wu",
+   "Farzan Farnia"
+  ],
+  "url": "https://arxiv.org/abs/2609.02275",
+  "published": "2026-09-03",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks whether LLMs match the output diversity of their training data and measures this gap via conditional entropy and matrix-based von Neumann entropy. It proposes a post-hoc matrix-entropy projection that reweights generated outputs, proves the concavity of the conditional-entropy functional, and solves the convex problem with a scalable mirror-descent algorithm.",
+  "added": "2026-09-03"
+ },
+ {
+  "id": "arxiv:2609.02373",
+  "source": "arXiv",
+  "title": "Percolation Dynamics in Optimization : Variance Cascades and Discrete Scale Invariance",
+  "abstract": "We study the dynamics of Stochastic Gradient Descent (SGD), which is known to steer deep neural networks toward invariant sets that correspond to simpler subnetworks. How this steering unfolds over time remains poorly understood. We answer this by modeling the stochastic gradient flow (SGF) as a percolation process, in which architectural symmetries force subnetworks to merge in discrete simultaneous blocks rather than one at a time. These structural transitions register as variance spikes in a macroscopic order parameter, echoing physical phase transitions. We further show this trapping mechanism and its associated scaling cascade extend to Adam and AdamW under an explicit heavy-tailed noise model.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "cs.AI"
+  ],
+  "authors": [
+   "Sai Niranjan Ramachandran",
+   "Suvrit Sra"
+  ],
+  "url": "https://arxiv.org/abs/2609.02373",
+  "published": "2026-09-03",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper studies how stochastic gradient descent steers deep networks toward simpler invariant subnetworks over time. It models stochastic gradient flow as a percolation process with discrete simultaneous subnetwork mergers, explains macroscopic variance spikes, and extends the cascade analysis to Adam/AdamW under heavy-tailed noise.",
+  "added": "2026-09-03"
+ },
+ {
+  "id": "arxiv:2609.02790",
+  "source": "arXiv",
+  "title": "Full-Model Optimality for Tunable Linear Generative Priors in Compressed Sensing",
+  "abstract": "Generative models have been studied experimentally and theoretically as priors for inverse problems such as compressed sensing. Recent work by Gunn et al. studied the use of generative priors with tunable complexity, where a family of generative priors with varying complexity is maintained and a specific complexity can be selected at inversion time. They demonstrated that lower reconstruction errors can be experimentally attained for a variety of inverse problems by appropriately tuning the complexity of the generative prior. In the present paper, we establish theory for compressed sensing in the setting of a tunable family of linear generative priors naturally related through their singular value decompositions. We prove that in noiseless Gaussian compressed sensing, the full-dimensional linear prior attains the minimum expected reconstruction error over the entire family of linear priors. Thus, in this idealized linear noiseless setting, tuning to a lower-complexity prior does not improve the expected reconstruction error. This result is in contract to the behavior of denoising, where lower complexity priors attain lower reconstruction errors due to a standard bias-variance tradeoff. This result indicates that the experimental benefits of tunability in compressed sensing with neural network priors arises due to nonlinearities in the generative models.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Zhaoming Li",
+   "Paul Hand"
+  ],
+  "url": "https://arxiv.org/abs/2609.02790",
+  "published": "2026-09-03",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper asks whether tuning the complexity of a generative prior improves reconstruction in compressed sensing. It proves that in noiseless Gaussian compressed sensing, a full-dimensional linear generative prior attains the minimum expected error over a tunable SVD-related family, indicating that the practical benefits of tunability come from nonlinearities.",
+  "added": "2026-09-03"
+ },
+ {
+  "id": "arxiv:2609.02833",
+  "source": "arXiv",
+  "title": "Learning Spectral-Like Mesh-Free Discretisations",
+  "abstract": "Meshfree methods such as smoothed particle hydrodynamics (SPH) with kernel corrections, radial basis function-generated finite differences (RBF-FD), and the local anisotropic basis function method (LABFM) construct discrete differential operators by imposing polynomial consistency on a local stencil. For stencils containing more nodes than there are consistency constraints, the resulting linear system is underdetermined, and the remaining degrees of freedom are fixed implicitly by the choice of kernel, basis preconditioning, or a minimum-norm condition. Polynomial consistency constrains the operator only in the low-wavenumber limit, and no part of the construction selects for accuracy at the wavenumbers where fine-scale content resides. We introduce Spectral-like Neural Discretisation (SpeND), in which the choice of those degrees of freedom is cast as a learning problem: stencil weights are parametrised by a neural network conditioned on the local node geometry, trained to approximate the modal response of a spectral operator over the resolvable band. A hard-constrained projection layer maps the network output onto the affine subspace of consistent weights, so that polynomial consistency holds exactly by construction rather than as a penalty. Training is self-supervised and physics-agnostic, requiring no reference solutions; the objective minimises dispersion and dissipation error over a prescribed band-limited function space. Modal analysis on disordered two-dimensional node distributions shows that the learned fourth-order operator follows the exact response over a substantially wider band than either explicit LABFM at equal stencil size or fourth-order finite differences on a structured grid, whilst recovering the expected fourth-order convergence rate under refinement.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Lucas Gerken Starepravo",
+   "Henry Broadley",
+   "Steven Lind",
+   "Jack R. C. King"
+  ],
+  "url": "https://arxiv.org/abs/2609.02833",
+  "published": "2026-09-03",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper addresses the uncontrolled fine-scale accuracy of meshfree stencil discretizations whose free degrees of freedom are only fixed implicitly. It introduces SpeND, which learns those stencil weights with a neural network conditioned on local node geometry and projects them onto the polynomial-consistent affine subspace, training self-supervised to match a spectral operator's modal response.",
+  "added": "2026-09-03"
+ },
+ {
+  "id": "arxiv:2609.02876",
+  "source": "arXiv",
+  "title": "GRADSOLVE: fast exact gradients for ODE ensembles on GPUs",
+  "abstract": "Ordinary differential equations (ODEs) underlie models in science and engineering, and many applications need derivatives of their solutions with respect to parameters. Ensembles of independent trajectories suit graphics processing units (GPUs), but current GPU software forces a trade-off: the fastest ensemble solvers cannot be differentiated in reverse mode at the speed they solve, and the solvers built for differentiation solve more slowly. No single tool has yet offered a reverse-mode gradient at the speed of a fused-kernel solve. We present GRADSOLVE, an open-source JAX library for solving and reverse-mode differentiating low-dimensional ODE ensembles on NVIDIA GPUs. It records the steps an adaptive solver accepts and differentiates a fixed-step replay of them; the returned gradient is the exact discrete adjoint of those steps, the same derivative Diffrax returns by default, obtained more cheaply from a fixed-length chain than from an adaptive loop. It targets ensembles differentiated many times against one recorded mesh, keeps Diffrax as a fallback, and supports explicit and Rosenbrock integrators. Used as a solver, GRADSOLVE's forward-only kernel ran 2.8x faster than DiffEqGPU.jl; used for gradients, once a record exists, it computed them 5.6-14.1x faster than Diffrax's checkpointed adjoint at matched forward-state accuracy across three GPU generations, the advantage narrowing on large ensembles and, on stiff systems, down to parity at tight accuracy. GRADSOLVE is released at https://github.com/ECLIPSE-AI4Science/gradsolve.",
+  "categories": [
+   "cs.MS",
+   "cs.DC",
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Alessio Spurio Mancini"
+  ],
+  "url": "https://arxiv.org/abs/2609.02876",
+  "published": "2026-09-03",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Computing reverse-mode gradients of ODE ensembles on GPUs currently forces a trade-off between solver speed and differentiability. GRADSOLVE records the accepted steps of an adaptive solver and differentiates a fixed-step replay, returning the exact discrete adjoint gradient more cheaply than existing checkpointed adjoints.",
+  "added": "2026-09-03"
  }
 ]
