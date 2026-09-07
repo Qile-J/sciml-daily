@@ -59450,5 +59450,221 @@
   ],
   "summary": "This paper studies the frequentist validity of Bayesian probabilistic numerical solvers for nonlinear PDEs, asking whether the posterior contracts at the minimax rate and satisfies Bernstein--von Mises theorems in strong topologies. Using a truncated Gaussian series prior on the solution with noisy evaluations at random collocation points, it proves minimax-rate contraction, Gaussian posterior approximations in positive-order Sobolev and uniform spaces, and asymptotic equivalence of the Gaussian Laplace approximation at the sqrt(N) scale.",
   "added": "2026-09-04"
+ },
+ {
+  "id": "arxiv:2609.04267",
+  "source": "arXiv",
+  "title": "A Data Fusion Framework for Grounding Aerospace Surrogate Model via Experimental Wind-Tunnel Observations",
+  "abstract": "Aerodynamic surrogate models trained on high-fidelity CFD data reproduce numerical predictions of both scalar outputs and entire fields accurately, yet their predictive fidelity is limited by systematic discrepancies between CFD and experimental observations. We present an experimentally grounded correction framework that adapts a CFD-trained deep learning surrogate using wind-tunnel PSP measurements. A Geotransolver surrogate trained on 2,300 high-fidelity CFD simulations of the NASA CRM wing-body configuration, spanning geometric variation, Mach 0.70-0.85, and angles of attack 0 to 4 degrees, reproduces the CFD integrated aerodynamic forces and pitching moment to R2 > 0.99 but does not match the experimental data. To incorporate experimental information without retraining the surrogate, a correction network is trained on spatially registered PSP measurements at two freestream Mach numbers (0.70 and 0.85) across the same angle-of-attack range, learning the discrepancy between the surrogate-predicted and experimentally measured surface-pressure distributions. At Mach 0.85 the correction substantially improves agreement with PSP, particularly at the wing suction peak, shock location, and subsequent pressure recovery, reducing both the magnitude of the prediction error and the fraction of wetted surface on which it exceeds 0.05 in Cp, and it does so from a limited experimental dataset without modifying the pretrained surrogate parameters. On held-out angles of attack the grounded surrogate agrees with measurement to within 2.3-2.7% of the measured Cp range, and outperforms direct interpolation between the measured conditions at every state tested. Experimental measurements can therefore ground a large-scale simulation-trained surrogate by learning systematic CFD-to-experiment discrepancies while preserving its generalization capability and computational efficiency.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Nitin Nagesh Kulkarni",
+   "Dheeraj Vemula",
+   "Yin Yu",
+   "Peter Lyu",
+   "Juan J. Alonso"
+  ],
+  "url": "https://arxiv.org/abs/2609.04267",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "CFD-trained aerodynamic surrogates reproduce numerical predictions but fail to match experimental wind-tunnel observations due to systematic CFD–experiment discrepancies. The paper introduces a correction network trained on spatially registered PSP measurements that learns the discrepancy between surrogate-predicted and measured surface-pressure distributions, grounding the surrogate in experimental data without retraining the CFD-trained model.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.04329",
+  "source": "arXiv",
+  "title": "Data-Driven Learning of Unknown Nonlinear Differential Equations Using Functional Analysis",
+  "abstract": "In this paper, the problem of data-driven discovery of nonlinear ordinary differential equations (ODEs) is recast, and a new interpretable machine learning (ML) method is proposed. The proposed method aims to learn the unknown vector field of nonlinear dynamics without prior knowledge of the system's physics from only one single state trajectory's data. The proposed method has two fundamental differences with existing methods: 1) the formulation presented in this method is derived based on Functional Analysis and Operator Theory, and 2) the cost function is constructed in the function space as a distance between two functions as an integral, instead of the discrete-sum of errors used in existing ML approaches. An incremental learning algorithm is proposed to learn the unknown vector field to handle new training samples in an online manner. The proposed method can discover the unknown vector field from both forced and unforced autonomous and non-autonomous (or time-varying) dynamical systems. The proposed method is able to simultaneously discover unknown external forces as a function of time and unknown underlying dynamics. Finally, numerical examples are given to demonstrate the advantages of the proposed method.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Seyyed Shaho Alaviani",
+   "Yongzhi Qu",
+   "Gregory W. Vogl"
+  ],
+  "url": "https://arxiv.org/abs/2609.04329",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Data-driven discovery of unknown nonlinear ODE vector fields from a single state trajectory typically relies on discrete-sum error costs and little physics knowledge. This paper reformulates the problem using functional analysis and operator theory, constructing the cost as an integral distance in function space and using an incremental learning algorithm to recover unknown dynamics and external forces for forced/unforced, autonomous/non-autonomous dynamical systems.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.04407",
+  "source": "arXiv",
+  "title": "Disentangling Attention in Deep Operator Learning: A Controlled Study of Data-Driven and Physics-Informed Architectures",
+  "abstract": "Deep neural operators learn mappings between input functions and complete PDE solution fields, enabling forward evaluations of new problem instances orders of magnitude faster than conventional numerical solvers. Attention mechanisms have recently been introduced into neural operators, but most studies change several architectural components at once, making it difficult to identify what actually improves accuracy. This work presents a controlled and systematic study of five deep operator network (DeepONet) variants with distinct attention mechanisms, trained under both data-driven and physics-informed regimes, to isolate the effects of cross-attention, self-attention, tokenization, and attention depth. We evaluate them on a source-driven transient one-dimensional nonlinear diffusion-reaction equation, a transient one-dimensional viscous Burgers equation with variable initial conditions, and a two-dimensional Poisson heat-conduction problem with heterogeneous source fields. Per-sensor tokenization with cross-attention reduces the mean relative L_2 error of the classical DeepONet in all benchmark-training combinations by factors of 2.4-28.0, while the best attention configurations reach 3.5-32.3. Branch self-attention paired only with dot-product fusion is inconsistent, degrading the one-dimensional problems while helping the more complex two-dimensional source field; added on top of cross-attention it improves all six cases, though by less than cross-attention fusion alone. Global pre-mixing provides no consistent benefit. Increasing cross-attention depth further improves accuracy, but with diminishing returns and a substantially higher cost under physics-informed training. Overall, query-dependent cross-attention is the most reliable mechanism, whereas branch self-attention is most useful for large, spatially complex functional inputs.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Amar Alem Koric",
+   "Qibang Liu",
+   "Seid Koric"
+  ],
+  "url": "https://arxiv.org/abs/2609.04407",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml"
+  ],
+  "summary": "Attention mechanisms have been introduced into neural operators, but confounded architectural changes obscure which components actually improve accuracy. This paper conducts a controlled systematic study of five DeepONet variants with distinct attention mechanisms under both data-driven and physics-informed training, isolating the effects of cross-attention, self-attention, tokenization, and attention depth on three PDE benchmarks.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.05087",
+  "source": "arXiv",
+  "title": "Regional Frequency Constrained Dispatch Method Considering Spatial-joint Stochastic Disturbances and Contingencies",
+  "abstract": "The increasing penetration of renewable energy challenges frequency stability due to high variability and declining inertia. Traditional frequency security constrained dispatch methods fail to capture regional frequency heterogeneity and spatially correlated stochastic disturbances, resulting in inaccurate frequency security enforcement. To address this, a regional frequency constrained dispatch method is proposed, considering the spatially joint stochastic disturbances and contingencies. Firstly, a multi-regional frequency response model is constructed, incorporating the Vine-Copula based characterization of regional stochastic disturbances and regional frequency support. Then, a progressive latent-bottleneck physics-informed neural network is applied to characterize differential frequency nadir terms and regional frequency support integral terms via an encoder-decoder architecture, which enables optimization compatible expressions of system frequency dynamics. Finally, a day ahead dispatch model is developed in which regional stochastic frequency constraints are embedded using a CVaR-based formulation. A case study on the IEEE 118-bus system shows that the proposed method outperforms the unified center of inertia embedded approach in mitigating regional frequency violations, with the regional frequency nadir and RoCoF improved by 32.76% and 2.06%, respectively.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Nian Liu",
+   "Yubing Chen",
+   "Kai Jiang",
+   "Jiahao Liu",
+   "Cheng Wang",
+   "Tianshu Bi"
+  ],
+  "url": "https://arxiv.org/abs/2609.05087",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Regional frequency-constrained dispatch is inaccurate when it ignores spatial stochastic disturbances and regional frequency heterogeneity. The paper proposes a dispatch framework combining Vine-Copula disturbance modeling, a progressive latent-bottleneck physics-informed neural network to make frequency dynamics optimization-compatible, and CVaR-based stochastic constraints, improving regional frequency violation metrics on the IEEE 118-bus system.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.05093",
+  "source": "arXiv",
+  "title": "LLM-Guided Program Evolution for Circle Packing: Breaking 10 Packomania Records for $28",
+  "abstract": "We present Discovery Loop, a lightweight system that uses a large language model (LLM) to iteratively evolve optimization algorithms. Starting from a simple seed solver, the LLM proposes algorithmic improvements guided by a scoreboard of results and a history of prior ideas. Each candidate is evaluated against an independent verifier; improvements are kept and failures discarded. Applied to the Packomania circle-packing benchmark (csqv: maximize the sum of radii of N variable-radius circles in the unit square), the system improved the best known solutions for 10 values of N in the range 101-114, with gains of 2.4%-5.4% over prior records, all within 15 iterations and at a total LLM cost of $27.72. These results have been independently accepted by Packomania. We describe the method, analyze cost-efficiency dynamics including an adaptive plateau-detection mechanism, and discuss implications for democratizing automated scientific discovery.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Wes Sander"
+  ],
+  "url": "https://arxiv.org/abs/2609.05093",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Optimizing circle-packing instances from the Packomania benchmark is computationally challenging and previous records are hard to beat. The paper introduces Discovery Loop, an LLM-guided evolutionary loop that proposes algorithmic improvements, scores them against an independent verifier, and retains only validated changes, breaking ten Packomania records at low LLM cost.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.05180",
+  "source": "arXiv",
+  "title": "A simple shallow neural network for emulating the solution to singularly perturbed problems",
+  "abstract": "We consider (feed-forward) Neural Networks (NNs) for the emulation of the solution to singularly perturbed second order boundary value problems, with two small parameters. We describe a shallow NN which exploits available asymptotic expansions for the solution. These additive decompositions into smooth and layer components, allow for derivative estimates which are explicit in the order of differentiation as well as the singular perturbation parameter(s) \\cite{melenk, Irene, SX}. Utilizing such decompositions, we propose a simple NN for emulating the solution to such problems using the $\\tanh$ activation function together with different training objectives, such as residual or energy minimization. The key idea is to augment the approximation space with suitable exponential functions, similar to enriched spaces in finite element methods, e.g.~\\cite{Kellogg}. Numerical examples in one and two dimensions, including a smooth non-tensor-product domain, illustrate the resulting parameter-robust behavior over the tested perturbation ranges.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Christos Xenophontos",
+   "Aayushman Raina"
+  ],
+  "url": "https://arxiv.org/abs/2609.05180",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Emulating solutions of singularly perturbed boundary value problems with neural networks is unreliable without capturing boundary-layer behavior. The paper proposes a shallow tanh neural network whose basis is enriched with exponential functions derived from asymptotic layer decompositions and trained by residual or energy minimization, yielding parameter-robust behavior in 1D and 2D numerical examples.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.05207",
+  "source": "arXiv",
+  "title": "FluxDisco: Symbolic Regression for Stoichiometric Dynamical Systems via Monte Carlo Graph Search",
+  "abstract": "Dynamical symbolic regression methods identify governing differential equations from noisy data, balancing interpretability and predictive accuracy. However, standard methods often produce expressions that violate known physical laws. To address this, we propose FluxDisco, a physics-informed framework tailored for flux-based, stoichiometric ODE systems. By leveraging a known stoichiometry, we reduce the expression search space and ensure physical adherence. Our framework adapts the Monte Carlo Graph Search algorithm for the unique challenges associated with joint flux discovery of stoichiometric systems. We evaluate our method across a range of physical and biological systems, demonstrating its ability to accurately recover governing dynamics through interpretable equations.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "physics.data-an"
+  ],
+  "authors": [
+   "Cassandra Durr (Lancaster University)",
+   "Alvaro K\\\"ohn-Luque (University of Oslo)",
+   "Chris Jewell (Lancaster University)",
+   "Lloyd A. C. Chapman (Lancaster University)"
+  ],
+  "url": "https://arxiv.org/abs/2609.05207",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Dynamical symbolic regression from noisy data often produces equations that violate known physical laws. The paper introduces FluxDisco, a physics-informed symbolic-regression framework that leverages known stoichiometry within a Monte Carlo Graph Search algorithm to jointly discover flux-based ODE dynamics with interpretable, physically consistent equations.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2310.00177",
+  "source": "arXiv",
+  "title": "A Neural-preconditioned Poisson Solver for Mixed Dirichlet and Neumann Boundary Conditions",
+  "abstract": "We introduce a neural-preconditioned iterative solver for Poisson equations with mixed boundary conditions. Typical Poisson discretizations yield large, ill-conditioned linear systems. Iterative solvers can be effective for these problems, but only when equipped with powerful preconditioners. Unfortunately, effective preconditioners like multigrid require costly setup phases that must be re-executed every time domain shapes or boundary conditions change, forming a severe bottleneck for problems with evolving boundaries. In contrast, we present a neural preconditioner trained to efficiently approximate the inverse of the discrete Laplacian in the presence of such changes. Our approach generalizes to domain shapes, boundary conditions, and grid sizes outside the training set. The key to our preconditioner's success is a novel, lightweight neural network architecture featuring spatially varying convolution kernels and supporting fast inference. We demonstrate that our solver outperforms state-of-the-art methods like algebraic multigrid as well as recently proposed neural preconditioners on challenging test cases arising from incompressible fluid simulations.",
+  "categories": [
+   "math.NA",
+   "cs.GR",
+   "cs.LG",
+   "cs.NA",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Kai Weixian Lan",
+   "Elias Gueidon",
+   "Ayano Kaneda",
+   "Julian Panetta",
+   "Joseph Teran"
+  ],
+  "url": "https://arxiv.org/abs/2310.00177",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Poisson equations with mixed boundary conditions require costly preconditioner setups every time the domain or boundary changes. The paper presents a neural preconditioner with spatially varying convolution kernels that approximates the inverse discrete Laplacian and generalizes across shapes, boundary conditions, and grid sizes.",
+  "added": "2026-09-07"
+ },
+ {
+  "id": "arxiv:2609.04527",
+  "source": "arXiv",
+  "title": "Learning Memory-Dependent Neural Network Correlation Potentials for Accurate Electron Dynamics",
+  "abstract": "Time-dependent density functional theory, though exact in theory, is in practice applied in an adiabatic approximation using exchange-correlation functionals with only local temporal dependence. Simultaneously, the exact correlation potential formally depends on, among other quantities, the time-history of electron densities. Here we develop a framework to learn neural network models of correlation functionals that feature explicit memory-dependence. Our framework includes two different approaches, both linked through their use of adjoint-based optimization. One approach decouples the learning of the functional from inversion to find ground truth values of the correlation potential. The other approach learns the functional directly without requiring inversion. We apply these methods to modeling the electron dynamics of two-electron systems in two spatial dimensions. In both cases, our methods yield correlation functionals with low test set propagation error, outperforming standard local density and generalized gradient approximation functionals by one to two orders of magnitude. Overall, our framework points at one strategy to move beyond the adiabatic approximation and develop memory-dependent correlation functionals that yield accurate propagation for excited state and/or non-equilibrium dynamics.",
+  "categories": [
+   "physics.chem-ph",
+   "math.OC",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Harish S. Bhat",
+   "Christine M. Isborn"
+  ],
+  "url": "https://arxiv.org/abs/2609.04527",
+  "published": "2026-09-07",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Standard adiabatic TDDFT lacks accurate, memory-dependent correlation functionals for non-equilibrium electron dynamics. The paper develops an adjoint-based framework for learning neural-network correlation functionals with explicit memory dependence, including an inversion-free variant, and shows they outperform LDA/GGA by one to two orders of magnitude.",
+  "added": "2026-09-07"
  }
 ]
