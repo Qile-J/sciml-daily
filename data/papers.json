@@ -60276,5 +60276,25 @@
   ],
   "summary": "Estimating the local gravitational potential and stellar distribution function directly from Gaia data is degenerate under Jeans' theorem. The paper linearizes the collisionless Boltzmann equation in terms of accelerations to measure the local force field in isolation, then fits closed-form potentials via symbolic regression, exploiting the stellar number counts that dominate the observable signal.",
   "added": "2026-09-09"
+ },
+ {
+  "id": "arxiv:2609.09860",
+  "source": "arXiv",
+  "title": "Exact Degeneracy Under Balanced k-Shot Sampling:Consequences for Small-Sample Discriminant Analysis on LLM Embeddings",
+  "abstract": "Balanced k-shot sampling draws exactly k labeled examples per class. We show that it induces an exact, provable degeneracy in a family of small-sample discriminant estimators. Under balanced sampling, the within-class scatter operator of Kernelized Linear Principal Component Discriminant Analysis (KLPCDA) is not merely rank-deficient but exactly a scaled orthogonal projector. We derive the consequences in closed form: two of KLPCDA's seven variants have every signal eigenvalue exactly equal, so their eigenvector selection criterion is provably indifferent rather than ill-conditioned, and a third has a provably void objective. This follows from the estimators' construction, not any dataset; we confirm it on frozen sentence embeddings and, separately, on residual-stream activations from a decoder-only generative model. An in-formula tie-break repairs the two repairable variants, with recovery gated by class count: the residual subspace constraint costs 5x more on few-class than many-class datasets (p=0.000001). We then evaluate the repaired framework on few-shot text classification on frozen LLM embeddings (n much smaller than d, up to 4096), across four datasets, three embedding sizes, and three trained baselines (SetFit, LoRA, in-context learning). A properly cross-validated logistic-regression probe still beats every KLPCDA variant on three of four datasets, at every embedding size; guidance carried from pixel, vibration-signal, and gene-expression data does not directly generalize to this feature space. Three independent geometric separability metrics fail to explain why one high-dimensional decoder-based embedding model underperforms smaller bidirectional encoders, ruling out anisotropy; the gap is substantially an estimation-efficiency effect, not a permanent ceiling, closing by more than 80% when the support set grows from k<=10 to k=30-50 (p=0.00195, both many-class datasets).",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Lingxiao Qu"
+  ],
+  "url": "https://arxiv.org/abs/2609.09860",
+  "published": "2026-09-10",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Balanced k-shot sampling is common in few-shot evaluation, but its effect on small-sample discriminant estimators for LLM embeddings is not well understood. The paper proves that KLPCDA's within-class scatter operator becomes an exact scaled orthogonal projector under balanced sampling, derives closed-form degeneracies, and evaluates a tie-break repair against logistic-regression probes on frozen LLM embeddings.",
+  "added": "2026-09-10"
  }
 ]
