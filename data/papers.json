@@ -60296,5 +60296,98 @@
   ],
   "summary": "Balanced k-shot sampling is common in few-shot evaluation, but its effect on small-sample discriminant estimators for LLM embeddings is not well understood. The paper proves that KLPCDA's within-class scatter operator becomes an exact scaled orthogonal projector under balanced sampling, derives closed-form degeneracies, and evaluates a tie-break repair against logistic-regression probes on frozen LLM embeddings.",
   "added": "2026-09-10"
+ },
+ {
+  "id": "arxiv:2609.12710",
+  "source": "arXiv",
+  "title": "Perturbational Validity for Foundation Models of Brain Dynamics: A Controlled Proof-of-Principle Simulation",
+  "abstract": "Foundation models for human brain recordings are usually evaluated by signal reconstruction, future-state prediction, and transfer to downstream tasks. However, these benchmarks do not establish whether a transferred model remains valid when the system is actively perturbed. We define perturbational validity as the preservation, after limited system-specific adaptation, of the conditional distribution of future trajectories given the current state and a controlled input, and we evaluate it at three levels: time-series accuracy, dynamical-structure similarity, and responses to perturbations excluded from calibration. We demonstrate the framework in an oracle-drift simulation of stochastic bistable systems. Two otherwise identical multilayer perceptrons were trained on drift evaluations from passive or input-driven trajectories. Next, for each held-out system the shared weights were frozen and only a three-dimensional embedding was adapted, with a correctly specified cubic model fitted from scratch as comparator. With two to five system-specific evaluations, perturbational pretraining yielded lower errors in recovering controlled flow, landscape geometry, finite-run occupancy, response distributions, and dose-transition curves. The advantage was reproduced across five independent runs, persisted under full-network adaptation of the passive model, and was attributable to input excitation rather than transition-state coverage: excitation alone lowered controlled-flow error 1.94-fold relative to coverage alone, in five of five runs. The cubic model became competitive as calibration grew, showing that the benefit is specific to few-shot transfer. This controlled demonstration does not test recovery of dynamics from noisy or partially observed brain recordings. It shows why passive prediction should be complemented by prospective evaluation under controlled inputs.",
+  "categories": [
+   "q-bio.QM",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Jos\\'e C. Garc\\'i Alanis",
+   "Sarah Alizadeh",
+   "Marco Rothermel",
+   "Bita Shariatpanahi",
+   "Mina Kheirkhah",
+   "Stefan G. Hofmann",
+   "Tim Hahn",
+   "Hamidreza Jamalabadi"
+  ],
+  "url": "https://arxiv.org/abs/2609.12710",
+  "published": "2026-09-14",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Standard reconstruction and prediction benchmarks do not establish whether a foundation model of neural dynamics stays valid when the system is actively perturbed. The paper defines a perturbational-validity criterion on the conditional distribution of future trajectories and, in controlled simulations of stochastic bistable systems, shows that pretraining an MLP on input-driven (excited) trajectories yields better few-shot transfer of controlled flow, landscape geometry, and dose-transition curves than passive-trajectory pretraining.",
+  "added": "2026-09-14"
+ },
+ {
+  "id": "arxiv:2609.12815",
+  "source": "arXiv",
+  "title": "4D Parallelism Unlocks Exascale Bayesian Neural Networks for High-Fidelity Atmospheric Modeling",
+  "abstract": "We present BEAST, the first-ever Bayesian Swin Transformer for atmospheric forecasting on 0.25$^\\circ$ global resolution able to accurately quantify both aleatoric and epistemic uncertainty. To overcome the associated computational bottlenecks, we devise an orthogonal 4D-parallelization scheme that introduces a unique domain-tensor-parallelism strategy and a novel uncertainty parallel method, enabling us to fully leverage GPU capacity and efficiently scale model training. For a 2.4-billion-parameter model, we achieve a peak performance of 3.96 EFLOP/s on 20,480 NVIDIA GH200 GPUs on the JUPITER supercomputer. We train BEAST as a 700-million-parameter model with 96 random weight samples on 384 nodes on 40 years of data for nearly one million gradient updates. This model achieves predictive skill scores competitive with state-of-the-art probabilistic atmospheric AI models and numerical models, and can predict extreme events with exceptional skill, while generating large ensembles 3 to 4 times faster than the current-best AI model. Our contribution unlocks the potential of high-fidelity uncertainty quantification in atmospheric AI models, heralding a new era for AI-based models in climate and Earth system sciences.",
+  "categories": [
+   "physics.ao-ph",
+   "cs.AI",
+   "cs.DC",
+   "cs.LG",
+   "cs.PF"
+  ],
+  "authors": [
+   "Deifilia Kieckhefen",
+   "Juan Pedro Guti\\'errez Hermosillo Muriedas",
+   "Lars Helge Heyen",
+   "Mathis Bode",
+   "Iida Hakulinen",
+   "Andreas Herten",
+   "Chelsea Maria John",
+   "Thorsten Kurth",
+   "Anni Moisala",
+   "Asena Karolin \\\"Ozdemir",
+   "Kaleb Phipps",
+   "Oskar Taubert",
+   "Arvid Weyrauch",
+   "Markus G\\\"otz",
+   "Charlotte Debus"
+  ],
+  "url": "https://arxiv.org/abs/2609.12815",
+  "published": "2026-09-14",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "foundations"
+  ],
+  "summary": "High-resolution atmospheric forecasting needs both predictive skill and reliable aleatoric and epistemic uncertainty estimates at exascale. The paper presents BEAST, a Bayesian Swin Transformer trained with a novel 4D domain-tensor- and uncertainty-parallelization scheme that reaches 3.96 EFLOP/s on 20,480 GH200 GPUs and produces large probabilistic ensembles 3-4x faster than the current best AI model.",
+  "added": "2026-09-14"
+ },
+ {
+  "id": "arxiv:2609.12831",
+  "source": "arXiv",
+  "title": "VertexCBF: Improving Neural Control Barrier Functions via Vertex-Restricted Control Search",
+  "abstract": "As the number of autonomous robots continues to grow, safety becomes increasingly important. Control barrier functions (CBFs) provide a theoretically grounded framework for ensuring safety, but existing design methods often face limitations in effectiveness, scalability, or interpretability, and may result in overly conservative safe sets. In this paper, we propose \\emph{VertexCBF}, a framework for learning neural CBFs in a scalable, systematic, and explainable way. We approximate the stationary Hamilton--Jacobi value function using a neural network trained via a combination of physics-informed and sparsely supervised learning. By exploiting control-affine dynamics and a convex polytope control set, under which the Hamiltonian is maximized at the control vertices, we efficiently generate supervision points via GPU-parallel vertex-restricted tree search, while a residual architecture guarantees that the learned CBF is never larger than the specified constraint function. We evaluate the method on 15 systems and compare it against relevant baselines, showing that it reliably recovers large safe sets where the baselines are conservative or fail completely. In addition, we perform a hardware experiment in which a mobile robot safely avoids pedestrians using a neural CBF trained with our method.",
+  "categories": [
+   "cs.RO",
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Bojan Deraji\\'c",
+   "Sebastian Bernhard",
+   "Wolfgang H\\\"onig"
+  ],
+  "url": "https://arxiv.org/abs/2609.12831",
+  "published": "2026-09-14",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Learned control barrier functions often yield overly conservative safe sets and scale poorly. VertexCBF approximates the stationary Hamilton-Jacobi value function with a physics-informed, sparsely supervised network and generates supervision via GPU-parallel vertex-restricted tree search over a convex polytope control set, with a residual architecture guaranteeing the learned barrier never exceeds the specified constraint function.",
+  "added": "2026-09-14"
  }
 ]
