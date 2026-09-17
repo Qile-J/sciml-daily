@@ -61071,5 +61071,83 @@
   ],
   "summary": "Finite-dimensional Koopman models learned from trajectory data often violate the energetic structure of mechanical systems, causing artificial energy growth and divergence under recursive prediction. The paper introduces a structure-preserving port-Hamiltonian Koopman framework in generalized-momentum coordinates with a structure-constrained neural architecture and a Cayley-midpoint discretization that guarantees passivity and exact discrete storage-dissipation balance.",
   "added": "2026-09-16"
+ },
+ {
+  "id": "arxiv:2609.18566",
+  "source": "arXiv",
+  "title": "Deep learning emergent spacetime from fermionic spectral functions in holography",
+  "abstract": "We present a physics-informed machine learning framework based on Neural Ordinary Differential Equations that solves the holographic inverse problem: reconstructing the bulk spacetime and gauge field of a charged AdS black hole directly from boundary fermionic spectral functions. Encoding the UV asymptotics, horizon regularity, and zero temperature extremality as hard constraints in the neural network architecture, our framework reliably reconstructs the extremal Reissner-Nordstr\\\"om AdS geometry across three quantum critical regimes set by the $U(1)$ probe charge---non-Fermi liquid, marginal Fermi liquid (strange metal), and Fermi-liquid-like states---and can jointly infer the probe charge itself to sub-percent accuracy. Relaxing the near-AdS boundary constraint uncovers a geometrical degeneracy: bulk profiles that differ throughout the radial direction but share the same near-horizon $AdS_2 \\times \\mathbb{R}^2$ data reproduce identical spectral functions near the Fermi surface. This isospectral non-uniqueness is precisely the bulk degeneracy expected on general holographic grounds at zero temperature, and its spontaneous emergence across independent training runs shows that the network isolates the IR CFT universality rather than overfitting a single UV completion.",
+  "categories": [
+   "hep-th",
+   "cond-mat.str-el",
+   "cs.LG"
+  ],
+  "authors": [
+   "Koji Hashimoto",
+   "Hyun-Sik Jeong",
+   "Keun-Young Kim",
+   "Daichi Takeda",
+   "Kwan Yun"
+  ],
+  "url": "https://arxiv.org/abs/2609.18566",
+  "published": "2026-09-17",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "equation-discovery-dynamical-systems",
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper addresses the holographic inverse problem of reconstructing the bulk spacetime and gauge field of a charged AdS black hole from boundary fermionic spectral functions. It builds a physics-informed Neural ODE framework that hard-codes UV asymptotics, horizon regularity, and extremality as architectural constraints, recovering extremal Reissner-Nordström geometry across three quantum critical regimes and revealing an isospectral bulk degeneracy.",
+  "added": "2026-09-17"
+ },
+ {
+  "id": "arxiv:2609.18759",
+  "source": "arXiv",
+  "title": "Stable Filters for Generative Modeling of Graph Signals",
+  "abstract": "Generating signals on graphs requires permutation-equivariant models that exhibit stability with respect to relative structural perturbations. While recent graph-aware Schr\\\"odinger bridge models incorporate topology information directly into their reference dynamics, it is unclear how perturbations of the graph propagate through these dynamics and affect the resulting generated distributions. In this paper, we analyze the structural stability of graph-aware continuous-time generative models whose drift combines a graph filter with a learned graph neural network. We derive explicit Wasserstein stability bounds that quantify the effect of relative graph perturbations on the generated distributions. Motivated by these bounds, we introduce a principled framework for designing stable graph filters that preserve the smoothing behavior of graph heat diffusion, while boosting structural stability. Experiments on synthetic and fMRI signals show our stable filters enhance structural robustness while matching or exceeding the generative quality of the heat equation baseline.",
+  "categories": [
+   "eess.SP",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Martin Schmidt",
+   "Gonzalo Mateos"
+  ],
+  "url": "https://arxiv.org/abs/2609.18759",
+  "published": "2026-09-17",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "foundations"
+  ],
+  "summary": "The paper studies how perturbations of a graph propagate through graph-aware continuous-time generative models based on graph-filter drifts plus learned GNNs. It derives explicit Wasserstein stability bounds for the generated distributions and uses them to design stable graph filters that retain heat-diffusion smoothing while improving structural robustness.",
+  "added": "2026-09-17"
+ },
+ {
+  "id": "arxiv:2609.18928",
+  "source": "arXiv",
+  "title": "Comprehensive reconstruction of collider events with hypergraph representation learning and graph-conditioned diffusion",
+  "abstract": "In particle collider experiments, event reconstruction is the task of inferring the kinematics of short-lived particles produced in the hard scatter from the stable final states recorded by detectors. We decompose event reconstruction into two primary tasks: assigning measured jets and charged leptons to parent particles, and predicting unmeasured neutrino kinematics. We present VyPER, a novel geometric learning framework that represents collider events as hypergraphs with a physics-inspired topology. VyPER combines the supervised classification of hyperedges for particle assignment with a diffusion model for predicting neutrino kinematics, leveraging a joint loss function to optimize both reconstruction tasks within a unified framework. We showcase VyPER across several proton-proton collision processes, comparing its performance to existing analytical and machine-learning-based reconstruction techniques. In doing so, we demonstrate that accurate event reconstruction is achievable across a diverse range of Standard Model physics processes, opening new avenues for precision measurements in the Higgs boson, electroweak, and top-quark sectors.",
+  "categories": [
+   "hep-ph",
+   "cs.LG",
+   "hep-ex"
+  ],
+  "authors": [
+   "Lining Mao",
+   "Yvonne Peters",
+   "Ethan Simpson",
+   "Zihan Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2609.18928",
+  "published": "2026-09-17",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper tackles collider event reconstruction, splitting it into assigning jets and leptons to parent particles and predicting unmeasured neutrino kinematics. It introduces VyPER, a geometric learning framework that represents events as physics-inspired hypergraphs with supervised hyperedge classification combined, via a joint loss, with a graph-conditioned diffusion model for neutrino kinematics.",
+  "added": "2026-09-17"
  }
 ]
