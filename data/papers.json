@@ -61149,5 +61149,145 @@
   ],
   "summary": "The paper tackles collider event reconstruction, splitting it into assigning jets and leptons to parent particles and predicting unmeasured neutrino kinematics. It introduces VyPER, a geometric learning framework that represents events as physics-inspired hypergraphs with supervised hyperedge classification combined, via a joint loss, with a graph-conditioned diffusion model for neutrino kinematics.",
   "added": "2026-09-17"
+ },
+ {
+  "id": "arxiv:2609.19288",
+  "source": "arXiv",
+  "title": "Learning-Induced Dynamical Transition in Recurrent Neural Networks",
+  "abstract": "Learning in recurrent neural networks can fundamentally reshape their underlying dynamics, transforming initially chaotic activity into stable task-dependent behavior. We develop a non-equilibrium dynamical mean-field theory(DMFT) to describe this transition during learning. We show that a slow feedback-driven learning process generates an evolving effective feedback strength that drives the network through a transition from chaotic to stable dynamics defined by a bifurcation of the DMFT solution. By deriving the two-time correlation function throughout learning, we identify a critical feedback strength and a corresponding learning rate dependent critical time separating these regimes. The transition arises from the progressive deformation of an effective dynamical landscape by the growing learned feedback structure. Starting from the untrained state, the theory predicts the time evolution of the network output during training and shows quantitative agreement with numerical simulations.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.dis-nn",
+   "nlin.CD"
+  ],
+  "authors": [
+   "Varun Vaidya"
+  ],
+  "url": "https://arxiv.org/abs/2609.19288",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm",
+   "foundations"
+  ],
+  "summary": "Learning reshapes recurrent network dynamics from chaos to stable task-dependent behavior, but there is no theory for this transition during training. The paper develops a non-equilibrium dynamical mean-field theory with an evolving effective feedback strength, deriving a two-time correlation function that identifies a critical feedback strength and a learning-rate-dependent critical time.",
+  "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.19314",
+  "source": "arXiv",
+  "title": "The Level Set Ensemble Kalman Filter: Sequential Data Assimilation for Flows With Shocks",
+  "abstract": "The ensemble Kalman filter is commonly used to perform sequential data assimilation in science and engineering because of its robust performance and scalability when the state space dimension is high. However, the standard EnKF generates spurious oscillations when applied to compressible flows with shocks; the cause is the uncertainty, across the ensemble, in the shock location. This paper develops the \\emph{level set EnKF}, which overcomes this challenge by employing a nonlinear mapping from the original state space into a latent space in which the analysis step is undertaken. The latent representation comprises a level set function that encodes the discontinuity location and smooth state extensions, defined over the full physical domain, that represent the solution on either side of the discontinuity. We first formulate the level set EnKF as a specific instance of a more general approach of performing data assimilation in a latent space. We then demonstrate the feasibility of the level set EnKF for several one-dimensional compressible flows and a two-dimensional blast wave.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Michael K. Sleeman",
+   "Lorenzo Beronilla",
+   "Hangchuan Hu",
+   "Xu-Hui Zhou",
+   "Matthias Morzfeld",
+   "Andrew M. Stuart",
+   "Tamer A. Zaki"
+  ],
+  "url": "https://arxiv.org/abs/2609.19314",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "The standard ensemble Kalman filter produces spurious oscillations when assimilating compressible flows with shocks because shock location is uncertain across the ensemble. The paper develops the level set EnKF, which maps the state into a latent level-set representation encoding the discontinuity location and smooth extensions on either side, and performs the analysis step there for 1D flows and a 2D blast wave.",
+  "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.19333",
+  "source": "arXiv",
+  "title": "NomadBBO: A direct-search framework for constrained mixed-variable blackbox optimization in Python",
+  "abstract": "Mixed-variable blackbox optimization arises in simulation-based engineering and machine learning, where objective and constraint functions are expensive to evaluate and variables may be continuous, integer, binary, or categorical. Several software libraries are available for derivative-free optimization, but few combine ease of use, computational efficiency, flexibility, and theoretical convergence guarantees. This work presents NomadBBO, a user-friendly Python library for inequality-constrained mixed-variable blackbox optimization built around Nomad. Its core optimization framework is CatADS, a new direct-search method that extends Adaptive Direct Search (ADS) to mixed-variable problems. CatADS combines the mechanisms of ADS for quantitative variables with neighborhoods for handling categorical variables. These neighborhoods use Gaussian process-based or empirical Wasserstein distances derived from available data. Inequality constraints are handled through the progressive barrier. The mixed-variable and surrogate-based mechanisms are implemented in Python and connected to the efficient C++ backend of Nomad via Cython. This integration allows Nomad to handle categorical variables. It also enables the use of external libraries and hybrid optimization strategies, including Gaussian process models from SMT 2.0 and Bayesian optimization. Numerical experiments compare NomadBBO with other solvers on constrained and unconstrained mixed-variable problems from the Cat-Suite benchmark collection. The beta release is available at https://test.pypi.org/project/NomadBBO/",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Edward Hall\\'e-Hannan",
+   "Christophe Tribes"
+  ],
+  "url": "https://arxiv.org/abs/2609.19333",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "foundations"
+  ],
+  "summary": "Constrained mixed-variable blackbox optimization with continuous, integer, binary and categorical variables is difficult for derivative-free solvers. The paper introduces NomadBBO and its CatADS direct-search method, which extends adaptive direct search with categorical neighborhoods defined by Gaussian-process or empirical Wasserstein distances and handles constraints through a progressive barrier.",
+  "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.19335",
+  "source": "arXiv",
+  "title": "Deep Learning for Singular PDEs: A Weighted Neural Network Approach",
+  "abstract": "We propose a deep learning framework for the numerical approximation of weakly singular semilinear elliptic equations subject to homogeneous Dirichlet boundary conditions and positivity constraints. These problems are challenging because the nonlinear source term becomes unbounded as the positive solution approaches zero near the boundary. The proposed approach combines three components. First, the Dirichlet boundary conditions are embedded directly into the neural representation through a hard-constraint formulation. Second, a Softplus transformation preserves positivity in the interior of the computational domain, ensuring that the singular nonlinear term remains well-defined during training. Third, a singularity-aware weighted residual loss emphasizes regions where the predicted solution becomes small and the singular behavior is more pronounced. The method is evaluated in the weak singularity regime through numerical reference solutions and controlled verification tests. Comparisons with the standard residual formulation are used to assess approximation accuracy and convergence behavior. The numerical experiments illustrate the potential of combining hard boundary enforcement, positivity preservation, and singularity-aware residual weighting for weakly singular elliptic problems.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Badr Oulgiht"
+  ],
+  "url": "https://arxiv.org/abs/2609.19335",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "Neural approximation of weakly singular semilinear elliptic equations is difficult because the nonlinear source term becomes unbounded as the positive solution vanishes near the boundary. The paper combines hard-constrained Dirichlet enforcement, a Softplus positivity transformation, and a singularity-aware weighted residual loss to keep the singular term well-defined during training.",
+  "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.19337",
+  "source": "arXiv",
+  "title": "Personalized Federated Hierarchical Gaussian Processes for Privacy-Preserving Modeling of Heterogeneous Distributed Systems",
+  "abstract": "We present Personalized Federated Hierarchical Gaussian Processes (pFedHGP) for probabilistic regression and classification when data are distributed across heterogeneous clients. Each client's latent function decomposes into (i) a shared global component, (ii) a client-specific deviation that shares the global kernel structure, and (iii) a flexible local residual. Sparse inducing-variable approximations and federated variational inference keep raw data local while the server synchronizes only low-dimensional statistics for the shared component. Full predictive distributions support uncertainty-aware decisions. In application studies, pFedHGP attains perfect fault classification in press tonnage monitoring using 13.77% of labeled cycles and recovers geographic zones in federated air-quality modeling without centralizing station-level time series. An Instantaneous Linear Mixing Model viewpoint links the hierarchy to multi-output Gaussian processes for correlated sensors.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Xianjian Xie",
+   "Hao Yan"
+  ],
+  "url": "https://arxiv.org/abs/2609.19337",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Probabilistic regression and classification across heterogeneous clients requires sharing structure without centralizing raw data. pFedHGP decomposes each client's latent function into shared global, client-specific, and flexible local residual components trained via sparse inducing-variable approximations and federated variational inference, yielding full predictive distributions for uncertainty-aware decisions.",
+  "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.19360",
+  "source": "arXiv",
+  "title": "PowerModels-ACOPF-AI: On-the-Fly Machine Learning Approach for Solving AC Optimal Power Flow Integrating Renewable Energy Sources",
+  "abstract": "The increasing complexity of modern power systems, driven by high renewable penetration, load variability, and operational uncertainty, demands fast and reliable solutions to the AC optimal power flow problem (AC-OPF). Traditional optimization methods, though accurate, often struggle with scalability and high computational burdens, making them impractical for real-time use in large networks. This paper introduces PowerModels-ACOPF-AI, a two-stage Bayesian Neural Network (BNN) surrogate designed to predict generator set points, bus voltages, and phase angles with uncertainty. The framework integrates a performance-sensitive on-the-fly learning mechanism that identifies regions of degraded prediction accuracy and dynamically retrains with additional AC-OPF solutions generated by PowerModels.jl. This self-adaptive loop ensures robust performance, enabling the model to maintain accuracy under novel or highly variable operating conditions. Validation on benchmark test systems of different sizes, namely the 30-bus, 200-bus, and 500-bus networks, demonstrates strong generalization capability, efficient handling of stochastic renewable injections, and the ability to provide rapid, uncertainty-aware predictions. Beyond predictive accuracy, the proposed approach offers practical value as both a real-time advisory tool for system operators and a fast initializer for conventional solvers, thus supporting resilient and efficient grid operation in future power systems.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Bhuban Dhamala",
+   "Jose Tabarez",
+   "Anup Pandey"
+  ],
+  "url": "https://arxiv.org/abs/2609.19360",
+  "published": "2026-09-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "uq-inverse-problems"
+  ],
+  "summary": "AC optimal power flow under high renewable penetration needs fast solutions that remain reliable outside the training distribution. PowerModels-ACOPF-AI uses a two-stage Bayesian neural network surrogate with an on-the-fly learning loop that detects degraded-accuracy regions and retrains on freshly generated PowerModels.jl AC-OPF solutions, yielding uncertainty-aware generator set points, voltages, and angles.",
+  "added": "2026-09-18"
  }
 ]
