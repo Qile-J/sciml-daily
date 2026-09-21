@@ -61289,5 +61289,315 @@
   ],
   "summary": "AC optimal power flow under high renewable penetration needs fast solutions that remain reliable outside the training distribution. PowerModels-ACOPF-AI uses a two-stage Bayesian neural network surrogate with an on-the-fly learning loop that detects degraded-accuracy regions and retrains on freshly generated PowerModels.jl AC-OPF solutions, yielding uncertainty-aware generator set points, voltages, and angles.",
   "added": "2026-09-18"
+ },
+ {
+  "id": "arxiv:2609.21590",
+  "source": "arXiv",
+  "title": "Periodic Neural Mapping for Unsteady Rotor-Blade Pressure and Aeroelastic Load Prediction",
+  "abstract": "Accurate prediction of unsteady aerodynamic loads remains a major challenge in turbomachinery design. High-fidelity Computational Fluid Dynamics (CFD) simulations are expensive, while aeroelastic Quantities of Interest (QoI) depend sensitively on the temporal evolution of the pressure field. This work introduces periodic Fourier Neural Mapping (p-FNM), a neural-operator framework for predicting unsteady pressure distributions on turbine rotor blades simulated using the chorochronic numerical hypothesis. The architecture embeds temporal periodicity into the model and learns a continuous mapping from operating conditions and time to pressure fields. Unlike sequential latent-space approaches, p-FNM predicts pressure fields independently at any time, avoiding error accumulation while preserving temporal continuity. The model is evaluated on a database of unsteady rotor-blade simulations and compared with a reduced-order baseline based on a variational autoencoder and recurrent neural network, refered as the Temporal Prediction Model (TPM). Performance is assessed for pressure fields and Generalized Aerodynamic Forces (GAFs), the primary aeroelastic QoI. Across all training datasets, p-FNM consistently outperforms TPM. On the largest dataset, p-FNM achieves a pressure-field mean absolute percentage error of 0.46% and a GAF-magnitude prediction error of 4.42%, corresponding to improvements of 60.7% and 77.6%, respectively. The minimum weighted phase error reaches 0.060 rad, demonstrating accurate preservation of the temporal characteristics of the aerodynamic response. The results show that GAF prediction is more challenging than pressure-field prediction and that temporal coherence is critical for accurately predicting spectral aerodynamic quantities. These findings demonstrate the potential of periodic neural operators for reduced-order modeling and aeroelastic analysis in turbomachinery.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.LG"
+  ],
+  "authors": [
+   "Lionel Salesses",
+   "Joachim Dominique",
+   "Tariq Benamara",
+   "Th\\'eo Flament",
+   "Franck Mastrippolito"
+  ],
+  "url": "https://arxiv.org/abs/2609.21590",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Accurately predicting unsteady pressure and aeroelastic loads on turbine rotor blades is costly with high-fidelity CFD, and sequential latent models accumulate error over time. The paper introduces periodic Fourier Neural Mapping (p-FNM), a neural-operator framework that embeds temporal periodicity and learns a direct mapping from operating conditions and time to pressure fields for reduced-order aeroelastic modeling.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21647",
+  "source": "arXiv",
+  "title": "Riemannian Neural Hamiltonian Flows: Geodesic Symplectic Transport and Interpretability",
+  "abstract": "Hamiltonian normalizing flows are attractive generative models because their phase-space maps are invertible and volume preserving, but most neural constructions are formulated in Euclidean space. We introduce Riemannian Neural Hamiltonian Flows, which combine the fixed kinetic energy of a Riemannian manifold, a learned scalar potential, and an explicit geodesic leapfrog integrator. Our analysis explains how the learned Hamiltonian can be made interpretable. Every normalizable potential defines an implicit profile, and the position marginal initially accelerates along the relative score between that profile and the base. The matched potential is the interpretable specialization for which the implicit profile is the target. In the isotropic Gaussian case, the mechanism corresponds to a phase-space rotation. A local harmonic analysis extends this result around each mode of a general target on a manifold. The gap between the learned and the matched potential is the sum of a residual memory of the base and a bias of the model, and the two potentials agree when the position base has been transferred to the momentum. This can be achieved when the former is broader than the target. Numerical experiments on Euclidean, hyperbolic, and spherical spaces show competitive sample quality and numerical cost against a Riemannian continuous normalizing flow, and confirm the interpretability of the learned potential.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Vincent Souveton"
+  ],
+  "url": "https://arxiv.org/abs/2609.21647",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Hamiltonian normalizing flows are invertible and volume-preserving, but most neural constructions are formulated only in Euclidean space. The paper introduces Riemannian Neural Hamiltonian Flows, combining a manifold's fixed kinetic energy, a learned scalar potential, and an explicit geodesic leapfrog integrator, and analyzes when the learned potential becomes interpretable.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21715",
+  "source": "arXiv",
+  "title": "Integral chemical reaction neural networks",
+  "abstract": "Discovering the structure and kinetics of chemical reaction networks (CRNs) from time-series concentration data is a fundamental challenge in chemical kinetics, with existing approaches relying on prior mechanistic assumptions or suffering from high computational cost and noise sensitivity. In this work, we present integral chemical reaction neural networks (iCRNNs), a framework that combines the interpretable, physics-constrained, architecture of chemical reaction neural networks (CRNNs) with an integral collocation formulation of the governing dynamics. Rather than solving ODEs forward in time at each training step, we approximate the integral of the learned rate functions directly using numerical quadrature. This yields an entirely algebraic forward pass consisting only of matrix operations, eliminating the repeated adaptive ODE solves of standard CRNN and producing smoother, more predictable training. We provide a recovery error analysis characterising the structural sources of ill-conditioning (conservation laws, reaction reversibility, and shared reactant sets) that limit network identifiability. On two benchmark CRNs, iCRNN trains in roughly half the wall-clock time of the baseline CRNN method on a four-species mechanism and between three and four times faster on a five-species mechanism, while completing every training run reliably and attaining comparable or lower loss.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Abraham Reyes-Vel\\'azquez",
+   "Stefan G\\\"uttel"
+  ],
+  "url": "https://arxiv.org/abs/2609.21715",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Discovering the structure and kinetics of chemical reaction networks from concentration time series is hampered by mechanistic priors and the cost of repeated ODE solves. The paper introduces integral chemical reaction neural networks (iCRNNs), replacing forward ODE integration with an integral-collocation formulation evaluated by numerical quadrature, and provides a recovery-error analysis of the ill-conditioning sources limiting identifiability.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21747",
+  "source": "arXiv",
+  "title": "Single-Loop Stochastic Projected Damped Extragradient Methods for Stochastic Nonconvex--(Strongly) Concave Minimax Optimization",
+  "abstract": "We develop single-loop stochastic projected damped extragradient methods for stochastic nonconvex--(strongly) concave minimax optimization, with complexity guarantees for both game stationarity (GS) and optimization stationarity (OS). Our approach combines a stochastic projected damped extragradient (SPDE) method with a recursive variance-reduced variant, VR-SPDE, both of which retain a single-loop structure. Under an unbiased stochastic gradient oracle with uniformly bounded variance, SPDE finds an $\\varepsilon$-game-stationary point with stochastic first-order oracle (SFO) complexities of $O(\\kappa\\varepsilon^{-4})$ and $O(\\varepsilon^{-5})$ in the nonconvex--strongly concave and nonconvex--concave settings, respectively, where $\\kappa=L/\\mu$. Under an additional mean-square Lipschitz condition on the stochastic gradients, VR-SPDE improves these GS complexities to $O(\\kappa^{3/2}\\varepsilon^{-3})$ and $O(\\varepsilon^{-9/2})$, respectively. For an $\\varepsilon$-optimization-stationary point, SPDE achieves SFO complexities of $O(\\kappa\\varepsilon^{-4})$ and $O(\\varepsilon^{-6})$, while VR-SPDE achieves $O(\\kappa^{3/2}\\varepsilon^{-3})$ and $O(\\varepsilon^{-6})$, in the two settings, respectively. These OS guarantees match the best-known bounds achieved by multi-loop methods while preserving a single-loop implementation. To the best of our knowledge, our results provide the best-known SFO complexity guarantees among single-loop stochastic first-order methods for the respective stationarity criteria and problem classes.",
+  "categories": [
+   "math.OC",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Huiling Zhang",
+   "Minhao Zhang",
+   "Zi Xu"
+  ],
+  "url": "https://arxiv.org/abs/2609.21747",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Stochastic nonconvex-(strongly) concave minimax optimization lacks single-loop first-order methods with strong stationarity guarantees. The paper develops single-loop stochastic projected damped extragradient methods (SPDE) plus a recursive variance-reduced variant (VR-SPDE), establishing improved SFO complexity bounds for both game and optimization stationarity.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21798",
+  "source": "arXiv",
+  "title": "An improved periodic activation for PINNs reconstructing convective flows",
+  "abstract": "Architectures with periodic activation functions have already been shown to be beneficial in comparison to monotonic counterparts for a wide range of applications of physics-informed neural networks. Here, we investigate a network architecture which uses the complex exponential function, generating pairs of sine and cosine outputs as activation functions. Testing it against comparable, sine-activated multi-layer perceptrons for the task of temperature reconstruction from sparse velocity data for cubic Rayleigh-B\\'enard convection reveals significant improvements in the reconstruction quality without a substantial increase in computational cost per training step. Vice versa, the improved architecture enables reaching similar reconstruction qualities for a fraction of the expense. Analyzing the mathematical structure of these networks points to the improvements being rooted in the property of passing both a sine and cosine function forward. This way, the subsequent layer is able to adapt the phase of the provided latent periodic functions, and doing it individually for each of its neurons.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Michael Mommert",
+   "Marie-Christine Volk",
+   "Christian Bauer"
+  ],
+  "url": "https://arxiv.org/abs/2609.21798",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Physics-informed neural networks reconstructing convective flows are limited by the choice of activation function. The paper introduces an activation based on the complex exponential that produces paired sine/cosine outputs, letting each subsequent neuron adapt the phase of the propagated periodic features and improving temperature reconstruction from sparse velocity data in Rayleigh-Bénard convection.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21821",
+  "source": "arXiv",
+  "title": "Adaptive Uncertainty-Aware Modeling and Stochastic Radial Basis Function Predictive Control for Personalized Fluid Resuscitation",
+  "abstract": "This paper presents a novel framework integrating Bayesian physiological modeling with optimal control strategies to achieve uncertainty-aware, personalized hemodynamic regulation during fluid resuscitation. An uncertainty-aware variational autoencoder state-space model (UVAE-SSM) was first developed to capture the dynamical relationship between mean arterial pressure (MAP) and fluid infusion using limited data, while explicitly modeling aleatoric uncertainty (i.e., randomness in the measurements, such as sensor noise). Then, a Bayesian nonlinear state-space model (BNSSM) was developed by utilizing Bayesian neural networks (BNNs) to capture epistemic uncertainty arising from physiological and patient-specific variability, enabling the creation of a virtual patient generator (VPG). Building on this uncertainty-aware modeling framework, a stochastic radial basis function model predictive control (sRBF-MPC) algorithm was designed to track the MAP target while satisfying physiological constraints. Finally, an online fine-tuning algorithm was developed to adapt the nominal UVAE-SSM using streaming VPG data, enabling progressive personalization during closed-loop therapy. Simulation results across unseen animal subjects and an independent human clinical dataset demonstrated the strong predictive accuracy and cross-population generalizability of the UVAE-SSM and BNSSM models. Closed-loop evaluations confirmed that the proposed sRBF-MPC framework achieved stable MAP regulation while providing better risk-aware control compared to quadratic MPC (Q-MPC) and stochastic quadratic MPC (sQ-MPC). Overall, the proposed framework accounts for inter- and intra-patient variability through online model adaptation, offering a promising step toward uncertainty-aware, personalized hemodynamic modeling and control in critical care.",
+  "categories": [
+   "eess.SY",
+   "cs.LG",
+   "cs.SY"
+  ],
+  "authors": [
+   "Elham Estiri",
+   "Hossein Mirinejad"
+  ],
+  "url": "https://arxiv.org/abs/2609.21821",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Personalized hemodynamic regulation during fluid resuscitation requires modeling both aleatoric sensor noise and epistemic patient variability under limited data. The paper develops an uncertainty-aware variational-autoencoder state-space model (UVAE-SSM) and a Bayesian-neural-network state-space model (BNSSM) for a virtual patient generator, coupled with a stochastic radial-basis-function model predictive control (sRBF-MPC) scheme and online adaptation for closed-loop MAP tracking.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21834",
+  "source": "arXiv",
+  "title": "Beyond Shadow Weights: Quantization-Aware Training as Quantized-Endpoint Descent",
+  "abstract": "Quantization-aware training (QAT) updates a full-precision shadow weight $\\mathbf{x}$ but deploys the quantized endpoint $Q(\\mathbf{x})$. Existing explanations for QAT largely view its success through the lens of shadow weights: QAT can move $\\mathbf{x}$ toward flatter basins, gain robustness from quantization-induced oscillations, or balance the shadow loss $f(\\mathbf{x})$ against the quantization error $\\|\\mathbf{x}-Q(\\mathbf{x})\\|_2$. These perspectives do not directly explain the empirical observation that the deployed endpoint loss $f(Q(\\mathbf{x}))$ improves while the shadow loss $f(\\mathbf{x})$ does not, and can even increase substantially. In this paper, we offer a different explanation by treating QAT as finite-grid endpoint dynamics. Motivated by the approximate normality of rescaled pretrained weights, we propose an idealized model for the residual phase, which records where each shadow weight sits inside its quantization cell as a fraction of the cell width. This model leads to a crossing law that determines which coordinates cross quantization boundaries after a shadow update. Inspired by the idealized model and signal-imbalance phenomenon in QAT, we further propose QAR (Quantization with Amplified Routing), an algorithmic framework that directly operates on the quantization code. In contrast to QAT, QAR is both theoretically grounded and memory-efficient: it admits feasible-gradient bounds for a family of power amplifiers up to unavoidable finite-grid floors without retaining a full-precision shadow weight copy. Experiments on post-training of large language models provide evidence consistent with the endpoint view and show that QAR can be comparable to or better than QAT with smaller memory cost.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Sheng-An Xu",
+   "Hanyang Li",
+   "Jianhao Ma",
+   "Ying Cui"
+  ],
+  "url": "https://arxiv.org/abs/2609.21834",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Quantization-aware training improves the deployed quantized-endpoint loss even when the full-precision shadow loss worsens, which existing shadow-weight explanations cannot account for. The paper models QAT as finite-grid endpoint dynamics through a residual-phase model that yields a quantization-boundary crossing law, and derives QAR, a shadow-weight-free algorithm operating directly on the quantization code with feasible-gradient bounds.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21751",
+  "source": "arXiv",
+  "title": "ForceTwin: Physics-informed Digital Twins for Robotic Manipulation from Instrumented Human Interaction",
+  "abstract": "Manipulating objects requires understanding not only their motion, but also the physical properties that determine it. For articulated objects, these include inertia, friction, and mechanisms such as springs or door closers, whose effects can vary with configuration and velocity. Such properties are not directly observable from appearance: visually identical doors may require very different effort to manipulate. Existing digital-twin pipelines recover primarily kinematics or assign static physical parameters from visual and language priors, which can yield physically implausible estimates. As a result, state-dependent mechanism dynamics remain unidentified and are not represented in standard asset formats. We present ForceTwin, a system for identifying physics-informed digital twins of articulated objects from instrumented human interaction. A person probes an object using a handheld force-sensing gripper, providing synchronized poses and interaction forces from which we estimate the articulation, parametric dynamics including inertia, Coulomb friction, viscous damping, and a structured neural residual capturing state-dependent mechanism forces. ForceTwin nearly halves the inertial-parameter error of a VLM prior. As a feedforward dynamics model for impedance control on a Spot and a Franka FR3, ForceTwin achieves 87% goal completion across nine object-embodiment pairs, compared with 60% using VLM-prior and 57% using kinematics-only twins, with the largest gains on objects whose strong mechanisms cause both baselines to stall. We further use the identified twins to train whole-body door-traversal policies and deploy them in the real world. Project Page: https://timengelbracht.github.io/forcetwin-website/",
+  "categories": [
+   "cs.RO",
+   "cs.AI"
+  ],
+  "authors": [
+   "Tim Engelbracht",
+   "Ren\\'e Zurbr\\\"ugg",
+   "Mayank Mittal",
+   "Marco Hutter",
+   "Marc Pollefeys",
+   "Hermann Blum",
+   "Zuria Bauer"
+  ],
+  "url": "https://arxiv.org/abs/2609.21751",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Identifying articulated objects' physical properties (inertia, friction, springs/door closers) is hard because state-dependent mechanism dynamics are not observable from appearance. ForceTwin estimates parametric dynamics plus a structured neural residual from synchronized human probing poses and forces, yielding physics-informed digital twins used as feedforward models for impedance control.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21762",
+  "source": "arXiv",
+  "title": "Neural composite likelihood estimation: simulation based inference for time series",
+  "abstract": "Simulation based inference (SBI) circumvents the challenge of intractable likelihoods by using a simulator that generates data given parameter values. For instance, neural likelihood estimation (NLE) estimates the likelihood function by training a neural network to perform conditional density estimation on simulated data given corresponding parameters. However such density estimation is only feasible for relatively low dimensional data. We extend the scalability of SBI methods to a higher dimensional problem: long sequences with a complex dependency structure. We introduce Neural Composite Likelihood Estimation (NCLE). This divides the sequence into smaller, equal-sized batches. Instead of training NLE to estimate the likelihood for an entire sequence, we estimate the likelihood for each batch separately. The product of these forms an approximate composite likelihood (CL), and we perform frequentist inference using methods from the CL literature: we get a point estimate from maximising the approximate CL and obtain confidence intervals by estimating the Godambe information matrix. We demonstrate the effectiveness of NCLE with experiments on time series models.",
+  "categories": [
+   "stat.CO",
+   "stat.ML"
+  ],
+  "authors": [
+   "Grace Yan",
+   "Mark Beaumont",
+   "Dennis Prangle"
+  ],
+  "url": "https://arxiv.org/abs/2609.21762",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Neural likelihood estimation for simulation-based inference does not scale to long sequences with complex dependency structure. The paper introduces Neural Composite Likelihood Estimation, which estimates per-batch likelihoods whose product forms an approximate composite likelihood, and performs frequentist inference with a Godambe-information confidence interval.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21795",
+  "source": "arXiv",
+  "title": "Towards Physics-Informed Neural Networks for Stiff Guitar String Vibrations",
+  "abstract": "Modeling stiff string vibrations is challenging due to their dispersive and high-frequency characteristics. This study investigates the effectiveness of Physics-Informed Neural Networks (PINNs) in simulating the transverse vibration of a one-dimensional linear stiff string with sharp initial conditions induced by plucking. The governing Partial Differential Equation (PDE), along with the associated initial and boundary conditions, is incorporated directly into the loss function of the neural network. For the reference measurements, a wire-breaking experiment was performed to excite the string, and its vibration response was captured using a laser profiler. The comparison between experimental measurements, finite-difference time-domain (FDTD) simulations, and PINN-based simulations shows good overall agreement, highlighting the potential of PINNs for modeling stiff-string vibrations.",
+  "categories": [
+   "eess.AS",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Xinmeng Luan",
+   "Kensuke Okada",
+   "Ryoya Tabata",
+   "Gary Scavone"
+  ],
+  "url": "https://arxiv.org/abs/2609.21795",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Modeling stiff string vibrations is difficult due to their dispersive, high-frequency character and sharp plucked initial conditions. The paper applies a physics-informed neural network that embeds the governing stiff-string PDE and initial/boundary conditions in the loss, validated against laser-profiler experiments and finite-difference time-domain simulations.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21882",
+  "source": "arXiv",
+  "title": "Orbital-Free Surrogate Functionals Yield Transferable Interatomic Potentials and Electron Densities",
+  "abstract": "Orbital-free density functional theory seeks to compute the energy of an electronic system directly from its electron density, avoiding one-electron wave functions and thereby offering a route to scalable electronic structure calculations. Machine-learned orbital-free density functionals have recently achieved promising results on small organic molecules, predicting energies with sub-millihartree accuracy. However, their convergence in density optimization remains sensitive to hyperparameter tuning and architectural choices. Here, we extend the recently introduced (weak) surrogate functional framework - designed to predict ground-state electron densities only - to also yield their energy, resulting in \"strong\" surrogate functionals. We find that these learned functionals enable stable convergence across all tested neural network backbones, reducing electron density errors relative to the Kohn-Sham reference by an order of magnitude compared to previous OF-DFT methods. More importantly, the predicted energies are competitive with state-of-the-art machine-learned interatomic potentials (MLIPs) trained only on energies, while exhibiting superior generalization to larger, unseen systems.",
+  "categories": [
+   "physics.chem-ph",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Simon Wagner",
+   "Marc K. Ickler",
+   "Manuel V. Klockow",
+   "Fred A. Hamprecht",
+   "Roman Remme"
+  ],
+  "url": "https://arxiv.org/abs/2609.21882",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Machine-learned orbital-free DFT functionals have unstable density optimization and previously predicted only densities, not energies. The paper extends the weak surrogate-functional framework to strong surrogate functionals that also yield energy, enabling stable convergence across backbones and transferable interatomic potentials and densities.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.21960",
+  "source": "arXiv",
+  "title": "Schedule optimization for tau-leaping in masked discrete diffusion",
+  "abstract": "Masked discrete diffusion models are commonly accelerated using the so-called tau-leaping discretization method, which reveals several coordinates in parallel at each sampling step. The sampler replaces the joint conditional law of each revealed block by a product distribution, incurring a factorization error $\\varepsilon_\\text{fact}$ present even with perfectly learned predictors. We analyze the standard sampler on $N$ coordinates with $K$ sampling steps, whose random block sizes depend on a denoising schedule. Our analysis uses an exact integral representation of $\\varepsilon_\\text{fact}$ in terms of a distribution-dependent dependence density $\\rho$, which records how conditional dependence evolves as the revealed fraction of coordinates grows. We develop estimators for this profile and quantify how estimation errors affect schedule selection. We derive recursive stationarity equations for the finite-$K$ optimization problem and, under a monotonicity condition, characterize its unique optimizer. In the joint limit $N,K\\to\\infty$, we obtain an explicit characterization of the optimal limiting smooth schedule and quantify the cost of random block sizes relative to a deterministic planner. When $\\rho_N$ converges uniformly to a strictly positive continuous profile, optimizing over fixed smooth schedules can improve the leading constant but not the $N/K$ scaling of $\\varepsilon_\\text{fact}$. By contrast, if $\\rho_N$ degenerates, suitable schedules can improve the asymptotic order relative to the uniform schedule. Examples based on stationary processes and exchangeable mixtures illustrate these two regimes.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Cecilia Secchi",
+   "Giacomo Zanella"
+  ],
+  "url": "https://arxiv.org/abs/2609.21960",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Tau-leaping masked discrete diffusion incurs a factorization error that depends on the denoising schedule, but this dependence is not characterized. The paper derives an exact integral representation of the factorization error via a dependence density, proves recursive stationarity conditions for finite-step schedule optimization, and characterizes the optimal limiting schedule and the cost of random block sizes.",
+  "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.22020",
+  "source": "arXiv",
+  "title": "Comparative analysis of Neural Networks approaches for Initial Orbit Determination of Near-Earth Objects",
+  "abstract": "Initial Orbit Determination (IOD) from Very Short Arcs (VSAs) remains one of the most challenging open problems in asteroid surveillance and celestial mechanics. Classical methods require angular observations spanning a sufficient fraction of the orbit, and become ill-conditioned or fail outright when only a single observing night is available, as is the case for most newly discovered Near-Earth Objects (NEOs). We present a comparative analysis of two Neural Network (NN) models that attack the ranging problem directly: both ingest a triplet of time-tagged angular measurements $(t_i,\\alpha_i,\\delta_i)$, $i=1,2,3$, from a single VSA and predict the geocentric range and range-rate $(\\rho,\\dot\\rho)$, thus completing the orbital state vector. The first is a Multi-Layer Perceptron trained on a purely data-driven objective; the second augments it with a physics-informed loss. Both are trained, under an object-disjoint partition, on a sample of the $568\\,127$ VSAs of $39\\,031$ real NEOs available in the NEODyS-2 catalogue. Each model returns an estimate on every arc by construction, so we assess instead whether that estimate is dynamically admissible: on a held-out test set of $56\\,773$ arcs the physics-informed model places $85.1\\%$ of its predictions inside the admissible region, against $76.5\\%$ for the data-driven baseline, whereas Gauss's and Laplace's methods return a solution on only $45.0\\%$ and $47.3\\%$ of the same arcs and collapse onto the degenerate root in about nine of those cases out of ten. A stratified analysis over proper motion and true range shows that the physics-informed objective is not uniformly superior to the baseline: it trades a longer error tail for admissibility and for a marked advantage on the fast, nearby arcs that are operationally the most relevant.",
+  "categories": [
+   "astro-ph.EP",
+   "math-ph",
+   "math.MP"
+  ],
+  "authors": [
+   "Francesco Geroni",
+   "Roberto Paoli",
+   "Riccardo Massidda",
+   "Giacomo Tommei"
+  ],
+  "url": "https://arxiv.org/abs/2609.22020",
+  "published": "2026-09-21",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Initial orbit determination from very short arcs is ill-conditioned, with classical Gauss/Laplace methods failing or returning degenerate roots on single-night NEO observations. The paper compares a purely data-driven MLP against a physics-informed-loss MLP that predict geocentric range and range-rate from three angular measurements, assessing dynamical admissibility of the completed state vectors.",
+  "added": "2026-09-21"
  }
 ]
