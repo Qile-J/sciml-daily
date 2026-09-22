@@ -61599,5 +61599,281 @@
   ],
   "summary": "Initial orbit determination from very short arcs is ill-conditioned, with classical Gauss/Laplace methods failing or returning degenerate roots on single-night NEO observations. The paper compares a purely data-driven MLP against a physics-informed-loss MLP that predict geocentric range and range-rate from three angular measurements, assessing dynamical admissibility of the completed state vectors.",
   "added": "2026-09-21"
+ },
+ {
+  "id": "arxiv:2609.23934",
+  "source": "arXiv",
+  "title": "The Neural Forcing for Three-Dimensional Incompressible Navier-Stokes finite time blowup",
+  "abstract": "We present a two-part neural framework for forced three-dimensional incompressible Navier--Stokes flow. Part~I develops the computational forcing system. A physics-informed neural model generates structured external-force trajectories, candidates are optimized through differentiable PDE rollouts or PPO-Clip, and selected forcings are frozen and checked by independent fixed-force replay. Part~II provides the mathematical certification layer. It separates neural candidate discovery from continuum analysis, derives integrated reciprocal-vorticity criteria that imply Riccati-type growth and finite-time loss of smooth continuation, develops a validated computational-to-continuum transfer strategy, and establishes a conditional positive-probability closure for a nondegenerate neural output law. The proof is complete at the continuum level.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Beibei Li"
+  ],
+  "url": "https://arxiv.org/abs/2609.23934",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "differentiable-simulation"
+  ],
+  "summary": "The paper asks whether forced three-dimensional incompressible Navier-Stokes flow can be driven to finite-time blowup and how such forcings can be found and certified. It builds a two-part neural framework in which a physics-informed model generates structured forcing trajectories optimized through differentiable PDE rollouts or PPO-Clip, paired with a continuum-level certification layer based on integrated reciprocal-vorticity criteria implying Riccati-type growth.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.23949",
+  "source": "arXiv",
+  "title": "Bulk-edge sticking beyond the Perron mode in Gaussian softmax attention",
+  "abstract": "We study row-softmax self-attention with independent Gaussian query and key weights in the proportional regime, at fixed inverse temperature. Hayase, Collins, and Karakida proved Gaussian equivalence for the empirical squared singular-value distribution after removal of the Perron direction. A global law alone does not exclude finitely many nonleading outliers. We prove that no such outliers persist: the rescaled squared singular value $\\ell s_k(A)^2$ converges in probability to the upper edge of their bulk law for every fixed $k\\ge 2$. In fact, this convergence is uniform over any deterministic sublinear number of leading non-Perron indices. The proof uses an exact decomposition of the softmax normalization, conditions on the key matrix, identifies the conditional covariance exactly with a diagonally conjugated inner-product kernel, linearizes that kernel in operator norm, and applies the outside-support local law of Fan, Ma, Paquette, and Wang. A separate stability argument identifies the finite conditional deformed Marchenko-Pastur edge with the limiting bulk edge. We also derive a scalar formula for that edge throughout the proportional regime and recover the explicit square-model formula of Hayase, Collins, and Karakida, including its physical branch.",
+  "categories": [
+   "math.PR"
+  ],
+  "authors": [
+   "Alexander Jerschow"
+  ],
+  "url": "https://arxiv.org/abs/2609.23949",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks whether finitely many nonleading singular-value outliers persist beyond the Perron mode in Gaussian row-softmax attention in the proportional regime. Via an exact decomposition of the softmax normalization, exact identification of the conditional covariance as a diagonally conjugated inner-product kernel, operator-norm linearization, and an outside-support local law, it proves the rescaled squared singular values converge uniformly to the bulk edge for a sublinear number of leading non-Perron indices and derives a scalar edge formula.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.23990",
+  "source": "arXiv",
+  "title": "MGRD: Compact morphology-gated residual diffusion for variance-aware cross-domain neurite forecasting",
+  "abstract": "Tracking neurite morphology over time helps characterize structural changes during neuronal development and deterioration, but long-term time-lapse imaging is resource-intensive and difficult to scale. Forecasting future morphology could reduce this burden. Existing neurite digital-twin models such as gated spatiotemporal attention (gSTA) produce a single deterministic forecast without representing variability among plausible futures. We introduce Morphology-Gated Residual Diffusion (MGRD), a compact stochastic surrogate that jointly forecasts twenty future neurite-morphology frames from ten observed frames while conditioning on morphology features derived from the latest observation. On controlled phase-field trajectories, MGRD reduces trajectory-wise mean MAE by 9.7% relative to a matched control while updating 4.46 times fewer parameters. On human iPSC-derived neuron microscopy, MGRD improves all four reported metrics over gSTA, including a 39.6% reduction in trajectory-wise mean MAE and a 45.3% increase in skeleton F1. Without mouse-domain retraining or fine-tuning, MGRD also improves MAE and skeleton F1 on mouse cortical-neurosphere microscopy across 10-40-min sampling intervals and forecast horizons beyond 13 hours. Repeated sampling provides a case-level variance score for ranking forecast difficulty. Retaining approximately 60% of the lowest-variance cases reduces mean MAE by 17.6% on iPSC microscopy and 16.8% on simulation data. MGRD uses 1.01% of gSTA's parameters, requires less than one tenth of its training-update time, and generates a 50-step DDIM trajectory 7.9% faster when morphology features are cached. These results establish MGRD as a compact stochastic surrogate for neurite-morphology forecasting and case prioritization across simulation and microscopy datasets.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA",
+   "physics.bio-ph"
+  ],
+  "authors": [
+   "Tsung Yeh Hsieh",
+   "Cosmin Anitescu",
+   "Chunghwan Kim",
+   "Victoria A. Webster-Wood",
+   "Yongjie Jessica Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2609.23990",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "The paper addresses forecasting future neurite morphology when long-term time-lapse imaging is costly and existing digital twins give only a single deterministic prediction. It introduces Morphology-Gated Residual Diffusion (MGRD), a compact stochastic diffusion surrogate conditioned on morphology features that jointly forecasts twenty future frames from ten observed ones and yields a repeated-sampling variance score for ranking forecast difficulty.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.24021",
+  "source": "arXiv",
+  "title": "Cost-Accuracy Trade-offs: Neural Operator vs Classical Numerical Solver",
+  "abstract": "Neural operators are data-driven models that learn mappings from inputs that parameterize partial differential equations, such as spatially varying coefficients, initial conditions, forcing terms, boundary conditions, or geometries, to solution fields or quantities of interest. Once trained, they can serve as surrogates for classical numerical solvers in many-query settings that require repeated evaluations for varying inputs. We address the question of when, and then why, neural operator surrogates outperform classical numerical solvers, in terms of cost for a given accuracy. We focus on the post-training, many-query limit, in which data-acquisition and training costs are treated as fixed and fully amortized. Even in this deliberately favorable regime for neural operators, there are regimes in which classical solvers outperform the surrogate models. We compare the cost-accuracy performance of neural operator surrogates and classical numerical solvers through a reproducible benchmark study comparing neural operators with problem-matched classical solvers on representative problems in computational science and engineering, focusing on prediction error, per-query floating-point cost, and wall-clock runtime. Neural operators are most competitive at low-to-moderate accuracy requirements. Their floating-point cost advantage depends strongly on the problem structure, arising when they avoid temporal or nonlinear iterations or predict a reduced quantity of interest rather than a full solution field. Additional wall-clock speedups result from dense tensor operations that are well suited to modern hardware. As the target accuracy is tightened, achieving the required accuracy with neural operators becomes increasingly challenging, and classical solvers outperform surrogates in this regime; thus classical solvers will remain important for verification and high-accuracy computation.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA"
+  ],
+  "authors": [
+   "Daniel Zhengyu Huang",
+   "Andrew M. Stuart"
+  ],
+  "url": "https://arxiv.org/abs/2609.24021",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper asks when and why neural-operator surrogates beat classical numerical PDE solvers in cost-for-a-given-accuracy terms in the post-training, fully amortized many-query limit. Through a reproducible benchmark comparing neural operators against problem-matched classical solvers on representative computational-science problems, it measures prediction error, per-query floating-point cost, and wall-clock runtime and identifies the regimes where surrogates or classical solvers win.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.24042",
+  "source": "arXiv",
+  "title": "Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints",
+  "abstract": "Edge deployment motivates forecasting models with compact parameter storage and low-bit representations. Deep equilibrium models (DEQs) obtain implicit depth by repeatedly applying a shared layer, reducing the parameter cost of explicit layer stacking. Their usual Anderson solver, however, searches for update coefficients in the continuous real domain. We propose Q-DEQ, which formulates local updates in DEQ forward solving as discrete optimization problems. Candidate directions are constructed from the current state and iteration history, and a local quadratic residual model is used to evaluate their combinations. Binary encoding of the direction coefficients yields a quadratic unconstrained binary optimization (QUBO) problem that can be solved by simulated annealing (SA) or a coherent Ising machine (CIM). After fixed-point solving, a re-forward pass applies W8A8 fake quantization to the shared layer's weights and activations. We evaluate Q-DEQ with an iTransformer backbone on five multivariate time series forecasting datasets. Relative MSE differences from the explicit multi-layer baseline range from $-1.16\\%$ to $+2.90\\%$, with lower MSE on two datasets. DEQ parameter sharing reduces parameter counts by factors of $1.80\\times$--$3.82\\times$; combined with W8A8, static weight storage is reduced by factors of $4.3\\times$--$12.8\\times$. Local QUBO problems solved using CPU-based SA and the Kaiwu CIM physical backend produce closely matching downstream forecasts. These results establish local discrete solving as a viable component of DEQ time series forecasting and provide a route for executing fixed-point updates through different combinatorial optimization backends.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Ruotong Yang",
+   "Hongdong Zhu",
+   "Qi Gao",
+   "Yin Ma",
+   "Hai Wei",
+   "Kai Wen"
+  ],
+  "url": "https://arxiv.org/abs/2609.24042",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper targets compact edge deployment of deep equilibrium models, whose standard Anderson solver searches for update coefficients in the continuous real domain. Q-DEQ recasts DEQ forward-solve local updates as discrete optimization, encoding candidate-direction coefficients as a QUBO solved by simulated annealing or a coherent Ising machine, and combines this with W8A8 quantization of the shared layer.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.24089",
+  "source": "arXiv",
+  "title": "FlashBoB: I/O-Efficient Exact Backward-over-Backward for Softmax Attention",
+  "abstract": "Transformer models built on the attention mechanism have become a central building block in modern deep learning, yet softmax attention remains a major bottleneck for long-context workloads. While FlashAttention makes the forward and first backward passes I/O-efficient, it does not support backward-over-backward (BoB), which enables exact differentiation through the backward pass for applications such as second-order optimization, test-time training, gradient-based memory, and meta-learning. Existing BoB implementations either materialize large intermediate tensors or exhaust GPU memory at long sequence lengths. We present FlashBoB, an exact, I/O-efficient algorithm for BoB in softmax attention that keeps computation within on-chip tiles and avoids all $N \\times N$ intermediate tensors, where $N$ is the sequence length. The key insight is a hierarchical affine structure in the softmax double backward: two row-wise scalars determine all outputs through affine transformations. This yields a two-pass schedule with bounded on-chip static random-access memory (SRAM) usage and minimal off-chip high-bandwidth memory (HBM) traffic. FlashBoB achieves $\\Theta(N^2 d^2/M)$ HBM traffic ($d$ is the head dimension and $M$ is the memory size) and, within the standard FlashAttention-style score-recomputation model, matches the inherited large-cache lower bound for exact forward attention. Empirically, it scales exact attention BoB to $N=262\\text{K}$ on a single A100 80GB GPU, where prior PyTorch exact baselines fail by $N=16\\text{K}$, and is up to $6.3\\times$ faster than FlashBack. These results make exact second-order attention practical at long-context sequence lengths where prior implementations cannot run efficiently.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Anthony Givans",
+   "Michael Crawshaw",
+   "Mingrui Liu"
+  ],
+  "url": "https://arxiv.org/abs/2609.24089",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper addresses the lack of an exact, memory-feasible backward-over-backward (BoB) for softmax attention, which is needed for second-order optimization, test-time training, and meta-learning at long context. FlashBoB exploits a hierarchical affine structure in the softmax double backward to give a two-pass, on-chip-tiled algorithm achieving Θ(N²d²/M) HBM traffic and matching the inherited large-cache lower bound for exact forward attention, scaling exact BoB to N=262K on a single A100.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.22189",
+  "source": "arXiv",
+  "title": "Physics-Informed Classical and Quantum Neural Networks for One-Dimensional Schrodinger Eigenvalue Problems",
+  "abstract": "The Schrodinger equation in one spatial dimension admits a small set of exactly solvable potentials that serve as natural proving grounds for any new eigenvalue solver. We formulate Physics-Informed Neural Networks (PINNs) and Physics-Informed Quantum Neural Networks (PIQNNs) for the time-independent Schrodinger equation and apply them to three of these benchmarks: the harmonic oscillator, the infinite square well, and the finite square well. In each case a composite loss encodes the differential-equation residual, the normalization condition, the boundary behavior, and the orthogonality between eigenstates, so that the trial wave function is driven toward a genuine eigenfunction without supervised data. The eigenvalues and wave functions returned by both methods are compared against the exact spectra and against three classical references: the matrix Numerov method, the finite difference method, and the shooting method. For the smooth oscillator the two neural solvers reproduce the lowest four eigenvalues to parts per million, while for the square wells they recover the analytic levels with comparable fidelity even where the potential is discontinuous. The quantum circuit, built as a layered angle-embedding ansatz with strongly entangling blocks, converges more reliably than its classical counterpart on the higher excited states, where the loss landscape of the classical network becomes harder to navigate.",
+  "categories": [
+   "quant-ph",
+   "cs.LG",
+   "hep-ph",
+   "hep-th"
+  ],
+  "authors": [
+   "Tariq Mahmood",
+   "Waqas Arshad",
+   "Bilal Naseer",
+   "Alfredo Raya"
+  ],
+  "url": "https://arxiv.org/abs/2609.22189",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "This paper asks whether physics-informed neural and quantum neural networks can recover eigenvalues and eigenfunctions of the time-independent Schrödinger equation as reliably as classical solvers. It formulates PINN and PIQNN solvers with a composite loss enforcing the residual, normalization, boundary behavior, and inter-eigenstate orthogonality, then benchmarks them against Numerov, finite-difference, and shooting methods on the harmonic oscillator and infinite and finite square wells.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.22329",
+  "source": "arXiv",
+  "title": "Artificial Neural Networks as Surrogate Models in Black Box Optimization",
+  "abstract": "Black-Box Optimization (BBO) is often applied in several engineering fields and can utilize an advancement of numerical measure- ments and simulation technologies. It deals with the optimization func- tions, where an analytical description is unavailable. It relies on meth- ods that require only an input point in the search space, paired with its corresponding objective function value, obtained through non-analytical means, e.g., sensors, experiments, or simulations. Common approaches include evolutionary optimization and other metaheuristics. Since BBO methods rely solely on objective function values, they typically require many evaluations, which becomes problematic when evaluating the ob- jective function is time-consuming or expensive. This leads to using surrogate-based optimization which evaluates selected true objective val- ues and trains a regression model to approximate the objective function across the search space. Surrogate-assisted black-box optimization is a small-data learning problem because the optimizer must approximate an expensive objective function from limited evaluations. Surrogate models act as data-efficient regressors, guiding the search toward promising or informative points under a restricted evaluation budget. In this paper, a new surrogate model using artificial neural networks, called Adaptive- Fidelity Nexus Covariance Matrix Adaptation Evolution Strategy (AFN- CMA-ES), is proposed for the selective evaluation of objective functions. The experimental results show its competitive performance compared to state-of-the-art surrogate-assisted BBO methods.",
+  "categories": [
+   "cs.NE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Md Khadimul Islam Zim (Czech Academy of Sciences",
+   "Institute of Computer Science",
+   "Prague",
+   "Czech Republic)",
+   "Martin Hole\\v{n}a (Czech Academy of Sciences",
+   "Institute of Computer Science",
+   "Prague",
+   "Czech Republic)"
+  ],
+  "url": "https://arxiv.org/abs/2609.22329",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Surrogate-assisted black-box optimization must approximate expensive objective functions from a small number of evaluations, a limited-data regression problem. The paper proposes AFN-CMA-ES, a neural-network surrogate coupled with CMA-ES for selective evaluation of the objective, and reports competitive results against state-of-the-art surrogate-assisted BBO methods.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.22342",
+  "source": "arXiv",
+  "title": "Gradient-estimator design overcomes trainability barriers in neural-network-based variational optimization",
+  "abstract": "Neural networks provide expressive representations for scientific computing. However, even sufficiently expressive networks can suffer training failure in weak-gradient regimes, limiting their practical use in quantum many-body physics and ab initio quantum chemistry. Here we derive an unbiased direct gradient estimator and introduce the adaptive minimum-variance phase (AMVP) estimator for neural-network variational optimization. By improving the signal-to-noise ratio of weak gradients, these methods enable reliable scientific calculations where training previously failed, while substantially reducing computational cost. The framework enables compact networks to outperform larger and fine-tuned default standard-estimator models with over an order of magnitude less GPU time on correlated flux models, and ultimately exceed the density matrix renormalization group (DMRG) accuracy. It further achieves chemical accuracy in N$_2$ bond breaking and, for the first time, in heavy-element I$_2$ with explicit spin-orbit coupling. These results demonstrate that gradient-estimator design expands the capabilities of neural-network variational methods for accurate scientific computing.",
+  "categories": [
+   "cond-mat.dis-nn",
+   "cond-mat.str-el",
+   "cs.LG",
+   "physics.chem-ph",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Yi-Ran Xue",
+   "Rui Wang",
+   "Baigeng Wang",
+   "Chenan Wei"
+  ],
+  "url": "https://arxiv.org/abs/2609.22342",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Expressive neural-network ansätze for scientific computing often fail to train in weak-gradient regimes, limiting neural-network variational optimization in quantum many-body physics and quantum chemistry. The paper derives an unbiased direct gradient estimator and the adaptive minimum-variance phase (AMVP) estimator that raise weak-gradient signal-to-noise, enabling compact networks to exceed DMRG accuracy on correlated flux models and reach chemical accuracy in N2 and spin-orbit-coupled I2.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.22658",
+  "source": "arXiv",
+  "title": "Subspace Learning with Interval-Censored Likelihoods for Dequantizing Percept PC LFP Snapshots",
+  "abstract": "Implanted neurostimulators that sense local field potentials now enable chronic electrophysiology based biomarker tracking in patients at home. The Medtronic Percept PC, the only commercially available sensing-enabled deep brain stimulation (DBS) device, stores spectral amplitudes as 16-bit integers at approximately 0.1 $\\mu$V per bit (quantum $q \\approx 0.11$ $\\mu$Vp). At frequencies where the true amplitude spans only a few quantization levels, consecutive bins round to the same stored value. Standard spectral parameterization (FOOOF, fitting oscillations and one over f), which separates periodic peaks from the aperiodic 1/f activity, treats every value as exact and fits oscillatory peaks to these plateaus. Because these spectra feed clinical biomarker pipelines and spectral foundation models for symptom decoding, spurious peaks can corrupt downstream inference. Across 9,438 spectra from 14 hemispheres in 7 subcallosal cingulate DBS patients, 20.6% of peaks detected at [2, 45] Hz have no match in ground truth synthesized by quantizing clean in-clinic BrainSense recordings, while aggregate beta band power and the aperiodic exponent are preserved. We formalize dequantization as interval-censored subspace estimation and compare five classes of correction methods. Quantized probabilistic PCA is the only tested method that reduces the spurious rate (20.6% to 18.3%) while preserving true peak detection and keeping noise floor RMSE below $q/\\sqrt{12}$.",
+  "categories": [
+   "eess.SP",
+   "stat.ML"
+  ],
+  "authors": [
+   "Shreesh Karjagi",
+   "Elif Ceren Fitoz",
+   "Maryam Khalid",
+   "Tanya Nauvel",
+   "Parisa Sarikhani",
+   "Helen S. Mayberg",
+   "Christopher J. Rozell",
+   "Sankaraleengam Alagapan"
+  ],
+  "url": "https://arxiv.org/abs/2609.22658",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Quantization of Percept PC local-field-potential spectra into 16-bit integers creates plateaus that standard spectral parameterization misreads as spurious oscillatory peaks, potentially corrupting downstream clinical biomarker pipelines. The paper formalizes dequantization as interval-censored subspace estimation, compares five correction-method classes, and shows that quantized probabilistic PCA is the only tested method that lowers the spurious-peak rate while preserving true peak detection.",
+  "added": "2026-09-22"
+ },
+ {
+  "id": "arxiv:2609.24929",
+  "source": "arXiv",
+  "title": "Conformalized Quantile Regression and Minimax Limits of Fixed-Score Calibration under Known Covariate Shift",
+  "abstract": "In this paper, we study nonasymptotic $L^p$ error bounds for interval length and conditional coverage in split conformalized quantile regression (CQR). Our bounds rely on local regularity conditions and accuracy guarantees for the estimated quantiles. We further instantiate our bounds for quantile regression with sparse ReLU neural networks. We also consider covariate shift, where the calibration and test covariates have different distributions, and derive nonasymptotic bounds for this setting. We obtain matching minimax upper and lower bounds in expectation for two constructed fixed-score calibration benchmarks under known covariate shift. The bounds match for every $p\\in[1,\\infty]$ in the scalar problem and for finite $p$ in the $K$-threshold problem; for the latter, a high-probability minimax lower bound holds for every $p\\in[1,\\infty]$.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Rustam Isaev",
+   "Anton Conrad",
+   "Denis Belomestny",
+   "Eric Moulines",
+   "Sergey Samsonov"
+  ],
+  "url": "https://arxiv.org/abs/2609.24929",
+  "published": "2026-09-22",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Nonasymptotic guarantees for conformalized quantile regression under covariate shift and the minimax limits of fixed-score calibration are not well understood. The paper derives L^p error bounds for interval length and conditional coverage, instantiates them for sparse ReLU networks, and establishes matching minimax upper and lower bounds for two fixed-score calibration benchmarks under known covariate shift.",
+  "added": "2026-09-22"
  }
 ]
