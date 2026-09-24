@@ -62045,5 +62045,441 @@
   ],
   "summary": "Large-scale Bayesian seismic traveltime tomography governed by the eikonal equation needs uncertainty quantification, but MCMC sampling and explicit sensitivity matrices are intractable for 3D surveys. The paper combines a Fast Marching eikonal solver with ADMM consensus decomposition and Stein Variational Gradient Descent particle sampling, accelerating particle evolution through a Woodbury-based data-space Gauss-Newton update.",
   "added": "2026-09-23"
+ },
+ {
+  "id": "arxiv:2609.26816",
+  "source": "arXiv",
+  "title": "Learning Stiffness Dependent Fluid Structure Dynamics from Coarse Flow Representations",
+  "abstract": "This paper develops a data-driven framework for long-term prediction of fluid--structure interaction (FSI) dynamics, focusing on the flow-induced vibration (FIV) of a flexible plate. A stiffness-conditioned neural evolution operator jointly represents the Eulerian flow field and Lagrangian structural state. The plate is represented by 101 ordered structural tokens carrying nodal coordinates and velocities, with nondimensional bending stiffness as a global conditioning variable. Bidirectional cross-attention couples fluid and structural representations within a hybrid CNN-Transformer architecture. Trained with staged multi-step autoregressive rollouts and symmetry-reflected trajectories, a single operator captures three stiffness-dependent response regimes: deflected--flapping, deflected, and flapping. The predicted trajectories preserve the principal flow structures, structural oscillations, and dominant frequencies, while blind 1000-step rollouts remain bounded. The operator also interpolates to stiffness values excluded from training. To reduce sensitivity to under-resolved near-wall gradients in force reconstruction, we develop a differentiable aerodynamic-force module based on the derivative-moment transformation (DMT). Conventional wall-stress surface integrals are replaced by an enclosed 2D curve integral around the core vortex region, enabling accurate reconstruction of lift and drag. A Signed Distance Function (SDF) and smoothed Dirac-delta formulation make the integration fully differentiable while preserving gradient flow. The proposed framework provides an accurate and differentiable surrogate for stiffness-dependent FSI dynamics, enabling efficient parameter studies and future stiffness optimization for flow-energy-harvesting applications.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.AI"
+  ],
+  "authors": [
+   "Chun-Jun Pu",
+   "Li-Wei Chen",
+   "Hai-Bo Huang"
+  ],
+  "url": "https://arxiv.org/abs/2609.26816",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "differentiable-simulation"
+  ],
+  "summary": "Long-term prediction of stiffness-dependent fluid–structure interaction, specifically the flow-induced vibration of a flexible plate, is hard because Eulerian flow and Lagrangian structure must be evolved jointly across distinct response regimes. The paper introduces a stiffness-conditioned neural evolution operator with bidirectional cross-attention over 101 structural tokens plus a differentiable derivative-moment-transformation aerodynamic-force module, trained with staged multi-step autoregressive rollouts and shown to remain bounded over blind 1000-step predictions and to interpolate to u",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.26866",
+  "source": "arXiv",
+  "title": "Marginally Correct Tool Caches Can Reverse Group-Normalized Policy Updates",
+  "abstract": "Tool-result caching reduces repeated execution in agent training, but also couples rollout randomness. We study a two-action model in which independent and shared execution preserve every rollout's conditional reward distribution. Despite this marginal agreement, sharing one stochastic result per group can reverse the expected group-normalized policy update. We derive an exact finite-group expression: against a constant alternative, the shared update follows the probability of winning minus the probability of losing, rather than the difference in expected reward. A Bernoulli specialization yields a wrong-direction region and a non-vanishing update-variance floor as group size grows. Centering without group standard-deviation scaling preserves the expected-return direction in this model, using an existing estimator control. Exhaustive finite sums verify 540 configurations and 3,240 estimator evaluations, with a separate ordered-sequence checker. An implementation audit reproduces the sharing path in a pinned, unmodified TVCache stack using 256 scripted rollouts. These results do not measure language-model training performance or refute TVCache's deterministic-output contract. They establish that marginal output validity alone cannot certify a stochastic cache as training-equivalent.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Shivam Gupta"
+  ],
+  "url": "https://arxiv.org/abs/2609.26866",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear whether a stochastic tool-result cache that preserves every rollout's marginal reward distribution is safe for group-normalized policy optimization in LLM-agent training. The paper derives an exact finite-group expression showing that sharing one stochastic result per group can reverse the expected group-normalized update toward a win-minus-lose probability, identifies a wrong-direction region and a non-vanishing update-variance floor, and verifies it with exhaustive finite sums and an implementation audit of a pinned TVCache stack.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.26890",
+  "source": "arXiv",
+  "title": "PR-Smoother: Simulator-Preserving Non-Gaussian Smoothing for Data Assimilation",
+  "abstract": "Many physical data assimilation (DA) workflows require smoothing methods that represent non-Gaussian posteriors over physical state variables, scale to high-dimensional simulators, train from observation windows alone, and remain compatible with calibration of the prescribed simulator. We introduce PR-Smoother, a simulator-preserving amortized smoother designed for this prescribed-simulator DA regime. Its key design principle is to keep the prescribed simulator explicit in both the evidence lower bound and the variational family: rather than learning replacement dynamics or a learned trajectory prior, PR-Smoother learns only future-conditioned corrections around the prescribed rollout. This yields an explicit non-Gaussian smoothing distribution over physical trajectories and supports joint state, parameter, and sensor-bias learning from observations alone. The variational family contains the exact smoother in deterministic and linear-Gaussian limits. Empirically, PR-Smoother captures multimodal posteriors in 4-dimensional Lorenz-96, remains accurate under ambiguous nonlinear observations and process noise in 40-dimensional Lorenz-96, and scales to joint state-parameter-bias inference in 16,384-dimensional Kolmogorov flow.",
+  "categories": [
+   "cs.LG",
+   "nlin.CD",
+   "physics.ao-ph"
+  ],
+  "authors": [
+   "Yuta Tarumi"
+  ],
+  "url": "https://arxiv.org/abs/2609.26890",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Physical data assimilation needs smoothers that represent non-Gaussian posteriors over state variables, scale to high-dimensional simulators, learn from observation windows alone, and stay compatible with simulator calibration. The paper introduces PR-Smoother, a simulator-preserving amortized variational smoother that keeps the prescribed simulator explicit in both the ELBO and the variational family by learning only future-conditioned corrections around the prescribed rollout, recovering the exact smoother in deterministic and linear-Gaussian limits and scaling to joint state–parameter–bias ",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.26972",
+  "source": "arXiv",
+  "title": "TinyUDE: Solver-Free Universal Differential Equations on Microcontrollers via Lie-Taylor Jet Matching",
+  "abstract": "Training Universal Differential Equations (UDEs) traditionally relies on backpropagating through numerical ODE solvers, creating memory footprints far exceeding the capabilities of edge microcontrollers. We present Lie-Taylor jet matching, a solver-free training framework that fits a hybrid vector field directly to the first and second time-derivatives of observed system states. These derivatives, the truncated Lie-Taylor jet, are estimated online via Savitzky-Golay filtering, yielding fully analytic gradients without automatic differentiation software. We evaluate whether eliminating the solver compromises accuracy against a conventional baseline (fixed-step RK4 integration, multiple shooting, exact discrete adjoints, Adam) sharing identical dynamics, noise models, network architectures, and metrics. While naive derivative matching degrades under sensor noise, our noise-adaptive mechanisms close and reverse this gap: full-rate phase-shifted sampling, a reservoir buffer, cosine-annealed optimization with weight averaging, on-device noise estimation, and polynomial-misfit quality gating. On a damped pendulum and chaotic double pendulum, our method matches or exceeds baseline accuracy at matched data windows and recovers unmodeled damping coefficients. Across noise levels from 0% to 5%, it attains a geometric-mean relative field error of 0.65x that of the baseline within 108 kB of static memory, compared with megabytes of solver tape. On an ESP32 microcontroller, the on-device run reaches a field error of 0.0020 and recovers the damping coefficient to c = 0.400 (true 0.400) within 61.3 kB of static memory and 7.24 ms per update (18.1% duty cycle at 25 Hz), confirming real-time on-device training is feasible without a numerical solver.",
+  "categories": [
+   "cs.LG",
+   "cs.ET"
+  ],
+  "authors": [
+   "Pranavanath Balamurali",
+   "Hrishi Kamireddy"
+  ],
+  "url": "https://arxiv.org/abs/2609.26972",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods",
+   "differentiable-simulation"
+  ],
+  "summary": "Training universal differential equations conventionally requires backpropagating through a numerical ODE solver, whose memory tape far exceeds edge-microcontroller budgets. The paper introduces Lie-Taylor jet matching, a solver-free training framework that fits the hybrid vector field to online Savitzky-Golay estimates of the first and second time derivatives with fully analytic gradients, matching or beating an RK4/multiple-shooting/adjoint baseline and recovering unmodeled damping on-device on an ESP32 within roughly 108 kB of static memory.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.26979",
+  "source": "arXiv",
+  "title": "Resource-Efficient Distributed Recursive Gaussian Processes",
+  "abstract": "Gaussian processes (GPs) provide a flexible framework for learning unknown functions from noisy measurements while quantifying predictive uncertainty, making them well suited for estimation in multi-agent systems. However, when measurements are collected by multiple agents, maintaining a unified GP model without centralized processing requires efficient distributed algorithms that can operate using local measurements and communication with neighboring agents. In this work, we develop two distributed recursive GP (RGP) algorithms for multi-output GP regression: ADMM-RGP and PDMM-RGP. We analyze the stability and convergence of both algorithms and develop parameter selection strategies to accelerate convergence, thus reducing the communication burden. The proposed methods are validated on a real-world multi-output wind dataset, and their convergence behavior is examined across communication graphs with varying connectivity. Numerical experiments demonstrate that ADMM-RGP and PDMM-RGP can significantly reduce communication relative to the state of the art, while maintaining comparable estimation accuracy and network-wide consensus.",
+  "categories": [
+   "cs.LG",
+   "eess.SP"
+  ],
+  "authors": [
+   "Josephine King",
+   "Ali Emre Balci",
+   "Raj Thilak Rajan"
+  ],
+  "url": "https://arxiv.org/abs/2609.26979",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Multi-agent estimation with a unified Gaussian-process model requires distributed algorithms that use only local measurements and neighbor communication while maintaining network-wide consensus. The paper develops two distributed recursive GP algorithms, ADMM-RGP and PDMM-RGP, proves their stability and convergence, derives parameter-selection strategies to accelerate convergence, and shows large communication savings at comparable accuracy on a multi-output wind dataset over varying communication graphs.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27008",
+  "source": "arXiv",
+  "title": "Sharp Convergence of Wasserstein Gradient Flows for Spectrally Nonnegative Interaction Energies",
+  "abstract": "We study the long-time behavior of Wasserstein gradient flows for interaction energies \\[ \\mathsf E[\\mu] = \\frac12\\iint_{M\\times M}K(x,y)\\,\\mathrm d\\mu(x)\\,\\mathrm d\\mu(y) \\] on a closed manifold $M$. For kernels diagonal in a Laplace eigenbasis with nonnegative spectral coefficients, we prove a differential inequality relating the relative entropy to the energy gap. Consequently, for any nonnegative initial density $u_0\\in L^p(M)$, $p>1$, the energy gap is integrable in time and satisfies \\[ \\mathsf E[\\mu_t]-\\mathsf E_{\\min}=o(t^{-1}). \\] If all spectral coefficients are positive, the flow converges weakly to the constant measure. These interaction energies need not be geodesically convex in Wasserstein space, and the associated flows contain no diffusion; their global convergence therefore does not follow from standard Wasserstein gradient flow theory. The kernels covered by our results include zonal kernels on spheres, kernels arising in transformer models, regularized Riesz kernels, and inverse fractional Laplacian kernels. We also investigate the sharpness of the $o(t^{-1})$ rate. For any smooth kernel in this class with infinitely many positive spectral coefficients and any $\\delta>0$, we construct a solution of the linearized flow whose energy is comparable to $t^{-1-\\delta}$ along a sequence of times tending to infinity. Moreover, for any $\\delta>0$, by choosing a suitable inverse fractional Laplacian kernel on the flat torus, we construct an exact solution of the nonlinear Wasserstein gradient flow whose energy is comparable to $t^{-1-\\delta}$. The nonlinear construction is based on uniform-in-time estimates for the evolution of the dyadic Fourier coefficient blocks and a blockwise energy-persistence argument. These estimates also yield a uniform-in-time quantitative comparison between the nonlinear Wasserstein gradient flow and its linearization.",
+  "categories": [
+   "math.AP",
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Zhengjiang Lin",
+   "Philippe Rigollet"
+  ],
+  "url": "https://arxiv.org/abs/2609.27008",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The long-time behavior of Wasserstein gradient flows for interaction energies that are not geodesically convex and contain no diffusion lies outside standard gradient-flow theory. The paper proves a relative-entropy/energy-gap differential inequality yielding E[μt]−Emin = o(t^{-1}) for kernels with nonnegative spectral coefficients — including zonal sphere kernels, kernels arising in transformer models, regularized Riesz kernels and inverse fractional Laplacian kernels — and constructs sharp constructions showing the rate cannot be improved.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27041",
+  "source": "arXiv",
+  "title": "Math Reasoning in LLMs is Organized by Approach, Not Topic",
+  "abstract": "Mathematical reasoning benchmarks are typically organized by topic, but language models may organize their internal computation by reusable reasoning approach instead. In this paper, we investigate whether open math-capable LLMs organize internally by topical sub-skill or by reasoning approach, and we present evidence that the approach is the key. We introduce a generation-replay protocol: a model first generates a solution, after which we replay the exact prompt-plus-generation trajectory and extract activation-importance signatures over the reasoning tokens. We cluster these signatures without supervision across eight models and five mathematical reasoning sources, then evaluate the recovered structure with structural, semantic, and intervention tests. Across all 40 model-source cells, the recovered clusters outperform matched-size random baselines. Two independent frontier-LLM judges find approach-level coherence in 77-82% of real clusters versus 6-11% in within-source controls, and topic-pure clusters usually receive labels finer than the topic itself. In approach-controlled prompting, changing the requested reasoning approach shifts cluster assignment in seven of eight model conditions, whereas paraphrases largely preserve it. These results indicate that math-capable LLMs organize internal mathematical computation by reasoning approach rather than benchmark topic. The implication is that topic-stratified benchmarks and topic-balanced training corpora can still miss the axis that matters: even deliberately topic-balanced corpora may remain imbalanced over reasoning approaches.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Sajad Goudarzi",
+   "Samaneh Zamanifard",
+   "Moloud Nasiri",
+   "Hamed Rahimian"
+  ],
+  "url": "https://arxiv.org/abs/2609.27041",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear whether math-capable LLMs organize their internal computation by benchmark topic or by reusable reasoning approach. The paper introduces a generation-replay protocol that extracts activation-importance signatures over reasoning tokens and clusters them under supervision-free settings across eight models and five math-reasoning sources, using structural, semantic, and intervention tests to show that the recovered organization is approach-level rather than topic-level.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27105",
+  "source": "arXiv",
+  "title": "Provably Complete Generalized Planning with LLMs",
+  "abstract": "Generalized planning aims to compute a plan that solves all instances of a planning domain. Recent work has used LLMs to automatically generate and debug such generalized plans in the form of Python programs and achieved perfect test data coverage for several domains. However, whether these generalized plans are actually complete, i.e. solve all instances of the domain, could only be determined by manual evaluation. Here, we present an approach for automatically generating generalized plans in Lean together with proofs of their completeness relative to a specification of the domain constraints provided as input. We introduce a semantic-preserving PDDL-to-Lean conversion, and use an LLM to generate both the generalized plan and the formal proof that it solves every instance satisfying the domain constraints. The correctness of the completeness proof is determined by Lean's kernel. We evaluate our approach on 13 commonly used benchmark domains, using GPT-5.6-Sol as the LLM. For 12 of the domains we obtain generalized plans together with valid completeness proofs. This is a major advancement of the state of the art in automatic generalized-plan completeness proofs.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Katharina Stein",
+   "Chaahat Jain",
+   "J\\\"org Hoffmann",
+   "Alexander Koller"
+  ],
+  "url": "https://arxiv.org/abs/2609.27105",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Whether LLM-generated generalized plans are truly complete could previously be settled only by manual evaluation. The paper introduces a semantic-preserving PDDL-to-Lean conversion in which an LLM generates both the generalized plan and a machine-checked Lean completeness proof, yielding valid proofs for 12 of 13 benchmark domains.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27186",
+  "source": "arXiv",
+  "title": "Data-driven discrete-time deep recurrent neural network-based modeling for dissipative systems",
+  "abstract": "Physical AI has gained increasing attention for its role in developing AI systems that better understand, predict, and control real-world dynamics. Achieving this requires AI models that not only achieve high prediction accuracy but also preserve fundamental physical properties of dynamical systems. In this paper, we propose a deep discrete-time dissipative recurrent neural network (DissipNet) that explicitly enforces dissipativity, a key property related to stability and energy dissipation, through structural weight constraints and a dedicated training algorithm. By construction, the proposed network is capable of learning dissipative dynamics while preserving their inherent stability, which is formally analyzed using Lyapunov theory. In contrast to Physics-Informed Neural Networks (PINNs), which incorporate governing equations into the training loss but do not guarantee preservation of internal analytical properties such as dissipativity or passivity, our approach provides explicit guarantees on stability at the model level. We demonstrate the effectiveness of the proposed method through several modeling applications, and compare its performance with a naive recurrent neural network (RNN) and a PINN-based model.",
+  "categories": [
+   "cs.LG",
+   "cs.RO"
+  ],
+  "authors": [
+   "Tuan Luong",
+   "Hyungpil Moon"
+  ],
+  "url": "https://arxiv.org/abs/2609.27186",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Learning models of dissipative dynamical systems while guaranteeing their stability is difficult, since PINNs penalize equation residuals but do not preserve internal properties such as dissipativity or passivity. The paper proposes DissipNet, a deep discrete-time dissipative recurrent network that enforces dissipativity through structural weight constraints and a dedicated training algorithm, with stability formally analyzed via Lyapunov theory.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27209",
+  "source": "arXiv",
+  "title": "Scalable Subgraph Sampling via Resistance Curvature",
+  "abstract": "Subgraph sampling reduces the training cost of large-scale graph neural networks, but sampling criteria may overlook the geometric roles of edges. We propose a resistance-curvature-guided sampling framework built on ERC-LG, a curvature approximation method for large-scale graphs. ERC-LG combines Johnson-Lindenstrauss projections with regularized multi-GPU batched conjugate gradient solvers, avoiding explicit Laplacian pseudoinverse computation and full embedding storage. The resulting curvature informs node- and edge-sampling probabilities for constructing GNN training subgraphs. Experiments show numerical agreement with pseudoinverse-based curvature and reduced runtime compared with CG-only computation. ERC-LG-based sampling variants achieve the highest mean accuracy on six of seven real-world datasets in downstream node classification.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Chaoqun Fei",
+   "Tinglve Zhou",
+   "Tianyong Hao",
+   "Yangyang Li"
+  ],
+  "url": "https://arxiv.org/abs/2609.27209",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Subgraph sampling criteria for training large graph neural networks overlook the geometric roles of edges. The paper proposes ERC-LG, a resistance-curvature approximation combining Johnson–Lindenstrauss projections with regularized multi-GPU batched conjugate-gradient solvers that avoids explicit Laplacian pseudoinverse computation, and uses the curvature to set node- and edge-sampling probabilities.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27216",
+  "source": "arXiv",
+  "title": "KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators",
+  "abstract": "Topology optimization (TO) remains computationally intensive due to repeated finite element analysis (FEA) evaluations required at each iteration. While neural network-based surrogates offer potential acceleration, existing approaches often suffer from gradient inconsistency between predicted objectives and sensitivities, leading to optimization instability. This work presents KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO). The framework employs the forward_split architecture, which derives deployed sensitivities via automatic differentiation through the predicted objective field and thereby preserves consistency between the predicted objective and the gradient used for optimization. The case studies include three 2D benchmark problems and three 3D structures considering compliance or stress minimization. A physics-informed multi-channel input encoding with Fourier position embedding enables resolution-invariant learning, supporting zero-shot extrapolation beyond the training resolution, with useful performance at moderate scaling factors and topology-preserving exploration at up to 64x without retraining. The framework extends to 3D through KATO3D, featuring novel KANConv3D blocks with learnable B-spline activations. KATOsuper demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases. The insight that sensitivity direction matters more than magnitude enables robust optimization even with approximate physics evaluation, extensible to other differentiable physics-driven design objectives.",
+  "categories": [
+   "cs.CE",
+   "cs.AI",
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Shengyu Yan",
+   "Jasmin Jelovica"
+  ],
+  "url": "https://arxiv.org/abs/2609.27216",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods",
+   "differentiable-simulation"
+  ],
+  "summary": "Neural surrogates for topology optimization often suffer gradient inconsistency between predicted objectives and sensitivities, destabilizing the optimization. The paper presents KATOsuper, coupling neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator whose forward_split architecture derives deployed sensitivities by automatic differentiation, enabling resolution-invariant zero-shot extrapolation and 15–110x deployment speedups.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27221",
+  "source": "arXiv",
+  "title": "Tail-Aware Geometry Learning for Conformal Ellipsoids",
+  "abstract": "This paper studies multivariate conformal prediction (CP), a distribution-free uncertainty quantification framework with finite-sample coverage guarantees. The efficiency of multivariate prediction sets hinges critically on the residual geometry encoded by the nonconformity score, while existing minimum-volume methods rely on quantile thresholds that ignore tail residual severity and implicitly bind geometry learning to coverage level. We propose a tail-aware geometry learning framework for conformal ellipsoids that decouples tail sensitivity in geometry learning from the final coverage guarantee. Using a two-split design, we learn the metric matrix via volume minimization under a CVaR constraint on an estimation split, then apply standard conformal calibration on a held-out calibration split. The resulting problem is convex and admits a bounded-reweighting interpretation that prioritizes high-residual samples. Moreover, we theoretically characterize the trade-off between ellipsoidal volume and tail severity. Experimental results demonstrate the effectiveness of the proposed method.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Xiang Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2609.27221",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Multivariate conformal prediction sets are inefficient when the nonconformity score's residual geometry ignores tail severity and is implicitly tied to the coverage level. The paper proposes a two-split tail-aware geometry-learning framework that learns the ellipsoid metric matrix by volume minimization under a CVaR constraint before standard conformal calibration, with a theoretical characterization of the volume–tail-severity trade-off.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27243",
+  "source": "arXiv",
+  "title": "From Variational Optimization to Flow-Based Transport: Posterior-Geometry Regularization for Ill-Conditioned Data Assimilation",
+  "abstract": "Variational data assimilation computes a Bayesian update through optimization on a fixed posterior geometry, whose conditioning is determined by the prior covariance and the observation operator. In strongly anisotropic, weakly observed, or highly informative regimes, this geometry can become severely ill conditioned, leading to substantial sensitivity to solver design and preconditioning. This work investigates an alternative computational route based on flow-based transport, using the ensemble score filter as a training-free realization. Rather than repeatedly optimizing over the full posterior geometry, the flow-based update transports the predictive distribution through a sequence of intermediate distributions whose covariance and curvature are progressively regularized before reaching the target posterior. In the linear-Gaussian setting, we characterize this mechanism through the evolution of the diffused posterior covariance and the associated time-dependent curvature, revealing a continuation from a near-isotropic reference geometry to the ill-conditioned posterior geometry targeted by variational assimilation. Numerical stress tests show that this geometric regularization makes the flow-based method substantially less sensitive to severe ill-conditioning than the variational method, while a heterogeneous $10^4$-dimensional Lorenz-96 benchmark demonstrates improved robustness and lower delivered computational cost. These results identify posterior-geometry regularization as a key mechanism distinguishing transport-based from optimization-based data assimilation.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Siming Liang",
+   "Feng Bao",
+   "Hristo G. Chipilski",
+   "Peter Jan van Leeuwen",
+   "Guannan Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2609.27243",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "generative-simulation"
+  ],
+  "summary": "Variational data assimilation optimizes over a fixed posterior geometry that becomes severely ill-conditioned in strongly anisotropic, weakly observed, or highly informative regimes. The paper analyzes flow-based transport updates (realized by the ensemble score filter) as posterior-geometry regularization, characterizing the evolution of the diffused posterior covariance and curvature and demonstrating improved robustness on a 10^4-dimensional Lorenz-96 benchmark.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27244",
+  "source": "arXiv",
+  "title": "Full-Covariance Smoothing of Bayesian Neural Networks for Online Adaptation",
+  "abstract": "A neural network's layers can be treated as time steps of a state-space model, turning Bayesian training into a smoothing problem: a forward pass propagates Gaussian moments through the network, and a backward Rauch--Tung--Striebel pass updates the weight posteriors in closed form. Such methods learn from each observation in a single pass, in an uncertainty-aware manner, and without gradient-based iterations or replay, which makes them well suited for online adaptation and data-efficient learning. Existing smoothing-based methods, however, are restricted to diagonal covariances across activations, discarding correlations between neurons. We overcome this limitation via a cross-covariance identity that enables full-covariance propagation through a network's nonlinear activations. We derive a one-step-per-layer smoother that approximates as Gaussian only each layer's affine output, and that applies both to deterministic systems with noisy observations and to stochastic systems described by output statistics. We demonstrate this method in non-stationary classification, online dynamics learning, and policy adaptation of a vision-language-action model, and find that it is generally more accurate than other smoothing-based methods.",
+  "categories": [
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Oren Wright",
+   "Haoming Jing",
+   "Qiaoan Shen",
+   "Koichiro Niinuma",
+   "Yorie Nakahira",
+   "Jos\\'e M. F. Moura"
+  ],
+  "url": "https://arxiv.org/abs/2609.27244",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Smoothing-based Bayesian neural networks treat layers as state-space time steps but are restricted to diagonal covariances across activations, discarding neuron correlations. The paper derives a cross-covariance identity enabling full-covariance propagation and a one-step-per-layer Rauch–Tung–Striebel smoother, improving online adaptation, dynamics learning, and policy adaptation.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.27290",
+  "source": "arXiv",
+  "title": "Sparse-Observation Atmospheric Thermal Forecasting with Physics-Informed Neural Networks for Climate-Aware Digital Twins",
+  "abstract": "Short-horizon forecasts of atmospheric temperature are needed to support climate-aware digital-twin systems, but such forecasts must be produced where thermal observations are incomplete. This study evaluates a physics-informed neural network for potential-temperature forecasting, constrained by a pressure-coordinate thermodynamic advection-source equation and a diabatic-source closure fit from the preceding 12-hour period and frozen before future-time training. Using hourly ERA5 reanalysis at three pressure levels, the model is evaluated as a conditional hindcast at lead times of one, two and three hours against persistence, local-trend, and two matched neural-network baselines, one of which receives the same future meteorological forcing as the PINN, helping distinguish the physical constraint from access to future forcing. In an Oklahoma development case, mean RMSE improvement over the strongest baseline grew from 8.1\\% at one hour to 23.8\\% at three hours; under an observation-density sweep down to 5\\% of candidate locations, this 3-hour advantage remained 14.6--16.9\\%, with no evidence that lower density improves performance. Under a fixed protocol transferred to an Alabama heat event with three virtual-observation layouts, three-hour improvement ranged 19.7-24.4\\% with consistent origin-level wins. A parallel Montana stress test, in which fixed pressure levels intersected complex terrain, produced a three-hour degradation of roughly 17.5\\%, identifying a terrain-related applicability limit of the formulation. Together, these results indicate that the physics constraint's benefit grows with forecast horizon, persists under severe observation sparsity, and transfers across regions, but is bounded by the validity of a fixed vertical-coordinate representation over complex terrain, evidence relevant to physics-constrained components of climate-aware forecasting and digital-twin systems.",
+  "categories": [
+   "cs.AI",
+   "cs.NA",
+   "math.AP",
+   "math.NA"
+  ],
+  "authors": [
+   "Tannaz Goodarzvand Chegini",
+   "Elyas Shivanian",
+   "Behzad Karimi",
+   "Faraz Dadgostari"
+  ],
+  "url": "https://arxiv.org/abs/2609.27290",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Short-horizon atmospheric temperature forecasts are needed where thermal observations are incomplete, as in climate-aware digital twins. The paper evaluates a physics-informed neural network constrained by a pressure-coordinate thermodynamic advection-source equation with a frozen diabatic-source closure, showing gains that grow with lead time and persist under severe observation sparsity but degrade over complex terrain.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.28425",
+  "source": "arXiv",
+  "title": "Repairability of Inexact Solvers in Recursive State Estimation with Machine Learning",
+  "abstract": "Recursive state estimation often executes approximate numerical solutions inside a feedback loop, where highly accurate local steps do not guarantee better overall results. For a fixed linear Kalman model, we characterize when a correction within a prescribed subspace and norm budget can meet a local admissibility tolerance, and how the defects actually executed affect the finite-horizon covariance response. Centering each defect on the exact gain for the implemented covariance separates current solve error from inherited gain drift. Expanding the exact residual-drift identity reveals opposing quartic contributions beyond the quadratic response: innovation-covariance inflation enters positively, while local-gain reoptimization enters subtractively. Under matched initialization, an absolute sixth-order remainder bound, uniform over bounded defect sequences at fixed horizon, gives sufficient conditions for quadratic under- or overprediction. Machine learning proposes bounded corrections, while a learner-independent residual certificate and verified fallback govern execution of classical and quantum candidates without changing the reference estimator. In a power-grid tolerance study, learned correction lowers the minimum conjugate-gradient iteration count for deployment without fallback relative to uncorrected solves under the same residual certificate. Gains reconstructed from a variational quantum linear solver and from an annealing-based binary encoding, with small-scale terminal measurements on superconducting hardware and sampling on a quantum annealer, are executed through the same interface. By linking local repairability to nonlinear error propagation, the framework evaluates approximate solvers and learned corrections through independent certification and finite-horizon response, providing a practical basis for studying hybrid quantum--classical computation.",
+  "categories": [
+   "quant-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yanjun Ji",
+   "Dennis Willsch",
+   "Orkun \\c{S}ensebat",
+   "Priyanka Arkalgud Ganeshamurthy",
+   "Zhi Pei",
+   "M. Sahnawaz Alam",
+   "Ivelina Stoyanova",
+   "Frank K. Wilhelm",
+   "Bo Zhao",
+   "Chao Wang",
+   "Kristel Michielsen"
+  ],
+  "url": "https://arxiv.org/abs/2609.28425",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "uq-inverse-problems"
+  ],
+  "summary": "Recursive state estimation can execute approximate numerical solves in a feedback loop, where better local accuracy does not necessarily yield better finite-horizon covariance behavior. The paper characterizes when bounded subspace corrections are locally admissible, derives residual-drift and sixth-order remainder bounds, and uses machine-learned corrections with a learner-independent residual certificate and verified fallback for classical and quantum solvers.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.28448",
+  "source": "arXiv",
+  "title": "Nonequilibrium Phases of Repulsive Self-Attention: Chaos, Attention Condensation, and Emergent Locality",
+  "abstract": "We study the nonequilibrium dynamics of a minimal recurrent transformer with $N$ normalized tokens, $Q=K=I$, and a negative value map $V=-I$. Similarity-based attention selects nearby representations, while the negative value map drives tokens away from the selected field. This feedback can continually reorganize both the representation geometry and the attention network. For $d=2$, the tokens lie on a circle, where the regular polygon is an exact fixed point. As the attention feedback strength $\\gamma$ is increased, the polygon loses stability through a flip bifurcation, giving rise to period-two motion, chaos, and cluster-exchange or cluster-flip states. Despite this temporal complexity, attention remains diffuse as $N\\to\\infty$ at finite fixed softmax sharpness $\\beta$. Attention condensation instead emerges in the scaling regime $\\beta\\sim N^2$. In the hard-routing limit, repulsive updates amplify local perturbations and routing-partner switches transmit them ballistically, producing an emergent butterfly cone in representation space. High-dimensional geometry provides a distinct route to localization. For $d=N\\to\\infty$, simulations from Gaussian initial conditions provide evidence for a condensation transition at $\\beta=O(1)$, driven by dynamically generated finite overlap gaps. Depending on $\\gamma$, the resulting phases include diffuse simplex-like states, consensus flips, condensed active routing with signatures of chaos, and fragmented cluster flips. These results establish temporal activity, attention condensation, and geometric clustering as distinct collective phenomena, and show that sparse attention can sustain persistent dynamics rather than freeze it.",
+  "categories": [
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "cs.LG"
+  ],
+  "authors": [
+   "Qucheng Gao",
+   "Zuyi Yang",
+   "Xiao Chen"
+  ],
+  "url": "https://arxiv.org/abs/2609.28448",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The nonequilibrium dynamics of a minimal recurrent transformer with repulsive self-attention and a negative value map are not well understood. The paper analyzes the resulting attention geometry and identifies bifurcations to chaos, attention-condensation scaling regimes, and emergent locality through a butterfly cone in representation space.",
+  "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.28458",
+  "source": "arXiv",
+  "title": "Differentiable astrophysics at scale: solving and differentiating ODE ensembles on the GPU",
+  "abstract": "Astronomers increasingly fit their models with gradient-based methods, such as Hamiltonian Monte Carlo, which need the derivatives of the model with respect to its parameters. In many analyses a prediction requires solving a small system of ordinary differential equations (ODEs) for thousands to millions of parameter sets, and this ensemble of integrations often sets the cost of the analysis. We introduce to the astronomical community GRADSOLVE, a JAX library that moves this computation to graphics processing units (GPUs): it integrates each member of the ensemble in its own GPU thread with its own step size and returns the derivatives with respect to the parameters in the same pass. We measure the speed-up it provides in three examples from different fields of astronomy, stellar orbits in the Galactic potential, the expansion history of a dark-energy cosmology and the spin precession of binary black holes, with every code held to the same accuracy requirement. For a million trajectories GRADSOLVE runs 8.5 to 1500 times faster than the serial CPU code of each example running on all 128 cores of a CPU, and several orders of magnitude faster than on one core. On the same GPU it is also 11 to 15 times faster than DIFFRAX, the state-of-the-art ODE library in JAX, in all three examples. With GRADSOLVE a million such integrations take seconds or less on one GPU, so gradient-based analyses that need ensembles of this size become routine. The code is publicly available at https://github.com/ECLIPSE-AI4Science/gradsolve.",
+  "categories": [
+   "astro-ph.IM",
+   "astro-ph.CO",
+   "astro-ph.GA",
+   "gr-qc",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "A. Spurio Mancini"
+  ],
+  "url": "https://arxiv.org/abs/2609.28458",
+  "published": "2026-09-24",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Gradient-based astrophysical inference often requires differentiating through ensembles of ODE solves, and this ensemble integration can dominate the computational cost. The paper introduces GRADSOLVE, a JAX library that integrates each ODE ensemble member in its own GPU thread with its own step size and returns parameter derivatives in the same pass, yielding large speedups over CPU codes and DIFFRAX.",
+  "added": "2026-09-24"
  }
 ]
