@@ -62481,5 +62481,347 @@
   ],
   "summary": "Gradient-based astrophysical inference often requires differentiating through ensembles of ODE solves, and this ensemble integration can dominate the computational cost. The paper introduces GRADSOLVE, a JAX library that integrates each ODE ensemble member in its own GPU thread with its own step size and returns parameter derivatives in the same pass, yielding large speedups over CPU codes and DIFFRAX.",
   "added": "2026-09-24"
+ },
+ {
+  "id": "arxiv:2609.28582",
+  "source": "arXiv",
+  "title": "SGA: Uncertainty Quantification for Multi-Step Forecasting in Time Series Foundation Models",
+  "abstract": "The recent emergence of Time Series Foundation Models (TSFMs) has significantly advanced multi-step forecasting performance, enabling accurate predictions over extended future horizons. However, existing TSFMs often suffer from significantly inherent uncertainty, which typically manifests as derived forecast branches emerging at each time step and spreading to subsequent steps; different forecast branches often exhibit varying forecasting performance, thereby undermining the credibility of TSFM forecasts. In this paper, we propose the Slicing-Graphing-Alignment (SGA) method to quantify the uncertainty of multi-step TSFM forecasts. The proposed SGA first characterizes the topology of all potential forecast branches using a directed acyclic graph, such that the graph complexity bounds the uncertainty of multi-step forecasts, and then precisely measures the graph complexity by integrating both topological information and TSFM-inherent stochasticity. Experimental results conducted on 11 TSFMs and 27 datasets demonstrate that (i) SGA achieves the best performance when ranking predictive errors with uncertainty estimates; (ii) SGA works with a more extensive and more precise sampling coverage than those of existing UQ methods, deriving a quantification mechanism fundamentally different from those of established ones; and (iii) larger model scales of TSFMs correlate with lower uncertainty estimates of multi-step forecasts, suggesting another empirical scaling law for uncertainty quantification of multi-step TSFM forecasts.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "stat.ML"
+  ],
+  "authors": [
+   "Xin-Yu Hu",
+   "Shuang Liang",
+   "Cheng Feng",
+   "Shao-Qun Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2609.28582",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Multi-step forecasts from time-series foundation models branch into many possible trajectories, and quantifying the resulting uncertainty is difficult. The paper proposes Slicing-Graphing-Alignment (SGA), which encodes forecast branches as a directed acyclic graph and measures its complexity from topological structure plus TSFM stochasticity to produce a calibrated uncertainty estimate.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.28603",
+  "source": "arXiv",
+  "title": "Learning to Discover Interesting Mathematics",
+  "abstract": "Recently, Large Language Models (LLMs) have been increasingly able to solve advanced mathematical problems, including many that have been open for decades. This opens the door to expansion of mathematical knowledge at unprecedented scale. Yet, while LLMs may be able to conjecture and prove more and more theorems, it remains open whether this new mathematical knowledge is interesting or useful. We define intrinsic interestingness of a theorem as the ratio between the length of its proof and the length of its statement. We show that this correlates strongly with an extrinsic measure of the downstream utility of a theorem. We identify the difficulty of a proof conditioned on a set of premises as a useful primitive for computing these metrics, and train a 27B model that predicts proof difficulty more accurately than frontier general-purpose models. Optimizing for our metric creates a model capable of producing more interesting theorems, while also reducing substantial or full overlap with Mathlib from 91.9% to 30.6%, showcasing the creation of more out-of-distribution math. We show that our system can generate candidate theorems, select the most interesting among them, and iteratively build on a self-expanding mathematical library. These metrics provide a practical and quantifiable signal for ranking conjectures and guiding proof search within formal mathematical libraries. Our framework provides a path towards self-expanding, machine-verified mathematical libraries that can choose worthwhile statements without relying on human-supplied targets.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Niket Patel",
+   "Ahmad Rammal",
+   "Amaury Hayat",
+   "Remi Munos",
+   "Julia Kempe"
+  ],
+  "url": "https://arxiv.org/abs/2609.28603",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "It is unclear whether the theorems LLMs can now conjecture and prove are actually interesting or useful. The paper defines intrinsic interestingness as the proof-length-to-statement-length ratio, trains a 27B model to predict proof difficulty as a primitive for this metric, and uses it to generate, select, and iteratively build a self-expanding formal mathematical library with reduced Mathlib overlap.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.28604",
+  "source": "arXiv",
+  "title": "Physics-Informed Self-Supervised Learning for Joint Wire Calibration and Interaction Position Reconstruction in Multi-Wire Parallel Plate Avalanche Counters",
+  "abstract": "Scientific instruments require accurate calibration to convert detector signals into reliable physical observables. Conventional calibration procedures typically rely on dedicated calibration measurements, analytical response models or labelled reference data, limiting their ability to adapt to changing operating conditions and detector aging. We present a physics-informed self-supervised learning framework that jointly performs wire calibration and interaction position reconstruction in Multi-Wire Parallel Plate Avalanche Counters (MWPPACs) without requiring labelled position measurements or dedicated calibration runs. The method formulates detector calibration as a latent optimization problem in which global wire gains and event-wise interaction positions are estimated simultaneously using supervision derived exclusively from detector geometry and charge-energy consistency constraints. A detector-independent neural network reconstructs sub-wire interaction positions from local charge distributions, eliminating the need to assume analytical induction profiles by learning the detector response directly from experimental data. The end-to-end differentiable framework enables continuous detector self-calibration while improving the uniformity and accuracy of position reconstruction. Experimental evaluation on the entrance MWPPAC tracking detectors of the VAMOS++ magnetic spectrometer demonstrates stable convergence, improved spatial homogeneity and enhanced position resolution. Beyond the detector studied, the method establishes a general framework for physics-informed self-supervised calibration of scientific instruments and is a step toward autonomous intelligent instrumentation capable of continuous adaptation during operation. In this paradigm, detector calibration is no longer a prerequisite for an experiment but an integral part of the measurement process itself.",
+  "categories": [
+   "cs.LG",
+   "nucl-ex",
+   "physics.ins-det"
+  ],
+  "authors": [
+   "Antoine Lemasson",
+   "Maurycy Rejmund"
+  ],
+  "url": "https://arxiv.org/abs/2609.28604",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "differentiable-simulation"
+  ],
+  "summary": "Calibrating detectors such as Multi-Wire Parallel Plate Avalanche Counters normally requires labelled reference data or dedicated calibration runs. The paper presents a physics-informed self-supervised, end-to-end differentiable framework that jointly optimizes global wire gains and event-wise interaction positions from geometry and charge-energy consistency, learning the detector response with a neural network.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.28625",
+  "source": "arXiv",
+  "title": "RLVR landscapes for iterated multiplications can be benign: Insights from spin-glass theory",
+  "abstract": "Despite the importance of reinforcement learning with verifiable rewards (RLVR), the extent to which it can learn new reasoning capabilities remains debated. Here we study the optimization landscape of RLVR on algorithmic tasks, such as iterated group and quasigroup multiplication. To this end, we map entropy-regularized RLVR over myopic tabular policies onto an energy-based (spin-glass) model over deterministic policies. This mapping upper-bounds what RLVR can achieve, and lets us rigorously characterize the landscape in this tabular setting. We show, both theoretically and experimentally, that for a wide class of models and tasks with uncorrelated inputs, this landscape is benign, containing no local minima that could trap RLVR training. Rather, the practical difficulty of these tasks appears to stem, at least in part, from issues such as diffusive barriers and gradient-estimation error in traversing the landscape. These are genuine obstacles that can prevent a solution from being found, but they are distinct from the landscape itself being rugged. We show that these obstacles can often be mitigated through the choice of entropy regulator. Consistent with this theory, we find that a transformer trained from scratch, using only last-token rewards, successfully learns an algorithmic chain of thought for iterated non-Abelian group multiplications.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.dis-nn",
+   "stat.ML"
+  ],
+  "authors": [
+   "Noa Rubin",
+   "Zohar Ringel"
+  ],
+  "url": "https://arxiv.org/abs/2609.28625",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The extent to which RLVR learns genuinely new reasoning capabilities is debated, and the structure of its optimization landscape is unclear. The paper maps entropy-regularized RLVR over myopic tabular policies onto an energy-based spin-glass model and proves the landscape for iterated group/quasigroup multiplication is benign, attributing practical difficulty to diffusive barriers and gradient-estimation error rather than local minima.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.28692",
+  "source": "arXiv",
+  "title": "Driving Epidemic Models with AI Agents: the Epydemix Agent Framework",
+  "abstract": "Artificial Intelligence agents based on large language models provide convenient natural language interfaces to scientific software, but reliability is not automatic. Here we introduce the Epydemix Agent Framework, an additive layer over Epydemix, an open-source Python library for stochastic compartmental epidemic modeling. The framework extends the library with four capabilities to facilitate interaction with an AI agent: discovery of available models and parameters, preventive validation of a declarative scenario specification, execution through tested library code, and inspectability of results. These capabilities let an agent handle the entire modeling process, from the natural-language description of the scenario to quantitative results, figures, and interpretation of findings without writing custom code. Each step reads input files and saves results in a separate output bundle, making the process auditable and reproducible. First, we show the end-to-end workflow with a case study comparing vaccination strategies for a novel respiratory virus. Second, we assessed the framework across 50 agent sessions and five modeling tasks by comparing the agent use of the framework against the direct use of the Python interface. The framework reduced turns, output tokens, and cost on most tasks, unless it trades resources for per-point reproducibility.",
+  "categories": [
+   "cs.AI",
+   "cs.CY"
+  ],
+  "authors": [
+   "Nicol\\`o Gozzi",
+   "Ciro Cattuto",
+   "Alessandro Vespignani"
+  ],
+  "url": "https://arxiv.org/abs/2609.28692",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM agents give natural-language access to scientific simulation software, but reliability of the resulting model-building workflow is not automatic. The paper introduces the Epydemix Agent Framework, an additive layer over the Epydemix stochastic compartmental epidemic library that adds model/parameter discovery, preventive validation of declarative scenario specs, execution through tested library code, and auditable output bundles.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.29403",
+  "source": "arXiv",
+  "title": "RD-JEPA: Predictive latent pretraining for few-trajectory transfer across reaction--diffusion equations",
+  "abstract": "Learning surrogates for time-dependent partial differential equations often requires a new simulation corpus when the governing operator changes. We introduce RD-JEPA, a joint-embedding predictive architecture for self-supervised pretraining on reaction-diffusion trajectories. A single model is pretrained on five parameterized systems and then adapted to three held-out systems whose reaction operators and trajectories are excluded from pretraining. Using one, five, or ten complete trajectories from a held-out system, RD-JEPA achieves lower mean relative discrete $\\ell^2$ field error and mean absolute spatial first-difference error than five supervised surrogate baselines, an independently trained control that removes the trajectory-dependent predictive latent pathway, and an architecture-matched model trained from scratch. Within the evaluated equations, output resolution, forecast horizons, and choices of adaptation trajectories, the results indicate that prediction of future-state representations can support data-efficient adaptation across related reaction-diffusion systems.",
+  "categories": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Chenhao Si",
+   "Ming Yan"
+  ],
+  "url": "https://arxiv.org/abs/2609.29403",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "pde-foundation-models"
+  ],
+  "summary": "Learning surrogates for time-dependent PDEs typically requires a new simulation corpus whenever the governing operator changes. The paper introduces RD-JEPA, a joint-embedding predictive architecture self-supervised on reaction-diffusion trajectories that is pretrained across five parameterized systems and adapted to held-out systems from as few as one trajectory.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.29437",
+  "source": "arXiv",
+  "title": "Learning Operators of Geometry with an Interface Autoencoder",
+  "abstract": "Geometry-dependent PDEs define operators whose inputs and outputs may each consist of an oriented interface and a function on that interface, whereas most existing neural operators are formulated on fixed domains. In this paper, we first establish an approximation theorem for continuous operators between general state sets. We then instantiate the theorem with the Interface Autoencoder (IAE), which represents interface-function states in a fixed box using finite projection codes and decodes them by zero-set extraction and restriction. For tensor cosine codes, we prove a uniform $C^0$ reconstruction rate and tube-local gradient convergence. These estimates yield Hausdorff and graph-Hausdorff error bounds, together with a reference-based topology certificate. The IAE accommodates both cross-space geometric operators, mapping domain geometries to the associated PDE solution fields, and within-space geometric operators, mapping between interface-function states. Its effectiveness is demonstrated through numerical experiments on the Poisson equation, interface merging in Hele-Shaw flow, and two-phase Stokes flow with surfactant.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Aiqing Zhu",
+   "Pengzhan Jin"
+  ],
+  "url": "https://arxiv.org/abs/2609.29437",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Neural operators are usually formulated on fixed domains, whereas geometry-dependent PDEs involve operators whose inputs and outputs are interface-function states. The paper proves an approximation theorem for continuous operators between general state sets and instantiates it with the Interface Autoencoder, gaining uniform C^0 reconstruction and Hausdorff/graph-Hausdorff error bounds.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.29466",
+  "source": "arXiv",
+  "title": "Direct Message Approximation (DMA): A Consistency-Based Framework for Tractable Approximate Inference on Factor Graphs",
+  "abstract": "Approximate message passing on factor graphs underlies two dominant families of probabilistic inference algorithms: expectation propagation (EP) and variational message passing (VMP). Both methods approximate the marginal at each factor edge, forcing an iterative round-robin schedule, risking negative-precision messages, and, for VMP, collapsing to point estimates at Dirac-delta factors. We introduce Direct Message Approximation (DMA), which approximates factor-to-variable messages directly rather than the marginal. For normalisable factors, we define a consistency condition (requiring exactness when all other incoming messages are Dirac deltas) to guide message construction. We prove a master theorem (proper messages, any graph) bounding marginal KL from message KL, with three structural corollaries: Dirac-input consistency, no EP-style inner-loop iteration, and no negative-precision messages. Further, we prove a complementary $O(1/r^2)$ guarantee for the inherently improper backward message of the product factor, whose closed-form treatment has resisted prior work. As a concrete instantiation, we derive explicit DMA messages for the product and leaky-ReLU factors and assemble a Bayesian neural network (BNN) inference algorithm with one forward/backward sweep per training example and no gradient learning-rate hyperparameter, validating that the structural guarantees translate to predictive uncertainty that widens in data-sparse regions, including under model mismatch.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "stat.ML"
+  ],
+  "authors": [
+   "Ralf Herbrich",
+   "Rainer Schlosser",
+   "Jan Lemcke",
+   "Johann Ukrow",
+   "Anna Kazachkova",
+   "Nicolas Alder",
+   "Leonhard Hennicke",
+   "Theo Bardey",
+   "Nico Grimm",
+   "Luca Kleinschmidt",
+   "Philipp Kolbe",
+   "Cezary Kujath",
+   "Johanna Schlimme",
+   "Karl Matti Sch\\\"utz"
+  ],
+  "url": "https://arxiv.org/abs/2609.29466",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "foundations"
+  ],
+  "summary": "Expectation propagation and variational message passing approximate marginals at factor edges, forcing round-robin schedules and allowing negative-precision messages. The paper introduces Direct Message Approximation, which approximates factor-to-variable messages directly under a Dirac-delta consistency condition, proves a master KL bound with structural corollaries, and instantiates it for product and leaky-ReLU factors in Bayesian neural network inference.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.28895",
+  "source": "arXiv",
+  "title": "GeoDose-CP: Graph-Local Conformal Inference for Continuous-Treatment Earth Observation",
+  "abstract": "Reliable intervention-oriented uncertainty quantification from Earth observation (EO) remains challenging when continuous treatment shifts, spatial dependence, limited support, and satellite-outcome uncertainty must be addressed simultaneously. Existing causal, conformal, and spatial approaches address parts of this problem, but their direct combination does not generally recover the appropriate interventional reference law because candidate reassignment jointly alters treatment likelihood, standardized residuals, and graph-dependent residual likelihood. This study presents GeoDose-CP, a support-aware conformal framework for localized stochastic potential outcomes under continuous or mixed continuous-atomic treatment. Its central methodological contribution is a graph-local target-orbit law that jointly represents intervention-induced treatment shift, the inverse outcome-scale Jacobian, and spatial residual dependence. The framework further provides exact weighted candidate inversion, a scalable sparse approximation with explicit discrepancy accounting, and refusal under inadequate support. Evaluation used controlled known-truth experiments, MineDoseBench, treatment-density sensitivity analysis, external conformal comparators, and a multi-mine New South Wales (NSW) study. In MineDoseBench, GeoDose-CP achieved mean selective coverage of 0.9692 across 27 configurations and a minimum local q0.05 of 0.8951; exact-sparse auditing produced nine inclusion disagreements over 2,700 targets. In the NSW study, the absence of an auditable longitudinal rehabilitation treatment rendered treatment-dependent inference nonoperational rather than forcing inference through a proxy exposure.",
+  "categories": [
+   "stat.AP",
+   "cs.LG"
+  ],
+  "authors": [
+   "Md Khalid Hasan Sakib",
+   "Dristi Datta",
+   "Manoranjan Paul",
+   "Davina White"
+  ],
+  "url": "https://arxiv.org/abs/2609.28895",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Reliable interventional uncertainty quantification from Earth observation is hard when continuous treatment shifts, spatial dependence, limited support, and outcome uncertainty coincide. The paper introduces GeoDose-CP, a support-aware conformal framework built on a graph-local target-orbit law that jointly models intervention-induced treatment shift, the inverse outcome-scale Jacobian, and spatial residual dependence, with exact weighted candidate inversion, a scalable sparse approximation, and refusal under inadequate support.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.29514",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Operator Surrogate for 2D Magnetohydrodynamic Reconnection",
+  "abstract": "Direct numerical simulation of magnetic reconnection is limited by the scale separation of resistive magnetohydrodynamics. At large Lundquist numbers $S$ the current layer thins as $S^{-1/2}$, forcing fine grids and short time steps that make parameter scans prohibitively expensive. Deep learning neural operators offer an alternative by learning the map between function spaces rather than individual solutions, so that a single trained model returns the state for any parameter and time at inference cost. We have developed a Fourier Neural Operator (FNO) based Physics-Informed Neural Operator (PINO) surrogate for two-dimensional compressible, viscous, resistive reconnection in a wall bounded domain. We condition on the initial state, the Lundquist number, and a continuous query time. Predicting the magnetic flux function makes $\\grad\\!\\cdot\\!\\bB=0$ exact, direct time queries remove autoregressive error accumulation, and parity-aware spectral differentiation matches the wall treatment of the reference solver. Trained across $10^{3}\\le S\\le2\\times10^{5}$ with two values withheld, the surrogate recovers density, pressure, and guide field to better than $0.2\\%$, velocity to $3.2$ to $3.9\\%$, the flux function to $1.0\\%$, and the spectral current density to $7.5\\%$. It resolves the thin, narrow current sheet, Alfv\\'enic jets, and spectral resolution beyond mode cutoff. Our surrogate reproduces the layer-averaged reconnection rate to within $3\\%$ through $S=1.1\\times10^{4}$, recovering a reconnection time exponent of $0.497$ consistent with Sweet-Parker scaling. When queried zero-shot on the $2049^{2}$ solver mesh, a full trajectory run is on the order of seconds on one GPU against several hours for the DNS, over two orders of magnitude faster, establishing learned operators as a practical route to surveying reconnection across parameter space.",
+  "categories": [
+   "physics.plasm-ph",
+   "stat.ML"
+  ],
+  "authors": [
+   "Kushaal Kumar Pothula",
+   "Arunav Kumar"
+  ],
+  "url": "https://arxiv.org/abs/2609.29514",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml"
+  ],
+  "summary": "Direct numerical simulation of 2D magnetic reconnection is prohibitively expensive at large Lundquist numbers because the current layer thins as S^{-1/2}, forcing fine grids and short time steps. The paper develops a Fourier Neural Operator-based physics-informed (PINO) surrogate conditioned on the initial state, Lundquist number, and continuous query time that predicts the magnetic flux function to make div B = 0 exact and removes autoregressive error accumulation, recovering reconnection rates consistent with Sweet-Parker scaling over two orders of magnitude faster than DNS.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.29969",
+  "source": "arXiv",
+  "title": "Rapid Uncertainty Quantification on a Latent Field using Fisher Information",
+  "abstract": "Many inverse problems in physics infer an unobserved field from measurements connected to it through a governing equation. We combine Fisher information with a differentiable solver to quantify uncertainty in both the inferred field and its predicted observables, using a local Gaussian approximation without sampling the full parameter posterior. Applied to nuclear optical potentials, the method distinguishes features constrained by scattering measurements from those whose uncertainty remains set by the prior. Our flexible model improves agreement with held-out cross sections and achieves nearly nominal coverage with narrower predictive intervals than an established Bayesian optical model.",
+  "categories": [
+   "nucl-th",
+   "physics.comp-ph",
+   "physics.data-an"
+  ],
+  "authors": [
+   "Karl Daningburg",
+   "A. E. Lovell",
+   "Arvind T. Mohan",
+   "R. O'Shaughnessy"
+  ],
+  "url": "https://arxiv.org/abs/2609.29969",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "differentiable-simulation"
+  ],
+  "summary": "Inverse problems in physics that infer an unobserved field from measurements linked by a governing equation need uncertainty estimates without sampling a full parameter posterior. The paper combines Fisher information with a differentiable solver to build a local Gaussian approximation of uncertainty in both the inferred field and its predicted observables, demonstrated on nuclear optical potentials.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.30039",
+  "source": "arXiv",
+  "title": "TorchFDTD: GPU-accelerated finite-difference time-domain simulation with discrete adjoints and host-streamed execution for photonic inverse design",
+  "abstract": "Gradient-based photonic design needs full-wave derivatives with respect to millions of parameters, but on a single GPU workstation the time-domain adjoint is limited by device memory and by the incompatibility of fused update kernels with automatic differentiation. Here, we present TorchFDTD, an open-source finite-difference time-domain (FDTD) package that addresses both limits. Its Yee, absorber and dispersion updates execute as fused CUDA kernels captured in a CUDA graph, and every kernel is paired with a transpose kernel derived from its update, so material and geometry derivatives are obtained by a discrete adjoint that PyTorch chains with differentiable objectives built from the supported observations. The adjoint recovers forward states by checkpoint replay or, for lossless periodic problems, by time reversal. For problems that exceed the device, a streamed mode advances the domain one causal slab at a time and keeps the global state and the checkpoints in host memory, which lowers the device allocation while preserving the resident discretization. We validate the package against analytic solutions, against Meep, FDTDX and a rigorous coupled-wave solver, and against automatic differentiation and finite differences. On an A100 the fused path completes full forward solves of eight test scenes 9.0 to 17.1 times faster than the PyTorch FDTD package it extends, and its double-precision solves are 49 to 59 times faster than those of Meep on a workstation CPU. On an RTX 3060, host streaming of $256^3$ and $320^3$ adjoints costs 3.1 and 2.7 times the resident time and lowers the peak device allocation by 56% and 65%. A 54-million-cell pillar-array lens coupled to an angular-spectrum objective yields an adjoint derivative within 0.78% of a central difference. The time-domain adjoint of a device with tens of millions of cells thus becomes available on a single workstation GPU.",
+  "categories": [
+   "physics.optics",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Hyoseok Park"
+  ],
+  "url": "https://arxiv.org/abs/2609.30039",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Gradient-based photonic design needs full-wave time-domain derivatives with respect to millions of parameters, but single-GPU adjoints are limited by device memory and by fused update kernels being incompatible with automatic differentiation. TorchFDTD provides fused CUDA-graph FDTD update kernels each paired with a transpose kernel for a discrete adjoint chained through PyTorch, plus a host-streamed checkpointing mode that lowers peak device allocation while preserving the resident discretization.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.30115",
+  "source": "arXiv",
+  "title": "Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis",
+  "abstract": "Modern deep neural networks treat parameters as static floating-point matrices stored in physical memory, incurring Von Neumann memory bottlenecks and representation collapse. We formulate Orbital Error Dynamics (OED), an analytical framework wherein synaptic weights are not stored masses (O(W)), but transient topological resonances (O(1)) derived procedurally from the complex quadratic polynomial map z_{n+1} = z_n^2 + c. We introduce the Bent Sine Wave Hypothesis, demonstrating that non-equilibrium living systems emerge when harmonic waves curl inward through environmental drag toward the cardioid cusp (c = 1/4). We define the Observer Horizon Geometry in parameter space, identifying interior resonance shoulder loci X_upper = (0.25, +0.18) and X_lower = (0.25, -0.18) between the fixed-point basin and the true boundary at c = 0.25 +/- 0.50i. To escape non-convex stagnation without loss zeroing, we introduce a heavy-tailed Biomimetic Perturbed Jump Operator (Omega_tunneling) inspired by mammalian fertilization zinc sparks. We further couple an enteric-cranial Dual-Brain architecture shielded by adaptive CD4+ regulatory immune gating (M_CD4), and project the 4-nucleotide genetic basis (A, T, C, G) across quadrants in C. Multi-seed empirical validation on the Two-Moons manifold (5 seeds, 80/20 train/test split, 32x32 grid, zero test-time updates, zero label leakage) demonstrates that procedural parameterization from a 24-byte coordinate seed achieves 77.67% +/- 5.35% clean test accuracy (within an 8.00-point paired difference of an unconstrained gradient baseline at 85.67% +/- 5.35%, 95% CI: [-1.07%, 17.07%]) and 71.33% +/- 3.80% under distribution shift (N(1.2, 0.4)), alongside conceptual equivalence with an analog optical co-processor.",
+  "categories": [
+   "cs.NE",
+   "cs.LG",
+   "nlin.CD"
+  ],
+  "authors": [
+   "Volkan Da\\u{g}l{\\i}",
+   "Zerrin Da\\u{g}l{\\i}",
+   "Da\\u{g}han Da\\u{g}l{\\i}"
+  ],
+  "url": "https://arxiv.org/abs/2609.30115",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Standard deep networks store weights as static memory-resident matrices, incurring von Neumann bottlenecks and representation collapse. The paper formulates Orbital Error Dynamics, deriving synaptic weights procedurally as O(1) transient topological resonances of the complex quadratic map z_{n+1}=z_n^2+c, with a perturbed jump operator and criticality-based parameter-space geometry, validated on the Two-Moons manifold.",
+  "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.30210",
+  "source": "arXiv",
+  "title": "The Alignment Illusion in Multimodal Large Language Models",
+  "abstract": "Layer-wise visual-text similarity in Multimodal Large Language Models (MLLMs) is widely interpreted as evidence that the language model progressively integrates visual content into a shared representation space. This reading rests on the assumption that scalar alignment scores reflect content-level cross-modal interaction. To test this assumption, we apply controlled interventions to the visual stream. Across 13 MLLMs from five families spanning 0.5B to 72B parameters, replacing projector-output visual tokens with Gaussian noise sharply reduces task accuracy, yet four standard scalar measures (CKA, SVCCA, MIR, and the leading principal-angle cosine) fail to consistently separate the corrupted stream from the original. We call this failure the alignment illusion and trace it to the shared language-model pathway: anisotropic MLP down-projections pull visual and text tokens toward common output directions, producing weight-induced alignment. Because this component is essentially one-dimensional, we introduce the principal-angle gap (PA gap), defined as the difference between the top two principal-angle cosines, which separates weight-induced similarity from multi-directional visual structure. Under graded visual corruption, the PA gap tracks task accuracy more consistently than the scalar scores we consider; under a structured but irrelevant image, it further exposes regimes in which internal geometry and task accuracy come apart. Internal visual-text alignment in MLLMs is therefore best read as a geometric diagnostic of the visual stream inside the language model rather than a direct proxy for content-level cross-modal interaction, and is most informative when calibrated by controlled task evidence.",
+  "categories": [
+   "cs.CV",
+   "cs.LG"
+  ],
+  "authors": [
+   "Hong-Han Wang",
+   "Yuntao Wang",
+   "Hu Ding"
+  ],
+  "url": "https://arxiv.org/abs/2609.30210",
+  "published": "2026-09-25",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Layer-wise visual-text similarity in MLLMs is widely read as evidence that the language model integrates visual content into a shared representation space, but scalar alignment scores may not reflect content-level cross-modal interaction. Through controlled corruption of the visual stream, the paper identifies an alignment illusion caused by anisotropic MLP down-projections and introduces the principal-angle gap, a geometric diagnostic that separates weight-induced similarity from multi-directional visual structure and tracks task accuracy.",
+  "added": "2026-09-25"
  }
 ]
