@@ -62823,5 +62823,253 @@
   ],
   "summary": "Layer-wise visual-text similarity in MLLMs is widely read as evidence that the language model integrates visual content into a shared representation space, but scalar alignment scores may not reflect content-level cross-modal interaction. Through controlled corruption of the visual stream, the paper identifies an alignment illusion caused by anisotropic MLP down-projections and introduces the principal-angle gap, a geometric diagnostic that separates weight-induced similarity from multi-directional visual structure and tracks task accuracy.",
   "added": "2026-09-25"
+ },
+ {
+  "id": "arxiv:2609.30973",
+  "source": "arXiv",
+  "title": "LipSSM: Structurally Lipschitz-Bounded Cascaded State-Space Model via Metric Transfer between Consecutive SSM Layers",
+  "abstract": "Lipschitz continuity is a fundamental principle in the design of certifiably robust deep neural networks (DNNs), wherein adjusting the Lipschitz constant, which quantifies network robustness, is of central theoretical importance. A standard approach to enforcing Lipschitz continuity requires each layer of a DNN to be Lipschitz continuous, thereby guaranteeing overall Lipschitz continuity. However, this layer-wise approach typically imposes overly conservative restrictions by producing a loose estimate of the overall Lipschitz constant, which limits the expressive capacity of the DNN and degrades empirical performance at a prescribed level of robustness. To overcome this loose estimation, the recently proposed LipKernel transfers information across layers to yield a much tighter overall Lipschitz bound than conventional layer-wise construction. In this paper, we extend this concept to cascaded state-space models (SSMs) to construct Lipschitz-continuous DNNs capable of modeling longer-term dependencies. The proposed architecture, named LipSSM, is theoretically justified and empirically evaluated.",
+  "categories": [
+   "cs.LG",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Natsuki Yoshino",
+   "Ren Uchida",
+   "Kazuki Matsumoto",
+   "Kohei Yatabe"
+  ],
+  "url": "https://arxiv.org/abs/2609.30973",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Enforcing Lipschitz continuity layer by layer yields overly conservative overall bounds that restrict expressive capacity at a given robustness level. The paper extends the LipKernel cross-layer metric-transfer idea to cascaded state-space models, constructing LipSSM with a provably tighter Lipschitz bound for modeling longer-term dependencies.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.30977",
+  "source": "arXiv",
+  "title": "Does Uniform Discrete Diffusion Need Time?",
+  "abstract": "Uniform discrete diffusion models (UDMs) commonly use explicit time conditioning, but we find that it can often be unnecessary in practice. In this paper, we first show that the population-optimal UDM predictor generally depends on time: time controls how much the model should trust the observed context. We then show that this dependence can become negligible in finite-data settings relevant to language. When a corrupted training sequence remains much closer to its original clean sequence than to competing training sequences, the empirical-optimal predictor is nearly insensitive to time over most of the diffusion trajectory, where the guarantee weakens toward the high-noise endpoint. Empirically, trained language UDMs exhibit limited time sensitivity over most of the trajectory, while time-agnostic predictors remain competitive with, and often outperform, time-conditioned models across datasets and training objectives. These results challenge the use of explicit time conditioning in UDMs: although the population optimum depends on time, explicitly conditioning on it may often be unnecessary in practice.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.CL"
+  ],
+  "authors": [
+   "Chunsan Hong",
+   "Chieh-Hsin Lai",
+   "Satoshi Hayakawa",
+   "Yuhta Takida",
+   "Jong Chul Ye",
+   "Yuki Mitsufuji"
+  ],
+  "url": "https://arxiv.org/abs/2609.30977",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Uniform discrete diffusion models conventionally condition on explicit time, but it is unclear whether that dependence is necessary. The paper shows the population-optimal UDM predictor generally depends on time yet becomes nearly time-insensitive in finite-data regimes, and that trained language UDMs are largely time-insensitive with time-agnostic predictors often matching or beating time-conditioned ones.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.30995",
+  "source": "arXiv",
+  "title": "Learning Hierarchical Causal Representations of the Effects of Forcings on Temperature in Climate Models",
+  "abstract": "Machine learning (ML) emulators provide a fast and cost-effective method to simulate climate change scenarios after being trained on Earth System Models projections. However, the black-box nature of those data-driven approaches limit the usability and trustworthiness of their outputs and in particular their use as causal attribution tools. Here, we develop a hierarchical causal representation learning framework applied to sea surface temperature fields from a state-of-the-art global climate model. As a key advance over previous work, our framework explicitly models both atmospheric dynamical interactions arising from internal climate variability and forced responses due to changes in atmospheric greenhouse gas and aerosol concentrations. When trained on future climate change scenarios, our method accurately predicts the long-term global mean and regional temperature evolution and shows physically realistic responses to perturbations in greenhouse gas and aerosol concentrations when evaluated on unseen scenarios. Our results underline the potential of causal representation learning frameworks for advancing climate model emulation.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Shan Zhao",
+   "Ilija Trajkovic",
+   "Julia Kaltenborn",
+   "Yaniv Gurwicz",
+   "Peer Nowack",
+   "David Rolnick",
+   "Julien Boussard"
+  ],
+  "url": "https://arxiv.org/abs/2609.30995",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "ML emulators of climate models are fast but black-box, which limits their use for causal attribution of external forcings. The paper develops a hierarchical causal representation learning framework for sea surface temperature fields that explicitly separates internal atmospheric dynamical variability from forced responses to greenhouse-gas and aerosol changes.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.30996",
+  "source": "arXiv",
+  "title": "The Linear Representation Hypothesis for Vision-Language-Action Models",
+  "abstract": "The linear representation hypothesis (LRH) has become a standard lens for measuring and intervening on semantic information through the internal representations of large language models (LLMs). A growing body of work has begun extending this perspective to vision-language-action (VLA) models, but the dynamical nature of embodied interaction introduces an additional challenge. Unlike semantic attributes commonly studied in LLMs, such as gender or language, a physical quantity of interest (QoI) in a VLA evolves jointly with the system dynamics: the representation influences the actions selected by the policy, which alter the physical state and, in turn, the next representation. In this paper, we develop a theoretical, signature-based formulation of the LRH for VLA that unifies representations and policies. On the representation side, we establish the existence of representations from which the future evolution of a QoI under a candidate action trajectory can be recovered via linear probing. On the policy side, we introduce a signature generalized linear model for stochastic action chunks. This structure yields a monotonic change in the expected future QoI along linear paths in natural parameter space, enabling linear steering. We construct an explicit oracle representation in a planar control-affine navigation experiment and verify the predicted linear probing and steering mechanisms.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Minseok Jeong",
+   "Hyewon Choi",
+   "Hiroyasu Tsukamoto",
+   "SooJean Han"
+  ],
+  "url": "https://arxiv.org/abs/2609.30996",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The linear representation hypothesis is hard to extend to vision-language-action models because a physical quantity of interest co-evolves with the policy's actions. The paper gives a signature-based theoretical formulation unifying representations and policies, proving linear-probe recoverability of a QoI's future evolution and introducing a signature generalized linear model that permits linear steering of stochastic action chunks.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31037",
+  "source": "arXiv",
+  "title": "Goal-Oriented Weighting of Reynolds-Stress Data for Learning Turbulence Models in Complex Flows",
+  "abstract": "Data-driven turbulence models for the Reynolds-averaged Navier-Stokes (RANS) equations offer a promising route to improving predictions of complex flows. Such models, specifically the turbulence constitutive relations, can be learned efficiently from high-fidelity Reynolds-stress data without evaluating the RANS equations during training. However, conventional losses weight all tensor-component and spatial errors equally, although their influence on a quantity of interest (QoI) can differ significantly; reducing the aggregate stress error therefore does not necessarily lead to an improved QoI prediction. Training against flow-level observations accounts for this dependence but requires repeated, potentially expensive RANS solutions. In canonical shear flows, physical reasoning can identify the shear component as the only one relevant for the mean-flow prediction. Motivated by this example, we propose a goal-oriented method to select and weight Reynolds-stress training data for complex flows. For a specified QoI, a single offline adjoint evaluation quantifies its sensitivity to local perturbations of each Reynolds-stress component. These sensitivities are converted into fixed weights in the supervised loss, enabling training without further RANS solutions. We validate the weighting in square-duct and periodic-hill flows, then apply it to a film-cooling jet in crossflow, where it improves velocity and cooling-effectiveness predictions over uniformly weighted training despite using a velocity-only QoI. Beyond turbulence modelling, this work suggests a broader strategy for aligning supervised learning with downstream prediction goals while preserving training efficiency.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Zhuolin Zhao",
+   "Haochen Wang",
+   "Youngwoo Kim",
+   "Solkeun Jee",
+   "Heng Xiao"
+  ],
+  "url": "https://arxiv.org/abs/2609.31037",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Learning Reynolds-stress closures with uniformly weighted losses does not guarantee better predictions of a downstream quantity of interest, and training against flow-level observations requires costly repeated RANS solves. The paper proposes a goal-oriented scheme in which one offline adjoint evaluation gives QoI sensitivities to each Reynolds-stress component, converting them into fixed loss weights that improve velocity and cooling-effectiveness predictions without further RANS evaluations.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31098",
+  "source": "arXiv",
+  "title": "The Residual Stream's Effective Depth",
+  "abstract": "We introduce \\emph{effective depth} ($\\Deff$), a scalar diagnostic that treats the layer-wise residual stream of a transformer as a discrete-time process, measures how representation similarity decays with layer distance, and aggregates that profile into one number. Across sixteen decoder-only language models, $\\Deff$ separates a structural consequence of residual accumulation from an empirical one: even maximally diverse orthogonal updates have the closed-form reference $F_L = 2L/(L+1)<2$, yet fifteen of sixteen default measurements lie below $F_L$ (Qwen3.5: 32--44\\%, OLMo-2: 40--41\\%, Pythia: 23--28\\%). Matched references show that the gap is not caused by the persistent initial state or update-size imbalance, but is largely a calibrated signature of correlated residual updates rather than evidence that depth is unused. Symmetric position-0, token-normalisation, and top-PC controls show the regime is not reducible to BOS or top-PC artefacts: the lone above-reference default outlier joins the same regime, and all sixteen models are sub-reference after token-normalisation or top-1-PC removal. Intermediate checkpoints show that the regime is established early in OLMo-2 and stable through 5T tokens, while Pythia-1.4B follows a distinct decreasing trajectory. A controlled residual-carry intervention supports the mechanism, and $\\Deff$ is best read as a \\emph{global} accumulated-state diagnostic, not as a capability score or pruning method.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Barak Gahtan",
+   "Ido Galil",
+   "Alex M. Bronstein"
+  ],
+  "url": "https://arxiv.org/abs/2609.31098",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear how representations evolve along the transformer residual stream and whether layer depth is effectively used. The paper introduces effective depth (D_eff), which models the residual stream as a discrete-time process and compares its representation-similarity decay profile to a closed-form orthogonal-update reference of 2L/(L+1), showing that most models fall below it because of correlated residual updates.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31152",
+  "source": "arXiv",
+  "title": "KnottedGraph: Scalable knotted-graph topology for scientific and mathematical discovery",
+  "abstract": "Scientific data span heterogeneous structures, including coordinates, networks, surfaces, volumes and fields, yet their topology can be quantified within a common framework through graph connectivity, cycle structure, genus and spatial embedding. Graph- and homology-based summaries do not determine spatial embedding, while standard knot and link polynomials require extensions to accommodate branching graphs. Here, we introduce KnottedGraph, a computational framework that converts such scientific representations to knotted graphs that retain graph connectivity and spatial embedding together. It constructs projected diagrams and PD codes, enabling various topological analyses, including Yamada-polynomial evaluation for topological classification. For scalable exact evaluation, it combines partial resolutions that leave the same unresolved connections and optimizes their processing order; the resulting algorithm is verified against published topological invariants of knotted graphs with up to 500 crossings. This scalability enables us to introduce an LLM-assisted mathematical-discovery methodology, in which computational topological data generated across knotted-graph families are used to identify candidate closed-form formulas. With this approach, we identify analytical Yamada-polynomials for generic graph motif families exhibiting Abelian and non-Abelian word sequences. Together, these scalable capabilities make knotted-graph topology computationally accessible across scientific domains, enabling large-scale classification and introducing a route from topological data to LLM-assisted AI4Math discovery.",
+  "categories": [
+   "cs.MS",
+   "cs.CG",
+   "cs.SC",
+   "math.GT",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Hakan Akg\\\"un",
+   "Xianquan Yan",
+   "Kehan Liu",
+   "Zhaoyun Chen",
+   "Ching Hua Lee"
+  ],
+  "url": "https://arxiv.org/abs/2609.31152",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "foundations"
+  ],
+  "summary": "Quantifying the topology of heterogeneous scientific data (coordinates, networks, surfaces, fields) is hard because graph/homology summaries ignore spatial embedding and standard knot polynomials need extending to branching graphs. KnottedGraph converts such representations into knotted graphs via projected diagrams and PD codes, scales exact Yamada-polynomial evaluation through optimized partial resolutions, and uses the resulting topological data with an LLM-assisted methodology to discover closed-form Yamada polynomials for graph motif families.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31384",
+  "source": "arXiv",
+  "title": "Multivariate conformal uncertainty propagation in multitask atomistic simulation: Successes and pitfalls",
+  "abstract": "Machine learning has become the standard tool for the design of interatomic potentials which balance efficiency and accuracy, but uncertainty quantification remains an open problem. Multiscale simulations introduce an additional challenge: robust uncertainty quantification across scales. Even within one scale, computations are often multistage, producing a sequence of target quantities, each dependent on the previous, and each with some uncertainty. Conformal methods have emerged as a model agnostic framework for recalibrating surrogate predictions to produce sets which contain the truth at a user-specified rate. For multistage workflows, we require uncertainty calibration for multiple chemical properties and atomistic configurations, and we want to propagate uncertainty sets to downstream quantities of interest. Such propagation should capture the error cancellations which occur in many downstream targets in materials science; for instance, an approximate energy difference is often more accurate than individual energy predictions. We present the first exploration of multivariate conformal methods for chemical properties, including Bonferroni-corrected hyperrectangles, hyperellipsoidal sets based on the Mahalanobis distance, and custom loss functions within conformal risk control. Calibration is applied directly to predicted energies, atomic forces, and virial stresses, then propagated to elastic constants and vacancy formation energies employing a variety of commonly considered approximate protocols in materials modeling. We highlight the benefits of building correlation predictions into the conformal procedure, making it possible to build sets which capture near symmetries and error cancellation. We conclude with a discussion of the interplay of the employed approximate computational protocol and conformal guarantees.",
+  "categories": [
+   "physics.chem-ph",
+   "stat.ML"
+  ],
+  "authors": [
+   "Katharine Fisher",
+   "Michael Herbst",
+   "James Kermode",
+   "Youssef Marzouk"
+  ],
+  "url": "https://arxiv.org/abs/2609.31384",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Uncertainty quantification and propagation remain open problems for machine-learned interatomic potentials, especially when multistage workflows chain several dependent predictions and exploit error cancellation. The paper presents the first study of multivariate conformal methods for chemical properties—Bonferroni-corrected hyperrectangles, Mahalanobis-distance hyperellipsoids, and custom conformal-risk-control losses—calibrated on energies, forces, and virials and propagated to elastic constants and vacancy formation energies, highlighting the value of modeling correlations and near-symmetri",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31469",
+  "source": "arXiv",
+  "title": "LandscapeSHAP: Which Persistent Homology Class Gets the Credit?",
+  "abstract": "Shapley values, a solution concept from cooperative game theory, have recently become a standard tool for feature credit allocation in machine learning. They provide an axiomatically justified method to fairly distribute a model's prediction among the data features. Shapley values have not yet been applied to explain machine learning models trained on features from topological data analysis. We develop what we believe is the first such approach, focusing on the persistence landscape featurization of persistence diagrams. Because each landscape coordinate is a rank statistic, crediting a model's prediction back to individual persistent homology classes (persistence diagram points) is nontrivial. We introduce LandscapeSHAP, a method for fair credit allocation to persistence diagram points based on a model's prediction. For linear models on persistence landscapes, LandscapeSHAP has a closed form expression that gives the exact Shapley value of every persistence diagram point. In particular, there is no coalition sampling required. We further prove that the four Shapley \"fairness\" axioms uniquely characterize this credit allocation for any model, not only linear ones. For a general nonlinear model, this unique value can only be calculated exactly from its defining coalition averaging formula, which requires considering all $2^N$ many coalitions, where $N$ is the number of points in the persistence diagram. This is computationally intractable for persistence diagrams of realistic size. We complement the exact linear model result with an efficient Monte Carlo sampling of persistence diagram coalitions. We give convergence rates in terms of number of samples needed to approximate to a desired degree of accuracy. We also prove stability results for the LandscapeSHAP credit allocation, for any model.",
+  "categories": [
+   "math.AT",
+   "cs.LG"
+  ],
+  "authors": [
+   "Nikola Mili\\'cevi\\'c"
+  ],
+  "url": "https://arxiv.org/abs/2609.31469",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "It is unclear how to fairly attribute a model's prediction back to individual persistent homology classes when using persistence-landscape features, since each landscape coordinate is a rank statistic. The paper introduces LandscapeSHAP, gives a closed-form exact Shapley value for linear models on persistence landscapes, proves the four Shapley fairness axioms uniquely characterize the credit allocation for any model, and provides a Monte Carlo coalition sampler with convergence rates plus stability results.",
+  "added": "2026-09-28"
+ },
+ {
+  "id": "arxiv:2609.31518",
+  "source": "arXiv",
+  "title": "Retrainable physics-integrated neural differentiable modeling of sintering across material systems",
+  "abstract": "Sintering is widely used to manufacture ceramics, but coupled densification and grain growth, material-dependent kinetics, and sparse measurements complicate predictive modeling and process design. We present Sinter-PiNDiff, a retrainable physics-integrated neural differentiable framework for predicting density and grain-size evolution. Two neural networks learn densification and grain-growth coefficients within coupled rate equations, while a smooth saturation factor attenuates densification near theoretical density. The same governing structure, network architecture, and training procedure were fitted independently to published data for MgO, Al-doped ZnO, and CaO-doped ThO2. Tests at held-out temperatures and compositions yielded the lowest mean error in all twelve material-metric comparisons against multilayer perceptron and residual network baselines. For MgO, Al-doped ZnO, and CaO-doped ThO2, respectively, density normalized root-mean-square errors were 14.6%, 10.8%, and 14.4%, and grain-size errors using the same metric were 8.6%, 12.1%, and 19.3%. Removing evolving density from both neural-network inputs increased density and grain-size trajectory errors in all three systems and ten of twelve aggregate errors, supporting density-dependent kinetic feedback. Deep ensembles estimated model disagreement, but empirical coverage showed that the uncertainty bands were not calibrated and did not capture all model-data discrepancies. These results establish Sinter-PiNDiff as a retrainable framework for sparse-data prediction and uncertainty-informed selection of sintering conditions.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cs.LG"
+  ],
+  "authors": [
+   "Zeping Chen",
+   "Ani Aprahamian",
+   "Khachatur V. Manukyan",
+   "Tengfei Luo"
+  ],
+  "url": "https://arxiv.org/abs/2609.31518",
+  "published": "2026-09-28",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "differentiable-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Predicting coupled densification and grain growth in sintering is difficult because kinetics are material-dependent, data are sparse, and the underlying rate equations must be fitted across ceramic systems. Sinter-PiNDiff is a retrainable physics-integrated neural differentiable framework in which two networks learn the densification and grain-growth coefficients inside coupled rate equations—with a smooth saturation factor attenuating densification near theoretical density—and is fitted independently to MgO, Al-doped ZnO, and CaO-doped ThO2 data, with deep ensembles probing (imperfectly calib",
+  "added": "2026-09-28"
  }
 ]
