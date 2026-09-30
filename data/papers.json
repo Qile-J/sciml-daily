@@ -63741,5 +63741,461 @@
   ],
   "summary": "Attention weights depend on token counts, so splitting a signal into more tokens can change a representation's contribution. The paper formalizes refinement symmetry for proportional and quadrature attention, proves that split invariance forces the local mass factor to be linear for any fixed positive attention kernel, bounds attention error under changed representations, and demonstrates on Qwen2.5-Omni-7B that measure weighting preserves answers under token duplication and improves robustness under natural frame resampling and twofold encoding merging.",
   "added": "2026-09-29"
+ },
+ {
+  "id": "arxiv:2609.35852",
+  "source": "arXiv",
+  "title": "A Mesoscopic View of Transformer Weights Through Row and Column Scale Fields",
+  "abstract": "Pooled statistics of Transformer weights obscure how magnitude is distributed across functional channels, while individual weights are too numerous to compare directly. We study the mesoscopic level between them: row and column scale fields, the median-centred log-RMS profiles of a weight matrix over its channels, which together with a global scale and a full balanced core represent the matrix exactly. Across public Pythia checkpoints at four sizes and controlled runs from three initialization families, balancing reveals similar measured core magnitude profiles. A mixture bridge, with its form fixed before the analysis and its coefficients fitted, predicts the pooled-shape departure from field width on held-out runs and data arms of the controlled grid. The indexed fields retain further structure: they align across projections that share a functional channel, and query/key profiles follow reassigned RoPE frequencies rather than fixed matrix coordinates. Training trajectories show early field formation followed by component-dependent broadening or recession. Extending the channel-based analysis to AdamW's second moment reveals related functional organization in its log-space row and column factors. Finally, edits of a frozen checkpoint separate reciprocal scale balance, which preserves the forward computation, from relative channel gain: flattening the gain increases in-distribution loss while preserving matrix norms and the balanced core. Row and column scale fields thus connect pooled magnitude statistics to channel organization and provide coordinates for tracking and testing trained weight structure.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Tiexin Ding"
+  ],
+  "url": "https://arxiv.org/abs/2609.35852",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Pooled Transformer-weight statistics hide how magnitude is distributed across functional channels. The paper introduces row and column scale fields (median-centred log-RMS profiles plus a global scale and balanced core) as an exact mesoscopic decomposition, and uses them to characterize field formation during training, index sharing across projections, and the effect of channel-gain edits on loss.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.35884",
+  "source": "arXiv",
+  "title": "Learning in the Transverse Subspace: A Minimal Representation for Divergence-Free Operator Learning",
+  "abstract": "Divergence-free vector fields are fundamental state variables in incompressible flows and many PDE systems. Redundant parameterizations, including Neural Conservation Law (NCL) potentials, map multiple auxiliary representations to the same physical field. Our experiments show that this redundancy can reduce static representation-fitting error by enlarging the set of equivalent solutions, but the resulting many-to-one mapping does not provide a unique state for operator learning. We introduce a minimal representation that encodes a real \\(D\\)-component divergence-free vector field on a \\(D\\)-dimensional domain as a real \\((D-1)\\)-component field on the same domain. Exploiting the transverse structure imposed by incompressibility in Fourier space, we use a Householder orthogonal transformation to construct the reduced coordinates directly. For periodic and closed impermeable fields, the transform is invertible, isometric, and angle-preserving. For open nonperiodic flows, Fourier extension constructs a compatible periodic field, and a minimum-energy rule selects a unique reduced representation. Neural operators then learn temporal evolution entirely in this reduced space. At inference, the predicted \\((D-1)\\)-component field is decoded directly into a physical divergence-free \\(D\\)-component field, without predicting an ambient field or applying post-hoc projection. Experiments on static fitting and temporal prediction reveal a task-dependent trade-off: redundancy facilitates static optimization, whereas unique invertible coordinates provide a well-defined state for temporal dynamics. By removing unconstrained longitudinal or null directions from the learned state space, the proposed formulation achieves lower prediction error and greater robustness while preserving divergence freedom by construction.",
+  "categories": [
+   "cs.LG",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Yifei Sun"
+  ],
+  "url": "https://arxiv.org/abs/2609.35884",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Divergence-free vector fields admit redundant parameterizations whose many-to-one maps leave operator learning without a unique state. The paper builds a minimal representation encoding a D-component divergence-free field as a (D-1)-component transverse field via a Fourier-space Householder orthogonal transform, with a minimum-energy rule for open flows, so that neural operators evolve and decode divergence-free fields directly.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37875",
+  "source": "arXiv",
+  "title": "Co-PiLOT: Constrained Physics-Informed Latent Optimization for Target-Driven Inverse Design",
+  "abstract": "Inverse design of physical systems (molecules, devices, microstructures) often reduces to optimizing a high-dimensional structure against an expensive black-box simulator. Direct search is difficult because the space is non-Euclidean, feasibility is hard to encode, and each evaluation is expensive. We present Co-PiLOT, a latent optimization approach that maps candidates through a generative encoder-decoder, uses the decoder as a learned validity prior, and searches the latent space with physics-informed black-box optimization. The framework is applied on the inverse design of magnesium alloy microstructure/texture. We develop a vision transformer based-encoder; paired with latent diffusion, diffusion transformer and rectified-flow transformer-based decoders on $\\sim80{,}000$ EBSD-derived microstructure dataset to learn a minimal bottleneck, $z$. The ViT-FMDiT model ($z$=$768$) reconstructs high-fidelity microstructure images (FID $27.86$, MS-SSIM $0.178$), which our self-segmenting orientation codec converts into input grids for crystal plasticity solver. Finally, we introduce MERIDIAN, an active latent optimizer driven by deep-kernel Gaussian-process uncertainty, failure-aware feasibility prediction, manifold-aware trust regions, and target-aware acquisition. Within a budget of $160$ simulations, the ViT-FMDiT and MERIDIAN combination yields the best target-driven objective score, reducing the relative target error by $3$--$22\\%$ against seven baselines (DANTE, TuRBO, BAxUS, CMA-ES, DDOM, SEIKO, DDPO) on the same decoder.",
+  "categories": [
+   "cs.AI",
+   "cs.CE"
+  ],
+  "authors": [
+   "Mahish K. Guru",
+   "Mayank Nagar",
+   "Ayush vyas",
+   "Jan Bohlen",
+   "Roland Aydin",
+   "Noomane Ben Khalifa"
+  ],
+  "url": "https://arxiv.org/abs/2609.37875",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "generative-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Inverse design of physical systems is hard because the structure space is non-Euclidean, feasibility is poorly encoded, and each black-box simulator evaluation is expensive. Co-PiLOT learns a generative latent bottleneck (ViT encoder with latent diffusion/diffusion-transformer/rectified-flow decoders) used as a validity prior, and searches it with MERIDIAN, a deep-kernel Gaussian-process active optimizer with failure-aware feasibility and manifold-aware trust regions.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37879",
+  "source": "arXiv",
+  "title": "Retrieval Capacity of Self-Attention Under Competition",
+  "abstract": "How many tokens from its context does a language model actually use, and what determines that number? We study this question through self-attention. Without retraining, we retain only the tokens with the highest attention weights at each head, layer, and query, keeping their original weights unchanged. By varying the selected set size and measuring the increase in negative log-likelihood (NLL), we estimate the effective attention set size needed to stay within a chosen loss tolerance. Relatively small selected sets can keep NLL close to the full-attention baseline, although the required size varies across models. Attention-based selection substantially outperforms random selection. Selected sets exhibit geometric structure, although geometric separation alone does not establish that model loss is preserved. Extending context while evaluating the same prediction targets increases the required set size, while its fraction of context decreases over the tested range. Experiments with a fixed supporting fact show that additional background pushes its tokens down the attention ranking and reduces their attention mass. Renormalizing the retained weights can substantially reduce the required set size, showing that it also depends on how selected representations are combined. Conditional theoretical models explain how competition and attention-mass retention can produce growing set sizes without more distinct information to retrieve. These results provide a way to measure effective attention set size in language models and investigate its dependence on context, competition, and aggregation.",
+  "categories": [
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Timur Mudarisov",
+   "Mikhail Burtsev",
+   "Radu State"
+  ],
+  "url": "https://arxiv.org/abs/2609.37879",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks how many context tokens a language model actually uses and what determines that number. It measures effective attention set size by retaining top-attention tokens and tracking the NLL increase, and develops conditional theoretical models showing how attention competition and mass renormalization produce growing set sizes without more retrievable information.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37921",
+  "source": "arXiv",
+  "title": "Pattern Formation in Transformers",
+  "abstract": "What are the inductive biases of a Transformer architecture? Existing theory on how the forward pass shapes representations either considers whether Transformers escape from rank collapse or demonstrates that self-attention drives tokens toward cluster patterns. The latter view arises from an elegant dynamical systems perspective, but relies on simplified architectural assumptions, and does not explain the rich structures observed in practice. This leaves a major open question: when a full Transformer escapes rank collapse, how does it structure token representations? Using pattern-formation theory, we show that the dynamical view of Transformers can account for Positional Encoding, Multi-Head Attention, and Output-Value geometry. We demonstrate that a full Transformer architecture imposes an inductive prior by selectively amplifying a rich set of previously unreported patterns, including traveling or rotating waves among others. We characterize the role of each architectural component in controlling which pattern is amplified, which ones stabilize, compete, or coexist. Finally, we show that these structures can act as a controllable dynamical prior that facilitates learning. By choosing both task-aligned positional encoding and weight initialization, we demonstrate improved data efficiency and accelerated optimization on controlled sequence tasks and with ConViT on CIFAR-10.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Erkan Turan",
+   "Gaspard Abel",
+   "Maks Ovsjanikov"
+  ],
+  "url": "https://arxiv.org/abs/2609.37921",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks how a full Transformer structures token representations once it escapes rank collapse, a question existing dynamical-systems analyses with simplified architectures cannot answer. It applies pattern-formation theory to incorporate positional encoding, multi-head attention, and output-value geometry, showing that the architecture selectively amplifies patterns such as traveling and rotating waves and using this as a controllable dynamical prior to improve data efficiency.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37944",
+  "source": "arXiv",
+  "title": "Identifiability Guarantees for Drivers and Dynamics of Delayed Physical Systems",
+  "abstract": "A wide range of methods have been proposed, including physics-informed neural networks, which are powerful but do not guarantee identifiability of the dynamics, symbolic regression, which requires a set of precomputed operations, and causal discovery, which is more principled but usually relies on strong assumptions that physical systems may violate. In this work, we develop a theory-grounded method and prove that under a set of permissive assumptions, the structural drivers and drift of stochastic delayed differential equations are identifiable. Our method outperforms others on a benchmark for driver identifiability, and on a second benchmark to evaluate physical consistency of the learned dynamics.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.DS"
+  ],
+  "authors": [
+   "Julien Boussard",
+   "Antoine D\\'{e}bouchage",
+   "Th\\'{e}o Saulus"
+  ],
+  "url": "https://arxiv.org/abs/2609.37944",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Existing approaches (PINNs, symbolic regression, causal discovery) do not guarantee identifiability of the dynamics of delayed physical systems. The paper proves, under permissive assumptions, that the structural drivers and drift of stochastic delayed differential equations are identifiable, and validates the resulting method on driver-identifiability and physical-consistency benchmarks.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37947",
+  "source": "arXiv",
+  "title": "A shape-similarity latent space for fluid interfaces: invertible reduced-order modelling of droplet morphology",
+  "abstract": "A droplet breaks up in tens of microseconds, and a recording captures perhaps a dozen frames. The states in between cannot be recovered without repeating the experiment, and simulating them is too costly to sweep an operating envelope. Yet they are present in the corpus as a whole: a campaign spanning a device's actuation range produces morphologies resembling those any single recording missed. Exploiting that requires a representation that is low-dimensional, invertible, and faithful to shape rather than to sampling. Proper orthogonal decomposition supplies the first two but measures distance in sampled coordinates; manifold learning supplies the third but no map back to a shape; elastic shape analysis supplies a shape metric but no reduced coordinates. SHROM composes all three. Interfaces are represented by their square-root velocity functions, a neighbour graph is built over that shape space, and an autoencoder is trained to reconstruct while penalising latents in which graph neighbours are not latent neighbours. The demonstration uses 301,539 inkjet droplet contours and four filmed break-up sequences. The graph term does not improve reconstruction. It determines whether position in the latent carries meaning: clustering the latent of an otherwise identical model recovers the shape-space partition at chance level (ARI = 0.063 +/- 0.059), and at 0.781 +/- 0.049 with the term active. Waveform parameters predict the full contour at R^2 = 0.878 +/- 0.026. Negative results are reported in the same terms. The graph metric proved immaterial across five choices, and interpolation error saturates at the reconstruction limit, so a plain autoencoder leads that task. The main limitation is interpolation across a topology change: no component of the regularised latent holds both a single-component and a post-break-up shape, whereas an unregularised autoencoder mixes them freely.",
+  "categories": [
+   "physics.flu-dyn",
+   "physics.comp-ph",
+   "physics.data-an",
+   "stat.ML"
+  ],
+  "authors": [
+   "Ali R. Hashemi",
+   "Mohammad R. Hashemi",
+   "Pavel B. Ryzhakov"
+  ],
+  "url": "https://arxiv.org/abs/2609.37947",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Transient droplet-interface states are not recoverable from sparse recordings and are too costly to simulate, so a low-dimensional, invertible, shape-faithful representation is needed. SHROM composes square-root velocity elastic shape analysis, a shape-space neighbor graph, and an autoencoder with a graph-neighbor latent penalty to yield an invertible reduced-order model whose latent positions track droplet morphology.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37983",
+  "source": "arXiv",
+  "title": "Toward Principled Generative Data Assimilation of Turbulent Flows from Sparse Observations",
+  "abstract": "Turbulent flows are highly chaotic, which makes their instantaneous states difficult to predict. Data assimilation aims to reduce this predictive uncertainty by synthesizing the predictions of a physical solver with partial observations of the system. Traditional data assimilation methods such as ensemble and variational approaches can incur substantial computational cost through evaluations of high-fidelity solvers and, for variational methods, adjoint calculations. Recently, generative diffusion models have been explored in the solution of inverse problems in fluid mechanics, demonstrating their potential for data assimilation. However, existing diffusion-based methods often use free parameters instead of the prescribed observation-error covariance to control the balance between the prior and likelihood, departing from the Bayesian formulation of data assimilation. We propose a framework for principled generative data assimilation in which observations are assimilated in the clean-state space and the prescribed observation-error covariance enters explicitly through an ensemble Kalman update. In the Lorenz-63 system, the proposed method yields a lower trajectory error and equation residual than the other diffusion-based posterior sampling methods considered, although its ensemble underestimates the posterior uncertainty. In two-dimensional Rayleigh-B\\'enard convection, the generated fields recover the statistics of the direct numerical simulation reference at large scales, with deviations confined to the smaller scales. These results suggest that the framework can produce physically plausible turbulent flow fields, indicating its potential for more challenging turbulent flow applications.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Baris Turan",
+   "Zhuoran Liu",
+   "Heng Xiao"
+  ],
+  "url": "https://arxiv.org/abs/2609.37983",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Diffusion-based data assimilation for turbulent flows typically uses free parameters rather than the prescribed observation-error covariance, departing from the Bayesian formulation. The paper proposes a principled generative data-assimilation framework that assimilates observations in the clean-state space and injects the prescribed observation-error covariance explicitly through an ensemble Kalman update, tested on Lorenz-63 and 2D Rayleigh-Bénard convection.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.38023",
+  "source": "arXiv",
+  "title": "PE-EK-PINN: Physics Embedding with Evolving Kernel for Scalable Physics-Informed Neural Networks",
+  "abstract": "Physics-Informed Neural Networks (PINNs) embed governing equations into deep learning, but enforce them only through loss residuals, leaving highly oscillatory wave behavior to be discovered by optimization. As a result, methods that achieve relative $L_2$ errors below $10^{-3}$ on standard manufactured Helmholtz benchmarks can fail on practical radiation problems involving singular excitations, absorbing boundaries, and wave fields spanning tens of wavelengths. Architectural physics embedding addresses this limitation by factorizing the field into analytically derived oscillatory kernels and learnable envelopes. However, the kernel dictionary must be manually constructed and scales with the number of elementary units, growing exponentially with the depth of hierarchically structured systems such as antenna arrays and metasurfaces. We propose PE-EK-PINN (Physics Embedded with Evolving Kernels), which treats physics kernels as reusable learned representations rather than fixed analytical inputs. A converged subsystem field is frozen and promoted to an evolved kernel, whose transformed copies are reused to represent higher-level configurations without deriving new governing equations. The resulting hierarchy makes the peak number of active kernels independent of system size and reduces cumulative training cost from $O(N)$ to $O(\\log N)$. Experiments on dipole arrays, composite line-source geometries, and cross arrays demonstrate the dramatic training cost reduction, while achieving a reduced or comparable relative $L_2$ error. One notable example is PE-EK-PINN solves a $256$-dipole array more than 30 times faster than direct PE-PINN.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Huiwen Zhang",
+   "Feng Ye",
+   "Chu Ma"
+  ],
+  "url": "https://arxiv.org/abs/2609.38023",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "PINNs and analytic physics-embedding approaches struggle on practical radiation problems, where the hand-built oscillatory kernel dictionary scales exponentially with hierarchical system depth. PE-EK-PINN instead treats physics kernels as reusable learned representations, freezing converged subsystem fields into evolved kernels that are hierarchically reused, making peak active kernels independent of system size and cutting training cost from O(N) to O(log N).",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.35958",
+  "source": "arXiv",
+  "title": "Solver Agent: an Agentic AI Framework for Theoretical Physics Computations Applied to F-theory Uplifts of O3-planes and S-folds",
+  "abstract": "We introduce Solver Agent, an AI framework based on large language models for calculations and proofs in mathematics and theoretical physics. The solution process is tracked through a persistent ledger that records assumptions, derivations, and computations. A central agent delegates tasks to specialized sub-agents, while independent agents verify both intermediate steps and the final result. This setup improves the traceability, reproducibility, and verification of computer-assisted calculations. Applying Solver Agent, we study global F-theory uplifts of Type IIB orientifolds and their S-fold generalizations. We establish sufficient conditions for Weierstrass models over projective threefolds with terminal $\\mathbb{Z}_k$ quotient singularities ($k\\in\\{2,3,4,6\\}$) to give $\\mathbb{Q}$-factorial projective elliptically fibered Calabi-Yau fourfolds with isolated Gorenstein terminal quotient singularities. These geometries realize O3-planes and S-folds, where local D3-brane probes of the latter yield four-dimensional $\\mathcal{N}=3$ superconformal field theories. Using stringy invariants, we derive fixed-point contributions to Hodge data and Euler characteristics, and show that these Euler corrections determine the localized D3-brane charges required for tadpole cancellation. We illustrate these results using toric hypersurface constructions, where a single three-dimensional polytope determines both the Type IIB Calabi-Yau threefold and the F-theory base; here, the orientifold double cover naturally forms a bisection of an alternative genus-one-fibered uplift with discrete $\\mathbb{Z}_2$ gauge symmetry. Finally, we provide methods for toric computations and four-form flux analysis in four-dimensional $\\mathcal{N}=1$ compactifications with non-abelian gauge sectors.",
+  "categories": [
+   "hep-th",
+   "cs.AI",
+   "math-ph",
+   "math.AG",
+   "math.MP"
+  ],
+  "authors": [
+   "Eliott Morgensztern",
+   "Cesar Fierro Cota",
+   "Alessandro Mininno"
+  ],
+  "url": "https://arxiv.org/abs/2609.35958",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Computer-assisted calculations and proofs in mathematics and theoretical physics need better traceability, reproducibility, and verification. The paper introduces Solver Agent, an LLM-based central-agent framework with a persistent ledger and independent verifier sub-agents, and applies it to study global F-theory uplifts of Type IIB orientifolds and their S-fold generalizations.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.35966",
+  "source": "arXiv",
+  "title": "SIFARI: Self-Supervised Interferometric Fitting for Astronomical Radio Imaging",
+  "abstract": "Radio-interferometric images are reconstructed from sparsely sampled visibilities, and CLEAN-based imaging can struggle with spatial filtering, complex morphologies, and uncertainty quantification. Alternative methods that fit visibilities directly can address some of these limitations but often require manual choices of image priors and model hyperparameters. We present SIFARI (Self-Supervised Interferometric Fitting for Astronomical Radio Imaging), a self-supervised neural network workflow that represents sky brightness as a continuous function of position and fits measured visibilities without an external image training set or explicit spatial regularizer. An empirical rule sets the Fourier feature scale from the visibilities before training, controlling how readily the network fits fine structure. Sampling network weights with Stochastic Weight Averaging-Gaussian (SWAG) gives approximate brightness uncertainty estimates, which we combine with a thermal-noise floor to construct spatially resolved signal-to-noise maps. In synthetic ALMA tests, SIFARI yields an effective point-source response about eight times narrower than the natural-weighting CLEAN restoring beam and recovers more extended flux than CLEAN when short baselines are missing. It also achieves higher image fidelity than the restored CLEAN images in all three morphology benchmarks. Applied to ALMA observations of PDS 70, SIFARI recovers the bright outer ring together with faint compact emission in the central cavity. For long-baseline-only WISPIT 2 data, SIFARI supplies a sky model for phase self-calibration where the CLEAN model is inadequate. The restored, self-calibrated SIFARI image has approximately 30% lower RMS noise than the CLEAN image made from the original visibilities without self-calibration.",
+  "categories": [
+   "astro-ph.IM",
+   "astro-ph.EP",
+   "cs.LG"
+  ],
+  "authors": [
+   "Shunyuan Mao",
+   "Andrea Isella",
+   "Paris Perdikaris",
+   "Li-Ta Lo",
+   "Hui Li"
+  ],
+  "url": "https://arxiv.org/abs/2609.35966",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Radio-interferometric imaging via CLEAN struggles with complex morphologies and uncertainty quantification, while direct visibility-fitting methods require manual priors. The paper presents SIFARI, a self-supervised neural network that represents sky brightness as a continuous function of position and fits measured visibilities directly, using Stochastic Weight Averaging-Gaussian for uncertainty and spatially resolved signal-to-noise maps.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.36007",
+  "source": "arXiv",
+  "title": "Infrared Subtraction with Artificial Intelligence",
+  "abstract": "We present AI-developed local infrared subtraction, building on projection to Born and EFT matching. The framework separates an integrable radiation term from a finite contribution at Born kinematics, referred to as the Born contact. The contact is determined using the EFT singular distribution in a resolution observable such as N-jettiness $\\tau_N$. Under human physics guidance, an LLM develops two implementations. One uses a neural network for phase space projection and fits the contact by matching to EFT cumulants. The other uses an analytic construction that keeps the Born momenta fixed while integrating over radiation. It combines the EFT $\\delta(\\tau_N)$ coefficient with finite 4-dimensional radiation integrals to calculate the contact term directly. This gives a local subtraction formula without a slicing parameter, while reusing existing lower-order radiation calculations and EFT singular predictions. As a demonstration, we reconstruct the full NLO correction for massless 3- and 4-jet production in electron-positron annihilation. The attempt to the NNLO dijet production is also made by recursively using the NLO P2B construction with the LLM designing machine-learning controls to reduce the variance of the contact integral. The tested predictions are in good agreement with EERAD3. The numerical calculation and projection-network training use a 2020 Apple M1 MacBook, without GPU acceleration, illustrating the feasibility of the construction with modest computing resources. The appendices develop an extension of the local subtraction to 3-jet NNLO, giving explicit radiation maps and a proposed contact formula. We also show how to integrate over NNLO radiation while keeping the Born momenta fixed, for any number of massless final-state jets. Our results demonstrate how AI can help higher-order calculations by constructing infrared subtraction and improving its numerical integration.",
+  "categories": [
+   "hep-ph",
+   "cs.AI",
+   "hep-ex",
+   "nucl-ex",
+   "nucl-th"
+  ],
+  "authors": [
+   "Wenjie He",
+   "Xiaohui Liu",
+   "Yandong Liu",
+   "Zhan Wang"
+  ],
+  "url": "https://arxiv.org/abs/2609.36007",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Constructing local infrared subtraction for higher-order QCD calculations without a slicing parameter is difficult. Under human physics guidance an LLM builds two implementations of the subtraction, one using a neural network for phase-space projection with ML variance-reduction controls and one using analytic radiation integrals, recovering NLO 3- and 4-jet and testing NNLO dijet results against EERAD3.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.36084",
+  "source": "arXiv",
+  "title": "Measuring trainable degrees of freedom in materials graph neural networks: a random-subspace intrinsic dimension analysis",
+  "abstract": "Final predictive accuracy is the standard basis for comparing graph neural networks (GNNs) in materials-property prediction, but it does not show how strongly performance depends on access to trainable parameter-space directions. Here, we introduce trainable-degree dependence as a complementary characterization of materials GNN learning. Using random-subspace intrinsic-dimension analysis, we train CGCNN, ALIGNN, and DimeNet++ in randomly oriented parameter subspaces across six prediction tasks and measure how performance recovers as independent trainable degrees of freedom are restored. The resulting recovery curves separate endpoint accuracy from the trainable-dimensional demand required to recover it. They reveal distinctions that final errors alone miss: metallic classification and log-bulk-modulus regression recover near-reference performance from small fractional subspaces, formation-energy and band-gap prediction show stronger architecture dependence, and phonon prediction is most sensitive to dimensional restriction. Dataset-size sweeps show that band-gap models require larger fractional subspaces as training data grows, whereas formation-energy and bulk-modulus responses are more stable. A width sweep shows that fractional thresholds can remain stable while absolute threshold dimensions increase with model size. Random-subspace analysis therefore provides a targeted stress test for how materials GNNs use their optimization space.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cs.AI"
+  ],
+  "authors": [
+   "Shehroz Ahmad Shoaib",
+   "Kangming Li"
+  ],
+  "url": "https://arxiv.org/abs/2609.36084",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Final predictive accuracy conceals how strongly materials GNN performance depends on access to trainable parameter-space directions. The paper introduces random-subspace intrinsic-dimension analysis, training CGCNN, ALIGNN, and DimeNet++ in randomly oriented parameter subspaces across six tasks to measure recovery versus restored trainable degrees of freedom.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.36142",
+  "source": "arXiv",
+  "title": "Copula Active Subspaces I: A Score-Covariance Method for Reduced-Order Non-Gaussian Density Estimation",
+  "abstract": "In Bayesian inference problems with non-Gaussian observation noise, the posterior is only as accurate as the noise density, and gradient-based samplers need that density and its gradient evaluable pointwise, whether from an explicit expression or from code, and without an inner solve. We propose Copula Active Subspaces (CAS) to represent this noise density. A componentwise rank transform isolates the noise law's dependence in its copula, and a rank-$r$ reduction keeps only the directions along which that dependence varies. These directions are the leading eigenvectors of the copula score covariance $\\boldsymbol{C} := \\mathrm{Cov}_{\\pi_{\\boldsymbol{Z}}}(\\nabla\\log c^{Z})$, which is what makes the reduction a copula active subspace. Because $\\boldsymbol{C}$ vanishes when the coordinates are independent, these are directions of dependence, which the covariance of the data need not identify. From this construction follow a Gaussian-reference KL divergence bound with the explicit constant $\\tfrac{1}{2}$, minimized over all rank-$r$ reductions by exactly this eigenspace; a diagnostic for the error the reduction leaves behind, computable from the samples alone; and, from Hermite score matching, a reduced log-density and gradient in closed form, with the truncation orders and the Stage-2 regularization constants chosen on validation samples. The reduction replaces a $d$-dimensional density estimation problem by an $r$-dimensional one. On a $d=20$ noise law and a Bayesian inference problem with that noise, CAS lowers noise KL divergence more than fivefold and posterior KL divergence more than sevenfold against Gaussian-copula, product-of-marginals, and PCA-subspace baselines, and lowers noise KL divergence by factors of about $3.5$ and $2.7$ on two further $d=20$ examples.",
+  "categories": [
+   "stat.ME",
+   "stat.CO",
+   "stat.ML"
+  ],
+  "authors": [
+   "Joshua Chen",
+   "Peter Jan van Leeuwen"
+  ],
+  "url": "https://arxiv.org/abs/2609.36142",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "In Bayesian inference with non-Gaussian observation noise, posterior accuracy hinges on representing the noise density compactly in high dimensions. Copula Active Subspaces (CAS) uses a componentwise rank transform and the leading eigenvectors of the copula score covariance to reduce density estimation to rank r, yielding a KL bound with constant 1/2, a sample-computable diagnostic, and a closed-form reduced log-density and gradient via Hermite score matching.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37529",
+  "source": "arXiv",
+  "title": "Principled MAP estimation for inverse problems: bridging the gap between convergence and performance",
+  "abstract": "Pretrained denoisers provide a powerful way to incorporate image priors into restoration algorithms. Plug-and-Play and RED approaches exploit fixed-noise-level denoisers within first-order optimization schemes, with convergence guarantees, but often struggle to achieve high-quality reconstruction on severely ill-posed inverse problems. In contrast, recent state-of-the-art approaches leverage denoisers derived from flow- or diffusion-based generative models and evaluate them along a sequence of decreasing noise levels. While these methods achieve strong empirical performance, their convergence theory remains limited. In this paper, we bridge this gap by specifically designing an algorithm that combines denoisers at decreasing noise levels with a schedule tailored to ensure convergence. From a Bayesian perspective, we prove that our method converges to a $\\textit{Maximum a Posteriori}$ (MAP) estimate, under suitable assumptions. Subsequently, we apply our method to various ill-posed inverse problems and show that it surpasses convergent methods while competing with state-of-the-art empirical ones.",
+  "categories": [
+   "cs.CV",
+   "cs.LG"
+  ],
+  "authors": [
+   "Alexandre Lagier",
+   "Valentine Tosel",
+   "Anne Gagneux",
+   "Mathurin Massias",
+   "S\\'egol\\`ene Martin"
+  ],
+  "url": "https://arxiv.org/abs/2609.37529",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "generative-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Inverse problems solved with pretrained denoisers often trade convergence guarantees against state-of-the-art reconstruction quality, especially for severely ill-posed problems. The paper designs a convergent algorithm that combines flow- and diffusion-based denoisers at decreasing noise levels with a tailored schedule, and proves it converges to a Maximum A Posteriori estimate under suitable assumptions.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37605",
+  "source": "arXiv",
+  "title": "TomoTransformer: Towards a Foundation Model for CT Reconstruction",
+  "abstract": "Supervised deep learning has advanced sparse-view tomographic reconstruction. However, conventional models, which typically map filtered back-projection (FBP) images or sinograms to clean reconstructions, are brittle under distribution shifts. Because they require retraining whenever projection counts and angles, detector resolutions, or data distributions change, their deployment in real-world applications remains limited. To address this, we introduce TomoTransformer, a transformer-based architecture that treats each \\textit{local} filtered projection as an individual token and predicts missing views via self-attention. Crucially, TomoTransformer operates in a \\emph{back-projection space} that separates projections across spatial locations, making view interpolation geometrically well-posed and invariant to detector size. This design yields a single foundation model that can process any number of input projections, at arbitrary angular locations and detector dimensions, and query any number of target angles without retraining. Trained on a large-scale dataset spanning diverse medical CT anatomies and natural images, TomoTransformer generalizes effectively across anatomies, materials, and resolutions. Extensive evaluations on several benchmark sparse-view datasets show that TomoTransformer significantly outperforms concurrent multi-purpose models like ViewTrans and matches or exceeds strong protocol-specific baselines, while remaining fully agnostic to the number of input and target projections. Furthermore, the model demonstrates robust zero-shot generalization on real experimental nanoscale brain data collected from an X-ray synchrotron, showcasing its practical utility for real-world applications.",
+  "categories": [
+   "cs.CV",
+   "cs.LG"
+  ],
+  "authors": [
+   "AmirEhsan Khorashadizadeh",
+   "Benjam\\'in B\\'ejar"
+  ],
+  "url": "https://arxiv.org/abs/2609.37605",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Sparse-view CT reconstruction models are brittle under distribution shifts in projection counts, angles, detector resolutions, and data distributions, requiring retraining. The paper introduces TomoTransformer, a transformer that treats each local filtered projection as a token and predicts missing views via self-attention in a back-projection space, yielding a single foundation model agnostic to input and target projection counts.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37659",
+  "source": "arXiv",
+  "title": "Are In-Context Images Worth 10 Dimensions?",
+  "abstract": "There has been significant work on understanding the In-Context Learning capabilities of Large Language Models, especially on the induction circuit. For a few-shot classification task, the induction circuit leverages linear representations of each labeled example in-context in order to classify an unlabeled query. However, few works focus on how those linear representations are built in the first place. Leveraging the expressivity of the vision modality compared to text, we uncover a Shared Discriminative Geometry (SDG) inside Large Vision Language Models (LVLMs). It is a low-dimensional space, shared across all image classification tasks, in which in-context images are compressed into linearly separable representations later used to perform classification. We observe that this is the result of the model performing a dimensionality reduction of vision representations in early layers. In order to explain this phenomenon: (1) We show analytically that linear self-attention can perform a dimensionality reduction by projecting in-context data onto its principal components, with each layer implementing one gradient descent step toward this objective. (2) We provide evidence that trained LVLMs reduce the dimensionality of vision representations in early layers via a similar mechanism.",
+  "categories": [
+   "cs.CV",
+   "cs.LG"
+  ],
+  "authors": [
+   "Adhemar de Senneville",
+   "Xavier Bou",
+   "J\\'er\\'emy Anger",
+   "Rafael Grompone",
+   "Gabriele Facciolo"
+  ],
+  "url": "https://arxiv.org/abs/2609.37659",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "How large vision-language models build the linear representations used for in-context few-shot classification is not well understood. The paper uncovers a low-dimensional Shared Discriminative Geometry and analytically shows that linear self-attention can implement a principal-component dimensionality reduction, with each layer performing one gradient-descent step toward that objective.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37762",
+  "source": "arXiv",
+  "title": "When Noise Estimation Hides Basis Misspecification in Repeated Bayesian Inverse Problems",
+  "abstract": "Basis-restricted priors in Bayesian inverse problems can lose coverage when the truth has components outside the basis. We show that estimating the observation-noise variance can hide this loss. Under a linear forward model, when the in-span prior variance dominates the noise, the maximum-likelihood noise estimate absorbs the out-of-basis energy in the complement of the model range. Residual-magnitude and observation-coverage checks then stay near nominal while field coverage falls. We study repeated problems sharing one forward operator and one basis, fixed independently of the tested data. After projection onto the complement, and conditionally on the fitted noise scale, every exact test is a test of the scale-free direction of the residuals. We test the shape of their sample spectrum with John's sphericity statistic. Under Gaussian noise its null model is exact at finite sample size, and we derive its null mean and its power at proportional dimension. On synthetic problems and in a preregistered GEBCO topography study, the test detects structured out-of-basis variation that cross-validation and observation-coverage checks largely miss. It cannot detect Gaussian out-of-basis variation that is isotropic in the complement, since that is indistinguishable from a change of noise scale.",
+  "categories": [
+   "stat.ME",
+   "math.ST",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Rares Dimitrie Grozavescu",
+   "Mark Girolami"
+  ],
+  "url": "https://arxiv.org/abs/2609.37762",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Basis-restricted priors in Bayesian inverse problems can lose field coverage when the truth has out-of-basis components, but estimating the observation-noise variance can mask this failure. The paper shows that the maximum-likelihood noise estimate absorbs that out-of-basis energy and proposes a John's sphericity test on the residual spectrum to detect structured variation that cross-validation and observation-coverage checks miss.",
+  "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.37849",
+  "source": "arXiv",
+  "title": "Is manual software optimization a thing of the past?",
+  "abstract": "Scientific software is increasingly required to process larger datasets while maintaining acceptable execution times. Software optimization traditionally requires substantial expertise in programming, algorithms, and numerical methods. Recent advances in large language models (LLMs) offer the possibility of automating much of this process. We investigate whether LLM-based agents can autonomously achieve substantial performance improvements in scientific software, including mature implementations that have already been extensively optimized by human developers. We tasked an LLM-based agent with optimizing software for three computational problems: t-SNE, single-sample gene set enrichment analysis (ssGSEA), and graphlet counting. Humans defined the scope, correctness criteria, and a verification mechanism, after which the agent worked autonomously, in some cases for several hours. Code maintainers reviewed each resulting implementation and verified its correctness. The optimized implementations were faster in all tested configurations, by up to two orders of magnitude over the fastest existing tools. The improvements included low-level code optimizations, mathematical reformulations, and an entirely new algorithm for graphlet counting. Software optimization can increasingly be delegated to autonomous agents, with the human role shifting from implementing optimizations to deciding which software to optimize, defining objectives, providing verification mechanisms, and ensuring the correctness of the final software. For well-scoped, verifiable problems, we argue that manual software optimization may be a thing of the past.",
+  "categories": [
+   "cs.SE",
+   "cs.AI"
+  ],
+  "authors": [
+   "Pavlin G. Poli\\v{c}ar",
+   "Martin \\v{S}pendl",
+   "Toma\\v{z} Ho\\v{c}evar"
+  ],
+  "url": "https://arxiv.org/abs/2609.37849",
+  "published": "2026-09-30",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "It is unclear whether LLM-based agents can autonomously optimize mature scientific software beyond human-engineered implementations. The paper tasks an autonomous LLM agent with optimizing t-SNE, ssGSEA, and graphlet counting, achieving up to two orders-of-magnitude speedups through low-level code optimizations, mathematical reformulations, and a new graphlet-counting algorithm.",
+  "added": "2026-09-30"
  }
 ]
