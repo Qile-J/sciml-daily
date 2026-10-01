@@ -64197,5 +64197,370 @@
   ],
   "summary": "It is unclear whether LLM-based agents can autonomously optimize mature scientific software beyond human-engineered implementations. The paper tasks an autonomous LLM agent with optimizing t-SNE, ssGSEA, and graphlet counting, achieving up to two orders-of-magnitude speedups through low-level code optimizations, mathematical reformulations, and a new graphlet-counting algorithm.",
   "added": "2026-09-30"
+ },
+ {
+  "id": "arxiv:2609.39387",
+  "source": "arXiv",
+  "title": "Beyond Simulation: Retain-and-Repair Neural Operators for Real-World Adaptation",
+  "abstract": "Neural operators increasingly benefit from pretraining on numerical simulations, yet adapting them for real-world prediction remains challenging. We introduce the Retain-and-Repair Neural Operator (R$^2$NO), a framework for adapting simulation-pretrained operators to real-world data while retaining useful pretrained structure. The pretrained operator is first finetuned on real data and then frozen to provide a source prediction, and a shared repair module learns a sequence of refinements from the same observations. Using orthogonal Fourier projections, a spectral ensemble fits a small ridge regression within each cell of the Fourier domain and combines the refinements by weights fitted on a held-out split of the real data. The cells are defined jointly by radial ranges, angular sectors, and measured channels, allowing refinement depth to vary with frequency magnitude, with orientation, and across channels. Including the source prediction as a candidate makes retention available in every cell, and independently trained repair modules enter the same combination as additional candidates. On all RealPDEBench systems and six backbones, R$^2$NO consistently outperforms full finetuning and iterative refinement. The framework treats adaptation depth as a cell-specific choice learned from real data.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Woojin Cho",
+   "Junghwan Park"
+  ],
+  "url": "https://arxiv.org/abs/2609.39387",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Simulation-pretrained neural operators adapt poorly to real-world data that departs from the training simulations. R$^2$NO freezes a finetuned source operator and learns a shared repair module whose refinements are combined per Fourier cell (radial range, angular sector, channel) by a spectral ridge-regression ensemble that also keeps the source prediction as a candidate.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39408",
+  "source": "arXiv",
+  "title": "Awakening of the Buddha: Subspace Learning During Population-Loss Plateaus",
+  "abstract": "Population loss can remain nearly constant while a neural network learns a substantially more predictive representation. We establish this separation for two-layer ReLU and leaky-ReLU networks trained on Gaussian inputs by simultaneous fixed-step population gradient descent on all parameters. For structured additive teachers whose links are positive mixtures of Gaussian-damped cubics in $H^1(\\gamma)$, we give explicit conditions under which small IID Gaussian initialization yields a high-probability guarantee: at a checkpoint during a high-loss plateau, minimum alignment between the rank-$r$ teacher subspace and the leading $r$-dimensional eigenspace of the predictor's average gradient outer product (AGOP) increases by at least $1/2$, and the minimum refit MSE under unchanged coefficient budgets decreases by more than $0.399$, both relative to initialization. The same trajectory subsequently attains a trained loss below every value in the plateau window. A complementary result treats unequal-weight cubic teachers and small additive Sobolev perturbations using projected-feature refits. For SwiGLU networks with an exactly fitted intercept, we prove leading-AGOP alignment during a loss plateau at fixed width and dimension as Gaussian initialization vanishes, for square-integrable teachers with nonzero Hermite content of degree one, two, or three. A rank-one cubic specialization also gives simultaneous unrestricted-refit gains at a prescribed width. An approximation lower bound further shows that certain interaction targets retain nonzero error when ridge neurons are restricted to shared orthogonal axes within the teacher subspace. Population-moment experiments with ReLU students across 21 teachers and 50 initializations per teacher complement the analysis.",
+  "categories": [
+   "cs.LG",
+   "math.OC",
+   "stat.ML"
+  ],
+  "authors": [
+   "Akash Kumar"
+  ],
+  "url": "https://arxiv.org/abs/2609.39408",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "A network can improve its representation substantially while population loss stays nearly flat, and this separation is not understood theoretically. For two-layer ReLU/leaky-ReLU networks on Gaussian inputs, the paper proves that during high-loss plateaus the minimum alignment between the teacher subspace and the predictor's average-gradient-outer-product eigenspace grows while refit MSE falls, extending the result to SwiGLU nets and adding an approximation lower bound.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39469",
+  "source": "arXiv",
+  "title": "Mesh-Free Numerical Approximation of the Biharmonic Equation via Optimized Kolmogorov--Arnold Neural Networks",
+  "abstract": "A mesh-free numerical framework based on \\textit{Kolmogorov--Arnold Physics-Informed Neural Networks} (KAN-PINNs) is developed for the approximation of fourth-order elliptic boundary value problems, with specific application to the biharmonic equation governing thin plate deflection. Unlike conventional Multi-Layer Perceptrons relying on fixed nodal activations, learnable univariate functions parameterized via radial basis functions are deployed on network edges, while high-order differentiability is preserved through hyperbolic tangent activation mappings. The severe numerical stiffness inherent to fourth-order differential operators and fully clamped boundary conditions is addressed through a direct normalized residual formulation coupled with a hybrid, multi-stage AdamW-to-L-BFGS optimization pipeline. An automated \\textit{24/7 hill-climbing search protocol} is implemented to systematically calibrate boundary penalty weights and optimization schedules. When evaluated on a smooth manufactured benchmark on the unit square, an error reduction factor exceeding $150\\times$ is attained over successive iterations, culminating in a final relative $L_2$ error of $1.593 \\times 10^{-5}$ ($0.00159\\%$) and a training loss of $3.065 \\times 10^{-6}$ utilizing only $7,801$ trainable parameters. These results demonstrate that high-order PDE problems can be accurately resolved using compact, mesh-free KAN-PINNs architecture without requiring auxiliary variable transformations or discrete mesh generation.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "B. Veena S. N. Rao"
+  ],
+  "url": "https://arxiv.org/abs/2609.39469",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Fourth-order elliptic problems such as the biharmonic equation are stiff to solve with conventional PINNs and typically need meshes. The paper builds a mesh-free KAN-PINN with learnable RBF univariate edge functions, tanh differentiability, a normalized residual formulation, an AdamW-to-L-BFGS schedule, and an automated hill-climbing search over boundary penalties.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39484",
+  "source": "arXiv",
+  "title": "CAMOS: Coupled Oscillatory State-Space Model for Multimodal Clinical Time-Series",
+  "abstract": "Longitudinal clinical cohorts are multimodal, irregularly sampled and pervasively incomplete: in ADNI, positron emission tomography and cerebrospinal fluid assays are absent from roughly half of all visits. Linear state-space models handle irregular sampling gracefully but treat a missing modality by masking the input, leaving the transition operator untouched. We prove that this is a representational limitation: the latent state of any linear state-space layer whose transition operator does not depend on the availability pattern is an additive function of the availability indicators, so no such layer can represent an interaction between two modalities being jointly present or jointly absent. We propose CAMOS, which gives each modality a bank of second-order oscillators coupled through a matrix that sits inside the differential equation and is gated by availability, so the transition operator itself becomes a function of which measurements were taken. Coupling invalidates the analysis of uncoupled oscillatory models, and we restore it: a per-channel Gershgorin budget makes the effective stiffness positive definite uniformly over all $2^M$ availability patterns and all gaps, an energy argument charges amplification to availability transitions rather than sequence length, and a channel factorization preserves exact associative parallel scans. On ADNI, CAMOS outperforms uncoupled oscillatory state-space models and clinical fusion models on same-visit staging, landmark prediction and longitudinal forecasting, and under zero-shot transfer to OASIS-3 it is the only model that avoids collapse to the majority class.",
+  "categories": [
+   "stat.ML",
+   "cs.AI"
+  ],
+  "authors": [
+   "Maxx Richard Rahman",
+   "Mostafa Hammouda",
+   "Wolfgang Maass"
+  ],
+  "url": "https://arxiv.org/abs/2609.39484",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Irregularly sampled, incomplete multimodal clinical cohorts expose a representational limit of linear state-space layers whose transition operator ignores which modalities are present. CAMOS couples per-modality banks of second-order oscillators through an availability-gated matrix inside the differential equation, with a Gershgorin stiffness budget, an energy argument bounding amplification, and a channel factorization preserving exact associative parallel scans.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39488",
+  "source": "arXiv",
+  "title": "Correcting CondOT: Exact Finite-Step Sampling in Gaussian Flow Matching",
+  "abstract": "Flow matching generates samples by gradually transforming noise into data. In practice, using a finite number of sampling steps introduces a numerical error that depends on the chosen schedule. We study this dependence for Gaussian targets and the explicit midpoint sampling method, using the exact flow field. We measure sampling error by the squared Wasserstein distance between the target distribution and the final distribution produced by the midpoint sampler. We show that the standard conditional optimal transport (CondOT) schedule cancels the leading midpoint error and improves the general convergence bound, even when the sampling steps are unequally spaced. On a uniform grid of $S$ sampling steps, we fix the signal schedule at $\\alpha_t=t$ and prove the existence of scalar noise schedules $\\beta_t$ that approach the CondOT noise schedule $1-t$ at rate $1/S$ and yield exact Gaussian sampling for every sufficiently large $S$. Controlled Gaussian experiments illustrate the convergence rates and exact calibration.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Ron Levy",
+   "Michael Elad"
+  ],
+  "url": "https://arxiv.org/abs/2609.39488",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Finite-step sampling in flow matching introduces a schedule-dependent numerical error whose structure is not well characterized. For Gaussian targets with the exact flow field and explicit midpoint sampling, the paper shows the standard CondOT schedule cancels the leading midpoint error and constructs scalar noise schedules approaching $1-t$ at rate $1/S$ that give exact Gaussian sampling.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39512",
+  "source": "arXiv",
+  "title": "Can Domain Generalization be Guaranteed in Small-Sample Learning?",
+  "abstract": "The small-sample learning problem remains a fundamental challenge in machine learning because limited training data lead to unstable model estimation and generalization. Structural Risk Minimization (SRM) has long been regarded as a principled solution under the classical i.i.d. assumption. However, domain generalization (DG) violates this assumption, leaving the theoretical role of SRM in DG largely unexplored. To bridge this gap, we establish the first theoretical guarantees for SRM in DG under mild assumptions. Specifically, based on the concept of stability, we derive learning consistency and generalization error bounds and prove that these bounds become tight when the hypotheses satisfy the stability condition. Building upon this, under a specific hypothesis space assumption, we establish stability, learning, and generalization bounds for SRM. We further discuss the applicability of these bounds to deep learning. This work establishes theoretical foundations for SRM under distribution shifts and sheds light on the design of robust DG algorithms in small-sample scenarios.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Hong Zheng"
+  ],
+  "url": "https://arxiv.org/abs/2609.39512",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear whether structural risk minimization can give generalization guarantees when the i.i.d. assumption is violated by domain shift. The paper derives stability-based learning-consistency and generalization-error bounds for SRM under mild assumptions and shows the bounds tighten when hypotheses satisfy the stability condition.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39525",
+  "source": "arXiv",
+  "title": "Mitigating Representation Gaps in Amortized Bayesian Inference with Auxiliary Supervision",
+  "abstract": "Casting Bayesian inference as a neural network optimization problem targeting an amortized posterior is attractive, as it extends to otherwise intractable statistical models and offers near instantaneous inference for new datasets after prepaying the training cost. Although theory guarantees faithfulness under ideal convergence, practical amortized inference still requires iterating over architectures and optimization choices and ultimately ``satisficing'' under finite simulation, compute, and time budgets. Even the best-performing solution may thus retain avoidable representation gaps that typically require problem-specific fixes. Here, we propose a generic alternative which improves training dynamics with auxiliary guidance losses applied to internal representations. Specifically, we show how such guidance leads to faster convergence when training data is abundant and to better performance when it is scarce. We formalize representation gaps as getting stuck in a local optimum at the information bottleneck between the parts of the network tasked with feature learning and those tasked with conditional distribution learning, and offer a generic diagnostic to separate summary failures from inference failures. Finally, we demonstrate that auxiliary supervision improves convergence speed and accuracy on a range of challenging real-world inference problems.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "stat.CO",
+   "stat.ME"
+  ],
+  "authors": [
+   "Hans Olischl\\\"ager",
+   "Svenja Jedhoff",
+   "\\v{S}imon Kucharsk\\'y",
+   "Aayush Mishra",
+   "Stefan T. Radev",
+   "Paul B\\\"urkner"
+  ],
+  "url": "https://arxiv.org/abs/2609.39525",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Amortized Bayesian inference often stalls in avoidable representation gaps that require problem-specific fixes. The paper adds auxiliary guidance losses on internal representations, formalizes the gap as getting stuck at the information bottleneck between feature learning and conditional-distribution learning, and gives a diagnostic separating summary failures from inference failures.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39544",
+  "source": "arXiv",
+  "title": "Growing an Agent/Prover Interface: Evolutionary Tool Design for Cost-Efficient Theorem Proving in Rocq and Lean",
+  "abstract": "Recent achievements in AI-assisted mathematics require intensive interaction of agents with proof assistants to generate machine-checked proof certificates. Agents interact with proof assistants such as Rocq or Lean through an interface that controls what the agent receives from the prover and the cost of these interactions. Today, these interfaces are adapted from tools designed for humans and not optimized for agents. We propose an evolutionary method where a frontier model incrementally proposes new features and only keeps the ones that improve the overall performance of smaller models. We demonstrate the effectiveness of our method by growing, on a curated set of mathematical problems, \\rme, a new MCP server for the Rocq prover. On the held-out \\texttt{test} split of miniF2F-Rocq, an agent equipped with \\rme outperforms both the baseline that only exposes the Rocq compiler and an established MCP server, across four models from two families, in success rate, cost per solve, and time per solve. Although evolved for Rocq, the resulting server transfers to Lean, improving cost and time per solve on a subset of PutnamBench. We release \\rme and its port to Lean.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Jules Viennot",
+   "Guillaume Baudart",
+   "Marc Lelarge"
+  ],
+  "url": "https://arxiv.org/abs/2609.39544",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Agents interacting with proof assistants such as Rocq and Lean use interfaces inherited from human tooling that are costly and ill-suited to machine consumption. The paper evolutionarily grows an MCP server for Rocq by having a frontier model propose features that are kept only if they improve smaller models' success rate, cost, and time per solve, and shows the server transfers to Lean.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39604",
+  "source": "arXiv",
+  "title": "Why Do Conventional World Models Fail to Learn Cellular Automata?",
+  "abstract": "Although conventional world models - auto-regressive or diffusion models based on transformers or convolutional networks - may learn surface statistics of world dynamics, can they learn the exact world dynamics from its observed history? Leveraging cellular automata as a simple testbed, we find the answer to be no in many cases. Conventional architectures predict most pixels correctly yet rarely complete a rollout: a CNN predicts 96.3% of cells but completes 18.9% of rollouts; a joint diffusion model completes none. We trace the gap to three failure modes of these world models - namely, they fail to exactly capture spatial locality, temporal locality or temporal stability. Simple changes repair each: (1) for spatial locality, two-dimensional rotary positions lift a transformer from 39.1% to 100% on the Game of Life; (2) for temporal locality, handing each token its cell's previous-frame neighbourhood lifts the same transformer from 25.8% to 99.9% on unseen rules; (3) for temporal stability, causal freezing lifts the same diffusion weights from 42.2% to 99.9%. None of the three changes touches the architectural backbone; each only modifies the information flow within it. We also compare joint and ordered sampling on billiards and, in an exploratory study, on a simulated Burgers equation.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Shaoyang Guo",
+   "Ziming Liu"
+  ],
+  "url": "https://arxiv.org/abs/2609.39604",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "generative-simulation"
+  ],
+  "summary": "The paper asks whether conventional world models can learn exact world dynamics, rather than surface statistics, from observed history. Using cellular automata, it identifies three failure modes (spatial locality, temporal locality, temporal stability) and repairs each via 2D rotary positions, per-token previous-frame neighborhoods, and causal freezing, without changing the architecture backbone.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39616",
+  "source": "arXiv",
+  "title": "Deep Truncated FBSDE Method: A Robust Solver for High-Dimensional Nonlinear PDEs and Fully Coupled FBSDEs",
+  "abstract": "In this paper, we introduce a deep truncated forward-backward stochastic differential equation (FBSDE) method for high-dimensional partial differential equations (PDEs). Compared with existing deep-learning solvers for fully coupled FBSDEs, where strong coupling may lead to numerical instability, our approach exhibits improved stability. The proposed method combines gradient-truncated iterative decoupling with fictitious-play averaging to separate the forward and backward processes in a coupled framework. This preserves the coupled dynamics while reducing the unstable feedback induced by parameter-dependent forward paths during optimization. Furthermore, we incorporate a pathwise consistency term to create explicit local gradient shortcuts, thereby providing a structural mechanism that may mitigate gradient vanishing. We also derive a residual-based error estimate and establish conditional convergence of the fully discrete numerical approximations under suitable conditions, in which the pathwise consistency loss is not required. Our approach is particularly effective for convection-dominated equations, where the coupled formulation provides a stable representation of nonlinear transport without introducing singular terms into the BSDE. Numerical experiments demonstrate improved accuracy and stability in both low- and high-dimensional problems and robust performance for strongly coupled problems.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "math.PR"
+  ],
+  "authors": [
+   "Xinyu Cheng",
+   "Yunzhang Li",
+   "Weiran Xiong"
+  ],
+  "url": "https://arxiv.org/abs/2609.39616",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "Deep-learning solvers for high-dimensional fully coupled FBSDEs become numerically unstable when the forward and backward processes are strongly coupled. The paper introduces a deep truncated FBSDE method combining gradient-truncated iterative decoupling, fictitious-play averaging, and a pathwise consistency term, with a residual-based error estimate and conditional convergence of the discrete approximations.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39626",
+  "source": "arXiv",
+  "title": "Parameterization method of reservoir properties for ensemble-based data assimilation using intermediate latent space of StyleGAN",
+  "abstract": "Ensemble smoothers are the most successful and efficient techniques currently available for history matching. However, because these methods rely on Gaussian assumptions, their performance is severely degraded when the prior geology is described in terms of complex facies distributions (non-Gaussian). In this way, for these methods, we need to apply efficient parameterization techniques. Currently, the most efficient methods for performing parameterization are deep learning models. However, given the variety of existing deep learning models, studies have not identified which is most suitable for use with ensemble-based methods, although some important models had already been evaluated. Based on a recent literature review, the most promising models selected were VAE-GAN, Latent Diffusion, and StyleGAN models. As a novel aspect of this work, data assimilation with the second generation of StyleGAN (StyleGAN2) model was performed using the latent z-space and intermediate w-space, separately. They were applied in two 2D case studies: one categorical (three facies) and the other continuous. The results demonstrated that all three models are highly efficient, with the StyleGAN2 model standing out for generating samples with geological realism and achieving excellent data matching in the cases studied. Our findings show that performing data assimilation with StyleGAN2 using the intermediate space (w-space) yielded better results than the traditional application in the latent space (z-space). This is due to the fact that ESMDA uses linear updates and the w-space is much more linear and disentangled than the highly entangled z-space, thereby ensuring that the updated vectors remain close to realistic geological patterns. These results were validated using main geostatistical and history matching metrics.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Marcio A. Sampaio",
+   "Paulo H. Ranazzi",
+   "Martin J. Blunt"
+  ],
+  "url": "https://arxiv.org/abs/2609.39626",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Ensemble-based history matching degrades when the prior geology is a complex non-Gaussian facies distribution that violates the Gaussian assumptions of ensemble smoothers. The paper parameterizes the prior with VAE-GAN, latent diffusion, and StyleGAN2 and shows that data assimilation in StyleGAN2's intermediate w-space yields better geological realism and data matching than the entangled z-space.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.38656",
+  "source": "arXiv",
+  "title": "Adaptive mixture variational inference for spike-and-slab regression",
+  "abstract": "Correlated predictors can support competing sparse explanations with similar predictions, making joint uncertainty about variable inclusion difficult to capture with mean-field approximations. We develop an adaptive fitting procedure for mixtures of product distributions in Gaussian regression with a point-mass spike-and-slab prior. It minimizes reverse Kullback-Leibler divergence directly on inclusion indicators and active coefficients, jointly refining component parameters and weights as the mixture grows. This avoids an additional divergence penalty on unused latent coefficients under independent augmentation. Our analysis relates approximation accuracy to mixture size, support coverage and dependence within supports, and establishes contraction, selection consistency and a Bernstein-von Mises approximation under explicit conditions on the prior, posterior concentration and variational error. On all 250 simulated datasets with exact posterior references, mixtures reduce errors in inclusion probabilities, grouped support probabilities and coefficient covariance relative to multistart mean field. Comparisons at fixed mixture size and common initialization favor direct joint refinement over augmented or restricted refinement in posterior divergence. Complete stagewise fitting can nevertheless be more accurate near collinearity. The results support direct joint refinement for posterior approximation while showing that local gains do not ensure superiority of the full adaptive search.",
+  "categories": [
+   "stat.ME",
+   "stat.ML"
+  ],
+  "authors": [
+   "Hanqing Li",
+   "Yaroslav Golub",
+   "Xuewen Lu"
+  ],
+  "url": "https://arxiv.org/abs/2609.38656",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Capturing joint posterior uncertainty about variable inclusion is hard for mean-field approximations when correlated predictors admit competing sparse explanations. The paper develops an adaptive mixture-of-products variational fitting procedure that minimizes reverse KL divergence directly on inclusion indicators and active coefficients and proves contraction, selection consistency, and a Bernstein-von Mises approximation.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.38842",
+  "source": "arXiv",
+  "title": "Learn-Then-Differentiate Gradient Estimation",
+  "abstract": "Learn-then-differentiate (LTD) estimates gradients by fitting a model to simulation outputs and differentiating it. We develop a unified framework explaining what LTD differentiates and how accurately it estimates gradients. For models with a weighted representation, LTD differentiates a learned representation of the underlying probability measure. We then show how accuracy guarantees for fitted models translate into guarantees for gradients and higher-order derivatives, with rates approaching the standard Monte Carlo rate under suitable smoothness conditions. The framework recovers established results for kernel regression, local polynomial regression, and kernel ridge regression, and yields further guarantees for multiple kernel learning and smooth neural networks. These results provide a common foundation for understanding and analyzing LTD across learning methods.",
+  "categories": [
+   "stat.CO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Nifei Lin",
+   "Qingkai Zhang",
+   "L. Jeff Hong"
+  ],
+  "url": "https://arxiv.org/abs/2609.38842",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Learn-then-differentiate (LTD) estimates gradients by fitting a model to simulation outputs and differentiating it, but it lacks a general account of what is being differentiated and how accurate the resulting derivatives are. The paper develops a unified framework showing LTD differentiates a learned representation of the underlying probability measure and proves gradient and higher-order-derivative accuracy guarantees that approach the Monte Carlo rate under smoothness conditions, recovering known results for kernel regression, local polynomial regression, and kernel ridge regression.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.39768",
+  "source": "arXiv",
+  "title": "Security Properties of Neural Networks as Decision Problems",
+  "abstract": "Certifying a deployed neural network raises decision problems that the verification literature has not classified: whether the model carries a backdoor planted in its training data, whether a fault in its stored parameters can drive it into an unsafe state, whether its output leaks a private part of its input. We formalise eight such problems and classify what we can. The organising observation is a logical one. The function computed by a piecewise linear network, together with all its node values, is definable by a quantifier-free formula of real addition of size linear in the network, so a property of the network is a quantifier-alternation sentence, which Sontag's 1985 theorem places in the polynomial hierarchy at the level of its prefix. Membership results are thus corollaries, and the argument makes plain what they need: that the quantified objects are inputs rather than the network's own parameters. Non-interference, monotonicity and counterfactual fairness have exactly the complexity of network equivalence and of interval verification, all co-NP- complete over ReLU. Detection of backdoor triggers from a quantised alphabet is Sigma_2^P-complete, one level above robustness certification, so it does not reduce to polynomially many robustness queries unless the hierarchy collapses. Inversion resistance is co-NP-complete for every l_p metric, p a fixed positive integer. Quantifying over parameters instead of inputs - the fault model of bit-flip attacks, radiation upsets and analog accelerators - makes verification exists-R-complete already for networks of identity nodes, for which every previously studied problem is in P, and it stays so when each parameter is confined to a box of inverse-polynomial width; the corresponding safety question is forall-R-complete for ReLU.",
+  "categories": [
+   "cs.LO",
+   "cs.CC",
+   "cs.CR",
+   "cs.LG"
+  ],
+  "authors": [
+   "Adrian Wurm"
+  ],
+  "url": "https://arxiv.org/abs/2609.39768",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Certifying a deployed neural network raises decision problems—backdoor presence, parameter-fault unsafe states, input leakage—whose computational complexity has not been classified. The paper formalizes eight such problems as quantifier-alternation sentences over piecewise-linear networks and places them in the polynomial hierarchy (e.g., backdoor detection Σ₂^P-complete, inversion resistance co-NP-complete), a mathematical theory result about neural networks rather than an application.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.40008",
+  "source": "arXiv",
+  "title": "PINNing the pion: conformal deep learning for $F_\\pi(s)$ and the $(g-2)_\\mu$ hadronic contribution",
+  "abstract": "Extracting the pion electromagnetic form factor $F_{\\pi}(s)$ through phenomenological curve-fitting models introduces model dependence, unphysical artefacts, and kinematic inconsistencies. We introduce a Physics-Informed Neural Network (PINN) embedded in a conformal $z$-plane that constructs $F_{\\pi}(s)$ directly from first principles across spacelike and timelike domains: charge normalisation and Schwarz reflection are enforced by construction, while Cauchy-Riemann analyticity, dispersion relations, Watson's theorem, and perturbative QCD asymptotics enter through the loss functional. Thus, the fundamental S-matrix principles dictate the form factor's behaviour while data act as constraints. Mapping the cut complex plane onto the unit disk bounds the Hessian norm and prevents Neural Tangent Kernel spectral starvation, two known failure modes of deep-learning optimisation. Besides $e^+e^-$ scattering data, we also incorporate $\\tau$-decay data through a switch that isolates the pure isovector form factor natively, bypassing model-dependent isospin-breaking pre-corrections. The network organically yields an interior zero-free form factor, while the framework tests experimental tensions around the $\\rho(770)$ peak against analyticity and dispersion constraints. We obtain model-independent estimates of the pion charge radius, $\\langle r_{\\pi}^2 \\rangle = 0.435 \\pm 0.008_{\\text{stat}} \\pm 0.007_{\\text{cali}}$ fm$^2$, the second-sheet pole parameters, $m_{\\rho}^{\\text{pole}} = 761.72\\pm 1.04$ MeV and $\\Gamma_{\\rho}^{\\text{pole}} = 135.99 \\pm 1.20$ MeV, and the two-pion contribution to the muon anomalous magnetic moment, $a_{\\mu}^{\\pi\\pi} = (506.48 \\pm 2.02_{\\text{stat}} \\pm 1.70_{\\text{cali}}) \\times 10^{-10}$.",
+  "categories": [
+   "hep-ph",
+   "cs.LG",
+   "hep-ex"
+  ],
+  "authors": [
+   "Mayank Goel",
+   "Subhadip Mitra",
+   "Monalisa Patra"
+  ],
+  "url": "https://arxiv.org/abs/2609.40008",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Extracting the pion electromagnetic form factor F_π(s) through phenomenological curve-fitting introduces model dependence, unphysical artefacts, and kinematic inconsistencies. The paper builds a Physics-Informed Neural Network embedded in a conformal z-plane that enforces Cauchy-Riemann analyticity, dispersion relations, Watson's theorem, and perturbative QCD asymptotics through the loss functional, yielding model-independent estimates of the charge radius and the two-pion contribution to (g−2)_μ.",
+  "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2609.40112",
+  "source": "arXiv",
+  "title": "Smart Machine Learning for Solving the Full Electron-Nuclear Schr\\\"odinger Equation with a Quantum-Chemically Inspired Wavefunction Ansatz",
+  "abstract": "Directly solving the full electron-nuclear Schr\\\"odinger equation remains one of the grand challenges in quantum mechanics. Here, we propose a quantum-chemically motivated orbital-based neural network wavefunction ansatz with explicit many-body electron-electron correlation terms, with parameters depending on the entire electron-nuclear configuration, enabling an accurate description of strongly correlated and/or multi-reference electronic structures by a single Slater-determinant across a broad nuclear configuration space. To train this wavefunction, we further develop an efficient hybrid optimization strategy that combines the variational Monte Carlo technique with local-energy constraints, mitigating the intrinsic sampling bias of the former and considerably reducing the statistical error. These advances are embedded in a unified neural network framework, Schr\\\"odinger, enabling the determination of globally accurate potential energy surfaces with a single training for systems ranging from strongly correlated diatomic molecules, triatomic reactions containing conical intersections, to polyatomic multi-reference molecules. This work offers a practical machine-learning tool for solving the electron-nuclear Schr\\\"odinger equation and capturing full quantum effects beyond the Born-Oppenheimer approximation.",
+  "categories": [
+   "physics.chem-ph",
+   "physics.comp-ph",
+   "quant-ph"
+  ],
+  "authors": [
+   "Yaolong Zhang",
+   "Bin Jiang",
+   "Hua Guo"
+  ],
+  "url": "https://arxiv.org/abs/2609.40112",
+  "published": "2026-10-01",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Directly solving the full electron-nuclear Schrödinger equation remains a grand challenge, particularly for strongly correlated and multi-reference systems across broad nuclear configuration space. The paper proposes an orbital-based neural network wavefunction ansatz with explicit many-body electron-electron correlation terms, trained by a hybrid variational Monte Carlo and local-energy-constraint optimization, to obtain globally accurate potential energy surfaces beyond the Born-Oppenheimer approximation from a single training.",
+  "added": "2026-10-01"
  }
 ]
