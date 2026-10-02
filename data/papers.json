@@ -64562,5 +64562,120 @@
   ],
   "summary": "Directly solving the full electron-nuclear Schrödinger equation remains a grand challenge, particularly for strongly correlated and multi-reference systems across broad nuclear configuration space. The paper proposes an orbital-based neural network wavefunction ansatz with explicit many-body electron-electron correlation terms, trained by a hybrid variational Monte Carlo and local-energy-constraint optimization, to obtain globally accurate potential energy surfaces beyond the Born-Oppenheimer approximation from a single training.",
   "added": "2026-10-01"
+ },
+ {
+  "id": "arxiv:2610.02182",
+  "source": "arXiv",
+  "title": "SoftServe: A Scalable Quasi-Newton Method for Deep Learning",
+  "abstract": "Quasi-Newton (QN) methods have long been among the most effective methods for large-scale unconstrained convex optimization. Two obstacles have limited their use in deep learning: non-convexity and enormous parameter sizes. We introduce SoftServe, a family of QN methods designed to overcome these obstacles without line searches or ad hoc curvature corrections. SoftServe derives positivedefinite curvature estimates from the variational objective of Berglund et al. (2025), even in the presence of negative curvature. We develop diagonal and Kroneckerfactored variants that preserve positive definiteness by construction and scale to massive neural networks. Finally, SoftServe relies on the stable coupled Newton-Schulz iteration for the required matrix operations, replacing costly matrix decompositions with GPU-friendly matrix multiplications. SoftServe excels on problems that are severely ill-conditioned, including tasks such as recurrent networks, deep autoencoders, physics-informed neural networks, and a 136M-parameter physics-informed diffusion model, often achieving lower losses than established baselines including Adam, Muon, and SOAP.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Joohwan Ko",
+   "Tetiana Parshakova",
+   "Diana Cai",
+   "Robert M. Gower"
+  ],
+  "url": "https://arxiv.org/abs/2610.02182",
+  "published": "2026-10-02",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Quasi-Newton methods have been impractical for deep learning because of non-convexity and enormous parameter counts. SoftServe derives positive-definite curvature estimates from a variational objective and provides diagonal and Kronecker-factored variants that stay positive definite by construction and scale via coupled Newton-Schulz iterations, beating Adam, Muon and SOAP on ill-conditioned problems such as PINNs and a 136M-parameter physics-informed diffusion model.",
+  "added": "2026-10-02"
+ },
+ {
+  "id": "arxiv:2610.02190",
+  "source": "arXiv",
+  "title": "Trust the Direction, Search the Step: Zero-and-First-Order Methods for LLM Fine-Tuning",
+  "abstract": "Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it. We combine \\textbf{Z}ero-and-\\textbf{F}irst-\\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size. ZFO uses a trusted first-order optimizer to determine the direction and performs zeroth-order evaluations only along this one-dimensional subspace to choose how far to move. Using the current {gradient information} and two additional objective function evaluations, ZFO instances construct a local model of the objective function along the proposed direction and select a curvature-aware step within a bounded search interval. This yields an adaptive step-selection mechanism that costs less than a full line search. We provide theoretical guarantees to show that shared-sample evaluations produce reliable finite-difference curvature estimates, that the induced local model selects a near-optimal step along the search interval, and that ZFO converges to a neighborhood of a stationary point. Across the evaluated settings, language models and datasets, ZFO frequently improves optimization and final performance relative to fixed-step first-order baselines, with the magnitude and preferred local model depending on the objective. Our code is publicly available at: https://github.com/nizswan/Zeroth-First-Order-Framework.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Cristian McGee",
+   "El Houcine Bergou",
+   "Aritra Dutta"
+  ],
+  "url": "https://arxiv.org/abs/2610.02190",
+  "published": "2026-10-02",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Step-size selection in large-scale neural-network optimization is hard because conservative steps slow convergence while aggressive steps destabilize it. ZFO decouples direction from step size by taking the direction from a trusted first-order optimizer and using two zeroth-order evaluations along that one-dimensional subspace to fit a local curvature-aware model, with guarantees on finite-difference curvature reliability and convergence to a stationary-point neighborhood.",
+  "added": "2026-10-02"
+ },
+ {
+  "id": "arxiv:2610.02195",
+  "source": "arXiv",
+  "title": "Cost-augmented Schr\\\"odinger bridges on graphs are exactly solvable: a Feynman-Kac tilt replaces learned control",
+  "abstract": "The generalized Schr\\\"odinger bridge on a graph moves mass between two distributions while charging a cost for the states visited. It has been approached by learning the rates of a controlled continuous-time Markov chain, with a temporal-difference penalty that restores the cost. A state cost folds into the reference process as a Feynman-Kac tilt. The cost-augmented bridge is then a plain bridge against the tilted reference, and the penalty is unnecessary. The bridge is computed exactly by alternating two endpoint rescalings, each one sparse matrix-exponential application; nothing is discretized in time or learned. The alternation converges at a rate set by the endpoint coupling alone. For a quadratic congestion cost on time-averaged occupancies, damped best response around the exact bridge is gradient descent on a strongly convex function, and its residual bounds its error. On a protein-folding model, a free-energy cost lowers the expected barrier of the folding paths. On the learned approach's road network, roll-outs of the exact bridge match the target within sampling error, and on networks with millions of intersections its memory grows linearly.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Akshay Balsubramani"
+  ],
+  "url": "https://arxiv.org/abs/2610.02195",
+  "published": "2026-10-02",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "foundations"
+  ],
+  "summary": "The cost-augmented Schrödinger bridge on a graph is normally handled by learning the rates of a controlled continuous-time Markov chain with a temporal-difference penalty. The paper shows the state cost acts as a Feynman-Kac tilt of the reference process, so the cost-augmented bridge reduces to a plain bridge against the tilted reference that is computed exactly by alternating endpoint rescalings via sparse matrix exponentials, with convergence rate set by the endpoint coupling alone and no time discretization or learned control.",
+  "added": "2026-10-02"
+ },
+ {
+  "id": "arxiv:2610.02199",
+  "source": "arXiv",
+  "title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+  "abstract": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized $1\\to1$ operator norm by selecting the sign of the largest magnitude entry in each column of two-dimensional weight matrices. This retains first-order gradients while making optimizer state memory nearly negligible. Our practical TACO optimizer maintains only a small set of low precision gradient components per column, reducing persistent optimizer state by $174\\times$ relative to AdamW8bit (from 27.7 GB to 0.16 GB) and peak training memory by $2.9\\times$ (from 80.6 GB to 27.5 GB) on OPT-13B, while achieving comparable accuracy and runtime. TACO further enables full-parameter fine-tuning of 30-32B-parameter models on a single 80 GB H100 GPU across multiple model families and tasks.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Jichao Jiang (University of Central Florida)",
+   "Cristian McGee (University of Central Florida)",
+   "El Houcine Bergou (Mohammed VI Polytechnic University)",
+   "Hanqin Cai (University of Central Florida)",
+   "Aritra Dutta (University of Central Florida)"
+  ],
+  "url": "https://arxiv.org/abs/2610.02199",
+  "published": "2026-10-02",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Full-parameter LLM fine-tuning is bottlenecked by optimizer-state memory, and memory-saving optimizers like Muon change the update geometry relative to AdamW. TACO takes Muon's operator-norm steepest-descent view further by computing the exact steepest-descent direction under a dimension-normalized 1-to-1 operator norm as the sign of the largest-magnitude entry per column, reducing persistent optimizer state by 174x versus AdamW8bit while matching its accuracy.",
+  "added": "2026-10-02"
+ },
+ {
+  "id": "arxiv:2609.39114",
+  "source": "arXiv",
+  "title": "The Row Normalization Puzzle in Muon",
+  "abstract": "This paper examines how row-wise renormalization affects Muon, focusing on the gap between NorMuon's worst-case guarantees and its practical performance (Li et al.). Despite its growing adoption and promising performance in large language model (LLM) pretraining, NorMuon's worst-case guarantees remain poorly understood. One fundamental question is: Does row normalization yield provable convergence gains, potentially through its interaction with approximate polar computation and exponential moving-average momentum? Our results show that row normalization introduces a dimension-dependent factor in the worst-case iteration complexity under the operator-norm geometry, which persists even with exact polar computation and any fixed momentum parameters. Indeed, we establish an algorithm-dependent lower bound and a matching upper bound in deterministic settings, and extend our upper bound analysis to stochastic settings. Both upper-bound analyses allow approximate polar computation. Experiments show that NorMuon is slower than Muon on synthetic problems inspired by our worst-case construction, yet outperforms Muon in LLM pretraining. These findings sharpen the puzzle of why row normalization helps in practice and complement the recent findings of Dewulf et al.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Jiayu Zhang",
+   "Tianyi Lin"
+  ],
+  "url": "https://arxiv.org/abs/2609.39114",
+  "published": "2026-10-02",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "It is unclear whether the row-wise renormalization used by NorMuon yields provable convergence gains over Muon in LLM pretraining. The paper establishes an algorithm-dependent lower bound and a matching upper bound on the worst-case iteration complexity under the operator-norm geometry, showing a dimension-dependent factor that persists even with exact polar computation and any fixed momentum, and extends the upper-bound analysis to stochastic settings.",
+  "added": "2026-10-02"
  }
 ]
