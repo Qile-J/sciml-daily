@@ -64677,5 +64677,122 @@
   ],
   "summary": "It is unclear whether the row-wise renormalization used by NorMuon yields provable convergence gains over Muon in LLM pretraining. The paper establishes an algorithm-dependent lower bound and a matching upper bound on the worst-case iteration complexity under the operator-norm geometry, showing a dimension-dependent factor that persists even with exact polar computation and any fixed momentum, and extends the upper-bound analysis to stochastic settings.",
   "added": "2026-10-02"
+ },
+ {
+  "id": "arxiv:2610.02499",
+  "source": "arXiv",
+  "title": "Residual Minimisation for Transport-Based Optimal Control",
+  "abstract": "We consider an optimal control problem governed by a stationary linear transport equation in two or three spatial dimensions, motivated by photon transport in radiotherapy treatment planning. The control is an inflow boundary source, and the observation operator may track either the angular flux or its angular integral, the latter serving as a simplified dose surrogate. The associated optimality system consists of a transport--adjoint pair with angular dependence, coupled through a boundary optimality condition. We formulate a residual least-squares functional whose minimisers coincide with solutions of the Karush--Kuhn--Tucker system and show that the functional controls the $L^2$ errors in the state and adjoint and the flux-weighted $L^2$ error in the control. This yields a continuum-level a posteriori estimate without recourse to discretisation. An additional unweighted optimality residual certifies the control in the norm of the objective. The estimate holds for every admissible approximation and accounts for the different boundary measures in the control penalty and transport traces, without a positive lower bound on $|\\omega\\cdot n|$. We then parameterise the state, adjoint and control using neural networks and minimise over a neural network space using appropriate quadrature. The Monte Carlo formulation replaces each residual integral by a weighted sample mean, whose quadrature error enters the a posteriori estimate. We prove convergence under explicit assumptions on approximation, quadrature andoptimisation and derive bounds on the total error in terms of approximation, quadrature and optimisation error. Numerical examples in two and three dimensions illustrate the residual--error relation and the flexibility of the residual framework for field-tracking control problems, including regular manufactured solutions.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Tristan Pryer",
+   "Nikolaos Rekatsinas"
+  ],
+  "url": "https://arxiv.org/abs/2610.02499",
+  "published": "2026-10-05",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper studies optimal control of a stationary linear transport equation with inflow boundary source control, motivated by photon transport in radiotherapy planning. It formulates a residual least-squares functional whose minimizers solve the KKT system, proves a continuum a posteriori error estimate, and minimizes over neural-network parameterizations of state, adjoint, and control with convergence bounds in terms of approximation, quadrature, and optimization error.",
+  "added": "2026-10-05"
+ },
+ {
+  "id": "arxiv:2610.02528",
+  "source": "arXiv",
+  "title": "Autoregressive Differentiable Method for Integer Programming",
+  "abstract": "We introduce an autoregressive differentiable method to solve 0-1 integer programs. We fix an arbitrary order of the binary variables and we train a transformer to predict the next bit while remaining in the feasible set. Our method is first trained on feasible incumbents provided by any solver, thus allowing us to initialize the transformer in the feasible set. Our procedure then implements a Lagrangian penalty to penalize infeasible solutions, and the transformer is further trained to explore the feasible set using Gumbel-softmax activations on the relaxed objective. We have tested our method on non-convex instances of quadratic knapsack problem and demonstrated consistent improvement upon state-of-the-art open-source solvers for dense problems up to 10,000 binary variables. In particular, we empirically demonstrate a phenomenon akin to a tunneling effect where the effective change of variables from binary variable to the continuous weights of the transformer that the method implements enables crossing barriers in the relaxed objective landscape.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Ouns El Harzli",
+   "Yudong Cao"
+  ],
+  "url": "https://arxiv.org/abs/2610.02528",
+  "published": "2026-10-05",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper tackles 0-1 integer programs with nonconvex dense objectives that are hard for classical solvers at scale. It trains an autoregressive transformer to predict the next binary variable while staying feasible, adding a Lagrangian penalty and Gumbel-softmax exploration of the relaxed objective, and reports improvements over open-source solvers up to 10,000 variables including a tunneling-like barrier-crossing effect.",
+  "added": "2026-10-05"
+ },
+ {
+  "id": "arxiv:2610.02538",
+  "source": "arXiv",
+  "title": "ENCORE: Exact Non-equilibrium COntrol with Replica Exchange for Diffusion Generation",
+  "abstract": "Inference-time control steers a pretrained generative model towards a target distribution without retraining. We study tilted targets $\\pi_0\\propto G_0\\,p_0$, where $p_0$ is the sampler output distribution and $G_0$ is an evaluable reweighting function. Existing approaches rely on sequential annealing with sequential Monte Carlo (SMC) or parallel annealing with replica exchange (RE). Sequential control is exact but needs large particle populations, whereas no exact parallel control method exists: existing RE corrections approximate an intractable time reversal and are biased. We propose Exact Non-equilibrium COntrol with Replica Exchange (ENCORE), the first exact parallel control method. Each replica stores its generation trajectory, so the upward move is a truncation and the intractable time reversal is never simulated. We prove target invariance and show that the resulting dynamics are those of non-equilibrium replica exchange with the exact time reversal as forward proposal. Under regularity conditions, our diffusion analysis shows that both sequential and parallel control become unstable under refinement of the time discretisation without guidance, whereas guided proposals remain stable and yield diagnostics for tuning the schedule and the computational budget. Across synthetic targets, Boltzmann sampling of biomolecules, and image generation, ENCORE achieves competitive accuracy and diversity, remains robust to sampler perturbations, and applies to distilled samplers where existing RE corrections are unavailable.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jiahao Yu",
+   "Saifuddin Syed",
+   "Jos\\'e Miguel Hern\\'andez-Lobato",
+   "Jiajun He"
+  ],
+  "url": "https://arxiv.org/abs/2610.02538",
+  "published": "2026-10-05",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Inference-time control of pretrained diffusion samplers toward tilted targets is either approximate under parallel replica exchange or sample-inefficient under sequential SMC. The paper introduces ENCORE, which stores each replica's generation trajectory so the upward move is a truncation, proving target invariance, deriving the resulting non-equilibrium replica-exchange dynamics, and analyzing discretization stability.",
+  "added": "2026-10-05"
+ },
+ {
+  "id": "arxiv:2610.02564",
+  "source": "arXiv",
+  "title": "Learning Closure of Dynamical Systems with Kernel Ridge Regression",
+  "abstract": "We develop a closure modeling framework for identifying missing components of dynamical systems using Kernel Ridge Regression (KRR). The framework addresses two classes of closure problems: difference-equation closures arising in ODE and PDE settings, and algebraic closures arising from moment closure in kinetic equations. For the first class, we derive an error bound in an ODE setting that quantifies contributions from time integration, approximation of unresolved scales, and interpolation required to couple unresolved-scale effects to the resolved solver. Numerical experiments on the Lorenz-63 system and the Kuramoto-Sivashinsky equation demonstrate accurate long-horizon predictions and substantial improvements over an LSTM-based closure model. For the second class, we consider moment closure for a one-dimensional kinetic equation by modeling discrepancies between kinetic and macroscopic fluxes as a function of the resolved macroscopic variables. We compare global KRR models based on PCA coordinates with spatially local models. While the global model performs well for unimodal initial conditions, its accuracy deteriorates for bimodal initial conditions. Spatially local models with appropriate modeling inputs improve robustness and achieve higher predictive accuracy.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA",
+   "math.DS"
+  ],
+  "authors": [
+   "Evan Habbershaw",
+   "John Harlim",
+   "Senwei Liang"
+  ],
+  "url": "https://arxiv.org/abs/2610.02564",
+  "published": "2026-10-05",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "The paper addresses closure modeling, identifying unresolved components of dynamical systems from resolved variables in both difference-equation and algebraic/moment-closure settings. It develops a Kernel Ridge Regression framework, derives an ODE error bound decomposing integration, unresolved-scale, and interpolation contributions, and demonstrates accurate long-horizon closures for Lorenz-63, Kuramoto–Sivashinsky, and a kinetic moment closure.",
+  "added": "2026-10-05"
+ },
+ {
+  "id": "arxiv:2610.02611",
+  "source": "arXiv",
+  "title": "Scale-Recursive Rectified Flows for Few-Step Precipitation Ensembles",
+  "abstract": "Fine-resolution precipitation estimates support flood risk assessment and water management, but coarse satellite products cannot resolve rainfall within each grid cell. Generative models address this ambiguity by producing ensembles of plausible high-resolution rainfall fields. Among these models, rectified flows generate samples by iteratively transforming random noise into rainfall fields. Reducing the number of sampling steps accelerates generation but can make ensemble members too similar, understating uncertainty. We propose a scale-recursive rectified flow that generates broad patterns before local details and guides sampling-step allocation by comparing ensemble variability with prediction error across spatial scales. Validation scores and rainfall power spectra constrain the allocation to avoid excessive amplification. In satellite-to-radar downscaling over the contiguous United States, our analysis identified broad rainfall patterns as the main source of insufficient ensemble variability under reduced sampling budgets. Allocating more steps to the coarse flow improved probabilistic accuracy and rain detection across training seeds at fixed architecture and computational cost. The proposed model also achieved better probabilistic accuracy with shorter sampling time than a nonrecursive flow using more steps.",
+  "categories": [
+   "cs.LG",
+   "cs.CV"
+  ],
+  "authors": [
+   "Shunya Nagashima",
+   "Takumi Bannai"
+  ],
+  "url": "https://arxiv.org/abs/2610.02611",
+  "published": "2026-10-05",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Generating ensembles of high-resolution precipitation fields under few sampling steps collapses ensemble variability and understates uncertainty. The paper proposes a scale-recursive rectified flow that generates broad rainfall patterns before local detail and allocates sampling steps across spatial scales by comparing ensemble variability to prediction error, improving probabilistic accuracy and rain detection at fixed cost.",
+  "added": "2026-10-05"
  }
 ]
