@@ -64794,5 +64794,283 @@
   ],
   "summary": "Generating ensembles of high-resolution precipitation fields under few sampling steps collapses ensemble variability and understates uncertainty. The paper proposes a scale-recursive rectified flow that generates broad rainfall patterns before local detail and allocates sampling steps across spatial scales by comparing ensemble variability to prediction error, improving probabilistic accuracy and rain detection at fixed cost.",
   "added": "2026-10-05"
+ },
+ {
+  "id": "arxiv:2610.05327",
+  "source": "arXiv",
+  "title": "Quantitative Universality of Approximate Message Passing for Rank-One Quadratic Sensing",
+  "abstract": "Approximate Message Passing (AMP) algorithms are attractive as they are computationally efficient and simultaneously admit a precise characterization in terms of the low-dimensional \"state-evolution\" recursion. In this work, we establish quantitative universality for AMP with centered rank-one sensing matrices $Z_i=(x_ix_i^\\top-I_d)/\\sqrt d$, where $x_i$ are independent standard Gaussian vectors. These matrices arise in quadratic regression and learning quadratic neural networks. Their normalized vectorizations have isotropic covariance in dimension $p=d(d+1)/2$, but strongly dependent coordinates. For linear observations with Gaussian noise and prescribed smooth, bounded spectral denoisers, we compare rank-one sensing with a covariance-matched isotropic Gaussian ensemble. At a fixed iteration horizon, with $n\\leq Cp$ and uniform bounds on the normalized signal energy, initialization, coefficients, and first four denoiser derivatives, normalized signal overlaps, cross-time overlaps, and smooth linear spectral statistics differ by $O(d^{-1/2})$ in every fixed $L^m$. This yields universality of the normalized mean-squared error, fixed spectral moments, and empirical spectral distributions. Whenever the Gaussian observables admit a joint state-evolution limit, the same predictions hold under rank-one sensing. The proof uses columnwise Lindeberg replacement, leave-one-out analysis, smooth spectral expansions, and high-moment concentration. For prescribed smooth spectral denoisers, the result establishes the AMP universality conjectured by Maillard et al. (arXiv:2408.03733).",
+  "categories": [
+   "cs.IT",
+   "math.IT",
+   "stat.ML"
+  ],
+  "authors": [
+   "Duy Thuc Nguyen",
+   "Yue M. Lu",
+   "Subhabrata Sen"
+  ],
+  "url": "https://arxiv.org/abs/2610.05327",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "It is unclear whether the precise state-evolution predictions of Approximate Message Passing hold for the correlated rank-one quadratic sensing matrices that arise in quadratic regression and quadratic-neural-network learning. The paper establishes quantitative universality by comparing rank-one sensing to a covariance-matched isotropic Gaussian ensemble, using columnwise Lindeberg replacement, leave-one-out analysis, and spectral expansions to bound differences at O(d^{-1/2}) and thereby prove AMP universality.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.05367",
+  "source": "arXiv",
+  "title": "AIProver: Agentic Auto-Formalization of Mathematical Research via Certificate-Driven Evolving Harness",
+  "abstract": "Proof auto-formalization translates natural-language (NL) theorems and proofs into a formal language (FL) such as Lean, enabling mechanical verification. Despite rapid progress, research-level proofs often depend on concepts missing from leading proof assistant libraries (e.g., Lean's Mathlib), and successful compilation does not guarantee that a translation preserves the theorem's meaning or the proof's reasoning. Furthermore, aligned NL-FL training data are scarce, and leading agents often rely on costly frontier models and manually engineered harnesses. To address the above issues, we present AIProver, an agentic framework for autonomous proof auto-formalization and proof synthesis (AFPS) that jointly post-trains a 119B open-weight language model and evolves its agentic, tool-calling harness with HarnessEvolve. Verifiers assess type correctness, proof completeness, and semantic correctness, returning rewards and diagnostic certificates that drive model fine-tuning and alternating reinforcement learning via symbolic feedback and HarnessEvolve, a certificate-driven evolutionary search over the whole harness control flow that re-tailors the harness to the updated model. For research-level training and evaluation, we introduce LoCoBench, 58.9k instances from Mathlib, CSLib, Mizar Math Library, and a bounded-arithmetic textbook, with a 771-instance validation split whose theorem-proof pairs have no public Lean formalization. Against 39 frameworks spanning AFPS agents, frontier LLMs, and coding agents, AIProver lifts pass@4 semantic correctness over its Leanstral-1.5 base from 15.7% to 36.7% and outperforms every other open-weight system and Aristotle. As a Claude Code and Codex skill, it lifts their semantic correctness from 41.9% and 34.1% to 79.8% and 62.4%, respectively. Further, it is also 24% cheaper than Numina-Lean-Agent, pushing the accuracy-cost frontier of research-level AFPS.",
+  "categories": [
+   "cs.LO",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Prithwish Jana",
+   "Viet Bach Hoang",
+   "Logan Luna",
+   "Viresh Pati",
+   "Akash Singirikonda",
+   "Cy Xie",
+   "Lisa Carbone",
+   "Wuyang Chen",
+   "Walter Moreira",
+   "Joe Stubbs",
+   "Sriram Vishwanath",
+   "Vijay Ganesh"
+  ],
+  "url": "https://arxiv.org/abs/2610.05367",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Research-level proof auto-formalization fails when required concepts are absent from libraries, successful compilation does not guarantee semantic preservation, and aligned NL-FL data are scarce. The paper presents AIProver, which jointly post-trains a 119B open-weight model while evolving its tool-calling harness via certificate-driven HarnessEvolve, and introduces the LoCoBench dataset for evaluation.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.05647",
+  "source": "arXiv",
+  "title": "Transformer-Based Time-Series Inference of Lindblad Dynamics in Open Quantum Systems",
+  "abstract": "The Lindblad master equation is the standard framework for describing the non-unitary evolution of open quantum systems, where environmental interactions induce dissipation and decoherence. When both the system Hamiltonian and the dissipation rates are partially unknown or explicitly time-dependent, traditional analytical inversion and system-identification techniques become intractable. Recent works have demonstrated that Transformer-based models can infer unknown dissipation rates from observable time series, yet these approaches typically rely on hand-crafted statistical features under idealized and highly restricted conditions. Here we advance the paradigm by introducing a raw time-series Transformer that directly ingests the full trajectories of Pauli expectation values $\\langle\\sigma _x(t)\\rangle$, $\\langle\\sigma _y(t)\\rangle$, and $\\langle\\sigma_z(t)\\rangle$, thereby fully exploiting the self-attention mechanism for temporal modeling. The architecture is further extended to jointly learn unknown Hamiltonian parameters, handle multiple dissipation channels, and operate robustly under realistic measurement noise. Across all tested scenarios the model achieves consistently high reconstruction accuracy while eliminating manual feature engineering. This provides a scalable, robust, and versatile framework for quantum environment sensing in realistic open quantum systems.",
+  "categories": [
+   "quant-ph",
+   "cs.AI"
+  ],
+  "authors": [
+   "Julian Guam",
+   "Jianqing Liu"
+  ],
+  "url": "https://arxiv.org/abs/2610.05647",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "When the Hamiltonian and dissipation rates of open quantum systems are partially unknown or time-dependent, analytical inversion of the Lindblad master equation becomes intractable. The paper introduces a raw time-series Transformer that directly ingests Pauli-expectation trajectories to jointly identify unknown Hamiltonian parameters and multiple dissipation channels under realistic measurement noise, eliminating hand-crafted features.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.05657",
+  "source": "arXiv",
+  "title": "Fast and Differentiable MHD Surrogate for Solar Wind using Neural Operator",
+  "abstract": "Global magnetohydrodynamic (MHD) simulations provide the complete plasma state of the heliosphere, but their computational cost limits applications requiring repeated model evaluations. We introduce SNOW (Solar Neural Operator for Wind), a fast and differentiable surrogate for global MHD solar wind. SNOW combines a rotational ballistic approximation, a spherical harmonic neural operator, and causal radial context to autoregressively propagate all eight MHD variables from 20 to 240 Rs through consecutive shell to shell transitions. Trained and evaluated using AWSoM simulations spanning a solar cycle, SNOW remains stable across the complete rollout. The model successfully reproduces the large scale plasma and magnetic field structures, including fast and slow wind streams, magnetic polarity sectors, vector orientations, fieldline connectivity, and bulk-flow structures. Additionally, the magnetic divergence and induction diagnostics remain comparable to the reference MHD solutions. The complete three-dimensional solution is generated in less than one second on a single GPU. These results demonstrate the feasibility of fast neural emulation of global MHD solar wind solutions while retaining physically meaningful plasma and magnetic field structure.",
+  "categories": [
+   "astro-ph.SR",
+   "physics.flu-dyn",
+   "physics.plasm-ph",
+   "physics.space-ph"
+  ],
+  "authors": [
+   "Prateek Mayank",
+   "Enrico Camporeale",
+   "Thomas E. Berger",
+   "Zhenguang Huang",
+   "Gabor Toth"
+  ],
+  "url": "https://arxiv.org/abs/2610.05657",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "differentiable-simulation"
+  ],
+  "summary": "Global MHD simulations of the solar wind are too costly for applications requiring repeated model evaluations. The paper introduces SNOW, a fast differentiable neural-operator surrogate combining a rotational ballistic approximation, a spherical harmonic neural operator, and causal radial context to autoregressively propagate all eight MHD variables from 20 to 240 solar radii.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.05759",
+  "source": "arXiv",
+  "title": "A Class of Function-Preserving Neural Network Operators with Applications to Modulated Signal Denoising",
+  "abstract": "In this paper, we introduce a class of function-preserving neural network operators designed to preserve a prescribed strictly positive function. We examine the approximation behaviour of the proposed operators on the space of continuous functions and show that they are positive, linear, well-defined, and bounded. Specifically, we demonstrate uniform convergence on compact intervals and get quantitative estimates of the approximation error in terms of the modulus of continuity. To support the theoretical analysis, we present several numerical experiments focusing on the preservation of exponential and logarithmic functions. These examples show how well the proposed operators perform and compare them with existing neural network operators. Also, an application to denoising modulated signals is provided, demonstrating the practical relevance of the proposed approach.",
+  "categories": [
+   "math.FA",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Sachin Saini"
+  ],
+  "url": "https://arxiv.org/abs/2610.05759",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper addresses the construction of neural network operators that preserve a prescribed strictly positive function while still approximating continuous functions. It introduces a class of positive, linear, bounded function-preserving operators, proves uniform convergence with modulus-of-continuity error estimates, and applies them to denoising modulated signals.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06002",
+  "source": "arXiv",
+  "title": "P3: Persistent Particle Planning for Constrained Diffusion Control",
+  "abstract": "Diffusion models provide expressive priors over trajectories, but adapting these priors to test-time constraints requires maintaining feasibility and consistency across successive control decisions. We introduce Persistent Particle Planning (P3), a sequential Monte Carlo framework for diffusion control that maintains a weighted population of candidate plans across replanning steps. At each control step, P3 shifts and partially re-noises the candidate trajectories, refines them under the latest observation, and uses constraint-aware weighting and resampling to select among alternative continuations without retraining the diffusion model. We consider denoising and replanning as one Feynman--Kac particle system and analyze it under an idealized repair. We prove that the re-noising depth controls how reliably a kept plan stays on its route, and that keeping a rare, well-separated route takes far fewer plans than rediscovering it by sampling from scratch. Experiments under multiple test-time constraint configurations show that population reuse reduces route switching and improves success without constraint violations. Because P3 refines earlier plans instead of redrawing them, it also needs fewer denoising iterations per replan. On maze-navigation tasks, it plans faster than both regenerated populations and methods that correct a single sampled plan by constrained optimization. Code and pretrained models are available at https://github.com/p3-username/p3-anon.",
+  "categories": [
+   "cs.RO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Hikmet Simsir",
+   "Mahyar Fardinfar",
+   "Ozgur S. Oguz"
+  ],
+  "url": "https://arxiv.org/abs/2610.06002",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Adapting diffusion-model trajectory priors to test-time constraints requires maintaining feasibility and consistency across successive control decisions. P3 casts denoising and replanning as a Feynman-Kac particle system that keeps a weighted population of plans, proves that re-noising depth controls how reliably a kept plan stays on its route, and shows population reuse cuts route switching and denoising iterations.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06032",
+  "source": "arXiv",
+  "title": "Polynomial neural surrogates for designing photonic quantum experiments",
+  "abstract": "Physics simulators can support the discovery of quantum experiments by predicting the states generated by experimental configurations. When these simulators are computationally expensive, repeated simulator calls can limit the search for experiments that generate a desired quantum state. Here, we develop a physics-inspired polynomial neural surrogate for PyTheus, a graph-based quantum-optics simulator, to predict quantum states and use it to design quantum experiments. Its polynomial activations are motivated by the relation between graph perfect matchings and the resulting state amplitudes. We train separate surrogate models for four-, six-, and eight-photon systems and show that they achieve higher prediction accuracy with fewer trainable parameters than standard multilayer perceptrons. We then use the trained surrogates for inverse design of GHZ, W, and linear-cluster states. For the larger systems, the surrogates also enable faster inverse design than direct optimization with PyTheus. These results suggest that incorporating the underlying physics into neural surrogates can provide an efficient approach to quantum experiment design.",
+  "categories": [
+   "quant-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Rohit Chaurasiya",
+   "Xuemei Gu"
+  ],
+  "url": "https://arxiv.org/abs/2610.06032",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Repeated calls to the expensive PyTheus quantum-optics simulator limit the search for configurations that generate a desired quantum state. The paper builds a physics-inspired polynomial neural surrogate of the graph-to-state map, whose activations mirror the link between perfect matchings and state amplitudes, and uses it for inverse design of GHZ, W, and linear-cluster states.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06080",
+  "source": "arXiv",
+  "title": "Gaussian Universality and Its Breakdown in Tensor-Network Machine Learning",
+  "abstract": "Gaussian-process limits are powerful in describing overparameterized machine learning models, yet their validity in structured tensor-network architectures remains unclear. Here we analytically present a moment-based approach that identifies precise conditions for the emergence and breakdown of Gaussian universality in tensor-network learning models, with a focus on matrix product states. We prove that in the large bond dimension limit, the learning models with both local and global observables converge to Gaussian processes, with explicit finite-size bounds on higher-order moment deviations. Whereas in the large physical dimension limit, the Gaussian universality no longer persists: while the models with local observables retain Gaussian-process behavior, those global cases exhibit persistent non-Gaussian corrections. Our results reveal that Gaussian-process behavior in tensor-network learning is controlled not only by parameter number, but also by architectural scaling, observable locality, and the spectral properties.",
+  "categories": [
+   "quant-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Shi-Tuan Wang",
+   "Zidu Liu",
+   "Li-Wei Yu"
+  ],
+  "url": "https://arxiv.org/abs/2610.06080",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "It is unclear when Gaussian-process limits describe overparameterized learning in structured tensor-network architectures. Using a moment-based analysis of matrix product states, the paper proves convergence to Gaussian processes in the large bond-dimension limit with explicit finite-size bounds on higher-order moments, and shows universality breaks down in the large physical-dimension limit for global observables.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06099",
+  "source": "arXiv",
+  "title": "A Renormalization-Group Hierarchy of Stochastic Effective Dynamics Learned through Path Integrals",
+  "abstract": "This study combines a stochastic renormalization group (RG) in space with a path-integral description of the time evolution, giving a spatial hierarchy of coarse-grained dynamics together with the distribution over spatiotemporal paths. The RG is defined as a diffusion process that applies scale-dependent Laplacian damping together with additive Gaussian noise. The time evolution at each spatial scale is formulated as an Onsager--Machlup action, with a drift (i.e., the predictor) and white noise whose amplitude is fixed by the RG. The predictor of these dynamics is optimized by minimizing the Kullback--Leibler divergence between the path distributions from the RG and from the path-integral description. The optimal predictor contains the score function that connects the spatial scales, so the predictor and the score are two aspects of the same multiscale path formulation. The formulation unifies simulation using the predictor, unconditional generation using the score, and super-resolution using both. The predictor has no closed form, so it is computed by a neural network in two realizations that differ only in how the score is computed. The first realization obtains the score by automatic differentiation of the path distribution, remaining faithful to that formulation. The second obtains the score as an additional network output trained by denoising, at a lower computational cost. These two realizations are validated through numerical experiments on two representative multiscale systems, the Kolmogorov flow and the two-timescale Lorenz-96 model.",
+  "categories": [
+   "nlin.CD",
+   "physics.comp-ph",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Yuki Yasuda",
+   "Tobias Bischoff"
+  ],
+  "url": "https://arxiv.org/abs/2610.06099",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Coarse-grained effective dynamics across spatial scales lack a unified description linking simulation, generation, and super-resolution. The paper defines a stochastic renormalization group as a scale-dependent Laplacian-damped diffusion, learns its drift by minimizing the KL divergence between RG and Onsager-Machlup path distributions with the optimal predictor tied to the inter-scale score, and validates on Kolmogorov flow and two-timescale Lorenz-96.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06169",
+  "source": "arXiv",
+  "title": "Spectral Barron spaces of periodic functions",
+  "abstract": "Spectral Barron spaces are Fourier-Lebesgue-type spaces that arise in the approximation of functions by neural networks. Conventional spectral Barron spaces are mostly considered on the whole space or on a bounded domain with certain smoothness assumptions on the boundary. In this work, we investigate spectral Barron spaces for periodic functions, thereby extending the study of spectral Barron spaces to high-dimensional tori and, more generally, to locally compact Abelian groups. These extensions are carried out by considering Fourier series expansions that are isometrically isomorphic to weighted sequence spaces built upon the $\\ell^1$ sequence space. We discuss the well-posedness of PDEs in these newly introduced spaces. Two specific inverse problems for evolution equations are investigated, yielding conditional stability within the framework of spectral Barron spaces on the torus.",
+  "categories": [
+   "math.FA",
+   "math.AP"
+  ],
+  "authors": [
+   "Mourad Choulli",
+   "Shuai Lu",
+   "Hiroshi Takase"
+  ],
+  "url": "https://arxiv.org/abs/2610.06169",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Spectral Barron spaces, which govern neural-network approximation rates, have mostly been studied on the whole space or on smooth bounded domains rather than on tori. The paper develops spectral Barron spaces for periodic functions via weighted ℓ1 sequence spaces, establishes PDE well-posedness in these spaces, and derives conditional stability for two inverse problems for evolution equations.",
+  "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.06227",
+  "source": "arXiv",
+  "title": "APOD: reasoning-guided agentic population ordinary differential equation discovery for pharmacological digital twins",
+  "abstract": "Establishing ordinary differential equations (ODEs) describing population data is a fundamental part of mathematical modeling in pharmacology, crucial to developing digital twins. However, doing so from sparse, noisy data is a slow, expert-driven task. Existing automated methods either search a restricted model space or ignore population inter-individual variability. Here we introduce APOD (Agentic Population ODE Discovery), a language-model agent that iteratively reasons over biological knowledge and fit diagnostics in an open-ended search space to discover a population digital twin (PDT), i.e., a shared ODE system with between-subject variability. On synthetic pharmacokinetic and tumor-dynamics benchmarks, APOD recovered ground-truth structures in 94-100\\% of runs, 12-fold faster in median than an established library-based search. On real cohorts it converged to valid structures, and proposed a PDT of radioligand-therapy-induced platelet dynamics that predicts thrombocytopenia from first-cycle data and simulates alternative dosing schedules that lower the predicted risk of toxicity.",
+  "categories": [
+   "q-bio.QM",
+   "cs.AI",
+   "cs.LG",
+   "stat.AP"
+  ],
+  "authors": [
+   "Romain Ferrara",
+   "Martin Soucail",
+   "Victor Gertner",
+   "Adil Moussali",
+   "Joris Cocquebert",
+   "Sandrine Oziel-Taieb",
+   "Julien Nicolas",
+   "Florence Gattacceca",
+   "Mihaela van der Schaar",
+   "S\\'ebastien Benzekry"
+  ],
+  "url": "https://arxiv.org/abs/2610.06227",
+  "published": "2026-10-06",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Deriving population ODE models from sparse, noisy data for pharmacological digital twins is slow and typically ignores inter-individual variability. APOD is a language-model agent that iteratively reasons over biological knowledge and fit diagnostics in an open-ended search space to discover a shared ODE system with between-subject variability, recovering ground-truth structures in 94-100% of synthetic runs and proposing a validated platelet-dynamics model on real cohorts.",
+  "added": "2026-10-06"
  }
 ]
