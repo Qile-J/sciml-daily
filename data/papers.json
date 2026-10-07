@@ -65072,5 +65072,342 @@
   ],
   "summary": "Deriving population ODE models from sparse, noisy data for pharmacological digital twins is slow and typically ignores inter-individual variability. APOD is a language-model agent that iteratively reasons over biological knowledge and fit diagnostics in an open-ended search space to discover a shared ODE system with between-subject variability, recovering ground-truth structures in 94-100% of synthetic runs and proposing a validated platelet-dynamics model on real cohorts.",
   "added": "2026-10-06"
+ },
+ {
+  "id": "arxiv:2610.07754",
+  "source": "arXiv",
+  "title": "Adversarially Trained Linear Transformers Are Optimal Robust In-Context Learners for Gaussian Mixtures",
+  "abstract": "Adversarial training is one of the most reliable defenses against adversarial attacks, but its high computational cost must generally be paid anew for each task. Robust foundation models offer a promising alternative: adversarially pretrain a model once and then transfer its robustness to downstream tasks through lightweight adaptation. However, a fundamental question remains open: can robustness acquired during pretraining transfer to unseen tasks without further adversarial training? In this study, we answer this question affirmatively. A single model adversarially pretrained at scale can achieve optimal robustness on new tasks without additional task-specific training. Specifically, we show that, for a family of Gaussian-mixture classification tasks, a sufficiently deep linear transformer adversarially trained across tasks can asymptotically attain the robust Bayes error on previously unseen tasks through in-context learning from clean demonstrations. By contrast, a standardly trained model cannot. We further analyze convergence under gradient flow, an accuracy--robustness trade-off, and demonstration complexity.",
+  "categories": [
+   "cs.LG",
+   "cs.CV",
+   "stat.ML"
+  ],
+  "authors": [
+   "Soichiro Kumano"
+  ],
+  "url": "https://arxiv.org/abs/2610.07754",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is open whether adversarial robustness acquired during pretraining can transfer to unseen tasks through in-context learning without further adversarial training. The paper proves that a sufficiently deep linear transformer adversarially trained over Gaussian-mixture classification tasks asymptotically attains the robust Bayes error on unseen tasks from clean demonstrations, and analyzes gradient-flow convergence, the accuracy–robustness trade-off, and demonstration complexity.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.07804",
+  "source": "arXiv",
+  "title": "Adaptive Mean Estimation by In-Context Learning: A Gradient-Flow Analysis",
+  "abstract": "Prior Fitted Networks (PFNs) such as TabPFN now rival established statistical procedures across prediction and estimation tasks. A natural explanation is that PFNs have the property of statistical adaptivity, that is, they perform nearly as well as a method tailored to the true data-generating model for a heterogeneous set of models, while not being told which model the data comes from. We study how such adaptivity is learned in a controlled location-estimation problem. Each task is an unlabeled sample whose family is hidden: Gaussian data call for averaging, with error of order $n^{-1}$, whereas uniform data are best estimated from their extremes, at the faster rate $n^{-2}$. We also provide the example of a symmetric Gaussian mixture, for which a rate of $\\sigma^2_n/n$ can be attained. On scalar inputs, softmax attention computes the derivative of the empirical cumulant-generating function. A single primitive therefore both supplies features that distinguish the families and forms estimators interpolating between the sample mean and the mid-range. We combine attention experts through either a softmax mixture of experts or a gated linear unit (GLU), and analyze stagewise gradient flow. With $\\widetilde{\\Omega}(n^{1+\\epsilon})$ pretraining tasks, the learned estimator is asymptotically efficient on Gaussian tasks, within a factor $n^{\\epsilon}$ of the minimax rate on uniform tasks, and order-optimal on mixtures in a shrinking-variance regime. These guarantees extend to new locations and longer contexts. A risk decomposition separates expert error, routing error and normalization error, which clarifies the architectural contrast. Softmax gating enforces normalization and exact translation equivariance, whereas the GLU must learn it: its dynamics separate into fast bias removal followed by slow expert selection. End-to-end experiments recover the predicted specialization.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Martin Eppert",
+   "Krishna Balasubramanian",
+   "Subhro Ghosh",
+   "Jason Klusowski",
+   "Yan Shuo Tan"
+  ],
+  "url": "https://arxiv.org/abs/2610.07804",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks how Prior-Fitted Networks such as TabPFN acquire statistical adaptivity across heterogeneous, hidden data-generating families. It shows that softmax attention computes the derivative of the empirical cumulant-generating function so a single primitive yields features that distinguish Gaussian from uniform tasks and interpolates between sample mean and mid-range, and analyzes stagewise gradient flow for mixture-of-experts and gated-linear-unit attention to prove asymptotic efficiency, near-minimax rates, and a risk decomposition.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.07811",
+  "source": "arXiv",
+  "title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
+  "abstract": "A physics-informed loss adds a discretised PDE residual to the data term, but is only strictly valid if the equations being enforced are closed on the fields being fitted. This fails on coarse-grained, stochastically forced data: nonlinear terms in the PDE generally do not commute with the filter, so the coarse-grained fields do not satisfy the original equations, and driving their residual to zero encodes an implicit closure into the learned operator. Under normalised, translation-invariant filtering on a periodic domain, constant-coefficient linear constraints remain valid on the filtered grid. For the 2D incompressible Navier-Stokes equations, two such constraints are continuity and global momentum balance. We enforce these exactly by applying a closed-form projection on the output of a Fourier neural operator (FNO) at $O(N \\log N)$ cost. On two-dimensional isotropic turbulence, truncated so that its forcing lies entirely beyond the cutoff wavenumber, the projection achieves a continuity error of $5.0\\times10^{-7}$ against 0.51 for a plain FNO and 0.17 for a physics-informed FNO, and a global momentum balance error of $8.6\\times10^{-11}$ against $7.5\\times10^{-4}$ and $8.3\\times10^{-4}$. The projection only costs an extra 2% of training time, and takes the fraction of rollouts whose energy remains bounded at 448 steps from 0.18 to 0.87. On resolved Kolmogorov flow, test-time optimisation costs approximately 3,300$\\times$ as much per trajectory as the projection, while leaving maximum divergence three orders of magnitude higher. Nonlinear constraints can also be enforced once their unclosed terms are modelled: closing the global energy balance with a constant subgrid flux, fitted from the coarse training data alone, removes the 20.9% energy deficit that enforcing the unclosed balance produces and keeps every free-running rollout bounded over 2,000 steps.",
+  "categories": [
+   "physics.flu-dyn",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Michael Groom",
+   "Rafael Oliveira"
+  ],
+  "url": "https://arxiv.org/abs/2610.07811",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "operator-learning"
+  ],
+  "summary": "Physics-informed losses are only valid when the enforced PDE is closed on the fitted fields, which fails for coarse-grained, stochastically forced turbulence where filtering does not commute with nonlinear terms. The paper shows only constant-coefficient linear constraints (continuity and global momentum balance) survive normalised periodic filtering and enforces them exactly by a closed-form O(N log N) projection on a Fourier neural operator's output, achieving near-zero continuity and momentum-balance errors and stabilized long rollouts.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08693",
+  "source": "arXiv",
+  "title": "Neural-Operator-Predicted Time-Dependent Reduced Subspaces for Projection-Based Simulation of Nonlinear PDEs",
+  "abstract": "Accurate numerical simulation of nonlinear partial differential equation initial value problems typically requires high-dimensional full-order discretizations at substantial computational cost. While purely data-driven surrogates can speed up prediction, these \"black box\" approximations do not necessarily satisfy the governing equations during inference. In this paper we present a hybrid framework, which combines neural operators with projection-based reduced-order modeling for nonlinear PDE simulation. The key idea is to train a neural operator to map the initial condition to a time-dependent reduced subspace, and then evolve low-dimensional reduced coordinates by solving the governing dynamical equations projected on this learned moving trial subspace. In this way, the network predicts an adaptive reduced representation rather than the full trajectory directly, while the online solver preserves a physics-based reduced evolution. We test this method on two representative nonlinear PDEs: the viscous Burgers' equation and the Fisher--KPP reaction--diffusion equation. In both cases, the proposed approach achieves successful reduced-order simulation with substantial wall-clock speedup relative to the corresponding full-order solver while maintaining relative errors on the order of \\(10^{-2}\\) to \\(10^{-1}\\) across the tested resolutions. These results demonstrate that a low-dimensional learned time-dependent reduced subspace can be used to predict solutions to nonlinear PDEs while retaining the advantages of projection-based reduced dynamics. Overall, this method provides a promising framework for fast and physically grounded data-assisted simulation of nonlinear PDEs.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Boxi Song",
+   "Rennie Mirollo",
+   "Jan R. Engelbrecht"
+  ],
+  "url": "https://arxiv.org/abs/2610.08693",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Full-order discretizations of nonlinear PDE initial value problems are costly, and purely data-driven black-box surrogates need not satisfy the governing equations at inference. The paper trains a neural operator to map the initial condition to a time-dependent reduced trial subspace and then evolves low-dimensional reduced coordinates by projecting the governing dynamics onto that learned moving subspace, tested on viscous Burgers and Fisher--KPP equations.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08718",
+  "source": "arXiv",
+  "title": "When Forgetting is not Catastrophic: On the Mechanics of Spurious Forgetting",
+  "abstract": "Knowledge that a language model appears to forget during finetuning often remains stored and can be recovered, a phenomenon called spurious forgetting. Finetuning on new facts can even produce forgetting that undoes itself: recall of the old facts collapses, recovers as training continues on new facts alone, and only then erodes for good. We seek to understand when such forgetting is not catastrophic. A minimal associative memory reproduces these dynamics with three ingredients: keys with shared structure, concentrated new values, and normalization in the network. Finetuning moves all old representations along a common direction, hiding the old facts while preserving their relative geometry; normalization withdraws this shift once the new facts are learned, whereas fact-specific changes accumulate and cause the erosion. Moreover, subtracting the common shift eliminates the collapse in a Transformer trained on synthetic data, and removing a single direction from each weight update restores old facts in a pretrained language model. Forgetting thus combines a shared, reversible loss of access with a slow erosion of individual facts, and only the second is catastrophic. Which one dominates depends on whether the new data move old memories together or apart.",
+  "categories": [
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Vedant Palit",
+   "Florent Draye",
+   "Nicolas Zucchet",
+   "Zhijing Jin",
+   "Bernhard Sch\\\"olkopf"
+  ],
+  "url": "https://arxiv.org/abs/2610.08718",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Finetuning can make a language model appear to forget facts that remain recoverable (spurious forgetting), and it is unclear when such forgetting is reversible rather than catastrophic. The paper builds a minimal associative-memory model showing that shared key structure, concentrated new values, and normalization shift old representations along a common direction, and confirms the mechanism by subtracting that direction in a pretrained Transformer.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08720",
+  "source": "arXiv",
+  "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+  "abstract": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time. Building such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored. To this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete. Specifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics. Experiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively. WorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Siru Jiang",
+   "Yongzhe Lyu",
+   "Shuo Lu",
+   "Yubin Wang",
+   "Yuxiang Zhang",
+   "Yue Liao",
+   "Bin Wang",
+   "Jian Liang",
+   "Tieniu Tan"
+  ],
+  "url": "https://arxiv.org/abs/2610.08720",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Writing physical simulators requires model identification, mathematical formulation, and executable implementation, and it is underexplored how well LLM agents can generate such solvers. The paper introduces WorldSolver, a 168-task benchmark spanning 7 physical domains where agents complete solver code and are scored on execution, visual fidelity, and physical plausibility.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08750",
+  "source": "arXiv",
+  "title": "Neural Petri flows for chemical reactions",
+  "abstract": "Petri nets have been used to describe chemical processes such as reactions.They map well to chemistry: Places are the bonds between atoms and the free valence of each atom, a token is a unit of bond order, a transition forms or breaks a bond, the conserved quantities are the valence budgets of the atoms, and the enabling rule is the valence rule. These semantics are not guaranteed by learned models of reactions or neural networks that are built on Petri nets that use the net as a scaffold for message passing. Here, we ask what architecture remains a Petri net for every value of its weights. We find the answer in the theory, where all semantics of a net share the firing form $m^\\prime=m+C\\sigma$, locality, as enabling reads only the inputs of a transition, and the enabling rule, and we prove that conservation forces the firing form and that non-negativity forces the enabling rule on local rate laws. This leaves free the rate law, which is the propensity of each transition to fire. We introduce Neural Petri Flow, which learns this rate law, or a readout for classification, and hard-wires the rest as parameter-free layers. On what we denote a valence net, atom mapping, reaction classification, and forward prediction become three tasks on one firing vector. Without training, the minimum firing vector maps 88.8% of the curated Golden set against 85.6% for RXNMapper, and 88.7 against 77.9% of the enzymatic reactions of EnzymeMap. On USPTO-480K, NPF trained on these firing vectors predicts 87.7% of the products and 67.4% when trained on a 1% subset of the training reactions. EC numbers of ECREACT are predicted at the third level for 90.2% of reactions, 5.6 points ahead of the best published method. With electrons as tokens, the same token game predicts 90.5% of the elementary steps of FlowER first, ahead of the published baseline, and every top-1 prediction is a valid molecule without a filter.",
+  "categories": [
+   "cs.LG",
+   "physics.chem-ph",
+   "q-bio.QM"
+  ],
+  "authors": [
+   "Jose Eduardo Escrig Molina",
+   "Daniel Probst"
+  ],
+  "url": "https://arxiv.org/abs/2610.08750",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Learned reaction models built on Petri nets usually treat the net only as a message-passing scaffold, so it is unclear which architectures remain true Petri nets for every weight setting. The paper proves that conservation forces the firing form m'=m+Cσ and non-negativity forces the enabling rule on local rate laws, then introduces Neural Petri Flow, which learns only the rate law (or a classification readout) while hard-wiring the rest of the semantics as parameter-free layers.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08755",
+  "source": "arXiv",
+  "title": "Metastability and Sharp Propagation-of-Chaos Thresholds for Mean-Field Interacting Diffusions on the Circle",
+  "abstract": "We study metastability and long-time propagation-of-chaos for mean-field interacting diffusions on the circle with multiple local free-energy minima. Working modulo rotations, we identify sharp exponential time scales for metastability and the validity and breakdown of the McKean-Vlasov approximation. Assuming finitely many critical rotation orbits and distinct local-minimum energies, we show that, for initial data in the attraction basin of a nonglobal minimum, metastability and propagation-of-chaos hold uniformly over deterministic times up to $e^{N(D-\\varepsilon)}$ and fail at every deterministic sequence growing faster than $e^{N(D+\\varepsilon)}$. Here $N$ is the particle number and $D$ the depth of the maximal Freidlin-Wentzell energy cycle having that minimum as its bottom. The same threshold governs running averages of the squared approximation error in a stronger pathwise sense, with corresponding metastability and propagation-of-chaos bounds for suitably aligned time-averaged empirical measures. When the global-minimum orbit is unique, we establish uniform-in-time propagation-of-chaos in its attraction basin without assuming finitely many critical orbits. The proofs develop Freidlin-Wentzell cycle analysis for the empirical measure process on the rotation quotient. The key steps extend Dawson and G\\\"artner's fixed-horizon large deviation estimates to excursions of unbounded duration between metastable wells, yielding sharp cycle-exit estimates and localization at deterministic times. We give a checkable Fourier criterion for finiteness of the critical orbits and explicit examples with multiple wells, and discuss applications to the noisy Kuramoto model and conditional consequences for noisy transformer interactions. We also investigate how phase transitions in the free-energy landscape, as noise strength varies, affect metastability and propagation-of-chaos.",
+  "categories": [
+   "math.PR"
+  ],
+  "authors": [
+   "Sayan Banerjee"
+  ],
+  "url": "https://arxiv.org/abs/2610.08755",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Mean-field interacting diffusions on the circle with multiple free-energy minima lack sharp time scales for metastability and for the validity of the McKean--Vlasov approximation. Working modulo rotations, the paper uses Freidlin--Wentzell cycle analysis of the empirical-measure process to prove metastability and propagation-of-chaos thresholds at times e^{N(D±ε)}, with applications to the noisy Kuramoto model and conditional consequences for noisy transformer interactions.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08764",
+  "source": "arXiv",
+  "title": "Rapid Fredholm stabilization of the Kuramoto--Sivashinsky equation with unrestricted, spatially-varying anti-diffusion",
+  "abstract": "We develop the first feedback design for rapid stabilization of the Kuramoto--Sivashinsky equation with a spatially varying anti-diffusion coefficient. For constant coefficients, the single-input Fredholm design of Coron and L\\\"u (2015) excludes a discrete set of values at which repeated unstable eigenvalues cause a loss of controllability. We overcome this obstruction by introducing a second boundary input and assigning the two inputs distinct roles. The key idea, inspired by Heymann's Lemma, is to use the boundary value $u(0,t)$ entirely for a pre-feedback that renders the modified plant controllable through the curvature input $u_{xx}(0,t)$. The latter input then stabilizes the plant through a Fredholm backstepping transformation. We show that two inputs suffice for controllability and are necessary when the plant has an unstable double eigenvalue. However, the Fredholm kernel still must be approximated for implementation. Hence, to enable kernel and gain approximation, we prove continuity of the coefficient-to-gain design map on compact admissible design classes. Unlike Volterra-based continuity proofs using successive approximations, our proof uses the modal representation to control the spectral data, the inverse coefficient system, and the tails of the kernel and gain series. This yields a single neural operator approximation of the gain to any prescribed $L^2$ accuracy across the class. Finally, we establish rapid local stabilization of the nonlinear closed-loop system under both the exact gains and sufficiently accurate approximations. We conclude with numerical results that illustrate prescribed decay rates and the computational cost of the approximations. In particular, we train a Fourier neural operator that achieves typical relative gain errors of approximately $0.1\\%$ and stabilizes all held-out cases tested, including a plant with an unstable double eigenvalue.",
+  "categories": [
+   "eess.SY",
+   "cs.LG",
+   "cs.SY",
+   "math.AP",
+   "math.OC"
+  ],
+  "authors": [
+   "Luke Bhan",
+   "Miroslav Krstic",
+   "Yuanyuan Shi"
+  ],
+  "url": "https://arxiv.org/abs/2610.08764",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Rapid stabilization of the Kuramoto--Sivashinsky equation with spatially varying anti-diffusion was blocked by repeated unstable eigenvalues in the single-input Fredholm design. The paper adds a second boundary input, uses u(0,t) as a pre-feedback making the curvature input render the plant controllable, proves continuity of the coefficient-to-gain map, and trains a Fourier neural operator approximating the gain to roughly 0.1% relative error.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08785",
+  "source": "arXiv",
+  "title": "Conformal Prediction Sets Quantify Information Gain: A Theoretical Perspective",
+  "abstract": "Conformal prediction is a popular tool for uncertainty quantification that outputs prediction sets with finite-sample coverage guarantees. While prediction set size is commonly used as a heuristic measure of uncertainty, the information-theoretic basis for this interpretation remains poorly understood. In this work, we provide such a foundation using a decision-theoretic generalization of entropy tailored to set-valued prediction. In particular, we introduce a family of generalized information measures based on the size and coverage of conformal prediction sets. Notably, Shannon mutual information admits an exact integral representation in terms of these measures. We then show that, in standard classification settings, the reduction in conformal set size from additional information (i) is sandwiched between calibration-dependent members of this family and (ii) obeys a data processing inequality, both up to finite-sample calibration and model error terms. Together, our results formally relate conformal prediction to classical information-theoretic quantities and justify using set-size reduction as an information gain metric. Empirically, we validate our theory across 11 classification settings and show that set-size reduction and Shannon mutual information can rank features differently in a greedy feature selection experiment.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Kevin Zhang",
+   "Stephen Bates"
+  ],
+  "url": "https://arxiv.org/abs/2610.08785",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Prediction-set size is widely used as a heuristic measure of uncertainty in conformal prediction, but its information-theoretic basis is poorly understood. The paper introduces a decision-theoretic family of generalized information measures built on set size and coverage, shows Shannon mutual information admits an exact integral representation in these terms, and proves set-size reduction from added information obeys a data processing inequality.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2606.31429",
+  "source": "arXiv",
+  "title": "The Geometry of Statistical Feature Learning in Mean-Field Langevin Dynamics",
+  "abstract": "We introduce a geometric formulation of statistical feature learning for supervised regression. Feature learning is defined through a base--fiber decomposition: the base is the feature-side geometry produced by training, and the fiber is the learned feature space where estimation is performed. We prove this property for spherical mean-field Langevin dynamics, viewed as the Wasserstein gradient flow of a negative entropy-regularized empirical risk. In Gaussian multi-index models, the low-temperature stationary distribution concentrates near the hidden indices, forms a multi-spike structure, and yields parameter recovery with high probability, even though negative entropy regularization penalizes concentration. This concentration has a sharp transition at temperature $\\lambda\\asymp 1$. In Gaussian single-index models, the stationary measure satisfies a concentration property, with parity determining whether it lives on $S_2^{d-1}$ or $\\mathbb{RP}^{d-1}$. The induced learned feature space aligns the regression signal and yields rates $d/N$ and $Md/N$, up to logarithmic factors.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Zong Shang",
+   "Tomoya Wakayama",
+   "Guillaume Lecu\\'e",
+   "Taiji Suzuki"
+  ],
+  "url": "https://arxiv.org/abs/2606.31429",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "How statistical feature learning arises geometrically in mean-field training dynamics is not well formalized. The paper defines feature learning through a base--fiber decomposition and proves it for spherical mean-field Langevin dynamics as a Wasserstein gradient flow, showing low-temperature concentration near hidden indices in Gaussian multi-index models and learned-feature rates of order d/N and Md/N.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.06985",
+  "source": "arXiv",
+  "title": "CrystalJev: thinking fast and slow with atomistic foundation models for materials discovery",
+  "abstract": "Atomistic foundation models triage millions of hypothetical materials but are used as slow simulators, their thresholded energies taken at face value. They are better read as fast decision-makers. CrystalJev queries a frozen interatomic potential once per unrelaxed structure and answers typed questions with calibrated probabilities, finite-sample guarantees and a rule for when to think slowly. Across 65 Matbench Discovery models, a 'stable' call is a probability in disguise, explained by a model's errors and the candidate population. Once trained, one forward pass decides nearly as well as a relaxation at a thirtieth of its cost, and a value-of-information theory sends slower computation only where decisions can change. The same layer answers electronic, mechanical and molecular questions. In a registered prospective test with 700 new density-functional calculations, single-pass forecasts calibrated only on existing data over-stated the stable fraction of unseen candidates (5.8%) by at most 2.1 percentage points.",
+  "categories": [
+   "cond-mat.mtrl-sci",
+   "cs.AI",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Peng Kang",
+   "Zhen Li",
+   "Yu Liu",
+   "Lei Zheng",
+   "Huibin Xu"
+  ],
+  "url": "https://arxiv.org/abs/2610.06985",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Atomistic foundation models are used as slow simulators whose thresholded energies are taken at face value, rather than as fast decision-makers with quantified uncertainty. The paper introduces CrystalJev, which queries a frozen interatomic potential once per unrelaxed structure to output calibrated per-question probabilities with finite-sample guarantees plus a value-of-information rule for when to relax, validated in a registered prospective test with 700 new DFT calculations.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.07712",
+  "source": "arXiv",
+  "title": "Mathematical Invariant-Enabled Topological Neural Networks for Molecular and Materials Property Prediction",
+  "abstract": "Existing molecular and materials learning approaches often rely on a limited set of structural representations, which may capture only selected aspects of complex three-dimensional structure. Here, we introduce mathematical invariant-enabled topological neural networks (MITNNs), a framework that represents complex structures through multiple complementary mathematical views and integrates them with topological neural architectures. MITNNs combine multiscale invariants from topology, spectral theory, commutative algebra, differential geometry, and discrete curvature, capturing complementary structural information from the same system. Systematic invariant-subset, architecture-subset, and ensemble analyses show that predictive performance depends on how mathematical representations and neural architectures are paired, with selected combinations outperforming individual models and the aggregation of all available components. Across protein-ligand binding, metal-organic framework properties, mutation-induced protein solubility, and molecular toxicity prediction, MITNN consistently outperforms existing methods. These results establish MITNN as a mathematically multimodal framework for scientific machine learning.",
+  "categories": [
+   "q-bio.BM",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yiming Ren",
+   "Xiang Liu",
+   "Mustafa Hajij",
+   "Pietro Li\\`o",
+   "Guo-Wei Wei"
+  ],
+  "url": "https://arxiv.org/abs/2610.07712",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Molecular and materials property prediction typically relies on a narrow set of structural representations that capture only selected aspects of complex 3D structure. MITNN represents each system through multiple complementary mathematical views — multiscale topological, spectral, commutative-algebra, differential-geometric, and discrete-curvature invariants — and integrates them with topological neural architectures, showing that predictive performance depends on how invariants and architectures are paired.",
+  "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.08612",
+  "source": "arXiv",
+  "title": "Classifications in modular restricted Boltzmann machines",
+  "abstract": "We consider a modular associative neural network made of $L$ Hopfield models (HMs), coupled so that intra-module interactions are Hebbian and inter-module interactions are anti-Hebbian; this competitive coupling is known to endow the network with pattern-disentanglement capabilities. The integral representation of this system coincides with an assembly of $L$ restricted Boltzmann machines (RBMs) whose hidden layers are coupled, thereby extending the HM-RBM duality to the modular setting. We then train this modular RBM, via one-step contrastive divergence, to perform a classification task in which a query encoded on the visible layers is mapped onto an $L$-tuple of labels read off the hidden layers. When the query is composed of $L$ patterns that are mutually orthogonal on average, we prove that the RBM weights obtained as empirical means over the training dataset, as suggested by the HM-RBM equivalence, constitute a fixed point of the learning dynamics, and we derive an explicit, non-asymptotic bound on the residual drift. We then turn to a harder classification task in which each module is queried with a mixture of $L$ patterns and we show numerically that the same setting for the RBM weights still provides an effective set-up, letting the network jointly classify and disentangle the mixture.",
+  "categories": [
+   "cond-mat.dis-nn",
+   "stat.ML"
+  ],
+  "authors": [
+   "Elena Agliari",
+   "Andrea Lepre",
+   "Edoardo Roscani"
+  ],
+  "url": "https://arxiv.org/abs/2610.08612",
+  "published": "2026-10-07",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper studies a modular associative network of L coupled Hopfield models — whose integral representation is an assembly of L coupled restricted Boltzmann machines — trained by one-step contrastive divergence to map a visible-layer query onto an L-tuple of hidden-layer labels and to disentangle pattern mixtures. It proves that the weights given by empirical dataset means form a fixed point of the learning dynamics, deriving an explicit non-asymptotic bound on the residual drift, and shows numerically that this same weight setting jointly classifies and disentangles mixtures of L patterns.",
+  "added": "2026-10-07"
  }
 ]
