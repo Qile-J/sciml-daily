@@ -65409,5 +65409,521 @@
   ],
   "summary": "The paper studies a modular associative network of L coupled Hopfield models — whose integral representation is an assembly of L coupled restricted Boltzmann machines — trained by one-step contrastive divergence to map a visible-layer query onto an L-tuple of hidden-layer labels and to disentangle pattern mixtures. It proves that the weights given by empirical dataset means form a fixed point of the learning dynamics, deriving an explicit non-asymptotic bound on the residual drift, and shows numerically that this same weight setting jointly classifies and disentangles mixtures of L patterns.",
   "added": "2026-10-07"
+ },
+ {
+  "id": "arxiv:2610.09505",
+  "source": "arXiv",
+  "title": "Adjoint-Based Calibration and Optimal Control of Stochastic Multiscale Bioprocess Digital Twins",
+  "abstract": "We develop a bias-aware digital-twin calibration and control framework for multiscale bioprocess models within a biological systems-of-systems (Bio-SoS) paradigm. The digital twin is represented by a stochastic differential equation (SDE) model and calibrated from sparse, discrete observations using quasi-likelihood estimation and adjoint sensitivity analysis. SDE generator-based moment expansions characterize truncation-induced parameter bias, while forward-backward adjoints quantify how calibration uncertainty propagates to value functions and policy performance. The resulting parameter-error distribution supports both policy-directed adaptive experimental design and uncertainty-aware policy optimization through a second-order Gaussian-averaged objective. We characterize the asymptotic behavior of the resulting exploration criterion and derive a physical-system performance under the optimized policy. To implement these ideas, we develop an Actor-Simulator algorithm that jointly updates model parameters, selects informative experiments, and optimizes control policies. Numerical studies demonstrate improved calibration accuracy, sample efficiency, and control performance relative to state-of-the-art baselines.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Keilung Choy",
+   "Wei Xie"
+  ],
+  "url": "https://arxiv.org/abs/2610.09505",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Calibrating and controlling stochastic multiscale bioprocess digital twins from sparse observations is hard because model bias and calibration uncertainty propagate into policy performance. The paper builds an SDE digital twin calibrated via quasi-likelihood estimation and adjoint sensitivity analysis, using forward-backward adjoints, moment expansions, and a second-order Gaussian-averaged objective within an Actor-Simulator algorithm that jointly updates parameters, selects experiments, and optimizes control policies.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09510",
+  "source": "arXiv",
+  "title": "Physics-Informed Neural Plasticity: PDE Solvers That Reshape Themselves",
+  "abstract": "Physics-informed neural PDE solvers adapt their parameters to satisfy governing equations, yet their representational structure typically remains fixed throughout training. This rigidity is poorly matched to PDE solutions with strongly heterogeneous complexity across space and space--time, leaving capacity insufficient where the physics is difficult and redundant where it is simple. We introduce physics-informed neural plasticity, a paradigm in which the representation itself reshapes during optimization in response to unresolved physics. We instantiate this principle with Representation Capacity Adaptation for PDEs (ReCAP), a Gaussian-localized solver that dynamically redistributes capacity through local enrichment, residual-directed splitting, gate-based pruning, and function-aware merging. ReCAP uses responsibility-weighted error indicators and the geometry of residual energy to determine where and how to refine. To limit the disturbance introduced by splitting, we introduce quiet-child refinement, which initializes new components by transporting the parent representation while controlling instantaneous functional perturbation. We further establish conditional a posteriori reliability and structural-stability guarantees linking localized physics residuals to solution error and stable refinement. Across five challenging 3D and 4D PDE benchmarks against 11 physics-informed solvers, ReCAP achieves the lowest relative $L^2$ error on every problem, reducing error by $10.7\\%$--$27.5\\%$ relative to the strongest competing result. These results suggest that physics-informed solvers need not merely learn their parameters---they can learn how their representational capacity should be organized.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Chun-Wun Cheng",
+   "Bingcheng Hu",
+   "Angelica I. Aviles-Rivero"
+  ],
+  "url": "https://arxiv.org/abs/2610.09510",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Physics-informed neural PDE solvers keep a fixed representational structure even when solution complexity is strongly heterogeneous across space and time, wasting capacity where physics is simple and starving it where it is hard. The paper introduces physics-informed neural plasticity and the ReCAP solver, which reshapes its own Gaussian-localized capacity through residual-directed splitting, quiet-child refinement, gate-based pruning, and function-aware merging, with conditional a posteriori reliability and structural-stability guarantees.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09591",
+  "source": "arXiv",
+  "title": "Scalable Logistic Gaussian Process Density Regression with Kinetic Langevin Sampling",
+  "abstract": "Conditional density estimation targets the full distribution of a response given covariates, as required, for example, for per-galaxy photometric redshifts. We develop a scalable Bayesian estimator based on the logistic Gaussian process. The log conditional density has a separable covariance: a Mat\\'ern kernel along the response, represented in a truncated Fourier basis on a circle, and a covariate kernel represented by Nystr\\\"om features, which accommodate non-stationary kernels with input-dependent amplitudes and length scales. Instead of a Laplace or variational approximation, we sample the latent field of this finite-feature model. Given the hyperparameters, its posterior is strongly log-concave with a uniformly bounded Hessian, and we draw from it by simulating kinetic Langevin dynamics with symmetric minibatch splitting in Kronecker-whitened coordinates. Marginal-likelihood gradients follow from Fisher's identity as posterior expectations. Under the conditions of our analysis their bias is controlled by the sampler's step size and run length, and the predictive averages over the non-Gaussian latent posterior instead of a Gaussian around its mode. On photometric-redshift benchmarks with up to 3.9 million training observations, trained on a single GPU, the estimator is competitive with state-of-the-art tabular foundation models on density and calibration metrics.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Daniel Paulin",
+   "\\'Ad\\'am Jung",
+   "Andr\\'as A. Bencz\\'ur"
+  ],
+  "url": "https://arxiv.org/abs/2610.09591",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Estimating full conditional densities (e.g., per-galaxy photometric redshifts) at millions of observations requires scalable Bayesian inference rather than a Gaussian or variational shortcut. The paper develops a logistic Gaussian process density-regression estimator with a separable Matérn-Fourier response kernel and Nyström covariate features, sampling the strongly log-concave latent field by kinetic Langevin dynamics with symmetric minibatch splitting and bounding the bias of Fisher-identity marginal-likelihood gradients by step size and run length.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09604",
+  "source": "arXiv",
+  "title": "Lightweight and Versatile Learned Optimization by Recombination of Gradient History",
+  "abstract": "This paper presents a lightweight and versatile learned optimizer that dynamically recombines gradient history, represented as averages over disjoint time spans. The optimizer reduces the prediction space to one scalar coefficient per gradient average, shared by multiple parameters. Progressively averaging older gradients minimizes memory cost of long history, while keeping their contributions independently accessible. A 37k-parameter network trained in 0.87 GPU-hours generalizes zero-shot to unseen tasks, lowering validation loss by 9.1% and 0.4% on BERT-Tiny and GPT-Tiny, and improving test accuracy over Adam by 3.5 %p on a Vision Transformer and by 2.7 %p on average across nine graph models, with FLOPs overhead as low as 0.3%.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Minyoung Choi",
+   "Dalta Imam Maulana",
+   "Wanyeong Jung"
+  ],
+  "url": "https://arxiv.org/abs/2610.09604",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Learned optimizers typically generalize poorly or need large models and long gradient histories to transfer across tasks. The paper proposes a lightweight learned optimizer that recombines gradient history as averages over disjoint time spans, using one shared scalar coefficient per average to cut memory, and generalizes zero-shot to unseen language, vision, and graph tasks after under an hour of training.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09620",
+  "source": "arXiv",
+  "title": "The Identifiability and Observability of Deep Normalized Attention",
+  "abstract": "We study which parameters of deep, unmasked, single-head attention are determined by its input--output function. For known positive nonconstant real-analytic normalizers, the function generically determines the effective scores and combined value map up to the signs induced by even normalizers. This proves the real-analytic case of a conjecture of Henry--Marchetti--Kohn, including softmax. We then classify exceptional fibers under explicit normalizer conditions, identifying when collapse makes later scores unobservable, and establish sharp Taylor orders for local identification. Near simultaneous query/key collapse, we compute the complete native Jacobian decay spectrum on separating finite input banks. For common first nonconstant normalizer degree $k$, layer $i$ has contact order $2k3^{i-1}-1$, with exact multiplicities and kernel dimension. High-precision and automatic differentiation calculations illustrate the resulting loss of numerical sensitivity.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Pranav Venkata Konda"
+  ],
+  "url": "https://arxiv.org/abs/2610.09620",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unresolved which parameters of deep normalized attention are actually determined by its input-output function. The paper proves the real-analytic case of the Henry-Marchetti-Kohn identifiability conjecture (including softmax), classifies exceptional fibers where collapse makes later scores unobservable, and derives sharp Taylor contact orders and the native Jacobian decay spectrum near query/key collapse.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09681",
+  "source": "arXiv",
+  "title": "Cost-Efficient Theorem Proving via Agent Orchestration in Program Verification",
+  "abstract": "Program verification establishes software correctness through machine-checkable proofs constructed in theorem provers. It's a guarantee especially valuable for code generated by large language models (LLMs), which is fluent but carries no assurance of correctness. Almost all existing provers, however, pursue pass rates alone at whatever sampling or search budget it takes, and overlook the success-vs-cost frontier; yet real software often carries hundreds of interdependent proof obligations, so what matters at scale is not whether one theorem can be proved, but how many can be proved economically. We introduce CoCo-Prover, which formalizes cost-efficient program proving as metalevel decision-making under cost, grounded on two-level proof graphs: an AND/OR proof hypergraph within each declaration is joined to a lemma-dependency graph across declarations; and at each step, it answers two questions: which open goals to select, and which actions to purchase on these goals. Selection stays symbolic as a topological pass over the proof graphs. Action choice is agent orchestration via metalevel decision-making: an agentic router treats every bounded specialist invocation as a separately priced, best-effort computation, matching heterogeneous specialist agents together with configurations, under evolved routing rules as evidence accumulates. On five program verification benchmarks in Lean 4 including function-level CLEVER, VERINA, and AlgoVeri, and repository-level NTP4VC and Vero, we show that CoCo-Prover achieves a better success-vs-cost frontier than baselines including frontier coding agents and state-of-the-art LLM-based provers: it achieves the best solve rate on every benchmark and up to 100% on two benchmarks. It also reduces cost by up to 30.9% compared to the strongest baseline with the strongest LLM in our evaluation.",
+  "categories": [
+   "cs.AI",
+   "cs.LO",
+   "cs.PL",
+   "cs.SE"
+  ],
+  "authors": [
+   "Shuangjie Yao",
+   "Nikolaus Holzer",
+   "Mark Paul Santolucito",
+   "Baishakhi Ray",
+   "Suman Jana",
+   "Dongdong She"
+  ],
+  "url": "https://arxiv.org/abs/2610.09681",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Program verification needs machine-checkable proofs that are cheap as well as correct, yet existing provers pursue pass rates alone and ignore the success-versus-cost frontier at repository scale. The paper introduces CoCo-Prover, which casts cost-efficient proving as metalevel decision-making over two-level AND/OR proof hypergraphs joined to a cross-declaration lemma-dependency graph, orchestrating priced specialist agents with evolved routing rules to beat baselines on solve rate and cost reduction.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.08880",
+  "source": "arXiv",
+  "title": "Physics-based Sphere Packing for Lagrangian Mesh Morphing",
+  "abstract": "This paper studies tetrahedral meshes as the body representation for differentiable simulation and computational design. Fixed-connectivity meshes degrade under large morphs, while remeshing from scratch discards node correspondence. We present JamTet, a physics-based sphere-packing framework for volumetric meshing and morphing. We contribute (i) a GPU-parallel mesher combining octree-hierarchical packing with constrained Delaunay tetrahedralization, producing more uniform element volumes than TetGen and fTetWild; (ii) Lagrangian mesh morphing that preserves interior-node identities by re-equilibrating the same spheres within changing shapes and rebuilding the boundary and connectivity, remaining inversion-free where fixed-connectivity and TetSphere meshes invert; and (iii) a differentiable GPU simulator in JAX, with mass-spring edges and a volumetric Neo-Hookean term, integrated with mesh morphing in a design pipeline. In soft-robot morphology design experiments, interior-node gradients improve swimming fitness by 0.73-1.07 over a matched surface-only variant, while voxelized versions of the same designs yield 32-63% lower fitness. These results establish sphere packing as a practical volumetric mesh representation for gradient-based shape optimization. Code and media: under review.",
+  "categories": [
+   "cs.GR",
+   "cs.AI"
+  ],
+  "authors": [
+   "Jiong Lin",
+   "Hod Lipson"
+  ],
+  "url": "https://arxiv.org/abs/2610.08880",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Differentiable simulation and gradient-based computational design need volumetric body representations that remain inversion-free under large morphs while preserving interior-node correspondence. The paper presents JamTet, a GPU-parallel physics-based sphere-packing mesher with Lagrangian morphing and a JAX differentiable mass-spring/Neo-Hookean simulator, showing in soft-robot morphology optimization that interior-node gradients raise swimming fitness over surface-only and voxelized variants.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.08892",
+  "source": "arXiv",
+  "title": "Hybrid++: The Bridge between PDE Models and Deep Learning for Gamma Noise Removal",
+  "abstract": "Multiplicative gamma noise is one of the dominant noise factors in Synthetic Aperture Radar (SAR) and medical ultrasound images. They are dependent on pixel level noises due to which they are highly varying across the image and harder to handle as compared to additive noise. The denoising methods to address this noise currently include classical partial differential equation (PDE) methods which are good for interpretation but lack the restoration ability as compared to the state-of-the-art models while deep convolutional networks like DnCNN achieve high performance but at the cost of transparency due to which practitioners are skeptical to use them in high-risk critical fields like medicine. This paper presents Hybrid++, a novel trainable nonlinear reaction-diffusion architecture that addresses both the concerns - staying interpretable while offering performance close to huge black-box models. It combines a fully learnable PDE initialization with a 3-stage reaction-diffusion network having 64-channel multiscale filter banks, 4-layer Squeeze-and-Excitation attention-based influence functions and a 64-dimensional noise level embedding. It uses a two-phase training strategy, stage-wise optimization followed by joint end-to-end refinement which enables co-adaptation of all learnable parameters. On the FoE benchmark, Hybrid++ substantially improves over classical PDE, BM3D and the original TNRD baselines. In the severe-noise setting L=1, it comes within 0.23 dB PSNR of a separately trained DnCNN while using only about 8% of its parameters. We therefore position Hybrid++ not as a universal state-of-the-art image restoration backbone, but as a compact, physically structured reaction-diffusion model for multiplicative gamma noise.",
+  "categories": [
+   "eess.IV",
+   "cs.AI"
+  ],
+  "authors": [
+   "Mahipal Jetta",
+   "Sujato Dutta"
+  ],
+  "url": "https://arxiv.org/abs/2610.08892",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Denoising multiplicative gamma noise in SAR and ultrasound images forces a choice between interpretable but weak classical PDE models and high-performing but opaque deep networks. Hybrid++ is a trainable nonlinear reaction-diffusion architecture with a fully learnable PDE initialization, 64-channel multiscale filter banks, Squeeze-and-Excitation influence functions, and a noise-level embedding, trained stage-wise then jointly end-to-end.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09261",
+  "source": "arXiv",
+  "title": "A Sensitivity-based Framework for Calibrating Coupled Ordinary Differential Equations under Model Discrepancy",
+  "abstract": "Coupled systems of ordinary differential equations (ODEs) are widely used to model complex physical and biological processes. In these applications, ODE model parameters must be calibrated to field data to enable prediction and parameter inference. In practice, the governing ODEs are an imperfect approximation to the true system, leading to non-negligible model discrepancy that must be incorporated to avoid biased parameter estimates. However, it is well known that highly flexible discrepancy models can confound discrepancy and simulator parameters, leading to poor identifiability. As a result, practitioners often must impose problem-specific prior constraints to adequately regularize the discrepancy, which can be challenging and cumbersome. In this work, we propose a novel calibration framework for coupled, multi-output ODE systems that enforces automatic, model-structural constraints on the discrepancy, improving identifiability without requiring application-specific discrepancy priors. Forward-model gradients are computed via sensitivity equations, solved jointly with the ODE system as a coupled initial value problem. Posterior inference is performed using an adaptive Metropolis-within-Gibbs sampler tailored to the resulting constrained posterior. We demonstrate the approach on three model systems: a mass-spring oscillator, a model of infectious disease spread, and a neuron firing model. We show that our method leads to improved parameter inference and predictive accuracy compared to standard calibration approaches.",
+  "categories": [
+   "stat.AP",
+   "math.OC"
+  ],
+  "authors": [
+   "Mitchel J. Colebank",
+   "William Consagra"
+  ],
+  "url": "https://arxiv.org/abs/2610.09261",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Calibrating coupled multi-output ODE systems to field data is biased when model discrepancy is ignored, yet flexible discrepancy models confound with simulator parameters and hurt identifiability. The paper enforces automatic model-structural constraints on the discrepancy using forward-model gradients from sensitivity equations solved jointly with the ODEs as a coupled initial value problem, with posterior inference via an adaptive Metropolis-within-Gibbs sampler.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09323",
+  "source": "arXiv",
+  "title": "Constrained Diffusion for Data-Scarce Orbital Monte Carlo in Constellation Tasking",
+  "abstract": "Constellation Monte Carlo results depend on the orbital population used to evaluate a tasking policy. With scarce reference trajectories, replay limits geometric diversity, while independent orbital-element jitter can violate physical constraints. We study constrained diffusion for orbital-population augmentation. A force-conditioned diffusion model learns a 13-dimensional orbital prior, recovering semimajor axis from perigee altitude and eccentricity; Basilisk propagates each sample under one of five force-model tiers. Using 800 reference trajectories, we compare diffusion with jittered bootstrap, per-tier Gaussian mixtures, and a conditional variational autoencoder, and evaluate distributional fidelity, support shift, classical astrodynamics diagnostics, and 4,000 paired GoDSAT-compatible campaigns. The largest diffusion model achieves held-out trajectory MMD of 0.0171 +/- 0.0239, similar to bootstrap (0.0170) and the mixture (0.0198), but samples farther from training priors (median nearest-training distance 2.7 versus 0.10 standardized units). All generators fail to match the shifted-blind population (classifier AUC 0.991-0.998). Endpoint-conditioned samples satisfy Lambert boundaries but have greater interior error than the matched Lambert reference (29.2 versus 5.7 km mean RMSE). Residual diffusion improves selected sparse forecasts and catalog-mode recall but does not outperform classical estimators on custody ranking. In a fixed 16-satellite configuration, diffusion yields similar mean custody to replay and bootstrap, while the force-tier mixture shifts custody by about 5.5 percentage points. Constrained diffusion supports local, in-support augmentation but cannot replace orbital dynamics or serve as an operational posterior. Orbital-population construction is a consequential source of uncertainty in constellation analysis.",
+  "categories": [
+   "astro-ph.IM",
+   "astro-ph.EP",
+   "cs.AI"
+  ],
+  "authors": [
+   "Omar Ramadan",
+   "Sam Siavoshian",
+   "Amir Kashif Saeed",
+   "Benjamin A. Johnson",
+   "Amin M. E. -A. Diab",
+   "Benjamin M. Rodriguez"
+  ],
+  "url": "https://arxiv.org/abs/2610.09323",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Constellation tasking evaluations depend on orbital populations that are geometrically diverse yet physically valid when reference trajectories are scarce, and jittered bootstrap or Gaussian-mixture samplers violate physical constraints or stay too close to training data. The paper learns a force-conditioned diffusion prior over 13-dimensional orbital elements, propagates samples through Basilisk force-model tiers, and benchmarks fidelity and campaign metrics against bootstrap, per-tier mixtures, and a CVAE.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09334",
+  "source": "arXiv",
+  "title": "VM-ARRAYDPS: Virtual Microphone Augmented Diffusion Posterior Sampling for Unsupervised Blind Speech Separation",
+  "abstract": "Blind Source Separation(BSS) is a fundamental problem in signal processing, aiming to separate multiple source signals from their mixtures without prior knowledge of the sources or the mixing process. Traditional approaches, such as Independent Vector Analysis (IVA) exploits statistical independence of sources. Recently, diffusion-based approaches have emerged as a promising alternative by leveraging powerful generative priors. Among them, ArrayDPS formulates BSS problem as a posterior sampling problem, and utilizes a pretrained speech diffusion model to guide the recovery of clean source signals. A key factor behind its separation capability is the multi-channel consistency (MC) objective, which enforces the estimated source signals to reconstruct the observed microphone mixtures through the estimated acoustic transfer functions. However, the number of microphones in the array is often limited, which constrains the performance of ArrayDPS. To address this issue, we propose VM-ArrayDPS, a novel method that augments the microphone array with virtual microphones with higher-SNR, these microphones can offer extra MC constraints to enhance the separation performance. Experimental results demonstrate that VM-ArrayDPS significantly outperforms ArrayDPS on both 2-speaker and 3-speaker datasets, showcasing the effectiveness of virtual microphone augmentation in improving BSS performance. We also did ablation studies to show the influence of the number of virtual microphones and weight of the MC objective brought by virtual microphones.",
+  "categories": [
+   "eess.AS",
+   "cs.LG",
+   "cs.MM",
+   "cs.SD",
+   "eess.SP"
+  ],
+  "authors": [
+   "Jingqi Sun",
+   "Haozhan Tang",
+   "Shulin He",
+   "Zhong-Qiu Wang"
+  ],
+  "url": "https://arxiv.org/abs/2610.09334",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Diffusion-posterior-sampling blind source separation (ArrayDPS) is limited by the small number of physical microphones available for the multi-channel consistency objective. VM-ArrayDPS augments the array with higher-SNR virtual microphones that supply additional multi-channel consistency constraints to the posterior-sampling objective.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09452",
+  "source": "arXiv",
+  "title": "Finite-Rank Logistic Gaussian Processes with Exact Likelihood for Conditional Density Estimation",
+  "abstract": "Conditional density estimation describes how the entire distribution of a response changes with covariates, and in imaging studies also with location. Logistic Gaussian processes (LGP) give a flexible prior for such densities. However, the normalizing constant of an LGP has no closed form, so existing methods approximate or replace the likelihood. We propose the exact likelihood finite-rank LGP (ExFR-LGP), which writes the log density as the sum of two bivariate functions, one of the response and a location-varying linear index of the covariates, and one of the response and the location. Each function is assigned a finite-rank Gaussian process prior that is piecewise linear on a regular grid, enabling the normalizing constant, the conditional mean and the quantiles to enjoy closed form representations. Posterior samples are drawn from the exact posterior under this prior via a Gibbs sampler that updates the Gaussian components by elliptical slice sampling. When the true log density is the sum of two such bivariate functions, we show that the posterior contracts at the minimax rate of an $\\alpha$-smooth bivariate density up to a logarithmic factor. Numerical experiments using synthetic data demonstrate the effectiveness of ExFR-LGP in conditional density estimation. Furthermore, application to fractional anisotropy responses along the corpus callosum in the Alzheimer's Disease Neuroimaging Initiative data yields covariate-adjusted percentile bands with uncertainty, elucidating how diagnosis changes the distribution along the tract.",
+  "categories": [
+   "stat.ME",
+   "math.ST",
+   "stat.AP",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Jaehoan Kim",
+   "Indrajit Ghosh",
+   "Debdeep Pati",
+   "Dipankar Bandyopadhyay"
+  ],
+  "url": "https://arxiv.org/abs/2610.09452",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Conditional density estimation with logistic Gaussian processes is hindered because the normalizing constant has no closed form, forcing approximations or likelihood replacements. ExFR-LGP represents the log density as a sum of two bivariate functions with finite-rank, piecewise-linear GP priors, yielding closed-form normalizing constants, conditional means and quantiles, a Gibbs/elliptical-slice posterior sampler, and posterior contraction at the minimax rate.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09690",
+  "source": "arXiv",
+  "title": "NAViLoss: An Underwater Navigation-Aware Dual-Residual Objective for Physics-Consistent Learning",
+  "abstract": "Autonomous underwater vehicles (AUVs) commonly rely on inertial navigation systems (INS) aided by Doppler velocity logs (DVLs) for reliable underwater navigation. Accurate DVL velocity estimation is therefore essential for successful operation. Recent learning-based methods have demonstrated improved DVL velocity estimation, particularly under degraded measurement conditions. However, their training objectives typically rely on conventional regression losses that are highly sensitive to large residuals and corrupted observations. Additionally, they do not explicitly account for the physical consistency and measurement uncertainty associated with the underlying sensing process. To address these limitations, this paper introduces navigation-aware loss (NAViLoss), a robust and uncertainty-aware objective function for learning-based AUV velocity estimation. NAViLoss jointly penalizes the velocity-estimation residual in the navigation-state domain and the beam-consistency residual in the DVL measurement domain. Its bounded formulation limits the influence of large residuals, while an adaptive mechanism regulates the uncertainty in beam geometry. Furthermore, NAViLoss is integrated with a DeepONet architecture to form a novel NAVi-DeepONet model for seamless estimation of an underwater vehicle's velocity. Lastly, our model is evaluated using approximately 10,000m of semi-synthetic AUV experimental data collected during multiple real-world sea trials. Experimental results demonstrate a 44% improvement in velocity-estimation accuracy compared with conventional and learning-based baselines. These results demonstrate the effectiveness of navigation-aware and uncertainty-adaptive loss design for robust learning-based underwater velocity estimation.",
+  "categories": [
+   "cs.RO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Arup Kumar Sahoo",
+   "Itzik Klein"
+  ],
+  "url": "https://arxiv.org/abs/2610.09690",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "operator-learning"
+  ],
+  "summary": "Learning-based DVL velocity estimation for AUVs relies on regression objectives that are sensitive to large residuals and ignore physical consistency and measurement uncertainty. The paper introduces NAViLoss, a bounded, uncertainty-adaptive loss jointly penalizing the navigation-state velocity residual and the DVL beam-consistency residual, integrated with a DeepONet to form the NAVi-DeepONet model.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09731",
+  "source": "arXiv",
+  "title": "Unbounded Characteristic and Universal Kernels",
+  "abstract": "Kernel methods are among the most powerful tools in machine learning and statistics, with a large number of successful applications. Their immense success stems from the flexible function class associated to each kernel---its reproducing kernel Hilbert space (RKHS)---which facilitates statistical analysis, as well as from their computational tractability and applicability to many domains. Multiple notions (such as characteristic, $L_p$-universal, and integrally strictly positive definite) capture the expressivity of kernels and their RKHSs and play a key role in understanding the statistical properties of kernel methods; these concepts and their relations are well-understood for bounded kernels. Even though unbounded kernels have received significant attention over the past decade (for instance, in the construction of kernel-based discrepancy and dependence measures such as the maximum mean discrepancy, the Hilbert-Schmidt independence criterion, and the kernel Stein discrepancy), surprisingly little is known about the relations of these notions in the unbounded case. In the present paper we tackle this severe bottleneck, establishing their relations under mild assumptions.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Jose Cribeiro-Ramallo",
+   "Florian Kalinke",
+   "Zolt\\'an Szab\\'o"
+  ],
+  "url": "https://arxiv.org/abs/2610.09731",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "How the expressivity notions for kernels (characteristic, L_p-universal, integrally strictly positive definite) relate to one another is well understood only for bounded kernels, leaving the unbounded case open despite its use in MMD, HSIC, and kernel Stein discrepancies. The paper establishes these relations for unbounded kernels under mild assumptions, providing the RKHS-level theory that underpins kernel-based statistical methods.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09770",
+  "source": "arXiv",
+  "title": "Artificial intelligence pathways from weather to climate",
+  "abstract": "Deep learning has made rapid advances in weather forecasting: autoregressive models trained on atmospheric reanalyses now rival dynamical models across nowcasting, medium-range, and subseasonal-to-seasonal lead times, producing well-calibrated ensemble forecasts at reduced cost. We review these advances and consider their extension to climate horizons, where the challenge shifts from initial-condition skill to producing reliable statistical responses under altered forcings. AI-powered climate prediction systems must produce credible forced responses to drivers (e.g., greenhouse gases, land-use change) typically outside the observed record. We propose two minimum requirements for AI in climate modeling: (i) external forcing agents must enter explicitly enough to support interventions in which they vary independently; and (ii) robustness must be stress-tested in out-of-distribution regimes, including extremes and counterfactual trajectories. Using leading AI autoregressive emulators and hybrid physics-AI models, we identify development and coupling challenges. Comparing the reported throughput of these models with that of GPU-ported dynamical models highlights how AI can reduce time-to-solution by advancing only the target variables at the required resolution and using longer time steps, rather than integrating a full high-frequency, multivariate state. Diverse AI downscaling strategies can partially substitute for explicit fine-scale resolution, paving the way toward inexpensive local hazard assessment across prediction horizons.",
+  "categories": [
+   "physics.ao-ph",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Tom Beucler",
+   "J. David Neelin",
+   "Hui Su",
+   "Shivanshi Asthana",
+   "Chris Bretherton",
+   "Will Chapman",
+   "Costa Christopoulos",
+   "Spencer K. Clark",
+   "Aditya Grover",
+   "Ignacio Lopez-Gomez",
+   "Tapio Schneider",
+   "Adam Subel",
+   "Oliver Watt-Meyer"
+  ],
+  "url": "https://arxiv.org/abs/2610.09770",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Extending deep-learning weather emulators to climate horizons is unclear because climate prediction requires credible forced responses under drivers outside the observed record rather than initial-condition skill. The review analyzes AI autoregressive emulators and hybrid physics-AI models and proposes two minimum requirements for AI climate modeling: explicit entry of external forcing agents and stress-testing robustness in out-of-distribution regimes.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09813",
+  "source": "arXiv",
+  "title": "Drift Estimation for a Multi-Dimensional L\\'evy-Driven Stochastic Differential Equation Using Deep Neural Networks",
+  "abstract": "We develop a non-asymptotic theory for nonparametric drift estimation in discretely observed multi-dimensional L\\'evy-driven stochastic differential equations using sparse ReLU neural networks. Under exponential \\(\\beta\\)-mixing and an exponential-tail condition on the L\\'evy measure, we establish an oracle inequality for the least-squares estimator. The jump component changes both the martingale structure and the concentration regime relative to diffusion models: continuous martingales are replaced by discontinuous martingales, while the relevant empirical-process fluctuations are sub-exponential rather than sub-Gaussian. We handle these difficulties without truncating the observed increments, using an exponential-supermartingale argument for compensated Poisson integrals and \\(\\psi_1\\)-chaining. Despite the weaker concentration, the resulting statistical bound is, up to constants, of the same order as the corresponding diffusion bound. For drift functions with hierarchical compositional structure, this yields intrinsic-dimensional convergence rates. The framework allows infinite jump activity and, in some cases, infinite variation. Finally, we establish a minimax lower bound on a fixed non-trivial compound-Poisson submodel. Together with the upper bound, this shows that the estimator is minimax optimal up to logarithmic factors.",
+  "categories": [
+   "math.ST",
+   "math.PR",
+   "stat.TH"
+  ],
+  "authors": [
+   "Taisei Noguchi",
+   "Teppei Ogihara"
+  ],
+  "url": "https://arxiv.org/abs/2610.09813",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "foundations"
+  ],
+  "summary": "Nonparametric drift estimation for discretely observed multidimensional Lévy-driven SDEs lacks non-asymptotic theory, since jumps turn continuous martingales into discontinuous ones and shift the concentration regime from sub-Gaussian to sub-exponential. The paper proves an oracle inequality and intrinsic-dimensional rates for sparse ReLU-network least-squares estimators using exponential-supermartingale arguments and ψ1-chaining without truncating increments, and establishes a matching minimax lower bound on a compound-Poisson submodel.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09898",
+  "source": "arXiv",
+  "title": "Learning joint probabilistic weather forecasts from station observations alone",
+  "abstract": "Assessing compound weather risks requires forecasts representing dependence between variables. CLARA (Calibrated Advection-Routing Attention) learns joint Gaussian predictive distributions of five surface variables from station observations alone, without numerical weather prediction or reanalysis; the approximately 28,000-parameter model supports CPU training and prediction. Across six multi-year folds on 96 stations, its lead-mean energy score is 4.9% lower than that of a learned comparator with matched temporal inputs (4.7% with a similar parameter count) and 11-65% lower than those of statistical baselines. Holding marginal variances fixed, removing learned correlations worsens joint negative log-likelihood by 1.0-2.8 nats per station. A covariance-scale estimator, proved consistent under stated assumptions, improves short-lead calibration but over-corrects at long leads. Synthetic interventions show an attention-bias coefficient alone does not measure forecast influence. Retrained in ten regions on six continents, CLARA outperforms persistence in all 60 multi-year region-lead comparisons and a similarly sized learned model in 57 of 60.",
+  "categories": [
+   "stat.AP",
+   "cs.LG",
+   "physics.ao-ph"
+  ],
+  "authors": [
+   "Chaeyeon Yi",
+   "Yun Am Seo"
+  ],
+  "url": "https://arxiv.org/abs/2610.09898",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Assessing compound weather risks requires forecasts that represent dependence between surface variables, which is hard without numerical weather prediction or reanalysis inputs. CLARA (Calibrated Advection-Routing Attention), a ~28,000-parameter learned model, produces joint Gaussian predictive distributions of five surface variables from station observations alone, with a covariance-scale estimator proved consistent under stated assumptions to improve short-lead calibration.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.09938",
+  "source": "arXiv",
+  "title": "Fast holographic inversion of superconducting domes",
+  "abstract": "A holographic superconductor whose scalar mass depends on the gauge field strength, $M(\\Fsq)$, reproduces a superconducting dome for a suitable $M$, and recovering that $M$ from a given dome has so far taken days for a single training run. We propose a new way of training this model, with which an inversion takes from about ten minutes to an hour. Training needs the gradient of the condition that fixes the critical temperature, which the earlier method obtains by finite differences, repeating the bulk integrations for every training parameter. Here that condition is obtained, without any fit, from two integrations started at the horizon and at the boundary, and its derivative with respect to $M$ is an integral over the same two solutions, so the gradient needs no integration of its own. We use the speed to study the part of $M$ that a dome cannot determine, on the interval between the value $\\Fsq$ takes at the horizon for the lowest doping and $\\Fsq=0$, at which $M$ is the scalar mass $M(0)$ that fixes the dimension of the dual operator. We hold the scalar mass at several values, which we call pinned masses, retrain everything else at each, and find that the reconstructions agree wherever the horizons of the dome reach, including the minima of $M$, and differ only on that interval. A rule that keeps the reconstruction with the simplest closed form recovers both the scalar mass and the mass function of a test dome. On Gaussian and double-Gaussian domes and on the measured phase diagrams of YBa$_{2}$Cu$_{3}$O$_{y}$ and 2M-WS$_{2}$, however, the pinned mass it keeps rests on ties or on narrow margins, so for these targets the scalar mass is left open. The dome thus constrains $M$ where its horizons reach, and fixing the dimension of the dual operator needs a second observable.",
+  "categories": [
+   "hep-th",
+   "cs.AI"
+  ],
+  "authors": [
+   "Sejin Kim"
+  ],
+  "url": "https://arxiv.org/abs/2610.09938",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Recovering the gauge-field-dependent scalar mass M from a holographic superconducting dome previously required days per training run, because the critical-temperature condition and its gradient were obtained by repeated finite-difference bulk integrations. The paper computes that condition and its derivative with respect to M analytically from two integrations started at the horizon and boundary, cutting inversion to minutes and enabling analysis of the M interval a dome cannot determine.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.10080",
+  "source": "arXiv",
+  "title": "Sharp Asymptotic Theory of Maximum Likelihood Estimation for Gaussian Processes with an RBF Kernel",
+  "abstract": "Gaussian processes (GPs) are widely used across machine learning, spatial statistics, time-series analysis, optimization, Bayesian statistics, and scientific applications. A central component of a GP model is its kernel, which is typically specified through a parametric family. Among the most widely used choices is the radial basis function (RBF), also known as the squared exponential or Gaussian kernel, owing to its simple form, smoothness, and flexibility. In practice, the kernel parameters are routinely estimated by the maximum likelihood estimators (MLEs), as implemented by standard GP software. Despite this widespread use, the asymptotic behavior of the MLEs remains poorly understood under fixed-domain asymptotics, even for the RBF kernel. The main difficulty arises from the increasingly strong dependence among densely sampled observations and the nonlinear dependence of the covariance matrix on the kernel parameters. In this paper, we address this gap by providing, to the best of our knowledge, the first complete asymptotic characterization of the joint MLE of the spatial variance, lengthscale, and nugget variance under fixed-domain asymptotics. We establish consistency, derive convergence rates for all three parameters, prove joint asymptotic normality, and show that these rates are minimax optimal.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "math.PR",
+   "stat.TH"
+  ],
+  "authors": [
+   "Ameer Qaqish",
+   "Didong Li"
+  ],
+  "url": "https://arxiv.org/abs/2610.10080",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The asymptotic behavior of maximum likelihood estimators for Gaussian process kernel parameters under fixed-domain asymptotics remains poorly understood, even for the widely used RBF kernel, due to strong dependence among densely sampled observations. The paper gives the first complete asymptotic characterization of the joint MLE of spatial variance, lengthscale, and nugget variance—consistency, convergence rates, joint asymptotic normality, and minimax optimality.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.10135",
+  "source": "arXiv",
+  "title": "Attention via Black-Box Vector Search",
+  "abstract": "Sparse attention mechanisms estimate attention over $n$ tokens using a small subset of keys. Many existing approaches use maximum inner product search (MIPS) to retrieve the heaviest keys, which motivates the following question: given black-box access to a MIPS oracle, how many keys must be retrieved to output an $\\varepsilon$-accurate attention estimate? We answer this question by unifying prior approaches through the framework of priority sampling. With a single MIPS index, we show that $\\Theta(\\sqrt{n}/\\varepsilon)$ retrieved keys are both sufficient and necessary. With $\\Theta(\\log n)$ indices, we give an algorithm that retrieves only $O(\\log n+1/\\varepsilon^2)$ keys and prove that this is near-optimal. More generally, we design algorithms that establish a smooth tradeoff between the number of MIPS indices and number of retrieved keys. We then show that if we allow augmentation of keys and queries, we can bypass the above lower bounds: there exists a simple priority-sampling estimator using a single MIPS index and $O(1/\\varepsilon^2)$ retrieved keys. When integrated into LLM inference, our algorithms outperform top-$k$ and sampling approaches used in prior work and yield attention approximation that scales favorably to long contexts.",
+  "categories": [
+   "cs.DS",
+   "cs.LG"
+  ],
+  "authors": [
+   "Stepan Zharkov",
+   "Krish Singal",
+   "Ashwin Padaki",
+   "Alexandr Andoni"
+  ],
+  "url": "https://arxiv.org/abs/2610.10135",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks how many keys a sparse-attention mechanism must retrieve from a black-box maximum-inner-product-search oracle to output an ε-accurate attention estimate. It unifies prior sparse-attention approaches under priority sampling, proving a tight Θ(√n/ε) bound for a single MIPS index, a near-optimal O(log n + 1/ε²) algorithm with Θ(log n) indices, and a single-index estimator using O(1/ε²) keys when keys and queries may be augmented.",
+  "added": "2026-10-08"
+ },
+ {
+  "id": "arxiv:2610.10320",
+  "source": "arXiv",
+  "title": "LLM-Assisted Generation of Transparent, Open-Source Multiphysics Models of Electrochemical Devices",
+  "abstract": "Multiphysics continuum models are powerful tools for studying electrochemical devices, enabling in silico reactor design and resolution of local pH, potential, and concentration fields that govern device performance but are difficult to measure experimentally. However, constructing such models requires substantial numerical expertise or reliance on proprietary software. Here, we show that frontier large language model agents can remove this implementation burden while keeping the underlying physics under researcher control. Using one-dimensional electrochemical CO2 reduction to CO in a porous gas diffusion electrode as a test case, we develop a machine-readable, human-specified modeling harness containing governing equations, parameters, numerical methods, logical build stages, and human-verifiable checkpoints. From this specification, the agent reproducibly constructs complete multiphysics models in open-source Julia. Independently built models, including fully autonomous agent-built models, agree with an equivalent COMSOL implementation to within 0.7% of the peak CO partial current density, and with one another to within 0.04%. Systematically planted errors demonstrate the importance of explicit specifications for reproducibility and reveal the agent's capabilities and limitations in debugging model physics. This framework establishes a more transparent approach to multiphysics modeling in which physical descriptions and governing equations, rather than specialized code, become the primary inputs for computational model development.",
+  "categories": [
+   "physics.chem-ph",
+   "cs.AI",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Sebastian Castro",
+   "Maya F. Schuchert",
+   "Spencer A. McCluskey",
+   "Eric W. Lees",
+   "Justin C. Bui"
+  ],
+  "url": "https://arxiv.org/abs/2610.10320",
+  "published": "2026-10-08",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Building multiphysics continuum models of electrochemical devices normally demands specialized numerical expertise or proprietary software, keeping the governing physics out of researchers' hands. The paper introduces a machine-readable, human-specified modeling harness (equations, parameters, numerical methods, build stages, verification checkpoints) from which frontier LLM agents reproducibly construct open-source Julia models that agree with a COMSOL implementation to within 0.7%.",
+  "added": "2026-10-08"
  }
 ]
