@@ -66689,5 +66689,304 @@
   ],
   "summary": "Reconstructing spatially resolved multiscale, regime-dependent plasma dynamics from sparse sensors is difficult because few measurements incompletely constrain the state, and the Shallow Recurrent Decoder (SHRED) offers no explicit multiscale or parametric mechanism. The paper introduces ReMAIN, which keeps SHRED's recurrent temporal encoding but replaces its decoder with a U-Net conditioned on the recurrent state via feature-wise linear modulation and adds a parametric extension that jointly embeds operating conditions, benchmarked on six 1D nonlinear PDEs and a collisionless E×B plasma.",
   "added": "2026-10-09"
+ },
+ {
+  "id": "arxiv:2610.13123",
+  "source": "arXiv",
+  "title": "Why Heavy-Tailed Weight Spectra Predict Model Quality",
+  "abstract": "A solid understanding of the predictive success of deep neural networks (DNNs) remains elusive. For example, while many data-dependent metrics exist that seek to predict model quality of DNNs, these metrics may be expensive to compute for large datasets and/or may be impossible to compute when training datasets are not released. A practical and effective predictor of model quality involves analyzing DNN weight matrices, as prior work has established that heavy-tailed spectral distributions in trained weight matrices can be strongly predictive of model quality. However, such metrics lack a rigorous statistical justification. In this work, we aim to understand why these metrics perform well, from a statistical perspective. To do so, we employ a probabilistic framework to derive the marginal likelihood for a DNN, evaluated using only the final layer weights. Across large-scale convolutional DNNs and LLMs, we find that this marginal likelihood predicts model quality. To understand the role heavy-tailed spectra play in predictive performance, we derive the limiting log-marginal likelihood for spectra that follow the (heavy-tailed) High-Temperature Marchenko-Pastur (HTMP) distribution. We show that this limiting quantity is convex in a heaviness parameter, and we derive an optimal heaviness that empirically predicts over-fitting for large-scale DNNs.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Joseph Wilson",
+   "Chris van der Heide",
+   "Liam Hodgkinson",
+   "Zhichao Wang",
+   "Fred Roosta",
+   "Michael W. Mahoney"
+  ],
+  "url": "https://arxiv.org/abs/2610.13123",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is not understood why heavy-tailed spectra of trained DNN weight matrices predict model quality. The paper derives a marginal likelihood evaluated from final-layer weights and shows that, under the heavy-tailed High-Temperature Marchenko--Pastur law, its limiting form is convex in a heaviness parameter with an optimal value that empirically predicts overfitting.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13129",
+  "source": "arXiv",
+  "title": "Fast Gradient-Based Approximation of Continuous Dynamic Time Warping",
+  "abstract": "Dynamic Time Warping (DTW) is a common choice for measuring the discrepancy between time series. It proceeds by finding an optimal warping between timestamps through dynamic programming, which can be slow and is not differentiable. Consequently, several variants have been proposed. Among them, Soft-DTW proposes a smooth formulation of DTW, amenable to gradient computation, while Continuous-DTW (CDTW) introduces a continuous formulation through parametrizable warping functions. Yet, computational costs remain high for both methods and impractical for large datasets in modern machine learning pipelines. This paper revisits CDTW in several ways. After establishing its differentiability under mild conditions, we introduce FastCDTW, which is an efficient approximate solver with two different computational strategies: an exact closed-form scheme for piecewise-linear warping functions, and an unbiased Monte Carlo estimator for smooth ones, such as implicit neural networks. Both strategies provide gradients with respect to the warping function and the input time series, and the resulting algorithm is GPU-friendly. We demonstrate its benefits through its integration into more complex learning problems, including time series averaging, classification and deep domain adaptation.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Pierre Houedry",
+   "Romain Tavenard",
+   "Nicolas Courty",
+   "Romaric Gaudel"
+  ],
+  "url": "https://arxiv.org/abs/2610.13129",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Continuous dynamic time warping remains computationally prohibitive and awkward to differentiate for large-scale learning pipelines. The paper establishes differentiability under mild conditions and introduces FastCDTW, a GPU-friendly approximate solver with an exact closed-form scheme for piecewise-linear warping and an unbiased Monte Carlo estimator for smooth warping functions such as implicit neural networks.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13225",
+  "source": "arXiv",
+  "title": "ReSFlow: Rectifying Categorical Flows on Statistical Manifolds for One-Step Generation",
+  "abstract": "Generative modeling for discrete data has been significantly advanced by learning continuous vector fields on the statistical manifolds to transport simple priors to target discrete distributions. However, because these continuous-time flows are not constrained to follow geodesics on the statistical manifold, thereby requiring multi-step numerical integration for simulation and leading to substantial computational costs during inference. In this work, drawing inspiration from the \"straight and fast\" properties of Rectified Flow in continuous Euclidean space, we propose the Rectified Statistical Flow (ReSFlow) model, which enables one-step categorical generation on statistical manifolds by explicitly learning geodesic trajectories that adhere to the intrinsic Riemannian geometry. By rectifying the flow on the statistical manifold, we theoretically guarantee that trajectories between prior and target distributions approximate geodesics. This rectification significantly reduces the transport cost by aligning the learned trajectories directly along geodesics on the statistical manifold, allowing the model to map pure noise to target discrete data in a single step. Through extensive experiments on diverse real-world generative tasks, ranging from image and text to biological domains, we demonstrate ReSFlow's superior one-step generation quality, which truly embodies geodesically optimal and rapid categorical generation. Our code is available at https://github.com/xiaohuanjia/ReSFlow.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Xiaohuan Jia",
+   "Renzhe Xu",
+   "Xiao Wang",
+   "Jiayun Wu",
+   "Shaohua Fan"
+  ],
+  "url": "https://arxiv.org/abs/2610.13225",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Continuous-time flows on statistical manifolds are not constrained to geodesics and therefore need multi-step numerical integration for categorical generation. The paper proposes Rectified Statistical Flow, which rectifies the flow so learned trajectories approximate geodesics of the statistical manifold and enables one-step generation from noise to discrete data.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13234",
+  "source": "arXiv",
+  "title": "Learning Schwarzschild Geodesic Motion with Lagrangian Neural Networks",
+  "abstract": "Lagrangian Neural Networks (LNNs) learn dynamics from trajectory data by parameterizing a scalar Lagrangian and deriving accelerations through the Euler--Lagrange equation, providing a variational inductive bias that improves physical consistency over purely data-driven models. LNNs have recently been extended to general relativistic settings, leaving Schwarzschild geodesics as an open challenge. Training on complex relativistic systems is hindered by the diversity of the dynamics, as well as numerical instabilities and the difficulty of adequately sampling physically relevant, diverse orbital regimes. We introduce two coordinated improvements: a decoupled position--velocity normalization scheme that independently rescales each coordinate and its time derivatives, reweighting acceleration targets to balance contributions across all channels; and an energy-constrained log-uniformly sampled dataset generation strategy informed by the innermost stable circular orbit (ISCO) structure. With these improvements, our model accurately reproduces perihelion precession and relativistic time dilation, conserves energy and angular momentum to within a few percent even after completing multiple orbits around the central mass and predicts orbital trajectories across eight orbital scenarios in close, medium, and far-field regimes. These results establish that LNNs, augmented with physically motivated normalization and sampling, can reliably learn geodesic dynamics in curved spacetime. Our work also represents the first successful training of LNNs on Schwarzschild geodesics and offers a promising direction for data-driven modeling of complex relativistic systems.",
+  "categories": [
+   "cs.LG",
+   "gr-qc"
+  ],
+  "authors": [
+   "Sukru Caglar",
+   "Sena Kalabalik",
+   "Abdullah Umut Hamzaogullari",
+   "Arkadas Ozakin"
+  ],
+  "url": "https://arxiv.org/abs/2610.13234",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Learning Schwarzschild geodesic dynamics with Lagrangian neural networks is hindered by unstable numerics and inadequate sampling of physically relevant orbital regimes. The paper introduces a decoupled position--velocity normalization scheme and an energy-constrained log-uniform sampling strategy informed by the ISCO, accurately reproducing perihelion precession and relativistic time dilation while conserving energy and angular momentum.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13258",
+  "source": "arXiv",
+  "title": "Neural Surrogate Modeling of Ultrasonic Wave Propagation in Heterogeneous Media",
+  "abstract": "Neural surrogates provide computationally efficient auto-regressive modeling of wave propagation, enabling e.g. fast inverse solutions. Despite recent progress, the current surrogates are not yet sufficient for the needs of ultrasonic sensing, characterized by high frequency and heterogeneous propagation media. We show how methods building on Fourier Neural Operators (FNO) fail to capture essential signal features, such as reflections, whereas U-Net -based methods learn the wave fields well but lack the ability to transfer information across different spatial scales. We then propose a new surrogate that captures the best of the two worlds, by integrating FNOs and local-integral resampling into a U-Net architecture. We show it can be trained on limited data, and that the predictions are robust to input noise and work across spatial scales.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Burla Nur Korkmaz",
+   "Petro Moilanen",
+   "Ari Salmi",
+   "Harsha Vardhan Tetali",
+   "Arto Klami"
+  ],
+  "url": "https://arxiv.org/abs/2610.13258",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Existing neural surrogates for auto-regressive wave propagation break down for high-frequency ultrasonic sensing in heterogeneous media, where Fourier Neural Operators miss reflections and U-Nets cannot transfer information across spatial scales. The paper integrates FNOs with local-integral resampling inside a U-Net architecture, yielding a surrogate trainable on limited data whose predictions are noise-robust and scale-transferable.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13292",
+  "source": "arXiv",
+  "title": "Recovering Irreducible Three-Body Interactions with Lagrangian Neural Networks",
+  "abstract": "Lagrangian Neural Networks (LNNs) learn mechanical systems from trajectory data by parameterizing a scalar Lagrangian and deriving the dynamics through the Euler-Lagrange equations, biasing the model toward motion that respects the variational structure of mechanics. The interactions studied so far have been pairwise-additive, leaving open whether LNNs can recover an irreducible many-body interaction from motion alone. We address this using the Axilrod-Teller triple-dipole interaction, the leading three-body dispersion term, whose dependence on the collective geometry of three particles cannot be represented by any sum of pairwise terms. We prescribe the kinetic energy exactly and learn only the potential, as a function of interparticle distances and angles. Combined with a signal-aware sampling strategy that concentrates training data where the three-body signal is strongest while preserving broad coverage of configuration space, this recovers the interaction from accelerations alone. The learned potential reproduces the radial scaling, angular dependence, and characteristic sign reversal of the Axilrod-Teller interaction, and generates stable trajectories. Embedding it within a pairwise Lennard-Jones potential lets us examine its observability: the three-body term is recovered once its dynamical signature exceeds the residual modeling error, which it does cleanly at amplified coupling but not at the coupling of a real noble gas, bracketing the transition between the two. Finally, symbolic regression on the trained potential, with no assumed functional form, returns the Axilrod-Teller expression with angular numerator, radial law, and coupling constant intact. An LNN with domain-specific structure can thus recover an irreducible three-body interaction from trajectories as a closed-form law, pointing toward learning interaction laws whose structure is not known a priori.",
+  "categories": [
+   "cs.LG",
+   "physics.atom-ph",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Sena Kalabalik",
+   "Sukru Caglar",
+   "Abdullah Umut Hamzaogullari",
+   "Arkadas Ozakin"
+  ],
+  "url": "https://arxiv.org/abs/2610.13292",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "It is open whether Lagrangian Neural Networks can recover a genuinely irreducible many-body interaction, rather than only pairwise-additive ones, from trajectory data alone. The paper learns only the potential of the Axilrod-Teller triple-dipole term with a signal-aware sampling strategy, recovering its radial scaling, angular dependence, sign reversal, and exact closed form via symbolic regression.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13317",
+  "source": "arXiv",
+  "title": "SBNO : Schr\\\"odinger Bridge Neural Operator for the Forward and Inverse Problems under Missing Information",
+  "abstract": "Partial differential equation (PDE) surrogate modeling often relies on either dense observations or access to governing equations/physics constraints. In practice, observations can be sparse and partial, and the underlying physics may be partially specified or unavailable. We introduce SBNO, an equation-free paired-data diffusion bridge matching framework that learns conditional operators for both forward and inverse PDE problems under partial observations. SBNO uses diffusion Schr\\\"odinger bridge matching to learn a pair of time-dependent drifts from a mask-aware endpoint coupling that preserves empirical input-solution pairing during training and supports both PDE-task directions within a single framework. At inference time, SBNO produces a deterministic point reconstruction by integrating the probability-flow ODE constructed from the learned drift pair, without inference-time observation or PDE guidance-weight tuning. On five PDE benchmarks with 5% observations, SBNO achieves superior or comparable accuracy to baselines while demonstrating lower test-instance error dispersion. Furthermore, SBNO is at least $9.7 \\times$ faster and reduces GPU memory by at least $4.3 \\times$ compared to guided-diffusion baselines.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Jaehyeon Park",
+   "Inhyeok Jeong",
+   "Noseong Park"
+  ],
+  "url": "https://arxiv.org/abs/2610.13317",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "PDE surrogate modeling usually assumes dense observations or known physics, which fails when observations are partial and the governing equations are unavailable. SBNO is an equation-free diffusion Schrödinger bridge matching framework that learns a pair of time-dependent drifts from mask-aware endpoint couplings, handling both forward and inverse PDE tasks with deterministic probability-flow-ODE inference.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13334",
+  "source": "arXiv",
+  "title": "PDE-PFN: Prior-Data Fitted Neural PDE Solver",
+  "abstract": "Motivated by the success of large language models (LLMs) with broad generalizability and robustness to noisy or unreliable pre-training data, we explore in-context prediction of PDE solution fields using approximate pre-training data. In addition, inspired by the posterior predictive mean-based inference mechanism of the in-context learning in prior-data fitted networks (PFNs), we propose PDE-PFN, a prior-data fitted neural solver that approximates the posterior predictive mean of PDE solutions via in-context learning. PDE-PFN builds on a PFN architecture with self- and cross-attention mechanisms of Transformer and is pre-trained on noisy approximate solutions generated by physics-informed neural networks, serving as diverse but not necessarily exact priors. Through experiments on a range of two-dimensional PDEs, we demonstrate that PDE-PFN achieves empirical generalization across heterogeneous equations, robustness under noisy priors, and zero-gradient-update in-context inference capability. PDE-PFN achieves competitive or improved predictive accuracy relative to the evaluated baselines while supporting flexible context and query representations.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Jaehyeon Park",
+   "Mingu Kang",
+   "Dongseok Lee",
+   "Woojin Cho",
+   "Kookjin Lee",
+   "Anthony Gruber",
+   "Youngjoon Hong",
+   "Noseong Park"
+  ],
+  "url": "https://arxiv.org/abs/2610.13334",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "pde-foundation-models",
+   "operator-learning"
+  ],
+  "summary": "PDE solution fields are targeted with in-context prediction from approximate, noisy pre-training data rather than exact solver labels. PDE-PFN is a prior-data-fitted neural solver with self- and cross-attention that approximates the posterior predictive mean of PDE solutions, pre-trained on noisy PINN-generated priors to give zero-gradient-update generalization across heterogeneous 2D equations.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13382",
+  "source": "arXiv",
+  "title": "BLOKS: Scaling Kernel Solvers with Sketched Block Preconditioning",
+  "abstract": "Kernel Ridge Regression (KRR) is a theoretically sound algorithm for nonparametric learning, which is also often used to investigate properties of deep learning. However, the exact KRR formulation incurs time and memory costs preventing applicability to large datasets, motivating the development of approximate solvers. These algorithms rely on (i) iterative methods, to avoid the computational burden of direct solutions; (ii) sketching or batching, to reduce the problem size; and (iii) preconditioning, to accelerate convergence. While crucial for fast convergence, preconditioning incurs memory costs that can be managed by lowering the number of free parameters of the model, potentially at the expense of expressivity and hence accuracy. To address this challenge, we propose BLOKS, a Conjugate Gradient-based solver for Nystr\\\"om-sketched KRR built around a novel preconditioner that combines a block Jacobi approximation with sketching. The BLOKS preconditioner has memory cost independent of both the dataset size and the number of parameters, allowing scaling to large models. We provide a memory-efficient, GPU-accelerated implementation and show that BLOKS achieves excellent accuracy while retaining favorable time/memory complexity. Indeed, on standard large-scale datasets used to benchmark kernel solvers, BLOKS achieves comparable or better performances than state-of-the-art methods.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Giordano Vitale",
+   "Giacomo Meanti",
+   "Marco Rando",
+   "Blanca Ayuso de Dios",
+   "Lorenzo Rosasco"
+  ],
+  "url": "https://arxiv.org/abs/2610.13382",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "foundations"
+  ],
+  "summary": "Exact kernel ridge regression is too costly for large datasets, and existing approximate solvers pay a memory price for preconditioning that limits model expressivity. BLOKS is a conjugate-gradient solver for Nyström-sketched KRR whose novel preconditioner combines a block Jacobi approximation with sketching, giving memory cost independent of dataset size and parameter count with a GPU-accelerated implementation.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13411",
+  "source": "arXiv",
+  "title": "In-Context Learning for System Identification: Probabilistic Formulation, Long-Sequence Handling, and Benchmark Validation",
+  "abstract": "Traditional system identification typically involves two steps: initially, training data is processed to estimate a model of the system of interest; then, the model is used to predict outputs for new input queries. In contrast, recent in-context learning approaches learn a meta model that maps directly from training data and query inputs to outputs in a zero-shot fashion, bypassing explicit model estimation. This approach leverages a meta model trained offline, on large sets of synthetically generated data, to emulate the behavior of a system identification algorithm. In this work, we advance this meta-learning framework for system identification in three directions. First, we develop a unified probabilistic meta-identification architecture that combines a Transformer-based encoder-decoder with tailored mechanisms for handling long training sequences, enabling calibrated predictions over long horizons. Second, we show how a pre-trained meta model can act as an uncertainty-aware synthetic data generator for classical system identification, providing task-specific data that regularize parametric models when real data are scarce. Third, we systematically evaluate the framework on standard nonlinear system identification benchmarks and on a challenging out-of-distribution scenario, demonstrating competitive accuracy with state-of-the-art methods and strong generalization, including cases where input-only adaptation is sufficient to handle significant distribution shifts.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Matteo Rufolo",
+   "Dario Piga",
+   "Filippo Pura",
+   "Marco Forgione"
+  ],
+  "url": "https://arxiv.org/abs/2610.13411",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "uq-inverse-problems"
+  ],
+  "summary": "Standard system identification first estimates a model and then predicts, whereas in-context meta-learned identification maps data and queries directly to outputs but lacks calibrated long-horizon probabilistic predictions. The paper develops a unified probabilistic meta-identification Transformer encoder-decoder with long-sequence mechanisms, and shows the pre-trained meta model can serve as an uncertainty-aware synthetic data generator regularizing classical identification when real data are scarce.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13425",
+  "source": "arXiv",
+  "title": "Non intrusive parametric Reduced Order Models based on physics for incompressible flow",
+  "abstract": "Reduced order modeling provides an efficient alternative to high fidelity simulations for the rapid prediction of fluid flows in many query settings. Among non intrusive approaches, Operator Inference (OpInf) enables the identification of reduced dynamical operators directly from data while preserving a prescribed mathematical structure. The present work extends physics structured OpInf to the construction of parametric Reduced Order Models for transient incompressible flows governed by the Navier-Stokes equations. The velocity and pressure fields are represented using separate global reduced bases, and their reduced operators are identified directly from temporal and parametric POD coefficients. The identification procedure is formulated as a sequence of uncoupled least squares problems, leading to an efficient offline stage while avoiding the explicit projection of the governing equations. The approach is first evaluated on a lid driven cavity flow in a periodic regime to assess temporal extrapolation and prediction at previously unseen parameter values. Its applicability is then demonstrated for transient flow through a porous medium with a square obstacle, for which the nonlinear terms are not directly amenable to a standard Galerkin projection. The results demonstrate that the approach can accurately reproduce both velocity and pressure fields while providing computationally efficient predictions for unseen parameter values.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Cyrille Allery",
+   "Claudine Beghein"
+  ],
+  "url": "https://arxiv.org/abs/2610.13425",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Fast parametric prediction of transient incompressible Navier-Stokes flows is sought without the cost of high-fidelity simulation or intrusive Galerkin projection. The paper extends physics-structured Operator Inference to parametric reduced-order models with separate velocity and pressure bases and uncoupled least-squares operator identification, validated on lid-driven cavity and porous-medium flow with an obstacle.",
+  "added": "2026-10-12"
+ },
+ {
+  "id": "arxiv:2610.13442",
+  "source": "arXiv",
+  "title": "Learning by Compression: Risk Estimates Attain the Law-of-Large-Numbers Rate",
+  "abstract": "Compression schemes provide a general framework for deriving data-dependent risk bounds for learning algorithms. For learning rules based on preferent compression, existing results upper-bound the risk in terms of a sample-dependent complexity $\\boldsymbol{k}$, defined as the cardinality of the compression augmented by the training examples on which the reconstructed hypothesis is inappropriate. These results, however, yield a margin of order $O(\\sqrt{\\ln N/N})$ above $\\boldsymbol{k}/N$. In this paper, we establish that the logarithmic factor is not intrinsic. We prove that, for every fixed confidence level $1-\\delta$, the risk is bounded with probability at least $1-\\delta$ by $$ \\frac{\\boldsymbol{k}}{N} + O\\left(\\frac{1}{\\sqrt{N}}\\right), $$ uniformly over all possible values of $\\boldsymbol{k}$. Thus, risk estimates for learning algorithms based on preferent compression attain the same law-of-large-numbers rate as the empirical estimate of the probability of a fixed event. We also show that the leading term $\\boldsymbol{k}/N$ is necessary and investigate its relation to the empirical risk. In particular, we identify regimes in which the empirical risk retains the $O(1/\\sqrt{N})$ convergence rate, as well as regimes in which it converges more slowly or ceases to be consistent, while the complexity-based estimator preserves the $O(1/\\sqrt{N})$ rate.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.ST",
+   "stat.TH"
+  ],
+  "authors": [
+   "Simone Garatti",
+   "Marco C. Campi"
+  ],
+  "url": "https://arxiv.org/abs/2610.13442",
+  "published": "2026-10-12",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Existing preferent-compression risk bounds for learning algorithms carry an extraneous logarithmic factor, leaving the achievable rate uncertain. The paper proves a worst-case-optimal bound of k/N + O(1/√N) uniformly in the sample-dependent complexity k, shows the leading term is necessary, and characterizes when the empirical risk retains or loses the O(1/√N) rate.",
+  "added": "2026-10-12"
  }
 ]
