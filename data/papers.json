@@ -67941,5 +67941,677 @@
   ],
   "summary": "Latent-space inversion with generative neural network priors is fundamentally limited because solutions are confined to a low-dimensional manifold that cannot reproduce the true higher-dimensional model. The paper introduces an 'escaping prior' distribution combined with a hierarchical Bayesian scheme that adapts prior strength a posteriori, allowing inversion to escape the GNN manifold while still being guided by it.",
   "added": "2026-10-14"
+ },
+ {
+  "id": "arxiv:2610.20204",
+  "source": "arXiv",
+  "title": "Learning to reconstruct Germano Differential Filtered Fields with Convolutional Neural Networks for Large Eddy Simulation of Plasma Turbulence",
+  "abstract": "We present a novel method which combines the invertibility of the differential filter of Germano, with convolutional networks to accelerate plasma turbulence simulations. Rather than learning the mapping from coarse-grid LES fields to fine-grid DNS, the proposed method learns the mapping from coarse LES fields to the differential-filtered DNS fields. We then use the inverse of Germano's filter to reconstruct the fine-scale details and hence calculate exactly the nonlinear terms in the governing equations and subgrid-scale terms in the LES equations. The method is tested on the 2D Hasegawa-Wakatani (HW) and modified Hasegawa-Wakatani (mHW) plasma turbulence models at $256^2$ and $512^2$ DNS resolutions using 2, 4 and 8 times smaller LES grids in each direction. We compare the model with DNS results on energy, enstrophy, spectra, probability distributions, poloidal and radial fluxes and computational cost. Validation extends to 1000 simulation time units for HW and 100 for mHW, whose faster dynamics lead toward laminarization. For the $256^2$ cases, the finer LES meshes preserve several integral and spectral features, whereas the coarsest mesh yields unphysical behavior. In contrast, for the $512^2$ cases, even the coarsest LES mesh preserves the turbulent character of the flow and maintains acceptable statistics for both the HW and mHW models. Moreover, we show how our methodology is superior to traditional algebraic numerical LES models, which traditionally fail to capture important design features. Finally, benchmarks show an MPI task-time reductions of 4.82--49.45, with a maximum wall-clock speedup of $1.55\\times$ when compared to full CPU socket.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Jony Castagna",
+   "Josh Williams"
+  ],
+  "url": "https://arxiv.org/abs/2610.20204",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Large-eddy simulation of plasma turbulence needs subgrid closure models that classical algebraic LES models fail to capture accurately. The paper trains a CNN to map coarse LES fields to Germano differential-filtered DNS fields and inverts the filter to recover fine-scale details, yielding exact nonlinear and subgrid-scale terms for the Hasegawa-Wakatani models with large task-time reductions.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20218",
+  "source": "arXiv",
+  "title": "Mixed Poisson diffusion models and application to posterior sampling",
+  "abstract": "Diffusion models are a powerful framework for learning complex probability distributions. While widely used diffusion models for continuous data rely on Gaussian noising processes, we instead develop diffusion models based on Poisson noise. More precisely, we introduce and study a new mathematical framework, called Mixed Poisson Diffusion Models (MPDM), with noising dynamics driven by multivariate counting processes. Our methodology is motivated by Poisson inverse problems. The success of Gaussian diffusion models has led to their use as prior models in a growing number of posterior sampling methods for inverse problems. However, most of these approaches focus on Gaussian inverse problems, in which observations are generated through a deterministic forward operator corrupted by additive Gaussian noise. By contrast, Poisson inverse problems, where observations are discrete and Poisson distributed, remain comparatively underexplored in this literature. Building on our Poisson generative dynamics, we develop a natural framework for posterior sampling in Poisson inverse problems and derive several posterior sampling algorithms based on the proposed model. We evaluate our approach on realistic Poisson inverse problems and show that the resulting framework is well suited to this class of problems.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "stat.CO"
+  ],
+  "authors": [
+   "Thibaut Pellerin",
+   "Alain Durmus",
+   "Elinor Berger",
+   "Eric Barat"
+  ],
+  "url": "https://arxiv.org/abs/2610.20218",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Posterior sampling with diffusion priors has been developed almost exclusively for Gaussian inverse problems, leaving discrete Poisson inverse problems underexplored. The paper introduces Mixed Poisson Diffusion Models whose noising dynamics are driven by multivariate counting processes and derives several posterior sampling algorithms for Poisson inverse problems.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20229",
+  "source": "arXiv",
+  "title": "The minimal width of neural networks and immersions of real projective space",
+  "abstract": "We investigate the minimal width of deep neural networks that can approximate all continuous functions from $\\mathbb{R}^n$ to $\\mathbb{R}^m$ in the topology of uniform convergence on compact subsets. We show that whenever the real projective space $\\mathbb{RP}^{n-1}$ admits a smooth immersion into $\\mathbb{R}^n$, the minimal width is at least $n+\\min\\{n,m\\}$, assuming that the activation function is continuous and monotone. As a consequence, the minimal width of ReLU networks is $n+m$ whenever $n$ is equal to 2, 3, 4, 7 or 8 and $1\\le m \\le n$, extending results of Hanin-Sellke and Hwang. This suggests an intriguing connection between the approximation theory of neural networks and differential topology.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "BaoZhi Chu",
+   "Ben Weinkove"
+  ],
+  "url": "https://arxiv.org/abs/2610.20229",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The minimal width of deep neural networks that can uniformly approximate all continuous functions between Euclidean spaces is not fully determined. The paper connects this approximation-theoretic question to differential topology, showing that smooth immersions of real projective space force a width of at least n+min{n,m} for continuous monotone activations and hence a ReLU minimal width of n+m for n = 2, 3, 4, 7, 8.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20266",
+  "source": "arXiv",
+  "title": "Wavelet compression for sampling deep Gaussian processes",
+  "abstract": "Deep Gaussian processes (DGPs) use iterative sampling to create non-stationary random fields. This is notoriously expensive because the covariance at each non-initial layer depends on the realised field from the layer below, so it changes with every sample. Moreover, standard fast sampling techniques like circulant embedding or matrix compression fail since the underlying kernel usually lacks the necessary regularity and structure. We develop and analyse a wavelet compression method for convolution Mat\\'ern DGPs. At each layer the covariance matrix is compressed using wavelets and a Lanczos algorithm computes the random sample. For specific parameter ranges involving the smoothness of the Mat\\'ern kernel as well as the smoothness of the wavelets, we show that the accumulative compression and sampling errors through all layers decay exponentially with increasing truncation parameter. We obtain a practical DGP sampling algorithm by choosing a truncation that gives log-linear covariance storage and matrix-vector costs, enabling DGP sampling at nearly linear computational cost.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Oskar Broukal",
+   "Michael Feischl",
+   "Conor Osborne"
+  ],
+  "url": "https://arxiv.org/abs/2610.20266",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Sampling deep Gaussian processes is notoriously expensive because each layer's covariance depends on the realized field of the layer below, defeating circulant embedding and matrix compression. The paper develops and analyzes a wavelet compression method for convolution Matern DGPs with Lanczos-based sampling, proving exponential decay of accumulated compression and sampling errors and achieving log-linear storage with nearly linear sampling cost.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20288",
+  "source": "arXiv",
+  "title": "Predicting Unseen Scientific Interactions: Conditional Flow Models Hallucinate Non-Additive Effects",
+  "abstract": "Conditional generative models are increasingly used for scientific prediction beyond the direct training support. Yet scientific questions often concern whether one intervention changes the effect of another. Such interactions can be of primary interest while explaining little of the total variation, allowing models to appear accurate overall without recovering the relevant scientific effect. It remains unclear how these models learn interactions and when these successfully extrapolate to unseen conditions. We therefore study interaction recovery in flow-matching models using a physiological time-series simulator, drug dose-response data, combinatorial cell perturbations, and molecular conformer generations, where we separate recovery from hallucinated interaction structure. In the controlled setting, individual effects are learned much earlier than interactions and models hallucinate interactions where none exist. Across settings, we find qualitatively different generalization problems, with successful prediction depending on whether condition structure continues from observed to held-out targets. When it does, interactions are recoverable. If not, models can generate plausible responses while missing the interaction. We furthermore find that hallucinations increase as targets become less identifiable, and that successful interaction recovery in output space can fail under nonlinear readouts. Finally, we show that aggregate fidelity metrics can conceal whether models learn and extrapolate interactions.",
+  "categories": [
+   "cs.LG",
+   "q-bio.QM"
+  ],
+  "authors": [
+   "Sam Gijsen",
+   "Moritz Seiler",
+   "Kerstin Ritter"
+  ],
+  "url": "https://arxiv.org/abs/2610.20288",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "It is unclear whether conditional generative models used for scientific prediction recover true interaction effects or hallucinate them, since interactions can explain little total variation while being scientifically central. The paper studies interaction recovery in flow-matching models across a physiological simulator, drug dose-response data, combinatorial cell perturbations and molecular conformer generation, finding that interactions extrapolate only when condition structure continues from observed to held-out targets.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20337",
+  "source": "arXiv",
+  "title": "Training Dynamics of Transformers on Unbounded Inputs: Attention Learning Can Lag Output Layer Learning",
+  "abstract": "The success of transformers is attributed to several factors, including their capacity to express formal languages over variable-length inputs, and ability of the attention mechanism to focus on relevant input features. However, there is limited understanding of the training dynamics of shallow transformers, specifically how to decouple the learning of the attention and the output (feedforward) layer. A natural extension of the theory of one-step gradient feature learning in feedforward networks suggests that one could first learn the attention weights with a single gradient step, and then train the output layer. We show that this fails for a shallow transformer trained to recognize a star-free language from unbounded-length input. We prove that the transformer can be trained to recognize the language with a three-phase gradient descent: the output layer is updated first, followed by an attention update, and the output layer is fine-tuned in the third phase. In contrast, the language cannot be learned by training only the attention or output layer, or by a single attention-layer update followed by finetuning the output layer. We empirically show that ``attention learning lagging output layer learning\" is beneficial in other language recognition, regression, and in-context learning tasks as well.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Yaomengxi Han",
+   "Debarghya Ghoshdastidar"
+  ],
+  "url": "https://arxiv.org/abs/2610.20337",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The training dynamics of shallow transformers on unbounded-length inputs, and how attention learning couples to output-layer learning, are poorly understood. The paper proves that recognizing a star-free language requires a three-phase gradient-descent trajectory in which the output layer is learned first, attention is updated second, and the output layer is fine-tuned last, and shows empirically that this attention-lagging behavior helps on other language-recognition, regression and in-context-learning tasks.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20363",
+  "source": "arXiv",
+  "title": "Fractional is Better: Learnable Derivative Orders in Neural Operator Learning",
+  "abstract": "Neural operators learn mappings between function spaces, enabling fast surrogate solutions to partial differential equations. Despite remarkable architectural diversity, these methods often share a common input representation: raw coordinate-value pairs $(x, u(x))$. We ask whether inputs aligned with PDE differential structure can improve learning. Through Picard iteration on mild solutions, we show that derivatives of the input appear explicitly in the solution operator, suggesting that providing derivative features should reduce the network's implicit differentiation burden. We prove this intuition: providing derivative features improves approximation bounds from $O(W^{-(s-m)/d})$ to $O(W^{-s/d})$, where $W$ is parameter count, $s$ is input regularity, $m$ is the PDE order, and $d$ is spatial dimension. Our central finding, however, is a surprise: the optimal derivative order $\\beta^*$ is strictly less than the PDE order $m$. This gap arises from a bias-variance tradeoff in spectral space that we characterize in closed form. Learning $\\beta$ from data achieves automatic spectral regularization. We introduce $\\partial$-NO (del-NO), for derivative-augmented neural operators, an architecture-agnostic augmentation that provides learnable fractional derivative features to any neural operator backbone. Across benchmark problems and architectures, $\\partial$-NO consistently improves prediction accuracy, with learned orders that reflect a representation of known physics modulated by noise and finite-sample constraints.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Fares B. Mehouachi",
+   "Saif Eddin Jabari"
+  ],
+  "url": "https://arxiv.org/abs/2610.20363",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Neural operators typically take raw coordinate-value pairs as input, ignoring the differential structure of the governing PDE. The paper uses Picard iteration to prove that derivative features tighten approximation bounds and introduces del-NO, an architecture-agnostic augmentation with learnable fractional derivative orders whose optimal order is shown to be strictly below the PDE order.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20369",
+  "source": "arXiv",
+  "title": "ReAl: Refine neural operators via aligning dynamical flow",
+  "abstract": "Neural partial differential equation (PDE) surrogates trained with mean squared error (MSE) can capture dominant dynamics but often lose high-frequency information and fine-scale structures. Generative models (e.g., Flow Matching) can capture the distribution of fine-scale details, yet stochastic errors may accumulate during autoregressive rollouts and compromise long-term stability. To address these limitations, we introduce Refine and Align(ReAl), a model-agnostic plug-in that augments pretrained PDE surrogates to improve the reconstruction of high-frequency structures associated with complex physical phenomena. In the refinement stage, a conditional flow-matching model learns the residual distribution around the deterministic base prediction, recovering missing fine-scale structures while retaining the dominant dynamics. In the alignment stage, to mitigate the generative discrepancies amplified in the autoregressive rollout, particularly in chaotic systems, we generate multiple trajectories from the same input and reinforce the refiner with trajectory-level rewards, thereby achieving long-horizon dynamical alignment. Experiments across diverse surrogate architectures and PDE tasks demonstrate that ReAl consistently improves high-frequency fidelity, forecasting accuracy, and long-horizon stability.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Jing Xu",
+   "Zenglin Xu",
+   "Li Yi",
+   "Ruoxi Jiang",
+   "Yuan Qi"
+  ],
+  "url": "https://arxiv.org/abs/2610.20369",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "generative-simulation"
+  ],
+  "summary": "MSE-trained neural PDE surrogates capture dominant dynamics but lose high-frequency structure, while generative refinements introduce stochastic errors that destabilize long autoregressive rollouts. ReAl is a model-agnostic plug-in that adds a conditional flow-matching refiner for residual fine-scale structure and aligns it to long-horizon dynamics with trajectory-level rewards.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20413",
+  "source": "arXiv",
+  "title": "When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?",
+  "abstract": "Momentum is a classical tool for accelerating convex optimization and a standard component of modern large language model training. Yet recent empirical work has questioned the usefulness of first-moment momentum in reinforcement learning with verifiable rewards (RLVR). We study this question through a bandit formulation of RLVR with bias-corrected exponential moving average (EMA) momentum, where the EMA coefficient $\\beta$ controls how quickly the weights on past gradients decay. When policy gradients are evaluated exactly, we prove that increasing $\\beta$ within a range that prevents overshoot strictly accelerates optimization. When gradients are estimated from sampled responses, a positive expected gain can be obscured by sampling fluctuations. We show that as the learning rate $\\eta$ decreases, the expected gain with fixed $\\beta$ vanishes faster than these fluctuations, whereas increasing $\\beta$ to keep $\\eta/(1-\\beta)$ within the safe regime preserves a nonvanishing gain that eventually dominates them. Bandit simulations quantitatively validate these predictions. RLVR experiments on Qwen3-4B-Base using SGD with EMA and AdamW support our principle of choosing larger coefficients in practical LLM post-training. On Qwen2.5-32B with AdamW, simply increasing $\\beta_1$ improves mean validation accuracy by nearly $2$ percentage points over the conventional choice, demonstrating the principle's effectiveness at a larger model scale.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "math.OC",
+   "stat.ML"
+  ],
+  "authors": [
+   "Kaifei Wang",
+   "Zikang Shan",
+   "Liwei Wang",
+   "Yinyu Ye",
+   "Han Zhong"
+  ],
+  "url": "https://arxiv.org/abs/2610.20413",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Whether first-moment momentum actually accelerates reinforcement learning with verifiable rewards (RLVR) has been questioned empirically. The paper analyzes bias-corrected EMA momentum via a bandit formulation, proving that increasing β within a non-overshooting regime strictly accelerates exact policy-gradient optimization and preserves a non-vanishing gain under sampled gradients, with Qwen RLVR experiments supporting the principle.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20462",
+  "source": "arXiv",
+  "title": "Learning by Examples: Power Grid Steady State Analysis with a Tabular Foundation Model",
+  "abstract": "Foundation models have shown strong generalization across scientific domains, but their use in power systems remains largely task-specific. We investigate whether a pretrained tabular foundation model (TFM), TabPFN, can serve as a general-purpose neural solver for power grid steady-state analysis. We evaluate the TFM on three tasks: power flow (PF) prediction, N-k contingency screening (NCS), and voltage stability margin (VSM) prediction. We performed experiments on 118- and 2000-bus systems, comparing the TFM against task-specific neural baselines. Without retraining or fine-tuning, the TFM matches or outperforms the best task-specific model in several settings across the three tasks. For 118-bus PF prediction, a variant of the TFM achieves errors of $1\\times 10^{-3}$ pu for voltage magnitudes and $0.30^\\circ$ for voltage angles, outperforming all baselines. On unseen N-1 contingency and close-to-infeasible PF cases, the TFM is competitive with the DCPF approximation. For millions of unseen N-2 contingencies, the TFM achieves AUCs of 0.92 and 0.95 for branch and voltage violation screening, respectively. The TFM also attains accurate VSM prediction performance for the 2000-bus system with limited labelled data. The TFM attains strong results across the tested tasks despite pretraining without any power-system-specific dataset and requiring no fine-tuning step. These results offer a glimpse into the potential of pretrained TFMs as a neural solver for a range of power grid analysis tasks.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Olayiwola Arowolo",
+   "Oluwadara Adedeji",
+   "Peter Palensky",
+   "Jochen L. Cremer"
+  ],
+  "url": "https://arxiv.org/abs/2610.20462",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "It is unclear whether a pretrained tabular foundation model can act as a general-purpose neural solver for power grid steady-state analysis. The paper evaluates TabPFN without retraining or fine-tuning on power flow prediction, N-k contingency screening, and voltage stability margin estimation for 118- and 2000-bus systems, matching or outperforming task-specific neural baselines.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20525",
+  "source": "arXiv",
+  "title": "The Physics Is the Network: Fast, Training-Free Neural Emulation",
+  "abstract": "Neural emulation need not require learning a substitute for known physics. We investigate PolyNets that couple a continuous-time neural representation of polynomial dynamics with a simple recurrent network for discrete-time integration. When the governing coefficients are known, the resulting tensor graph requires no training and preserves the prescribed numerical scheme while enabling efficient hardware execution and parallel simulation. Using the one-dimensional Korteweg-de Vries equation, we compare PolyNet with CPU and GPU finite-difference Runge-Kutta solvers and three trained neural models: a state-map emulator, a physics-informed predictor, and a learned-tendency integrator. Analytical soliton solutions provide a reference for amplitude and phase errors across grid resolutions, 10^6 dispersively scaled time steps, ensembles of up to 10^4 trajectories, and varying initial amplitudes. PolyNet achieves accuracy comparable to the numerical solvers, including at amplitudes outside the learned models' training conditions. It combines this fidelity with high GPU throughput, approximately constant over the tested resolution range, and favorable ensemble scaling.",
+  "categories": [
+   "cs.LG",
+   "cs.SY",
+   "eess.SY",
+   "nlin.CD",
+   "stat.AP"
+  ],
+  "authors": [
+   "Luka Todorovic",
+   "Kaushal Gianchandani",
+   "Sai Ravela"
+  ],
+  "url": "https://arxiv.org/abs/2610.20525",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "differentiable-simulation"
+  ],
+  "summary": "Neural emulation typically requires training a learned surrogate to replace known physics. PolyNet instead couples a continuous-time neural representation of polynomial dynamics with a simple recurrent integrator, giving a training-free tensor graph that preserves the prescribed numerical scheme and is benchmarked on the Korteweg–de Vries equation against CPU/GPU Runge–Kutta solvers and trained neural models.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20585",
+  "source": "arXiv",
+  "title": "Learnable Hodge-Laplacian Driven Mixture of Experts for Steady-PDE Surrogates on Coarse Unstructured Meshes",
+  "abstract": "Current approaches for steady partial differential equations surrogate models on unstructured meshes apply a single mixing mechanism to the whole solution. This paper proposes an architecture that partitions the solution among vanilla transformer experts, each focused on a different spectral scale. The partition is built from a discrete Hodge Laplacian $L_0=\\star_0^{-1} d_0^{\\top}\\star_1 d_0$, that serves as a fitting layer measuring high-frequency content. A gating mechanism takes the mesh as input and produces the per-vertex weights that recombine the expert outputs. AirFRANS is a steady Reynolds-averaged Navier--Stokes (RANS) airfoil benchmark. We evaluate our approach in a reduced remeshed version of the benchmark with each unstructured mesh counting 9.6K faces and 4.9K vertices. We compare our approach with the Transolver on the same dataset and dataset slit. Our approach reduces relative $L_2$ error by 31\\% and interior mean squared error by 47\\%.",
+  "categories": [
+   "cs.LG",
+   "cs.CV"
+  ],
+  "authors": [
+   "Stavros Nousias",
+   "Akis Nousias",
+   "Konstantinos Gkrispanis"
+  ],
+  "url": "https://arxiv.org/abs/2610.20585",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Steady PDE surrogate models on coarse unstructured meshes often force a single mixing mechanism over the whole solution. The paper introduces a learnable Hodge-Laplacian-driven mixture of transformer experts that partitions the solution by spectral scale and reduces relative L2 error by 31% over Transolver on a RANS airfoil benchmark.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20586",
+  "source": "arXiv",
+  "title": "Continuum Attention",
+  "abstract": "We introduce Continuum Attention (CA), a causal Transformer attention operator that replaces discrete key and value lookup with integration over a continuous, piecewise linear memory curve. Each query induces an exponential relevance density along the curve. Integrating the density and interpolated values yields exact normalized attention from closed form exponential moments, including half token boundary contributions. The gradients follow analytically from moments of order at most two, enabling parallel GPU implementations while retaining quadratic sequence complexity and the standard Transformer decoder. Compared with ordinary softmax and focal attention, CA reduces mean validation negative log likelihood by 0.0200 and 0.0480 nats per byte, respectively, winning all paired comparisons. An additional disjoint validation slice yields a 0.0457 nats per byte advantage over the strongest selected softmax baseline, with a paired 95% confidence interval. These findings motivate continuous integration as a promising attention alternative while leaving larger scale generalization open.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Afshin Khadangi"
+  ],
+  "url": "https://arxiv.org/abs/2610.20586",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Standard Transformer attention relies on discrete key-value lookup, which the paper replaces with a continuous attention operator. Continuum Attention integrates an exponential relevance density over a piecewise linear memory curve, yielding exact closed-form normalized attention and analytic gradients through moments up to second order.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.18920",
+  "source": "arXiv",
+  "title": "Physiology-Informed Sparse Identification of Dynamic Crop Models",
+  "abstract": "Developing resilient crops requires models that accurately capture how plant growth dynamics emerge from the continuous interplay between genetic and environmental factors. While high-throughput phenotyping platforms generate data for dynamic growth models, current modelling approaches show limitations: process-based crop growth models (CGMs) capture environmental dynamics but are difficult to scale across many genotypes because they require calibration of many parameters, while quantitative genetic models allow modelling many genotypes but often summarise time-varying environments using static covariates. To address this gap, we propose a data-driven framework to identify reduced systems of ordinary differential equations (ODEs) describing crop growth dynamics as functions of environmental variables and a controllable number of genotype-specific coefficients (GSCs). Using the Sparse Identification of Nonlinear Dynamics (SINDy) method, we infer model structure directly from data via sparse regression on a physiologically informed library of candidate functions. In this framework, GSCs parameterise cultivar-specific differences in response to environmental conditions. The resulting models are linear in these GSCs, making them compatible with mixed-model and genomic prediction approaches. We evaluate the approach on an in silico dataset generated with WOFOST for five potato cultivars across twelve growing seasons. Our identified ODEs generalise to held-out years and achieve $R^2 > 0.9$ for end-of-season yield prediction across held-out years when compared to full-scale WOFOST simulations. These results provide a proof of concept for SINDy-based identification of parsimonious dynamic crop models from longitudinal crop-growth data.",
+  "categories": [
+   "q-bio.PE",
+   "math.DS",
+   "q-bio.QM"
+  ],
+  "authors": [
+   "Corn\\'{e} Verburg",
+   "Alexander Heinlein",
+   "Fred van Eeuwijk",
+   "Neil Budko"
+  ],
+  "url": "https://arxiv.org/abs/2610.18920",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Crop growth models struggle to balance environmental dynamics against genotype-specific coefficients at scale. The paper applies SINDy with a physiologically informed library to identify reduced ODEs in which genotype-specific coefficients enter linearly, enabling mixed-model and genomic prediction.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.18924",
+  "source": "arXiv",
+  "title": "TorchSpin: Differentiable Electron Paramagnetic Resonance Simulation in PyTorch",
+  "abstract": "Interpreting electron paramagnetic resonance (EPR) spectra commonly requires repeated forward simulation and optimization of spin Hamiltonian parameters. Established software provides mature simulation and fitting methods, but these calculations are not generally available as differentiable components within machine-learning workflows. We present TorchSpin, an open-source PyTorch framework that ports the organization and numerical conventions of EasySpin into a tensor-based computational environment. Representative calculations spanning continuous-wave EPR, ENDOR, pulse EPR, spin dynamics, trajectory simulation, and magnetometry closely reproduced corresponding EasySpin results. In matched benchmarks, TorchSpin CPU execution was faster than EasySpin for six of nine workloads although performance depended strongly on the calculation. We therefore focused on the capabilities enabled by automatic differentiation in PyTorch. In a Cu(II) powder-spectrum demonstration, feedback propagated through TorchSpin improved the quality of a supervised convolutional neural network (CNN) without using parameter labels during refinement. Models trained from randomly initialized CNNs using only noisy spectra and TorchSpin reconstruction loss achieved median similarities of $\\geq$ 0.99. CNNs trained on TorchSpin-generated libraries also transferred without adaptation to independently generated EasySpin spectra with performance comparable to EasySpin-trained controls. Once trained, the CNN produced initial parameter estimates in approximately 1 ms per spectrum while a batch of 512 was processed in approximately 1.3 ms with GPU acceleration. TorchSpin therefore provides both a tested Python implementation of established EPR calculations and a differentiable physical layer for rapid learned inference, spectral refinement, and parameter-label-free training.",
+  "categories": [
+   "physics.chem-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Alec H. Follmer"
+  ],
+  "url": "https://arxiv.org/abs/2610.18924",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "EPR spectra interpretation requires repeated forward simulation and optimization of spin Hamiltonian parameters outside differentiable ML workflows. TorchSpin ports EasySpin's numerical conventions into a tensor-based PyTorch framework with automatic differentiation, enabling label-free CNN refinement and fast learned parameter inference.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19091",
+  "source": "arXiv",
+  "title": "DiffGIPC: Differentiable Mixed-Coordinate Contact Dynamics on GPU",
+  "abstract": "Contact-rich inverse problems require efficient gradients and reliable enforcement of non-penetration. Existing differentiable methods provide fast simulation and rigid-deformable coupling, but contact treatments based on penalties or velocity-level constraints can permit penetration or positional drift. Incremental Potential Contact (IPC) maintains non-penetration through geometric barriers and {continuous collision detection (CCD)}. However, repeated forward and backward evaluations remain costly in full-space finite-element (FEM) implementations, particularly when nearly rigid components retain many vertex {degrees of freedom (DoFs)}. We present DiffGIPC, a GPU-accelerated differentiable IPC framework for optimizing interacting deformable and nearly rigid bodies. Our affine-body derivatives enable {rest-shape} design, initial-state optimization, and articulated control while retaining only twelve motion DoFs per affine body. These gradients account for how changes in geometry, placement, and actuation affect other objects through collision and friction. We preserve these interactions in one coupled FEM-affine adjoint system per frame, reducing the backward-system size without discarding the dependencies that drive the inverse problem. GPU-optimized backward computation further reduces the cost of repeated gradient evaluations. A reusable PyTorch interface connects supported physical parameters to user-defined parameter maps and losses across design, identification, motion, placement, and articulated control. Experiments demonstrate peak speedups over DiffIPC of approximately 150.0x with full-space FEM and 4133.3x with affine bodies for combined forward simulation and backward differentiation.",
+  "categories": [
+   "cs.GR",
+   "cs.RO",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Kemeng Huang",
+   "Bowen Ren",
+   "Xinyu Lu",
+   "Minchen Li",
+   "Taku komura"
+  ],
+  "url": "https://arxiv.org/abs/2610.19091",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation"
+  ],
+  "summary": "Contact-rich inverse problems need efficient gradients while strictly enforcing non-penetration. DiffGIPC combines Incremental Potential Contact barriers with affine-body derivatives and a coupled FEM-affine adjoint system on GPU to support design, identification, and articulated control with large speedups.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19250",
+  "source": "arXiv",
+  "title": "Full-Order Safety for Nonlinear Reduced-Order MPC",
+  "abstract": "Reduced-order models (ROMs) make model predictive control (MPC) of high-dimensional nonlinear systems tractable, but the resulting modeling error can lead to constraint violations on the real system. We introduce CoRE-MPC, a robust MPC formulation that plans with a nonlinear ROM and guarantees recursive feasibility and constraint satisfaction for the full-order system. It can be applied with a broad class of nonlinear model reduction techniques and the resulting MPC does not require evaluating the full-order model online, thus ensuring computational efficiency. The key insight is in how the ROM affects the dynamics of the prediction error. We account for this with two error radii that are propagated alongside the ROM and provide a guaranteed bound on the prediction error. The approach is validated in simulation on an 80-state oscillator chain, a Burgers equation, and a 9,768-state finite-element soft robot, where a two-state ROM with data-driven bounds keeps all 1,628 nodes clear of a wall at a median solve time below 1 ms for a 20 ms control period. Across these examples, CoRE-MPC is 13 to 61 times faster than full-order robust MPC at only 27 to 35% higher closed-loop cost, whereas existing certified schemes are either infeasible or at least twice as conservative. Code: [released upon publication].",
+  "categories": [
+   "cs.RO",
+   "cs.SY",
+   "eess.SY",
+   "math.OC"
+  ],
+  "authors": [
+   "Luis Pabon",
+   "Johannes K\\\"{o}hler",
+   "Revant Kasichainula",
+   "Marco Pavone"
+  ],
+  "url": "https://arxiv.org/abs/2610.19250",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Reduced-order models make nonlinear MPC tractable but can violate constraints on the full-order system. CoRE-MPC plans with a nonlinear ROM while propagating two error radii that bound the prediction error, guaranteeing recursive feasibility and constraint satisfaction without online full-order evaluation.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19490",
+  "source": "arXiv",
+  "title": "Digital Self-Interference Cancellation for In-Band Full-Duplex Systems Based on Transformer Neural Operators",
+  "abstract": "Digital-domain self-interference cancellation is essential in in-band full-duplex radios after passive suppression and analog cancellation. It is particularly challenging when the desired signal is strong relative to the residual self-interference. In this regime, conventional iterative digital cancellers update their coefficients from desired-signal-contaminated received samples and may suffer substantial performance degradation. This paper reformulates digital-domain self-interference cancellation as an operator-learning problem. The proposed framework learns the temporal evolution of the residual self-interference channel from historical observations and uses the learned operator together with the known local transmit signal to reconstruct the current residual self-interference. A Transformer neural operator is used to realize this framework. The resulting method is trained in a desired-signal-free setting and then applied in the presence of a desired signal. A continuity-based analysis characterizes the sensitivity of the learned operator to the resulting input perturbation. Numerical experiments in static and time-varying channels, including time-varying SIR conditions, demonstrate stable cancellation performance over a wide range of interference levels. At 30 dB SIR, the proposed method improves the cancellation performance by 5--15 dB over the considered conventional methods.",
+  "categories": [
+   "cs.IT",
+   "cs.LG",
+   "math.IT"
+  ],
+  "authors": [
+   "Zhijie Su",
+   "Shiquan Zhang",
+   "Qiaolin He"
+  ],
+  "url": "https://arxiv.org/abs/2610.19490",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Digital self-interference cancellation in in-band full-duplex radios degrades when the desired signal contaminates conventional iterative updates. The paper reformulates cancellation as operator learning and uses a Transformer neural operator to predict the residual self-interference channel from historical observations, improving cancellation by 5–15 dB at 30 dB SIR.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19628",
+  "source": "arXiv",
+  "title": "Self-Conditioning Enables Deep Sequential Reasoning in Flow Matching",
+  "abstract": "Recent work has explored visual reasoning through image generation, where models solve visual-reasoning problems by directly generating solution images. Intuitively, iterative samplers such as flow matching are well suited to this task, since each sampling step may resemble one reasoning step. However, in this work, from a circuit complexity perspective, we show that this intuition is misleading. We prove that as long as the model outputs satisfy certain mild regularity conditions, the trajectory of the vanilla flow-matching sampler can be simulated by a constant number of sequential rounds of parallel model evaluations. Consequently, additional sampling steps cannot increase the expressive power of a constant-depth backbone model under the standard complexity-theoretic model of transformers. We then reveal that self-conditioning, which conditions the model on the previous step's estimate of the final image, plays a previously unrecognized role in removing this bottleneck. Controlled experiments on diverse visual-reasoning tasks show that flow matching with self-conditioning achieves higher accuracy and greater reasoning depth than vanilla flow matching, and its performance improves with more sampling steps. Theoretically, we prove that with self-conditioning, a constant-depth backbone can achieve expressive power equivalent to that of space-bounded Turing machines. Our study suggests a design principle for future visual reasoning research: carry more information between sampling steps, so that additional steps translate into deeper reasoning.",
+  "categories": [
+   "cs.CV",
+   "cs.LG"
+  ],
+  "authors": [
+   "Zeyang Zhang",
+   "Linxiang Gao",
+   "Meiqi Gu",
+   "Xingyan Chen",
+   "Minrui Luo",
+   "Kaifeng Lyu",
+   "Tianxing He"
+  ],
+  "url": "https://arxiv.org/abs/2610.19628",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear whether iterative flow-matching samplers actually gain reasoning depth from additional sampling steps. The paper proves via circuit complexity that vanilla flow-matching trajectories can be simulated by a constant number of sequential parallel rounds under a constant-depth transformer backbone, and shows self-conditioning removes this bottleneck, yielding expressive power equivalent to space-bounded Turing machines.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19778",
+  "source": "arXiv",
+  "title": "Computational compressive imaging reconstruction with a simulated-annealing-based Ising solver",
+  "abstract": "Computational compressive imaging, such as single-pixel imaging and lensless imaging, is a promising imaging technique, enabling the reconstruction of objects from under-sampled measurements through compressed sensing algorithms or deep learning methods. However, the demand for electronic computational resources grows rapidly when recovering high-resolution and multi-dimensional images and training neural networks with numerous parameters, which has become a bottleneck for the widespread adoption of this technique. Here, we propose a physics-driven reconstruction framework that formulates imaging inverse problems as Ising models and directly recovers target objects through the self-evolution of non-von Neumann Ising machines toward the ground state of the Hamiltonian. We employ a simulated-annealing-based Ising solver to demonstrate this proof-of-concept by reconstructing objects in both single-pixel imaging and a lensless diffuser camera at sampling rates ranging from 1% to 25%. By further incorporating a foreground-sparsity constraint and a smoothness constraint, the reconstruction quality of our method is comparable to or even better than that of mainstream algorithms. This approach has the potential to substantially reduce the electronic computational burden of inverse reconstruction, paving the way for real-time, low-power computational imaging.",
+  "categories": [
+   "physics.optics",
+   "cs.CV",
+   "cs.DC",
+   "math-ph",
+   "math.MP",
+   "physics.app-ph"
+  ],
+  "authors": [
+   "Ze Zheng",
+   "Xiaoyan Wu",
+   "Hang Xu",
+   "Jingzheng Huang",
+   "Tailong Xiao",
+   "Guihua Zeng"
+  ],
+  "url": "https://arxiv.org/abs/2610.19778",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing high-resolution and multi-dimensional images from under-sampled measurements is bottlenecked by the electronic compute required by compressed-sensing and deep-learning solvers. The paper formulates imaging inverse problems as Ising models solved by a simulated-annealing-based Ising machine, adding foreground-sparsity and smoothness constraints to match or beat mainstream reconstruction in single-pixel and lensless cameras at 1-25% sampling rates.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.19888",
+  "source": "arXiv",
+  "title": "Maximum likelihood, neural networks and posterior mean for inferring fractional Brownian motion parameters",
+  "abstract": "Fractional Brownian motion (fBM) is a model of anomalous diffusion parameterised by a Hurst exponent $H \\in (0,1)$ and a generalised diffusion coefficient $D_H > 0$. We jointly estimate $H$ and $D_H$ using maximum likelihood (MLE) from density measurements with Poisson counting noise and single-particle trajectory with Gaussian localisation error. We show that one density measurement in time cannot infer both $H$ and $D_H$ and that several time points are needed, which matters most for inference precision. For trajectories, we show that a neural network trained with a squared error loss approximates the posterior mean of $H$, which can be computed exactly at negligible cost. Paired with the profile-likelihood estimate of $D_H$, the posterior mean has the lowest root mean squared error in both $H$ and $D_H$, except near $H=0$ and $H=1$ where MLE estimates $H$ better. In vesicle trajectories from two cell types, $H$ and $D_H$ form a continuum rather than distinct modes of motion. The posterior probability that each window within a track is subdiffusive or superdiffusive shows that $26\\%$ of MRC5 fibroblast and $21\\%$ of HeLa vesicle trajectories contain both subdiffusive and superdiffusive windows, against $2\\%$ and $7\\%$ expected from estimation uncertainty alone. Intracellular cargoes therefore switch between subdiffusion and superdiffusion over time rather than forming populations with fixed $H$.",
+  "categories": [
+   "q-bio.QM",
+   "cond-mat.stat-mech",
+   "physics.bio-ph",
+   "stat.ME",
+   "stat.ML"
+  ],
+  "authors": [
+   "Daniel S. Han",
+   "Vaishnavi Ananthanarayanan",
+   "Matthew J. Simpson"
+  ],
+  "url": "https://arxiv.org/abs/2610.19888",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Jointly estimating the Hurst exponent H and generalized diffusion coefficient D_H of fractional Brownian motion from Poisson-noisy density measurements and Gaussian-localization-error trajectories is statistically delicate. The paper proves one density measurement cannot identify both parameters, and shows that a neural network trained with squared-error loss approximates the exact posterior mean of H, giving the lowest RMSE when paired with profile-likelihood estimation of D_H.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20020",
+  "source": "arXiv",
+  "title": "MCMC Can See Can't See",
+  "abstract": "It is folklore that passing \"convergence\" diagnostics does not guarantee that a Markov chain has converged. We prove this as an impossibility for any finite checklist of diagnostics. Running more chains, longer chains, and smarter diagnostics does not avoid this impossibility in certifying convergence. Under regularity assumptions, we determine how the worst-case undetected non-convergence decays as more diagnostics are added, and how to choose diagnostics optimally. Folklore suggests that the sampler's slowest mixing modes are the \"dangerous\" ones that must be monitored; we prove that the slow modes yield nearly optimal diagnostics as sampling proceeds. Given a source class, we also give an anytime-valid bound on the remaining discrepancy and show how undetected bias caps the effective sample size that a finite checklist can certify.",
+  "categories": [
+   "stat.CO",
+   "math.ST",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Daniel Matsui Smola"
+  ],
+  "url": "https://arxiv.org/abs/2610.20020",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "It is folklore that passing MCMC convergence diagnostics does not imply a chain has converged, but this had not been formalized. The paper proves an impossibility result for any finite checklist of diagnostics, characterizes how worst-case undetected non-convergence decays as diagnostics are added, gives an anytime-valid bound on remaining discrepancy, and shows how undetected bias caps certifiable effective sample size.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20090",
+  "source": "arXiv",
+  "title": "Drift parameter estimation for interacting particle systems with singular repulsion",
+  "abstract": "We study the estimation of the interaction parameter in singular interacting particle systems from continuous and discrete observations over a fixed time horizon. The singularity of the interaction drift prevents the direct application of standard likelihood and contrast-based methods, which rely on regularity assumptions that fail in this setting. Our approach exploits an exact reduction of the particle dynamics to a one-dimensional stochastic differential equation for a quadratic empirical moment. By the symmetry of the interaction kernel, the singular terms cancel, yielding an explicit estimator in which the unknown parameter enters linearly. We establish consistency and asymptotic normality as the number of particles, \\(N\\), tends to infinity. Letting \\(\\varepsilon_N\\) denote the microscopic noise scaling of the system, we obtain asymptotic normality at the rate \\(\\sqrt{N/\\varepsilon_N}\\) for strictly positive interaction kernels, under an additional condition on the limiting empirical information. We further extend these results to degenerate interaction kernels, achieving consistency and asymptotic normality at rate \\(N\\) under suitable structural assumptions and the canonical scaling \\(\\varepsilon_N=N^{-1}\\). In both regimes, we provide conditions on the observation mesh ensuring that the statistical limits remain valid under discrete sampling, in high frequency. Finally, we illustrate the applicability of our methodology through Dyson Brownian motion, the Dyson Ornstein--Uhlenbeck process, and Wishart--Laguerre particle systems, alongside a numerical investigation of the estimators' finite-sample performance.",
+  "categories": [
+   "math.ST",
+   "math.PR",
+   "stat.TH"
+  ],
+  "authors": [
+   "Chiara Amorino",
+   "Jacek Malecki",
+   "Radomyra Shevchenko"
+  ],
+  "url": "https://arxiv.org/abs/2610.20090",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Estimating the interaction parameter in singularly repelling interacting particle systems is obstructed because standard likelihood and contrast methods fail under the non-regular singular drift. The paper exploits an exact reduction of the dynamics to a one-dimensional SDE for a quadratic empirical moment and derives explicit estimators, proving consistency and asymptotic normality at rate sqrt(N/eps_N) for positive kernels and rate N for degenerate kernels, including conditions for discrete high-frequency sampling.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20321",
+  "source": "arXiv",
+  "title": "Hierarchical Gaussian Processes for Survey Weighting: Local Equivalent Weights in Structured Populations",
+  "abstract": "Regression-based survey weighting connects model-based population estimation with design-based inference through equivalent weights. For nonlinear models, equivalent weights can be defined locally through the sensitivity of a poststratified population estimator. However, conventional regression models may inadequately capture nonlinear relationships and complex interactions across sparse poststratification cells. We develop a survey-weighting framework based on hierarchical Gaussian process (HGP) regression, combining structured group-level effects with kernel-based smoothing to share information across related cells. We derive Gaussian posterior prediction formulas that exploit the structured covariance representation to reduce computational costs. We also establish a uniform convergence result for the posterior predictive mean under stated regularity conditions and construct local equivalent weights by matching the first-order sensitivity of a plug-in poststratified estimand to that of a weighted average of fitted response means, with both derivatives taken with respect to the latent mean-scale vector. Simulations show that HGP achieves lower population-weighted prediction error under nonparametric structure, whereas logistic regression performs well under correct parametric specification. Additional analyses examine sample size, frame coverage, subgroup prediction, and population-mean agreement. An application to the Future of Families and Child Wellbeing Study illustrates the method. Overall, this work extends local equivalent-weight construction to nonparametric modeling and provides a computational framework and conditional theoretical results for survey weighting in structured, sparse populations.",
+  "categories": [
+   "stat.ME",
+   "stat.ML"
+  ],
+  "authors": [
+   "Seonghun Lee"
+  ],
+  "url": "https://arxiv.org/abs/2610.20321",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Survey weighting with nonlinear regression models requires local equivalent weights, but standard regressions capture nonlinearity and cross-cell interactions poorly in sparse poststratification cells. The paper develops a hierarchical Gaussian process regression framework with a structured covariance representation, derives Gaussian posterior prediction formulas with reduced cost, proves uniform convergence of the posterior predictive mean, and constructs local equivalent weights by matching first-order sensitivities of a poststratified estimator.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20374",
+  "source": "arXiv",
+  "title": "Effective Graph Neural Representation of Chain Architectures of Block Copolymers Tested by Predicting RPA Instability Limits",
+  "abstract": "Advances in polymer synthesis and computational modeling are expanding the block-copolymer architecture space accessible for phase-behavior design. Machine learning can accelerate this exploration, yet a common representation capable of learning across diverse chain topologies remains lacking. Here, we present a graph neural network (GNN) representation of acyclic AB multiblock architectures, tested by random-phase approximation (RPA) instability prediction. Each chain is represented as a graph, enabling a common model to learn across diverse topologies. This representation, which organizes RPA-related information, retains predictive capability when extrapolated to architectures with more blocks and demonstrates its potential for reuse across tasks through transfer to instability-wavenumber prediction. By effectively linking block-copolymer chain architecture to field-theoretic response, this graph representation not only reconstructs stability-limit curves but also provides a practical route for future self-consistent field theory exploration of ordered phase space across complex topologies.",
+  "categories": [
+   "cond-mat.soft",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Xiyue Zhang",
+   "Yutong Wu",
+   "Yi-Xin Liu"
+  ],
+  "url": "https://arxiv.org/abs/2610.20374",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Learning across diverse block-copolymer chain topologies is hindered by the lack of a common representation. The paper introduces a graph neural network representation of acyclic AB multiblock architectures, tested by predicting random-phase-approximation instability limits, and shows extrapolation to architectures with more blocks and transfer to instability-wavenumber prediction.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20400",
+  "source": "arXiv",
+  "title": "HRTF Upsampling and Personalization via Neural Operators",
+  "abstract": "Head-related transfer function (HRTF) spatial upsampling from sparse measurements is a fundamental challenge in personalized binaural audio. We formulate HRTF upsampling as an operator learning problem and introduce SPARO, a neural operator that maps sparse measurements at a set of spatial directions to the HRTF field, a continuous representation that can be queried at arbitrary positions. SPARO projects the measurements onto a learned set of spherical latent modes, processes the latent modes with Transformer blocks, and decodes the resulting representations at query directions. On SONICOM, using the LAP24 measurement configuration, SPARO attains the best log-spectral distortion (LSD) and interaural level difference (ILD) error at every sparsity level from 3 to 100 measurements (18% lower LSD and 43% lower ILD error than the strongest baseline at 100 measurements) while remaining competitive in interaural time difference (ITD) error. It reconstructs a dense HRTF 15 to 373 times faster than the leading neural-field method RANF. We further validate the approach on HUTUBS, demonstrating its effectiveness across HRTF datasets.",
+  "categories": [
+   "cs.SD",
+   "cs.LG"
+  ],
+  "authors": [
+   "Meenakshi Krishnan",
+   "You Zhang",
+   "Ramani Duraiswami",
+   "C. Phillip Brown"
+  ],
+  "url": "https://arxiv.org/abs/2610.20400",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Upsampling head-related transfer functions from sparse spatial measurements is a core obstacle to personalized binaural audio. The paper introduces SPARO, a neural operator that projects measurements onto learned spherical latent modes, processes them with Transformer blocks, and decodes the HRTF field at arbitrary query directions, achieving lower LSD and ILD error than strong baselines and 15-373x faster reconstruction than RANF.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20447",
+  "source": "arXiv",
+  "title": "Testing Conditional Distribution Equality Using Generative Models",
+  "abstract": "Conditional distribution equality testing is a core problem with applications in causal inference, model diagnostics, and transfer learning. Existing methods often lose power when the conditioning variable is high-dimensional. We propose a new test that leverages generative models to compare conditional distributions using both observed data and synthetic samples. A sample-splitting and studentization scheme is introduced to control estimation error. Under the null, the test statistic is asymptotically normal, and we establish local power against contiguous alternatives. Our theory under the null and fixed alternative requires only consistency of the learned conditional distribution, allowing for a broad class of generative models. Empirical results demonstrate accurate size control and strong power in high-dimensional settings compared to representative kernel-based conditional and joint two-sample tests.",
+  "categories": [
+   "stat.ME",
+   "stat.ML"
+  ],
+  "authors": [
+   "Zekai Jin",
+   "Yi Zhang",
+   "Yun Yang",
+   "Xiaofeng Shao"
+  ],
+  "url": "https://arxiv.org/abs/2610.20447",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper addresses conditional distribution equality testing, a core statistical problem that loses power when the conditioning variable is high-dimensional. It proposes a generative-model-based test with sample splitting and studentization, proving asymptotic normality under the null and local power against contiguous alternatives while requiring only consistency of the learned conditional distribution.",
+  "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20573",
+  "source": "arXiv",
+  "title": "Beyond LLM Judge: Mechanical Verification for Agentic Autoformalization",
+  "abstract": "We introduce a novel method for verifying Lean formalizations that goes beyond LLM-judged faithfulness. Unlike most verification methods, which rely on LLMs or trained models, our method combines LLM-based semantic review with mechanical numerical and vacuity checks, providing checkable feedback and detecting errors missed by LLM judges. We apply this method, along with our Extract-Verify-Proof autoformalization pipeline, to construct the Formalized Library of Mathematical Functions (FLMF), a partial formalization of the NIST Digital Library of Mathematical Functions (DLMF). On three labeled datasets, our method achieves the lowest accepted-error rate among the evaluated methods, measured as the fraction of incorrect statements accepted by the verification method. Expert review of the results also identifies translation and source defects in existing datasets. Code available at https://github.com/annamei1/FLMF-Ch7ErrFunc-Release.git.",
+  "categories": [
+   "cs.LO",
+   "cs.AI"
+  ],
+  "authors": [
+   "Anna Mei",
+   "Michael R. Douglas"
+  ],
+  "url": "https://arxiv.org/abs/2610.20573",
+  "published": "2026-10-15",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM-judged verification of Lean formalizations can accept incorrect statements, so the paper targets more reliable autoformalization checking. It combines LLM-based semantic review with mechanical numerical and vacuity checks in an Extract-Verify-Proof pipeline, using it to build the FLMF formalization of the NIST DLMF and achieving the lowest accepted-error rate among evaluated verifiers.",
+  "added": "2026-10-15"
  }
 ]
