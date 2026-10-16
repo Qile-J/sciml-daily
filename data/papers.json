@@ -68613,5 +68613,446 @@
   ],
   "summary": "LLM-judged verification of Lean formalizations can accept incorrect statements, so the paper targets more reliable autoformalization checking. It combines LLM-based semantic review with mechanical numerical and vacuity checks in an Extract-Verify-Proof pipeline, using it to build the FLMF formalization of the NIST DLMF and achieving the lowest accepted-error rate among evaluated verifiers.",
   "added": "2026-10-15"
+ },
+ {
+  "id": "arxiv:2610.20613",
+  "source": "arXiv",
+  "title": "Physics-informed Kolmogorov-Arnold networks (PIKANs) for noise-robust reconstruction of boiling heat flux from infrared measurements",
+  "abstract": "Recovering a noise-amplified inverse quantity from corrupted boundary data is a recurring problem in physics-informed learning for real-world applications. Specifically, small perturbations in the measured field are magnified through the spatial derivatives needed to reconstruct the target, and hence conventional discretization solvers turn them into large unphysical oscillations. We study this problem through the reconstruction of local time-resolved nucleate-boiling heat flux, which cannot be measured directly and must be inferred from infrared surface temperatures by solving an unsteady three-dimensional heat-conduction problem with sharp and rapidly evolving liquid-vapor interface gradients. We show that neither network architecture nor optimizer alone overcomes the spectral bias that smooths away these interface-scale features, and that the two must be addressed jointly. Our approach combines a Chebyshev physics-informed Kolmogorov-Arnold network (PIKAN) backbone, a quasi-second-order (SOAP) optimizer, and a temperature-annealed residual-based resampling scheme that concentrates collocation points at high-residual interface regions. Trained directly on experimental infrared measurements imposed as a boundary condition, the network resolves high-frequency bubble signatures and the high-flux distribution tail much better than a Fourier-feature PINN of equal size and training budget. In particular, it selectively filters measurement noise while preserving the physically meaningful high-frequency features, suppressing the spurious oscillations that contaminate finite-volume reconstructions and yielding more physically consistent heat-flux estimates from noisy experimental data.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Siavash Khodakarami",
+   "Parimala Vardhan Vydyula",
+   "Aniruddha Bora",
+   "Justin A. Weibel",
+   "George Em Karniadakis"
+  ],
+  "url": "https://arxiv.org/abs/2610.20613",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper targets noise-amplified reconstruction of local time-resolved nucleate-boiling heat flux from corrupted infrared boundary temperatures, where spatial derivatives magnify measurement noise into unphysical oscillations. It combines a Chebyshev physics-informed Kolmogorov-Arnold network (PIKAN) backbone, a quasi-second-order SOAP optimizer, and a temperature-annealed residual-based resampling scheme that concentrates collocation points at high-residual interface regions.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20614",
+  "source": "arXiv",
+  "title": "Thermodynamically Consistent Machine Learning for Fracture Prediction in Heterogeneous Materials",
+  "abstract": "Understanding fracture behavior is critical for assessing the structural integrity and longevity. Highly time-consuming physics-based fracture simulations motivate the development of machine-learning-based fracture evolution prediction with surrogate models. However, most existing machine-learning models for fracture prediction operate as black boxes and require large training datasets to generalize reliably. In this work, Thermodynamically Consistent Latent Dynamics Identification (tLaSDI) for parametric systems is introduced to predict fracture patterns and evolution in heterogeneous materials. The model learns the thermodynamic state variable in a lower-dimensional latent space using parametric GENERIC Formalism-Informed Neural Networks (pGFINNs) that enforce key thermodynamic principles, such as total energy conservation and entropy generation. This model embeds physics into the neural network architecture using a hard-constraint method that inherently complies with the underlying thermodynamic principles. The proposed tLaSDI-pGFINNs is further enhanced by a Geometry-Conditioned Autoencoder in learning the geometry configuration for effective geometry-guided learning. The energy and entropy evolution histories demonstrate that the model preserves the thermodynamic constraints on unseen testing samples. The results further show that tLaSDI-pGFINNs can more accurately capture both fracture patterns and the subsequent fracture evolution than the purely data-driven Autoencoder Long Short-Term Memory (AE-LSTM) model.",
+  "categories": [
+   "physics.comp-ph",
+   "cond-mat.mtrl-sci",
+   "cs.CE",
+   "cs.LG"
+  ],
+  "authors": [
+   "Muhamad Alim",
+   "Xiaolong He",
+   "Mei-Na Tsao",
+   "Chi-Hua Yu",
+   "J. S. Chen"
+  ],
+  "url": "https://arxiv.org/abs/2610.20614",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper predicts fracture patterns and evolution in heterogeneous materials, aiming to avoid costly physics-based fracture simulations and black-box surrogates that need large datasets. It introduces tLaSDI-pGFINNs, which learns a low-dimensional latent thermodynamic state with parametric GENERIC-formalism-informed neural networks under hard energy-conservation and entropy-generation constraints, enhanced by a geometry-conditioned autoencoder.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20617",
+  "source": "arXiv",
+  "title": "Iterative Neural Variational Solver of Committor Function in Under-damped Langevin Dynamics",
+  "abstract": "The committor function describes the probability that a stochastic dynamical system, while transitioning between two metastable states, will first reach one state rather than the other. It is a central object in transition path theory, providing the accurate reaction rate and the characterization of the transition mechanism through reactive probability flux and the transition state ensemble. While the numerical methods for this function are well studied for over-damped Langevin dynamics where the friction damping coefficient goes to infinity, its computation in the general under-damped case remains an open challenge due to the lack of a variational structure in the underlying backward Kolmogorov equation. This restricts the quantitative investigation of the impact of the finite damping coefficient on rare transitions in real systems. In this work, by decomposing the infinitesimal generator of the underdamped Langevin dynamics into a self-adjoint and a skew-adjoint part, we develop an iterative scheme in which each subproblem has a variational form and can be solved efficiently using neural networks. Fundamentally, this approach can be viewed as a generalized Concus-Golub-Widlund (CGW) splitting method and each subproblem has a variational form, which can be solved efficiently. This iterative scheme also has the flexibility of introducing a preconditioning operator associated with a new overdamped Langevin dynamics, which naturally leads to the design of enhanced adaptive sampling for the subproblems. We validate the efficiency and accuracy of our method on benchmark systems including a one-dimensional double-well potential, the Muller-Brown potential, and alanine dipeptide. The proposed iterative variational framework provides a practical and extensible numerical tool for probing rare transition events in Langevin dynamics across varying damping coefficients.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Tiejun Li",
+   "Zhaoqi Liu",
+   "Xiang Zhou"
+  ],
+  "url": "https://arxiv.org/abs/2610.20617",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "Computing the committor function of under-damped Langevin dynamics is an open challenge because the backward Kolmogorov equation lacks a variational structure. The paper decomposes the generator into self-adjoint and skew-adjoint parts to build an iterative variational scheme (a generalized Concus-Golub-Widlund splitting) solved by neural networks, with a preconditioning operator enabling enhanced adaptive sampling.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20619",
+  "source": "arXiv",
+  "title": "pcNN-SN: a physics-enhanced predictor-corrector neural network algorithm coupled with the discrete ordinates method for neutron transport equations",
+  "abstract": "Super-resolution machine learning methods hold promise for addressing the high computational costs associated with high-dimensional features in traditional transport simulations. This paper proposes a physics-enhanced neural network coupling algorithm for discrete ordinates (SN) transport calculations. Based on high- and low-accuracy data, we develop a predictor-corrector neural network (pcNN) to predict correction factors for coarse-grid solutions. Based on transport equations, local physical features containing subgrid-scale information are selected as network inputs. Dimensionless transformation of physical quantities reduces the input space dimensionality and narrows parameter distributions, facilitating network training. Physical constraints are incorporated into the network model, and the corrected solution retains its original conservation properties. pcNN and SN transport sweeps are internally coupled, and numerical solutions are corrected online. Numerical results demonstrate that this algorithm can effectively improve coarse-grid solutions to achieve a level of accuracy comparable to that of fine-grid results. The physics-based network design enables the model to demonstrate a certain degree of reusability under different computational conditions. Compared to mesh refinement, the pcNN-SN algorithm reduces the computation time for the three-dimensional test problem by more than 60%.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG"
+  ],
+  "authors": [
+   "Cong Liu",
+   "Junxia Wei",
+   "Shuai Wang",
+   "Heng Yong"
+  ],
+  "url": "https://arxiv.org/abs/2610.20619",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "The paper addresses the high cost of discrete-ordinates (SN) neutron transport simulations by correcting coarse-grid solutions. It develops a predictor-corrector neural network (pcNN) coupled online with SN transport sweeps that predicts correction factors from subgrid-scale physical features via dimensionless inputs and conservation-preserving constraints.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20621",
+  "source": "arXiv",
+  "title": "On the Assessment of Domain Decomposition Approaches in Extended Physics-Informed Neural Networks for the Shock-Dominated Burgers Equation",
+  "abstract": "Physics-Informed Neural Networks (PINNs) provide a mesh-free framework for solving partial differential equations but often struggle with sharp gradients and shock-dominated solutions. Extended Physics-Informed Neural Networks (XPINNs) address this challenge through domain decomposition; however, the effects of decomposition design, overlap, and local network capacity on solution accuracy remain insufficiently characterized. This work presents a systematic assessment of domain decomposition configurations for XPINNs applied to the one-dimensional viscous Burgers equation ($\\nu=0.01/\\pi$). We compare a standard PINN, a conventional XPINN, a shock-focused XPINN with increased network capacity in the shock-containing subdomain, and overlapping XPINNs with different overlap widths. All configurations are trained using a common protocol based on Adam, L-BFGS refinement, and ten Residual-based Adaptive Refinement (RAR) cycles. Performance is evaluated against a reference solution using global and shock-region relative $L_2$ and $L_\\infty$ errors, maximum PDE residuals, and interface continuity errors. The results show that decomposition design strongly affects XPINN accuracy and shock resolution. Among the overlapping configurations, the smallest overlap provides the best accuracy, while larger overlaps degrade performance. The shock-focused XPINN achieves the lowest overall solution errors, indicating that increased local network capacity can provide greater benefit than increasing overlap alone. RAR produces the largest improvements during early refinement stages, followed by increasingly non-monotonic changes in accuracy. These findings highlight the importance of jointly considering decomposition, interface coupling, network capacity, and adaptive refinement for shock-dominated problems.",
+  "categories": [
+   "physics.comp-ph",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Andr\\'es F. Bola\\~nos-Acosta",
+   "Juli\\'an C. Restrepo"
+  ],
+  "url": "https://arxiv.org/abs/2610.20621",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "The paper systematically studies how domain decomposition design, overlap, and local network capacity affect extended physics-informed neural networks (XPINNs) on the shock-dominated 1D viscous Burgers equation. It compares a standard PINN, conventional XPINN, shock-focused XPINN with increased capacity, and overlapping XPINNs trained with a shared Adam/L-BFGS and residual-based adaptive refinement protocol.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20637",
+  "source": "arXiv",
+  "title": "Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States",
+  "abstract": "We expand the exponential kernel of attention into a truncated Taylor series of $n$ terms and factorize each term into a tensor-power inner product, which collapses the causal history into exactly $n$ recurrent states, each updated by one rank-one outer product per token and independent of context length $N$. The recursion is lossless with respect to the truncated kernel ($2.2 \\times 10^{-16}$ in float64), and the states are additive across chunks ($5.7 \\times 10^{-14}$), so prefill admits a parallel scan. Measured exponents are $t \\propto N^{2.28}$ for softmax against $N^{0.91}$ for states, with a crossover at $N \\approx 728$ and $20.8\\times$ at $N = 8192$; per-token decoding latency is constant at $7.3\\,\\mu$s against $N^{1.04}$ for softmax, giving $76.0\\times$ at $N = 65536$. Accuracy improves exponentially in $n$ while cost grows combinatorially, since the $m$-th state is $\\binom{d+m-1}{m}$ wide---a bound confirmed by SVD---so the optimum is second order, $n = 3$, at $6.5 \\times 10^{-4}$ error and $9{,}945$ elements per head. Query and key normalization is a prerequisite: without it the argument exceeds the convergence radius and adding terms stops helping.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Zicong Huang"
+  ],
+  "url": "https://arxiv.org/abs/2610.20637",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks how to make attention linear-time while provably preserving its exponential-kernel behavior. It expands the exponential kernel as a truncated Taylor series, factorizes each term into a tensor-power inner product to collapse the causal history into a fixed number of additive recurrent states, and analyzes convergence-radius and approximation-error behavior.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20643",
+  "source": "arXiv",
+  "title": "Thermochemically Constrained Multiscale Laplace Neural Operator to Learn Stiff Chemical Kinetics with Conditional Diffusion Model Sampling",
+  "abstract": "Stiff chemical kinetics is a major computational bottleneck in reacting-flow simulations, while data-driven solvers remain sensitive to training-state coverage and chemical dynamics. This work combines conditional diffusion sampling with a thermochemically constrained multiscale Laplace neural operator (TC-MLNO) for chemistry ODE integration. The diffusion model learns the equivalence-ratio-conditioned joint distribution of temperature and species from low-dimensional flame data, augmenting the state space without independent perturbations. TC-MLNO represents transient, non-periodic responses through pole-residue Laplace layers and assigns fast, medium, and slow species to separate branches. Thermochemical constraints are imposed through losses for mass and elemental conservation and heat release rate. The framework is evaluated in 1D premixed flames, a 2D developing jet, and a 3D turbulent burner flame. With equal-sized datasets, diffusion sampling reduces the 95th-percentile distance to the base flame manifold by up to 37.5% and the a posteriori full-species macro-average error by up to 92.7% versus random sampling, especially for minor species and radicals. TC-LNO yields smaller errors than the DeepONet baseline for 84.9% of retained modes and reduces the 95th-percentile error for the most attenuated modes from 0.372 to 0.081. In multidimensional flames, TC-MLNO better preserves reaction-zone locations, heat-release structures, and chemically sensitive species than DeepONet. Errors of representative radical and nitrogen-containing species in the 3D flame decrease by 88.0%-88.9%. Compared with direct CVODE integration, TC-MLNO reduces mean chemistry and total solution times by 90.1% and 62.6%, respectively. These results show that distribution-aware sampling and Laplace neural operator learning provide an accurate and efficient alternative for stiff chemical ODE integration.",
+  "categories": [
+   "physics.comp-ph",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Dong Yang",
+   "Xiongbo Duan",
+   "Min Zhang",
+   "Yuqiang Li"
+  ],
+  "url": "https://arxiv.org/abs/2610.20643",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "generative-simulation",
+   "physics-informed-ml"
+  ],
+  "summary": "The paper tackles stiff chemical-kinetics integration, a bottleneck in reacting-flow simulations where data-driven solvers are sensitive to state-space coverage. It couples a thermochemically constrained multiscale Laplace neural operator (with pole-residue Laplace layers and species-branching) with a conditional diffusion model that augments training data while enforcing mass, elemental, and heat-release constraints.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20655",
+  "source": "arXiv",
+  "title": "Global-in-time Spectral Duhamel-Picard Method for Post-Exposure Bake Simulation and Physics-Informed Neural Operators for EUV Lithography",
+  "abstract": "We present a global-in-time spectral Duhamel-Picard method with polynomial expansions for post-exposure bake (PEB) simulation. The coupled acid-quencher reaction-diffusion equations are reformulated as nonlinear Volterra integral equations using the Duhamel principle. Full trajectories are represented by finite polynomial expansions, with temporal coefficient fields determined over the bake interval by Anderson-accelerated Picard iteration, thereby avoiding sequential time marching. In 3-D PEB simulations, we employ Chebyshev and Legendre temporal bases while evaluating the Duhamel integrals using the corresponding Gaussian quadrature rules. We demonstrate that the proposed method simulates a large domain of $1200\\times1200\\times100$ voxels on the order of one minute. The representation is further incorporated into a physics-informed neural operator (PINO) with a mixed-transform variant of a factorized Fourier neural operator, which is trained without precomputed solution trajectories. Together, the integral formulation and its PINO extension enable accelerated, time-marching-free prediction of concentration fields at arbitrary times within the bake interval.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG",
+   "physics.app-ph"
+  ],
+  "authors": [
+   "Doyun Kim",
+   "Mircea Dusa",
+   "Werner Gilijns",
+   "Philippe Leray"
+  ],
+  "url": "https://arxiv.org/abs/2610.20655",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "The paper accelerates post-exposure bake simulation for EUV lithography by avoiding sequential time marching of the coupled acid-quencher reaction-diffusion equations. It reformulates them as nonlinear Volterra integral equations solved via a global-in-time spectral Duhamel-Picard expansion with Anderson-accelerated Picard iteration, and embeds the representation in a physics-informed neural operator with a mixed-transform factorized Fourier neural operator.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20659",
+  "source": "arXiv",
+  "title": "Latent Annealed Posterior Sampling with a Variance-Preserving Bridge for Sparsely Observed Random Fields",
+  "abstract": "Posterior inference for random fields from sparse observations presents two major challenges: accurately characterizing complex spatial uncertainty and preventing conditional sampling costs from growing substantially as the spatial grid is refined. To address these challenges, we propose latent annealed posterior sampling (LAPS). LAPS first maps the random field into a latent space with reduced dimensionality, while a coordinate decoder composed of Branch and Trunk networks enables field evaluation at arbitrary spatial locations. Flow matching is then used to learn the latent prior distribution. Based on this learned prior, posterior sampling is performed entirely in the latent space, with the observation likelihood incorporated progressively through an annealing procedure. To control local covariance inflation, we introduce a variance-preserving (VP) bridge that allocates a covariance budget between the transported latent state and a Gaussian perturbation. Numerical experiments demonstrate that LAPS accurately approximates posterior distributions, preserves distinct posterior modes, and reduces the dependence of conditional sampling costs on spatial resolution. Across two Gaussian benchmarks, LAPS attains small errors against exact posterior references, with sliced Wasserstein distances only 2 to 3 percent higher than the reference values obtained from exact posterior samples. In a bimodal posterior problem, LAPS reduces the sliced Wasserstein distance from 0.2693 to 0.1499 and consistently recovers both modes across all test scenarios. For a two dimensional Navier-Stokes random field, LAPS substantially improves marginal posterior calibration, while its evaluation time remains nearly constant as the output grid is refined from 64^2 to 512^2. These results demonstrate that LAPS achieves a favorable tradeoff among posterior accuracy, uncertainty calibration, and computational efficiency.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jiankun Lei",
+   "Tian Qi"
+  ],
+  "url": "https://arxiv.org/abs/2610.20659",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "generative-simulation",
+   "operator-learning"
+  ],
+  "summary": "The paper addresses posterior inference for random fields from sparse observations, aiming to capture complex spatial uncertainty without conditional-sampling costs growing with grid refinement. It introduces Latent Annealed Posterior Sampling (LAPS), which uses flow matching to learn a latent prior, a Branch-and-Trunk coordinate decoder for arbitrary-location evaluation, and a variance-preserving bridge with annealing to control covariance inflation.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20681",
+  "source": "arXiv",
+  "title": "IneqAgent: Agentic Inequality Proving in Lean with Symbolic Computation",
+  "abstract": "Formal inequality proving requires mathematical reasoning and exact computation, often connected through intermediate lemmas and goal reformulations. We introduce IneqAgent, an agentic framework combining LLM reasoning with symbolic computation for inequality proving in Lean4. Lemma-level Monte Carlo Tree Search coordinates lemma construction, goal reformulation, and symbolic backend selection. Complementary sum-of-squares, Bernstein, and successive difference-substitution backends produce exact certificates for local Lean proof generation. The agent integrates these proofs with LLM-generated steps and uses Lean feedback to construct complete proofs checked against the original theorem statements. On four benchmarks, IneqAgent with DeepSeek-V4-Flash solves 175 of 186 problems (94.09%), achieving the highest overall success rate among the evaluated methods. Across four backbones, it achieves higher success rates at low LLM inference cost thresholds than Direct Agent using the same backbone, with lower mean inference costs over each method's successful runs. We also obtain Lean-verified strengthenings of Dittert's conjecture in dimensions four and five, and certify the Holens--Djokovic $(4,4)$ inequality, implying Merris's conjecture in dimension four.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Gaolei He",
+   "Jinhui Li",
+   "Ruobing Zuo",
+   "Xia Zeng",
+   "Zhengfeng Yang"
+  ],
+  "url": "https://arxiv.org/abs/2610.20681",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper targets formal inequality proving in Lean4, which requires combining mathematical reasoning with exact computation. It introduces IneqAgent, an agentic framework that couples lemma-level Monte Carlo tree search with LLM reasoning and sum-of-squares, Bernstein, and successive difference-substitution symbolic backends that emit exact certificates.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20685",
+  "source": "arXiv",
+  "title": "L2G-SR: Learning to Guide LLM-based Symbolic Regression",
+  "abstract": "Symbolic regression searches for an equation that explains observed data. Numerical error is commonly used to guide the search, but it alone can favor an accurate surrogate over a candidate with the right structure. We propose L2G-SR, a framework for LLM-based symbolic regression that guides search with a learned structural verifier. We construct structural supervision signal using tree edit distance (TED), accounting for commutative operators and alternative expression forms. A verifier first aligns numerical observations with the formulas, then learns to score a candidate's structural similarity to the target formula. At search time, the target formula is hidden and the verifier complements numerical error in parent selection. An analyst then uses verifier feedback and diagnostic tools to propose revisions, which a generator converts into refined expressions. On LLM-SRBench, L2G-SR achieves state-of-the-art numerical fit, equation level accuracy and TED across the evaluated LLM backbones and domains. L2G-SR demonstrates the value of learned structural guidance for LLM-based symbolic regression.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Letian Huang",
+   "Xiangyu Wang",
+   "Haowei Lin",
+   "Di He"
+  ],
+  "url": "https://arxiv.org/abs/2610.20685",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "The paper addresses symbolic regression where numerical-error-guided search can favor accurate but structurally wrong equations. It proposes L2G-SR, an LLM-based framework that trains a structural verifier using tree-edit-distance supervision to score a candidate's structural similarity to the hidden target, complementing numerical error in parent selection.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.21657",
+  "source": "arXiv",
+  "title": "Conditional Mean Flows: Few-Step Densities for Simulation-Based Inference",
+  "abstract": "Flow matching has emerged as a powerful generative family for simulation-based inference (SBI). However, sampling and density evaluation require numerical integration at inference time. This makes posterior sampling in neural posterior estimation costly. More importantly, it can make repeated likelihood evaluation prohibitively expensive and impractical for Markov chain Monte Carlo (MCMC) sampling, which may require thousands of repeated density evaluations. Here, we develop conditional mean flows for posterior and likelihood approximation, combining few-step sampling with tractable density evaluation. We show that the mean flow objective identifies conditional flow maps and that independent masking enables direct estimation of marginal likelihoods. We evaluate both posterior and likelihood estimation across several tasks and show that conditional mean flows retain the flexibility of flow-based density estimators while significantly reducing inference time. In particular, single-step conditional mean flow density evaluation yields estimation error comparable to 200-step flow matching while enabling about 200-fold faster downstream MCMC sampling.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Jonas Arruda",
+   "Jan Hasenauer",
+   "Stefan T. Radev"
+  ],
+  "url": "https://arxiv.org/abs/2610.21657",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Flow matching for simulation-based inference requires costly numerical integration for posterior and likelihood evaluation, especially in MCMC. The paper develops conditional mean flows that combine few-step sampling with tractable density evaluation, using a mean-flow objective to identify conditional flow maps and independent masking to estimate marginal likelihoods.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.21664",
+  "source": "arXiv",
+  "title": "Data-driven Smooth-to-hard Spectral Regularization for General Linear Inverse Problems",
+  "abstract": "The logistic smooth-to-hard shrinker is the proximal map of an explicit saturating spectral penalty for general linear inverse problems. Its exact weak convexity yields a unique scaled update and proximal-gradient stationarity guarantees, while independent validation provides finite-grid parameter-selection control. We use MRI as an illustrative example.",
+  "categories": [
+   "math.OC",
+   "cs.NA",
+   "eess.IV",
+   "eess.SP",
+   "math.NA"
+  ],
+  "authors": [
+   "Guanzhong Yang",
+   "Zi Wang",
+   "Guang Yang"
+  ],
+  "url": "https://arxiv.org/abs/2610.21664",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Data-driven spectral regularization for general linear inverse problems often lacks stability and parameter-selection guarantees. The paper introduces a logistic smooth-to-hard shrinker as the proximal map of an explicit saturating spectral penalty, with weak convexity yielding a unique scaled update, proximal-gradient stationarity, and finite-grid parameter-selection control.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.21672",
+  "source": "arXiv",
+  "title": "Diffusion Language Models as Open Quantum Systems",
+  "abstract": "Diffusion language models generate text by reversing a classical diffusion process over token sequences. We show that their continuous-time forward and reverse dynamics can be embedded in the framework of open quantum systems, which describes quantum systems interacting with their environment. This connection provides a basis for extending diffusion sampling to superpositions of sentence states and for modifying the underlying generation dynamics. We construct a $\\tau$-leaping unraveling scheme that simulates stochastic trajectories of these states while updating multiple token positions at each step. This enables generation conditioned on superposed prompts or thoughts, which we call Superposition of Prompts (SoP) and Superposition of Thoughts (SoT). The same formulation yields Quantum-Inspired Remasking (QIR): perturbing the masked-diffusion dynamics produces a confidence-based rule for revising previously generated tokens. Experiments with pretrained diffusion language models show that superposition-based generation can retain information from conditioning components not selected at the final measurement, while QIR improves LLM-assessed text quality when applied at an appropriate stage of generation.",
+  "categories": [
+   "cs.LG",
+   "cs.CL",
+   "quant-ph"
+  ],
+  "authors": [
+   "Akinori Tanaka",
+   "Yukinao Akamatsu",
+   "Takuki Tomita",
+   "Yuji Hirono"
+  ],
+  "url": "https://arxiv.org/abs/2610.21672",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper investigates the mathematical structure of diffusion language models by asking whether their continuous-time forward and reverse dynamics can be embedded in the framework of open quantum systems. It constructs a τ-leaping unraveling scheme for stochastic trajectories, enabling superposition-based generation (Superposition of Prompts and Thoughts) and a quantum-inspired remasking rule.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20825",
+  "source": "arXiv",
+  "title": "Linear Independence of Polynomial Compositions with Bounded Input Degree",
+  "abstract": "We prove the weak composition-independence conjectures of Kohn, Marchetti, Massarenti and Mella. The proof uses deformations of rational curves and a single kernel of the linearized equation. Riemann-Roch gives a contradiction from tangent fields with controlled poles. By settling these conjectures, we prove that a neural network with a general polynomial activation function of sufficiently large degree is identifiable.",
+  "categories": [
+   "math.AG",
+   "cs.LG"
+  ],
+  "authors": [
+   "Xiaotian Chang",
+   "Yacoub Hendi"
+  ],
+  "url": "https://arxiv.org/abs/2610.20825",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper settles the weak composition-independence conjectures of Kohn, Marchetti, Massarenti and Mella, with the consequence that a neural network with a general polynomial activation of sufficiently large degree is identifiable. The proof uses deformations of rational curves, a single kernel of the linearized equation, and a Riemann-Roch contradiction from tangent fields with controlled poles.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.20982",
+  "source": "arXiv",
+  "title": "The Blume-Capel Model as a $\\phi^6$ Field Theory: A Monte Carlo and Flow Model Study",
+  "abstract": "We report Monte Carlo simulations of a continuous spin variant of the Blume-Capel model. We compute the phase diagrams in the crystal-field-temperature plane, as a function of the softness of the spins. We show that normalizing flows, a class of generative models capable of direct sampling without autocorrelation, are effective samplers across the phase diagram, including in the first-order transition region and in the vicinity of the tricritical point. Finite-size scaling analyses of flow samples locate the first- and second-order transitions as well as the tricritical point with accuracy comparable to canonical and extended-ensemble Monte Carlo.",
+  "categories": [
+   "cond-mat.stat-mech",
+   "cond-mat.dis-nn",
+   "cs.LG",
+   "hep-lat"
+  ],
+  "authors": [
+   "Ejaaz Merali",
+   "Ryan Larson",
+   "Ehsan Khatami",
+   "Richard T. Scalettar"
+  ],
+  "url": "https://arxiv.org/abs/2610.20982",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "The paper maps the phase diagram of a continuous-spin Blume-Capel model as a function of spin softness and locates its first-order, second-order, and tricritical transitions. It shows that normalizing flows act as autocorrelation-free samplers across the phase diagram and that finite-size scaling of flow samples matches canonical and extended-ensemble Monte Carlo accuracy.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.21363",
+  "source": "arXiv",
+  "title": "Two Sample Sizes in Test-Time LLM Ensembling: Buffered ERM and Minimax Theory",
+  "abstract": "Test-time scaling can improve the performance of large language models by generating multiple answers to a question and aggregating them. Weighted ensembles extend this idea by drawing answers from several models, with the weights determining how often each model is used. Learning these weights from a training dataset involves two sample sizes: $Q$ labeled questions and $N$ generations per model and question. We study their interplay through the clean risk, the population error of the ensemble's infinite-generation voting rule. Under a margin condition with exponent $\\beta$, we show that empirical risk minimization (ERM) with a calibrated margin buffer achieves excess risk of order $Q^{-1/2}+N^{-\\beta/2}$, up to logarithmic factors, for fixed numbers of models and candidate answers. To investigate the optimality of this dependence on $Q$ and $N$, we analyze a simplified submodel with two models and two possible answers per question. We characterize its minimax excess risk up to constants by a Hellinger modulus for a binomial-mixture experiment. Polynomial approximation and spectral analysis reveal three regimes. When questions are relatively scarce, the $Q^{-1/2}$ term governs learning and the general buffered ERM is optimal. In an intermediate regime, pooling generation counts across questions improves upon estimating each answer distribution separately, with only logarithmic gains from additional questions. With sufficiently many questions, the minimax excess risk reaches an $N^{-\\beta}$ identification floor that persists even with infinitely many questions. The submodel's lower bounds also apply to general ensembles, matching the buffered-ERM upper bound up to logarithmic factors when questions are scarce and in parts of the intermediate regime. Questions remain about the transitions between regimes and the construction of matching pooled estimators for general ensembles.",
+  "categories": [
+   "math.ST",
+   "cs.LG",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Zhi Zhang",
+   "Arash A. Amini"
+  ],
+  "url": "https://arxiv.org/abs/2610.21363",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper studies how the two sample sizes of test-time LLM ensembling (Q labeled questions and N generations per model/question) jointly govern the excess risk of learned ensemble weights. It proves buffered-ERM achieves excess risk of order Q^{-1/2}+N^{-β/2} and, via a Hellinger modulus for a two-model binomial-mixture submodel, characterizes the minimax risk across three regimes including an N^{-β} identification floor.",
+  "added": "2026-10-16"
+ },
+ {
+  "id": "arxiv:2610.22367",
+  "source": "arXiv",
+  "title": "Discovering state-of-the-art quantum circuits with large language models",
+  "abstract": "Significant efforts are currently being directed toward the implementation of large-scale quantum information processors, but realizing useful quantum advantage also requires the development of efficient quantum algorithms. While for many practical problems the dominant resource costs are associated with a small set of computational primitives, optimizing them in the quantum setting presents unique challenges, including a reversibility constraint absent from ordinary classical computation. Here we introduce an evolutionary framework in which large language models (LLMs) propose circuit designs and an independent evaluator verifies and scores them. We apply this framework to tasks spanning numerical computation, chemistry, optimization, quantum simulation, and number theory. In seven of the eight tasks, the discovered circuits significantly reduce both Toffoli and qubit counts relative to the state of the art. In the eighth, the search discovers a new reversible architecture for prime-field modular inversion. By handling reversibility differently, the architecture makes divsteps -- a classical algorithm previously impractical for reversible integer arithmetic -- viable and substantially improves the Toffoli-qubit trade-off for modular inversion. These results open the door for evaluator-guided LLM co-design of new algorithmic structures for quantum computation.",
+  "categories": [
+   "quant-ph",
+   "cs.AI"
+  ],
+  "authors": [
+   "Andi Gu",
+   "Alek H. Kemeny",
+   "Susanne F. Yelin",
+   "Mikhail D. Lukin"
+  ],
+  "url": "https://arxiv.org/abs/2610.22367",
+  "published": "2026-10-16",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Designing efficient reversible quantum circuits for computational primitives is hard because of reversibility and Toffoli/qubit cost constraints. The paper introduces an evolutionary framework in which LLMs propose circuit designs and an independent evaluator verifies and scores them, discovering circuits that reduce Toffoli and qubit counts across numerical computation, chemistry, optimization, quantum simulation, and number-theory tasks and yielding a new reversible architecture for prime-field modular inversion.",
+  "added": "2026-10-16"
  }
 ]
