@@ -72194,5 +72194,665 @@
   ],
   "summary": "General grain boundaries are understudied because their structural complexity makes mechanistic simulation workflows difficult to scale. GBClaw integrates an LLM orchestrator, specialized agents, domain tools, simulation interfaces, and hierarchical memory to plan and analyze atomistic simulations, applied to 14 asymmetric tilt boundaries in nickel.",
   "added": "2026-10-21"
+ },
+ {
+  "id": "arxiv:2610.28703",
+  "source": "arXiv",
+  "title": "Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning",
+  "abstract": "Large-scale topology optimization (TO) remains computationally demanding, especially for stress-constrained problems. To address this challenge, we propose the simultaneous neural topology optimization (SNTO) framework where we represent state, adjoint, and design variables with custom neural networks (NNs) whose parameters are jointly optimized within a single optimization loop that leverages continuous adjoint analysis and automatic differentiation. This optimization minimizes a multi-component loss function that combines the design objective, an aggregation of the local stress constraints, and the potential energy functionals. Our NNs have a unique architecture that accelerates convergence while enabling the networks to capture sharp gradients and boundaries which are critical to stress-constrained TO. To achieve scalability to millions of degrees of freedom (DoF), we develop a hardware-aware training scheme in which the design domain is partitioned into subdomains that are distributed across multiple GPUs. To control peak GPU memory usage, we further slice each subdomain into smaller regions whose loss gradients are evaluated sequentially and accumulated to update the NN parameters. Unlike domain decomposition approaches, our partitioning naturally ensures field continuity across the subdomains and does not require the introduction of additional terms into the loss function. For validation, we first evaluate the proposed framework on various 2D stress-constrained benchmarks and compare our results to a conventional finite element-based approach, showing that SNTO produces super-resolution designs with sharper boundaries, smaller gray areas, and lower volume fractions. We then consider large-scale 3D problems with up to eight million collocation points and distribute the training over up to eight GPUs.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Xiangyu Sun",
+   "Shirin Hosseinmardi",
+   "Ramin Bostanabad"
+  ],
+  "url": "https://arxiv.org/abs/2610.28703",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Stress-constrained topology optimization at scale is computationally demanding, especially at millions of degrees of freedom. The paper proposes simultaneous neural topology optimization (SNTO), which represents state, adjoint and design variables with jointly trained neural networks using continuous adjoint analysis and automatic differentiation, plus a hardware-aware subdomain partitioning scheme distributed over multiple GPUs.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28706",
+  "source": "arXiv",
+  "title": "SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery",
+  "abstract": "LLM-driven evolutionary search is a promising paradigm for scientific discovery, but existing methods remain costly and slow, often applying expensive reasoning uniformly while underusing evidence from failed, redundant, and saturated trials. We introduce Speculative Evolution (SpecEvo), a multi-LLM framework that coordinates lightweight and frontier models through continual consolidation of search evidence. Lightweight models power both parallel Speculators, which generate and refine candidate programs, and an Advisor, which distills accumulated successes, failures, and saturated directions into persistent guidance for subsequent exploration. At sparse checkpoints, a frontier-model Navigator inspects the evolving population and intervenes through synthesis, surgical refinement, or reframing according to search stagnation. This speculate-then-consolidate workflow delegates routine exploration and evidence consolidation to inexpensive models while reserving frontier reasoning for strategic interventions whose benefits extend across many subsequent low-cost evaluations. Across 176 tasks spanning four scientific and algorithmic discovery domains, SpecEvo matches or outperforms frontier-model baselines while reducing API cost by up to 80%, achieves up to 1.5x greater evaluation efficiency than cost-efficient baselines on equation discovery, and improves over the strongest CO-Bench baseline by 3.8%. These results support trajectory-conditioned model coordination as an effective approach to cost-efficient scientific discovery.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Ha Minh Hieu",
+   "Tongyao Zhu",
+   "Do Xuan Long",
+   "Min-Yen Kan"
+  ],
+  "url": "https://arxiv.org/abs/2610.28706",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM-driven evolutionary search for scientific discovery is expensive because costly frontier reasoning is applied uniformly and evidence from failed or saturated trials is wasted. SpecEvo coordinates lightweight Speculator and Advisor models that continuously consolidate search evidence with sparse frontier-model Navigator interventions at stagnation checkpoints, matching or beating frontier baselines at up to 80% lower API cost across 176 discovery tasks including equation discovery.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28800",
+  "source": "arXiv",
+  "title": "Depth Separation for Neural Networks under Gaussian Measure",
+  "abstract": "We revisit the problem of depth separation for neural networks, as studied by Eldan and Shamir, Daniely, and others. Specifically, we consider the natural setting of $L^2$ approximation of radial functions under the standard Gaussian measure in $d$ dimensions. We show that there is a radial function in $L^2$ under the standard Gaussian measure that can be approximated to a fixed sufficiently small $L^2$ error by a depth-3 ReLU neural network of polynomial size in $d$ but can only be approximated by depth-2 networks with subexponentially bounded weights if their size is at least exponential in $d$. For that, we prove a general result showing that if a radial function has substantial mass in the high frequencies of its Hermite expansion, then it cannot be well approximated by a depth-2 neural network with small width and bounded weights. All theorems, lemmas, propositions, and corollaries are verified in Lean~4.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Cynthia Bortolotto",
+   "Francisco Ganacim",
+   "Roberto I. Oliveira"
+  ],
+  "url": "https://arxiv.org/abs/2610.28800",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The paper revisits depth separation for ReLU networks in the setting of L^2 approximation of radial functions under the standard Gaussian measure in d dimensions. It proves that a function approximable by polynomial-size depth-3 networks requires exponential-in-d size for bounded-weight depth-2 networks, via a Hermite-expansion high-frequency mass argument, with all proofs formalized in Lean 4.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28803",
+  "source": "arXiv",
+  "title": "Towards Realistic Models of Change: A Causal Perspective on Decision-Making and Dynamical Systems",
+  "abstract": "While statistical learning has made remarkable progress in recent decades, driven by large datasets and data-driven protocols that have transformed scientific practice, it still faces a key limitation: it struggles to generalize beyond the data it has seen, often failing under distribution shift. Causality offers a promising solution: causal models focus on the underlying mechanisms of change rather than surface-level associations, enabling robust reasoning under external interventions. This allows systems not only to learn from data, but also to reason about hypothetical scenarios, adapt to new environments, and inform better decisions. This thesis explores how these approaches can inform each other, in two parts. The first part examines algorithmic recourse, that is, identifying which changes an individual can make to overturn an unfavorable decision. We propose an alternative perspective to the established framework, arguing for a more realistic cost function, a reformulation of the problem in causal terms, and the inclusion of a temporal dimension in policy evaluation. The second part focuses on dynamical systems, extending the notions of causal interventions and effects to discrete and continuous stochastic processes. We show that the equilibria of these processes, and how they change following an intervention, can be linked to Structural Causal Models (SCMs), viewed as compressed representations of the underlying temporal dynamics. We argue for the relevance of such temporal causal models, since in real-world scenarios actions take time to produce their effects. The common goal of both parts is practical: the utility, robustness, and trustworthiness of these models depend critically on their ability to realistically represent the underlying phenomena.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Isacco Beretta"
+  ],
+  "url": "https://arxiv.org/abs/2610.28803",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Statistical learning generalizes poorly under distribution shift, and the thesis argues that causal models of the underlying mechanisms are the remedy. It reformulates algorithmic recourse with realistic costs and temporal policy evaluation, and extends causal interventions to discrete and continuous stochastic processes, linking their equilibria and intervention responses to structural causal models as compressed representations of temporal dynamics.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28849",
+  "source": "arXiv",
+  "title": "When Do Gaussian Priors Fail? A Latent Geometry Investigation of RL Fine-Tuning",
+  "abstract": "Latent diffusion models almost universally place a Gaussian prior on the VAE latent space. For base generation this default is unproblematic; under reinforcement-learning fine-tuning, however, it carries a structural limitation. The standard VAE's KL term does not merely ignore mode structure - it actively taxes separation and tightness. When data are multimodal, the ELBO optimum compresses distinct modes into an overlapping latent. RL fine-tuning amplifies this overlap: the score network is under-resolved on the saddle region between modes, dynamic-to-variational amplification rises sharply, and the collapse boundary beta_c is pushed far above its variational scale. On the real alanine-dipeptide Boltzmann distribution, a Gaussian-prior VAE collapses at beta_c = 0.224 while a mode-tracked Gaussian-mixture prior collapses at 0.00316, a 71x gap from the same pipeline. We trace this gap to a single geometric mediator, d_min/(2 sigma_0), and verify the causal chain through controlled interventions: moving geometry at fixed prior, and switching prior at matched geometry (full mediation; prior-label coefficient 0.995x, 95% CI [0.79, 1.25]). A three-source decomposition localises the amplification to the learned policy (zero ODE-solver contribution, bounded anchor mismatch); the coverage plateau is an unconditional benefit of mode-separating priors that no amount of RL capacity recovers. The remedy is conditional: a non-Gaussian prior is necessary precisely when the latent geometry would fall into overlap and the task is coverage-sensitive. A machine-checked theory skeleton supports the KL pricing structure - a divergent compactness tax under a Gaussian prior versus a finite assignment fee under a mixture - and the position-versus-plateau distinction delimits what is finite-resource from what requires changing the prior.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Wang Ru"
+  ],
+  "url": "https://arxiv.org/abs/2610.28849",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Latent diffusion models universally place a Gaussian prior on the VAE latent, which the paper argues fails structurally under RL fine-tuning when data are multimodal. It locates the collapse boundary beta_c as a function of a single latent-geometry mediator d_min/(2 sigma_0), verifies the causal chain by mediation interventions, and shows on the alanine-dipeptide Boltzmann distribution that a mode-tracked Gaussian-mixture prior collapses at a 71x lower beta_c.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28864",
+  "source": "arXiv",
+  "title": "A General Topological Symmetry Index for Critical Orbits In Neural Network Loss Landscapes",
+  "abstract": "A systematic understanding of the global structure of neural-network loss landscapes remains challenging due to their high dimensionality. Symmetries arising from network architectures and learning objectives provide a way to investigate aspects of this structure. Although a growing number of studies have drawn attention to these symmetries, a systematic characterization of them, as well as of the critical orbits they give rise to, remains incomplete. To address this gap, in this work we establish a topological symmetry index, based on the methodologies from the family of equivariant degree theories, to decode these symmetries. The frameworks apply to arbitrary network architectures and include methods applicable to degenerate critical orbits. The index detects the isotropy of the critical points and quantifies the corresponding net topological contributions. Several examples, including softplus MLPs, Transformers, and equivariant neural networks, are presented to illustrate the computations.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Jingzhou Liu"
+  ],
+  "url": "https://arxiv.org/abs/2610.28864",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "The global structure of neural-network loss landscapes and the critical orbits induced by architecture and objective symmetries lack a systematic characterization. The paper constructs a topological symmetry index from equivariant degree theory that detects the isotropy of critical points, quantifies their net topological contributions, handles degenerate critical orbits, and is illustrated on softplus MLPs, Transformers, and equivariant networks.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.28871",
+  "source": "arXiv",
+  "title": "How Much Gradient Does Truncated Backprop Lose in Looped Transformers?",
+  "abstract": "Looped transformers reuse one block of layers many times and are often trained by backpropagating through only the last k loops. We measure how much of the weight gradient this throws away, exactly and for every k from one backward pass, on nine looped language models, and report three findings. First, on a trained model this lost gradient is set near the output: once the loop count is well above k, it barely changes with the loop count (within about 0.03 from 32 to 64 loops on the three models we tested, as a pre-registered test predicted for Parcae). Where the backward signal shrinks, $\\rho^k$, with $\\rho$ the signal's fitted shrink per loop, approximates it at moderate loop counts but overstates it at long ones, because the fitted $\\rho$ drifts up as the fit takes in more loops. On Ouro the signal grows, and keeping two of four loops still loses 81% of the final output's gradient. Second, the lost gradient falls during fine-tuning, by 0.07-0.22 within 300 steps on three of four models, on held-out problems too. The fall is not just the read-out's share of the gradient; training only the layers outside the loop reproduced up to half of it, and it also falls under truncated training. So a trained model's value overstates what truncation removes later. Third, we could not show that it predicts the training cost of truncation better than rules that need no measurement: on two new models it tied Parcae's cost at the same k, in a test too small to separate them.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Aur Shalev Merin"
+  ],
+  "url": "https://arxiv.org/abs/2610.28871",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Looped transformers are trained by backpropagating through only the last k loops, and the paper asks exactly how much weight gradient this truncation discards. Across nine looped language models it shows the lost gradient is set near the output and barely varies with loop count, that a fitted rho^k shrink model overstates the loss at long loop counts, and that the discarded share decreases during fine-tuning.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29086",
+  "source": "arXiv",
+  "title": "Internal Guidance as a Sampling Method for Tilted Diffusion Models",
+  "abstract": "Reward guidance methods sample an exponential tilt of a base density using a diffusion model trained with only samples from the base distribution. Existing methods use what we call external guidance: additive terms in the drift or multiplicative terms on the transition probabilities. We propose internal guidance which leaves the output of the base denoiser unmodified and instead changes the point at which it is evaluated. For discrete distributions embedded in the hypercube $\\{-1,1\\}^{d}$, the denoiser of any linearly tilted density is exactly the base denoiser evaluated at a shifted and rescaled input. In practice the base denoiser is a neural network trained on noised samples of the base distribution. The required evaluation points for sampling the tilted density would be out-of-distribution for basic noising of the base distribution. We modify the training algorithm with random diagonal rescalings of the data, so that the denoiser network learns both in- and out-of-distribution evaluations of the denoiser relative to the base distribution. A single denoiser network samples binary reward tilts, class labels, and infilling with no fine-tuning and no external guidance term.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Curtis McDonald",
+   "Peter Bartlett"
+  ],
+  "url": "https://arxiv.org/abs/2610.29086",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Sampling an exponentially tilted density with a diffusion model trained only on base samples typically requires external guidance terms. The paper proves that for hypercube-embedded discrete distributions the tilted denoiser is exactly the base denoiser at a shifted and rescaled input, and turns this identity into an internal-guidance sampler trained with random diagonal rescalings.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29145",
+  "source": "arXiv",
+  "title": "ORSMT: Unleashing the Potential of Satisfiability Modulo Theories for Semantic Verification and Repair in LLM-Based Optimization",
+  "abstract": "Large language models increasingly automate optimization modeling from natural language problems, producing written mathematics, solver code and a returned report. Verifying one optimization problem across these artifacts requires semantic comparison: unequal models can attain the same objective, equivalent models can use different auxiliary variables, and mutually consistent artifacts can omit the same source requirement. ORSMT provides a typed semantic interface and exact SMT relation queries. It aligns observable decisions, projects auxiliary variables, proves or refutes feasible region and objective relations, localizes refutations to implicated rows or domains and links source texts when available. It then reconstructs one artifact from another, and each adopted candidate passes the required relation checks. Across 3,034 problems and six generator sizes, ORSMT improves the model-code match rate in all 72 benchmark and generator combinations before selection. Protected selection raises the aggregate rate from 43.2% to 88.2% and the share that are both correct and matched from 25.2% to 40.2%. On the 1,905 refuted outputs, certified voting under the shared fallback makes 50.9% of outputs correct and matched, compared with 44.8% for ReLoop and 49.4% for Opt-Verifier. A separate one-round source revision followed by exact reconstruction restores a model-code match for 84.4% of the refuted pairs.",
+  "categories": [
+   "math.OC",
+   "cs.AI",
+   "cs.SE"
+  ],
+  "authors": [
+   "Rui Zhang",
+   "Chenyu Zhou",
+   "Jianghao Lin",
+   "Yaoxin Wu",
+   "Dongdong Ge",
+   "Wen Song"
+  ],
+  "url": "https://arxiv.org/abs/2610.29145",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM-generated optimization models, solver code, and reports can be mutually inconsistent or equivalent-but-different, so string or numeric comparison cannot verify them across artifacts. The paper builds ORSMT, a typed semantic interface with exact SMT relation queries that proves or refutes feasible-region and objective relations, localizes refutations, and reconstructs corrected artifacts.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29166",
+  "source": "arXiv",
+  "title": "A Shadow Sequence Technique for Last-Iterate Convergence Analysis of the Random Reshuffling Method: Relaxed Stepsize Conditions and Beyond",
+  "abstract": "We prove two last-iterate convergence bounds of the random reshuffling (RR) method in the smooth general convex finite-sum optimization. In the proved results, the stepsize sequence $\\{\\eta_{k}\\}_{k}$ of RR is an arbitrary positive non-increasing sequence with $\\eta_{1}\\lesssim 1/(\\operatorname{polylog}(n)L)$, where $n$ is the number of components of the finite-sum objective and $L$ is the smoothness parameter. Specifically, a last-iterate convergence rate $\\widetilde{\\mathcal{O}}\\left(\\frac{\\Vert x_{1}^{1}-x_{*}\\Vert^2}{n\\sum_{k=1}^{K}\\eta_{k}}+\\sigma_{*}^{2}\\sum_{k=1}^{K}\\frac{\\eta_{k}^{2}}{\\sum_{l=k}^{K}\\eta_{l}}\\right)$ of RR is proved, where $x_{*}$ is a solution of the optimization problem and $\\sigma_{*}^{2}$ is the variance at the solution $x_{*}$. This rate is novel to the last-iterate of RR. Also, a last-iterate convergence rate $\\widetilde{\\mathcal{O}}\\left(\\frac{\\Vert x_{1}^{1}-x_{*}\\Vert^2}{n\\sum_{k=1}^{K}\\eta_{k}}+n\\sigma_{*}^{2}\\sum_{k=1}^{K}\\frac{\\eta_{k}^{3}}{\\sum_{l=k}^{K}\\eta_{l}} \\right)$ of RR is proved. A similar rate exists in the literature, but only under a restrictive stepsize condition $\\eta\\lesssim 1/(n L)$ and does not allow varying stepsizes. At the heart of our proof for the latter rate is an auxiliary sequence named the shadow sequence, which has the same epoch endpoints with the iterate sequence generated by RR. The shadow sequence can be regarded as an iterate sequence generated by performing an inexact RR on an auxiliary interpolated problem or performing a novel variant of random reshuffled SVRG on the original problem. The shadow sequence technique sheds light on deeper understanding of RR and may be useful in the analysis of other shuffling methods.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Hai Liu",
+   "Tiande Guo",
+   "Congying Han"
+  ],
+  "url": "https://arxiv.org/abs/2610.29166",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Last-iterate convergence guarantees for random reshuffling have required restrictive stepsize conditions such as η ≲ 1/(nL). The paper proves new last-iterate rates under arbitrary positive non-increasing stepsizes via a shadow sequence that shares epoch endpoints with the RR iterates, yielding relaxed stepsize conditions.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29192",
+  "source": "arXiv",
+  "title": "Curvature-Scaled Sharpness-Aware Minimization: Convergence Beyond Smoothness",
+  "abstract": "Sharpness-Aware Minimization (SAM) has established itself as a widely used method for training deep neural networks. Despite its popularity, existing convergence guarantees for SAM-type methods require smoothness, a restrictive assumption. Generalized smoothness conditions have recently been proposed in the analysis of gradient methods but remain underexplored for SAM. To analyze the effect of SAM's perturbation under generalized smoothness, we use relative gradient distortion to quantify how the sharpness-aware direction departs from the original gradient. Under $(L_0,L_1)$-smoothness, we show that this distortion can become unbounded near stationarity for SAM and at large gradients for its unnormalized variant (USAM), with examples where SAM cycles and USAM diverges. We then establish a necessary condition for uniform distortion control among perturbations along the gradient whose nonnegative multipliers depend only on its norm. Motivated by this condition, we propose Curvature-Scaled SAM (CS-SAM), which scales both the perturbation and the descent step by suitable curvature upper bounds, and prove that it uniformly bounds the distortion. Under both $(L_0,L_1)$- and $(H_0,H_1)$-smoothness, we establish deterministic $\\mathcal{O}(1/T)$ rates for the best squared gradient norm on nonconvex objectives, last-iterate $\\mathcal{O}(1/T)$ rates for the function gap on convex objectives with a minimizer, and linear convergence under the Polyak-Lojasiewicz condition. With zero perturbation, our guarantees recover the rates for gradient descent with $(L_0,L_1)$- or $(H_0,H_1)$-based step-sizes. Minibatch experiments on computer vision tasks demonstrate competitive performance for both variants, with the $(H_0,H_1)$ variant achieving the highest mean best-test accuracy in all four settings against tuned SAM and USAM with constant and cosine annealing schedules.",
+  "categories": [
+   "math.OC",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Dimitris Oikonomou",
+   "Nicolas Loizou"
+  ],
+  "url": "https://arxiv.org/abs/2610.29192",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Existing convergence guarantees for Sharpness-Aware Minimization assume smoothness, which is restrictive and leaves the behavior of its perturbation under generalized smoothness unclear. The paper quantifies the induced relative gradient distortion, shows it can be unbounded for SAM and USAM, and proposes Curvature-Scaled SAM with O(1/T) and linear (PL) convergence rates under (L0,L1)- and (H0,H1)-smoothness.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29211",
+  "source": "arXiv",
+  "title": "On the gradient conjecture at infinity: Finite spherical length for gradient trajectories of definable potentials",
+  "abstract": "We prove that for every open $ U \\subseteq \\mathbb R^n $ the spherical projection of every gradient trajectory $\\theta(t)$, $t \\geq 0$, of a definable $C^1$-potential $F \\colon U \\to \\mathbb R$ has finite length and, in particular, converges (directional convergence). In other words, every gradient trajectory of a definable $C^1$-potential has finite total angular motion. Here, definable means definable in an arbitrary o-minimal structure expanding the real field. Notably, the gradient trajectory in this result is an arbitrary solution of the gradient flow differential equation (whose solutions may not be unique) with no further assumptions: The gradient trajectory may be unbounded and diverge to infinity or it may be convergent. The established theorem therefore provides affirmative answers to both the gradient conjecture at infinity for definable potentials and the definable Thom gradient conjecture. We apply our theorem to the training of deep neural networks (DNNs) to conclude that, in the case of definable and continuously differentiable activation and loss functions, the spherical projection of the DNN training flow must always converge (directional convergence).",
+  "categories": [
+   "math.DS",
+   "cs.LG",
+   "math.AG",
+   "math.CA",
+   "math.LO"
+  ],
+  "authors": [
+   "Thang Do",
+   "Arnulf Jentzen",
+   "Benno Kuckuck"
+  ],
+  "url": "https://arxiv.org/abs/2610.29211",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Whether gradient trajectories of definable potentials have finite angular motion at infinity—the gradient conjecture at infinity and the definable Thom gradient conjecture—has remained open. The paper proves finite spherical length and directional convergence for arbitrary trajectories of definable C¹ potentials in o-minimal structures, and applies the result to show convergence of the spherical projection of DNN training flows for definable activations and losses.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29261",
+  "source": "arXiv",
+  "title": "Group Distributionally Robust Optimization over Decentralized Networks",
+  "abstract": "We study group distributionally robust optimization (GDRO) over decentralized networks, where workers collaborate to learn robust models by minimizing the maximum local risk. Existing methods optimize only dual-regularized surrogates and establish guarantees for a globally averaged model that is not available to workers. In this paper, we directly optimize the original GDRO objective and establish guarantees for local models in semi-decentralized (SemiDec) and fully decentralized (Dec) settings. A key difficulty is that applying the primal-dual decomposition from centralized GDRO yields worker-dependent losses whose evaluation requires unavailable cross-worker information. To address this challenge, we develop a novel error decomposition that recasts decentralized GDRO as (i) a decentralized online convex optimization (D-OCO) problem and a prediction-with-expert-advice problem in SemiDec, and as (ii) two coupled D-OCO problems in Dec, with discrepancy terms capturing inconsistencies among local decisions. By isolating consensus errors in analysis, we develop modular frameworks that support different consensus routines. We then establish the \\emph{first} per-worker convergence guarantees for optimizing the original GDRO objective over decentralized networks. Instantiations with accelerated gossip and Choco-gossip achieve an $O(\\sqrt{(\\log m)/T})$ convergence rate over $T$ update rounds, while experiments demonstrate improved worst-worker performance over baselines.",
+  "categories": [
+   "math.OC",
+   "cs.LG"
+  ],
+  "authors": [
+   "Haomin Bai",
+   "Junyan Sun",
+   "Quan Cheng",
+   "Yuanyu Wan",
+   "Lijun Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2610.29261",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Decentralized group distributionally robust optimization only had guarantees for a globally averaged model that workers never actually hold. The paper optimizes the original GDRO objective directly and derives the first per-worker convergence guarantees by recasting the problem as decentralized online convex optimization subproblems with explicit consensus-error terms, giving O(sqrt(log m / T)) rates with accelerated gossip routines.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29476",
+  "source": "arXiv",
+  "title": "Generative Modeling via Nonlinear Schr\\\"odinger Bridges and Branching Diffusions",
+  "abstract": "We propose a new generative modeling framework grounded in forward-backward partial differential equations (PDEs). These equations arise naturally in mean-field game (MFG) theory, and are closely related to nonlinear Schr\\\"odinger systems. Our main contribution is to reinterpret this connection within the setting of generative modeling and to develop an efficient numerical methodology for its practical implementation. Specifically, we derive and characterize a nonlinear extension of the classical Schr\\\"odinger bridge problem through a coupled system of PDEs, yielding a model we call SBNL (Schr\\\"odinger Bridge NonLinear). To compute its solution, we design a simulation algorithm based on branching diffusions and the probabilistic representation of semilinear PDEs. The resulting method is embarrassingly parallel, scalable to high dimensions, and applicable to a broad class of nonlinear interaction functionals. We validate the approach through numerical experiments, including recovery of the classical Schr\\\"odinger bridge, nonlinear extensions with convex penalties (Gross-Pitaevskii) as well as potential interaction terms, and high-dimensional generative tasks such as image synthesis on the MNIST and FFHQ human face dataset. Furthermore, the same framework embeds score-based generative modeling, diffusion models, and tractable gaussian Schr\\\"odinger bridges.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "stat.ML"
+  ],
+  "authors": [
+   "Mathias Grau",
+   "Pierre Henry-Labord\\`ere"
+  ],
+  "url": "https://arxiv.org/abs/2610.29476",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "ml-numerical-methods"
+  ],
+  "summary": "Generative modeling has largely relied on linear Schrödinger bridges and diffusion processes, while the nonlinear forward-backward PDE/mean-field-game counterpart has lacked a practical computational framework. The paper derives SBNL, a nonlinear Schrödinger bridge characterized by a coupled PDE system, and solves it with a branching-diffusion algorithm based on the probabilistic representation of semilinear PDEs that is embarrassingly parallel and scalable to high dimensions.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29526",
+  "source": "arXiv",
+  "title": "Geometric knowledge spaces, Attention pairing and Architectures",
+  "abstract": "In this paper, we propose a geometric approach to deriving attention mechanisms and exploring potential new transformer architectures. We begin by formalizing the notions of knowledge worlds and attention pairings, then demonstrate how this framework naturally leads to the architectures of standard attention, causal attention, linear attention, tensor attention, and recurrent neural networks. Finally, we introduce several new geometric spaces that may inspire novel neural network architectures.",
+  "categories": [
+   "cs.LG",
+   "math.AG",
+   "math.GN"
+  ],
+  "authors": [
+   "Shang Xu"
+  ],
+  "url": "https://arxiv.org/abs/2610.29526",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear what geometric structure underlies attention mechanisms and how existing and alternative transformer architectures relate to one another. The paper formalizes knowledge worlds and attention pairings and shows this geometric framework yields standard, causal, linear, tensor attention and recurrent networks, then proposes new geometric spaces for designing architectures.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29546",
+  "source": "arXiv",
+  "title": "Sequential Entropic Optimal Transport for Bayesian Inverse Problems via Multilevel Monte Carlo",
+  "abstract": "We consider the problem of Bayesian estimation associated to inverse problems governed by partial differential equations (PDEs). In most cases of practical interest, one must use numerical solvers to implement computational methods based on Monte Carlo methods. This inevitably leads to an adaptation of multilevel Monte Carlo (MLMC) methods to reduce computational efforts to achieve a pre-specified mean square error (MSE). MLMC is based on sampling coupled versions of Bayesian posteriors associated to increasingly precise numerical solves of the PDE. In this article we present a novel method to implement MLMC based upon sequential entropic optimal transport couplings learned with light Schr\\\"odinger bridges, and correct the transport with Metropolis--Hastings steps that preserve the pairing. We bound the mean square error associated to a version of our new estimation method and show, for an elliptic inverse problem, that to achieve a MSE of $\\mathcal{O}(\\delta^2)$ ($\\delta >0$) one can have an optimal cost of $\\mathcal{O}(\\delta^{-2})$. The results feature explicit bounds on the effect of the fitted transport and of the Metropolis--Hastings correction. From a numerical perspective, on elliptic, Darcy-flow and Navier-Stokes problems, the method reduces the variance of the most precise solver by a factor of five to ten and is faster than multilevel sequential Monte Carlo [arXiv:1503.07259] at tight accuracies.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "stat.CO"
+  ],
+  "authors": [
+   "Jason Beh",
+   "Pierre Del Moral",
+   "Ajay Jasra"
+  ],
+  "url": "https://arxiv.org/abs/2610.29546",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Multilevel Monte Carlo for PDE-constrained Bayesian inverse problems needs couplings between posteriors at successive solver accuracies, and good couplings are the bottleneck to achieving a target MSE at low cost. The paper constructs sequential entropic optimal transport couplings learned with light Schrödinger bridges, corrects them with pairing-preserving Metropolis–Hastings steps, and proves explicit MSE bounds yielding optimal cost of O(delta^-2) for an elliptic inverse problem.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29559",
+  "source": "arXiv",
+  "title": "Certified Neural Approximation of Robust Nonlinear Model Predictive Control",
+  "abstract": "Model predictive control is a high-performance control method, but it incurs comparatively high online computational costs across many control tasks and is challenging to realize in low-level hardware settings. To address this, we present a framework for generating neural network controllers that provably inherit the safety and stability guarantees of a robust model predictive policy. In contrast to approaches based on post-verification or additional online safety filters, our method provides constructive, a priori design conditions that ensure preservation of recursive feasibility and stability before deployment. We treat the approximation error as a bounded input disturbance, which is addressed in the MPC design. This allows the neural network controller to directly inherit robustness from the underlying model predictive controller, which enables the transfer of guarantees to the approximation. The design process is an offline, constructive synthesis pipeline and can be implemented once Lipschitz bounds are specified. We further demonstrate in simulation that the learned controller reproduces the closed-loop behavior of the original controller while reducing online computation.",
+  "categories": [
+   "eess.SY",
+   "cs.LG",
+   "cs.SY"
+  ],
+  "authors": [
+   "Hendrik Alsmeier",
+   "Maik Pfefferkorn",
+   "Rolf Findeisen"
+  ],
+  "url": "https://arxiv.org/abs/2610.29559",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "ml-numerical-methods"
+  ],
+  "summary": "Replacing robust model predictive control with a neural controller is attractive for cheap online computation, but post-hoc verification or online safety filters do not certify the approximation in advance. The paper provides a constructive offline synthesis pipeline that treats the network approximation error as a bounded disturbance inside the robust MPC design, so the learned controller provably inherits recursive feasibility and stability.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29604",
+  "source": "arXiv",
+  "title": "Local and Global Recursive Ridge Regression for Online Residual Correction of Frozen Multivariate Forecasters under Label Delay",
+  "abstract": "A frozen multi-horizon forecaster can be corrected online from its own residuals. However, under label delay the target of a block arrives only after the whole horizon has passed, and the corrector's retained state grows with the number of channels. Aiming to combine a small retained state with a large error reduction, we propose DRiC (DCT Ridge Corrector), which fits a ridge regression of the leading discrete cosine transform (DCT) coefficients of the next residual block on those of the frozen forecast and of the latest input block, with sufficient statistics updated recursively. Its local variant, DRiC-L, keeps one such regression per channel; its global variant, DRiC-G, pools all channels into one regression, whose statistics do not depend on the channel count. A guard tracks a running scale of the frozen forecast's residual for each channel; it skips updates on blocks far outside that scale and clips the issued correction. We evaluate on seven datasets (four ETT series, Weather with its missing-value codes filled, Electricity, and Traffic) with DLinear, PatchTST, and iTransformer backbones, against 10 naive, gradient-trained, and closed-form methods. DRiC-L with eight DCT coefficients (DRiC-L8) reduces the mean squared error (MSE) by 14.55% on average over 126 conditions, against 12.98% for ELF, the most accurate comparator, while retaining 15-17 times less state, although ELF is more accurate on Traffic. DRiC-G retains 14.6 kB on the 321-channel Electricity data and 18.9 kB on the 862-channel Traffic data and is the most accurate method at or below its state on both. However, 5 to 7 of the 10 comparators, all with at least 10 times its state, are more accurate there. On the unfilled Weather file, DRiC-L8 without the guard has on average 8.0 times the frozen forecast's MSE, whereas with the guard it reduces the MSE by 7.94%. Code: https://github.com/keiotakmin/dric.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Takumi Fujimoto",
+   "Hiroaki Nishi"
+  ],
+  "url": "https://arxiv.org/abs/2610.29604",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Frozen multi-horizon forecasters drift, but online residual correction under label delay forces a corrector state that grows with the number of channels. The paper proposes DRiC, which recursively fits a ridge regression of leading DCT coefficients of the next residual block, with per-channel (DRiC-L) and pooled (DRiC-G) variants plus a residual-scale guard that skips and clips corrections, achieving large MSE reductions with 15-17x less retained state.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29605",
+  "source": "arXiv",
+  "title": "Improved Training of Strong Stochastic Flow Maps",
+  "abstract": "Stochastic flow maps promise few-step sampling of stochastic differential equations (SDEs) by learning to directly jump between times along the solution path, yet training these models to learn this solution map remains difficult. The primary obstacle is the Brownian path itself: it is an infinite-dimensional object which needs to be passed to the neural network and is nowhere differentiable, which makes the implementation of derivative-based losses that power the state-of-the-art deterministic flow maps just out of reach. We identify two core design principles which address these issues: a) represent the Brownian path with a basis which carries higher-order local information, and b) train with an objective that forces the network to use the full representation of the path, not just the first order. To address this, we leverage the shifted Legendre polynomial expansion with a Wong-Zakai styled objective, unlocking derivative-based losses. Finally, we propose a recipe for fine-tuning large pre-trained flow models into strong stochastic flow maps. We ablate through this design space on several toy problems and use our findings to transform a large flow model into a strong stochastic flow map on ImageNet, achieving roughly a three-fold improvement in FD-DINOv2 over SSFM at four NFE.",
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "math.DS"
+  ],
+  "authors": [
+   "Zander W. Blasingame",
+   "Antonio Franca",
+   "Raul Minan",
+   "Christian Koke",
+   "Niklas Rindtorff",
+   "Alexander Tong"
+  ],
+  "url": "https://arxiv.org/abs/2610.29605",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation"
+  ],
+  "summary": "Learning stochastic flow maps that jump between times along an SDE solution path is hard because the driving Brownian path is infinite-dimensional and nowhere differentiable, blocking derivative-based losses. The paper represents the path with a shifted Legendre polynomial expansion and trains with a Wong-Zakai-styled objective, plus a fine-tuning recipe that turns large pretrained flow models into strong stochastic flow maps.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29850",
+  "source": "arXiv",
+  "title": "Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI",
+  "abstract": "Traditional turbulence-model development relies heavily on expert knowledge and is time-consuming. This study develops an agentic AI framework, DEScover (automated Discovery of DES closures), to explore subgrid length scales for detached eddy simulation (DES). The user provides only a modeling idea: the length scale is the grid width normal to the local vortex axis. Four large language model (LLM) agents then propose, review, implement, and evaluate candidate formulations and generate scripts for CFD simulations. The Discovery Agent infers the vortex axis from various vortex-identification methods. The candidates are tested on four cases spanning canonical and engineering flows: a flat plate, a backward-facing step, a free shear layer, and an iced airfoil. For all test cases, the best candidate consistently outperforms the standard length scale based on the maximum cell size. Its accuracy is similar to, or slightly better than, that of the expert-designed shear-layer-adapted length scale. Each agentic discovery run takes about 25 minutes on average, excluding the CFD simulations. These results show that LLM-based reasoning can significantly accelerate the discovery of physically interpretable turbulence models and reduce reliance on manual expert formulation.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Jiawei Chen",
+   "Xiang I. A. Yang",
+   "Ping He"
+  ],
+  "url": "https://arxiv.org/abs/2610.29850",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing",
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Developing detached-eddy-simulation closures traditionally depends on slow expert iteration. The paper introduces DEScover, a framework of four LLM agents that propose, review, implement, and evaluate candidate subgrid length-scale formulations (e.g., grid width normal to the local vortex axis) and generate the CFD scripts to test them, recovering expert-comparable closures on four flow cases.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29906",
+  "source": "arXiv",
+  "title": "Reinforcement Learning for Global-Local Control of Dynamic Networks with Applications to Systemic Risk",
+  "abstract": "We propose a reinforcement learning framework for solving control problems on dynamic networks, where control decisions consist of a combination of graph-level (global) and node-level (local) actions. To exploit the underlying network structure in a policy-gradient algorithm, we introduce a message-passing neural network architecture with separate global and local policy heads. The architecture ensures that the resulting policies satisfy natural permutation symmetries and transparency constraints. Our main theoretical contribution is an analysis of the robustness and regularity properties of the proposed architecture. We derive explicit Lipschitz bounds with respect to both parameter and input perturbations and use these estimates to establish convergence guarantees for a projected policy-gradient algorithm. The resulting constants reveal how architectural choices and graph characteristics influence sensitivity to input perturbations and the convergence behavior of gradient-based optimization methods. As an application, we study the management of systemic risk in financial networks, where a regulator allocates capital interventions across interconnected institutions. Numerical experiments demonstrate that the proposed reinforcement learning architecture outperforms standard architectures based on feedforward neural networks while the learned policies fulfill desirable symmetry and transparency constraints. The algorithm scales to large networks and effectively combines global budget decisions with local allocation policies by exploiting the underlying graph structure.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Nils Detering",
+   "Florian Grell",
+   "Thilo Meyer-Brandis"
+  ],
+  "url": "https://arxiv.org/abs/2610.29906",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Control problems on dynamic networks require combining graph-level and node-level actions while respecting permutation symmetry and transparency. The paper introduces a message-passing policy architecture with separate global and local heads, derives explicit Lipschitz bounds in parameters and inputs, and uses them to prove convergence of a projected policy-gradient algorithm, applied to systemic-risk capital allocation.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29909",
+  "source": "arXiv",
+  "title": "Tractable Inference with Kolmogorov-Arnold Networks",
+  "abstract": "Machine-learning surrogates in computational science often require not only accurate predictions but also expectations, variances, conserved integrals, and normalization constants. Conventional neural networks, including Kolmogorov--Arnold networks (KANs), generally evaluate these quantities through Monte Carlo sampling or multidimensional quadrature, making repeated inference costly, particularly in high dimensions. We introduce KANs with Tractable Operators for Uncertainty and Constraints (TOUCKANs), whose finite-degree polynomial outer functions yield a decomposable sum--product representation. Under factorizing input measures, expectations and higher moments then reduce algebraically to deterministic recursions over one-dimensional leaf integrals. Independent and shared inner-block variants form a parameter-efficiency hierarchy, and a universal-approximation proof for its most restricted member extends to the complete class. The same deterministic operators allow conserved integrals and normalization to be imposed throughout training. Across uniform and Gaussian benchmarks through 50 dimensions, deterministic mean and variance errors remained below the median fixed-budget Monte Carlo errors in every case. TOUCKANs also conserved Cahn--Hilliard mass to machine precision and imposed normalization and orthogonality through deterministic moments, enabling joint computation of the lowest four Schr\\\"odinger eigenpairs in two, three, and five dimensions. TOUCKANs therefore connect KAN approximation with tractable probabilistic circuits, making statistical operators and integral constraints directly available within an expressive neural surrogate.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Juan Diego Toscano",
+   "Sascha Ranftl",
+   "Zhiwei Gao",
+   "Li-Lian Wang",
+   "George Em Karniadakis"
+  ],
+  "url": "https://arxiv.org/abs/2610.29909",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "ML surrogates in computational science must deliver not only predictions but expectations, variances, conserved integrals, and normalization constants, which KANs currently obtain only through Monte Carlo or multidimensional quadrature. The paper introduces TOUCKANs, whose finite-degree polynomial outer functions give a decomposable sum-product representation that reduces moments to deterministic recursions over 1-D leaf integrals, with a universal-approximation proof and training-time imposition of conservation and normalization (e.g., Cahn–Hilliard mass to machine precision, Schrödinger eige",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29938",
+  "source": "arXiv",
+  "title": "A PDE-theory-guided neural operator and the long-time relaxation of the two-dimensional anisotropic Boussinesq system",
+  "abstract": "We design a neural operator for the two-dimensional Boussinesq system with anisotropic dissipation on the periodic box, guided by a rigorous analysis of its long-time behavior. The operator maps a small perturbation of hydrostatic equilibrium, of amplitude $\\varepsilon$, to the vorticity at a late time. We prove that the flow relaxes to a stratified shear flow, with the horizontally averaged vorticity staying within $O(\\varepsilon^2)$ of its initial value $\\bar\\omega_0$ and the oscillation about it of order $\\varepsilon$. Accordingly, the network outputs $\\bar\\omega_0$ plus these two parts, each scaled to its size, which grows as $\\varepsilon^2$ and $\\varepsilon$, respectively. Without this guidance the training either does not converge or misses the $\\varepsilon^2$ growth. With it, one network reproduces, sample by sample on $2\\times10^3$ test runs over a factor of $23$ in amplitude, the quantity bounded by the theorem to a median error of $2.2$ percent. Being fast and differentiable with respect to the initial data, the network is also used to search the space of initial data, and with every candidate checked by the solver the search finds initial data for which this quantity is $4.4$ times the largest value among the test runs, raising the lower bound for the constant of the theorem by that factor.",
+  "categories": [
+   "math.AP",
+   "cs.NA",
+   "math.NA"
+  ],
+  "authors": [
+   "Akram Moustafa",
+   "Jiahong Wu",
+   "Xiaoming Zheng"
+  ],
+  "url": "https://arxiv.org/abs/2610.29938",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml"
+  ],
+  "summary": "The paper studies the long-time relaxation of the 2-D anisotropic Boussinesq system on the periodic box and how to predict late-time vorticity from small perturbations of hydrostatic equilibrium. It proves relaxation to a stratified shear flow with an O(ε²) mean vorticity and O(ε) oscillation, and builds a PDE-theory-guided neural operator that outputs these theorem-scaled components separately (2.2% median error over a 23× amplitude range), then uses the differentiable operator to search initial data that raise the theorem's constant by 4.4×.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.29984",
+  "source": "arXiv",
+  "title": "Constrained Koopman Control Parametrization: Convex Controller Synthesis for Tracking under Input Constraints",
+  "abstract": "Koopman operator theory represents nonlinear systems with linear and bilinear terms in the state and input observables, greatly simplifying control design. However, incorporating input constraints into Koopman-based controller synthesis remains challenging, limiting their applicability to constrained control tasks such as tracking. This paper develops a constrained Koopman Control Parametrization (cKoCoP) framework for synthesizing state-feedback controllers that satisfy prescribed input constraints with Lyapunov-certified stability of the identified lifted closed loop. The cKoCoP offers nonlinear state-feedback via linear-in-observables feedback, enabling linear controller design. The proposed controller is obtained through convex optimization: we incorporate ellipsoidal or polytopic input constraints with the S-procedure or Farkas-lemma-based conditions. We also introduce a Control Lyapunov Function (CLF) for trajectory tracking which incorporates input constraints. The approach is validated on two canonical nonlinear systems, a double pendulum and a unicycle, demonstrating data-driven tracking while respecting input constraints. Experiments validate the method's robustness to measurement noise, and runtime improvements over Koopman Model Predictive Control (KMPC) baselines. The results demonstrate that cKoCoP achieves competitive tracking performance with substantially reduced online computational cost, supporting its potential for real-time constrained tracking applications.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Taha Ondogan",
+   "Ran Jing",
+   "Andrew P. Sabelhaus",
+   "Roberto Tron"
+  ],
+  "url": "https://arxiv.org/abs/2610.29984",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Incorporating input constraints into Koopman-based controller synthesis is difficult, which limits Koopman methods on constrained tracking tasks. The paper develops cKoCoP, a linear-in-observables state-feedback parametrization whose gains are obtained by convex optimization with S-procedure or Farkas-lemma input constraints and a constraint-aware control Lyapunov function, yielding Lyapunov-certified tracking at substantially lower online cost than Koopman MPC.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.30009",
+  "source": "arXiv",
+  "title": "Mitigating Model Collapse through Dreaming Learning",
+  "abstract": "Training generative models on synthetic data causes loss of diversity and a decrease in performance, a phenomenon known as model collapse. We study this degeneration spectrally in a controlled Markov setting. The eigenvalue spectrum of the learned transition operator offers a direct view of the process, since the subdominant eigenvalues set how fast the chain mixes and therefore how much of the state space it continues to explore. We find that sampling at temperature $T_s < 1$ acts on the operator like repeated sharpening, pushing it toward a deterministic system: the subdominant eigenvalues approach the unit circle and the spectral gap narrows. When $T_s < 1$, even data accumulation does not appear to arrest this drift. We then analyze Dreaming Learning, a regulariser that, in parallel with regular training, adds a loss term on the model's own samples drawn at a raised temperature $T_d > 1$. Because high-temperature samples flatten the predicted distribution, training on them keeps the entries of the learned operator from becoming vanishingly small, which in turn keeps the eigenvalues bounded away from the unit circle. Measurements of the spectra over 5000 generations are consistent with this picture, and the mitigation effect persists in more complex settings such as LSTM language models and a 124M-parameter GPT-2.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.dis-nn",
+   "stat.ML"
+  ],
+  "authors": [
+   "Matteo Benati",
+   "Alessandro Londei",
+   "Denise Lanzieri",
+   "Raffaello Mastromarino",
+   "Vittorio Loreto"
+  ],
+  "url": "https://arxiv.org/abs/2610.30009",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Training generative models on their own synthetic data causes model collapse, and the mechanism behind this degeneration is not well characterized. The paper analyzes it spectrally in a controlled Markov setting, showing that low-temperature sampling repeatedly sharpens the learned transition operator so subdominant eigenvalues approach the unit circle and the spectral gap narrows, and that Dreaming Learning's high-temperature self-samples keep those eigenvalues bounded away from it, verified over 5000 generations and in LSTM and GPT-2 settings.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.30024",
+  "source": "arXiv",
+  "title": "Tempered Langevin diffusions with polynomial-tailed targets: explosions, moment thresholds and ergodicity",
+  "abstract": "For tempered Langevin diffusions (TLDs) targeting polynomially tailed measures, the convergence rate is known to change from polynomial to exponential to uniform as the temperature rises through a critical value. We explain this transition by the tails of the marginal laws of the norm of the TLD, up to a second, larger critical temperature beyond which the TLD explodes. As the temperature increases, these tails change from stretched-exponential, through super-polynomial at the first critical temperature, to polynomial, mirroring the transition in the convergence rate. Moreover, this tail analysis gives a complete quantification of the convergence rates throughout the non-explosive regime, in both $f$-variation and Wasserstein distances.",
+  "categories": [
+   "math.PR"
+  ],
+  "authors": [
+   "Aleksandar Mijatovi\\'c",
+   "Haokai Xie"
+  ],
+  "url": "https://arxiv.org/abs/2610.30024",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "For tempered Langevin diffusions targeting polynomially tailed measures, the convergence rate is known to switch from polynomial to exponential to uniform with temperature, but the mechanism and full rate quantification are missing. The paper analyzes the tails of the norm process, showing they move from stretched-exponential through super-polynomial to polynomial across the critical temperature, identifies a second critical temperature beyond which the diffusion explodes, and quantifies convergence rates in f-variation and Wasserstein distances throughout the non-explosive regime.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.30118",
+  "source": "arXiv",
+  "title": "The role of locality and weight sharing in convolutional neural networks",
+  "abstract": "The success of convolutional neural networks is often attributed to locality and weight sharing. However, how these two properties separately shape learning, and how their effects depend on the spatial correlations of natural images, remain poorly understood. We address these questions in a teacher-student model with a convolutional teacher acting on $P$ input positions with correlation $c$ between positions. We compare convolutional and locally connected students trained by online stochastic gradient descent, and derive ordinary differential equations that describe their dynamics exactly in the limit of large feature dimension $D$. For uncorrelated positions ($c = 0$), the two students follow the same learning trajectory, with the convolutional student learning exactly $P$ times faster. We also find that locality affects the sample complexity: a student that matches the kernel size of the teacher recovers it from $\\mathcal{O}_{D}(D)$ samples, whereas $\\mathcal{O}_{D}(D\\log(D))$ samples are needed with a larger kernel. For $c > 0$, spatial correlations can reduce the advantage of weight sharing. The asymptotic error of the convolutional student grows with $c$, whereas that of the locally connected student is independent of $c$ and overall lower when evaluated at the same learning rate. When the learning rate is instead tuned to the training horizon, however, the locally connected student wins at early times and the convolutional student at late times, with a transition that we predict analytically.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "stat.ML"
+  ],
+  "authors": [
+   "Francesco Mori",
+   "Melanie Weber"
+  ],
+  "url": "https://arxiv.org/abs/2610.30118",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear how locality and weight sharing separately shape learning in convolutional networks, and how that depends on spatial correlations in natural images. The paper analyzes convolutional versus locally connected students in a teacher-student model, deriving exact ODEs for online SGD dynamics in the large feature-dimension limit and obtaining sample-complexity results showing that weight sharing speeds learning by a factor of P at zero correlation while correlations c > 0 erode that advantage.",
+  "added": "2026-10-22"
+ },
+ {
+  "id": "arxiv:2610.27317",
+  "source": "arXiv",
+  "title": "Machine-learned spectral PDE solvers for fluids and plasmas",
+  "abstract": "Sparse regression methods for discovering governing partial differential equations (PDEs) from data are sensitive to observation noise and are not constrained to reproduce the data under forward integration. We address both limitations by performing weak-form discovery in the spatial discretization in which the PDE is solved, learned by differentiating through multistep rollouts anchored at the observed states. The new method, Weak-form Anchored Rollout for PDEs (WARP), produces a machine-learned PDE solver. In this work, we focus on systems amenable to a spectral Galerkin solver. Across eight benchmark fluid and plasma systems, including high-dimensional turbulent simulations, WARP produces numerically stable rollouts from new random initial conditions and substantially improves coefficient recovery, rollout accuracy, and statistical measures compared with a single-step weak-form SINDy baseline.",
+  "categories": [
+   "physics.comp-ph",
+   "cs.LG",
+   "physics.plasm-ph"
+  ],
+  "authors": [
+   "Mellow Baixuan Chen",
+   "Alan A. Kaptanoglu"
+  ],
+  "url": "https://arxiv.org/abs/2610.27317",
+  "published": "2026-10-22",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Sparse-regression PDE discovery is noise-sensitive and does not guarantee that recovered equations reproduce data under forward integration. The paper introduces WARP, which performs weak-form discovery in the solver's own spatial discretization and differentiates through multistep spectral-Galerkin rollouts anchored at observed states, yielding a stable machine-learned PDE solver with improved coefficient recovery on eight fluid and plasma benchmarks.",
+  "added": "2026-10-22"
  }
 ]
