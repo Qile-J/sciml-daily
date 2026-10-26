@@ -73630,5 +73630,454 @@
   ],
   "summary": "The dynamics of attention blocks remain only partially understood beyond their interpretation as interacting particle systems with Wasserstein-type gradient-flow mean-field limits. The paper derives inertial, Nesterov-type damped Hamiltonian attention blocks on spaces of probability measures, developing local-mobility and quotient Stein geometries, a finite-dimensional solution theory with sharp global-existence versus second-moment blow-up conditions for linear attention, and a quantitative link between continuous blow-up and layer depth, plus geometric corrections validated on nanoGPT-style ",
   "added": "2026-10-23"
+ },
+ {
+  "id": "arxiv:2610.31677",
+  "source": "arXiv",
+  "title": "Autoregressive Physics-Informed Neural Operator Surrogates and Joint 4-D Seismic-Production Bayesian History Matching",
+  "abstract": "We present a surrogate-accelerated Bayesian history-matching framework, demonstrated on a realistic synthetic model ($N=100{,}188$ cells). The forward map $\\mathcal{G}$ is replaced by a Fourier neural operator $\\mathcal{G}_\\theta$ trained in a closed loop, $\\hat{x}_{n+1}=\\mathcal{G}_\\theta(u,\\hat{x}_n)$, with the discrete black-oil residual $R(x_{n+1},x_n)$ as a physics-informed neural operator (PINO) penalty, truncated backpropagation and noise injection. We assimilate production data and 4-D seismic using adaptive regularised ensemble Kalman inversion (aREKI), and synthesise $\\Delta V_p$ inside the rollout via a closed-form Gassmann transform of the surrogate, under a two-stage schedule (aREKI on production, then an ensemble smoother with multiple data assimilation, ES-MDA, on both). To temper the ill-posedness, we invert $(\\log K,\\phi)$ not in $\\mathbb{R}^{2N}$, where $N_e\\ll 2N$ leaves a rank-deficient covariance and a null space the data never inform, but on a chart $u=\\Psi(\\tilde m)$, $\\tilde m\\in\\mathbb{R}^{d}$, $d\\ll 2N$, given by a Parseval-exact truncated cosine transform or a variational auto-encoder decoder. The ensemble then spans its own search space; the directions the data cannot constrain are cut to those the chart can express, and every member decodes to a geologically plausible field. For the rollout we prove an exposure bound $W_1\\le\\sum_j L^{\\,n-1-j}\\mathbb{E}e_j$, a physics-penalty contraction $\\|D_x\\mathcal{G}_\\theta\\|\\le\\alpha<1$ under a small residual defect, and an $\\mathcal{O}(\\rho^K)$ truncation bias. A Loewner-order inequality $\\mathcal{I}_p\\preceq\\mathcal{I}_p+\\mathcal{I}_s$ explains why joint assimilation is no less informative. On held-out data, $\\mathcal{G}_\\theta$ attains $R^2>0.999$ on pressure and saturation and rolls out in $0.579$ s, a $\\sim2500\\times$ speed-up, bringing an $N_e=190$-member, $N_a=10$-iteration joint inversion within one GPU-hour.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Clement Etienam",
+   "David Blom",
+   "Hari Pattathil",
+   "Tsubasa Onishi",
+   "Harpreet Sethi",
+   "Lalson Vincent",
+   "Suraj Pawar",
+   "Kishan Ramesh Kumar",
+   "Pandu Devarakota",
+   "Faruk O. Alpak"
+  ],
+  "url": "https://arxiv.org/abs/2610.31677",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "Joint 4-D seismic and production history matching is computationally prohibitive because it requires thousands of forward black-oil simulations inside a Bayesian inversion. The paper trains a closed-loop Fourier neural operator surrogate with a black-oil residual penalty (PINO), inverts on a low-dimensional Parseval-exact cosine or VAE chart with adaptive regularised ensemble Kalman inversion plus ES-MDA, and proves rollout exposure, physics-penalty contraction, and truncation-bias bounds.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31721",
+  "source": "arXiv",
+  "title": "End-to-End Differentiable Diffusion Conditioning for Physics-Informed Optimization",
+  "abstract": "Optimizing high-dimensional physical systems under expensive evaluations and complex constraints is a central challenge in science and engineering. In offline model-based optimization (MBO), methods must improve designs using only a fixed dataset and no test-time access to the true objective. However, existing methods typically suffer from conservatism, unconstrained surrogate exploitation, or function as static inference-time samplers that cannot refine candidates against precise physical objectives. In this paper, we propose Differentiable Diffusion Conditioning (D2C) for offline MBO, which leverages the fact that deterministic sampling makes the reverse denoising chain differentiable with respect to the conditioning signal. D2C turns a frozen conditional diffusion model into an end-to-end gradient-based optimizer by directly optimizing conditioning variables at test time via gradients from frozen surrogate objectives and physics-informed penalties backpropagated through the reverse chain. We implement this idea in a composed proposer-evaluator framework and evaluate it on laser pulse optimization for inertial confinement fusion, sustainable data-center workload scheduling, and four Design-Bench tasks. Our method achieves the strongest results on the two real-world tasks and the best average rank across four Design-Bench tasks.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Ricardo Luna Gutierrez",
+   "Vineet Gundecha",
+   "Rahman Ejaz",
+   "Varchas Gopalaswamy",
+   "Riccardo Betti",
+   "Sahand Ghorbanpour",
+   "Aarne Lees",
+   "Soumyendu Sarkar"
+  ],
+  "url": "https://arxiv.org/abs/2610.31721",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "differentiable-simulation",
+   "generative-simulation"
+  ],
+  "summary": "Offline model-based optimization of high-dimensional physical systems must improve designs from a fixed dataset while avoiding surrogate exploitation. The paper exploits the differentiability of deterministic reverse denoising to optimize conditioning signals end-to-end through a frozen conditional diffusion model with surrogate and physics-informed penalties, evaluated on laser pulse optimization for inertial confinement fusion and data-center workload scheduling.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31728",
+  "source": "arXiv",
+  "title": "When and How Does Muon Precondition? The Role of Structured Gradient Noise",
+  "abstract": "Muon has become a popular optimizer for large language model training, yet its theoretical foundations remain poorly understood. In this work, we study how gradient noise geometry shapes Muon's preconditioning benefits. We first show, theoretically and empirically, that under the classical isotropic noise assumption, Muon offers no acceleration beyond a rescaling of the learning rate. This motivates us to investigate structured noise arising from mini-batch sampling in associative memory with heterogeneous task frequencies. We establish an exact balancing threshold for two tasks and extend the analysis to multiple tasks, revealing how task coverage and gradient reliability jointly shape learning. Our analysis shows that Muon can soften the dependence on task frequency from linear to square-root, helping balance the learning of frequent and rare tasks. We further identify rotation-induced negative transfer in SignSGD that Muon avoids, and explain how momentum reduces sampling noise while tracking changing gradients. Controlled numerical experiments validate these mechanisms, and a preliminary LLM pretraining study illustrates the practical promise of fast-slow momentum.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Xiaoran Chen",
+   "Binghui Li",
+   "Liwei Wang",
+   "Pinyan Lu"
+  ],
+  "url": "https://arxiv.org/abs/2610.31728",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "It is unclear why the Muon optimizer preconditioning helps in LLM training. The paper shows that under isotropic gradient noise Muon only rescales the learning rate, then analyzes structured mini-batch noise in associative memory to derive an exact task-balancing threshold and show Muon softens task-frequency dependence from linear to square-root.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31783",
+  "source": "arXiv",
+  "title": "Early learning in large residual networks",
+  "abstract": "We study the early training dynamics of nonlinear residual networks with blocks of zero hidden layers as a model of more general residual networks. We analyze networks in a sequential limit where first width and depth diverge, then the number of training data points diverges, and finally the input dimension diverges. This is a more refined setup compared to the typical mean-field theory analysis in which depth and width diverge but the number of training datapoints and input dimension are fixed. Our main technical result is a diagrammatic computation of both the network output and the hidden representations after the few steps of gradient descent in terms of the statistics of inner products of inputs from the training set. One of our principle conceptual findings is a negative result: in the limit of large input dimension the network output can learn only a linear function of its inputs early in training since higher learned monomials are more and more suppressed in the input dimension and vanish in the large dimension limit. This suggests that mean-field limits of ResNets are surprisingly rigid in the regime of high input dimension and may not be sufficient toy models for understanding feature learning. Finally, we investigate how to ensure hyperparameter transfer for the learning rate as a function of dataset size and input dimension. We test our predictions numerically and find excellent agreement with our theory.",
+  "categories": [
+   "stat.ML",
+   "cs.LG",
+   "math.PR",
+   "physics.data-an"
+  ],
+  "authors": [
+   "Vladimir Narovlansky",
+   "Boris Hanin"
+  ],
+  "url": "https://arxiv.org/abs/2610.31783",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The early training dynamics of residual networks are typically studied under mean-field limits that hold dataset size and input dimension fixed. The paper analyzes zero-hidden-layer residual blocks in a sequential limit where width/depth, then data size, then input dimension diverge, giving a diagrammatic computation of outputs and hidden representations and showing that in high input dimension only linear functions can be learned early in training.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31789",
+  "source": "arXiv",
+  "title": "Phronix: The Capability-Centric Learning Paradigm for Agents",
+  "abstract": "Scientific computing increasingly relies on large language model-based agents for performance engineering tasks such as instrumentation, analysis, and workflow porting. However, agent effectiveness depends heavily on the surrounding harness, which typically relies on manually written skills and curated memory. This limits autonomous learning, forcing agents to repeatedly rediscover solutions rather than retain and reuse knowledge from prior executions. We introduce Phronix, a capability-centric learning paradigm that enables agentic harnesses to acquire, validate, and refine reusable capabilities from their own executions. Phronix operates through a predictor-validator-corrector loop: MCP tools and associated skills propose solutions, tool executions validate them, and observed outcomes refine the stored capabilities. It distills every observed interaction into a capability store and researches a failing task rather than abandoning it. First, such learned capabilities solve a recurring task on the first attempt in 93-95% of cases across every model, significantly reducing solution non-determinism and improving reliability. Second, Phronix turns an agent's own execution into 7.6-30.8 durable capabilities per task without user instruction, and creation falls below two once the needed capability exists. Third, warm-start runs consume only 0.38-0.40 million tokens per task, which is three to four times less than a single baseline attempt, while a cold-start costs no more than the baseline. On the 1000 Genome Pegasus workflow, instrumenting a production application for I/O performance analysis, Phronix passes all 11 correctness checks against six for the baseline harness, and also lifts the task solving rates of two cheaper models from 29% and 27% of SWE-bench tasks solved to 91% and 87%, respectively, matching the performance of the most expensive evaluated model.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Hariharan Devarajan",
+   "Neeraj Rajesh",
+   "Aniruddha Marathe",
+   "Nikoli Dryden",
+   "Kin Ng",
+   "Michela Taufer"
+  ],
+  "url": "https://arxiv.org/abs/2610.31789",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM agents for scientific-computing performance engineering depend on hand-written skills and curated memory, so they repeatedly rediscover solutions instead of retaining them. Phronix introduces a predictor-validator-corrector loop that distills tool executions into a reusable capability store, demonstrated on a 1000 Genome Pegasus workflow instrumentation task and SWE-bench task-solving rates.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31810",
+  "source": "arXiv",
+  "title": "PaperFormalizer: Author-in-the-Loop Autoformalization of Research Papers in Lean",
+  "abstract": "Even a carefully proofread paper can leave small gaps in its proofs or its stated assumptions. We introduce PaperFormalizer, a Lean-based agentic pipeline that helps authors find and close such gaps in their own papers and turn each paper into a Lean-verified version. Starting from the LaTeX source, PaperFormalizer transcribes the paper into a dependency graph of statements, audits each statement in natural language for faithfulness, ambiguity and correctness, and then formalizes and proves the statements in Lean against Mathlib, optional domain libraries and the author's personal toolkit. Only the author knows what a statement is meant to say and how a formalization gap in a result is best fixed. The pipeline therefore stops and asks the author whenever a statement admits more than one reading, presents every repair, in natural language and TeX symbols, as a proposal that the author can accept, decline or redirect, and leaves to the author every decision that could potentially change what the paper claims. The output is an annotated and revised version of the paper, a report of the changes, and Lean code in which each declaration is linked to the statement it formalizes. The author's toolkit grows as more papers are formalized, and authors can share their verified papers so that researchers who build on them can reuse their Lean code. By making verified papers practical to produce, PaperFormalizer aims to make research that rests on mathematical proofs more robust. PaperFormalizer runs inside a coding agent (Claude Code or Codex) and is available at https://github.com/Jiyuan-Tan/PaperFormalizer. Papers with Lean code shared by users are available at https://paperformalizer.org.",
+  "categories": [
+   "cs.AI",
+   "cs.LO"
+  ],
+  "authors": [
+   "Jiyuan Tan",
+   "Vasilis Syrgkanis",
+   "Jose Blanchet"
+  ],
+  "url": "https://arxiv.org/abs/2610.31810",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Proofread papers can still contain gaps in proofs and assumptions, and turning them into Lean-verified artifacts is laborious. PaperFormalizer builds an author-in-the-loop agentic pipeline that transcribes LaTeX into a dependency graph of statements, audits them, and formalizes and proves them in Lean against Mathlib while pausing for author decisions wherever a statement is ambiguous.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31855",
+  "source": "arXiv",
+  "title": "Cautious Conflict-Free Inverse Gradient Methods",
+  "abstract": "Partial differential equations (PDEs) are indispensable tools for modeling complex phenomena in physics and engineering. Physics-Informed Neural Networks (PINNs) have emerged as a powerful alternative to traditional numerical solvers by directly incorporating physical constraints into neural network loss functions. Despite their advantages, PINN training requires multi-objective optimization, which often leads to significant gradient conflicts among boundary, initial, and residual loss terms. The Conflict-Free Inverse Gradient (ConFIG) method addresses these conflicts; however, integrating ConFIG with adaptive optimizers such as Adam introduces a critical vulnerability: the conflict-free direction generated by ConFIG is further processed by the optimizer, and the resulting weight update may no longer be conflict-free with respect to the task gradients. To address this issue, Cautious ConFIG is proposed as a concise three-line extension to the ConFIG algorithm that empirically restores the conflict-freeness guarantee prior to the weight update. The method is evaluated on three PINN benchmarks: the 1D Viscous Burgers' equation, the 1D Nonlinear Schr\\\"odinger equation, and the 2D Kovasznay flow. Experimental results demonstrate consistent performance improvements over the standard ConFIG baseline. Additionally, the stabilizing effect of cautious masking and its reaction to conflict severity, task number, and optimizer lag are investigated using a simple toy system.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Damian Hattler",
+   "Qiang Liu",
+   "Nils Thuerey"
+  ],
+  "url": "https://arxiv.org/abs/2610.31855",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Physics-informed neural network training is a multi-objective problem where the conflict-free inverse gradient direction can be destroyed by adaptive optimizers such as Adam. The paper proposes Cautious ConFIG, a three-line masking extension that restores conflict-freeness before the weight update, validated on Burgers, nonlinear Schrödinger, and Kovasznay flow benchmarks.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32487",
+  "source": "arXiv",
+  "title": "State Estimation as In-context Tabular Prediction",
+  "abstract": "This letter poses state estimation (SE) as an in-context tabular prediction (ICTP) problem. The key idea is a tabular arrangement in which historical measurement vectors and corresponding state estimates serve as the context, and a new measurement vector forms the query for which we predict a state vector. We propose to use tabular foundation models (TFMs), pretrained on synthetic data, whose weights are never updated, so power system data is needed only as context. With frozen TFM weights we estimate the state of 14-, 30-, 33-, 70-, and 118-bus transmission and distribution networks, and do so where weighted least squares (WLS) fails or degrades, under low observability and with bad data. ICTP errors are 11 to 57$\\times$ below the per-bus average of the context at full metering, and 1.3 to 4.0$\\times$ below it with only 5% of measurements available. With measurements at six buses biased by 8$\\sigma$, the ICTP angle error rises 1.8 to 5.0$\\times$ over its bias-free value against 2.5 to 12.7$\\times$ for WLS with bad-data detection. Without retraining, ICTP has lower voltage error than DSS$^2$ on both of its feeders, and lower than a retrained TAPINE on two of three reconfiguration sets.",
+  "categories": [
+   "eess.SY",
+   "cs.LG",
+   "cs.SY"
+  ],
+  "authors": [
+   "Ayushi Jolotia",
+   "Parikshit Pareek"
+  ],
+  "url": "https://arxiv.org/abs/2610.32487",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "State estimation in power systems becomes unreliable under low observability and bad data. The paper reframes state estimation as in-context tabular prediction, using frozen tabular foundation models with historical measurements as context to predict state vectors without retraining.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32505",
+  "source": "arXiv",
+  "title": "BAARC: Uncertainty-Driven Adaptive Partial Spectral Measurement to Full Reconstruction for Material Classification",
+  "abstract": "Spectroscopic instruments with limited wavenumber coverage require accurate scan positioning or multiple measurements to complete the material analysis. This often requires prerequisite knowledge about the material under diagnosis to measure the spectral regions with distinguishing peaks. In our study, we simulate a Bayesian Adaptive Acquisition with Reconstruction-driven Classification (BAARC) framework for Raman spectral measurements, using masked training to learn spectral features that dynamically drive laser channel selection until the material is identified. We present a jointly trained two-level framework that takes progressive partial measurements of small wavenumber patches across the complete spectral range and, at each step, first attempts to reconstruct the full spectra until the model uncertainty is low. Secondly, material classification is performed at each reconstruction step until stoppage. Uncertainty quantification during reconstruction steps helps determine the measurement position of our next patch, while combining it with classification uncertainty determines measurement termination. By closing the loop between hardware acquisition and deep probabilistic modeling, the proposed system minimizes physical measurement steps while maintaining both spectral fidelity and diagnostic accuracy. Experimental evaluations demonstrate that our framework achieves high-accuracy sample identification using only a fraction of full-spectrum channels, offering a scalable solution for real-time, high-throughput spectroscopic instruments.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Adithya Ashok Chalain Valapil",
+   "Aishwarya Venkataramanan",
+   "Joachim Denzler"
+  ],
+  "url": "https://arxiv.org/abs/2610.32505",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Spectroscopic material classification with limited wavenumber coverage requires choosing measurement positions without prior material knowledge. The paper introduces BAARC, a jointly trained Bayesian adaptive acquisition and reconstruction framework that uses reconstruction and classification uncertainty to select spectral patches and decide when to stop measuring.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32911",
+  "source": "arXiv",
+  "title": "Classical, Machine Learning, and Hybrid Solvers for Partial Differential Equations: An Evidence-Weighted Review and Decision Framework",
+  "abstract": "Machine learning for partial differential equations raises a practical question: when are classical, learned, or hybrid solvers justified? This survey compares the three families in a decision framework organized by data availability, query volume, and certification needs. An amortization law, tested on parametric Darcy flow, shows that surrogates trained on solver-generated data break even only after many queries, beyond thirty thousand for errors below one percent. An evidence ladder, a benchmark reanalysis, and three case studies show that claims of speedup and generalization carry the weakest evidence. Solver choice should follow regime, query volume, and evidence quality, not method novelty.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Yingchao Huang",
+   "Xin Wang",
+   "Shanshan Yao",
+   "Fanhua Zeng",
+   "Wei Peng"
+  ],
+  "url": "https://arxiv.org/abs/2610.32911",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "It is unclear when classical, learned, or hybrid PDE solvers are actually justified compared with one another. The paper surveys the three families in a decision framework organized by data availability, query volume, and certification needs, and tests an amortization law on parametric Darcy flow showing surrogates break even only beyond tens of thousands of queries.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32914",
+  "source": "arXiv",
+  "title": "A Tutorial on Physics Constrained Machine Learning for Hybrid Modeling, Optimization, and Control",
+  "abstract": "Physics-constrained machine learning (PCML) integrates domain knowledge, first-principles, and physical constraints into AI/ML models. In this work, we present a step-by-step tutorial of a modular PCML framework, KKT-HardNet, and illustrate how it could be used for hybrid modeling, process simulation, optimization and model predictive control in a single platform. KKT-HardNet combines fast inference capabilities of neural networks with guaranteed satisfaction of algebraic constraints through differential projection. It can handle heterogeneous data and enforce both linear and nonlinear equality and inequality constraints. The modular design supports custom neural-network backbones and user-defined projection mechanisms for PCML. To enable efficient end-to-end training, KKT-HardNet exploits implicit function theorem to backpropagate through the projection layer. This avoids computationally expensive automatic differentiation. This work also introduces an exact reduced-order Fischer-Burmeister reformulation and a primal-dual interior-point method as an alternative projection solve strategy. We also provide a diverse set of benchmarking problems for PCML in engineering applications. KKT-HardNet achieves orders of magnitude better performance in terms of both constraint satisfaction and inference time. The KKT-HardNet code and the benchmark datasets are available at https://github.com/souls-tamu/kkt-hardnet .",
+  "categories": [
+   "cs.LG",
+   "cs.ET"
+  ],
+  "authors": [
+   "Rahul Golder",
+   "Bimol Nath Roy",
+   "MM Faruque Hasan"
+  ],
+  "url": "https://arxiv.org/abs/2610.32914",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "differentiable-simulation"
+  ],
+  "summary": "Physics-constrained machine learning needs a modular way to guarantee hard algebraic constraints while remaining efficient to train end to end. The paper presents a tutorial and framework, KKT-HardNet, that enforces linear and nonlinear equality/inequality constraints via differential projection, backpropagating through the projection layer with the implicit function theorem and introducing a Fischer-Burmeister primal-dual interior-point projection solver.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32919",
+  "source": "arXiv",
+  "title": "SemantEq: Faithful Bidirectional Equivalence of Formal Statements",
+  "abstract": "Statement autoformalization translates mathematics from natural language into a proof assistant such as Lean 4, and models now do it at scale. As provers get stronger, the burden of correctness shifts from the proof to the statement, that is, to whether the formal statement faithfully translates its source. Given a trusted reference formalization, the natural test is logical equivalence, and it proves too much. $P \\leftrightarrow Q$ holds trivially for any two statements $P$ and $Q$ that the library proves, because a prover can prove each separately and pass through $P \\leftrightarrow \\mathrm{True} \\leftrightarrow Q$. The stronger the prover, the more unrelated pairs pass. Earlier methods restrict the prover and check that each proof names the other statement. We introduce SemantEq, a more principled relation that instead requires each statement to turn into the other only through a chain of allowed steps, such as logical rearrangement and rewriting with the library's own equations. Our programs judge a proof by the proof term Lean checks, not by its tactic script. SemantEq-Eval, a search without a model, reaches 100% precision and 65.6% recall on the ProofNetVerif test split under our adjudicated labels, against 95.8% and 61.8% for BEq+, and an 8.9-fold increase in its CPU time adds at most three pairs. A language model finds more proofs, but under two of four prompts it proves both directions of about two in five of the non-equivalent pairs. SemantEq-ProofAudit audits each model-written proof under a policy derived from the relation and accepts none of the 104 non-equivalent pairs, and it raises recall on 407 equivalent pairs from 65.4% to 81.1% under the best prompt. Separating the generation of equivalence proofs from their acceptance lets a stronger prover raise recall without changing what an acceptance means. We release code and data at: https://github.com/hlxr89/SemantEq",
+  "categories": [
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Xinrui Li",
+   "Pawan Sasanka Ammanamanchi",
+   "Siddharth Bhat",
+   "Rianna Jamdar",
+   "Yongxi Lin",
+   "Stella Biderman"
+  ],
+  "url": "https://arxiv.org/abs/2610.32919",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Autoformalized statements can be trivially judged logically equivalent when a strong prover proves both sides, so faithfulness of statement translation needs a stricter test. The paper introduces SemantEq, a relation requiring each statement to transform into the other only through allowed steps, checked on Lean proof terms, together with SemantEq-Eval and SemantEq-ProofAudit for model-written equivalence proofs.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32926",
+  "source": "arXiv",
+  "title": "ZENO: Nonlinear filtering with Zakai Equation Neural Operators",
+  "abstract": "State inference and parameter learning for nonlinear filters is a core computation for scientific machine learning with varied applications in engineering and neuroscience. The unnormalized filtering distribution is governed by the Zakai equation, a stochastic partial differential equation (SPDE) that combines the forward Kolmogorov operator (known as the Fokker-Planck equation) with observed likelihood updates. Although solving these high-dimensional SPDEs is often impossible analytically and intractable numerically, advances in operator learning and physics-informed machine learning have made it feasible. Harnessing these advances, we introduce the Zakai Equation Neural Operator (ZENO), a model that optimizes a neural operator against a Zakai Equation based physics-informed loss to approximate the exact unnormalized filtering distribution for latent stochastic dynamical systems. We use this ZENO-inferred posterior distribution in an expectation-maximization (EM) framework to perform parameter learning and state inference. We demonstrate ZENO's ability to accurately infer the posterior distribution and learn its corresponding SDE parameters in three simulated stochastic dynamical systems (Double-Well bistable system, Van Der Pol (VDP) oscillator, and Lorenz system) and compare its performance against established methods for latent SDE inference and learning. We show that ZENO recovers previously observed limit cycles representing forward and backward locomotion from a whole-brain imaging dataset of immobilized \\textit{C. elegans} nematodes. ZENO is a novel approach to the problem of nonlinear filtering and dynamical inference through the lens of partial differential equations and operator theory.",
+  "categories": [
+   "cs.LG",
+   "q-bio.NC"
+  ],
+  "authors": [
+   "Aaditya Prasad",
+   "Steven W. Flavell",
+   "Brian DePasquale"
+  ],
+  "url": "https://arxiv.org/abs/2610.32926",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "Nonlinear filtering requires solving the Zakai SPDE for the unnormalized filtering distribution, which is intractable in high dimensions. The paper introduces ZENO, a neural operator trained with a Zakai-equation physics-informed loss, and uses the inferred posterior inside an EM framework for state inference and SDE parameter learning.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.31920",
+  "source": "arXiv",
+  "title": "Input Bias Correction in Gaussian Process Regression",
+  "abstract": "In traditional Gaussian process (GP) regression, the inputs are typically assumed to be known, and uncertainty enters only through the measurements. When scalar fields are mapped using GP regression with measurements obtained from a mobile sensor, the inputs correspond to the estimated pose of the mobile sensor. The goal in this letter is to understand how a recorded GP, trained on erroneous inputs (e.g., pose estimates from dead-reckoning), can be corrected in a numerically efficient way when better estimates of the inputs become available. In the developed bias-aware GP (Ba-GP) framework, the recorded GP posterior-mean gradient is used to propagate estimated input bias and noise into mean and covariance corrections. The resulting additive covariance structure is then exploited to develop numerically efficient first-order correction algorithms. A simulation study and an indoor light-intensity mapping experiment show that Ba-GP improves predictive accuracy and uncertainty calibration relative to noisy-input GP baselines, with an order-of-magnitude reduction in computational cost relative to full GP retraining.",
+  "categories": [
+   "cs.RO",
+   "cs.LG"
+  ],
+  "authors": [
+   "Muzaffar Qureshi",
+   "Tochukwu E. Ogri",
+   "Trivikram Satharasi",
+   "Kyle Volle",
+   "Rushikesh Kamalapurkar"
+  ],
+  "url": "https://arxiv.org/abs/2610.31920",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Gaussian process maps built from mobile-sensor measurements inherit error from the pose inputs used during training, and correcting them typically means full retraining. The paper develops a bias-aware GP (Ba-GP) that propagates estimated input bias and noise through the recorded posterior-mean gradient into additive mean and covariance corrections, yielding first-order corrections that are an order of magnitude cheaper than retraining.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32631",
+  "source": "arXiv",
+  "title": "When does boundary-condition uncertainty outweigh thermal and vegetation effects in street canyon flow? A global sensitivity analysis of input uncertainty",
+  "abstract": "Computational Fluid Dynamics (CFD) is increasingly used to resolve wind, heat, and pollution patterns in cities with high fidelity but high computational cost. Thermal effects and vegetation are often neglected despite being important drivers, yet their influence may be masked by variability from other uncertain inputs. This work determines how precisely model parameters and boundary conditions must be known for these effects to govern output uncertainty in the velocity, temperature, and concentration fields of a two-dimensional street canyon. A global Sobol analysis of 24 parameters is made tractable by a surrogate trained on Reynolds-Averaged Navier--Stokes (RANS) simulations, combining principal component analysis (PCA) with multilayer perceptrons (MLPs). Two ventilation regimes assess the variance due to thermal and vegetation parameters as uncertainty in all other inputs is progressively reduced. At typical uncertainty levels, turbulence closure constants and inflow turbulence profiles govern variability in all three fields in both regimes. Under weak ventilation, solar forcing becomes the main source of temperature variability once the remaining uncertainties are halved, and of concentration variance once they are reduced to a quarter (about $\\pm11\\%$ for the dominant closure constant and $\\pm12\\%$ for the emission rate). In contrast, vegetation contributes significantly at typical uncertainty levels. Under strong ventilation, however, the canopy never overtakes the closure constants, even when the dominant one is known to $\\pm5\\%$. Spatially, both effects peak at road level and along canyon walls, which influence outdoor exposure and indoor infiltration, suggesting that high-resolution exposure studies should account for them.",
+  "categories": [
+   "physics.ao-ph",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Albert Moreno Catal\\`a",
+   "Joan Calafell Sandiumenge",
+   "Nikolaj T. M\\\"ucke",
+   "Jan Mateu Armengol"
+  ],
+  "url": "https://arxiv.org/abs/2610.32631",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "It is unclear how precisely street-canyon CFD inputs and boundary conditions must be known before thermal and vegetation effects dominate output uncertainty in velocity, temperature, and concentration fields. The paper makes a 24-parameter global Sobol sensitivity analysis tractable by training a PCA-plus-MLP surrogate on RANS simulations, quantifying the variance attributable to turbulence-closure constants, inflow profiles, solar forcing, and vegetation across two ventilation regimes.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32788",
+  "source": "arXiv",
+  "title": "Generalization properties of the token perceptron: the role of embedding and vocabulary",
+  "abstract": "Large language models are trained to predict tokens from a finite vocabulary, each represented by a vector in a $d$-dimensional embedding space. Therefore, token prediction is a classification problem whose classes have a geometry determined by the embedding. We study how this geometry affects learning in a minimal solvable model: a linear predictor that maps a sequence of $N$ embedded tokens to a $d$-dimensional output through one $d\\times d$ matrix per position, trained in the teacher--student setting. We call this the \\textit{token perceptron}. We compute its generalization error with the replica method, taking $N\\to\\infty$ at fixed number of examples per position $\\alpha=P/N$ and keeping $d$ and the vocabulary size $D$ finite. As a first reference case, we consider continuous embeddings on the sphere, which isolate the role of the embedding dimension. The natural load is then $\\alpha/d$, and for $d>1$ a normalized label fixes the direction of the teacher output, so the problem becomes a noiseless regression: the teacher is recovered exactly above $\\alpha_{\\rm rec}=d^2/(d-1)$, and spherical cross-entropy reaches this threshold at large inverse temperature. In the same setting the storage capacity of random associations scales as $d^2$ for margins $O(1/\\sqrt{d})$. We then turn to vocabulary embeddings, where a label only identifies the Voronoi cell of the teacher output, so that each example imposes inequalities rather than equations, as in the classical perceptron. We compute the Bayes-optimal error for a given embedding matrix through an approximate spectral closure and show that the optimal learner first resolves the directions in which the vocabulary has the largest variance, even when the teacher is isotropic.",
+  "categories": [
+   "cond-mat.dis-nn",
+   "cond-mat.stat-mech",
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Dario Bocchi",
+   "Matteo Negri",
+   "Flavio Nicoletti",
+   "Francesco D'Amico"
+  ],
+  "url": "https://arxiv.org/abs/2610.32788",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "How the geometry of a finite vocabulary embedding shapes token prediction is unclear. The paper introduces the token perceptron, a teacher--student linear model over embedded token sequences, and computes its generalization error via the replica method, separating continuous-embedding and Voronoi-cell label regimes.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32840",
+  "source": "arXiv",
+  "title": "Physics Informed Neural Network for Multi-dimensional Turbulent Self-gravitating Flows",
+  "abstract": "Molecular clouds exhibit complex, multi-scale dynamics driven by the interplay of turbulence, self-gravity, and gas pressure. Modelling these systems with conventional grid-based methods becomes increasingly expensive as spatial resolution and dimensionality increase. Physics-Informed Neural Networks (PINNs) offer a mesh-free alternative by incorporating the governing equations directly into the training objective, but their ability to model realistic turbulent self-gravitating flows remains largely unexplored. We apply PINNs to isothermal molecular clouds initialized with astrophysically motivated turbulent velocity fields, considering subsonic and supersonic evolution in two and three dimensions. We benchmark the predicted density and velocity fields against the finite-volume code Athena++. PINNs accurately recover the global evolution of the flow over multiple free-fall times across turbulent realizations, Mach numbers, and dimensionalities. Their training cost also exhibits weak dependence on spatial resolution, increasing by less than 25% from 128^3 to 1024^3 in our experiments. These results demonstrate that PINNs can model substantially more realistic self-gravitating turbulent flows than previously explored and provide a promising complementary framework for studying these systems.",
+  "categories": [
+   "astro-ph.SR",
+   "astro-ph.GA",
+   "astro-ph.IM",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Tirthankar De",
+   "Sayantan Auddy",
+   "Ramit Dey",
+   "Shantanu Basu"
+  ],
+  "url": "https://arxiv.org/abs/2610.32840",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Whether physics-informed neural networks can model realistic turbulent, self-gravitating molecular-cloud flows rather than idealized setups was largely unexplored. The paper trains PINNs on isothermal clouds with astrophysically motivated turbulent initial velocities in 2D and 3D and benchmarks density and velocity fields against Athena++, finding weak cost scaling with resolution.",
+  "added": "2026-10-26"
+ },
+ {
+  "id": "arxiv:2610.32970",
+  "source": "arXiv",
+  "title": "On the continuity of conditional distributions and stratification for derivative pricing",
+  "abstract": "Stratification can reduce the estimator variance in Monte Carlo simulations by partitioning the sample space according to a low-dimensional factor and sampling separately within the resulting strata, making it well suited to the valuation of path-dependent claims in high-dimensional financial models. Its performance, however, depends critically on the choice of the stratification factor, and effective low-dimensional factors are generally difficult to identify in complex continuous-time models. Neural networks provide a flexible approximation class for this purpose and have proved useful in related variance-reduction problems in quantitative finance. In this paper, we study the construction of neural stratification factors for derivative pricing under proportional allocation in continuous-time models. Since the numerical construction of a stratification factor typically involves approximation, we establish continuity results for the associated conditional expectations and, more generally, conditional distributions, and provide several counterexamples showing the limits of this continuity theory. Combined with density results for neural networks, our findings yield a universal approximation theorem for admissible stratification factors. We conclude with numerical experiments involving a constant-maturity-swap range accrual in a two-factor Gaussian short-rate model and a worst-of autocallable in a Wishart stochastic covariance model, where the learned factors outperform all considered benchmarks.",
+  "categories": [
+   "q-fin.CP",
+   "math.PR",
+   "q-fin.MF"
+  ],
+  "authors": [
+   "Aleksandar Arandjelovic",
+   "Patrick Cheridito"
+  ],
+  "url": "https://arxiv.org/abs/2610.32970",
+  "published": "2026-10-26",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Stratification reduces Monte Carlo variance for path-dependent derivative pricing, but effective low-dimensional stratification factors are hard to construct in continuous-time models. The paper learns neural stratification factors, proves continuity of the induced conditional expectations and distributions (with counterexamples) and a universal approximation theorem for admissible factors, and demonstrates variance reduction on CMS range-accrual and worst-of autocallable payoffs.",
+  "added": "2026-10-26"
  }
 ]
