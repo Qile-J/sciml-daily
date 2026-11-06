@@ -83619,5 +83619,628 @@
   ],
   "summary": "Predicting grain growth under non-isothermal heat treatments with PDE-based simulations is expensive for long or complex thermal cycles. The paper introduces a thermally conditioned surrogate that encodes grain-size distributions with a CNN, embeds thermal descriptors with an MLP, and uses a recurrent network to forecast evolution under changing temperature and thermal rate.",
   "added": "2026-11-05"
+ },
+ {
+  "id": "arxiv:2611.07387",
+  "source": "arXiv",
+  "title": "Projection-based segregated, iterative, and multi-stage physics-informed neural network for incompressible Navier-stokes equations",
+  "abstract": "Physics-informed neural networks(PINNs) offer a mesh-free and continuously differentiable approach to fluid simulation. However, standard monolithic PINNs for incompressible Navier-Stokes (NS) equations often suffer from severe constraint coupling and spectral biases, limiting both convergence and accuracy. To address this challenge, we propose a segregated, iterative, and multi-stage PINN (SIM-PINN) inspired by the classical projection method in computational fluid dynamics. In SIM-PINN, the nonlinear NS equations are decoupled into the linearized momentum and pressure Poisson equations. Each is addressed separately using dedicated multi-stage neural networks and coupled through projection-based inner iterations. Each stage of the multi-stage neural networks for the momentum equations corresponds to one iteration of the projection method, in which the velocity fields are progressively refined at targeted frequencies. Upon iteration convergence, solutions to the fully coupled and nonlinear NS equations are recovered. By integrating the segregated and iterative framework with the multi-stage training, SIM-PINN alleviates the optimization difficulties of the incompressible NS equations arising from nonlinearity, constraint coupling, and spectral biases. The improved convergence and accuracy are demonstrated by simulations of steady lid-driven cavity and unsteady Kolmogorov flows.",
+  "categories": [
+   "physics.flu-dyn",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Zhenyu Zhang",
+   "Zhixiang Ling",
+   "Yinghao Huo",
+   "Huayong Liu",
+   "Yunde Su"
+  ],
+  "url": "https://arxiv.org/abs/2611.07387",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Monolithic PINNs for the incompressible Navier–Stokes equations suffer from severe constraint coupling and spectral bias, limiting convergence and accuracy. SIM-PINN decouples the equations into linearized momentum and pressure-Poisson subproblems handled by dedicated multi-stage networks coupled through projection-based inner iterations, progressively refining velocity at targeted frequencies.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07395",
+  "source": "arXiv",
+  "title": "Rigorously Certified Neural-Network Computation of Nonlinear Water Waves at Near-Machine Precision",
+  "abstract": "We present a computational framework that combines machine-learning-based discovery with rigorous computer-assisted numerical certification and formal verification for strongly nonlinear partial differential equations. We demonstrate the approach for periodic gravity-capillary traveling water waves. Physics-informed neural networks are used as a search mechanism, with the wave profile, wave speed and, in continuation experiments, surface tension learned directly from the governing equations without training data. Through a staged training and refinement procedure, the neural networks achieve near-machine-precision residuals of the governing equations, even in strongly nonlinear regimes. A single formulation recovers high-amplitude Stokes waves, Crapper waves and Wilton ripples. Continuation from a high-amplitude Wilton ripple in surface tension reveals new high-amplitude candidate solutions. We freeze one candidate as an explicit finite representation and rigorously certify a uniform bound on its governing-equation residual using interval arithmetic, accounting for floating-point roundoff, Fourier truncation, aliasing and grid-to-continuum errors. This independently validates the neural-network accuracy. We formalize the certification argument in Lean, which machine-checks the deductions from certified numerical bounds to the residual theorem. Both the interval certification and formalization were developed with substantial assistance from a large language model, while the validity of the result remains independent of the language model: the numerical bounds are rigorously enclosed by interval arithmetic and the subsequent mathematical deductions are checked by the Lean kernel. Together, these steps provide a pipeline from neural discovery to rigorous numerical certification and machine-checked verification with auditable mathematical guarantees.",
+  "categories": [
+   "math.AP",
+   "cs.LG",
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Michal Shavit",
+   "Yongji Wang",
+   "Tristan Buckmaster"
+  ],
+  "url": "https://arxiv.org/abs/2611.07395",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Strongly nonlinear traveling water-wave solutions are hard to compute with rigorous guarantees. The paper uses PINNs as a data-free search mechanism that reaches near-machine-precision residuals for Stokes, Crapper, and Wilton waves, then freezes one candidate into an explicit finite representation and certifies its residual bound with interval arithmetic and a Lean-checked formal proof (both developed with LLM assistance).",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07406",
+  "source": "arXiv",
+  "title": "Random Reshuffling for Smooth Convex Optimization: Dominates Stochastic Gradient Descent",
+  "abstract": "Stochastic Gradient Descent (SGD) is one of the most classical optimization algorithms with favorable theoretical guarantees, yet its practical implementation differs subtly from its well-known form and is often referred to as Shuffling Stochastic Gradient Descent (Shuffling SGD). A particularly popular strategy in Shuffling SGD is Random Reshuffling (RR), which has achieved great empirical success. Despite its strong performance, RR has long been considered a heuristic due to a lack of theoretical support. Over the last decade, people have finally established provable convergence rates for RR, thus justifying its observed superiority. However, for smooth convex optimization, two clouds over the convergence theory of RR remain. According to current theory, Shuffling SGD under RR converges only when the stepsize is smaller than a threshold proportional to $1/n$, where $n$ is the number of summands in the objective (or the number of data points). Consequently, the optimally tuned theoretical rate of Shuffling SGD under RR is strictly worse than that of SGD when the number of epochs is smaller than another threshold proportional to $n$. These two restrictions heavily limit the applicability of existing theories and leave a critical mismatch with practice. In this work, for the first time, we prove that RR dominates SGD in smooth convex optimization for any reasonable stepsize after any finite number of epochs, thereby addressing a longstanding open question. Moreover, we establish new algorithm-dependent lower bounds for RR and SGD, respectively. Altogether, these results yield (nearly) sharp worst-case characterizations of RR and SGD. Furthermore, we develop a shuffling-based method to optimize functions satisfying the quadratic growth condition, a strict relaxation of strong convexity, and derive a new complexity bound improving existing results proved under stronger assumptions.",
+  "categories": [
+   "math.OC"
+  ],
+  "authors": [
+   "Zijian Liu"
+  ],
+  "url": "https://arxiv.org/abs/2611.07406",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Existing theory for random reshuffling only guarantees convergence for stepsizes below a 1/n threshold, making its tuned rate provably worse than SGD for few epochs, contradicting practice. The paper proves RR dominates SGD in smooth convex optimization for any reasonable stepsize after any finite number of epochs and establishes matching algorithm-dependent lower bounds, plus a shuffling method for quadratic-growth objectives.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07458",
+  "source": "arXiv",
+  "title": "Physics-informed latent conditional flow matching for generative modeling of granular flows on inclined planes",
+  "abstract": "The internal kinematic and mechanical states of granular flows are difficult to observe or measure, limiting the interpretation of internal particle interactions and their role in flow evolution. In this study, we propose a physics-informed latent conditional flow matching (PI-LCFM) framework for reconstructing complete multivariable flow sequences from partial boundary observations. A variational autoencoder and temporal flow-matching model learn a reusable latent prior over velocity, granular temperature, stress, and solid volume fraction. During inference, boundary-velocity or basal-stress observations and mass- and momentum-conservation constraints guide the latent trajectory through the decoded physical fields, without retraining either model. The results demonstrate that the model accurately reconstructs full spatiotemporal fields from observations containing only 0.3\\% of the complete field information, extrapolates beyond the training ranges of inclination and particle number, and recovers key trends in runout scaling, energy evolution, and stress profiles. Compared with a frame-by-frame conditional flow-matching baseline, PI-LCFM reduces the mean velocity-component root-mean-square error by 45.2\\%, while observation-guided reconstruction of 500-frame sequences achieves an approximately 44-fold speedup. Physics guidance further improves conservation consistency, supporting the broader potential of this framework for inferring hidden states in particulate systems, with potential applications envisioned in geophysical hazard assessment and industrial process monitoring.",
+  "categories": [
+   "cs.CE"
+  ],
+  "authors": [
+   "Ziqi Han",
+   "Kuang Shi",
+   "Xuyang Li",
+   "Teng Man",
+   "Yimin Lu"
+  ],
+  "url": "https://arxiv.org/abs/2611.07458",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "The internal kinematic and mechanical states of granular flows on inclined planes are difficult to observe directly. PI-LCFM learns a reusable latent prior over velocity, granular temperature, stress, and solid volume fraction with a VAE and temporal flow matching, then guides the latent trajectory at inference with boundary observations and mass/momentum conservation constraints.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07520",
+  "source": "arXiv",
+  "title": "Graph learning-assisted logic-based Benders decomposition for distributionally robust in-station train rescheduling under disruptions",
+  "abstract": "Uncertainty in resource reopening times complicates train holding and rerouting decisions when resource closures coincide with arrival delays and processing-time extensions. We develop a rolling-horizon distributionally robust model that updates predictions of the remaining closure duration as observations of disruption resolution become available. The model jointly optimizes train routes, sequences, and timings. It minimizes the worst-case expected total completion delay over an ambiguity set of scenario probabilities. The solution algorithm, GNN-LBBD, uses logic-based Benders decomposition to coordinate routing and resource scheduling. Conditional cuts are constructed from resource-use patterns, and a graph neural network guides the order in which resource relaxation subproblems are solved. Across 28 test instances for a five-track station, GNN-LBBD achieved a mean total completion delay of 61.13 train-min. This was 16.63\\% lower than tabu search and 20.06\\% lower than variable neighborhood search, with a mean total computation time close to that of tabu search. Information comparisons on six representative instances showed that using observations of disruption resolution reduced mean total completion delay by approximately 21.7\\%. Scenario-based and conditional-mean predictions produced similar overall results under the same information conditions. The benefits of information were more pronounced in some instances with alternative routes. This suggests a relationship between the use of observations, the station resource structure, and the scope for schedule adjustments.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Xiaobin Li",
+   "Yanbin Gao",
+   "Jianing Long",
+   "Wuming Lei"
+  ],
+  "url": "https://arxiv.org/abs/2611.07520",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Rolling-horizon distributionally robust train rescheduling under disruptions requires solving many resource-relaxation subproblems inside a logic-based Benders decomposition. GNN-LBBD trains a graph neural network to order those subproblem solves, lowering mean total completion delay by roughly 16–20% versus tabu and variable-neighborhood search at comparable computation time.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07526",
+  "source": "arXiv",
+  "title": "Understanding Data Influence in Transportation Networks: A Physics-Constrained Influence-Function Framework",
+  "abstract": "Understanding how individual training observations influence model predictions is important for developing reliable and interpretable data-driven transportation systems. Existing influence-function methods, however, are primarily formulated for unconstrained learning and do not explicitly account for physical constraints that couple different components of a transportation network. Under such constraints, perturbing a training observation can affect model parameters and predictions only through physically feasible directions, potentially changing how its influence propagates across the network. This paper develops a hard physics-informed influence-function framework for constrained learning, in which training-data influence is characterized within the physically feasible space defined by network constraints. The analytical results reveal how physical constraints alter the magnitude, direction, and spatial distribution of training-sample influence relative to conventional influence measures. Using traffic prediction under flow-conservation constraints as a case study, we show that influential observations identified by the proposed framework differ systematically from those identified by classical influence functions. Through orthogonal decomposition, we quantitatively characterize how much of a perturbation in the training data is propagated through the network via the flow-conservation constraints and how much is removed by the constraint projection. The proposed influence framework provides a physically consistent approach for evaluating training-data influence in constrained transportation learning problems, with potential applications to data diagnostics, sensor evaluation, and targeted data collection.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Hamidreza Attari",
+   "Yueyue Fan",
+   "Johannes Royset"
+  ],
+  "url": "https://arxiv.org/abs/2611.07526",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "Classical influence functions assume unconstrained learning and ignore the physical constraints coupling components of a transportation network, so training-data influence is mis-attributed. The paper derives a hard physics-informed influence-function framework restricted to the physically feasible space of flow-conservation constraints and, via an orthogonal decomposition, quantifies how much of a data perturbation propagates through the constraints versus is removed by constraint projection.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07582",
+  "source": "arXiv",
+  "title": "Bayesian Kolmogorov-Arnold networks for trustworthy Reynolds-stress closures",
+  "abstract": "Data-driven turbulence closures can improve Reynolds-averaged Navier-Stokes (RANS) predictions, but their use is limited by two issues: learned constitutive relations are often difficult to inspect, and predictions typically lack reliable uncertainty estimates. We develop a Bayesian tensor-basis Kolmogorov-Arnold network (BKAN) for Reynolds-stress anisotropy that addresses both within a single closure. Learnable univariate spline functions on network edges provide an inspectable representation that can, where sufficiently simple, be approximated symbolically. Variational posteriors over spline coefficients yield a predictive distribution separating epistemic uncertainty, due to limited training data, from aleatoric uncertainty, the irreducible scatter of high-fidelity targets at given inputs. Galilean and rotational invariance, symmetry, and tracelessness are enforced through the tensor basis, while physical realisability is treated separately through soft regularisation. A controlled regression benchmark assesses predictive accuracy, calibration, and Bayesian parameterisation. Placing the posterior on spline coefficients gives the best overall balance of accuracy, calibration, parameter cost, and interpretability. Applied to Reynolds-stress anisotropy, the BKAN is accurate in distribution, with calibrated, informative uncertainty that tends to identify larger prediction errors. Under geometric extrapolation, however, the model becomes overconfident: epistemic uncertainty increases but does not fully account for growing prediction errors. Finally, the framework is extended to three-dimensional wind-farm wakes, where the learned correction transfers to unseen layouts and posterior samples are propagated through the RANS solver, with the aleatoric component injected as a spatially correlated field, to obtain uncertainty bounds on the predicted wake flow.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Ali Eidi",
+   "Kherlen Jigjid",
+   "Tyler Buchanan",
+   "Richard P. Dwight"
+  ],
+  "url": "https://arxiv.org/abs/2611.07582",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Data-driven RANS Reynolds-stress closures are difficult to inspect and typically lack reliable uncertainty estimates. The paper develops a Bayesian tensor-basis Kolmogorov–Arnold network whose spline-coefficient posteriors separate epistemic from aleatoric uncertainty while Galilean/rotational invariance and tracelessness are built into the tensor basis, and propagates posterior samples through the RANS solver to bound wind-farm wake predictions.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07618",
+  "source": "arXiv",
+  "title": "A Bilevel Neurodynamic Approach for Distributed SCAD-Regularized Sparse Least Squares",
+  "abstract": "This paper proposes a bilevel particle swarm optimization (PSO)-neurodynamic method for solving the distributed sparse least-squares problem regularized by the smoothly clipped absolute deviation (SCAD) penalty to global optimality. The SCAD penalty is nonsmooth and nonconvex, so existing distributed neurodynamic methods have not been extended to it directly. Through two-time-scale singular perturbation analysis, a rigorous full-trajectory convergence theory with explicit convergence rates is established for the inner collaborative multi-agent neurodynamic system without requiring the second-order sufficient condition. A theory-guided inner-outer collaborative optimization framework is further developed, in which a red-light green-light sensitivity mechanism is embedded in the outer PSO search to enhance global search while concentrating computational effort on the SCAD shape parameters, thereby improving recovery accuracy and computational efficiency. Simulation results on four sparse-recovery scenarios demonstrate that the proposed method accurately recovers the true sparsity pattern and achieves faster convergence and lower relative error than competing neurodynamic methods.",
+  "categories": [
+   "math.OC",
+   "cs.MA"
+  ],
+  "authors": [
+   "Juntao Li",
+   "Qihang Guo",
+   "Deyuan Meng"
+  ],
+  "url": "https://arxiv.org/abs/2611.07618",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Solving distributed sparse least squares with the nonsmooth, nonconvex SCAD penalty to global optimality is beyond existing distributed neurodynamic methods. The paper builds a bilevel scheme in which a continuous-time multi-agent neurodynamic system is analyzed by two-time-scale singular perturbation for rigorous full-trajectory convergence rates, while an outer PSO search with a red-light green-light sensitivity mechanism concentrates effort on the SCAD shape parameters.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07643",
+  "source": "arXiv",
+  "title": "Projection-Free Gradient Tracking Neurodynamic for Distributed Nonnegative Sparse Optimization",
+  "abstract": "This paper proposes a continuous-time, projection-free neurodynamic system based on gradient tracking for distributed nonnegative sparse optimization. Unlike traditional methods, our approach avoids projecting states onto the feasible set. Instead, it employs gradient tracking to estimate average gradients under heterogeneous costs, coupling primal and dual dynamics such that feasibility and sparsity emerge naturally from the equilibrium conditions. The system ensures unique solutions through a locally Lipschitz vector field and guarantees that every equilibrium corresponds to an exact KKT point. We establish rigorous convergence guarantees for convex objectives through three distinct analytical layers. These include a centralized kernel rate, a computable distributed rate derived from Jacobian analysis without restrictive stability assumptions, and a global exponential stability proof based on Lur'e system theory. Our analysis quantitatively separates these layers, revealing that the convergence rate is primarily limited by graph sparsity and remains robust to variations in momentum time scales. Numerical experiments on strongly convex quadratic problems validate the theoretical rates, demonstrate effective active set recovery, and show that the system maintains stable tail convergence rates even under strong local heterogeneity.",
+  "categories": [
+   "math.OC",
+   "cs.NE"
+  ],
+  "authors": [
+   "Juntao Li",
+   "Qihang Guo",
+   "Deyuan Meng"
+  ],
+  "url": "https://arxiv.org/abs/2611.07643",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Distributed nonnegative sparse optimization under heterogeneous costs is usually handled by projected methods whose feasibility steps are costly. The paper proposes a continuous-time projection-free gradient-tracking neurodynamic system in which primal-dual coupling yields feasibility and sparsity at equilibrium, and gives a three-layer convergence analysis (centralized kernel rate, Jacobian-based computable distributed rate, and Lur'e-system global exponential stability).",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07646",
+  "source": "arXiv",
+  "title": "WaSP: Wasserstein Data Synthesis Pipeline for Solver-Free Operator Learning",
+  "abstract": "Neural operators offer fast surrogates for solving PDEs, but training them typically requires expensive input-solution pairs. Two solver-free alternatives include physics-informed learning and training on manufactured data. Physics-informed learning approximates solutions by minimizing PDE residuals. While the residual norm must be strong enough to control solution error, stronger norms increase mini-batch variance and hinder optimization. Manufactured data constructs input-solution pairs for learning by applying the PDE operator to artificial solutions. However, the resulting training distribution can be mutually singular with the target distribution, yielding poor accuracy on the target distribution. We introduce the Wasserstein Data Synthesis Pipeline (WaSP), which trains on manufactured input-solution pairs while gradually mitigating the distribution shift. WaSP synthesizes new pairs by applying the learned operator to a path of intermediate distributions converging to the target input distribution. Training proceeds in stages along this path. At each stage, the previous surrogate generates solutions, and the exact PDE operator derives corresponding inputs, yielding training pairs for the next surrogate. Theoretically, we prove a stepwise error-propagation bound for the distribution shift introduced during synthesis. Empirically, WaSP reduces solution error by $3.9\\times$ to $9.5\\times$ compared to existing solver-free methods on PDEs such as Allen-Cahn, Kuramoto-Sivashinsky, and Ginzburg-Landau, and better reproduces the two chaotic systems' statistical observables.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Ryan Liu",
+   "Chuwei Wang",
+   "Ricardo Baptista",
+   "Andrew Stuart",
+   "Anima Anandkumar"
+  ],
+  "url": "https://arxiv.org/abs/2611.07646",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Solver-free neural operator training is hampered because physics-informed residuals need strong norms that inflate mini-batch variance, while manufactured data can be mutually singular with the target input distribution. WaSP instead trains in stages on pairs generated by applying the exact PDE operator to surrogate outputs along a Wasserstein path of intermediate input distributions, with a stepwise error-propagation bound for the induced distribution shift.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07666",
+  "source": "arXiv",
+  "title": "Extracting Single-Mode Rayleigh--Taylor Instability dynamics from data via SINDy",
+  "abstract": "Rayleigh-Taylor instability (RTI) is of fundamental importance in fields such as inertial confinement fusion and supernova explosions, and its evolution is commonly described by potential--flow theory and buoyancy--drag models. However, both types of models struggle to accurately capture the overshoot behavior of bubble and spike velocities, as well as the subsequent reacceleration stage. To address these limitations, we develop a physics-constrained, data-driven framework based on the integral formulation of Sparse Identification of Nonlinear Dynamics (SINDy), which extracts low-dimensional dynamical equations for bubble and spike evolution directly from data. By introducing the nondimensional initial amplitude $A_0 = k\\eta_0$ as an explicit parameter, we identify distinct dynamical equations for the bubble and the spike based on data spanning multiple Atwood numbers and initial amplitudes. The resulting low-dimensional dynamical equations not only reproduce the overshoot behavior of the velocity with good accuracy, but also capture the reacceleration stage well, while maintaining high predictive accuracy at unseen values of the wavenumber, acceleration, and Atwood number. This work provides a physics-constrained, data-driven framework complementary to conventional potential-flow and buoyancy--drag models, accurately describing the dynamical evolution of the bubble and spike at high Atwood numbers, and provides a new perspective for directly extracting the dynamical equations of interfacial instabilities from data.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.LG"
+  ],
+  "authors": [
+   "Chuanxing Wang",
+   "Hui Luo",
+   "Guohuai Zhu",
+   "Hongbo Cai",
+   "Shaoping Zhu",
+   "Mingxing Luo"
+  ],
+  "url": "https://arxiv.org/abs/2611.07666",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Potential-flow and buoyancy-drag models fail to reproduce the overshoot and reacceleration of Rayleigh-Taylor bubble and spike velocities. The paper applies an integral-formulation SINDy framework with the nondimensional initial amplitude as an explicit parameter to extract separate low-dimensional dynamical equations for bubble and spike from multi-Atwood-number data.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07674",
+  "source": "arXiv",
+  "title": "Instrumental Variables in Continuous-Time Stochastic Processes",
+  "abstract": "Causal questions often arise in systems that evolve in continuous time. While instrumental variable (IV) methods provide a principled approach to identify causal effects in static or discrete-time settings, even in the presence of unobserved confounding, they do not yet extend to continuous-time dynamics. In this work, we develop an IV framework for stationary continuous-time stochastic processes parameterized by stochastic differential equations (SDE), where the instrument itself takes the form of a stochastic process. We encode the structural sparsity and causal effects directly at the infinitesimal level of the drift, and contrast these assumptions with the IV assumptions on the discretized version of the same process. Based on these structural assumptions, we derive moment restrictions using path-valued instruments. We show how these restrictions simplify for Ornstein-Uhlenbeck processes and present an identification condition together with a corresponding consistent estimation method. Finally, we extend our estimation framework to nonlinear causal effects by expressing the path-based moment restrictions leveraging the signature kernel. Empirically, our method recovers causal effects in confounded continuous-time systems where maximum-likelihood-based estimation and discrete-time IV methods are systematically biased.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Lars Pennig",
+   "S{\\o}ren Wengel Mogensen",
+   "Niki Kilbertus"
+  ],
+  "url": "https://arxiv.org/abs/2611.07674",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Instrumental-variable identification of causal effects does not extend to systems observed as stationary continuous-time stochastic processes. The paper places structural sparsity and causal effects at the drift level of an SDE, derives path-valued moment restrictions for process-valued instruments (simplified for Ornstein-Uhlenbeck dynamics), and builds a consistent estimator, extended to nonlinear effects via the signature kernel.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07676",
+  "source": "arXiv",
+  "title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
+  "abstract": "We establish finite-time convergence guarantee for synchronous relative value iteration (RVI) $Q$-learning for finite weakly communicating Markov decision processes (MDPs). For stochastic Krasnosel'ski\\u{\\i}--Mann iterations driven by a non-expansive, linearly regular map on a finite-dimensional normed space, we establish last-iterate mean-squared residual bounds under martingale-difference noise whose conditional second moment grows at most linearly with the squared residual. Suitable polynomial stepsizes of order $n^{-a}$ yield an $O(n^{-a})$ rate for $0<a\\leq1$. We verify linear regularity and the noise condition for the centered Bellman operator for finite weakly communicating MDPs. Applying the general result gives an $O(n^{-1})$ bound on the mean-squared Bellman span residual of RVI $Q$-learning iterates when a suitable stepsize sequence is used. The positive gap between optimal and suboptimal stationary deterministic policies then yields an $O(n^{-1})$ bound on the expected suboptimality of the greedy policy. Consequently, $O(\\epsilon^{-1})$ synchronous iterations suffice for an $\\epsilon$-optimal policy in expectation. These guarantees are instance-dependent, with constants that depend on the hitting-time parameters and the suboptimality gap of the second-best policy.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Avik Kar",
+   "Siddharth Chandak",
+   "Rahul Singh",
+   "Shalabh Bhatnagar"
+  ],
+  "url": "https://arxiv.org/abs/2611.07676",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Finite-time convergence rates for synchronous relative value iteration Q-learning on finite weakly communicating MDPs were not established. The paper proves last-iterate mean-squared residual bounds for stochastic Krasnosel'skii-Mann iterations under non-expansive, linearly regular maps with martingale-difference noise, yielding an $O(n^{-1})$ Bellman-span-residual rate and $O(\\epsilon^{-1})$ iterations for an $\\epsilon$-optimal greedy policy.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07695",
+  "source": "arXiv",
+  "title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
+  "abstract": "Most existing equivariant architectures for Hamiltonian prediction propagate features in direct-sum spaces of irreducible spherical tensors, whereas the target Hamiltonian is naturally an operator block in a direct-product representation over local orbital and spin bases. This representation mismatch fragments contiguous Hamiltonian blocks, obscures direct manipulation of orbital couplings, and organizes features into irregular angular-momentum components that require numerous transformations and are poorly aligned with efficient hardware execution and memory management. To address both the representation mismatch and computational bottleneck, we propose DP-Learner, an equivariant learning framework that performs message passing directly on Hamiltonian-like operator blocks in the direct-product space. Theoretically, we propose Lie-generator-based directional embedding and invariantly weighted left--right products and contractions that preserve equivariance to SO(3), SU(2), and spatial inversions, without explicit Clebsch--Gordan decomposition or inverse reconstruction. Methodologically, we instantiate this principle as a Transformer architecture, in which Hamiltonian-like feature matrices or tensors evolve through equivariant operators in the direct-product space, while non-linear invariant scalar routing controls structured gating over matrix units, directional propagation, attention, and environment-embedded context interactions. We further construct MP-HAM-110K, a large-scale Hamiltonian dataset comprising more than 110,000 material structures covering 68 elements with both Hamiltonian and wavefunction data. Experiments on MP-HAM-110K and Materials-HAM-SOC demonstrate that DP-Learner dramatically improves Hamiltonian prediction accuracy and inference efficiency over the state-of-the-art method.",
+  "categories": [
+   "cs.LG",
+   "cond-mat.mtrl-sci",
+   "cs.AI",
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Shi Yin",
+   "Zujian Dai",
+   "Xinyang Pan",
+   "Lixin He"
+  ],
+  "url": "https://arxiv.org/abs/2611.07695",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "foundations"
+  ],
+  "summary": "Equivariant Hamiltonian-prediction networks propagate features in direct-sum spaces of spherical tensors, which mismatches the direct-product operator-block structure of the target Hamiltonian. The paper introduces DP-Learner, which message-passes directly on Hamiltonian-like operator blocks using Lie-generator-based directional embeddings and invariantly weighted left-right products and contractions that preserve SO(3)/SU(2)/inversion equivariance without Clebsch-Gordan decomposition, alongside the MP-HAM-110K dataset.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08277",
+  "source": "arXiv",
+  "title": "LeanContext: Disentangling Mathematical Resources from Local Formal Context in Lean Whole-Proof Generation",
+  "abstract": "Neural theorem proving increasingly uses retrieved premises and project context to support proof generation. Evaluating these resources requires measuring the advantage of target-selected declarations over comparable alternatives and how this advantage depends on training. We introduce LeanContext, a benchmark of 129,826 Lean whole-proof generation problems, to investigate these questions. We group selected complete preceding mathematical declarations as Mathematical Context (MC) and the remaining selected local source commands as Environment Context (EC). Four aligned input views support crossed training and inference evaluations with shared targets and original Lean verification environments. For both diffusion- and autoregressive-based models, selected declarations outperform comparable alternatives by a larger margin when training includes MC. Final-input audits identify omitted declarations referenced by the target. Prioritizing these dependencies improves Pass@32 by 1.40% and 1.70% for LLaDA and Llama, respectively, on 2,000 targets. The selection experiment operates without access to target reference proofs and holds checkpoints, EC, and inference budgets constant. The code and dataset are available at https://github.com/haaaardcvZ/LeanContext.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Hang Zhang",
+   "Qihao Ye",
+   "Litong Liu",
+   "Yunbei Zhang",
+   "Yugyung Lee",
+   "Yue Zhou",
+   "Bowen Liu",
+   "Emily First",
+   "Cheng Han",
+   "Qiao Zhuang"
+  ],
+  "url": "https://arxiv.org/abs/2611.08277",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Neural theorem proving with retrieved premises and project context requires measuring how much target-selected declarations actually help over comparable alternatives. The paper introduces LeanContext, a 129,826-problem Lean whole-proof generation benchmark that separates Mathematical Context from Environment Context and shows, through crossed training/inference views with shared targets and original Lean verification, that prioritizing omitted target-referenced declarations lifts Pass@32 for LLaDA and Llama.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08303",
+  "source": "arXiv",
+  "title": "First-Token Attraction in Mamba Dynamics",
+  "abstract": "We study token dynamics in deep Mamba models, with a particular focus on the attracting role of the first token. Unlike attention mechanisms, where token interactions are governed by positive scalar coefficients, Mamba dynamics involve full matrix-valued interaction coefficients with no positivity or definiteness guarantees. This structural difference makes Mamba dynamics substantially harder to analyze and prevents the direct application of existing techniques for attention-based models. To overcome this challenge, we introduce a new analytical framework based on a high-dimensional invariant box and a sharp exit-time argument, which together recover an effective form of sign-definiteness. Using this framework, we characterize the possible limit points of token trajectories and prove explicit exponential convergence rates. Our analysis reveals that the first token has privileged dynamics: its limiting direction attracts subsequent tokens, inducing token clustering and attention-sink phenomena in deep Mamba models. We further show that this attraction mechanism extends to broader sequence dynamics, including state-space models, causal attention, and classical time-series models. Experiments on Falcon-Mamba-7B validate our predictions, showing that concentration on the first token increases with depth and dominates in later layers.",
+  "categories": [
+   "cs.AI"
+  ],
+  "authors": [
+   "Trinh T. Nguyen",
+   "Minh-Khoi Nguyen-Nhat",
+   "Duy-Tung Pham",
+   "Hoang-Son Do",
+   "Tan Minh Nguyen",
+   "Thieu N. Vo"
+  ],
+  "url": "https://arxiv.org/abs/2611.08303",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Token dynamics in deep Mamba models resist analysis because their interaction coefficients are full matrices with no positivity or definiteness, unlike attention. The paper introduces a high-dimensional invariant-box and sharp exit-time framework that recovers effective sign-definiteness, characterizes trajectory limit points with explicit exponential convergence rates, and shows the first token's limiting direction attracts later tokens, inducing clustering and attention-sink behavior.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08358",
+  "source": "arXiv",
+  "title": "Unifying Central Flow, Rod Flow, and the Edge Coupling",
+  "abstract": "At the edge of stability, the iterates of gradient descent oscillate along the sharp directions of the Hessian. This poses a significant challenge for continuous-time models as the usual continuous-time approximation -- the gradient flow -- admits no oscillations. Several continuous-time models have been proposed to capture the behavior at the edge of stability, among them central flow and rod flow. Although both models can be interpreted as performing a coarse-graining in time, the connection between them remains poorly understood. Here we show that both flows can be derived from a third object, the edge coupling: a functional on consecutive iterates whose critical points are the fixed points and period-two orbits of gradient descent. It is revealed that the two flows correspond to coarse-grainings at different time scales. Rod flow coarse-grains over only the fastest time scale, while central flow coarse-grains over both the fast and intermediate time scales. Furthermore, using the edge coupling, we derive rod flows and central flows for momentum methods such as heavy ball and Adam. We verify the derived flows experimentally on representative neural network architectures, where they track the discrete iterates throughout all phases of training -- including the transition from the stable regime to the edge of stability.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Eric Regis",
+   "Sinho Chewi"
+  ],
+  "url": "https://arxiv.org/abs/2611.08358",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Several continuous-time models (central flow, rod flow) were proposed to reproduce gradient descent's oscillations at the edge of stability, but their connection was poorly understood. The paper derives both from a third object, the edge coupling — a functional on consecutive iterates whose critical points are the fixed points and period-two orbits of gradient descent — showing the two flows are coarse-grainings at different time scales and extending them to heavy-ball and Adam.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08409",
+  "source": "arXiv",
+  "title": "Conformal Prediction for Time-Dependent PDEs",
+  "abstract": "Uncertainty quantification is crucial in scientific machine learning, where models inform safety-critical tasks such as flood forecasting, financial risk management, and thermal control in machines. Conformal prediction provides distribution-free coverage guarantees, but in time-dependent settings common to physics and engineering, these guarantees can break down, leading to systematic undercoverage. We study this problem in the context of surrogate models for time-dependent physical systems described by partial differential equations. We prove that in a function space setting, distributions at arbitrarily close times can be mutually singular, making exact coverage guarantees impossible. We further show that in discretized settings, the total variation distance between distributions often saturates exponentially fast with the grid resolution, mandating restrictions on the spatial discretization to ensure coverage. Finally, for certain settings, we show how to use principled weighted conformal prediction to obtain finite-sample coverage guarantees over growing time horizons.",
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "authors": [
+   "Joshua Stiller",
+   "Annika Schneider",
+   "Eyke H\\\"ullermeier"
+  ],
+  "url": "https://arxiv.org/abs/2611.08409",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Conformal prediction's distribution-free coverage guarantees break down for time-dependent PDE surrogate models, producing systematic undercoverage. The paper proves that distributions at arbitrarily close times can be mutually singular in function space, shows total-variation distance saturating exponentially with grid resolution, and shows that principled weighted conformal prediction restores finite-sample coverage over growing time horizons.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08411",
+  "source": "arXiv",
+  "title": "Low-Rank Tensor Manifolds for Turbulent Field Reconstruction from Sparse Data",
+  "abstract": "Reconstructing turbulent flow fields from sparse and irregular measurements remains challenging because the underlying inverse problem is severely underdetermined. Here we present MANTRA, a manifold-based tensor framework that represents each velocity component in a continuous tensor-product space while constraining its coefficient tensor to a low-rank Tucker manifold. This structure provides a compact, data-adaptive representation without requiring gridded observations or governing equations. Riemannian optimization and adaptive selection of rank and basis complexity enable the model to exploit coordinate-wise spatiotemporal correlations. In simulations of forced isotropic turbulence and flow over a cylinder, MANTRA recovers multiscale structures at sampling densities orders of magnitude below the underlying grids and remains accurate under Gaussian noise up to 20% of the peak velocity. It also recovers leading coordinate-wise correlation structures from sparse observations. Applied to experimental particle-tracking velocimetry of an oscillating impinging jet, MANTRA reveals time-evolving structures that are not apparent from the scattered measurements alone.",
+  "categories": [
+   "physics.flu-dyn"
+  ],
+  "authors": [
+   "Nazmus Sakib",
+   "Alexander G. Mychkovsky",
+   "Hessam Babaee"
+  ],
+  "url": "https://arxiv.org/abs/2611.08411",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "ml-numerical-methods"
+  ],
+  "summary": "Reconstructing turbulent velocity fields from sparse, irregular measurements is a severely underdetermined inverse problem. MANTRA represents each velocity component in a continuous tensor-product space with a coefficient tensor constrained to a low-rank Tucker manifold, using Riemannian optimization and adaptive rank/basis selection to recover multiscale structures at sampling densities orders of magnitude below the underlying grid.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08421",
+  "source": "arXiv",
+  "title": "Data-driven discovery of intrinsic Lie point symmetries of differential equation systems",
+  "abstract": "Discovering continuous symmetries directly from differential-equation data can reveal geometric structure for model reduction and scientific machine learning without symbolic determining equations or a closed-form representation of the governing system. We formulate intrinsic Lie point-symmetry discovery as an operator-theoretic problem on sampled jet-space data. Admissible generators are identified from a sampled determining operator and separated from redundant, solution-dependent, and geometrically trivial directions. The framework combines prolongation, sequential subspace restrictions, and a fixed nonlinear dictionary linear in trainable coefficients. A rank-stabilization preflight test diagnoses systems whose represented intrinsic symmetry algebra does not stabilize under dictionary refinement. On a controlled differential-equation benchmark with an analytically known 11-dimensional represented intrinsic symmetry algebra, the method recovers the complete represented generator set, reproduces its Lie-bracket structure to numerical precision, and approximates a known generator beyond the training domain. Here we show that explicit intrinsic continuous-symmetry generators can be recovered from data obtained from exact or approximate differential systems.",
+  "categories": [
+   "cs.LG",
+   "cs.NA",
+   "math.DG",
+   "math.DS",
+   "math.GR",
+   "math.NA"
+  ],
+  "authors": [
+   "Ilker Gurcan",
+   "Kadir Ustun",
+   "Ramazan Gokberk Cinbis"
+  ],
+  "url": "https://arxiv.org/abs/2611.08421",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems"
+  ],
+  "summary": "Discovering continuous symmetries directly from differential-equation data requires neither symbolic determining equations nor a closed-form model of the governing system. The paper formulates intrinsic Lie point-symmetry discovery as an operator-theoretic problem on sampled jet-space data, combining prolongation, sequential subspace restrictions, and a fixed nonlinear dictionary linear in trainable coefficients, with a rank-stabilization preflight test and recovery of an 11-dimensional symmetry algebra on a controlled benchmark.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08457",
+  "source": "arXiv",
+  "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
+  "abstract": "Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT dynamics of GD with large constant step sizes. We first study GD in adversarial linear logistic regression, focusing on two aspects: where the model parameters converge (implicit bias) and how quickly the losses decrease (optimization). We then turn to neural networks training and study how the sharpness of losses evolve during AT. Our results advance the understanding of the behaviors of GD with large step sizes in AT and highlight three key differences from its behavior in Standard Training (ST): (i) the implicit bias gap between AT and ST, previously established only for small step sizes, persists for arbitrarily large constant step sizes, (ii) different from ST, there is no uniform rate of convergence for the optimization error in AT, and (iii) sharpness can exhibit two-stage dynamics that differ from the Edge-of-Stability behavior observed in ST.",
+  "categories": [
+   "cs.LG",
+   "math.OC"
+  ],
+  "authors": [
+   "Yi Feng",
+   "Andrea Paudice"
+  ],
+  "url": "https://arxiv.org/abs/2611.08457",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Existing analyses of adversarial training dynamics assume small or vanishing step sizes that are rarely used in practice. The paper analyzes gradient descent with large constant step sizes in adversarial linear logistic regression and neural networks, characterizing the implicit-bias gap, the absence of a uniform convergence rate, and two-stage sharpness dynamics distinct from Edge-of-Stability.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08483",
+  "source": "arXiv",
+  "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+  "abstract": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
+  "categories": [
+   "cs.AI",
+   "cs.NE"
+  ],
+  "authors": [
+   "Qile Jiang",
+   "George Em Karniadakis"
+  ],
+  "url": "https://arxiv.org/abs/2611.08483",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "LLM-guided evolutionary program search for mathematical and computational problems is slow because each round requires long textual chains of thought. SwarmEvolve instead runs swarms of hundreds of low-cost agents that reason in latent space, share KV caches, and filter novel ideas by hidden-state distance, reaching state-of-the-art solutions on 21 discovery and scientific-computing problems in minutes.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.06933",
+  "source": "arXiv",
+  "title": "Capturing Membrane Dynamics and Spike Timing of Human Neurons at Scale using Neural Operators",
+  "abstract": "Characterizing the properties of neuronal cell types is central to understanding brain function. Yet, biophysically realistic neuron models remain difficult to scale to large populations while preserving the richness of cellular dynamics and within-cell-type variability. We present a cell-type-specific neural-operator framework for scalable neuronal population modeling. Rather than training separate surrogate models for individual neurons, the proposed framework learns a shared operator across multiple modeled neurons from the same cell type, conditioned on biologically interpretable electrophysiological features. Relative to the original single-neuron \\texttt{NOBLE} setting, learning across heterogeneous neurons requires a richer electrophysiological conditioning representation and a training objective designed to preserve diverse spiking dynamics. This enables efficient generation of large ensembles of somatic voltage responses while preserving variability across cells and model configurations. We evaluate the approach using membrane dynamics metrics, action potential waveform metrics, spike timing accuracy, input-output firing relationships, and electrophysiological feature distributions. Our framework reproduces subthreshold membrane dynamics, spike waveforms, and firing-rate responses across major cortical inhibitory neuron types, while accurately preserving spike timing despite the sensitivity of threshold-crossing dynamics. The predicted electrophysiological feature distributions show strong agreement with detailed simulator outputs and human experimental recordings, including high explained variability in properties such as inter-spike intervals, firing frequency, action-potential shape, and post-spike recovery.",
+  "categories": [
+   "q-bio.NC",
+   "cs.LG"
+  ],
+  "authors": [
+   "Luca Ghafourpour",
+   "Cindy Zhao",
+   "Valentin Duruisseaux",
+   "Bahareh Tolooshams",
+   "Philip H. Wong",
+   "Costas A. Anastassiou",
+   "Anima Anandkumar"
+  ],
+  "url": "https://arxiv.org/abs/2611.06933",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Biophysically realistic neuron models are hard to scale to large populations while preserving cellular dynamics and within-cell-type variability. The paper introduces a cell-type-specific neural-operator framework that learns a shared operator across heterogeneous neurons conditioned on electrophysiological features, reproducing membrane dynamics, spike waveforms, and spike timing at scale.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07490",
+  "source": "arXiv",
+  "title": "Statistical and Privacy Guarantees for Deep M-Regression via Stochastic Gradient Langevin Dynamics",
+  "abstract": "In this article, we study deep nonparametric regression trained via stochastic gradient Langevin dynamics (SGLD), a variant of stochastic gradient descent that injects carefully calibrated Gaussian noise during optimization. Using a PAC-Bayesian analysis tailored to deep ReLU networks, we establish an excess-risk bound that simultaneously accounts for network approximation error, statistical complexity, and the algorithmic cost accumulated along the SGLD trajectory. Under a Bernstein condition and within a stable SGLD regime, the excess-risk bound contains a stochastic term whose coefficient is inversely proportional to the variance of injected noise, while the estimator retains the optimal rate for nonparametric regression under the H\\\"older smoothness condition up to logarithmic factors. This result provides an approximation-error-aware, rate-optimal statistical perspective on the widely observed generalization benefits of moderate SGLD noise. For per-sample clipped SGLD, we further establish an exact f-DP guarantee and the corresponding asymptotic $\\mu$-GDP guarantee for the proposed estimator. We establish statistical convergence rates and differential privacy guarantees for DNN estimators trained using SGLD, while explicitly accounting for both network approximation error and the effect of injected noise in the excess-risk bound. Extensive simulation studies and analyses of two real datasets examine the finite-sample predictive performance and privacy-utility behavior of the proposed procedure.",
+  "categories": [
+   "stat.ME",
+   "cs.LG"
+  ],
+  "authors": [
+   "Yeheng Ge",
+   "Jian Huang",
+   "Shuyuan Wu"
+  ],
+  "url": "https://arxiv.org/abs/2611.07490",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Statistical and privacy guarantees for deep nonparametric regression trained with stochastic gradient Langevin dynamics are lacking. The paper derives a PAC-Bayesian excess-risk bound for deep ReLU networks that accounts for approximation error, statistical complexity, and accumulated algorithmic noise, and proves exact f-DP and asymptotic μ-GDP guarantees for per-sample clipped SGLD.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.07845",
+  "source": "arXiv",
+  "title": "Masked diffusion as random sequential adsorption: an exactly solvable model for parallel decoding",
+  "abstract": "Masked diffusion models generate text by reversing a stochastic masking process. Unlike autoregressive LLMs, which generate text one token at a time, they can reveal many tokens in parallel, at the price of an error, since tokens revealed together are drawn independently. We show that this trade-off maps onto the statistical physics of driven many-particle systems. (i) For any data, the error of parallel generation is the entropy production of the generation process relative to the reversed masking process. (ii) For Markov data, generation is a random sequential adsorption process with labelled gaps, which we solve exactly for any number of steps. (iii) For many steps, the error becomes the dissipation of a slowly driven system: the unmasking schedule plays the role of the driving protocol, the number of steps that of its duration, and the error is set by a thermodynamic metric that we obtain in closed form from the mutual information between tokens. Optimal schedules are geodesics of this metric. The exact solution shows how correlations in the text shape both the error and the quality of the output. The longer the correlations, the more the error concentrates at the start of generation. Schedules that start with small steps then gain more, both in path error and in perplexity, and need fewer steps to reach their asymptotic behaviour.",
+  "categories": [
+   "cond-mat.stat-mech",
+   "cs.AI",
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Adrian Baule"
+  ],
+  "url": "https://arxiv.org/abs/2611.07845",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Masked diffusion models reveal several tokens in parallel at the cost of a generation error whose origin is poorly characterized. The paper shows the error equals entropy production relative to the reversed masking process, solves the Markov-data case exactly as a random sequential adsorption process with labelled gaps, and derives a closed-form thermodynamic metric whose geodesics give optimal unmasking schedules.",
+  "added": "2026-11-06"
+ },
+ {
+  "id": "arxiv:2611.08426",
+  "source": "arXiv",
+  "title": "Dynamics Aware Past-Future Information Bottleneck",
+  "abstract": "The simplification of complex dynamical systems is essential for efficient estimation and control. A principled approach to this task is through the lens of information-theoretic compression. The Past-Future Information Bottleneck (PF-IB) provides a theoretical framework for compressing linear dynamical systems. However, the standard formulation often lacks structural consistency, yielding representations that are not realizable as dynamical systems. By constraining the objective to a specific manifold of block Hankel matrices, which we prove is a Lie group, we bridge the gap between PF-IB and realization theory. Our approach ensures that the resulting compressed dynamics are realizable, thereby enabling its direct application to estimation and control. We demonstrate our approach in numerical simulations.",
+  "categories": [
+   "cs.IT",
+   "cs.SY",
+   "eess.SY",
+   "math.IT"
+  ],
+  "authors": [
+   "Wooyoung Chung",
+   "Stas Tiomkin"
+  ],
+  "url": "https://arxiv.org/abs/2611.08426",
+  "published": "2026-11-06",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "The Past-Future Information Bottleneck compresses linear dynamical systems information-theoretically, but its optima need not correspond to any realizable system, hindering use in estimation and control. The paper constrains the objective to a manifold of block Hankel matrices that is proven to be a Lie group, yielding compressed dynamics that are guaranteed realizable as dynamical systems.",
+  "added": "2026-11-06"
  }
 ]
