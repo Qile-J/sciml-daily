@@ -92208,5 +92208,616 @@
   ],
   "summary": "Cryogenic SKY130 circuit design needs compact BSIM4 models that reproduce measured 77 K I-V behavior. The paper uses a neural surrogate of NGSpice inside a bounded least-squares extraction, with finite-difference surrogate Jacobians and NGSpice re-simulation, reducing RRMS by 17-26% over the released cards.",
   "added": "2026-11-17"
+ },
+ {
+  "id": "arxiv:2611.22286",
+  "source": "arXiv",
+  "title": "Learning Regions of Attraction for Transverse Feedback Linearization under Controller Singularities",
+  "abstract": "Transverse feedback linearization (TFL) achieves path following by exactly linearizing the error dynamics, but its controller is undefined on a singular set, such as zero speed for a unicycle or zero thrust for a quadrotor. The constrained region of attraction, the set of initial states from which the closed loop converges to the path without violating state or regularity constraints, determines where the controller can be safely activated. Exploiting the exact linear error dynamics, we show that this region is the largest forward invariant subset of the admissible set. We then decompose its state-constrained Zubov value function into an analytically known quadratic cost-to-go and a safety value function. We learn only the latter, by fitted value iteration without infinite-horizon trajectory labels. The resulting estimate combines an inner layer verified by interval branch and bound with a learned outer layer tested on samples. On a unicycle following a circle and a sinusoid and on a planar quadrotor, it covers on average 72.0%, 83.4% and 19.1% of the simulated region of attraction. In comparison, the quadratic cost-to-go and two physics-informed neural network (PINN) solvers of Zubov's equation cover at most 11.3%, 4.0% and 0.0% on average. Code and animations are available at https://gradslab.github.io/roa_tfl",
+  "categories": [
+   "cs.AI",
+   "cs.SY",
+   "eess.SY"
+  ],
+  "authors": [
+   "Abdullah Waqar Malik",
+   "Hamza Tariq",
+   "Adeel Akhtar"
+  ],
+  "url": "https://arxiv.org/abs/2611.22286",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Transverse feedback linearization controllers are undefined on singular sets such as zero speed, so characterizing the constrained region of attraction determines where activation is safe. The paper decomposes the state-constrained Zubov value function into an analytically known quadratic cost-to-go plus a safety value function learned by fitted value iteration without infinite-horizon labels, verified by interval branch and bound and shown to cover far more of the simulated region than PINN solvers of Zubov's equation.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22312",
+  "source": "arXiv",
+  "title": "Zero-Dimensional Attention Topology for Linguistic Acceptability",
+  "abstract": "Topological summaries of Transformer attention provide sentence representations for linguistic acceptability classification. We examine a zero-dimensional persistent-homology ($H_0$) representation that summarizes minimum-spanning-tree merge values from 144 symmetrized BERT attention graphs into 1,440 features. The retrospective evaluation uses 8,517 downstream training sentences and 521 in-domain and 497 out-of-domain CoLA validation sentences after data-integrity filtering. The recorded out-of-domain Matthews correlation coefficients are 0.438 for the topological representation and 0.508 for attention statistics, compared with 0.545 for BERT. Attention-feature results are retained aggregate measurements; BERT predictions are rescored and length controls are refitted from the accompanying records. Analytical results show that the representation retains token-count information and discards a class of directional attention differences. Source resampling of BERT predictions also demonstrates the sensitivity of uncertainty estimates to the sampling unit. The reported results do not demonstrate a predictive advantage for this fixed topological representation over simpler attention summaries. They identify representation properties and evaluation controls relevant to subsequent studies of attention topology.",
+  "categories": [
+   "cs.CL",
+   "cs.LG"
+  ],
+  "authors": [
+   "Saeed AlMarri (Khalifa University)"
+  ],
+  "url": "https://arxiv.org/abs/2611.22312",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Whether fixed topological summaries of Transformer attention carry usable information for linguistic acceptability is unclear. The paper constructs a zero-dimensional persistent-homology representation from 144 symmetrized BERT attention graphs and analytically shows it retains token-count information while discarding a class of directional attention differences, finding no predictive advantage over simpler attention statistics.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22334",
+  "source": "arXiv",
+  "title": "BQ-LoRA: Binary-Quantized Low-Rank Adapters as Implicit Regularizers for Parameter-Efficient Fine-Tuning",
+  "abstract": "Parameter-efficient fine-tuning of quantized large language models is dominated by QLoRA, which combines 4-bit weight quantization with FP16 low-rank adapters. We ask whether the FP16 adapter precision is necessary. Replacing it with a single binary bit per adapter parameter, combined with a learned per-layer scale $s$ and a Scaled Straight-Through Estimator, reduces adapter storage by 13-16x. We introduce two variants -- NormScale, which binarizes under a norm-preserving scale with a clipped STE, and LearnThresh, which makes the binarization threshold learnable -- unified under a framework we call BQ-LoRA. Our main theoretical contribution is a tight characterization of the BQ-LoRA hypothesis class: it has bounded entrywise norm, a typical-set spectral norm bound that is $\\Theta(r)$ times sharper than the worst case, a full-rank, near-isotropic update, and consequently a Rademacher complexity that yields an explicit $\\tilde{O}(s_{\\max}\\alpha\\sqrt{d_{out}/(rn)})$ generalization bound. FP16 LoRA has no comparable a priori norm or isotropy control. On Qwen2.5 (1.5B-72B), BQ-LoRA exceeds QLoRA's benchmark averages at every scale by 0.8-3.5 points; on LLaMA-2 (7B/70B) it remains competitive at the same storage reduction but does not uniformly lead the strongest FP16-adapter baselines (LoftQ at 7B, QLoRA at 70B). On Qwen2.5-7B the binary adapter preserves the 4-bit base WikiText-2 PPL within 0.06 (9.86 vs. 9.80) while QLoRA worsens it by 0.59. The reduction applies to inference-time adapter storage and serving; training memory matches QLoRA and step time rises by under 4%. We translate the storage saving into a deployment study, BQ-SGMV, by extending Punica's SGMV kernel with a binary inner-product primitive: the same A100-80GB holds 15.6x more adapters in HBM, and our research prototype eliminates cache misses under a skewed synthetic workload.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Juyoung Park",
+   "Heejun Lee"
+  ],
+  "url": "https://arxiv.org/abs/2611.22334",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Whether FP16 adapters are necessary in quantized parameter-efficient fine-tuning, and what guarantees binary adapters offer, is unresolved. BQ-LoRA binarizes adapter parameters with a learned per-layer scale and a scaled straight-through estimator, and its main theoretical contribution is a tight characterization of the resulting hypothesis class (bounded entrywise norm, near-isotropic full-rank updates) yielding a Rademacher-complexity generalization bound.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22398",
+  "source": "arXiv",
+  "title": "A locking-free enriched linearized neural network for linear elasticity",
+  "abstract": "Neural-network Galerkin methods suffer from volumetric locking in nearly incompressible elasticity. We propose the locking-free enriched linearized neural network (LF-ENN), to the best of our knowledge, the first neural-network Galerkin method proved to be locking-free. Following the enriched Galerkin (EG) method of Yi, Lee and Zikatanov (2022), for finite $\\lambda$ it admits a displacement-only formulation whose trial space is a linearized neural network enriched by one dilation field per element of an auxiliary mesh. The parameter $\\lambda$ enters only through a piecewise constant discrete divergence, whose action on the dilation fields is the graph Laplacian of the dual graph of the mesh. Hence any conforming field can be made discretely divergence-free, and the error is bounded independently of $\\lambda\\in(0,\\infty]$. The network needs no boundary factor: the Dirichlet condition is imposed weakly by Nitsche's method, and a Galerkin least-squares term on the shear part, as in ENN, together with a Hessian penalty on the elements along the traction boundary, replaces the trace inequality that networks lack. Under the stated approximation and quasi-uniformity assumptions, the discrete stability and error-estimate constants are independent of network width, mesh size, and $\\lambda$, for both clamped and mixed boundary conditions. For solutions with reduced regularity, we establish an error estimate of order $h^s$ under the assumptions $u\\in H^{1+s}(\\Omega)^d$ and $p\\in H^s(\\Omega)$, with $s>1/2$. Numerical experiments, including Cook's membrane, demonstrate the effectiveness of the method in the presence of boundary singularities.",
+  "categories": [
+   "math.NA",
+   "cs.NA"
+  ],
+  "authors": [
+   "Bonyong Kim",
+   "Young Ju Lee"
+  ],
+  "url": "https://arxiv.org/abs/2611.22398",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "ml-numerical-methods"
+  ],
+  "summary": "Neural-network Galerkin methods suffer volumetric locking in nearly incompressible linear elasticity. The paper proposes LF-ENN, a displacement-only neural-network Galerkin formulation whose trial space is enriched by one dilation field per auxiliary-mesh element with Nitsche-imposed Dirichlet conditions, and proves stability and error-estimate constants independent of network width, mesh size, and the Lamé parameter.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22455",
+  "source": "arXiv",
+  "title": "MARS: Feature-guided physics-informed deep learning for real-time battery health and lifetime prediction",
+  "abstract": "Accurate and robust estimation of battery state-of-health (SOH) and remaining useful life (RUL) is essential for safe and cost-effective operation of electrified transportation systems, yet it remains challenging under operating variability, non-stationary aging, and non-Gaussian measurement disturbances. This paper proposes Multi-scale Adaptive Robust State Estimation (MARS), a multi-scale adaptive robust state-estimation framework that couples a dual-branch temporal encoder with an equivalent-circuit-model-constrained differentiable generalized-correntropy adaptive Kalman filter. The encoder disentangles fast intra-cycle voltage-current-temperature dynamics from slow inter-cycle degradation, and the fused degradation context adaptively parameterizes the cycle-level process covariance, measurement covariance, and correntropy bandwidth. Through the unrolled robust filtering recursion, MARS performs physics-consistent state propagation and generalized-correntropy-based innovation correction, while uncertainty decomposition and Monte Carlo dropout provide calibrated prediction intervals for SOH estimation and conditional RUL prediction. Experiments on the NASA and CALCE benchmarks demonstrate improved SOH accuracy, achieving mean absolute error/root mean square error values of 0.72%/0.92% and 0.63%/0.80%, respectively, together with competitive conditional RUL performance against representative data-driven and hybrid baselines. The resulting conditional-RUL prediction intervals achieve coverage probabilities of 100.00% and 99.24% on NASA and CALCE, respectively. Ablation, disturbance-sensitivity, near-end-of-life, and runtime analyses further verify the contribution of each module and the practical inference cost for online battery management.",
+  "categories": [
+   "eess.SY",
+   "cs.SY"
+  ],
+  "authors": [
+   "Innocent Izabayo",
+   "Haiquan Zhao"
+  ],
+  "url": "https://arxiv.org/abs/2611.22455",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "differentiable-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Battery state-of-health and remaining-useful-life estimation is difficult under operating variability, non-stationary aging, and non-Gaussian disturbances. MARS couples a dual-branch temporal encoder with an equivalent-circuit-constrained differentiable generalized-correntropy adaptive Kalman filter whose unrolled recursion parameterizes process/measurement covariances and correntropy bandwidth, with Monte Carlo dropout providing calibrated prediction intervals.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22467",
+  "source": "arXiv",
+  "title": "Efficient Robust Optimization via an Adaptive Mono-Level Gaussian Process Surrogate",
+  "abstract": "Optimization under uncertainty seeks designs that perform robustly despite varying operating conditions or uncertain model parameters. However, identifying such designs typically requires solving an optimization problem with a nested uncertainty analysis, resulting in a high computational burden. Surrogate models can alleviate this burden and enable optimization under uncertainty even with computationally expensive simulation models. This paper proposes a novel surrogate-based approach that reduces the number of costly model evaluations required for robust optimization. The approach adopts a mono-level strategy, in which a single Gaussian process surrogate is constructed and adaptively refined for both optimization and uncertainty analysis. Refinement in the design space is guided by a sampling-based uncertainty indicator that propagates the surrogate's epistemic uncertainty to the robustness measure. Efficient uncertainty estimation is crucial for the scalability of the algorithm and achieved through pathwise sampling combined with a weight-space representation of the Gaussian process. The proposed approach is evaluated on several analytical benchmark models and requires fewer model evaluations than a state-of-the-art bi-level surrogate approach while achieving comparable solution accuracy. Once trained, the mono-level surrogate can be reused to optimize different robustness measures at reduced cost. Moreover, the approach is successfully applied to a structural optimization problem with constraints and design variable uncertainty.",
+  "categories": [
+   "cs.CE"
+  ],
+  "authors": [
+   "Julius Schultz",
+   "Mustafa Essou",
+   "Ulrich R\\\"omer"
+  ],
+  "url": "https://arxiv.org/abs/2611.22467",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "foundations",
+   "uq-inverse-problems"
+  ],
+  "summary": "Robust design optimization under uncertainty normally requires a costly nested uncertainty analysis, so reducing the number of expensive simulation evaluations is the central obstacle. The paper proposes a mono-level adaptive Gaussian process surrogate refined for both design-space optimization and uncertainty quantification, propagating epistemic uncertainty into the robustness measure via pathwise sampling in a weight-space representation.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22549",
+  "source": "arXiv",
+  "title": "Physically Admissible Generative Flow Matching for Sparse Flow Reconstruction",
+  "abstract": "Reconstructing full fluid velocity fields from sparse, localized observations is a severely ill-posed inverse problem: most of the spatial domain remains unobserved, discrete conservation laws must hold strictly, and predictive uncertainty must be reliable. Existing generative models typically enforce physical constraints only at the terminal output or via soft penalties, leaving intermediate generative trajectories unconstrained. We introduce Feasible Subspace Consistency (FSC), a framework that preserves physical admissibility as an invariant of continuous generative dynamics: tangent-space matching confines the entire ODE trajectory to the discrete conservation manifold, while mass-orthonormal coordinates preserve the kinetic-energy metric. Sparse reconstruction then reduces to amortized posterior transport in the latent space of a frozen FSC prior, ensuring every posterior sample inherits incompressibility and boundary conditions without per-sample projection loops. We validate FSC on a periodic Kolmogorov flow, where exact spectral projection isolates path tangency and metric isometry, and a wall-bounded cylinder wake with immersed obstacles, realized via matrix-free iterative projection. FSC prevents the mode-coverage collapse induced by terminal projection (increasing mode coverage from $0.000$ to $0.790$) while eliminating high-wavenumber spectral distortion. In sparse reconstruction, amortized FSC reduces global relative error by $50\\%$ and $46\\%$, and sensor residuals by $63\\%$ and $55\\%$, relative to the unconditioned prior, while delivering calibrated, spatially heterogeneous uncertainty.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Yuhao Wang",
+   "Yuanxi Peng"
+  ],
+  "url": "https://arxiv.org/abs/2611.22549",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "generative-simulation",
+   "uq-inverse-problems"
+  ],
+  "summary": "Reconstructing full velocity fields from sparse, localized flow observations is severely ill-posed, and existing generative models enforce conservation laws only at the output or through soft penalties. The paper introduces Feasible Subspace Consistency, which uses tangent-space matching and mass-orthonormal coordinates to keep the entire generative ODE trajectory on the discrete conservation manifold, enabling amortized posterior transport with calibrated uncertainty.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22557",
+  "source": "arXiv",
+  "title": "Balancing Exploration and Exploitation in Constrained Combinatorial Optimization with U(1)-Symmetric Tensor Trains",
+  "abstract": "Tensor Train (TT) decomposition has emerged as a powerful tool for mitigating the curse of dimensionality in a variety of machine learning and combinatorial optimization tasks. Recent advances show that TT-based generative models can efficiently represent and explore high-dimensional discrete spaces, even when the cost function structure is unknown. However, incorporating hard linear constraints into TT-based optimization remains challenging, as existing interpolation and sampling approaches often fail when feasible points are rare. In this work, we develop a general TT-based framework for constrained combinatorial optimization built upon U(1)-symmetric tensor networks. Our method introduces an expressibility-enhancement mechanism for constructing sparse symmetric tensors and a graph-based diversity measure that guides sample selection during training. On assignment benchmarks, expressibility enhancement and diversity-aware selection improve mean solution quality over their respective baselines. The assignment-selected diversifying strategy also extends to nonpolynomial Set Partitioning, with larger relative gains observed in the higher-tensor-rank data families. Separate runtime benchmarks show substantial speedups over ConstrainTNet and PROTES on non-degenerate assignment workloads; comparisons with simulated annealing depend on constraint information and computational budget, but, overall, support the practicality of the current implementation.",
+  "categories": [
+   "math.OC",
+   "cs.LG"
+  ],
+  "authors": [
+   "Sergei Iudin",
+   "Mikhail Podobrii",
+   "Dmitry Zheltkov",
+   "Stanislav Moiseev"
+  ],
+  "url": "https://arxiv.org/abs/2611.22557",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Tensor-train generative models can explore high-dimensional discrete spaces but struggle to enforce hard linear constraints when feasible points are rare. The paper develops a U(1)-symmetric tensor-network framework with an expressibility-enhancement mechanism for sparse symmetric tensors and a graph-based diversity measure guiding sample selection during training.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22624",
+  "source": "arXiv",
+  "title": "Stochastic Representation-Inspired Physics-Informed Neural Networks for Incompressible Fluid Flows",
+  "abstract": "The effectiveness of neural networks in solving partial differential equations depends not only on their approximation capability but also on the suitability of their representations for the underlying solutions. Motivated by stochastic integral representations of incompressible fluid flows and the associated Biot--Savart kernel, we propose a Biot--Savart-informed (i.e. physics-informed) neural network (BS-PINN) for the incompressible Navier--Stokes equations. By extracting a rational profile from a regularized Biot--Savart kernel, we construct a smooth activation function with fixed and learnable kernel scales. Both variants retain the conventional velocity--pressure formulation and physics-informed training framework, allowing the influence of the activation function to be examined independently. We evaluate the method on five benchmarks, including Kovasznay flow, cylinder wake, three-dimensional Beltrami flow, Taylor--Green vortex, and double shear layer. Across 21 benchmark--architecture comparisons, both variants consistently reduce the combined velocity error relative to the conventional $\\tanh$-based PINN, achieving mean relative error reductions of 31.7\\% and 33.2\\%, respectively. Improvements are also observed in reported pressure and vorticity errors. Notably, the double-shear-layer experiments demonstrate improved resolution of localized shear structures and, for BS-PINN-F, qualitatively clearer vortex-roll-up patterns in the long-time simulation. These findings highlight the potential of incorporating analytical flow structures into neural-network representations for incompressible flow simulations.",
+  "categories": [
+   "physics.flu-dyn",
+   "math.AP",
+   "math.PR"
+  ],
+  "authors": [
+   "Zihao Guo",
+   "Zhongmin Qian"
+  ],
+  "url": "https://arxiv.org/abs/2611.22624",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml"
+  ],
+  "summary": "PINN accuracy for incompressible flow depends not only on network capacity but on whether the representation suits the solution class. The paper derives a smooth Biot-Savart-informed activation function from a regularized Biot-Savart kernel (with fixed and learnable scales) and plugs it into a standard velocity-pressure PINN, reducing velocity error across five flow benchmarks.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22629",
+  "source": "arXiv",
+  "title": "Residual-Guided Multi-Step Conditional Generation for Fast Airfoil Flow Field Prediction",
+  "abstract": "Deep-learning surrogate models for aerodynamic flow prediction are efficient within the training distribution, but their accuracy often degrades sharply in out-of-distribution (OOD) scenarios. To improve OOD robustness for airfoil flow-field inference, this study proposes a residual-guided sequential inference framework to correct the unreliable local flow field. The framework consists of three Transformer-based components: a Flow Initializer for direct flow prediction, a Residual-based Corrector for high-residual regions, and a Shock-based Corrector for shock regions. The framework is evaluated on an engineering-oriented OOD test set built from CFD-based aerodynamic optimization trajectory. The proposed framework reduces the L1 error, CL error, and CD error by 30%, 59%, and 41%, respectively, relative to the usual single step Geo-to-Flow prediction. The additional iterative inference cost is only 0.25s per sample. These results demonstrate that the proposed framework provides an effective route for improving OOD robustness in airfoil surrogate modeling.",
+  "categories": [
+   "cs.CE"
+  ],
+  "authors": [
+   "Weishao Tang",
+   "Mingcheng Lei",
+   "Yufei Zhang"
+  ],
+  "url": "https://arxiv.org/abs/2611.22629",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Deep-learning airfoil flow-field surrogates are accurate in-distribution but degrade sharply out of distribution. The paper proposes a residual-guided multi-step inference framework composed of Transformer-based Flow Initializer, Residual-based Corrector, and Shock-based Corrector stages that sequentially correct unreliable local regions at low extra inference cost.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22646",
+  "source": "arXiv",
+  "title": "The Price of Hard Coverage Constraints in Online Conformal Prediction",
+  "abstract": "Conformal prediction provides distribution-free uncertainty quantification, but in sequential deployment, standard coverage guarantees can still allow substantial fluctuations in the number of miscoverages over time. We study an online setting in which prediction sets are produced one round at a time and the cumulative number of miscoverages must stay within a prescribed budget throughout deployment.Such a hard coverage guarantee can be enforced by enlarging prediction sets, but how much additional prediction-set size is fundamentally necessary remains unclear. We characterize this unavoidable efficiency cost over $T$ prediction rounds. Remarkably, the cost persists even with i.i.d.\\ data, a known score distribution, and perfect knowledge of the population-optimal prediction set. Under suitable regularity conditions relating coverage and prediction-set size, we determine the minimum cumulative excess prediction-set size required by any online method satisfying the hard coverage constraint. This minimum cost is $\\Theta(\\log T)$ for expected cost at a fixed time known in advance, $\\Theta(T^{1/3})$ for the largest expected cost over all fixed times up to $T$, and $\\Theta(\\sqrt{T})$ for the expected worst realized cost when the evaluation time is chosen in hindsight. We further show that these rates can be attained using past scores, without knowing the score distribution. Thus, even perfect statistical knowledge does not make sequential reliability free.",
+  "categories": [
+   "cs.LG",
+   "math.ST",
+   "stat.ML",
+   "stat.TH"
+  ],
+  "authors": [
+   "Mingrui Liu"
+  ],
+  "url": "https://arxiv.org/abs/2611.22646",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "Online conformal prediction with a hard cumulative miscoverage budget requires enlarged prediction sets, but the fundamental efficiency price of that constraint was unknown. The paper derives minimax-optimal excess prediction-set-size rates of Theta(log T), Theta(T^{1/3}), and Theta(sqrt(T)) depending on the evaluation-time criterion, and shows these rates are attainable without knowing the score distribution.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22759",
+  "source": "arXiv",
+  "title": "Robust Actor-Critic Learning under Transport and Divergence Uncertainty",
+  "abstract": "Learning reliable control policies requires accounting for uncertainty in transition dynamics and errors introduced by function estimation and action generation. We develop an actor--critic method for discounted robust Markov decision processes with continuous states and actions and an unknown nominal transition law. We consider transition uncertainty sets defined by Wasserstein distance, total variation, Kullback--Leibler divergence, or Pearson chi-square divergence. A conditional diffusion model is fitted once to offline transitions. At each subsequent iteration, we estimate the robust action-value function from current-policy observations using a shared-target minimax criterion, then update a generative actor through exponentially weighted score matching. Regularization preserves exploration and provides the density regularity needed for conditional distribution estimation. Under coverage and regularity conditions, we establish finite-sample bounds for critic estimation, the learned conditional action law, and the robust return of the implemented policy. The bounds distinguish critic estimation error, uncertainty in the nominal transition model, and policy regularization, and characterize how the four robustness radii affect the resulting guarantees.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Kunqi Huang",
+   "Lican Kang",
+   "Hongrui Shu",
+   "Jincheng Ying"
+  ],
+  "url": "https://arxiv.org/abs/2611.22759",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems"
+  ],
+  "summary": "The paper studies robust actor--critic learning for discounted robust MDPs with continuous states and actions when the nominal transition law is unknown, using Wasserstein, total-variation, KL, or chi-square uncertainty sets. It fits a conditional diffusion model once to offline transitions and derives finite-sample bounds for the critic, the learned conditional action law, and the robust return of the implemented policy, separating estimation error, model uncertainty, and policy regularization.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22782",
+  "source": "arXiv",
+  "title": "PANO: Parallel Latent Space Neural Operator for Solving PDEs",
+  "abstract": "Aggregating observations into a limited number of latent tokens and learning physical interactions in the latent space has emerged as an effective approach for Transformer-based neural operators to solve Partial Differential Equation (PDE) problems involving large-scale observations. However, existing methods typically compress observations using a single aggregation pattern, making physical information not retained by that pattern invisible to the latent space and thereby constraining physical interactions within it. To address this limitation, we propose PArallel Latent Space Neural Operator (PANO), a novel neural operator for solving PDEs that formulates physical interactions among observations as an additive combination of interaction results from parallel latent spaces with shared parameters. Specifically, PANO transforms observations into multiple distinct compressed representations through independent mappings, learns physical interactions in parallel based on these representations, and finally fuses the decoded results to predict the target physical field. Within PANO, we further propose Coupled Assignment Projection (CAP) to construct bidirectionally consistent encoding and decoding mappings, and Pairwise Latent Space Attention Layer (PaLA) to jointly update latent representations of each latent space through adaptive cross-space interactions. Extensive experiments on nine benchmarks spanning diverse physical systems, geometries, and observation scales demonstrate that PANO achieves state-of-the-art performance. Notably, PANO reduces equivalent plastic strain prediction errors on Unilateral Stamping by 28.3% (or more) and lift-coefficient prediction errors on AirCraft by 21.4% (or more) compared with existing methods. Code is available at https://github.com/ZijiangY1116/PANO.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Zijiang Yang",
+   "Xiaomeng Wu",
+   "Chen Kuang",
+   "Dongmei Fu"
+  ],
+  "url": "https://arxiv.org/abs/2611.22782",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "operator-learning"
+  ],
+  "summary": "Transformer-based neural operators that compress large observation sets into a single latent space lose physical information not captured by that aggregation pattern. The paper proposes PANO, a parallel latent-space neural operator that combines interactions from multiple independently compressed representations, with Coupled Assignment Projection and Pairwise Latent Space Attention for consistent encoding/decoding and cross-space updates.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22941",
+  "source": "arXiv",
+  "title": "A Transformer-Derived Iterative Preconditioner",
+  "abstract": "Transformers trained on in-context prediction problems can learn known numerical algorithms, e.g., gradient descent. We go further, showing that their internal computations can reveal new algorithms with provable guarantees. A softmax-attention transformer trained to solve linear systems $Xw=y$ implicitly improves matrix conditioning. Tracing $XX^\\top$ reveals an iterative preconditioning primitive, which we develop into RAPID, a standalone algorithm requiring no learned components. RAPID is an anytime preconditioner for symmetric positive definite (SPD) matrices, using randomized mixing and sparse local corrections to improve conditioning. Proof-of-concept experiments on synthetic and real-world problems consistently improve conditioning and reduce conjugate gradient iterations needed to reach a target accuracy. For a Haar-mixing idealization, we prove convergence to any fixed target condition number regardless of spectral distribution, with only logarithmic dependence on initial conditioning. Together, these results show how a transformer can discover a broadly applicable numerical algorithm.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Patrick Lutz",
+   "Themistoklis Haris",
+   "Aditya Gangrade",
+   "Venkatesh Saligrama"
+  ],
+  "url": "https://arxiv.org/abs/2611.22941",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "The paper asks whether the internal computations of a softmax-attention transformer trained on in-context linear systems can reveal a new algorithm with guarantees. Tracing the transformer's implicit update of XX^T yields RAPID, a standalone randomized-mixing preconditioner with sparse local corrections for SPD matrices, with a proof that a Haar-mixing idealization converges to any target condition number with only logarithmic dependence on the initial one.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22951",
+  "source": "arXiv",
+  "title": "A high-dimensional spatial-physical coupling operator for generalizable super-resolution of three-dimensional turbulent flows",
+  "abstract": "Accurate representation of turbulent flows requires simultaneously capturing multi-scale spatial structures and the complex, nonlinear coupling between distinct physical quantities (\\textit{e.g.}, velocity components and density). In practice, however, turbulent data are often constrained by low spatial resolution due to hardware limitations and computational costs. While current data-driven super-resolution methods have shown promise by learning mappings via convolutional neural networks (CNNs), they typically treat physical variables as independent channels. This simplified approach neglects intrinsic cross-variable correlations, causing models to struggle with high-fidelity reconstruction, particularly under extremely sparse conditions or in out-of-distribution regimes. To bridge this gap, we propose an architecture-agnostic spatial-physical coupling operator that extends the standard convolution into a joint spatial-variable dimension. Unlike conventional linear channel mixing, our framework constructs a unified spatial-physical representation within CNNs to explicitly capture local inter-variable interactions. By lifting features into a higher-dimensional manifold, this operator significantly enhances the model's representation capacity. Experiments demonstrate that this approach enables strong reconstruction performance and zero-shot generalization, offering a physics-aware inductive bias for super-resolution of three-dimensional turbulence. More broadly, this work suggests that high-dimensional operators offer a promising avenue for modeling intricate multi-scale turbulent flows.",
+  "categories": [
+   "physics.flu-dyn",
+   "cs.CV"
+  ],
+  "authors": [
+   "Zengyuan Zuo",
+   "Junjun Jiang",
+   "Fei Mu",
+   "Xubo Wang",
+   "Xianming Liu"
+  ],
+  "url": "https://arxiv.org/abs/2611.22951",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "operator-learning",
+   "ml-numerical-methods"
+  ],
+  "summary": "Data-driven super-resolution of three-dimensional turbulence usually treats physical variables as independent CNN channels, discarding cross-variable correlations and failing under sparse or out-of-distribution conditions. The paper introduces an architecture-agnostic spatial-physical coupling operator that lifts features into a joint spatial-variable manifold to explicitly model local inter-variable interactions, yielding physics-aware reconstruction and zero-shot generalization.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22965",
+  "source": "arXiv",
+  "title": "High-Dimensional Black-Box Optimization via Guidance Sampling of Diffusion Models",
+  "abstract": "Many real-world optimization problems involve optimizing black-box objectives for which only a limited number of evaluations are available. Bayesian optimization (BO) is a powerful framework for such problems, but its effectiveness often deteriorates in high-dimensional spaces. Recent work leverages diffusion models for black-box optimization, often through pre-training a reward-conditioned score network to steer generation towards high-reward samples. Alternatively, gradient-based guidance methods assume access to a differentiable reward function from which guidance gradients are queried. However, these approaches either require large amounts of labeled data for offline training or access to exact reward gradients, limiting their applicability in black-box settings. We propose BReaD (Black-box Reward-guided Sampling of Diffusion Model), a guidance sampling framework for optimizing black-box rewards without assuming access to a labeled dataset or reward gradients. The proposed method uses a Gaussian process (GP) as a differentiable surrogate for the unknown objective and actively queries labels for the generated samples. We provide a theoretical analysis of the total-variation distance between the generated distribution and the target distribution. Using Upper Confidence Bound (UCB) as guidance signals, our method balances exploration and exploitation during generation and enables the discovery of high-reward regions in the data space. Numerical experiments on scientific discovery and image generation tasks demonstrate that our framework can effectively optimize black-box rewards in low-data scenarios.",
+  "categories": [
+   "cs.LG",
+   "cs.AI"
+  ],
+  "authors": [
+   "Xiaoyan Hu",
+   "Rohit Sonker",
+   "Jalal Butt",
+   "Jiayu Chen",
+   "Egemen Kolemen",
+   "Jeff Schneider"
+  ],
+  "url": "https://arxiv.org/abs/2611.22965",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "generative-simulation"
+  ],
+  "summary": "High-dimensional black-box optimization with few evaluations defeats standard Bayesian optimization, and existing diffusion-based optimizers need either offline labeled data or differentiable reward gradients. The paper proposes BReaD, which uses a Gaussian-process surrogate as a differentiable stand-in for the black-box objective to guide diffusion sampling with UCB signals, and analyzes the total-variation distance between the generated and target distributions.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.22979",
+  "source": "arXiv",
+  "title": "Residual-Driven Basis and Data Selection for Polynomial Approximation of High-Dimensional Hamilton-Jacobi-Bellman Equations",
+  "abstract": "We develop greedy strategies for selecting global polynomial basis functions and training data in the sparse approximation of high-dimensional partial differential equations, with emphasis on Hamilton-Jacobi-Bellman (HJB) equations arising in nonlinear optimal control. Inspired by the goal-oriented dual-weighted residual framework, we derive a closed-form, mesh-free indicator that predicts, to first order, the reduction of the PDE residual obtained by adding a single candidate basis function, without solving an adjoint problem. In the data-driven regime, we jointly select basis functions and gradient-augmented training samples by maximizing the predicted decrease of a supervised loss. Numerical experiments on benchmark PDEs and nonlinear optimal control problems in up to 35 dimensions show accuracy comparable to non-adaptive approaches with substantially fewer basis functions and training samples.",
+  "categories": [
+   "math.NA",
+   "cs.NA",
+   "math.OC"
+  ],
+  "authors": [
+   "Yuyang Huang",
+   "Dante Kalise",
+   "Yuhua Zhu"
+  ],
+  "url": "https://arxiv.org/abs/2611.22979",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods",
+   "physics-informed-ml"
+  ],
+  "summary": "Sparse polynomial approximation of high-dimensional HJB equations requires choosing both basis functions and training samples efficiently. The paper derives a closed-form, adjoint-free dual-weighted-residual indicator that predicts the residual or supervised-loss decrease from adding a candidate basis function, and uses it to greedily co-select bases and gradient-augmented samples in up to 35 dimensions.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23072",
+  "source": "arXiv",
+  "title": "Amortizing Tempered Sampling with Corrected Self-Training",
+  "abstract": "Learning a neural sampler can reduce the cost of repeated sampling from an un-normalized distribution, but obtaining good training data remains difficult. We develop a corrected self-training scheme across a sequence of tempered targets, making use of importance sampling and Markov chain Monte Carlo to correct the samples and replay buffers to store them. We introduce Sequential Score Sampler (SSS) as a particular case. In SSS, the proposal is a score-based diffusion trained by regression on energy gradients; and the samples are corrected by importance weights on the path space. After training, samples can be collected directly from the model, from its importance-corrected proposals, or from the final-temperature buffer. The method amortizes repeated sampling by encoding the global structure of the target in the model. SSS achieves competitive sampling accuracy across the benchmarks and, on several targets, uses shorter runtimes with fewer energy evaluations than competing samplers.",
+  "categories": [
+   "stat.ML",
+   "cs.LG"
+  ],
+  "authors": [
+   "Hoang-Viet Nguyen",
+   "Hai-Dang Dau",
+   "Alexandre H. Thi\\'ery"
+  ],
+  "url": "https://arxiv.org/abs/2611.23072",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Amortizing repeated sampling from un-normalized distributions with a learned neural sampler is limited by the difficulty of obtaining good training data across tempered targets. The paper introduces a corrected self-training scheme using importance sampling, MCMC corrections and replay buffers, instantiated as the Sequential Score Sampler trained by regression on energy gradients.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23093",
+  "source": "arXiv",
+  "title": "What's in a Tree ? Hierarchical $n$-gram models as controlled approximators of language",
+  "abstract": "Hierarchical models have been proposed as synthetic settings for studying language. However, their relevance to realistic language corpora remains underexplored. In this work, we introduce tree-grams, autoregressive generative $n$-gram models that build the conditional probability tensor $p(x_n \\mid x_{1:n-1})$ through a hierarchical composition of order-2 and order-3 tensors. $n$ controls the maximal context window, whereas a rank hyperparameter $d$ controls model capacity, yielding an interpretable and systematically scalable family of approximators of language. We show how tree-grams outperform existing $n$-gram baselines, while remaining competitive with deep transformer-based language models. We demonstrate the utility of such controlled approximations by using tree-grams as generative models. In particular, we show that hyperparameter transfer under $\\mu$P can be made more robust when narrower models are tuned on simpler data, generated by tree-grams with moderate $n$ and $d$. In addition, we show that entropy and effective range of correlations control performance gap after fine-tuning. This is because tree-grams allow us to explicitly control horizon and capacity. When allowed to route across candidate topologies, we observe emergent sparsity in tree-grams. Such concentrated routing permits pruning upto 95\\% of topologies without significant change in performance.",
+  "categories": [
+   "cs.CL",
+   "cond-mat.dis-nn",
+   "cs.AI",
+   "cs.LG"
+  ],
+  "authors": [
+   "Aritra Das",
+   "Francesco Cagnetta",
+   "Darshil Doshi",
+   "Victor V. Albert",
+   "Maissam Barkeshli",
+   "Andrey Gromov"
+  ],
+  "url": "https://arxiv.org/abs/2611.23093",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "mathematical-analysis-of-llm"
+  ],
+  "summary": "Whether hierarchical synthetic models can serve as controlled, interpretable approximators of realistic language is underexplored. The paper introduces tree-grams, autoregressive n-gram models that build the conditional probability tensor by hierarchically composing order-2 and order-3 tensors with an explicit rank control, and uses them to study muP hyperparameter transfer, correlation-range effects on fine-tuning gaps, and emergent topological sparsity.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23129",
+  "source": "arXiv",
+  "title": "Where Should Physics Enter? Information, Identifiability and Calibration in Probabilistic Sea Surface Temperature Forecasting",
+  "abstract": "Advection-diffusion priors are a common way to make neural sea surface temperature (SST) forecasts physics-informed. We test where such a prior must enter a heteroscedastic ConvLSTM to help, using daily NOAA OISST v2.1 for the Bay of Bengal (1982-2024) and a synthetic benchmark on the same grid with known currents of controlled strength. (i) On real data, a soft advection-diffusion residual with a learned velocity gives no reliable benefit (lead-15 CRPS -0.007 degrees C, 95% interval [-0.022, +0.008]); a plain temporal-smoothness penalty matches it, and equivalence within 3% is not established either. (ii) Learned velocities do not recover the currents, whether placed in the loss, in an explicit transport step, or in a transport step without neural correction: they correlate with the reference no better than a shuffled-date null, even on synthetic data where knowing the currents would improve day-15 forecasts by 16-23%. (iii) Supplied currents help on synthetic data, but mostly as information: giving them to the network as input channels, without transport, recovers 92% of the transport design's lead-5 gain, and a frozen-current numerical forecast does as well as either. (iv) With GLORYS12 reanalysis currents on real data, the transport design is 6% and 4% worse at leads 1 and 5; reanalysis advection explains essentially none of the daily OISST change (correlation 0.02), and frozen-current transport is worse than persistence. (v) The defect that matters is lead-dependent miscalibration shared by every model. One variance multiplier per lead, fitted on validation data, brings 90% coverage to 0.85-0.91 at all leads and lowers day-1 CRPS by 13-21%; fine-tuning on 15-day rollouts fixes long-lead coverage but costs short-lead skill. This version withdraws an earlier claim of an 81% CRPS reduction that came from an uncontrolled comparison.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Parmitha Vangapandu",
+   "Jonnakuti Pavan Kumar",
+   "Sathwik Narkedimilli",
+   "MSVPJ Sathvik",
+   "T. M. Balakrishnan Nair",
+   "Santanu Bhattacharya"
+  ],
+  "url": "https://arxiv.org/abs/2611.23129",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "uq-inverse-problems"
+  ],
+  "summary": "It is unclear where an advection-diffusion prior must enter a probabilistic sea surface temperature forecaster to actually help, and whether learned velocities are identifiable at all. The paper systematically tests prior placement in a heteroscedastic ConvLSTM against synthetic benchmarks with known currents and shows that the dominant defect is lead-dependent miscalibration, which a per-lead variance multiplier largely corrects.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23130",
+  "source": "arXiv",
+  "title": "A Neural Envelope Method for Rapid Gradient-based Optimum Takeoff Trajectory Design",
+  "abstract": "Urban air mobility arises to mitigate ground traffic congestion. Multidisciplinary analysis and optimization (MDAO) has been introduced to reduce the energy consumption, thereby expanding aircraft performance. Surrogate-based MDAO lowers the cost of optimization, but multimodality disrupts global optimum search for both simulation-based and surrogate-based optimizations. Convex envelopes convert multimodal spaces into unimodal spaces, permitting efficient convex optimization; however, convexifying a design space may produce infeasible \"optimal\" designs due to complex design constraints. To address these challenges, this work proposes the coupling of a physics-constrained generative adversarial networks (physicsGAN) and neural envelope to transform original, constrained, non-convex optimizations into unconstrained, convex optimizations. Specifically, the physicsGAN discovers a feasible design space where all design candidates inherently satisfy all constraints, by penalizing surrogate-predicted constraint violations during training. Moreover, the neural envelope constructs a neural network-based convex envelope for the transformed objective function within the physicsGAN-discovered feasible space. Note that the neural envelope only needs to deal with objective function since constraints are inherently satisfied in the feasible space. The neural envelope is demonstrated on takeoff trajectory optimizations of the Airbus A3 Vahana eVTOL aircraft. Results show that neural envelopes achieve a 99.91% mean accuracy within a flight-condition space compared with reference convex envelopes. Neural-envelope-enabled optimizations achieve 99.84% accuracy on the global optimum design, costing only 0.04 seconds on average. The neural envelope accelerates the trajectory optimization by 53 and 162 times on average compared to the physicsGAN-enabled gradient-based and global optimizations, respectively.",
+  "categories": [
+   "cs.LG"
+  ],
+  "authors": [
+   "Samuel Sisk",
+   "Xiaosong Du"
+  ],
+  "url": "https://arxiv.org/abs/2611.23130",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "ml-numerical-methods"
+  ],
+  "summary": "Surrogate-based multidisciplinary design optimization of takeoff trajectories is hampered by multimodality and by convexifications that can yield infeasible designs. The paper couples a physics-constrained GAN, which learns a feasible design space satisfying all constraints, with a neural network convex envelope of the objective, converting constrained non-convex trajectory optimization into unconstrained convex optimization with large speedups.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23135",
+  "source": "arXiv",
+  "title": "OpenPINN/PINO: An Extensible Open-Source Framework for Agent-Assisted Physics-Informed Neural Networks and Neural Operators",
+  "abstract": "Substantial challenges in physics-informed learning have motivated many improvements, but fragmented implementations hinder systematic organization, integration, and comparison. We propose OpenPINN/PINO, an extensible open-source PyTorch framework for physics-informed neural networks and neural operators. Two shared specifications connect problem setup, local computation, and evaluation. Agents support problem formulation, solver planning, and diagnosis. ProblemSpec defines geometry, governing equations, constitutive relations, parameters, initial and boundary conditions, and optional data. MethodSpec configures the model, sampling, loss, optimization, and differentiation. Researchers can register new problem templates and method components, then combine or compare strategies such as Fourier features, residual-adaptive sampling, and self-adaptive loss weighting for a fixed problem. Agents translate natural-language descriptions into specifications, flag missing information, and propose solver plans. The framework validates these specifications and deterministically generates local training and testing code. A diagnostic agent reviews training logs and evaluation results to identify problems and suggest revisions. Three examples show how method choices and agent diagnostics affect accuracy. For viscous Burgers, Fourier features and residual-adaptive sampling each reduced relative $L^2$ error by about $75\\%$ from a shared baseline. For periodic Poisson, spectral differentiation reduced mean-free relative $L^2$ error by about $68\\%$ across 16 held-out forcings. For a plate with a hole, successive agent diagnoses guided nondimensionalization and optimization. After initial training failure, all three runs met the $10\\%$ target, with relative $L^2$ displacement errors of $3.51\\%$--$6.31\\%$.",
+  "categories": [
+   "physics.comp-ph"
+  ],
+  "authors": [
+   "Xi Wang",
+   "Jun Lu",
+   "Cheng Zhang",
+   "Xiaoying Zhuang",
+   "Timon Rabczuk",
+   "Hehua Zhu",
+   "Wei Wu",
+   "Peinan Li",
+   "Jidong Zhao",
+   "Zhenyu Yin",
+   "Hao Sun"
+  ],
+  "url": "https://arxiv.org/abs/2611.23135",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "physics-informed-ml",
+   "operator-learning",
+   "llm-agents-for-sci-computing"
+  ],
+  "summary": "Physics-informed learning research is fragmented across implementations, hindering systematic comparison and reuse of method components. The paper presents OpenPINN/PINO, a PyTorch framework with shared ProblemSpec and MethodSpec specifications plus LLM agents for problem formulation, solver planning and diagnosis that deterministically generate training code, demonstrated on Burgers, periodic Poisson and a plate-with-hole problem.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2506.10636",
+  "source": "arXiv",
+  "title": "Structure and asymptotic preserving deep neural surrogates for uncertainty quantification in multiscale kinetic equations",
+  "abstract": "The high dimensionality of kinetic equations with stochastic parameters poses major computational challenges for uncertainty quantification (UQ). Traditional Monte Carlo (MC) sampling methods, while widely used, suffer from slow convergence and high variance, which become increasingly severe as the dimensionality of the parameter space grows. To accelerate MC sampling, we adopt a multiscale control variates strategy that leverages low-fidelity solutions from simplified kinetic models to reduce variance. To further improve sampling efficiency and preserve the underlying physics, we introduce surrogate models based on structure and asymptotic preserving neural networks (SAPNNs). These deep neural networks are specifically designed to satisfy key physical properties, including positivity, conservation laws, entropy dissipation, and asymptotic limits. By training the SAPNNs on low-fidelity models and enriching them with selected high-fidelity samples from the full Boltzmann equation, our method achieves significant variance reduction while maintaining physical consistency and asymptotic accuracy. The proposed methodology enables efficient large-scale prediction in kinetic UQ and is validated across both homogeneous and nonhomogeneous multiscale regimes. Numerical results demonstrate improved accuracy and computational efficiency compared to standard MC techniques.",
+  "categories": [
+   "math.NA",
+   "cs.LG",
+   "cs.NA",
+   "physics.comp-ph",
+   "physics.plasm-ph"
+  ],
+  "authors": [
+   "Wei Chen",
+   "Giacomo Dimarco",
+   "Lorenzo Pareschi"
+  ],
+  "url": "https://arxiv.org/abs/2506.10636",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "physics-informed-ml"
+  ],
+  "summary": "Uncertainty quantification for high-dimensional kinetic equations with stochastic parameters is dominated by slow-converging, high-variance Monte Carlo sampling. The paper combines multiscale control variates with structure- and asymptotic-preserving neural network surrogates that enforce positivity, conservation, entropy dissipation and asymptotic limits to accelerate sampling in homogeneous and nonhomogeneous regimes.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2512.24205",
+  "source": "arXiv",
+  "title": "Micro-Macro Tensor Neural Surrogates for Uncertainty Quantification in Collisional Plasma",
+  "abstract": "Plasma kinetic equations exhibit pronounced sensitivity to microscopic perturbations in model parameters and data, making reliable and efficient uncertainty quantification (UQ) essential for predictive simulations. However, the cost of uncertainty sampling, the high-dimensional phase space, and multiscale stiffness pose severe challenges to both computational efficiency and error control in traditional numerical methods. These aspects are further emphasized in presence of collisions where the high-dimensional nonlocal collision integrations and conservation properties pose severe constraints. To overcome this, we present a variance-reduced Monte Carlo framework for UQ in the Vlasov--Poisson--Landau (VPL) system, in which neural network surrogates replace the multiple costly evaluations of the Landau collision term. The method couples a high-fidelity, asymptotic-preserving VPL solver with inexpensive, strongly correlated surrogates based on the Vlasov--Poisson--Fokker--Planck (VPFP) and Euler--Poisson (EP) equations. For the surrogate models, we introduce a generalization of the separable physics-informed neural network (SPINN), developing a class of tensor neural networks based on an anisotropic micro-macro decomposition, to reduce velocity-moment costs, model complexity, and the curse of dimensionality. To further increase correlation with VPL, we calibrate the VPFP model and design an asymptotic-preserving SPINN whose small- and large-Knudsen limits recover the EP and VP systems, respectively. Numerical experiments show substantial variance reduction over standard Monte Carlo, accurate statistics with far fewer high-fidelity samples, and lower wall-clock time, while maintaining robustness to stochastic dimension.",
+  "categories": [
+   "cs.LG",
+   "math-ph",
+   "math.MP",
+   "physics.comp-ph",
+   "physics.plasm-ph"
+  ],
+  "authors": [
+   "Wei Chen",
+   "Giacomo Dimarco",
+   "Lorenzo Pareschi"
+  ],
+  "url": "https://arxiv.org/abs/2512.24205",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "uq-inverse-problems",
+   "physics-informed-ml"
+  ],
+  "summary": "UQ for collisional plasma kinetics is prohibitively expensive because of high-dimensional phase space, multiscale stiffness and costly nonlocal Landau collision integrals. The paper builds a variance-reduced Monte Carlo framework that replaces collision-term evaluations with calibrated, asymptotic-preserving tensor neural surrogates based on an anisotropic micro-macro decomposition of separable PINNs.",
+  "added": "2026-11-18"
+ },
+ {
+  "id": "arxiv:2611.23196",
+  "source": "arXiv",
+  "title": "Nonlinearity-preserving quantum simulation of flows in the early fault-tolerant regime",
+  "abstract": "Ensemble prediction of nonlinear dynamics propagates a probability density whose linear transport equation retains the nonlinear drift, but grid-dependent circuit costs leave end-to-end feasibility in early fault-tolerant quantum computing unresolved. We couple polynomial reduced-order models fitted by sparse identification of nonlinear dynamics to Walsh-synthesized Koopman-von Neumann (KvN) transport and surface-code resource estimation. At fixed model dimension and drift degree, per-step transport rotation counts scale polylogarithmically with cells per reduced coordinate. Balancing model accuracy against circuit costs makes reduced-model polynomial degree a design variable for early fault-tolerant quantum simulation. For a cylinder wake approaching saturation, preparation, propagation and sampling to 1% relative root-mean-square field error against the radial model are estimated to take 1.62 h on about 560,000 physical qubits. Estimated three-coordinate wake runtimes span hours to weeks below one million qubits. IBM hardware experiments demonstrate nonlinear radial KvN transport for this wake, using reference circuits to mitigate noise.",
+  "categories": [
+   "quant-ph",
+   "cs.CE",
+   "nlin.CD"
+  ],
+  "authors": [
+   "Hansol Noh (David)",
+   "Unam Oh (David)",
+   "Sangkyu Baek (David)",
+   "Doyeol (David)",
+   "Ahn"
+  ],
+  "url": "https://arxiv.org/abs/2611.23196",
+  "published": "2026-11-18",
+  "in_scope": true,
+  "tags": [
+   "equation-discovery-dynamical-systems",
+   "ml-numerical-methods"
+  ],
+  "summary": "End-to-end feasibility of quantum simulation for nonlinear flow ensembles is unresolved because grid-dependent circuit costs dominate. The paper fits polynomial reduced-order models via sparse identification of nonlinear dynamics and couples them to Walsh-synthesized Koopman-von Neumann transport with surface-code resource estimation, making reduced-model polynomial degree a design variable for early fault-tolerant simulation of a cylinder wake.",
+  "added": "2026-11-18"
  }
 ]
